@@ -1,0 +1,4 @@
+a13 = (1,...,13): |F_2| = 1; level-14 search nodes 17753408; witness-free leaves 1; of these proper by gcd 1; all 13 coords divisible by 7: 1
+b13 = (1,...,11,13,24): |F_2| = 8; level-14 search nodes 65639134; witness-free leaves 8; of these proper by gcd 8; all 13 coords divisible by 7: 8
+TOTAL witness-free leaves 9, gcd-proper 9, improper (neither) 0
+exit 0 time 27 s

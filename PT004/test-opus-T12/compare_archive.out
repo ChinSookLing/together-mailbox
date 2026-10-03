@@ -1,0 +1,6 @@
+our orbits with |F_2|>0: 90640
+archive survivor rows: 298483 -> distinct orbits: 90640  rows of one orbit disagreeing on (l2,l4): 0
+orbits only in ours: 0  only in archive: 0
+common orbits: 90640  with different (|F_2|,|F_4|): 0
+sum |F_2| ours: 514273  archive (per orbit): 514273
+sum |F_4| ours: 6274  archive (per orbit): 6274

@@ -1,0 +1,6 @@
+p=83 k=13 folded classes=41 each speed covers 5 times
+covering supports of size 12: 83722  (x C(12,11)=12 multisets each)
+covering supports of size 13: 3747359  (x C(12,12)=1 multisets each)
+covering supports total: 3831081; support orbits: 93441 (remainder 0)
+improper level-1 13-multisets |I(13,83,1)|: 4752023; unit orbits: 115903 (remainder 0)
+tau_13(83) (smallest cover): 12

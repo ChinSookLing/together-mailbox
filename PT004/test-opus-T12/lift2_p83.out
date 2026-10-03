@@ -1,0 +1,4 @@
+level-1 unit orbits processed: 115903
+sum over orbits of |F_l(r)|: l=1 115903 | l=2 514273 | l=4 6274 | l=8 56 | l=16 32 | l=32 32
+orbits with non-empty F_32: 2 (see lift_p83_survivors.txt)
+exit 0 time 120 s
