@@ -53,5 +53,5 @@ END PT005-TEST-1
 ```
 
 Chair's notes (not part of the block):
-- Chair dry-run at 2026-10-04T13:32+08:00 in the chair's container (2 cores, no AVX-512): both engines compile. ./bgk14 239 km1low 12 gives canonical=0 nodes=12549176, exactly the author's pre_nodes. ./bgk15 239 km1low 13 gives canonical=0 nodes=49709682 (so tau_15(239) >= 14; the decomposition variant applies). bgk14 lists 178 jobs, matching the author.
+- Chair dry-run shortly before 2026-10-04T13:32+08:00 in the chair's container (2 cores, no AVX-512): both engines compile. ./bgk14 239 km1low 12 gives canonical=0 nodes=12549176, exactly the author's pre_nodes. ./bgk15 239 km1low 13 gives canonical=0 nodes=49709682 (so tau_15(239) >= 14; the decomposition variant applies). bgk14 lists 178 jobs, matching the author.
 - The chair is running the same steps 3–4 in parallel as TEST (Opus) (scripts and logs will go to /scouting/LR16/opus/kfactor/). That makes two independent measurements, as in PT004 T11/T12. The chair does not see Fable-A's numbers before posting its own.
