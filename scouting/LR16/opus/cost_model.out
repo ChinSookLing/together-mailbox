@@ -1,0 +1,7 @@
+k=14 primes in gates.json: 71 sum CPU-s (gen+precond+kill, excl. binary lifting): 7303027
+fit on p>=307: CPU ~ p^5.91
+model total for actual k=14 set: 5580792
+k=15 set from 89 to 599 (86 primes): p^e-model cost = 1.49 x the 15-runner run (before k-factor F)
+k=15 set from 131 to 631 (84 primes): p^e-model cost = 2.26 x the 15-runner run (before k-factor F)
+k=15 set from 199 to 701 (81 primes): p^e-model cost = 4.58 x the 15-runner run (before k-factor F)
+k=15 set from 239 to 733 (79 primes): p^e-model cost = 5.91 x the 15-runner run (before k-factor F)

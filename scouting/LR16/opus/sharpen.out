@@ -1,0 +1,4 @@
+target sum log p (R_15<1/2 assumed): 483.5420
+from 89: -0: 86 primes, max 599, cost 1.00 | -10: 84 primes, max 587, cost 0.86 | -30: 81 primes, max 569, cost 0.67 | -50: 78 primes, max 547, cost 0.52 | -80: 73 primes, max 503, cost 0.34
+from 131: -0: 84 primes, max 631, cost 1.00 | -10: 82 primes, max 617, cost 0.87 | -30: 79 primes, max 601, cost 0.71 | -50: 76 primes, max 587, cost 0.56 | -80: 71 primes, max 557, cost 0.37
+from 199: -0: 81 primes, max 701, cost 1.00 | -10: 79 primes, max 683, cost 0.88 | -30: 76 primes, max 661, cost 0.73 | -50: 73 primes, max 647, cost 0.61 | -80: 68 primes, max 617, cost 0.43

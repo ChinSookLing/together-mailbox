@@ -1,0 +1,25 @@
+k=14 (paper, check): need sum log p > 401.9845
+   all primes from 89: up to p_max=503 (73 primes)
+   all primes from 101: up to p_max=509 (72 primes)
+   all primes from 131: up to p_max=557 (71 primes)
+   all primes from 151: up to p_max=571 (70 primes)
+   all primes from 199: up to p_max=617 (68 primes)
+   all primes from 239: up to p_max=647 (67 primes)
+   all primes from 307: up to p_max=709 (65 primes)
+k=15 (16 runners): need sum log p > 483.1820
+   all primes from 89: up to p_max=599 (86 primes)
+   all primes from 101: up to p_max=601 (85 primes)
+   all primes from 131: up to p_max=631 (84 primes)
+   all primes from 151: up to p_max=647 (83 primes)
+   all primes from 199: up to p_max=691 (80 primes)
+   all primes from 239: up to p_max=733 (79 primes)
+   all primes from 307: up to p_max=809 (78 primes)
+k=16 (17 runners): need sum log p > 570.9288
+   all primes from 89: up to p_max=673 (99 primes)
+   all primes from 101: up to p_max=683 (99 primes)
+   all primes from 131: up to p_max=719 (97 primes)
+   all primes from 151: up to p_max=739 (96 primes)
+   all primes from 199: up to p_max=797 (94 primes)
+   all primes from 239: up to p_max=827 (93 primes)
+   all primes from 307: up to p_max=883 (91 primes)
+paper P14: 71 408.8233
