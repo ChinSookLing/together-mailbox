@@ -1,0 +1,3 @@
+./bgk14 p=239: roots=15 jobs=178
+./bgk14 p=239: roots=15 jobs=178 already_done=97
+{"engine": "./bgk14", "p": 239, "jobs": 178, "rows": 1342843, "nodes": 5308002124, "cpu_secs": 1574.2, "wall": 246.0}

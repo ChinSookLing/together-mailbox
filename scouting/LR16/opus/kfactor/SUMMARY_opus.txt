@@ -1,0 +1,4 @@
+TEST (Opus) k-factor at p=239, author's engine basegen_k_campaign.cpp (Zenodo 22667683), flags as run_gate.sh, 2 workers, container restarts resumed by job (per-job engine secs)
+K=14: jobs 178 rows 1342843 nodes 5308002124 cpu_secs 1574.2   author: 178 / 1342843 / 5308002124 / 1301.2
+K=15: jobs 149 rows 9552452 nodes 18722505854 cpu_secs 5751.4
+ratios K15/K14: time 3.654  nodes 3.527  rows 7.114
