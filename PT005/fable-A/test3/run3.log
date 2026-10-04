@@ -1,0 +1,16 @@
+'PT005.D1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PT005.D2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PT005.D3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PT005.crit_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PT005.crit_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PT005.H_eq_H1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PT005.H_gt_of_small' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PT005.isCompact_Kset' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PT005.continuousOn_H' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PT005.H_gt_at_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PT005.shape_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+real	0m43.138s
+user	0m28.682s
+sys	0m14.540s
+exit=0
