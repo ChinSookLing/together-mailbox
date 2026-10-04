@@ -1,0 +1,20 @@
+== build
+== stage 1: tiny cases
+== level one, p = 43 (extra)
+== stage 2: level one, p = 83
+== second implementation, p = 43
+== second implementation, p = 83
+== stage 3: lifts 2..32 and 14
+== comparison with the archive
+== sha256 of the outputs
+66a98187f4b5753ef9c40a4d7ea5a3889c2e8680458dcdedc3aadfed0e06d0e2  stage1_tests.out
+882097308a2a6dba634b57f1a534829012c42d2fc934ab0b3a4c1ae01dbde8c8  level1_p43.log
+0ab17b072958bfec6102783c86c040e08a8074509ea21345fcac6564dcdbb319  level1_p43.txt
+c75673d66cf9dc10ee1db12d042f111b88e7439d847d48d54b91b123e7a657d0  level1_p83.log
+547441f23f205ff5d1f7f296e24d9ba47e934493396977fd653e68c08d9f2c75  level1_p83.txt
+9df20e7398b473d44d846e57f44fb332cefea113742aaaefc12539f182d6a810  level1_check_p43.out
+2569628607fd3cb722684116c08ad2bffbcd1df528d26daee227e1873e028ca9  level1_check_p83.out
+da123c12f40b3daf147b01ea62c61056f3fae1136d60a7955148c9bc16266b2e  cascade_p83.log
+3feebd2ef7e4cc2a91c11b79afcf12a3236b6aedf253ee0c645855b825f699a3  cascade_p83.txt
+434bfbc9f048edafce7f104306871618a95320a8a0c74ec8246f25e31a6ee8ff  compare_p83.out
+== all steps finished
