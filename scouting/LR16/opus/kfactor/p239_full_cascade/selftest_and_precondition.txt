@@ -1,0 +1,6 @@
+## patched run build (cascade_k15p) --selftest:
+SELFTEST FAIL positive tight lookup P=29 g=1
+## selftest variant (cascade_k15_selftest_variant.diff) --selftest:
+SELFTEST OK: 300 exact cover cases; 3-prime tight lookup audit; lift kernel verified on 8000 real cascade parents (specialized == generic, all even times dead)
+## precondition: ./bgk15 239 km1low 13 OUT
+km1low smax=13 canonical=0 nodes=49709682 leaves=0 secs=40.1509

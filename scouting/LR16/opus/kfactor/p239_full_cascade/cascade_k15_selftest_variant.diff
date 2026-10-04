@@ -1,0 +1,12 @@
+71c71
+< static_assert(2 * K < 29, "tight lookup assumes 2K < P for P >= 29");
+---
+> static_assert(2 * K < 31, "selftest variant");
+744c744
+<     for (const int prime : {29, 61, 167}) {
+---
+>     for (const int prime : {31, 37, 167}) {
+784c784
+<     for (const int prime : {29, 61}) {
+---
+>     for (const int prime : {37, 43}) {
