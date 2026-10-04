@@ -1,0 +1,6 @@
+p=239 v[:4]=[83, 39, 102, 167]... short relations with c_i in {-1,0,1}: 60034 (3^15/p = 60037); rank mod p of 400 of them = 14 -> solution space dim 1 (v fixed up to a unit)
+p=239 v[:4]=[4, 205, 186, 167]... short relations with c_i in {-1,0,1}: 59892 (3^15/p = 60037); rank mod p of 400 of them = 14 -> solution space dim 1 (v fixed up to a unit)
+p=307 v[:4]=[292, 9, 300, 118]... short relations with c_i in {-1,0,1}: 46726 (3^15/p = 46739); rank mod p of 400 of them = 14 -> solution space dim 1 (v fixed up to a unit)
+p=307 v[:4]=[64, 288, 107, 195]... short relations with c_i in {-1,0,1}: 46694 (3^15/p = 46739); rank mod p of 400 of them = 14 -> solution space dim 1 (v fixed up to a unit)
+p=601 v[:4]=[259, 549, 404, 381]... short relations with c_i in {-1,0,1}: 23538 (3^15/p = 23875); rank mod p of 400 of them = 14 -> solution space dim 1 (v fixed up to a unit)
+p=601 v[:4]=[249, 441, 588, 432]... short relations with c_i in {-1,0,1}: 23752 (3^15/p = 23875); rank mod p of 400 of them = 14 -> solution space dim 1 (v fixed up to a unit)
