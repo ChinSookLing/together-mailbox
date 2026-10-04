@@ -1,0 +1,8 @@
+# TEST (Opus) machine record for the p=239 K=15 run (recorded 2026-10-04 after Fable-B test 4 asked for it)
+CPU(s):                                  2
+Model name:                              Intel(R) Xeon(R) Processor @ 2.80GHz
+Hypervisor vendor:                       KVM
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+e64981cedb6875264a12e31e7337492be9cd4f39e14af0004ab3136f7cc4cc31  bgk15
+9558e5f25236cd79a0b4a2b936bd8a67b8818751f03c5454167900ed2c9f4239  cascade_k15p
+K=15 p=239 n=119 m=14 VEC=0 NW=8
