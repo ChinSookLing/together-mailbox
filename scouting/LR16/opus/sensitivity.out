@@ -1,0 +1,15 @@
+base (with t14<=1/3) min sum log t = -72.79088
+B_ 1 x1.10 -> gain   0.503 log-units
+B_ 2 x1.10 -> gain   0.421 log-units
+B_ 3 x1.10 -> gain   0.403 log-units
+B_ 4 x1.10 -> gain   0.311 log-units
+B_ 5 x1.10 -> gain   0.262 log-units
+B_ 6 x1.10 -> gain   0.252 log-units
+B_ 7 x1.10 -> gain   0.270 log-units
+B_ 8 x1.10 -> gain   0.314 log-units
+B_ 9 x1.10 -> gain   0.393 log-units
+B_10 x1.10 -> gain   0.524 log-units
+B_11 x1.10 -> gain   0.654 log-units
+B_12 x1.10 -> gain   1.128 log-units
+B_13 x1.10 -> gain   0.000 log-units
+B_14 x1.10 -> gain   1.733 log-units

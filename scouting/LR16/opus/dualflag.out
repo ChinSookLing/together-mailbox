@@ -1,0 +1,14 @@
+no dual (paper)  min sum log t = -73.073036  gain vs paper = -0.0000 log-units  t13=0.1528 t14=0.4722
+dual r=1         min sum log t = -72.790881  gain vs paper = 2.1162 log-units  t13=0.3571 t14=0.2679
+dual r=1,2       min sum log t = -72.790881  gain vs paper = 2.1162 log-units  t13=0.3571 t14=0.2679
+paper (no dual) gain check: -4.902744876744691e-12
+minimiser with t14<=1/3: [1.000e-04 2.000e-04 5.000e-04 9.000e-04 1.500e-03 2.400e-03 3.800e-03
+ 6.200e-03 1.020e-02 1.760e-02 3.220e-02 6.500e-02 3.571e-01 2.679e-01]
+r=1: suffix product 2.679e-01   Hermite cap 1/det <= 3.333e-01   binds: False
+r=2: suffix product 9.566e-02   Hermite cap 1/det <= 1.975e-01   binds: False
+r=3: suffix product 6.218e-03   Hermite cap 1/det <= 7.407e-02   binds: False
+r=4: suffix product 2.004e-04   Hermite cap 1/det <= 4.938e-02   binds: False
+r=5: suffix product 3.521e-06   Hermite cap 1/det <= 3.292e-02   binds: False
+r=6: suffix product 3.593e-08   Hermite cap 1/det <= 2.926e-02   binds: False
+r=7: suffix product 2.218e-10   Hermite cap 1/det <= 2.926e-02   binds: False
+r=8: suffix product 8.488e-13   Hermite cap 1/det <= 3.902e-02   binds: False
