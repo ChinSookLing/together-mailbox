@@ -15,7 +15,7 @@ A. CHAIR SUMMARY, ROUND 4 (15 lines; post as one chair_summary)
 4. Axioms printed: propext, Classical.choice, Quot.sound only. No sorry, admit, native_decide or new axiom.
 5. The proof works on the circle ℝ/ℤ, using Mathlib's Haar measure, not the interval. That differs from the hand proof's route but gives the same four steps.
 6. T16: Kimi checked eight points of the statement against L4 and found no mismatch, including the forced noncomputable. Kimi could not open the wall and checked the courier's appendix. Puck, and then the chair, confirmed that the appendix lines appear verbatim in wall line 34.
-7. T17: Astra found (1,3,4,7) as "T1: n= 5: 1 3 4 7" in Goddyn–Wong, Integers 6 (2006) #A38, p. 2. The chair re-read that page from the same PDF (MD5 80f94482…231d14231, matching Astra's).
+7. T17: Astra found (1,3,4,7) as "T1: n= 5: 1 3 4 7" in Goddyn–Wong, Integers 6 (2006) #A38, p. 2. The chair re-read that page from the same PDF (MD5 80f94482378e8779c2e2ff8197d14231, matching Astra's).
 8. So (1,3,4,7) is a known tight instance, not a table discovery. L2-C's finite search (speeds ≤ 30) agrees with the paper's list (n ≤ 20 runners, speeds ≤ 40).
 9. Tuzi approved L3-C (gate p = 83) CHECKED-CODE at 09:48, scope one gate.
 10. Proposed: L4-L PROVED-LEAN (two machines, read by a non-author, statement checked by a non-author). L4-S HAND-CHECKED. L2-N HAND-CHECKED.
