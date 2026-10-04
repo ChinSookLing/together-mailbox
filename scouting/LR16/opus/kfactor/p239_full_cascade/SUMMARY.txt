@@ -1,0 +1,5 @@
+TEST (Opus) scouting: K=15, p=239, author's engine bgk15 (unmodified) + cascade_filter_k.cpp with the one-line static_assert patch (cascade_k15_scouting_patch.diff).
+precondition km1low 13: canonical=0 (tau_15(239) >= 14), decomposition variant
+irredundant: jobs 149 rows 9552452 cascaded 9552452 improper-at-level-2 rows 15184 rows with improper lifts at level 16: 0
+reducible: km1 roots 14 covers 8272 extension rows 984368 improper-at-level-2 20635 alive at level 16: 0
+Reading: every level-one row (irredundant and reducible, up to units) has an empty improper fiber by level 16 => J(15,239) empty (scouting build; not a certificate).
