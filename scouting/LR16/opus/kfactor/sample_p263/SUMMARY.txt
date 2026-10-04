@@ -1,0 +1,4 @@
+jobs_K14_p263.jsonl 16 mean_secs 15.29
+jobs_K15_p263.jsonl 16 mean_secs 141.14
+jobs_K14_p307.jsonl 16 mean_secs 52.55
+p263 est K14 3410 K15 26817 ratio 7.86

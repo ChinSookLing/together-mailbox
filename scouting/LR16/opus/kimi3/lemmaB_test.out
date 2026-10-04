@@ -1,0 +1,7 @@
+rows 250680 survivors 569 survivors found among rows 569
+Lemma A (singleton) violations over all v, covered a0: 0
+forced bit != floor(a*v/p) mod 2 in 3332 of 6664 covered pairs
+kimi_literal: marks 569/569 survivors (must be 0), 2000/2000 sampled dying rows
+bitfix_only: marks 569/569 survivors (must be 0), 2000/2000 sampled dying rows
+corrected: marks 0/569 survivors (must be 0), 0/2000 sampled dying rows
+exact enumeration check: survivors that die by enumeration 0/200 (must be 0); dying rows confirmed 200/200 (must be all)
