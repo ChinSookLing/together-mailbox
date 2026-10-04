@@ -1,0 +1,16 @@
+Chair scouting (TEST Opus), 2026-10-04 ~15:20-15:35 +08. Author's cascade_filter_k.cpp (Zenodo 22667683).
+K=15 needs a one-line change: static_assert(2*K < 29) blocks K=15 (2K=30). Scouting copy relaxes it to 2*K < 89 (diff in cascade_k15_scouting_patch.diff); only primes >= 89 used. NOT a certificate build.
+Input row: classes 1..15 (tight orbit), file row15.txt = 0102030405060708090a0b0c0d0e0f. Command: ./cascade_k15p P filter row15.txt
+K=15:
+p=89  l2=83 l4=18 l8=36 l16=128 l32=512 PERSISTENT
+p=131 l2=7 l4=2 l8=4 l16=0
+p=179 l2=2 l4=2 l8=4 l16=0
+p=239 l2=1 l4=2 l8=4 l16=0
+p=251 l2=1 l4=2 l8=4 l16=0
+p=307 l2=1 l4=2 l8=4 l16=0
+p=401 l2=1 l4=2 l8=4 l16=0
+p=503 l2=1 l4=2 l8=4 l16=0
+p=601 l2=1 l4=2 l8=4 l16=0
+p=691 l2=1 l4=2 l8=4 l16=0
+Control K=14 (unpatched build), row 1..14: p=131, 239, 307: l16=8 l32=16 PERSISTENT (matches the author: (1..14) survives every binary level).
+tau_15 precondition (./bgk15 p km1low 13): canonical covers on <=13 classes: 179:83239 199:105794 211:8515 223:65 227:8424 229:18346 233:117 239:0 251:26

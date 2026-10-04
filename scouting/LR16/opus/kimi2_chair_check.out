@@ -1,0 +1,7 @@
+dL/du numerator (factored): -2*(7*u**5 + 14*u**4 - 27*u**3 - 11*u**2 - 4*u + 1)
+dL/du numerator == -c*P_kimi for a positive constant c? 1
+critical points of a: roots of -2*(14*u**2 - 13*u + 1)
+u1 bounds 23/280 < u1 < 237/2800: True True (via sqrt(113) < 10.7: True , sqrt(113) > 10.63: True )
+exact: a(u1) > 8/5  <=  q(23/280)^15 > (8/5)^15 * (237/2800)^2 : True
+dlogH/dt = 28*(t - 1)*(378*t**3 + 25*t**2 + 10*t - 1)/(15*t*(t**2 - 2*t - 1)*(27*t**2 + 2*t + 1))
+sign check: dlogH/dt has the SAME sign as the cubic on (0,1) (denominator 15t(t^2-2t-1)(...) < 0 and (t-1) < 0)

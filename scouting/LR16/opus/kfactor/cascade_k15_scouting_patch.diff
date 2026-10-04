@@ -1,0 +1,4 @@
+71c71
+< static_assert(2 * K < 29, "tight lookup assumes 2K < P for P >= 29");
+---
+> static_assert(2 * K < 89, "CHAIR SCOUTING PATCH: tight lookup needs 2K < P; only P >= 89 used");
