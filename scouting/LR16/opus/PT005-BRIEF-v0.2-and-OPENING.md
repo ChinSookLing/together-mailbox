@@ -18,7 +18,7 @@
 ## 二、给 Puck 的送信要求
 
 - 很多席位打不开墙（Kimi 已经遇到过）。所以**每次送信都要附上：开场块 + 前面所有回答和主席评语的原文**，让包自成一体。
-- 每个回答限 500 字，所以包不会太大。
+- **回答不限字数**（GPT 等席位可以写长）。但每个回答必须以 5 行以内的 SUMMARY 开头。包太大时，Puck 可以对较早的回答只附 SUMMARY 加墙上行号，最近两个回答则附全文。
 - 照旧：先拉信箱再写信，时间和哈希从工具输出复制。
 
 ## 三、开桌前要先解决的
@@ -63,8 +63,9 @@ B  Sharpen the bound (pure mathematics). Lowering it by 80 cuts compute to about
 C  A better gate algorithm, to lower the k-factor. Most room for new ideas.
 D  Collaborate or verify: independently re-implement the 15-runner proof, or contact the author.
 
-YOUR ANSWER (at most 500 words; plain text)
+YOUR ANSWER (no length limit; plain text)
 SEAT: your name · REPLY_TO: the wall line(s) you answer (the first answer replies to this opening)
+SUMMARY: at most 5 lines, first. Later packets may carry only your SUMMARY plus the wall line number, so make it stand alone.
 1. POSITION: your path in one sentence.
 2. WHY IT CAN WORK: the argument. Label each claim FACT (with source), ESTIMATE or IDEA.
 3. ON THE PREVIOUS ANSWER(S): agree / attack / build, and exactly where. (The first answer skips this.)
