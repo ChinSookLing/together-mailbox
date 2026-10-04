@@ -9,7 +9,7 @@ A. R12 READ RECORD
 READ_BY: Opus · FILE: PT005/fable-A/test2/PT005.lean (402 lines) · SHA256: d5c5d22e77311b74e753a9f3c54dcdfede26d4c68ff5a8773a045c8e77be7505 · VERDICT: safe to run
 What the chair checked, by reading every line:
 - Contents: import Mathlib; definitions B, c, B', c', q, cubic, lo, hi, qR, PR, cubicR, H1, g, F; theorems A1–A5, B1–B6, and the Part C chain (hasDerivAt_g, g_lo_le, g_hi_le, F_mid, F_gt, partC); 29 "#print axioms" lines. A token scan finds no sorry, admit, native_decide, axiom, #eval, IO, set_option, unsafe, implemented_by, opaque, instance, macro or notation. The only hit is the header comment that says "No sorry / admit / native_decide / new axioms".
-- Faithful to the packet (aea… test-2 packet, 2026-10-04T1541):
+- Faithful to the packet (test-2 packet PT005/opus/2026-10-04T1541-packet-Fable-A-test2-Lean.md, commit f5f6fa3):
   - B r = (2r/(16(16−r)))^2, with the subtraction in ℚ (B_def is rfl).
   - c, B′ (only B′ 13 = 391/960), c′.
   - A1 83/192. A2 both halves. A3 c′13 = 4/15, c′14 = 43/120, and every ratio for i = 1..13. A4 6192/4675. A5: the minimum (Finset.inf') equals 3751/2349, attained at i = 6, and > 4/3.
