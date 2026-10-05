@@ -4,7 +4,8 @@
 import subprocess, os, sys, json, time
 from concurrent.futures import ThreadPoolExecutor
 P = 223; n = (P - 1) // 2
-S = sys.argv[1]; DEAD = time.time() + float(os.environ.get("BUDGET", "1e9"))
+S = sys.argv[1];  # canonical <=13-class covers from `bgk15 223 km1low 13 FILE`
+ DEAD = time.time() + float(os.environ.get("BUDGET", "1e9"))
 rows = [[int(h[2*i:2*i+2], 16) for i in range(14)] for h in open(S).read().split()]
 cores = sorted({tuple(sorted(set(r))) for r in rows})
 done = {}
@@ -21,7 +22,7 @@ def job(C):
                rows_unhandled=int(tot[8]), secs=round(time.time() - t0, 1),
                first_unhandled=[l for l in out.splitlines() if l.startswith("UNHANDLED")][:2])
     with open("cores.jsonl", "a") as f: f.write(json.dumps(rec) + "\n")
-with ThreadPoolExecutor(2) as ex: list(ex.map(job, cores))
+with ThreadPoolExecutor(int(os.environ.get("WORKERS", "2"))) as ex: list(ex.map(job, cores))
 R = [json.loads(l) for l in open("cores.jsonl")]
 print(json.dumps(dict(cores_done=len(R), of=len(cores), rows=sum(r["rows"] for r in R),
       l16_lifts=sum(r["l16_lifts"] for r in R), unhandled=sum(r["unhandled"] for r in R),
