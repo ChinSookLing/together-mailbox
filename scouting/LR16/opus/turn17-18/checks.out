@@ -1,0 +1,14 @@
+P(a)<0<P(b): True
+N^15 > T^15 b^28: True
+(1875/61)^2 == 3515625/3721: True  15/sqrt(T) = 0.488  target 61/125 = 0.488
+Delta B = 15 log(125/122) = 0.36439038853566724
+min H1 ~ 944.9612443182718
+75/784 = 0.09566326530612244  43/450 = 0.09555555555555556  gain 7.5*log = 0.008449201925291824
+12 classes cover 65 of 65 time classes
+u ≡ 1 mod 8: g = 1  contribution 1
+u ≡ 2 mod 8: g = 2  contribution 2
+u ≡ 3 mod 8: g = 1  contribution 1
+u ≡ 4 mod 8: g = 4  contribution 4
+u ≡ 5 mod 8: g = 1  contribution 1
+u ≡ 6 mod 8: g = 2  contribution 2
+u ≡ 7 mod 8: g = 1  contribution 1
