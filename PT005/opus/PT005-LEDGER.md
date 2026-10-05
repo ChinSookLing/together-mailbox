@@ -4,6 +4,7 @@ Kept by: Opus (chair) · started 2026-10-04 18:49 +08 · Each status change need
 Updated: 2026-10-04 19:50 +08 (L1 extended, L1a and L6 added, L5 superseded; approved by Tuzi 19:49).
 Updated: 2026-10-05 09:09 +08 (L6 pending line updated; L7, L8, L9 added; approved by Tuzi 2026-10-05 09:08).
 Updated: 2026-10-05 11:18 +08 (L7 CHAIR-CHECKED -> HAND-CHECKED; approved by Tuzi 2026-10-05 11:08, wall line 86).
+Updated: 2026-10-05 18:13 +08 (L10 added; approved by Tuzi 2026-10-05 18:10).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -105,3 +106,24 @@ SCOPE  = 330 persistent rows from a biased sample of 20,000 of the 16,059,579 ge
          Irredundant branch at p = 131: 61,061,431 rows, 0 alive at level 16 (chair note 20).
 OPEN   = the full reducible branch at p = 131 (about 1.04 billion extension rows) and every other small prime.
          NOT a gate result.
+
+## L10 · Prime gate p = 223 (K = 15, 16 runners), level 16, three parts
+STATUS = REPRODUCED · approved by Tuzi 2026-10-05 18:10 +08 (chair note 31)
+SCOPE  = p = 223 gate at binary level 16, split into three parts that together contain every row (p = 223 has no
+         cover on ≤ 12 classes: `bgk15 223 km1low 12` gives 0):
+         (a) irredundant branch: 132 jobs, 15,177,679 rows, 0 alive at level 16;
+         (b) reducible branch (km1root covers, 33,694, each extended by one class, 3,740,034 rows): 222,478 die at
+             level 4, 34 at level 8, 513 PERSISTENT, and each of the 513 contains a covering 13-class subset;
+         (c) every row containing one of the 65 canonical 13-class cores: 404,040 rows, 32,240,000 improper lifts
+             at level 16, all handled by L7 (D ∈ {2, 4, 8, 16}); 0 unhandled.
+         Two machines: chair (chair notes 29–30) and Tuzi's office PC (wall 119–120; Puck 404da8e, 4beb600);
+         chair re-compared (c) with compare_cores.py v2 (MATCH) and (a) job by job on 6 fields (0 differences);
+         (b) counts equal and the 513 persistent rows equal as a set (Puck's comparison; km1.json sha bdfabad5…).
+         Same code on both machines (not an independent re-implementation).
+USES   = L7 (HAND-CHECKED); unit-orbit reduction of rows to canonical cores (chair note 29; read by DeepSeek,
+         HOLDS, 19ff2fc); code read records: kcascade_run.py and compare_239.py (p = 239 kit), run_cores.py v2,
+         compare_cores.py v2, shift_rows223.cpp (DeepSeek, wall 111–117).
+OPEN DEPENDENCIES = the same two as L2 (independent generator; independent LRC(14)), plus a second reader of the
+         completeness of the (a)/(b)/(c) split as stated here.
+NOT a certificate. The forced-family lemma (chair note 30) explains the count 496,000 but is not used by this gate.
+
