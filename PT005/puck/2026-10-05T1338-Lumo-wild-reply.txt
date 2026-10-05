@@ -1,0 +1,43 @@
+
+
+![Generated image](attachment:380f0515-cea9-4b68-8b1b-3289dc1938b6)
+
+
+
+I can see the packet — it's PT005-WILD-IDEAS, carried by Puck, asking for one bold idea per brain on the 16-runner Lonely Runner problem, with a cheap test and a kill condition. I read no other chats or records in this account; I worked only from the packet text. Here is my seat's reply, with a picture included as invited. First, one arithmetic observation from your own numbers that anchors everything below: 496,000 × 65 = 32,240,000 exactly (FACT, from the packet), so the "32,240,000 checks" are precisely the sum of the per-core counts — the per-core figure 496,000/6,216 ≈ 79.79 is *not* an integer, so lifts are not uniformly spread over rows. That non-integrality is a clue, not noise.
+
+---
+
+**SEAT** · LUMO
+
+**REPLY_TO:** chair note 29
+
+**SUMMARY** — The invariance of 496,000 across 65 unrelated cores is the signature of a *spectral* constant: if the common shape S is a union of cosets of a subgroup H of the time-class group, then any complete core produces the identical multiplicity histogram automatically, and the improper-lift count is a closed character sum in the quotient group. Turn that into a formula, and every prime whose shape is likewise H-periodic closes in one symbolic certificate instead of one gate.
+
+**THE IDEA** — Work in G = Z/222 (p = 223, time classes in discrete-log order; FACT per packet). Every speed covers a translate τ_g S of one fixed shape S (FACT, your picture). A core C gives the coverage multiplicity u_C(x) = Σ_{g∈C} 1_{τ_g S}(x) ≥ 1 everywhere, with total Σ u_C = 13|S| fixed regardless of C.
+
+The bold claim (IDEA): **the shape S is H-periodic** for some nontrivial subgroup H ≤ Z/222, i.e., S is a union of whole cosets of H. If so, every translate of S is also H-periodic, multiplicities are constant on each coset of H, and *any* complete core yields the *same* histogram — the 65 identical counts of 496,000 are then forced, not lucky. Even better, u_C descends to the quotient Z/222/H, a much smaller group, and the improper-lift count collapses to
+
+N = Σ_x f(u_C(x)) = Φ(222, H, S, 13),
+
+a closed finite character sum on the quotient, evaluable by Parseval/Möbius inversion over the divisor lattice {1, 2, 3, 6, 37, 74, 111, 222} — no enumeration. The candidate mechanisms, in order of hope: S a union of cosets of the order-37 subgroup (quotient Z/6), the order-3 subgroup (quotient Z/74), or the order-74 subgroup (quotient Z/3). The reason 13 classes suffice while 222 points exist suggests the real action lives on a small quotient.
+
+The prize beyond p = 223: if Φ depends only on the quotient group, the shape's Fourier profile, and 13, then every prime p whose analogous shape is periodic with respect to a subgroup of Z/(p−1) with the same quotient signature inherits the same certificate after rescaling (IDEA). "Close all p with an H-periodic core" replaces "run a gate per prime." Even the grand prize — Σ log p over the whole class computed symbolically — becomes one line of algebra.
+
+**WHY IT MIGHT WORK** — (1) FACT: you observed 65 different cores giving byte-identical counts; group-theoretically, quantities invariant under arbitrary swap of a subset are exactly class functions, and completeness of the cover kills every non-trivial Fourier mode of u_C — minus, necessarily, whatever periodicity S carries. (2) FACT: "every speed covers a shifted copy of the same shape" is precisely the hypothesis under which sums-of-translates are diagonalized by characters; statistics of such sums that don't depend on the translation set either come from the trivial character or from periodicity of S. (3) ESTIMATE: the machinery is elementary finite Fourier analysis on Z/n; a sub-hour script settles the hypothesis outright. (4) The accompanying picture is the mental model: 13 rotated copies of one arc-shape tint the whole ring uniformly — which is exactly what subgroup-periodicity forces, and exactly what the histogram test checks.
+
+**CHEAP TEST** (one laptop, well under an hour):
+1. *(~2 min)* Load the shape S at p = 223 as a subset of Z/222 and test subgroup-periodicity directly: for each H in {order 2, 3, 6, 37, 74, 111}, check whether S + h = S for all h ∈ H. A single membership-table pass; one FFT makes it instant.
+2. *(~10 min)* For all 65 cores, compute the exact multiplicity histogram H_c(k) = #{x : u_C(x) = k} and hash it. Prediction: all 65 hashes identical — and predicted *shape* of the histogram: flat on H-cosets.
+3. *(~15 min)* Fit N = Σ_k a_k H_c(k) from two cores; verify it reproduces 496,000 on all 65; rewrite as the quotient character sum and evaluate symbolically (Sage/Pari), ideally keeping p as a symbol.
+4. *(~15 min)* Repeat step 2 at p = 239, where you already have 3× reproduction. If the count there is again a core-independent constant, the phenomenon is group-theoretic and generic, and the family-of-primes plan is live.
+
+Deliverable: either an exact formula reproducing 496,000 — in which case the p = 223 gate becomes an identity-check and the class-closure program starts — or a precise discrepancy report.
+
+**WHAT KILLS IT** — (i) S is not periodic for any nontrivial H in step 1, or the histograms in step 2 differ across cores while the totals coincidentally agree: then 496,000 is a marginal-sum fluke with no spectral skeleton, and the idea dies at birth. (ii) The fitted weights a_k fail to depend only on quotient data, so the formula has no meaning outside p = 223 and cannot batch-close primes. (iii) At p = 239 the count varies with the core: the constancy isn't structural, killing the family ambition even if the p = 223 formula survives. Any single one of (i)–(iii) is fatal and each is directly measurable in the test above.
+
+*Aside, flagged as probable numerology (IDEA, low confidence):* 496 = 2⁴(2⁵−1) is the third perfect number, 6216 = 28·222 with 28 the second, and 6,216·6,216 + ... nothing else falls out cleanly — I would treat the 28/496 pairing as noise until the histogram test speaks. But if step 2 returns coset-flat histograms, I'd take even the numerology slightly more seriously.
+
+One caution on framing: the claim that this generalizes to "whole classes of primes closing at once" is the genuinely wild part — the per-prime shape S is defined by modular arithmetic that need not respect a uniform subgroup structure, so treat the family program as the moonshot and the p = 223 formula as the deliverable a good outcome actually looks like.
+
+Happy to iterate on the character-sum derivation or draft the step-2 script if the chair wants it written out.

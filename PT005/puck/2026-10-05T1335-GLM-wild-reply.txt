@@ -1,0 +1,59 @@
+SEAT · GLM · REPLY_TO: chair note 29 (packet PT005-WILD-IDEAS, carried by Puck, 2026-10-05)
+Records read: none. I have read only this packet; no other chats or records in this account were opened.
+
+SUMMARY (≤ 5 lines)
+In discrete-log order, multiplication becomes translation, so every speed covers a shift of ONE fixed shape D_p — and because the lonely-ball is ±-symmetric, that shape is (p−1)/2-periodic and the whole gate folds onto Z_{(p−1)/2} with a ⌊p/16⌋-point shape. At p = 223 that is a 13-point set in Z_111, which I computed by hand (below). My wild claim: the census numbers (65 cores, the universal 496,000) are functions of two integers — group size and shape size — not of the shape's fine structure. If true, a closed formula exists, 496,000 is explained without enumeration, and whole congruence classes of primes close by one symbolic evaluation. One hour of "change the ball and rerun" experiments decides it.
+
+THE IDEA — "Fold the gate, then claim the census is shape-blind"
+
+0. First, the one-line answer to the chair's "Why does every speed draw a shifted copy of the same shape?" (FACT). Fix a primitive root g mod p and write every time class a and speed class v in log coordinates. Then v·a covers time a iff va mod p lies in the ball B_p, and log_g(va) = log_g v + log_g a. Multiplication is addition in log space; therefore the set of time classes covered by v is exactly a translate of the fixed set D_p = log_g(B_p). The picture the table drew is the group law, not a coincidence.
+
+1. The fold (FACT). The ball is symmetric: r ∈ B_p ⟺ −r ∈ B_p, and log_g(−r) = log_g r + (p−1)/2. Hence D_p is invariant under shift by (p−1)/2: it is a doubled copy of a smaller shape D̄_p on the quotient Z_{(p−1)/2}, with |D̄_p| = h := ⌊p/16⌋. A set of speed classes covers all time classes iff its reduction covers Z_{(p−1)/2} by translates of D̄_p. So the entire gate at p is one cyclic set-cover: it closes iff the covering number of D̄_p is ≥ 16. Everything else — families, rows, cores — is an unfolding of this single object.
+
+2. The p = 223 instance, hand-computed (FACT, offered for immediate verification; my arithmetic was cross-checked multiplicatively, but please re-derive — it is seconds of code). 3 is a primitive root mod 223 (3⁶ ≡ 60, 3⁷⁴ ≡ 183, 3¹¹¹ ≡ −1; prime divisors of 222 = 2·3·37 all checked). The ball is ±1…±13 (26 classes; 223/16 = 13.9375). Then
+D̄_223 = {0, 1, 2, 27, 28, 36, 47, 69, 70, 89, 96, 99, 107} ⊂ Z_111,
+which is just {log_3 r mod 111 : r = 1..13} — the interval 1..13 seen through the logarithm:
+
+Z_111 in discrete-log order, blocks of ten; # = shape point (label: which r it is the log of)
+```
+  0– 9  |###.......|  3   (0,1,2   = log 1, log 3, log 9)
+ 10–19  |..........|  0
+ 20–29  |.......##.|  2   (27,28   = log 4, log 12)
+ 30–39  |......#...|  1   (36      = log 13)
+ 40–49  |.......#..|  1   (47      = log 10)
+ 50–59  |..........|  0
+ 60–69  |.........#|  1   (69      = log 2)
+ 70–79  |#.........|  1   (70      = log 6)
+ 80–89  |.........#|  1   (89      = log 5)
+ 90–99  |......#..#|  2   (96,99   = log 8, log 7)
+100–110 |.......#..|  1   (107     = log 11)
+```
+13 points; circular gaps 25, 22, 19, 11, 8, 8, 7, 4, 3, 1, 1, 1, 1. Mean gap = 111/13 = 8.538.
+
+3. The price tag (FACT). The covering problem is vertex-transitive, so its fractional optimum is exactly N'/h = 8.538 — the mean gap, the same number. All difficulty is the integrality gap from 8.54 to 16. The cores show the covering number at 223 is ≤ 13, so the 223-gate genuinely fails at class level — hence the lift-kill machinery. At p = 239 (N' = 119, h = 14) the gate closed, so the covering number jumped from ≤ 13 to ≥ 16 between two consecutive primes: the covering count is a steep function of (N', h). Steepness is exactly what a closed formula captures.
+
+4. The wild core (IDEA): universality. I conjecture the census — number of cores, rows per core, and the per-core improper-lift count — is a function Λ(N', h, m) of the two sizes and the family size m, blind to the fine structure of D̄_p. Three supports: (a) the table's own observation: 65 structurally different cores, one identical count; (b) the transpose symmetry A + D̄ = Z is symmetric under swapping core and shape — cores and shape are the same species of object, so a count blind to which 13-set is the shape must be blind to which 13-set is the core; the observed invariance is precisely shape-blindness; (c) an occupancy heuristic (ESTIMATE, crude): the expected number of 13-subsets covering a generic 13-set in Z_111 is on the order of 10⁴–10⁵ raw, i.e. the same order as 65 after normalization — cores are generic large-deviation fluctuations, not arithmetic miracles. My hand check of the order-3 character of D̄_223 gives 6 + 3ω + 4ω² = 2.5 − (√3/2)i, |·| = √7 ≈ 2.65 versus |D̄| = 13: no subgroup alignment at order 3 — consistent with "generic" (the chair should sweep all character orders; minutes).
+
+If universality holds: Λ has a closed form (a quasipolynomial/transfer-matrix identity over the circulant — the natural proof is induction on an inclusion–exclusion over translates); 496,000 is explained without enumeration (direction 1 of the packet); and closure by class follows by symbolic evaluation, because the parameter N' = 8h + s has slack s = (p mod 16 − 1)/2: p ≡ 1 (mod 16) gives s = 0 (exact 8-tilings arithmetically possible, subgroup-rich — I predict these are the costlier primes), p ≡ 15 (mod 16) gives s = 7 (N' odd, no exact tiling ever, seven forced overlaps — a mechanism for the packet's hint that this class closes). And a dividend regardless: every future gate is priced in seconds by solving the folded covering ILP (≤ 366 binary variables for p ≤ 733) before anyone spends CPU-hours on it.
+
+5. Fingerprints worth flagging (NUMEROLOGY — not load-bearing, but each is a free falsifiable prediction): 6,216 = 111·56 with 56 = 8·7 = ⌊111/13⌋·(111 mod 13); if real, rows-per-core = N'·⌊N'/h⌋·(N' mod h), so deforming to h = 12 must give 111·9·3 = 2,997 and h = 14 must give 111·7·13 = 10,101. Also 65 = 5·13 = 5h; 496,000 = 2⁷·5³·31 (contains the perfect number 496 = 2⁴·31, and no factor 3 or 37 — so the lift census is not a union of full scaling orbits; it is counted in a normalized gauge). And a curiosity my deformation scratch-work produced: |χ₃|² of the shape equals N' mod h at h = 12, 13, 14 (values 3, 7, 13) but fails at h = 10, 11 — three hits, then a miss. Exactly the kind of thing the deformation table settles.
+
+6. Honesty clause (ASSUMPTION). I do not know the exact semantics of "row", "lift", "improper" in the ledger; my model is completions/level-p² extensions killed by secondary conditions. The tests below do not depend on that model — they need only the machinery to accept the ball as input, which the fold guarantees.
+
+WHY IT MIGHT WORK
+The shift theorem and the fold are exact and checkable in minutes (at 223: every d and d+111 pair is present in D — all 13 pairs). The 65-fold identical count is exactly the invariance that shape-blindness predicts, and it is otherwise hard to explain: the 65 cores are not one scaling orbit (65 divides neither 222 nor 111·72, the ambiguity group from scaling and choice of primitive root), so the constancy is not a group-action triviality. The steepness of the covering count explains both why 223 is painful and why large primes close cheaply — one function, two regimes. And the payoff is asymmetric: even a partial formula (core count alone) re-prices the 74,000 CPU-hour campaign; the full formula deletes enumeration for entire congruence classes.
+
+CHEAP TEST (one button: change the ball, rerun the certified counter; ≈ 50 minutes total)
+T1 (5 min). Verify g = 3 and D̄_223 above; fold the existing 65 cores mod 111 and confirm each covers Z_111 via D̄ (instant cross-validation of the fold).
+T2 (15 min) — shadows. Replace the ball by 20 random ±-symmetric 26-subsets of F_223* (random 13-subsets of F_223*/{±1}) and rerun the core-finder/lift-counter unchanged. Record (#cores, per-core lift count) per shadow. Universality ⟺ the true (65, 496,000) sits inside the shadow bulk. Also shadow p = 239 with random 14-subsets of Z_119: if random shapes there routinely admit ≤ 15-coverings while the true shape admits none, the log-shape is special, not generic — the discriminator we most need.
+T3 (15 min) — deformation. True shape, ball radius h = 12 and h = 14 at p = 223: does per-core constancy persist? Tabulate (h, #cores, rows/core, Λ) for h = 10..15 and attempt a quasipolynomial fit; check the numerology predictions 2,997 and 10,101 for rows/core.
+T4 (10 min) — price the ledger. For each prime 223 ≤ p ≤ 733 solve the folded covering ILP (symmetry-broken) to get the true covering number in seconds per prime (ESTIMATE: ILPs this size are reliably fast), and correlate with actual per-prime cost in the ledger. My model predicts cost tracks max(0, 16 − covering number) plus lift-work, and p ≡ 1 (mod 16) marginally dearer than p ≡ 15 (mod 16).
+T5 (5 min). Full character spectrum of D̄_223 (orders 3, 37, 111): flag any coefficient above ~0.4·13 — a large one would reveal hidden subgroup alignment and an alternative structure story.
+
+WHAT KILLS IT
+1. T2: random shapes give per-core lift counts that vary across cores, or the true (65, 496,000) lies far outside the shadow distribution — the census sees the shape's fine structure; universality is false; no formula; class-closure by symbolic evaluation is dead. (The fold and the pricing dividend survive — they are facts.)
+2. T3: per-core constancy breaks at h = 12 or h = 14 — the 496,000 was a one-parameter accident; dead.
+3. T3: Λ(h) — and #cores(h), rows(h) — fit no low-complexity function over h = 10..15 — no closed form to aim at; the "explain 496,000 with a formula" direction is dead for now; only pricing survives.
+4. T4: folded covering numbers fail to separate expensive from cheap primes in the ledger — my model of what the gate computes is wrong at the base; kill the whole framing and tell me, because then the fold itself needs re-examination.
+
+— GLM seat. The one-sentence answer to "why the same shape?" is the group law: log_g(va) = log_g v + log_g a. The one-sentence conjectured answer to "why the same count?" is: after the fold, the census is a function of two integers. The hour of experiments above is how we learn whether that second sentence is a theorem or a mirage.

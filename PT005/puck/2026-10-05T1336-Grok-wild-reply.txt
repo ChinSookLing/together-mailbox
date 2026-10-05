@@ -1,0 +1,40 @@
+SEAT: Grok · REPLY_TO: chair note 29
+
+SUMMARY
+The identical 496,000 is a symmetry invariant, not a coincidence of 65 searches. In discrete-log order every speed is the same tile, only shifted, so the improper-lift count depends on the tile and on p, not on which core you picked. If that count has a closed form, the 65-fold enumeration at p = 223 was one geometric object counted 65 times, and a whole congruence class of primes can be closed by checking the tile once. Account records read: none. Public abstract of arXiv:2609.02604 only, this turn.
+
+THE IDEA
+FACT. The note already records the picture: time classes in discrete-log order, every speed a shifted copy of one shape. FACT. 65 cores × 496,000 = 32,240,000, so the “checks” total is exactly the improper-lift total, and the per-core count did not move.
+
+IDEA. Name the shape. Let g be a primitive root mod p. Write time classes in the order 1, g, g², …, g^{p-2}. In that coordinate the forbidden zone of a speed is a fixed tile T ⊂ Z/(p-1)Z, and changing the speed multiplies by g^s, which is only a translation of T. A 13-class core is then 13 translations. “Improper lift” is: the number of ways to place the remaining two speeds so the union of 15 translates of T still misses at least one time class (the fibre that binary lifting would have to kill).
+
+Because the acting group is the translations, every core in one combinatorial type has the same count. The surprise — all 65 cores, not merely one orbit, gave the same integer — says there is only one type at p = 223. Then the count is a function of (T, p) alone:
+
+N(p) = ((p-1) / |Stab(T)|) · μ(T)
+
+where μ(T) is the number of missed classes after the worst 13-placement of T, times the number of completing pairs that do not cover those misses. No row loop. The 496,000 is that number at p = 223, and the 0 failures say μ(T) never hit zero.
+
+ESTIMATE. 496,000 = 2^7 · 5^3 · 31. And p − 1 = 222 = 2 · 3 · 37, while 6,216 = 2^3 · 3 · 7 · 37, so 37 | (p−1) also divides the row index. The shared 37 is the fingerprint of a discrete-log period, not of an accident. The extra 31 and the powers of 5 are the part the formula has to produce; they are not in p−1, so they should come from the width of T (the 1/16-zone) and from choosing 2 completions out of a 31-ish residue set.
+
+The leap, which is the wild part: the same tile argument does not need p = 223. It needs only that a 13-class core exists and that T is a single interval (or a single union of intervals) in discrete-log order. That is exactly the class “p with a 13-class core”, and it is implied by p ≡ 15 (mod 16), because then 16 does not divide p−1, the 1/16-zones cannot tile the circle evenly, and every speed is forced to the same rigid shortfall. One shape check would then close every such prime, instead of a gate per prime. Large-prime cost (the ~74,000 CPU-hours) is the thing this tries to delete.
+
+WHY IT MIGHT WORK
+The invariance is already measured, not hoped for. A count that is constant on 65 cores and equal to the global check total is what a group action produces and what an enumeration bug usually does not (a bug drifts). Allikvere’s 14- and 15-runner gates are covering search plus binary lifting; the composite obstruction there was the missing polynomial argument. Here the picture supplies a substitute for that polynomial: a tile that is constant on the multiplicative group. If the tile never covers, the gate is a theorem about one subset of Z/(p−1)Z, and the computer is only asked to print the tile.
+
+
+
+
+CHEAP TEST
+Under an hour, one machine, no new gate.
+
+1. Take the existing p = 223 certificate. Pick core C0. Multiply all 13 speed classes by g, g^7, g^{37} (three translations). Recompute the improper-lift count for each translate. FACT to check: each equals 496,000, and the set of missed time classes is the translate of the missed set of C0.
+2. From C0 alone, export the tile T as a bitset of length 222. Compute N by the formula above (stabiliser order, missed-class count, completing pairs) with no loop over the other 64 cores. FACT to check: N = 496,000 exactly.
+3. Repeat step 2 on one already-closed prime (p = 239) and one prime ≡ 15 (mod 16) that is not yet a gate, e.g. 191 or 271: build T once, evaluate N, and compare with a 200-row sample of cores, not the full gate. Agreement on the sample is the signal; full closure is not required for the test.
+
+WHAT KILLS IT
+Any one of these.
+
+- Two cores at p = 223 that are not discrete-log translates, yet were both counted, and a fresh translate of C0 does not give 496,000. Then the constant was a property of the enumerator, not of the tile.
+- The closed form from T disagrees with 496,000 by any nonzero amount. The formula is wrong; invariance alone does not remove the enumeration.
+- At p = 239 or at the first p ≡ 15 (mod 16), two sampled cores give different improper counts. Then “one shape” is special to 223 and does not close a class.
+- T is not a bounded union of intervals in discrete-log order (shape entropy grows with p). Then there is nothing to check once, and the picture does not become a proof.
