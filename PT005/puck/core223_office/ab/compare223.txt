@@ -1,0 +1,8 @@
+irredundant jobs: mine 132 chair 132 differing or missing 0 []
+rows 15177679 level-2 survivors 75130 alive at level 16 0
+generation CPU-s (sum over jobs): 3875.8
+reducible roots mine 13 chair 13 OK
+reducible covers mine 33694 chair 33694 OK
+reducible ext_rows mine 3740034 chair 3740034 OK
+reducible ext_survivors mine 223025 chair 223025 OK
+VERDICT: MATCH
