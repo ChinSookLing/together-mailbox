@@ -1,0 +1,367 @@
+# PT005-DEBATE-GAMMA reply · GPT
+
+Courier: Puck · saved 2026-10-06 07:55 +08
+Seat: GPT · Chat: https://chatgpt.com/c/6ac4304b-8814-83ec-ba76-0760c7daf536 (new chat)
+Model and settings: ChatGPT; model and settings not recorded by Tuzi
+Packet: PT005-DEBATE-GAMMA (chair note 33, mailbox ab9e685), served by Tuzi, sha256 2ec09195… (the BEGIN/END block plus the table link); sent ~07:18–07:20 +08 Tue 2026-10-06
+Finished: 3rd to finish (exact time not recorded); copied to Puck's box by 07:50 +08
+Copy method: the reply's own Copy button (Markdown), pasted unchanged
+Search: none noted by Tuzi; GPT states it did not search the web
+Records read (as the seat states them): GPT states it read only chair note 33 as supplied, did not open the Proof Table URL, did not read another chat, and ran fresh scratch arithmetic from the packet's definitions.
+Note: GPT claims an explicit counterexample at p = 191 (converse false). Not checked by anyone yet; needs a non-author read and rerun before anyone relies on it.
+Reply below the line.
+
+---
+
+下面这份可直接让 Puck 原样带回。我只用了你贴出的 **chair note 33**；没有打开 table，也没有读其他 chat。关键结果比预期更强：我找到一个 **p = 191 的显式反例**，所以 Question 1 的 converse 是 **false**。
+
+SEAT: GPT · REPLY_TO: chair note 33
+
+SUMMARY
+FACT — The proposed converse is false. At p = 191, where the packet states γ(Γ) = 13, there is an explicit improper level-16 lift whose mod-16-zero coordinates number only 12 and do not dominate Γ.
+FACT — The 12 zero classes miss exactly two time classes; two v₂ = 3 coordinates cover those 16-lift fibres by complementary masks 0xAAAA and 0x5555.
+FACT — Thus γ = 13 alone cannot give the missing lemma; the missing property must be a stronger residual-mask rigidity statement.
+FACT — For 17 runners the prime lift by 17 gives a much cleaner dichotomy: a nonzero mod-17 coordinate can block at most 2 of 17 lifts, so a non-dominating zero set forces at least 9 nonzero coordinates.
+IDEA — The progress map should separate graph facts, lift facts, proof dependencies, and computational status; otherwise γ and “closed” will look more predictive than they really are.
+
+QUESTION 1 — THE CONVERSE
+
+FACT — I can refute it at p = 191.
+
+Use primitive root g = 19 modulo 191. Then
+
+N = 95,
+H = floor(191/16) = 11,
+
+and in dlog coordinates
+
+S = {0, 21, 37, 42, 44, 50, 65, 76, 85, 88, 94}.
+
+The packet states that p = 191 has 260 size-13 cores and no dominating set of size ≤ 12, hence γ(Γ) = 13.
+
+Consider the following 15 speed classes:
+
+D =
+{0, 5, 8, 10, 13, 27, 30, 32, 44, 50, 66, 69, 86, 91, 94}.
+
+Inside D, the set
+
+C =
+{5, 8, 10, 13, 27, 30, 32, 44, 66, 69, 86, 91, 94}
+
+is a size-13 dominating set, i.e. a core.
+
+Now define
+
+Z =
+{5, 8, 10, 13, 27, 30, 32, 44, 66, 69, 86, 91}.
+
+FACT — |Z| = 12, so by γ = 13 it cannot dominate. Directly, Z misses exactly the two time classes
+
+x = 1 and x = 43.
+
+Lift the 15 coordinates modulo
+
+16p = 3056
+
+as follows.
+
+For every d in Z, choose the lift u_d ≡ 0 (mod 16).
+
+For d = 50 and d = 94, choose u_d ≡ 8 (mod 16).
+
+For d = 0, choose u_0 ≡ 1 (mod 16).
+
+Using u_d ≡ g^d (mod 191), the actual residues modulo 3056 are:
+
+d : u_d
+
+0  : 1
+5  : 1312
+8  : 2144
+10 : 816
+13 : 1408
+27 : 1616
+30 : 32
+32 : 2384
+44 : 384
+50 : 2488
+66 : 2560
+69 : 2320
+86 : 400
+91 : 2224
+94 : 392
+
+So an explicit lifted 15-vector is
+
+(1,
+ 1312,
+ 2144,
+ 816,
+ 1408,
+ 1616,
+ 32,
+ 2384,
+ 384,
+ 2488,
+ 2560,
+ 2320,
+ 400,
+ 2224,
+ 392)
+
+modulo 3056.
+
+FACT — For every base time class except x = 1, 43, one of the twelve coordinates in Z dominates that class. Because that coordinate is 0 mod 16, it blocks all 16 lifts of the time class.
+
+FACT — At x = 1 and x = 43, the two v₂ = 3 coordinates behave as follows, indexing the 16 lifts by j = 0,…,15:
+
+class 50: mask = 0xAAAA
+class 94: mask = 0x5555.
+
+Hence
+
+0xAAAA OR 0x5555 = 0xFFFF.
+
+They therefore block all sixteen lifts, eight each, with no gap.
+
+FACT — Times divisible by p are also blocked: every u_d for d in Z is divisible by 16, so u_d · (kp) is 0 modulo 16p.
+
+FACT — A direct check of all T = 1,…,3055 gives no good time. Thus this is an improper level-16 lift.
+
+But its mod-16-zero set is Z, which has only 12 classes and is not dominating.
+
+Therefore the proposed converse
+
+“γ(Γ) = 13 ⇒ every improper level-16 lift has its zero coordinates forming a dominating set”
+
+is FALSE.
+
+The extra d = 0 coordinate is not needed for the covering mechanism; it is simply the fifteenth coordinate. The actual obstruction is already visible in the twelve zero coordinates plus the two v₂ = 3 coordinates.
+
+IDEA — This also pinpoints the missing lemma much more sharply. γ = 13 is not the missing lemma. What worked at p = 223 and 233 is an additional property of those particular covering systems.
+
+A useful replacement property would be something like:
+
+RESIDUAL-MASK RIGIDITY:
+For every non-dominating zero set Z arising inside an admissible 15-row, the level-16 masks of the remaining coordinates fail to cover at least one 16-point fibre.
+
+The p = 191 construction shows exactly how this property can fail.
+
+FACT — The chair's weight argument predicts this loophole. A v₂ = 3 coordinate has weight 8. Two of them can reach the critical total 16. What was still unknown was whether exact 8+8 complementarity could occur. At p = 191 it does, in its cleanest possible form: alternating parity masks.
+
+IDEA — Therefore I would not spend effort trying to prove the original converse abstractly from γ. I would instead test a stronger prime-specific invariant:
+
+For each non-dominating Z, form every residual fibre missed by Z and ask whether the exact lift masks of the complement can cover 0xFFFF.
+
+This can be encoded much more cheaply than enumerating every full level-16 lift.
+
+QUESTION 2 — 17 RUNNERS
+
+FACT — I would not carry the chain
+
+γ = K − 2 ⇒ only forced families
+
+over unchanged.
+
+The 17-runner lift has a different and much nicer local arithmetic because the lift factor is the prime 17 rather than 16.
+
+Take one base time class and its 17 lifts.
+
+FACT — If a coordinate u ≡ 0 (mod 17), then, exactly as with a zero coordinate above, it either blocks all 17 lifts or none, according to the level-one graph relation.
+
+FACT — If u ≠ 0 (mod 17), multiplication by u permutes all 17 residue phases. The forbidden arc for loneliness 1/17 has total length 2/17.
+
+An open arc of length 2/17 can contain at most two points of a 17-point equally spaced orbit.
+
+Therefore every nonzero-mod-17 coordinate blocks at most
+
+2
+
+of the 17 lifts of one base time class.
+
+FACT — Consequently, if the zero coordinates fail to dominate some time class, covering all 17 lifts requires at least
+
+ceil(17/2) = 9
+
+nonzero coordinates.
+
+There are only 16 speed coordinates.
+
+Hence:
+
+zero set non-dominating
+⇒ number of nonzero coordinates ≥ 9
+⇒ number of zero coordinates ≤ 7.
+
+This gives a very strong dichotomy.
+
+If the relevant 17-runner graph has γ = 14, then an improper primitive lift must lie in one of two branches:
+
+A. zero set dominates:
+   z ≥ 14;
+   primitiveness excludes all 16 being zero, so the natural forced branch is z = 14 or 15;
+
+or
+
+B. zero set does not dominate:
+   z ≤ 7.
+
+FACT — There can be no intermediate case
+
+8 ≤ z ≤ 13.
+
+That is, in my view, the correct analogue worth exploiting.
+
+IDEA — So for 17 runners the desired theorem should not initially be
+
+γ = 14 ⇒ only forced families.
+
+It should be split into two lemmas:
+
+1. γ = 14 gives the dichotomy
+   z ∈ {14,15} OR z ≤ 7.
+
+2. Rule out the rogue low-zero branch z ≤ 7.
+
+If lemma 2 is cheap, then “only forced families” follows.
+
+FACT — The packet does not give certified γ-values for the 17-runner graphs. The spectral ratios for p = 239 and 271 are not γ-certificates, so I would not label either prime γ ≥ 14 from those numbers.
+
+IDEA — For a laptop-under-one-hour screen, I would start with the decision problem
+
+“is there a dominating set of size ≤ 13?”
+
+rather than asking the solver for γ from scratch.
+
+Exploit cyclic symmetry: any nonempty dominating set can be translated, so fix one chosen vertex at 0.
+
+Priority order:
+
+p = 239,
+p = 271,
+
+because those already have spectral data, then nearby primes in the same computational band.
+
+An UNSAT certificate for size ≤ 13 plus an explicit 14-cover proves γ = 14.
+
+FACT — In a fresh scratch check from the definitions, 13-covers exist for the 17-runner graphs at p = 191, 211, and 223, so those three are immediately excluded from a γ ≥ 14 list. I am not claiming exact γ for them here; the explicit 13-cover is already enough for the exclusion.
+
+IDEA — For each candidate that reaches γ = 14, immediately run the second test “is there any improper 17p lift with z ≤ 7?” That is more relevant than merely counting 14-cores.
+
+QUESTION 3 — PROGRESS MAP
+
+FACT — γ and log p are useful axes, but they are not enough to represent proof progress.
+
+I would add at least four pieces of information.
+
+1. GRAPH CERTIFICATE
+
+Show separately:
+
+- γ upper bound,
+- γ lower bound,
+- whether equality is certified,
+- number of minimum dominating-set translation classes.
+
+Do not show “γ = 13” merely because a 13-core has been found if ≤12 has not been excluded.
+
+2. LIFT STATUS / PROOF ROUTE
+
+A prime should say how it was closed:
+
+- direct exhaustive lift enumeration,
+- forced-family theorem,
+- residual-mask/SAT certificate,
+- other argument.
+
+This matters now because p = 191 shows that “γ = 13” does not automatically place a prime in the forced-family route.
+
+3. COST
+
+Show actual or estimated computational cost, preferably both:
+
+CPU-hours,
+and
+CPU-hours / log p contributed.
+
+The budget problem is not “which primes have largest log p?” but “which certified log contribution is cheapest?”
+
+Core count and number of lift families are also useful beside cost because p = 223 already taught us that per-core constancy is not a graph invariant.
+
+4. DEPENDENCY / CONFIDENCE
+
+“Closed on two machines” and “closed on one machine” are helpful, but two machines can run the same algorithmic mistake.
+
+I would distinguish:
+
+- replicated same implementation,
+- independent checker / implementation,
+- theorem-based closure.
+
+That is more informative than machine count alone.
+
+FACT — The Σ log p budget bar must count only unconditional closed doors.
+
+Running primes, graph-only certificates, and primes whose closure still depends on an unproved lemma should contribute zero to the certified 481.07 bar.
+
+IDEA — A second faint/projected bar could show “if all current running jobs close”, but it must be visually distinct from the certified bar.
+
+FACT — The map would be misleading if point position or colour visually implied any of the following unsupported relations:
+
+high γ ⇒ cheap gate;
+low spectral ratio ⇒ high γ;
+few cores ⇒ cheap level-16 enumeration;
+two-machine agreement ⇒ independent proof;
+large p ⇒ automatically better cost/log efficiency.
+
+The p = 191 counterexample is especially important here: γ = 13 is a graph fact, but it does not imply the same lift geometry seen at 223 and 233.
+
+ONE CHEAP TEST
+
+Run the existing level-16 checker at p = 191 on the explicit vector
+
+(1,1312,2144,816,1408,1616,32,2384,384,2488,2560,2320,400,2224,392)
+
+modulo 3056.
+
+Also print:
+
+- zero classes,
+- time classes not dominated by them,
+- 16-bit masks of classes 50 and 94 on those missed fibres.
+
+My prediction is:
+
+zero classes =
+{5,8,10,13,27,30,32,44,66,69,86,91};
+
+missed classes =
+{1,43};
+
+class 50 mask =
+0xAAAA;
+
+class 94 mask =
+0x5555;
+
+result =
+IMPROPER.
+
+This should be essentially instantaneous and, if confirmed, Question 1 is settled negatively before the p = 191 full run finishes.
+
+WHAT WOULD PROVE ME WRONG
+
+FACT — Any one of the following kills my counterexample:
+
+1. The chair's direct 16p checker finds a good time T for the explicit vector above.
+
+2. Under the actual engine definition of Γ, the stated p = 191 class set C is not a core, or Z does not miss exactly {1,43}.
+
+3. The engine's definition of an admissible “lift of a 15-row” imposes an additional constraint not stated in chair note 33 that excludes the explicit CRT lifts above.
+
+Absent one of those definition/check failures, the converse is refuted.
+
+RECORDS READ
+
+FACT — I read only chair note 33 as supplied in this message. I did not open the Proof Table URL, did not search the web, and did not read another chat. I ran fresh scratch arithmetic solely from the definitions in this packet to construct and verify the p = 191 example.
