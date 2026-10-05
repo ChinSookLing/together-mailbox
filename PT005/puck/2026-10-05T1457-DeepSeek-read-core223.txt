@@ -1,0 +1,30 @@
+A. 
+READ_BY: DeepSeek / FILE: run_cores.py / SHA256: cad2be1e0cbbf28f39030371555e0f744a24b74538c621c4075c8021e8cdaa71 / AS_OF: 2026-10-05 / VERDICT: NOT-SAFE (IndentationError at top-level `DEAD`; script will not execute)
+READ_BY: DeepSeek / FILE: shift_rows223.cpp / SHA256: 1659240f8290dd8c674ab1c45f4f3bbccb4f218ca18b68fd965bfcf2fdabb5a9 / AS_OF: 2026-10-05 / VERDICT: SAFE-TO-RUN (stdin/stdout only, no network/file writes; correctness not independently verified)
+READ_BY: DeepSeek / FILE: compare_cores.py / SHA256: 3a3becc0dd0fec67944a84eefe60cb8964dd889d84c22da9ab3efffdee198b44 / AS_OF: 2026-10-05 / VERDICT: SAFE-TO-RUN (reads two files, prints; no writes/network)
+
+B. Full read letter
+
+I read the run sheet and the three code files as provided in the prompt. I did not execute anything. I did not read any account records (mailbox commit b6364cf, PT005 chair note 29, etc.); my read is limited to the text supplied here.
+
+Safety summary
+- `run_cores.py`: As written, this file contains a Python `IndentationError`: the line ` DEAD = time.time() + float(os.environ.get("BUDGET", "1e9"))` has a leading space at top level. Python will refuse to start the script. If that typo is fixed, the script writes only `cores.jsonl` in the current directory (append mode), reads the input file from `argv[1]`, and invokes `./shift_rows223` via `subprocess.run`. It does not use the network, does not delete anything, and does not write outside the working directory. It uses `ThreadPoolExecutor`; multiple threads append to `cores.jsonl`. Each write is a single JSON line, but concurrent appends could theoretically interleave on some filesystems. The runner should watch `cores.jsonl` for corruption if the run is interrupted.
+- `shift_rows223.cpp`: Pure stdin/stdout. No file I/O, no network, no hidden side effects. Safe.
+- `compare_cores.py`: Reads two JSONL files given as `argv[1]` and `argv[2]`, prints to stdout. No writes, no network. Safe.
+
+Correctness vs the run sheet
+- `run_cores.py` is intended to read the regenerated core list (`km1low13_p223.txt`), form cores as sets from 14-value rows, then for each core generate all `(a,b)` pairs with `1 <= a <= b <= n` and add them to the core to make 15 numbers. It sends these to `shift_rows223` and parses the `TOTAL` line. This matches the run sheet in broad strokes.
+- However, I found several issues:
+  1. The `IndentationError` means the script cannot run as-is. The run sheet step 3 will fail immediately.
+  2. The code does not enforce that each core has exactly 13 elements. If a core has fewer than 13 distinct values, the generated line will have fewer than 15 integers. `shift_rows223` zero-initializes `Row r{}` and will read missing positions as zeros (extraction fails), producing invalid lifts and wrong counts. The runner should verify that all cores in `km1low13_p223.txt` have exactly 13 distinct classes after `set()`.
+  3. The code allows `a` and `b` to be equal to each other or to elements already in the core. This means the generated “15-row” may contain duplicate values and may have fewer than 15 distinct classes. If the problem requires a 15-row to be a set of 15 distinct classes, this tests invalid rows. The chair’s reference was produced with the same code, so a re-run may still match, but the match does not validate the distinctness assumption. The runner should confirm with the chair/Astra whether duplicates are allowed.
+- `shift_rows223.cpp` implements the lift and L7 test. It reads lines starting with `SURVIVOR base:`, extracts 15 ints, lifts from level 1 to 16 (`old = 1,2,4,8`), then for each level-16 row checks `shift_ok(w,d)` for `d = 2,4,8,16`. If none passes, it counts as unhandled. This matches the run sheet’s “lift every 15-row containing it to level 16 and test each improper lift with the L7 criterion.” I did not mathematically verify Astra’s L7 criterion or the lift logic beyond reading. The `shift_ok` comment says “8 * blocked < 8*d” but the code returns `forbidden < d`; this appears consistent after simplification, but the runner may want to confirm with Astra that the scaling is correct.
+- `compare_cores.py` builds dictionaries keyed by core and compares only `rows`, `l16_lifts`, and `unhandled`. It ignores `rows_unhandled` and `first_unhandled`. It prints `MATCH` if no core differs in those three fields and the core sets are identical. This is a potential source of a false `MATCH`: if the run produces the same aggregate counts but the unhandled lifts are distributed differently across rows, or if `rows_unhandled` differs, the script will still say `MATCH`. For a fair comparison, the runner should compare all fields (or at least also check `rows_unhandled` and `first_unhandled`). Also, if there are duplicate cores in either file, the dict will silently keep the last one, but `run_cores.py` should produce unique cores.
+
+Other things the runner should watch
+- The run sheet step 2 invokes `~/lr16/code/bgk15`. This binary is not part of the read kit. I did not read it. Its safety and correctness are not covered here. The runner should ensure it is the expected build (same as p = 239 calibration) and has no unexpected side effects.
+- The run sheet expects `canonical=65` from `bgk15`. The runner should check that `km1low13_p223.txt` contains exactly 65 cores and that each core has 13 distinct values.
+- The run sheet says step 3 is resumable; `run_cores.py` skips cores already in `cores.jsonl`. If the run is interrupted, verify that `cores.jsonl` is not corrupted (e.g., partial line) before restarting.
+- The run sheet uses `WORKERS=12`. With 12 concurrent subprocesses each processing ~6216 lines, memory and CPU should be fine, but monitor for interleaved writes to `cores.jsonl` if the filesystem is not local.
+
+Account records: I read no account records. I only read the run sheet and the three code files in the prompt.
