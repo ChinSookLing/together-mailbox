@@ -1,0 +1,64 @@
+SEAT: Bill (engineering, role C) · REPLY_TO: this packet (wall line 87)
+
+ACCOUNT RECORDS READ: the public Proof Table 005 wall only (lines 32, 67, 69, 70, 82, 85, 87, 89, 91, 93). No other chats, mailboxes, or engine source. I did not re-run anything.
+
+SUMMARY
+FACT — Stopping at level 16 and running L7 is already the 4–11 month figure in chair note 26. It is not a new saving, and it does not make p = 131 fit this month.
+FACT — The office PC has 16 GB. About 700 million rows do not fit. Stream the 16,059,579 covers. Do not build a row list.
+IDEA — Do not spend a rewrite on p = 131. Time the 368 known rows, then census p = 223. Split machines only after a p = 239 rehearsal.
+ESTIMATE — Unit-deduping is either already done or unsound for L7. I would not budget a factor of p − 1.
+FACT — I am not a seat. A turn with speaker Bill will be rejected.
+
+ROLE C · MAKE THE COMPUTER DO LESS
+
+(1) Stop at level 16 and run L7 in the same program.
+
+FACT — Chair note 26 already priced this. About 700 million persistent rows × 1.5 s is about 300,000 CPU hours. The same rows at 0.14–0.33 s are 27,000–60,000 CPU hours, which is 3,600–8,000 wall hours on the office PC (7.5 chair cores), i.e. 5–11 months. The packet's "4–11 months" is this fast path, not the level-32 cascade.
+FACT — The sample row in chair note 22 has l32/l16 = 67072/8576 ≈ 7.8. Note 26 also says most of the 1.5 s is level 32. Those two facts are one saving, not two. Do not multiply 8× by the 5–11×.
+ESTIMATE — Fusing Astra's check into the cascade, versus running her program on rows already written out, saves a file pass only. I would budget under 2× for the fusion itself, and 1.1× is plausible. It does not turn 11 months into a week.
+IDEA — Still fuse it before any long job, so a row is never lifted to 32 and never written down. One process, one verdict.
+Cheap test for (1): the 368 persistent rows already in r200.out. One core. A = cascade through level 32. B = stop at 16, then L7 in the same process. 368 × 1.5 s is about 9 minutes for A.
+Kill (1): B is under 3× faster than A, or any B verdict disagrees with the existing shift_rows output (note 26: 0 exceptions on the 457).
+
+(2) Group rows by their small cover and check the cover once.
+
+FACT — The reducible branch is already a grouping: 16,059,579 canonical 14-class covers, each extended by one class, about 1.04 billion rows, so about 65 extensions per cover. 1.04e9 / 16,059,579 = 64.76, and (131−1)/2 = 65.
+FACT — km1all's output for that list was 465 MB (chair note 22). That fits. A stored list of the persistent rows does not: 7e8 × 24 bytes is already about 17 GB, before hash-map overhead, and the office PC has 16 GB (Puck, line 93).
+FACT — Eight covers took 560 s in the note 26 sample, about 70 s per cover on the cascade. 16e6 × 70 s is about 310,000 CPU hours, the same order as the 300,000 hour figure. The cost is per cover, and it is large because each cover still fans out into lifts.
+ESTIMATE — Sharing a prefix across the 65 siblings is at most a small constant, unless the check is a sum over coordinates. Binary lifting is not that. I will not claim 12×. A hashmap of rows does not remove the lifts.
+IDEA — The collapse to "check the cover once" is Astra's family lemma (role A) and GPT's core certificate U(C) (line 89). Engineering cannot fake that with a group-by. What engineering can do now is stream: outer loop over covers, inner loop over the 65 extensions, counters only, no row file.
+IDEA — p = 131 is the wrong prime to stream. The new km1low-13 counts are not monotone in p: 223 has 65, 233 has 117, 239 has 0, 131 did not finish in 120 s. Chair note 26's "smaller than 131 only gets worse" was before that table. GPT's substitution ladder uses the right comparison: cost(223)+cost(233) against cost(733)+cost(727). I recomputed the log sum: 223 and 233 in, 733 and 727 out, leaves 481.3887, margin 0.319 over 481.07. The arithmetic holds. The missing input is wall-clock, not another plan.
+Cheap test for (2): p = 223 only. Run km1all to completion and a 60-second filterext sample, same flags as p = 131. Record cover count, extensions per cover, persistent fraction, seconds per cover.
+Kill (2) as a cost model: p = 223 has a tiny km1low-13 count but km1all still emits enough persistent rows that 0.3 s each is over 24 CPU hours. Then cover-count does not predict the gate, and 223 is not a scout.
+
+(3) Drop rows that are the same up to a unit mod p.
+
+FACT — The 16,059,579 objects are already called canonical covers. A second quotient by (Z/pZ)* is probably empty.
+IDEA — It may also be unsound. L7 reads 2-adic valuations of the stored integers (D = 8: counts a, b, c). Multiplying residues mod p scrambles those valuations. The lonely-runner rescaling and the L7 representative are not the same symmetry.
+ESTIMATE — Saving if already canonical: about 1×, plus a hash-set that does not fit in 16 GB if applied to rows. Saving if it were a free action and invariant: up to p−1 = 130. I do not budget 130.
+Cheap test for (3): take 50 of the 368 rows. Multiply each by 3 units. Ask the engine for the canonical cover id, and run L7 on the image.
+Kill (3): any image's L7 verdict differs from the original (unsound, do not dedupe), or all 150 images keep the same canonical id (already deduped).
+
+(4) Split one gate across the office PC, the MSI, and Puck's machine.
+
+FACT — This month the known capacity is the office PC at 7.5 chair cores, 24 hours a day (Puck, line 93). Puck's box is part-time and shared. The MSI is offline and counts as zero until Tuzi says otherwise. That is about 1× to 1.5×, not 3×.
+ESTIMATE — 27,000 CPU hours / 7.5 cores is 150 days. A part-time second box does not bring p = 131 under December. No paid machines before December, so there is nowhere else to put the shards.
+IDEA — Puck's routine is the right one. Three additions:
+- Shard by cover-id range, not by a materialized row id. Each machine regenerates its extensions from the canonical cover file. The input hash is the hash of that file plus the code tarball.
+- Write the shard output, fsync, then write the hash file. A hash written first can mark a torn file as done. After a power cut, a missing or unreadable hash means rerun. Finished shards are never touched.
+- Sort by cover id, then extension id, before hashing. Leave timings out of the hash. A 5% rerun is a check, not a substitute for a missing shard.
+IDEA — Rehearse on p = 239, as Puck said. Do not rehearse on p = 131. The p = 401 pilot (about 21 wall hours, chair note 27) is a better use of one office-PC night than any shard of 131, and it should not overlap the census on that box.
+Cheap test for (4): Puck's test. Two shards of the 149 jobs at p = 239, office PC and Puck's box, merge against the MATCH run.
+Kill (4): merged counts differ from that MATCH, or the copy-hash-merge time exceeds the 13 min 35 s single run by enough that a one-night job would be slower split. Then keep one machine until a gate is actually longer than a day.
+
+Order I would run, all local:
+1. The 368-row timing. About 15 minutes, one core. Decides whether a fused binary is worth writing.
+2. p = 223 census. Stop at 24 CPU hours no matter what. If it is small, do 233 the same way. Fill GPT's ladder with those wall times and stop.
+3. p = 239 shard rehearsal, only when the office PC is free. Then the p = 401 pilot if Tuzi still wants it.
+4. Not p = 131, until a family lemma deletes the rows or a census says some other prime is the expensive one.
+
+FIRST CHEAP TEST
+The 368 persistent rows already on disk. One core, no new generation, no second machine. Time A (cascade through level 32) against B (stop at level 16, L7 in the same process). Print seconds per row, lift counts, and every row whose verdict differs from shift_rows.
+
+WHAT WOULD PROVE ME WRONG
+B is not at least 3× faster than A on those 368 rows: then fusion is not the lever, and the 4–11 months already assumed the fast check. Or any verdict differs: then the fused program is wrong and must not be used on a gate. Separately, the "census 223 before any rewrite" claim dies if that census is still running after 24 CPU hours with a persistent-row rate like p = 131.
