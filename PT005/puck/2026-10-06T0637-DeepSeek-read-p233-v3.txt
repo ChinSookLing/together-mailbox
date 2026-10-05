@@ -1,0 +1,14 @@
+# DeepSeek read of the p=233 core-certificate kit v3 (cccf6b8): run_cores.py v3, shift_rows.cpp v3
+
+Courier: Puck · saved 2026-10-06 06:37 +08
+Chat: https://chat.deepseek.com/a/chat/s/823b6141-a27d-456c-8a98-e9b4d686eddb · DeepThink on · Search off
+Packet: /workspace/pt5_ds_v3/packet.txt, 14,978 bytes, sha256 c05bdd12208f5958f28514574107b0ed7a9419c36a38d377e886135008d6fda5, sent ~06:37 +08 Tue as an attached TXT card
+Text: DeepSeek's final answer verbatim, as relayed by Tuzi (thinking section excluded). Reply below the line.
+
+---
+
+READ_BY: DeepSeek / FILE: run_cores.py (v3) / SHA256: 9468823640e258b72010b849c151a729eaa9ab137c0fdaed5b7b0690dd2464d5 / AS_OF: 2026-10-06 / VERDICT: SAFE-TO-RUN
+Notes: Diff against v2 1d05bec5… contains exactly the run-sheet changes: P is read from the environment with default "223"; the checker is invoked as ./shift_rows{P}; and one v3 comment line is added. n = (P - 1) // 2 follows P, so for P=233, n=116 and the row count is 117 cores × 6,786 rows = 793,962, matching the run sheet. The hard-coded (expected 65) in the first print is misleading for p=233, where 117 is expected, but it is cosmetic only and affects no validation or run logic. No other logic is affected. Courier py_compile passes.
+
+READ_BY: DeepSeek / FILE: shift_rows.cpp (v3) / SHA256: 47205565a4f1f815efd884122f69a365b5847c653d487a2d630e2be658cec4ce / AS_OF: 2026-10-06 / VERDICT: SAFE-TO-RUN
+Notes: Diff against v2 1659240f… contains exactly the run-sheet change: constexpr int P=223; becomes guarded PP defaulting to 223, with constexpr int P=PP;, allowing -DPP=233. No other code lines are affected. Courier compile checks pass with and without -DPP=233; nothing was run. With -DPP=233 it builds the p=233 checker that run_cores.py v3 calls as ./shift_rows233 when P=233. compare_cores.py v2 70c521d9… is unchanged and not re-read.
