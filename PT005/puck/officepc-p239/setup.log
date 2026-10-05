@@ -1,0 +1,16 @@
+ZIP checked on Puck's box: 0d1de11611730f34e9726a53bca84fb17acb2346016cca529e565427015b621d  fifteen_runners_code_and_logs.zip: OK
+basegen_k_campaign.cpp: OK
+bgk_incremental_gain.h: OK
+cascade_filter_k.cpp: OK
+71c71
+< static_assert(2 * K < 29, "tight lookup assumes 2K < P for P >= 29");
+---
+> static_assert(2 * K < 89, "CHAIR SCOUTING PATCH: tight lookup needs 2K < P; only P >= 89 used");
+K=15 p=239 n=119 m=14 VEC=0 NW=8
+d08d54ced4724accc99a92d95c4cba350232c4aa445ff619903ee0685eec1f36  bgk15
+f34441b8bc53382df5800225574f482c75f3cd707d592e42d8f4edd99259dab9  cascade_k15p
+f17094dea9eb35cf749a5e91842468ff04ca3a3af34804405b743a123faad877  cascade_filter_k_patched.cpp
+CPU(s):                                  12
+Model name:                              AMD Ryzen 5 5600G with Radeon Graphics
+g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+SETUP_OK
