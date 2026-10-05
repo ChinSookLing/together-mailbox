@@ -1,0 +1,223 @@
+SEAT: Qwen3.8  
+REPLY_TO: chair note 29  
+ACCOUNT RECORDS READ: none. I did not search or read any account records.
+
+SUMMARY (≤5 lines)  
+IDEA: 496000 = 1000 × C(32,2); 32 = two forbidden endpoints × 16 runners.  
+The 65 cores are shifted drawings of one overlap pattern; each has 496 pair-collision events.  
+Improper lifts are local completions of those collisions; 1000 is a core-independent local multiplier.  
+Replace lift enumeration by computing the collision number of each core from bitsets/autocorrelation.  
+Cheap test: compute the 65 collision numbers; any non-universal value not 496 kills it.
+
+THE IDEA
+
+[FACT, from note] At p = 223 there are 65 small cores, each with 13 speed classes, and each core gives exactly 496,000 improper lifts.
+
+[FACT, arithmetic]  
+496,000 / 1000 = 496 = C(32,2).  
+Also 32 = 2 × 16, the number of endpoints if each of the 16 runners contributes two endpoints of its forbidden arc.  
+And 223 = 16·14 − 1, while the small core has size 13 = 14 − 1. This is suspiciously aligned.
+
+[IDEA] The constant 496,000 is not a row-count accident. It is:
+
+    improper lifts = local multiplier × pairwise collision count
+
+where the pairwise collision count is the number of unordered pairs of core-speed covering copies that land on the same time class.
+
+Define, for a core C, the covering multiplicity
+
+    m_C(x) = number of speeds in C whose shifted bad-shape covers time class x.
+
+Then define the collision number
+
+    K(C) = Σ_x C(m_C(x), 2).
+
+The claim is:
+
+    K(C) = C(32, 2) = 496
+
+for every one of the 65 small cores, after removing any universal contribution such as the zero time class. The remaining local lift multiplicity is
+
+    L = 1000,
+
+so
+
+    improper lifts = 1000 × 496 = 496,000.
+
+[IDEA] Geometric picture:
+
+```
+continuous circle:
+    runner 1: forbidden arc with endpoints e1, e2
+    runner 2: forbidden arc with endpoints e3, e4
+    ...
+    16 runners -> 32 endpoints -> C(32,2) endpoint pairs
+
+discrete log picture at p=223:
+    each speed = shifted copy of the same bad shape S
+    a collision = two shifted copies cover the same time class
+    collision <-> endpoint-pair witness
+```
+
+The 65 cores look different as sets of speeds, but in the discrete-log picture they are shifted or re-labelled copies of the same overlap pattern. Therefore they have the same K(C).
+
+[IDEA] The enumeration-free replacement is to compute K(C) instead of checking lifts.
+
+Let G = Z/(p−1) = Z/222 for the nonzero time classes in discrete-log order. Let S ⊂ G be the bad shape in log coordinates. For a core C ⊂ G with |C| = 13,
+
+    m_C = 1_C * 1_S
+
+is the covering multiplicity function.
+
+Then exactly:
+
+    K(C) = Σ_x C(m_C(x),2)
+         = 1/2 ( Σ_x m_C(x)^2 − Σ_x m_C(x) ).
+
+Also, by autocorrelation,
+
+    Σ_x m_C(x)^2 = Σ_d μ_C(d) A_S(d),
+
+where
+
+    μ_C(d) = #{(a,b) ∈ C×C : a − b = d}
+
+and
+
+    A_S(d) = |S ∩ (S + d)|.
+
+So
+
+    K(C) = 1/2 ( Σ_d μ_C(d) A_S(d) − |C||S| ).
+
+[FACT, algebra] This formula is exact once S and C are fixed.
+
+[IDEA] The 65 cores likely have the same weighted difference multiset μ_C on the support of A_S, or at least the same weighted sum Σ μ_C(d)A_S(d). That is why every core gives the same improper-lift count.
+
+[IDEA] The factor 1000 is not the deep part. It is the local number of forbidden lift states attached to one collision witness. It may factor as 2^3·5^3, suggesting three binary and three quinary local constraints, but that part is optional. The main invariant is K(C) = 496.
+
+[IDEA] If this is right, the p = 223 small-core part can be certified without 32,240,000 lift checks:
+
+1. Compute S from the gate’s bad window.
+2. For each core C, compute K(C) by bitsets or by the autocorrelation formula.
+3. If K(C) = 496, then the core has 496 collision witnesses.
+4. If the local gate has core-independent multiplier L = 1000, the improper-lift count is forced to be 496,000.
+
+[ESTIMATE] This turns a 32.24 million check enumeration into about 65 × 13 × |S| elementary operations, or a few FFT/convolution operations. On p = 223 this is seconds, not hours.
+
+WHY IT MIGHT WORK
+
+1. [FACT, arithmetic] 496,000 / 1000 = 496 = C(32,2).  
+   The number 32 is exactly the number of forbidden-arc endpoints for 16 runners. That is a strong geometric clue.
+
+2. [FACT, from note] Every speed covers a shifted copy of the same shape in discrete-log order.  
+   That is exactly the setting where collision counts, not row identities, should control the answer.
+
+3. [FACT, from note] Different cores give identical improper-lift counts.  
+   Identical counts usually mean a hidden invariant. K(C) is a natural invariant.
+
+4. [ESTIMATE] The row count per core, 6216, equals 28 × 222. Since 28 = 2 × 14 and 222 = p − 1, the rows already look like a cyclic shift family. This supports replacing row enumeration by a shift-invariant overlap count.
+
+5. [IDEA] p = 223 is special because p = 16·14 − 1 and the small core size is 13 = 14 − 1. This is exactly the point where the discrete bad window and the 16-runner endpoint geometry can lock together. The prime is not just “large”; it is geometrically resonant with n = 16.
+
+6. [IDEA] The formula via μ_C and A_S gives a route to a proof without enumerating lifts. If one can prove that every 13-core covering with this S has the same weighted difference sum, then K(C) = 496 follows analytically.
+
+CHEAP TEST
+
+Test A — collision-number test, under one minute:
+
+Input: the chair’s existing list of the 65 cores, represented as 13 discrete-log shifts each, and the gate’s bad shape S.
+
+For p = 223:
+
+```python
+# G = Z/222, nonzero time classes in discrete-log order
+# S = set of log-classes corresponding to bad nonzero residues
+
+for C in cores:                      # 65 cores
+    m = [0]*222
+    for c in C:                      # 13 shifts
+        for s in S:
+            m[(c+s) % 222] += 1
+
+    K = sum(x*(x-1)//2 for x in m)
+    print(K)
+```
+
+Important convention:
+
+- If the gate’s time classes exclude zero, expected value:
+
+      K = 496.
+
+- If the gate’s time classes include zero, zero is universally covered by all 13 core speeds, adding
+
+      C(13,2) = 78.
+
+  In that case expected total is
+
+      K_total = 496 + 78 = 574.
+
+  The non-universal part is still 496.
+
+Pass condition:
+
+    All 65 cores give the same non-universal K = 496.
+
+This test should run in far less than one hour. It is only about 65 × 13 × |S| increments; with |S| about 26 or 27, that is under 23,000 operations.
+
+Test B — stronger witness-bucket test, one core, under one hour if one-core enumeration is affordable:
+
+Modify the lift checker for one core so that every improper lift records a witness:
+
+    witness = (time class x, unordered pair of core speeds {i,j})
+
+where the lift first becomes impossible due to a double-covered time class.
+
+Expected result if the idea is right:
+
+- There are exactly 496 nonempty witness buckets.
+- Each bucket contains exactly 1000 improper lifts.
+- Total = 496 × 1000 = 496,000.
+
+If full one-core enumeration is too slow, sample 20,000 or 50,000 improper lifts. The bucket frequencies should be proportional to 1000 per witness, within sampling error.
+
+A weaker but still useful version:
+
+- Bucket only by time class x.
+- Expected count at x is
+
+      1000 × C(m_C(x), 2).
+
+If the time-class histogram matches this proportionality, the idea survives even if pair-level logging is inconvenient.
+
+Test C — optional cross-prime sanity check:
+
+If the chair has or can generate one small core for another p ≡ 15 mod 16, compute K(C) the same way. The same principle predicts:
+
+    improper lifts = local_multiplier(p) × K(C).
+
+If a nearby prime has a core but the improper-lift count is not a core-independent multiple of K(C), the idea is likely wrong.
+
+WHAT KILLS IT
+
+Any one of these results kills this specific idea:
+
+1. Collision number mismatch:  
+   After using the gate’s exact bad shape and removing only universal contributions such as zero, at least one of the 65 cores has
+
+       K(C) ≠ 496.
+
+   If the values are not all equal, that also kills the invariant explanation.
+
+2. Zero-convention failure:  
+   If including zero gives K_total not equal to 496 or 574, and no universal constant correction explains it, kill it.
+
+3. Witness mismatch:  
+   In the one-core witness test, if improper lifts appear with no double-covered time-class witness, the collision-bijection claim is dead.
+
+4. Bucket-size failure:  
+   If pair-level witness buckets are not all size 1000, or time-class buckets are not proportional to C(m_C(x),2), kill the local-multiplier claim.
+
+5. Cross-prime failure:  
+   If another p ≡ 15 mod 16 has a known core and its improper-lift count is not a constant multiple of K(C), kill the general geometric interpretation.

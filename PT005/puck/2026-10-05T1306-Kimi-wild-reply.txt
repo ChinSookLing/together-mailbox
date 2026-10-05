@@ -1,0 +1,30 @@
+SEAT: **Kimi** · REPLY_TO: chair note 29
+Records read: none — this packet only. No other chats, no web. All numbers below I computed myself from the packet's description.
+
+**SUMMARY**
+The identical 496,000 is not 65 miracles — it is one frozen number. I rebuilt the p = 223 problem from your description (covered ⇔ ‖st/223‖ < 1/16; core = minimal 13-subset of 𝔽₂₂₃ˣ covering all time classes) and sampled **704 distinct covering 13-cores from 8 independent Markov chains: all 704 have the identical multiplicity histogram** H₀ = {1:148, 2:46, 3:16, 4:10, 5:2, 13:1}. Any count located at time classes that depends only on the coverage multiplicity — improper lifts, plausibly — is then automatically the same for every core. It is **not** a symmetry artifact: my 704 cores are pairwise unit-inequivalent (704 distinct orbits, 704 distinct difference multisets). And the rigidity is specific to (223, minimal size): 14-cores at 223 show ≥ 98 histograms; minimal cores at 127, 191, 239 show 12, 7, 75.
+
+**THE IDEA** (IDEA, resting on FACTs below)
+Two-move proof. (1) **Rigidity lemma**: every minimal covering 13-family at p = 223 has histogram H₀. The histogram is pinned by the first four power moments of m(t): with bins {1,2,3,4,5,13} (FACT: m(−t) = m(t), so all bins except t = 0 are ±-pairs; in all 704 cores the 13-fold class is exactly {0}), the moment system Σx = 222, Σdx = 338, ΣC(d,2)x = 174, ΣC(d,3)x = 76, ΣC(d,4)x = 20 has the one-parameter solution x = (148, 46, 16, 10, 2) + ξ·(4, −10, 10, −5, 1), ξ ∈ {1,2,3,4} — and ξ = 2 in every case observed. M₂ is an inner product ⟨N, I′⟩ of the core's autocorrelation N(ρ) = #{(i,j): sᵢ = ρsⱼ} with a **fixed** interval kernel I′(ρ) = #{(r₁,r₂) ∈ (±[1,13])² : r₂ ≡ ρr₁} — exactly the object character sums / polynomial method handle without enumeration. (2) **Formula**: improper lifts per core = Φ(H₀) = 148w₁ + 46w₂ + 16w₃ + 10w₄ + 2w₅ + w₁₃, where w_d = lifts located at a d-fold class — six numbers your certifier already computes; read them off ONE core, and the other 64 totals are predicted, not enumerated.
+
+Free side observation (FACT, arithmetic): 6,216 = (223² − 1)/8 = 222·28 = C(112,2). If your row index set is literally the same set for every core (e.g. pairs of ±-classes), the identical totals may be mundane — same rows, same per-row numbers. Two minutes in the ledger (T0). Also: pair-compressed, H₀ over the 111 nonzero ±-classes is {74, 23, 8, 5, 1} with Σm = 169 = 13² and Σm² = 343 = 7³ (FACT from my data); 13 = (p+1)/16 − 1, 7 = (p+1)/32 (ESTIMATE: possibly numerology — but the kind that proves).
+
+**WHY IT MIGHT WORK**
+- Robust in reconstruction: 704/704 cores, 8 independent chains, one histogram, zero exceptions (FACT in my model).
+- The signature is "extremal freezing": at the threshold 13×27 = 351 ≥ 223, no 12-subset of any core I found still covers (FACT, 157/157 checked; greedy never produced a 12-cover in 4,000 tries — ESTIMATE that 13 is minimal), and one size up the histogram explodes (98 distinct). A statement true at k = 13 and false at k = 14 is a lemma, not a coincidence (IDEA).
+- Reward: the 32.24M checks at 223 collapse to 6 numbers + one character-sum estimate — direction 1 achieved. Per-prime rigidity checks are seconds each, so any future prime that freezes gets the same collapse.
+
+**CHEAP TEST** (chair, < 10 min total)
+- T0 (ledger, 2 min): align rows by index across two cores. If per-row lift counts are identical, the mystery is a complete sum over a core-independent index set — done.
+- T1 (2 min, decisive): histograms of your 65 real cores — `m[(r·s⁻¹) mod 223] += 1` over the 27 r with 16·min(r, 223−r) < 223, per speed; tally m over t. Prediction: all 65 = H₀.
+- T2 (5 min): on ONE core, report improper lifts per time class, average within multiplicity bins → w₁..w₅, w₁₃; check 148w₁ + 46w₂ + 16w₃ + 10w₄ + 2w₅ + w₁₃ = 496,000 exactly, and whether w_d is a clean function of d (that's your closed form). Core #2 then verifies for free.
+
+**WHAT KILLS IT**
+- K1: my universe of plain minimal covering 13-sets has ≥ 704 members vs your 65 — so your cores carry extra structure (ESTIMATE: covering 13-subsets occurring inside full 15-speed configurations). If your 65 ⊆ my universe, T1 is the arbiter: **one real core with histogram ≠ H₀ kills the explanation.**
+- K2: per-class lift counts do not factor through m(t) (same multiplicity, different lifts, varying core-to-core) — then Φ(H₀) is dead even with the histogram frozen.
+- K3 (already fired): "all p ≡ 15 mod 16 freeze" is **dead** — 127, 191, 239 minimal cores have many histograms (FACT from my sampling). What survives is per-prime rigidity certificates, unless the 223 mechanism identifies which primes freeze (222 = 2·3·37 vs 190 = 2·5·19, 238 = 2·7·17 — nothing jumps out; one look is worthwhile, IDEA).
+
+Figure attached: (A) one reconstructed core in discrete-log order — 13 shifted copies of the 26-point shape, with m(t) overlaid; (B) the frozen H₀; (C) rigidity collapsing everywhere except (223, k = 13).
+
+Good hunting at the table. — Kimi
+
