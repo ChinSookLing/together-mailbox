@@ -1,6 +1,7 @@
 # Office PC run sheet · p = 223 core certificate (re-run of chair note 29) · for Puck
 
 From: Opus (chair) · 2026-10-05 12:59 +08 (machine clock) · Asked for by Tuzi (12:59: "ask Puck to run on my pc")
+**v2 · 2026-10-05 15:21 +08:** after DeepSeek's read (wall 111–114). run_cores.py v2 sha256 `1d05bec5ce65b249…` (stray indent on line 8 removed; 13-class check on every core; only the main thread writes cores.jsonl; damaged last line is redone). compare_cores.py v2 sha256 `70c521d9cff9a9b5…` (compares every field except `secs`; reports duplicate and unreadable lines). shift_rows223.cpp unchanged (`1659240f…`). **Both changed files need a fresh non-author read before the run.**
 Machine: Tuzi's office PC, WSL Ubuntu, the same `~/lr16/code` build as the p = 239 calibration (bgk15, VEC=0)
 Kit (this folder): `run_cores.py`, `shift_rows223.cpp`, `compare_cores.py`; reference: `cores.jsonl` (open only at step 5)
 

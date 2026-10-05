@@ -1,0 +1,12 @@
+failing distributions: 2055 max z: 10
+with z=10: [(2, 1, 1, 1, 10)]
+tier13 (>=13 div by 4) fails: []
+tier12 (>=12 div by 8) fails: []
+tier11 (>=11 div by 16) fails: []
+UNCERTIFIED_COMPLETIONS: 0
+distinct True nonzero mod17 True
+sign classes mod17: [1, 2, 3, 4, 5, 6, 7, 8]
+classes cover all nonzero t mod 17: True
+grid-good T on 16p grid: []
+odd count 6 L7 budgets [6, 12, 32, 38] handled: None
+min distance at t=1/10: 1/10

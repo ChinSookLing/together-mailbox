@@ -1,0 +1,18 @@
+g=3 primitive root: True
+|ball| 26 S in Z/222: [0, 1, 2, 27, 28, 36, 47, 69, 70, 89, 96, 99, 107, 111, 112, 113, 138, 139, 147, 158, 180, 181, 200, 207, 210, 218]
+Dbar_223 (mod 111): [0, 1, 2, 27, 28, 36, 47, 69, 70, 89, 96, 99, 107]  GLM's: True
+S periodic under subgroup of order 2: True
+S periodic under subgroup of order 3: False
+S periodic under subgroup of order 6: False
+S periodic under subgroup of order 37: False
+S periodic under subgroup of order 74: False
+S periodic under subgroup of order 111: False
+largest |chi_k(Dbar)|: [(6.5909, 98), (6.5909, 13), (6.2476, 106), (6.2476, 5)]  (0.4*13 = 5.2 )
+order-3 characters k=37,74: [(2.6458, 74), (2.6458, 37)]
+cores covering Z_111 after fold: 65 of 65
+distinct multiplicity histograms (Z_111): 5
+   ((1, 70), (2, 31), (3, 4), (4, 5), (5, 1)) 13
+   ((1, 74), (2, 23), (3, 8), (4, 5), (5, 1)) 13
+   ((1, 72), (2, 26), (3, 10), (4, 1), (5, 1), (6, 1)) 13
+   ((1, 71), (2, 27), (3, 9), (4, 3), (5, 1)) 13
+   ((1, 73), (2, 25), (3, 7), (4, 5), (5, 1)) 13

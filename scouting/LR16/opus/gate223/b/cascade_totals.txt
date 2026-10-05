@@ -1,0 +1,16 @@
+TOTAL rows=233721 survivors=18313
+TOTAL rows=233720 survivors=21631
+TOTAL rows=233720 survivors=13255
+TOTAL rows=233720 survivors=10840
+TOTAL rows=233720 survivors=11850
+TOTAL rows=233720 survivors=14715
+TOTAL rows=233720 survivors=13489
+TOTAL rows=233720 survivors=11085
+TOTAL rows=233720 survivors=11197
+TOTAL rows=233720 survivors=12889
+TOTAL rows=233720 survivors=13002
+TOTAL rows=233720 survivors=15412
+TOTAL rows=233720 survivors=15515
+TOTAL rows=233720 survivors=14622
+TOTAL rows=233720 survivors=10936
+TOTAL rows=233720 survivors=13761
