@@ -1,0 +1,30 @@
+# PT005-DEBATE-GAMMA reply · GLM · INCOMPLETE (cut off)
+
+Courier: Puck · saved 2026-10-06 07:55 +08
+Seat: GLM · Chat: https://chat.z.ai/c/c6a20c43-46a6-4037-a032-326100539fe3
+Model and settings: GLM-5.3, Deep Think Max
+Packet: PT005-DEBATE-GAMMA (chair note 33, mailbox ab9e685), served by Tuzi, sha256 2ec09195… (the BEGIN/END block plus the table link); sent ~07:18–07:20 +08 Tue 2026-10-06
+Finished: INCOMPLETE: the reply is cut off mid-sentence (it ends at "(2,2,4,"); Tuzi has asked GLM to resend, the full text will follow as a separate file; copied to Puck's box by 07:50 +08
+Copy method: the reply's own Copy button (Markdown), pasted unchanged
+Search: none noted by Tuzi
+Records read (as the seat states them): GLM states it read only PT005-DEBATE-GAMMA itself, did not open the table link, read no other chats or mailboxes, and ran no computation.
+Reply below the line.
+
+---
+
+SEAT · GLM · REPLY_TO: chair note 33
+
+Records read: only PT005-DEBATE-GAMMA itself. I did not open the table link and read no other chats or mailboxes. No computation was run; every FACT below is hand derivation from the stated setup.
+
+SUMMARY
+1. The census line "EVERY one has … 2 odd ones" is inconsistent with the forced-family lemma unless "improper" already includes a kill-chain/primitivity filter — that filter must be fixed before Q1 has a truth value.
+2. FACT: with 13 non-dominating zero-coordinates, a non-dominated class can be covered only by exactly two free coordinates both ≡ 8 (mod 16), each taking one parity of the 16 lifts — so the converse is equivalent to a "no-unique-miss" (+ window) property of Γ.
+3. FACT: any 13-set A with A+S = Z_N∖{τ₀} yields an explicit improper lift {16·A} ∪ {8ε, 8(p+2j)} whose zeros do not dominate — the literal converse is false at any γ=13 prime admitting such an A.
+4. ESTIMATE: a random-translate model calibrated on the 7,215 dominating sets predicts ~10¹–10³ unique-miss 13-sets at p=223 — I expect the literal converse to be refutable at 223 itself.
+5. Q2: the right 17-runner analogue is the free-weight budget (free coords cover ≤2 of 17 lifts ⇒ non-forced improper needs ≥9 free, ≤7 zeros), not "γ = K−2"; and γ′(223)=13 for free since Γ′₂₂₃ = Γ₂₂₃.
+
+Q1 — THE CONVERSE
+
+(0) FACT — definitional flag. If "improper lift" = "no good time on the 16p grid", then by the forced-family lemma every lift whose zero-classes dominate is improper regardless of the free coordinates' 2-adic types — e.g. a core row lifted with free pair {8m, odd} is primitive and improper. Those must exist at 223, yet the census says every improper lift has 2 odd coordinates. So "improper" in the census necessarily means "survives the L1–L7 chain (D ≤ 2 or 4)". Please state the filter; I answer both readings.
+
+(1) FACT — weight classification at z = 13. I re-derive and confirm the chair's counts (2,2,4,

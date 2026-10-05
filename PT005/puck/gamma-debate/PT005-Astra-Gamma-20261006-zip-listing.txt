@@ -1,0 +1,24 @@
+# PT005-Astra-Gamma-20261006.zip · file listing (Astra, PT005-DEBATE-GAMMA)
+
+Courier: Puck · 2026-10-06 07:55 +08
+Zip: 18,090 bytes, sha256 b8fc446ebc59230245ad16885dd82a1536b3d76227bf23729fa5ac398d27fedc, 18 files (51,031 bytes unpacked). Not committed (binary); on Puck's box at /workspace/pt5_gamma/replies/PT005-Astra-Gamma-20261006.zip.
+Format: sha256  size-in-bytes  path (extracted with unzip on the box; nothing in it was run)
+
+4b876b374dc08533df74654f6a6d1957d3e87c85211ec68a360773ddb8c2422c  68  BUILD-INFO.txt
+02257ed7464d2e7254be266d4475117c0fd6cb8dee157347a1b0ebb56025e320  12302  README.md
+4d79778c2db8b474f436cfd605aa5a403e7faa24c61e140d08a2f071297b41c9  1403  SHA256SUMS.txt
+95a2c8aedb3e64ddf02c1b6cbaa9c75d50dbf416846079912139f484837db0f7  350  converse17.json
+6af242a867b4002effb191cb02dd7fd6b81d646bdcb5e2721d483ca4ff840658  241  converse191.json
+04ee9af5ae6b7bb66e1e1bcb386ec68f01e34fcb3f7da8d3e82d63a170052397  1459  converse_search.py
+a07aa6077ccacb98a85b314c793c2f75d7ba5c95956fcf6ef479a1450abe1951  11255  core233-one-output.json
+f7e0be90809cc0e8c692d4e83a499cb0be5e146ff3c37f8a232696f9f56b46eb  60  core233-one.json
+4a4ac19fee9b686e518205526425865c154c3f68ded97a53d1f2a5ec88e6d257  2791  core_pair_test.py
+eb3ebdb827d4286d19a0edc002068ff9b1c3442805cc316067d122193ae5ae74  9219  gamma17_scan.jsonl
+88baac1ab9c08b631596ce9db14ad1fb203e61dab54a3c2ad071fcae9d3840d3  833  gamma17_scan.py
+e5137785fc5b6e6b2de3aceed0e2e20307b66d7131fa1ed26e4523fd27f1f338  4919  gamma_scan.jsonl
+111b28cab324eb02cb5b30521e5055351b03936c6211494354257d8d3d81b877  833  gamma_scan.py
+4b1ecbd3187f01d12e7aab13e37e49fb5dd6f830195185ad8c2b9342a76edcbc  293  preliminary-run-notes.json
+1a9b9d1e82f586ab6ab5e644a5d96a2da5f8190f1f30bbe9bff2a24d88da0d59  902  scout.py
+5eb889444c6abbfbc5430d0b5ba7b45c5083676ecd4e73ab744c4ca50ac818d7  1441  switch_core.py
+9f3509a956fe04a9433186c148849ca53423b839cee355f92496c036d465fcec  289  verify-output.txt
+bea7b241cc3b373247b4abd9ffac68fe7daddc06360d71c8500bcdb737267731  2373  verify.py

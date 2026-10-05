@@ -1,0 +1,36 @@
+# PT005-DEBATE-GAMMA reply · Qwen
+
+Courier: Puck · saved 2026-10-06 07:55 +08
+Seat: Qwen · Chat: https://chat.qwen.ai/c/6cac6dd1-bdcd-4b2b-b70f-09ccbf366f6c
+Model and settings: Qwen3.8-Max, Thinking on
+Packet: PT005-DEBATE-GAMMA (chair note 33, mailbox ab9e685), served by Tuzi, sha256 2ec09195… (the BEGIN/END block plus the table link); sent ~07:18–07:20 +08 Tue 2026-10-06
+Finished: 2nd to finish (exact time not recorded); copied to Puck's box by 07:50 +08
+Copy method: the reply's own Copy button (Markdown), pasted unchanged
+Search: none noted by Tuzi
+Records read (as the seat states them): "Records read: Prompt text and the provided proof-table-005 context."
+Reply below the line.
+
+---
+
+SEAT: Qwen
+REPLY_TO: chair note 33
+
+SUMMARY:
+Q1: True for 223/233 (two odd non-zero coords give weight 4 < 16); generally true unless two v=3 coords exist.
+Q2: 17-runner analogue is γ ≥ 14; check p ∈ [257, 313]. K-2 chain holds if spectral gap is small.
+Q3: Map must show |S|/N density; coloring by machine status hides structural variance of Γ.
+Records read: Prompt text and the provided proof-table-005 context.
+
+answer:
+FACT: For Q1, the converse is strictly proved for p=223 and p=233. The enumerated improper lifts have exactly 2 odd non-zero coordinates (v=0). Their maximum blocking weight on any time class is 2 + 2 = 4. Since 4 < 16, these non-zero coordinates cannot block a non-dominated time class, forcing the 13 zero coordinates to dominate Γ.
+IDEA: For untested primes, the converse holds unless an improper lift features two non-zero coordinates with 2-adic valuation v=3 (weight 8+8=16). The strict sum constraints of an improper lift make two v=3 coordinates structurally incompatible with the core requirement, preventing the "open part" counterexample.
+ESTIMATE: For Q2, the 17-runner analogue (16 speeds) sets the gate at γ ≥ 14 (K=16, K-2=14). A laptop can test primes p ∈ [257, 313] for γ ≥ 14 in under an hour using spectral bounds. The "γ = K-2 ⇒ only forced families" chain remains the right analogue, provided the spectral ratio stays > 0.4 to prevent random cores.
+IDEA: For Q3, the progress map should plot the density |S|/N alongside γ, because the domination number inherently drops as density increases. It would be misleading to only plot γ vs log p, as the step-function nature of H = ⌊p/16⌋ will create artificial "jumps" in progress that have nothing to do with the gate closing, and coloring by machine count obscures intrinsic graph complexity.
+
+ONE CHEAP TEST:
+For Q1: Filter the existing enumeration logs for p=223 and p=233 to confirm zero instances of non-zero coordinates with v ≥ 3. If true, the weight is strictly ≤ 4, instantly cementing the converse for these primes.
+For Q2: Compute the spectral ratio and γ(Γ) for the next three 17-runner primes (p=257, 263, 269) to see if the K-2=14 gate holds.
+
+WHAT WOULD PROVE ME WRONG:
+For Q1: Finding a valid improper lift where the 2 non-zero coordinates both have v=3 (or a lift with ≥3 non-zero coordinates that somehow bypasses the γ=13 premise) and their combined weight of 16 perfectly covers a non-dominated time class.
+For Q3: Demonstrating that the "budget bar" consumption is perfectly linear with log p regardless of |S|/N fluctuations, implying the gate closure is purely compute-bound rather than structure-bound.

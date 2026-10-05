@@ -1,0 +1,34 @@
+# PT005-DEBATE-GAMMA reply · Kimi
+
+Courier: Puck · saved 2026-10-06 07:55 +08
+Seat: Kimi · Chat: https://www.kimi.ai/chat/1a10e5d1-7ce2-8e49-8000-09ce56bc2d27
+Model and settings: K3, thinking on
+Packet: PT005-DEBATE-GAMMA (chair note 33, mailbox ab9e685), served by Tuzi, sha256 2ec09195… (the BEGIN/END block plus the table link); sent ~07:18–07:20 +08 Tue 2026-10-06
+Finished: 1st of the five to finish (exact time not recorded); copied to Puck's box by 07:50 +08
+Copy method: the reply's own Copy button (Markdown), pasted unchanged
+Search: none noted by Tuzi
+Records read (as the seat states them): "Records read: none beyond this table note."
+Reply below the line.
+
+---
+
+KIMI · REPLY_TO: chair note 33
+
+SUMMARY
+Q1: The weight hint gives the right proof skeleton but has one unquantified gap: weights cap *hits*, not *blocking with margin* — a hit coordinate may still fail to block if its arc position is bad. Convert S16 ≤ 16 into a strict inequality via an arc-packing argument (or prove sharpness fails for v = 3 coordinates) and the converse follows; otherwise a counterexample needs total weight exactly 16 on some non-dominated class. Q2: laptop-viable primes for 17 runners are 239 (γ ≥ 13 confirmed by spectral ratio 0.442) and 271 — one hour suffices for exhaustive ≤ K−3 search at these N. Q3: the map needs per-prime compute cost and the conditional nature of "closed."
+
+ANSWER
+
+**Q1 (IDEA, partial FACT):** The chair's count is sound as a *hit* bound: coordinate u with v₂(u) = v sweeps 16/2^v positions, each 2^v times, and an open arc of length 1/8 contains at most max(1, 2^{v−?}) — i.e., weights 2, 2, 4, 8 — so total weight < 16 forces a free lift of the non-dominated class. That half is FACT. The gap (IDEA): at equality weight = 16 you need all 16 arc positions of the reachable coordinates to land inside the blocking arc — an alignment condition. The converse proof should therefore proceed in two steps: (1) show an improper lift has ≤ 2 odd free coordinates (already known empirically), bounding total non-core weight; (2) show the alignment at weight 16 is impossible because a v = 3 coordinate's 2 swept points are p/8-separated and cannot both lie in the open 1/8 arc unless... this is exactly where a counterexample would live. I lean IDEA: the converse holds at γ = 13 because any non-dominated class t has S-distance ≥ 2 from all zero coordinates, forcing ≥ 2 distinct non-zero coordinates to reach it, each with weight ≥ 2, and parity of the improper lift caps usable weight at 14 < 16 — but I have not proved the cap; treat as IDEA.
+
+**Q2 (FACT/ESTIMATE):** For 17 runners, H = ⌊p/17⌋, N = (p−1)/2. Laptop-feasible in < 1 h: p = 239 (N = 119, |S| = 14, spectral ratio 0.442 — same as 233 which closed) and p = 271 (N = 135, ratio 0.477). Both likely have γ(Γ) ≥ 13, i.e., K − 2 with K = 15. ESTIMATE: exhaustive domination search at N = 119, |S| = 14 costs roughly what p = 233 cost the chair (minutes-to-tens-of-minutes on the cited engine). The right analogue of the chain: yes — "γ = K − 2 ⇒ the zero (mod 16) coordinates of any improper lift must form a core, then L7 kills at D = 4" is prime-independent; only the domination-number hypothesis changes.
+
+**Q3 (IDEA):** The map should additionally show: (a) compute-hours spent per door (a closed door at 223 ≠ a closed door at 191 in evidence strength per unit effort); (b) which "closed" doors rest on the forced-family lemma conditional on Q1's converse — colour them differently, since if Q1 fails those doors reopen; (c) the 131 anomaly as an explicit warning marker that the strict pattern fails below γ threshold. Misleading risks: plotting doors by γ alone hides that γ(Γ) was computed only where S is the discrete-log shape (prime-dependent); and the budget bar Σ log p vs 481.07 implies partial progress accumulates linearly, which it does not — one unclosed door blocks the product.
+
+ONE CHEAP TEST
+At p = 223, enumerate size-13 dominating-set *containing rows* and for each 15-row compute the total S16-weight available to each non-dominated time class; report the max. If max ≤ 14 everywhere, the weight argument closes Q1 at 223 unconditionally; if 16 occurs, dump that lift as a candidate counterexample. Cost: reuses the existing 7,215-core enumeration, minutes.
+
+WHAT WOULD PROVE ME WRONG
+An explicit improper lift at 223 or 233 whose coordinates ≡ 0 (mod 16) fail to dominate Γ yet which blocks all 16 lifts of some non-dominated class — i.e., a weight-16 aligned configuration. That single exhibit kills my parity-cap IDEA and forces the converse to be reformulated with the alignment condition as a hypothesis.
+
+Records read: none beyond this table note.
