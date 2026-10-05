@@ -2,6 +2,7 @@
 
 Kept by: Opus (chair) · started 2026-10-04 18:49 +08 · Each status change needs Tuzi's approval (time given).
 Updated: 2026-10-04 19:50 +08 (L1 extended, L1a and L6 added, L5 superseded; approved by Tuzi 19:49).
+Updated: 2026-10-05 09:09 +08 (L6 pending line updated; L7, L8, L9 added; approved by Tuzi 2026-10-05 09:08).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -71,3 +72,30 @@ NOT    = a theorem; NOT a total-cost model. It leaves out the lifting cost, whic
          (author: p = 131 generation 32 s, lifting and level 15 about 328,000 s). Some primes may fail the gate.
 PENDING = Fable-B test 5 (K = 15 at 307 and 367, raw numbers only; the old SURVIVES / REFUTED rule in the packet
          is withdrawn). Model prediction: T(367)/T(307) ≈ 1.35 (p^6 alone: 2.9).
+UPDATE  = test 5 PARTIAL (chair note 21): K = 15 at 367, 11 of 12 jobs, about 357 s per job; model predicted about
+         318 s on the chair's machine, about 7% low after machine adjustment (4th prospective hit). 307 not measured.
+
+## L7 · Composite-denominator shift lemma for k = 15 (Astra turn 17)
+STATUS = CHAIR-CHECKED · approved by Tuzi 2026-10-05 09:08 +08 · second reader requested (DeepSeek)
+SCOPE  = for positive integers u_1..u_15 and an integer D ≥ 2, with E = {i : D ∤ u_i}, |E| ≥ 2, g_i = gcd(D, u_i),
+         D_i = D/g_i: if Σ_{i∈E} g_i·⌈D_i/8⌉ < D and LRC(m) holds for m ≤ 13, some rational t has ||t u_i|| ≥ 1/16
+         for all i. With D = 8: a + 2b + 4c < 8 (a = #odd, b = #(2 mod 4), c = #(4 mod 8)). Used as the third
+         alternative of the author's Lemma 2.2(ii) at levels 16 and 32 (D divides L·p).
+         Read line by line by the chair (chair note 24). Mailbox PT005/astra/turn17/.
+
+## L8 · Sharper shape factor R_15 < 61/125; bound B = 494.558 (GPT turn 18)
+STATUS = CHAIR-CHECKED · approved by Tuzi 2026-10-05 09:08 +08
+SCOPE  = H > 3515625/3721 (≈ 944.8065) for n = 15, hence R_15 < 61/125 and ΔB = 15·log(125/122) = 0.3644;
+         B goes from 494.922 to 494.558; the gates must supply Σ log p > 481.07.
+         The exact rational test was re-run by the chair (PASS; scouting/LR16/opus/turn17-18/checks.out).
+         The minimiser reduction it uses is the author's; for n = 15 a different route is in Lean at threshold 900
+         (L1, `H_gt_at_min`); a Lean version at threshold 944.8065 would need only the last step changed. Not done.
+
+## L9 · p = 131, K = 15: sampled persistent rows are handled by L7 (scouting)
+STATUS = TEST (Opus) · approved for recording by Tuzi 2026-10-05 09:08 +08
+SCOPE  = 330 persistent rows from a biased sample of 20,000 of the 16,059,579 general-variant covers: 2,644,800
+         improper lifts at level 16, per-row counts equal to the author's cascade; all pass the L7 criterion with
+         D ∈ {2, 4, 8, 16} (Astra's code, read then run by the chair; chair note 24).
+         Irredundant branch at p = 131: 61,061,431 rows, 0 alive at level 16 (chair note 20).
+OPEN   = the full reducible branch at p = 131 (about 1.04 billion extension rows) and every other small prime.
+         NOT a gate result.
