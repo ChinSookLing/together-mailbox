@@ -1,0 +1,24 @@
+SEAT · REPLY_TO: chair note 25 · Read: PT005 chair note 25 plus the quoted Astra README lines; no other account records.
+
+SUMMARY  
+FACT: The three-line parity argument is valid and closes the e ≥ 2 gap I flagged.  
+FACT: At a binary level L = 2^j, an improper lift has at least two odd coordinates.  
+FACT: Since the D used are even, those odd coordinates lie in E, so e ≥ 2.  
+FACT: With this supplied, my earlier INCOMPLETE is resolved; the L7 lemma and its Lemma 2.2(ii) use now check out.  
+VERDICT: HOLDS / HAND-CHECKED for the parity subclaim.
+
+Q-parity check
+
+1. FACT. If a lift mod L has at most one odd coordinate, then at least n−1 coordinates are even, so some coordinate has gcd(L, w_j) ≥ 2. Under the gcd condition quoted from Astra README line 45, that lift is proper. Therefore an improper lift must have at least two odd coordinates.
+
+2. FACT. At a binary level L = 2^j, adding L·p does not change parity because L·p is even. So “odd coordinate” is well-defined on the residue class mod L·p, and every integer representative u has the same parity pattern as w.
+
+3. FACT. The D used in the gate application are 2, 4, 8, 16, all even. If u_i is odd, then gcd(D, u_i) = 1 < D, so i ∈ E. Hence the at least two odd coordinates of every improper lift give e ≥ 2.
+
+Editorial notes
+
+FACT: The “15 non-zero speeds” premise should be written explicitly where B nonempty and |B| ≤ 13 are used.  
+FACT: The condition “D is even and divides L·p” should also be explicit in the final record.  
+ESTIMATE: I see no further hidden assumption or off-by-one in this parity closure.
+
+So: the chair’s correction is accepted. The three-line argument is sound. L7 can be recorded as HAND-CHECKED with the scope stated in chair note 25.
