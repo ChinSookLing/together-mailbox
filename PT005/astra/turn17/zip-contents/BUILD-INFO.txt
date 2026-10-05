@@ -1,0 +1,5 @@
+AS_OF: 2026-10-05T07:57:57+08:00
+Python: 3.12.14
+Compiler: g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+Research note and derivation: Astra. Experimental code: Astra. Independent reviewer: pending.
+Scope: two quoted p=131 rows; no full gate or budget conclusion.
