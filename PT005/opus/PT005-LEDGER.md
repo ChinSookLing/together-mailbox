@@ -3,6 +3,7 @@
 Kept by: Opus (chair) · started 2026-10-04 18:49 +08 · Each status change needs Tuzi's approval (time given).
 Updated: 2026-10-04 19:50 +08 (L1 extended, L1a and L6 added, L5 superseded; approved by Tuzi 19:49).
 Updated: 2026-10-05 09:09 +08 (L6 pending line updated; L7, L8, L9 added; approved by Tuzi 2026-10-05 09:08).
+Updated: 2026-10-05 11:18 +08 (L7 CHAIR-CHECKED -> HAND-CHECKED; approved by Tuzi 2026-10-05 11:08, wall line 86).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -76,12 +77,17 @@ UPDATE  = test 5 PARTIAL (chair note 21): K = 15 at 367, 11 of 12 jobs, about 35
          318 s on the chair's machine, about 7% low after machine adjustment (4th prospective hit). 307 not measured.
 
 ## L7 · Composite-denominator shift lemma for k = 15 (Astra turn 17)
-STATUS = CHAIR-CHECKED · approved by Tuzi 2026-10-05 09:08 +08 · second reader requested (DeepSeek)
-SCOPE  = for positive integers u_1..u_15 and an integer D ≥ 2, with E = {i : D ∤ u_i}, |E| ≥ 2, g_i = gcd(D, u_i),
-         D_i = D/g_i: if Σ_{i∈E} g_i·⌈D_i/8⌉ < D and LRC(m) holds for m ≤ 13, some rational t has ||t u_i|| ≥ 1/16
-         for all i. With D = 8: a + 2b + 4c < 8 (a = #odd, b = #(2 mod 4), c = #(4 mod 8)). Used as the third
-         alternative of the author's Lemma 2.2(ii) at levels 16 and 32 (D divides L·p).
-         Read line by line by the chair (chair note 24). Mailbox PT005/astra/turn17/.
+STATUS = HAND-CHECKED · approved by Tuzi 2026-10-05 11:08 +08 (wall line 86); was CHAIR-CHECKED from 09:08
+SCOPE  = 15 non-zero integer speeds u_1..u_15 (stated explicitly, as DeepSeek asked). For an integer D ≥ 2 with
+         E = {i : D ∤ u_i}, |E| ≥ 2, g_i = gcd(D, u_i), D_i = D/g_i: if Σ_{i∈E} g_i·⌈D_i/8⌉ < D and LRC(m) holds for
+         m ≤ 13, some rational t has ||t u_i|| ≥ 1/16 for all i. With D = 8: a + 2b + 4c < 8 (a = #odd,
+         b = #(2 mod 4), c = #(4 mod 8)).
+USE    = third alternative of the author's Lemma 2.2(ii) at binary levels L = 16 or 32, with D EVEN and D | L·p
+         (stated explicitly, as DeepSeek asked). e ≥ 2 holds for every improper lift: an improper lift at a binary
+         level has at least two odd coordinates (otherwise the gcd condition makes it proper), and odd coordinates are
+         not divisible by an even D (Astra README line 45; chair note 25).
+CHECKED = chair (chair note 24, line by line; chair note 25, parity step) and DeepSeek (turns 19 and 20, wall lines
+         79–80 and 83–84). Mailbox PT005/astra/turn17/.
 
 ## L8 · Sharper shape factor R_15 < 61/125; bound B = 494.558 (GPT turn 18)
 STATUS = CHAIR-CHECKED · approved by Tuzi 2026-10-05 09:08 +08
