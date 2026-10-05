@@ -1,0 +1,7 @@
+{"r": 3, "s": 5, "rows": 642, "nodes": 7690848914, "secs": 3202.52, "casc_rows": 642, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
+{"r": 6, "s": 15, "rows": 167, "nodes": 3291296029, "secs": 1271.52, "casc_rows": 167, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
+{"r": 10, "s": 7, "rows": 362, "nodes": 3777643329, "secs": 1313.1, "casc_rows": 362, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
+{"r": 14, "s": 8, "rows": 100, "nodes": 3279783708, "secs": 1115.7, "casc_rows": 100, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
+{"r": 19, "s": 2, "rows": 406, "nodes": 4753031951, "secs": 1559.74, "casc_rows": 406, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
+{"r": 24, "s": 10, "rows": 3, "nodes": 945331450, "secs": 318.545, "casc_rows": 3, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
+{"r": 0, "s": 0, "rows": 3880, "nodes": 14220970034, "secs": 4766.9, "casc_rows": 3880, "casc_survivors": 2, "deep": [], "n_survivor_lines": 2}
