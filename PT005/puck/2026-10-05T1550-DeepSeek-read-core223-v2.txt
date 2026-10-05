@@ -1,0 +1,28 @@
+# DeepSeek read of the p=223 core-certificate kit v2 (c60622d) + proof checks (A) unit-orbit, (B) forced-family lemma
+
+Courier: Puck · saved 2026-10-05 15:51 +08
+Chat: https://chat.deepseek.com/a/chat/s/06447dca-da52-4d89-a9b2-075e00a9c7d5 · DeepThink on · Search off
+Packet: /workspace/pt5_ds_v2/packet.txt, 17,994 bytes, sha256 ad71034b92ef3bc7ca14cfb316ad2e26ccf98cf7ff075094e776cb0e892c3757, sent ~15:49 +08 as an attached TXT card
+Text: DeepSeek's final answer verbatim, as read from the page by Tuzi (thinking section excluded; bold/code styling not kept). Reply below the line.
+
+---
+
+READ_BY: DeepSeek / FILE: run_cores.py (v2) / SHA256: 1d05bec5ce65b249943823495c7011deb8ca06dc87429c4e0512c398a277c7bd / AS_OF: 2026-10-05 (session) / VERDICT: SAFE-TO-RUN
+READ_BY: DeepSeek / FILE: compare_cores.py (v2) / SHA256: 70c521d9cff9a9b505ee5f425bac43bc3d8c65e024d5ea8a4ffcd15ac5236cf8 / AS_OF: 2026-10-05 (session) / VERDICT: SAFE-TO-RUN
+
+Notes on the earlier points:
+
+run_cores.py v2: line-8 stray indentation removed. The 13-element core check is present (len(c) != 13 plus range check). Duplicates in a/b are now intentionally allowed via a <= b and multiset construction. Concurrent appends are fixed: only the main thread writes cores.jsonl. Damaged last line is reported and that core is redone. bgk15 is still not in the kit; run_cores.py expects the canonical core file S as an external argument, so the kit is not self-contained unless S is supplied/regenerated separately.
+
+compare_cores.py v2: now compares rows, l16_lifts, unhandled, rows_unhandled, and first_unhandled (all fields except timing secs). It also reports duplicate and unreadable lines in either file. The earlier "ignoring rows_unhandled/first_unhandled" issue is fixed.
+
+shift_rows223.cpp unchanged (1659240f…), no re-read needed.
+
+Proof checks:
+
+(A) Unit-orbit argument — HOLDS.
+The CRT choice b ≡ a^{-1} mod p, b ≡ 1 mod 16 exists. Since b is odd and coprime to 16p, multiplication by b permutes the time grid T mod 16p, so good/improper witnesses map bijectively. Also b ≡ 1 mod 16 leaves all residues modulo 2,4,8,16 unchanged, so the L7/shift_ok tests are preserved. No gap found.
+
+(B) Forced-family lemma — HOLDS.
+For p | T, w_i = 16u_i gives w_i T/(16p) = u_i T/p integer, so distance 0 and bad. For p ∤ T, w_i T/(16p) = u_i T/p, and since w_i ≡ s_i mod p, this is exactly the condition that class s_i covers time class 16^{-1}T. If Z covers all nonzero time classes, some i ∈ Z is bad for every T. No gap found.
+Caveat: the reverse statement ("only forced families survive") is explicitly marked as an observation/open bridge, not proved by this lemma; the verdict above is only for the forced-family lemma itself.
