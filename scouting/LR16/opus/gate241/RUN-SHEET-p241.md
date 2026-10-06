@@ -14,20 +14,31 @@ Why the office PC: at p = 241 the work is about 10× that of 223, too much for t
 - **(c):** 46 of the 936 cores done so far (`chair_cores241_partial.jsonl`). All pass: 0 unhandled; every lift has 13 coordinates ≡ 0 (mod 16) and 2 odd.
 - **(a):** running on the chair's machine (172 jobs; ESTIMATE 3–4 hours).
 
+## UPDATE 2026-10-06 15:16 +08 — use the early-L7 checker for (c) (chair note 36)
+
+- `shift_rows_early.cpp` (sha256 `7487a9c5…`) is `gate233/shift_rows.cpp` v3 plus 5 lines. After the lifts to levels 4 and 8, it drops every lift that L7 already handles with D = 4 (or 8).
+- On the chair's machine it is about 35× faster, with the same verdict:
+  - 241: all 936 cores in 3,078 CPU s;
+  - 223 and 191: every core re-checked; 0 lifts reach level 16, and the level-4 kills are exactly 1/16 of the old level-16 counts.
+- **It needs a non-author read first** (the 5-line diff against gate233/shift_rows.cpp).
+- The ledger entry L7 also needs a reader to confirm that using L7 at level 4 or 8 is in scope.
+- With it, (c) below takes minutes, not hours.
+- Compile it as `shift_rows241` and compare with `chair_cores241_early.jsonl` instead of the partial file. Expected: 936 cores, 6,795,360 rows, level16_lifts 0, 0 unhandled, `VERDICT: MATCH`.
+
 ## Steps on the office PC
 
 ```bash
-# (c) — ESTIMATE about 3 hours with 12 workers
-mkdir -p ~/core241 && cd ~/core241        # copy run_cores.py, shift_rows.cpp (gate233/) and compare_cores.py (core223/)
-sha256sum run_cores.py shift_rows.cpp compare_cores.py | tee kit.sha256
-g++ -O2 -std=c++17 -DPP=241 -o shift_rows241 shift_rows.cpp
+# (c) — with shift_rows_early.cpp: minutes. (Old route, without it: about 3 hours.)
+mkdir -p ~/core241 && cd ~/core241        # copy run_cores.py (gate233/), shift_rows_early.cpp (this folder), compare_cores.py (core223/)
+sha256sum run_cores.py shift_rows_early.cpp compare_cores.py | tee kit.sha256
+g++ -O2 -std=c++17 -DPP=241 -o shift_rows241 shift_rows_early.cpp
 ~/lr16/code/bgk15 241 km1low 13 km1low13_p241.txt | tee km1low.log     # must say canonical=936 (about 3 min)
 sha256sum km1low13_p241.txt                                            # chair: 312d5927…
 date '+%F %T %Z' | tee run.time
 P=241 WORKERS=12 python3 run_cores.py km1low13_p241.txt | tee run.log
 date '+%F %T %Z' | tee -a run.time
-python3 compare_cores.py cores.jsonl chair_cores241_partial.jsonl | tee compare.txt
-# expected: "differing/missing" = 0 for the chair's 46 cores; "extra" = 890 and VERDICT CHECK are expected here
+python3 compare_cores.py cores.jsonl chair_cores241_early.jsonl | tee compare.txt
+# expected: VERDICT: MATCH (936 cores, level16_lifts 0, unhandled 0)
 
 # (a)+(b) — ESTIMATE several hours; the reducible part runs on ONE core (single filterext process)
 cd ~/lr16/code
