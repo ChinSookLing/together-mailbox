@@ -14,5 +14,5 @@ The engine and cascade were unchanged (`run.sh`). Rows and survivors per job equ
 
 First look (chair, IDEA level):
 - One of the five is the speeds 1, 2, …, 15 themselves: the classical tight example of the conjecture (its best time gives exactly 1/16). It can only die at level 16 = 16·p, the level that "sees" the tight time. Any method must treat this row separately.
-- The other four die at the very next zoom (level 4). Three of them contain long runs of small classes (1, 2, 3, …), the same "interval" structure as the tight row.
-- So at p = 401, out of about 2 × 10^12 search nodes, the whole difficulty is: the tight row, plus four near-copies of it.
+- The other four die at the very next zoom (level 4). Three of them (jobs (0,0), (1,0), (5,5)) contain many small classes (7 to 14 of their 15 classes are ≤ 15), close to the tight row; the fourth (15,11) does not. Caution: rows are listed in the engine's canonical form under unit multiplication, so "small" depends on that choice of representative.
+- So at p = 401, out of about 2 × 10^12 search nodes, what survives one zoom is the tight row plus four other rows, three of them close to it.
