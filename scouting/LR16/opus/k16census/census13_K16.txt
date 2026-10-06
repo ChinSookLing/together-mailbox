@@ -1,0 +1,37 @@
+223 km1low smax=13 canonical=455 nodes=33862405 leaves=65 secs=28.3491
+227 km1low smax=13 canonical=0 nodes=21202390 leaves=0 secs=19.6301
+229 km1low smax=13 canonical=0 nodes=20495268 leaves=0 secs=18.8552
+233 km1low smax=13 canonical=0 nodes=13817873 leaves=0 secs=14.0245
+239 km1low smax=13 canonical=0 nodes=49904132 leaves=0 secs=44.4485
+241 km1low smax=13 canonical=0 nodes=38714793 leaves=0 secs=34.8593
+251 km1low smax=13 canonical=0 nodes=14558724 leaves=0 secs=16.7141
+257 km1low smax=13 canonical=0 nodes=60814485 leaves=0 secs=58.6317
+263 km1low smax=13 canonical=0 nodes=34951275 leaves=0 secs=37.9394
+269 km1low smax=13 canonical=0 nodes=18649973 leaves=0 secs=23.665
+271 km1low smax=13 canonical=0 nodes=17145249 leaves=0 secs=22.8875
+277 TIMEOUT
+281 km1low smax=13 canonical=0 nodes=42652424 leaves=0 secs=54.1648
+283 km1low smax=13 canonical=0 nodes=38207687 leaves=0 secs=49.6061
+293 TIMEOUT
+307 TIMEOUT
+311 TIMEOUT
+313 TIMEOUT
+317 TIMEOUT
+331 TIMEOUT
+337 TIMEOUT
+347 TIMEOUT
+349 TIMEOUT
+353 TIMEOUT
+359 TIMEOUT
+367 TIMEOUT
+373 TIMEOUT
+379 TIMEOUT
+383 TIMEOUT
+389 TIMEOUT
+397 TIMEOUT
+401 TIMEOUT
+409 TIMEOUT
+419 TIMEOUT
+421 TIMEOUT
+431 TIMEOUT
+433 TIMEOUT
