@@ -1,0 +1,72 @@
+# PT005-DEBATE-GAMMA reply · GLM · FULL (supersedes the incomplete file)
+
+Courier: Puck · saved 2026-10-06 08:16 +08
+Seat: GLM · Chat: https://chat.z.ai/c/c6a20c43-46a6-4037-a032-326100539fe3 (same chat as the incomplete reply)
+Model and settings: GLM-5.3, Deep Think Max, web off
+Packet: PT005-DEBATE-GAMMA (chair note 33, mailbox ab9e685), served by Tuzi, sha256 2ec09195… (the BEGIN/END block plus the table link); sent ~07:18–07:20 +08 Tue 2026-10-06
+Resend: the first reply was cut off mid-sentence (2026-10-06-gamma-GLM.txt, mailbox 3a05451); Tuzi asked for the complete answer at ~07:53 +08; this reply finished ~08:12 +08. This file supersedes 2026-10-06-gamma-GLM.txt.
+Copy method: the reply's own Copy button (Markdown), pasted unchanged (13,598 bytes UTF-8, 0 replacement chars)
+Search: web off; none noted by Tuzi
+Records read (as the seat states them): "Records read: only PT005-DEBATE-GAMMA itself. I did not open the table link and read no other chats, mailboxes, or ledger notes. No computation was run; every FACT below is hand derivation from the stated setup."
+Reply below the line.
+
+---
+
+SEAT · GLM · REPLY_TO: chair note 33
+
+Records read: only PT005-DEBATE-GAMMA itself. I did not open the table link and read no other chats, mailboxes, or ledger notes. No computation was run; every FACT below is hand derivation from the stated setup. No keys or passwords held or used.
+
+SUMMARY
+1. The census line "EVERY one has … 2 odd ones" is inconsistent with the forced-family lemma unless "improper" already includes a kill-chain/primitivity filter — that filter must be fixed before Q1 has a truth value.
+2. FACT: with 13 non-dominating zero-coordinates, a non-dominated class can be covered only by exactly two free coordinates both ≡ 8 (mod 16), each taking one parity of the 16 lifts — so the converse is equivalent to a "no-unique-miss" (+ window) property of Γ.
+3. FACT: any 13-set A with A+S = Z_N∖{τ₀} yields an explicit improper lift {16·A} ∪ {8ε, 8(p+2j)} whose zeros do not dominate — the literal converse is false at any γ=13 prime admitting such an A.
+4. ESTIMATE: a random-translate model calibrated on the 7,215 dominating sets predicts ~10¹–10³ unique-miss 13-sets at p=223 — I expect the literal converse to be refutable at 223 itself.
+5. Q2: the right 17-runner analogue is the free-weight budget (free coords cover ≤2 of 17 lifts ⇒ non-forced improper needs ≥9 free, ≤7 zeros), not "γ = K−2"; and γ′(223)=13 for free since Γ′₂₂₃ = Γ₂₂₃.
+
+Q1 — THE CONVERSE
+
+(0) FACT — the census needs a filter before Q1 is well-posed. By the forced-family lemma, any lift whose zero-classes dominate is improper regardless of its free coordinates: a core row lifted with 14 zero-coordinates + 1 odd, or 15 zero-coordinates, or 13 zero + (odd, ≡8-mod-16) free pair, is improper and primitive, yet is not of the "13 zero + 2 odd" form. So "improper" in the census must mean "survivor of L1–L6" or "primitive and non-descending and 13-zero-parameterised". This matters because the census claim then decomposes into (i) no improper lift with z ≤ 12 zero-coordinates — the real content, and open — and (ii) a filter statement about z ≥ 13. I answer both readings.
+
+(1) FACT — exact blocked-lift classification (I use the chair's hint (i) and sharpen "at most" to exact counts with parity structure; this sharpening is where all content lives). Fix a class τ with representative t ∈ [1, p−1]; its 16 lifts are t_j = t + jp, j ∈ Z_16. For a coordinate u write ut mod 16p = c + p·s with c = ut mod p ∈ [1, p−1], s ∈ Z_16. Then position(u, t_j) = c + p·(s + uj mod 16), which is bad iff s + uj ≡ 0 or 15 (mod 16) (positions c and c+15p; distance-exactly-p positions never occur since c ∈ [1,p−1]). Hence, with v = v₂(u):
+- v = 0: blocks exactly {−su⁻¹, (15−s)u⁻¹} — exactly 2 lifts of EVERY class, one even j, one odd j;
+- v = 1: exactly {j₀, j₀+8} — exactly 2 lifts of every class, same parity;
+- v = 2: ∅ or {j₀, j₀+4, j₀+8, j₀+12} — 4 lifts, one parity;
+- v = 3: ∅ or one full parity class of 8 j's. With u = 8y and ρ = y·t mod 2p: even j's ⟺ ρ ∈ [0, p/8) ∪ [15p/8, 2p); odd j's ⟺ ρ ∈ [7p/8, 9p/8).
+So odd and v=1 coordinates reach every class with weight exactly 2; v=2, v=3 coordinates reach only window classes, ≈ (p−1)/16 ≈ 14 classes per window at p = 223. Astra 23's ledger S₁₆ = 2a+2b+4c+8d is confirmed; the parity/window refinement is new.
+
+(2) FACT — reduction theorem (the part I can prove). Let z = #coordinates ≡ 0 (mod 16), f = 15 − z.
+- z = 15: f = 0, a non-dominated class has all 16 lifts good.
+- z = 14: f = 1, capacity ≤ 8 < 16.
+- z = 13: capacity ≤ 8+8 = 16, with equality only for a free pair both ≡ 8 (mod 16), taking complementary parities at every non-dominated class. Any other pair, in particular any pair containing an odd coordinate (2+8 = 10 < 16), fails. Note that the (8 mod 16, 8 mod 16) exception forces gcd ≥ 8: the row descends to level 2p and is not a level-16 object.
+Therefore, under the primitive (non-descending) reading: every improper lift with z ≥ 13 has dominating zero-coordinates — proved — and the converse is exactly equivalent to: no improper lift with z ≤ 12.
+
+(3) FACT — conditional counterexamples (explicit lifts, per the chair's invitation).
+(3a) Literal reading. Let A be a 13-set with S − A = Z_N ∖ {τ₀} (unique miss). Take the row A ∪ {b₁, b₂}; lift A at its zero-lifts; lift bᵢ at uᵢ = 8yᵢ with y₁t₀ mod 2p in the even-window and y₂t₀ mod 2p in the odd-window (uᵢ ≡ 8 mod 16 is the pinned lift of class bᵢ = 8yᵢ mod p; this is the {8ε, 8(p+2j)} family — ε = ±1, j ∈ Z parametrise odd y). Every class τ ≠ τ₀ is blocked by a zero-coordinate at all 16 lifts; τ₀'s even j's are blocked by u₁, odd j's by u₂. Improper, zeros do not dominate; gcd = 8 (descends). For fixed τ₀ there are ≈ p/8 ≈ 28 admissible y's per window at p = 223, against ≈ 27 forbidden (A's classes, y ≡ 0 mod p), so a clean pair exists unless A is window-adversarial.
+(3b) Primitive reading. Let C be a core, a ∈ C with private set priv_C(a) = {τ₀} (private = covered by a alone). Then A = C − a is a 12-set with M(A) = priv(a) = {τ₀} exactly. Row = C ∪ {b₁, b₂}; zero-lift A's 12 classes; lift b₁, b₂ as u₁, u₂ ≡ 8 (mod 16) in the two windows; lift a itself at any odd lift. z = 12, f = 3, primitive (one odd coordinate), improper by the same per-class check, zeros non-dominating — and the row contains the core C, so the witness lives inside the census's own enumeration space. Conversely (FACT): every 12-set with a unique miss extends to a core by any σ ∈ (S − τ₀) ∖ A (nonempty: 13 candidates vs |A| = 12), and priv(σ) = {τ₀}; so unique-miss 12-sets are in exact correspondence with private-1 vertices of cores, and the private-set scan below is exhaustive for them. With |M| = 2 one needs both missed classes in E(u₁) ∩ O(u₂) (≈ 13 free pairs — borderline); |M| ≥ 3 is dead for the z = 12 route. The z ≤ 11 routes need v₂/v₃ mixes (e.g. z = 11 needs ≥ 2 coords ≡ 8 mod 16, or one such + two ≡ 4 mod 8) with 3+ window coincidences per missed class — strictly more rigid.
+
+(4) ESTIMATE — abundance. γ = 13 forces every core to be irredundant (empty private set would give a 12-dominator), so private sizes are ≥ 1; in arc-circulants of this type I expect private sizes 1–4 with mass at 1–2, giving ~10¹–10³ private-1 vertices (hence unique-miss 12-sets) and a similar or larger count of unique-miss 13-sets (one swap below domination) at p = 223. Prediction: the literal converse is false at 223; the primitive converse hinges on the private-set census. Note the stakes: if a witness exists, the 223 census has a hole (it claims no improper lift outside 13+2odd); if none exists, we have discovered a lemma — "every core of Γ₂₂₃ is 2-irredundant" — and the census's z ≤ 12 completeness is explained rather than assumed. Both outcomes are progress; the test below decides which.
+
+Q2 — 17 RUNNERS
+
+(1) FACT — flat weights. At level 17p the same computation gives positions c + p(s + uj mod 17) and bad σ ∈ {0, 16}; every coordinate ≢ 0 (mod 17) blocks exactly 2 of the 17 lifts of every class. There is no 2-adic ladder because 17 is prime.
+
+(2) FACT — the correct chain. A non-dominated class needs ⌈17/2⌉ = 9 free coordinates (8×2 = 16 < 17). So any improper level-17 lift with z ≥ 8 has dominating zeros; and the counting bound γ(Γ′) ≥ N/|S′| = (p−1)/(2⌊p/17⌋) > 8 holds for every prime p > 17, i.e. γ ≥ 9 for free. Hence at every 17-door: improper ⟹ z ≥ γ (forced family) or z ≤ 7; the zone 8 ≤ z < γ is empty. "γ = K−2 ⇒ only forced families" is the wrong analogue: at 16 runners the forcing came from the weight-8 exception plus primitivity (γ = 13 = 15−2 was a coincidence of that), and at 17 runners no coordinate covers more than 2 of 17 lifts, so the forcing threshold is ⌈17/2⌉ = 9, always satisfied. At 223 itself γ′ = 13 < 14 = K−2 and the gate logic still works (forced families are 13 zeros + 3 free, total free weight 6 < 17) — a live counterexample to the necessity of the K−2 shape.
+
+(3) FACT — free doors. Γ′(p) = Γ(p) whenever ⌊p/16⌋ = ⌊p/17⌋: at p = 103, 107, 109, 127, 137, 139, 157, 173, 191, 223, 239 the 17-runner graph is the 16-runner graph and γ′ = γ. 191 is already running for 16 runners; its 17-door comes free; 239 is already in the table's n = 17 spectral list. Start the 17-table there, then extend by ILP domination (is γ′ ≥ 14? bonus — it shrinks forced families — never a necessity).
+
+(4) IDEA — the kill. The L7 analogue lives at level 289: a free coordinate blocks exactly 34 of 289 lifts (bad σ ∈ [0,17) ∪ [272,288]), so f ≤ 7 covers ≤ 238 < 289, and within each level-17p class a free coordinate blocks exactly 2 of 17 lifts. The kill therefore reduces to: do the zero-coordinates (acting as x·t mod 17p ∈ (−p, p)) cover the whole level-17p class circle? That is a per-core window-covering computation (13 windows of fraction 2/17, total 26/17 — overlapping, so genuinely decidable only by computation), laptop-cheap.
+
+(5) ESTIMATE — the non-forced zone z ≤ 7 is heuristically dead: a 7-set covers ≤ 7⌊p/17⌋ classes (≤ 91 < 111 at 223), so ≥ 20 classes must each be tiled by the same ≤ 9 free pairs {j, j + 16u⁻¹}, whose offsets are fixed while positions shift with the class. Provably checkable by exhaustion at p = 71 (N = 35) or 103 (N = 51) with pair-tiling pruning — minutes, well under the hour budget.
+
+Q3 — THE PROGRESS MAP
+
+What it should show and does not: (1) a census-scope glyph per door — whether the z ≤ 12 / non-(13+2odd) subspace was actually exhausted (the Q1 stake); "closed" must mean the same thing at every door, and 233's five-valued per-core counts hint the enumeration shape differed; (2) the family-size distribution (max per-core improper count and spread), not just totals — 223's 7,750×64 constancy is stated not to be a graph invariant, so the 233 spread is the compute-risk metric; (3) the door predicate and the budget denominator — Σ log p against 481.07 measures progress only if "every minimal counterexample meets one of these doors" is a theorem; display that theorem's status, else the bar measures effort, not coverage; (4) γ-provenance — exhaustive vs lower-bound (γ = 13 is a hypothesis of every converse-type inference downstream); (5) reproducibility granularity — two machines ≠ two codebases; mark independent reimplementation, and the kill-depth D actually needed per door; (6) a better y-variable: excess γ − ⌈N/|S|⌉, with the spectral ratio plotted (γ is pinned near 13; the signal is the excess, and the ratio anti-correlates with size — 401 at 0.375 is spectrally easier than 191 at 0.549); (7) running doors: fraction of core-translation classes enumerated.
+What would make it misleading: the budget bar read as theorem-coverage; single-machine closures coloured as verified; the log p axis selling "bigger = harder"; omission of not-started doors inside the ≤ 760 range (selection bias in what gets drawn); and — most of all — hiding that "improper ⇒ forced" (Q1) is open: every closed door's census currently rests on it, so the map needs a global banner carrying Q1's status.
+
+ONE CHEAP TEST (p = 223, one hour, mostly minutes). Step 1: for each of the 7,215 cores C and each a ∈ C compute priv(a) = (S−a) ∖ ⋃_{a′≠a}(S−a′). This is exhaustive for unique-miss 12-sets by the bijection in Q1(3b). Step 2: for any witness (A = C−a, τ₀), list the ≈28 window y's for each parity, exclude class(8y) ∈ C and 8y ≡ 0 (mod p); any surviving pair (y₁, y₂) with distinct classes gives the explicit primitive z = 12 improper lift — a counterexample to the converse and a hole in the census, verifiable by pure per-class arithmetic in seconds. Step 3 (if Step 1 is empty): ILP-minimise |Z_N ∖ (S−A)| over 12-sets and 11-sets (111 binaries, 111 covering constraints each — seconds per target); minimum ≥ 3 (and ≥ 2 for 11-sets, with the v₂-mix windows checked as in Step 2) kills the z ≤ 12 and z = 11 routes and upgrades "every 12-set misses ≥ 3 classes" to a lemma target, retroactively justifying the census's completeness.
+
+WHAT WOULD PROVE ME WRONG. (a) A brute-force check of one row against my classification Q1(1): any coordinate whose blocked-lift set violates "exactly 2 / 0-or-2^v with the stated parity and window structure" breaks the reduction theorem and everything built on it. (b) Step 1 returning all private sets ≥ 2 and Step 3 returning minima ≥ 3 (12-sets) and ≥ 2 (11-sets): my ESTIMATE Q1(4) is then wrong, the literal refutation loses its input, and the primitive converse survives its sharpest test at 223/233 (though it would still not be proved — z ≤ 10 and other primes remain). (c) For Q2: any improper level-17 lift with 8 ≤ z < γ′ refutes the dichotomy — impossible if my σ ∈ {0, 16} derivation holds, so the falsifier there is again a one-row brute force at p = 223 × 17 lifts. (d) For Q3: if the chair's clarification of "improper" shows the census did exhaust z ≤ 12 by a pruning I have not reconstructed, then my framing of the census-hole alternative collapses to the lemma outcome — I would then stand corrected on the estimate and withdraw prediction (4).
+
+Holding: the reduction theorem, the classification, and both constructions; the estimates are estimates.
+
+GLM
