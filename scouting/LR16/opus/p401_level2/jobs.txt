@@ -1,0 +1,4 @@
+0_0 root=0 sub=0 raw_irred15=3880 rawscan=30741 nodes=14220970034 leaves=30741 secs=5267.72 | TOTAL rows=3880 survivors=2
+1_0 root=1 sub=0 raw_irred15=5016 rawscan=21346 nodes=11981528350 leaves=21346 secs=4508.89 | TOTAL rows=5016 survivors=1
+5_5 root=5 sub=5 raw_irred15=5361 rawscan=23846 nodes=7320283033 leaves=23846 secs=2813.5 | TOTAL rows=5361 survivors=1
+15_11 root=15 sub=11 raw_irred15=266 rawscan=7246 nodes=2919213097 leaves=7246 secs=1119.27 | TOTAL rows=266 survivors=1
