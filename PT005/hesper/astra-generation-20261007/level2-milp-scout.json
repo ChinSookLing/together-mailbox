@@ -1,0 +1,9 @@
+{
+  "input": "p401-level2-ir-except-five.opb",
+  "time_limit_seconds": 45.0,
+  "elapsed_seconds": 45.01275736700018,
+  "status": 1,
+  "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+  "proof_file_produced": false,
+  "evidence_status": "TEST_ONLY_NOT_A_CERTIFIED_UNSAT_RESULT"
+}
