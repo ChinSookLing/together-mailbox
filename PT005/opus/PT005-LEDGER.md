@@ -5,6 +5,7 @@ Updated: 2026-10-04 19:50 +08 (L1 extended, L1a and L6 added, L5 superseded; app
 Updated: 2026-10-05 09:09 +08 (L6 pending line updated; L7, L8, L9 added; approved by Tuzi 2026-10-05 09:08).
 Updated: 2026-10-05 11:18 +08 (L7 CHAIR-CHECKED -> HAND-CHECKED; approved by Tuzi 2026-10-05 11:08, wall line 86).
 Updated: 2026-10-05 18:12 +08 (L10 added; approved by Tuzi 2026-10-05 18:10).
+Updated: 2026-10-07 21:12 +08 (L12, L13 added; approved by Tuzi 2026-10-07 21:12. L11 is reserved for p = 401, deferred by Tuzi 2026-10-06 16:24).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -126,4 +127,29 @@ USES   = L7 (HAND-CHECKED); unit-orbit reduction of rows to canonical cores (cha
 OPEN DEPENDENCIES = the same two as L2 (independent generator; independent LRC(14)), plus a second reader of the
          completeness of the (a)/(b)/(c) split as stated here.
 NOT a certificate. The forced-family lemma (chair note 30) explains the count 496,000 but is not used by this gate.
+
+## L12 · Prime gate p = 233 (K = 15, 16 runners), level 16, three parts
+STATUS = REPRODUCED · approved by Tuzi 2026-10-07 21:12 +08 (chair note 38)
+SCOPE  = same three-part split as L10 (p = 233 has no cover on ≤ 12 classes):
+         (a) 146 jobs, 49,184,257 rows, 0 alive at level 16;
+         (b) 88,134 covers, 10,223,544 extension rows: 489,626 die at level 4, 69 at level 8, 1,316 PERSISTENT, each
+             containing a covering 13-class subset;
+         (c) 117 canonical cores, 793,962 rows, 63,652,160 improper level-16 lifts, all handled by L7; 0 unhandled.
+         Two machines: chair (chair note 32) and Tuzi's office PC (Hesper, PT005/hesper/officepc-p233); chair re-compared
+         (c) with compare_cores.py v2 (MATCH), (a) job by job on 6 fields (0 differences), (b) counts equal and the 1,316
+         persistent rows equal as a set. Same code on both machines.
+USES   = L7 (HAND-CHECKED); unit-orbit reduction (chair note 29, DeepSeek HOLDS); read records as for L10 plus
+         run_cores.py v3 and shift_rows.cpp v3 (DeepSeek, b0f5aef).
+OPEN DEPENDENCIES = as L10. NOT a certificate.
+
+## L13 · Prime gate p = 191 (K = 15, 16 runners), level 16, three parts
+STATUS = REPRODUCED · approved by Tuzi 2026-10-07 21:12 +08 (chair note 38)
+SCOPE  = same three-part split as L10 (p = 191 has no cover on ≤ 12 classes):
+         (a) 96 jobs, 12,083,620 rows, 0 alive at level 16;
+         (b) 42,114 covers, 4,000,830 extension rows: 366,021 die at level 4, 484 at level 8, 2,349 PERSISTENT, each
+             containing a covering 13-class subset;
+         (c) 260 canonical cores, 1,185,600 rows, 99,751,808 improper level-16 lifts, all handled by L7; 0 unhandled.
+         Two machines: chair (chair note 34) and Tuzi's office PC (Hesper, PT005/hesper/officepc-p191); chair re-compared
+         as for L12 (all MATCH; 2,349 persistent rows equal as a set). Same code on both machines.
+USES   = as L12. OPEN DEPENDENCIES = as L10. NOT a certificate.
 
