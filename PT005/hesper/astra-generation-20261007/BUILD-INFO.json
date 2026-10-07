@@ -1,0 +1,6 @@
+{
+  "created_at": "2026-10-07T16:40:12+08:00",
+  "python": "3.12.14",
+  "scope": "Astra own local finite checks and unsolved OPB inputs; no gate certificate",
+  "solver_scout": "SciPy/HiGHS, 45 seconds, time limit; no proof"
+}
