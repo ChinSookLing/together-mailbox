@@ -1,0 +1,4 @@
+# No read record is pinned. "-" refuses p241c and does not compile.
+# A later reviewed revision replaces these two fields with one mailbox path and that file's sha256.
+path -
+sha256 -
