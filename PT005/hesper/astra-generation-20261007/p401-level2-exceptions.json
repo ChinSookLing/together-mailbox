@@ -1,0 +1,466 @@
+{
+  "p": 401,
+  "scope": "irredundant level-2 branch",
+  "variables": 600,
+  "base_constraints": 1155,
+  "constraints_with_exception_blocks": 1177,
+  "normalizations_per_seed": [
+    8,
+    8,
+    2,
+    2,
+    2
+  ],
+  "total_normalizations": 22,
+  "all_seed_models_validated": true,
+  "LP_relaxation_fractional_feasible": true,
+  "LP_assignment": {
+    "x1": "1",
+    "x400": "0",
+    "other_x": "7/199",
+    "all_q": "1/2"
+  },
+  "exception_list_completeness": "NOT_PROVED; UNSAT proof needed",
+  "models": [
+    {
+      "normalized_speeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "excluded_by_constraint": 1156
+    },
+    {
+      "normalized_speeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271,
+        272
+      ],
+      "excluded_by_constraint": 1157
+    },
+    {
+      "normalized_speeds": [
+        1,
+        2,
+        3,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323
+      ],
+      "excluded_by_constraint": 1158
+    },
+    {
+      "normalized_speeds": [
+        1,
+        2,
+        113,
+        114,
+        115,
+        116,
+        227,
+        228,
+        229,
+        230,
+        231,
+        342,
+        343,
+        344,
+        345
+      ],
+      "excluded_by_constraint": 1159
+    },
+    {
+      "normalized_speeds": [
+        1,
+        53,
+        54,
+        106,
+        107,
+        160,
+        161,
+        213,
+        214,
+        267,
+        268,
+        320,
+        321,
+        374,
+        375
+      ],
+      "excluded_by_constraint": 1160
+    },
+    {
+      "normalized_speeds": [
+        1,
+        61,
+        62,
+        123,
+        124,
+        184,
+        185,
+        186,
+        246,
+        247,
+        308,
+        309,
+        369,
+        370,
+        371
+      ],
+      "excluded_by_constraint": 1161
+    },
+    {
+      "normalized_speeds": [
+        1,
+        72,
+        73,
+        74,
+        145,
+        146,
+        147,
+        218,
+        219,
+        220,
+        291,
+        292,
+        293,
+        364,
+        365
+      ],
+      "excluded_by_constraint": 1162
+    },
+    {
+      "normalized_speeds": [
+        1,
+        88,
+        89,
+        90,
+        177,
+        178,
+        179,
+        266,
+        267,
+        268,
+        269,
+        355,
+        356,
+        357,
+        358
+      ],
+      "excluded_by_constraint": 1163
+    },
+    {
+      "normalized_speeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        15,
+        28
+      ],
+      "excluded_by_constraint": 1164
+    },
+    {
+      "normalized_speeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        258,
+        263,
+        264,
+        265,
+        266,
+        267,
+        268,
+        269,
+        270,
+        271
+      ],
+      "excluded_by_constraint": 1165
+    },
+    {
+      "normalized_speeds": [
+        1,
+        2,
+        3,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        166,
+        319,
+        320,
+        321,
+        322,
+        323
+      ],
+      "excluded_by_constraint": 1166
+    },
+    {
+      "normalized_speeds": [
+        1,
+        4,
+        113,
+        114,
+        115,
+        116,
+        227,
+        228,
+        229,
+        230,
+        231,
+        342,
+        343,
+        344,
+        345
+      ],
+      "excluded_by_constraint": 1167
+    },
+    {
+      "normalized_speeds": [
+        1,
+        53,
+        54,
+        107,
+        160,
+        161,
+        212,
+        213,
+        214,
+        267,
+        268,
+        320,
+        321,
+        374,
+        375
+      ],
+      "excluded_by_constraint": 1168
+    },
+    {
+      "normalized_speeds": [
+        1,
+        61,
+        62,
+        123,
+        124,
+        185,
+        186,
+        246,
+        247,
+        308,
+        309,
+        368,
+        369,
+        370,
+        371
+      ],
+      "excluded_by_constraint": 1169
+    },
+    {
+      "normalized_speeds": [
+        1,
+        72,
+        73,
+        74,
+        145,
+        146,
+        147,
+        218,
+        219,
+        291,
+        292,
+        293,
+        362,
+        364,
+        365
+      ],
+      "excluded_by_constraint": 1170
+    },
+    {
+      "normalized_speeds": [
+        1,
+        86,
+        88,
+        89,
+        90,
+        177,
+        178,
+        179,
+        266,
+        267,
+        268,
+        269,
+        355,
+        356,
+        357
+      ],
+      "excluded_by_constraint": 1171
+    },
+    {
+      "normalized_speeds": [
+        1,
+        8,
+        78,
+        94,
+        120,
+        140,
+        189,
+        218,
+        248,
+        264,
+        288,
+        342,
+        358,
+        366,
+        374
+      ],
+      "excluded_by_constraint": 1172
+    },
+    {
+      "normalized_speeds": [
+        1,
+        40,
+        66,
+        157,
+        172,
+        216,
+        256,
+        260,
+        282,
+        304,
+        322,
+        326,
+        348,
+        362,
+        394
+      ],
+      "excluded_by_constraint": 1173
+    },
+    {
+      "normalized_speeds": [
+        1,
+        9,
+        26,
+        28,
+        90,
+        124,
+        160,
+        170,
+        202,
+        222,
+        228,
+        274,
+        312,
+        326,
+        378
+      ],
+      "excluded_by_constraint": 1174
+    },
+    {
+      "normalized_speeds": [
+        1,
+        10,
+        42,
+        86,
+        89,
+        92,
+        108,
+        142,
+        192,
+        196,
+        242,
+        292,
+        302,
+        326,
+        334
+      ],
+      "excluded_by_constraint": 1175
+    },
+    {
+      "normalized_speeds": [
+        1,
+        30,
+        68,
+        75,
+        78,
+        124,
+        146,
+        192,
+        198,
+        216,
+        276,
+        294,
+        344,
+        354,
+        380
+      ],
+      "excluded_by_constraint": 1176
+    },
+    {
+      "normalized_speeds": [
+        1,
+        36,
+        112,
+        132,
+        139,
+        160,
+        172,
+        222,
+        244,
+        254,
+        284,
+        304,
+        350,
+        386,
+        394
+      ],
+      "excluded_by_constraint": 1177
+    }
+  ]
+}
