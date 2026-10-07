@@ -1,0 +1,123 @@
+[
+  {
+    "p": 17,
+    "raw": false,
+    "residue_types": 128,
+    "boolean_variables": 640,
+    "constraints": 376,
+    "time_constraints": 113,
+    "coefficient_occurrences": 5673,
+    "bytes": 47628,
+    "sha256": "4d2a83466c2038ce30c148bb164d58609caf5f5d1ad4aac7f1e0eeff85fde713",
+    "status": "INPUT_GENERATED_NOT_SOLVED"
+  },
+  {
+    "p": 17,
+    "constraints_verified": 376,
+    "result": "ENCODING_CHECKED_NOT_AN_UNSAT_PROOF"
+  },
+  {
+    "p": 233,
+    "raw": true,
+    "residue_types": 1856,
+    "boolean_variables": 9280,
+    "constraints": 5341,
+    "time_constraints": 1625,
+    "coefficient_occurrences": 413189,
+    "bytes": 3710160,
+    "sha256": "eba6f958aadf601ecb4eb6b7c1223485d3bb7cec25216ce580e6c98fdc9fe895",
+    "status": "INPUT_GENERATED_NOT_SOLVED"
+  },
+  {
+    "p": 233,
+    "constraints_verified": 5341,
+    "result": "ENCODING_CHECKED_NOT_AN_UNSAT_PROOF"
+  },
+  {
+    "p": 233,
+    "raw": false,
+    "residue_types": 1856,
+    "boolean_variables": 9280,
+    "constraints": 5344,
+    "time_constraints": 1625,
+    "coefficient_occurrences": 432213,
+    "bytes": 3882711,
+    "sha256": "60aaa481c2667ed6165c70f78eaa0d7b149f377388ec80ca3aa1e51a162db232",
+    "status": "INPUT_GENERATED_NOT_SOLVED"
+  },
+  {
+    "p": 233,
+    "constraints_verified": 5344,
+    "result": "ENCODING_CHECKED_NOT_AN_UNSAT_PROOF"
+  },
+  {
+    "p": 239,
+    "raw": false,
+    "residue_types": 1904,
+    "boolean_variables": 9520,
+    "constraints": 5482,
+    "time_constraints": 1667,
+    "coefficient_occurrences": 451714,
+    "bytes": 4058370,
+    "sha256": "b1bc8d10e6ceca38d21dab003425a41faaebeb9db9f7c48e5bc876817000c4dd",
+    "status": "INPUT_GENERATED_NOT_SOLVED"
+  },
+  {
+    "p": 239,
+    "constraints_verified": 5482,
+    "result": "ENCODING_CHECKED_NOT_AN_UNSAT_PROOF"
+  },
+  {
+    "p": 239,
+    "LP_fractional_feasible": true,
+    "denominator": 119,
+    "zero_residue_multiplicity_numerator": 10,
+    "conclusion": "root LP infeasibility/dual certificate is impossible for this formulation"
+  },
+  {
+    "p": 401,
+    "raw": false,
+    "residue_types": 3200,
+    "boolean_variables": 16000,
+    "constraints": 9208,
+    "time_constraints": 2801,
+    "coefficient_occurrences": 1217001,
+    "bytes": 11401879,
+    "sha256": "1ce65ca77bb2bbf6964577f390a760c8ba55ea2b1599351baa05ac2ae5eb99ad",
+    "status": "INPUT_GENERATED_NOT_SOLVED"
+  },
+  {
+    "p": 401,
+    "constraints_verified": 9208,
+    "result": "ENCODING_CHECKED_NOT_AN_UNSAT_PROOF"
+  },
+  {
+    "p": 401,
+    "LP_fractional_feasible": true,
+    "denominator": 200,
+    "zero_residue_multiplicity_numerator": 10,
+    "conclusion": "root LP infeasibility/dual certificate is impossible for this formulation"
+  },
+  {
+    "control": "p17 known grid-improper L7-failing tuple",
+    "result": "SAT_ASSIGNMENT_VERIFIED",
+    "meaning": "encoder is not unconditionally UNSAT"
+  },
+  {
+    "control": "p233 forced family with duplicate odd residue",
+    "raw": "SAT_ASSIGNMENT_VERIFIED",
+    "residual": "REJECTED_BY_THREE_L7_FAILURE_CONSTRAINTS",
+    "failed_constraint_indices": [
+      3717,
+      3718,
+      3719
+    ]
+  },
+  {
+    "control": "p401 tight tuple 1..15",
+    "result": "REJECTED_AT_GOOD_BOUNDARY_TIME_1_OVER_16",
+    "failed_constraint_indices": [
+      6408
+    ]
+  }
+]
