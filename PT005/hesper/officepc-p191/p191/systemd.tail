@@ -1,0 +1,30 @@
+9468823640e258b72010b849c151a729eaa9ab137c0fdaed5b7b0690dd2464d5  run_cores.py
+47205565a4f1f815efd884122f69a365b5847c653d487a2d630e2be658cec4ce  shift_rows.cpp
+70c521d9cff9a9b505ee5f425bac43bc3d8c65e024d5ea8a4ffcd15ac5236cf8  compare_cores.py
+run_cores.py: OK
+shift_rows.cpp: OK
+compare_cores.py: OK
+km1low smax=13 canonical=260 nodes=13991504 leaves=254 secs=5.97216
+6fce3acbe19b1a19b67f08cfce318880cca2a68fd41193d0414a22bb07c39c13  km1low13_p191.txt
+2026-10-07 16:50:26 +08
+cores 260 (expected 65), all 13 distinct classes
+{"cores_done": 260, "of": 260, "rows": 1185600, "l16_lifts": 99751808, "unhandled": 0, "rows_unhandled": 0, "secs": 17300.7}
+2026-10-07 17:14:53 +08
+cores: mine 260 chair 260 differing/missing 0 extra 0 | duplicates mine/chair 0 0 | unreadable lines mine/chair 0 0
+mine totals: rows 1185600 l16_lifts 99751808 unhandled 0 rows_unhandled 0
+VERDICT: MATCH
+/home/gigabyte/kit/kcascade_run.py: OK
+/home/gigabyte/kit/compare_239.py: OK
+2026-10-07 17:16:54 +08
+km1: {'roots': 11, 'covers': 42114, 'gen_secs': 42.925327, 'ext_rows': 4000830, 'ext_survivors': 368854}
+ir jobs 96 done 0 todo 96
+{"ir_jobs_done": 96, "of": 96, "rows": 12083620, "casc_rows": 12083620, "survivors_l2": 136548, "rows_alive_at_l16": 0}
+2026-10-07 17:21:04 +08
+irredundant jobs: mine 96 chair 96 differing or missing 0 []
+rows 12083620 level-2 survivors 136548 alive at level 16 0
+generation CPU-s (sum over jobs): 1068.6
+reducible roots mine 11 chair 11 OK
+reducible covers mine 42114 chair 42114 OK
+reducible ext_rows mine 4000830 chair 4000830 OK
+reducible ext_survivors mine 368854 chair 368854 OK
+VERDICT: MATCH
