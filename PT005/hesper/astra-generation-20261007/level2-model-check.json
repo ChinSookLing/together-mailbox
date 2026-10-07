@@ -1,0 +1,24 @@
+{
+  "p": 401,
+  "scope": "irredundant level-2 branch",
+  "variables": 600,
+  "base_constraints": 1155,
+  "constraints_with_exception_blocks": 1177,
+  "normalizations_per_seed": [
+    8,
+    8,
+    2,
+    2,
+    2
+  ],
+  "total_normalizations": 22,
+  "all_seed_models_validated": true,
+  "LP_relaxation_fractional_feasible": true,
+  "LP_assignment": {
+    "x1": "1",
+    "x400": "0",
+    "other_x": "7/199",
+    "all_q": "1/2"
+  },
+  "exception_list_completeness": "NOT_PROVED; UNSAT proof needed"
+}
