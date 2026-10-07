@@ -1,0 +1,3 @@
+cores: mine 260 chair 260 differing/missing 0 extra 0 | duplicates mine/chair 0 0 | unreadable lines mine/chair 0 0
+mine totals: rows 1185600 l16_lifts 99751808 unhandled 0 rows_unhandled 0
+VERDICT: MATCH
