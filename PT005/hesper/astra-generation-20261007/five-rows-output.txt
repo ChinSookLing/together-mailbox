@@ -1,0 +1,55 @@
+DIRECT_GRID row=1 level=2 all_children=32768 exact survivor sets compared: PASS
+SURVIVOR row=1 level=2: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+ROW 1 LEVEL 2 TOTAL 1 ZERO_MOD_L 7:1 ODD_COUNT 8:1 SHIFT_D_FIRST UNHANDLED 1 seconds 0.017556
+DIRECT_GRID row=1 level=4 all_children=32768 exact survivor sets compared: PASS
+ROW 1 LEVEL 4 TOTAL 2 ZERO_MOD_L 3:2 ODD_COUNT 8:2 SHIFT_D_FIRST UNHANDLED 2 seconds 0.0330868
+DIRECT_GRID row=1 level=8 all_children=65536 exact survivor sets compared: PASS
+ROW 1 LEVEL 8 TOTAL 4 ZERO_MOD_L 1:4 ODD_COUNT 8:4 SHIFT_D_FIRST UNHANDLED 4 seconds 0.0890794
+VAL8 row=1 level=8 (odd,2mod4,4mod8,0mod8) [8,4,2,1]:4
+DIRECT_GRID row=1 level=16 all_children=131072 exact survivor sets compared: PASS
+ROW 1 LEVEL 16 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 0.194132
+VAL8 row=1 level=16 (odd,2mod4,4mod8,0mod8)
+DIRECT_GRID row=2 level=2 all_children=32768 exact survivor sets compared: PASS
+SURVIVOR row=2 level=2: 1 2 3 4 5 6 7 8 9 10 11 12 13 15 28
+ROW 2 LEVEL 2 TOTAL 1 ZERO_MOD_L 7:1 ODD_COUNT 8:1 SHIFT_D_FIRST UNHANDLED 1 seconds 0.0211384
+DIRECT_GRID row=2 level=4 all_children=32768 exact survivor sets compared: PASS
+ROW 2 LEVEL 4 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 0.0312865
+DIRECT_GRID row=2 level=8 all_children=0 exact survivor sets compared: PASS
+ROW 2 LEVEL 8 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 9.31e-07
+VAL8 row=2 level=8 (odd,2mod4,4mod8,0mod8)
+DIRECT_GRID row=2 level=16 all_children=0 exact survivor sets compared: PASS
+ROW 2 LEVEL 16 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 7.11e-07
+VAL8 row=2 level=16 (odd,2mod4,4mod8,0mod8)
+DIRECT_GRID row=3 level=2 all_children=32768 exact survivor sets compared: PASS
+SURVIVOR row=3 level=2: 402 2 406 408 8 410 412 414 430 432 38 60 91 149 566
+ROW 3 LEVEL 2 TOTAL 1 ZERO_MOD_L 13:1 ODD_COUNT 2:1 SHIFT_D_FIRST UNHANDLED 1 seconds 0.0125137
+DIRECT_GRID row=3 level=4 all_children=32768 exact survivor sets compared: PASS
+ROW 3 LEVEL 4 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 0.00839031
+DIRECT_GRID row=3 level=8 all_children=0 exact survivor sets compared: PASS
+ROW 3 LEVEL 8 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 1.061e-06
+VAL8 row=3 level=8 (odd,2mod4,4mod8,0mod8)
+DIRECT_GRID row=3 level=16 all_children=0 exact survivor sets compared: PASS
+ROW 3 LEVEL 16 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 1.021e-06
+VAL8 row=3 level=16 (odd,2mod4,4mod8,0mod8)
+DIRECT_GRID row=4 level=2 all_children=32768 exact survivor sets compared: PASS
+SURVIVOR row=4 level=2: 402 406 408 8 410 412 414 420 430 449 60 480 118 139 586
+ROW 4 LEVEL 2 TOTAL 1 ZERO_MOD_L 13:1 ODD_COUNT 2:1 SHIFT_D_FIRST UNHANDLED 1 seconds 0.0108827
+DIRECT_GRID row=4 level=4 all_children=32768 exact survivor sets compared: PASS
+ROW 4 LEVEL 4 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 0.0068796
+DIRECT_GRID row=4 level=8 all_children=0 exact survivor sets compared: PASS
+ROW 4 LEVEL 8 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 9.31e-07
+VAL8 row=4 level=8 (odd,2mod4,4mod8,0mod8)
+DIRECT_GRID row=4 level=16 all_children=0 exact survivor sets compared: PASS
+ROW 4 LEVEL 16 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 8.62e-07
+VAL8 row=4 level=16 (odd,2mod4,4mod8,0mod8)
+DIRECT_GRID row=5 level=2 all_children=32768 exact survivor sets compared: PASS
+SURVIVOR row=5 level=2: 402 7 418 18 44 450 50 484 104 506 122 524 550 171 174
+ROW 5 LEVEL 2 TOTAL 1 ZERO_MOD_L 13:1 ODD_COUNT 2:1 SHIFT_D_FIRST UNHANDLED 1 seconds 0.00931031
+DIRECT_GRID row=5 level=4 all_children=32768 exact survivor sets compared: PASS
+ROW 5 LEVEL 4 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 0.00685281
+DIRECT_GRID row=5 level=8 all_children=0 exact survivor sets compared: PASS
+ROW 5 LEVEL 8 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 1.011e-06
+VAL8 row=5 level=8 (odd,2mod4,4mod8,0mod8)
+DIRECT_GRID row=5 level=16 all_children=0 exact survivor sets compared: PASS
+ROW 5 LEVEL 16 TOTAL 0 ZERO_MOD_L ODD_COUNT SHIFT_D_FIRST UNHANDLED 0 seconds 8.62e-07
+VAL8 row=5 level=16 (odd,2mod4,4mod8,0mod8)
