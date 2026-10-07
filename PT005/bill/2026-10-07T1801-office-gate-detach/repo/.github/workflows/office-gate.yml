@@ -1,0 +1,68 @@
+# Private repo only. workflow_dispatch only. Do not add pull_request or pull_request_target.
+# The job does not checkout the dispatched commit. It runs the reviewed tree installed at
+# $HOME/office-gate/dispatcher, and only if SHA256SUMS matches the hash below.
+name: office-gate
+on:
+  workflow_dispatch:
+    inputs:
+      gate:
+        description: Menu item
+        required: true
+        type: choice
+        options:
+          - status
+          - p233-pack
+          - p191
+          - p241ab
+          - p241c
+          - collect
+      collect_which:
+        description: Used only when gate is collect
+        required: true
+        default: none
+        type: choice
+        options:
+          - none
+          - p191
+          - p241ab
+          - p241c
+          - all
+permissions:
+  contents: write
+concurrency:
+  group: office-gate
+  cancel-in-progress: false
+jobs:
+  gate:
+    runs-on: [self-hosted, office-wsl]
+    timeout-minutes: 30
+    steps:
+      - name: reviewed local menu
+        env:
+          GATE: ${{ inputs.gate }}
+          COLLECT_WHICH: ${{ inputs.collect_which }}
+          RUN_ID: ${{ github.run_id }}
+          GITHUB_TOKEN: ""
+          GH_TOKEN: ""
+          RESULT_TOKEN: ""
+          ACTIONS_RUNTIME_TOKEN: ""
+        run: |
+          set +x
+          set -euo pipefail
+          cd /tmp
+          sums="${HOME}/office-gate/dispatcher/SHA256SUMS"
+          got="$(sha256sum "$sums" | awk '{ print $1 }')"
+          test "$got" = "1c5add965c4c5c190c87b998ee8efbd79f733c8ce41ffabd2adb67929e452eef"
+          exec bash "${HOME}/office-gate/dispatcher/gates/entry.sh"
+      - name: publish results
+        if: always()
+        env:
+          GATE: ${{ inputs.gate }}
+          RUN_ID: ${{ github.run_id }}
+          RESULT_TOKEN: ${{ github.token }}
+          RESULT_REPO: ${{ github.repository }}
+        run: |
+          set +x
+          set -euo pipefail
+          cd /tmp
+          exec bash "${HOME}/office-gate/dispatcher/gates/publish-step.sh"
