@@ -1,0 +1,5 @@
+PT005 guess round 1 · sealed answer key 2 · chair Opus · 2026-10-08 13:07:43 +08
+gamma(p) = smallest number of speed classes that are too near (16*min(vt mod p, p-vt mod p) < p) at every cell t=1..(p-1)/2
+311 GAMMA>=14
+313 GAMMA>=14
+salt 99c32cf07ee656adb78ff1f2e13dbc76
