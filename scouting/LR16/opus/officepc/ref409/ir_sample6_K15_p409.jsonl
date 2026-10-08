@@ -1,0 +1,6 @@
+{"r": 3, "s": 5, "rows": 19, "nodes": 4722226096, "secs": 2047.6, "casc_rows": 19, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
+{"r": 6, "s": 15, "rows": 16, "nodes": 1900625483, "secs": 780.132, "casc_rows": 16, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
+{"r": 10, "s": 11, "rows": 13, "nodes": 2842632093, "secs": 1121.42, "casc_rows": 13, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
+{"r": 0, "s": 0, "rows": 402, "nodes": 10225232652, "secs": 4233.82, "casc_rows": 402, "casc_survivors": 1, "deep": [], "n_survivor_lines": 1}
+{"r": 14, "s": 16, "rows": 0, "nodes": 1156774233, "secs": 454.484, "casc_rows": 0, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
+{"r": 20, "s": 0, "rows": 33, "nodes": 2576718794, "secs": 1019.36, "casc_rows": 33, "casc_survivors": 0, "deep": [], "n_survivor_lines": 0}
