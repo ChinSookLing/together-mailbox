@@ -1,0 +1,6 @@
+compile: gcc -O2 -DMAXNEW -o pt006_export pt006_export_v3.c
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+machine: x86_64 Linux
+run: ./pt006_export > pt006_nodes_p223_v3.jsonl  (it stops by hand; the 16 nodes are all written by s2 node 31,565,896; the run was cut by timeout 500 s at the progress line below)
+progress nodes=402653184 s2=94850631 small:0/0 any:8/8
+source sha256: 2f050842773181352f3a665eed3207bb5a0d32750e1f763a804ff075c0089050
