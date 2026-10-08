@@ -1,0 +1,2 @@
+cores 936 (expected 65), all 13 distinct classes
+{"cores_done": 936, "of": 936, "rows": 6795360, "l16_lifts": 0, "unhandled": 0, "rows_unhandled": 0, "secs": 3814.2}
