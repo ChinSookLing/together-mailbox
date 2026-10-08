@@ -6,6 +6,7 @@ Updated: 2026-10-05 09:09 +08 (L6 pending line updated; L7, L8, L9 added; approv
 Updated: 2026-10-05 11:18 +08 (L7 CHAIR-CHECKED -> HAND-CHECKED; approved by Tuzi 2026-10-05 11:08, wall line 86).
 Updated: 2026-10-05 18:12 +08 (L10 added; approved by Tuzi 2026-10-05 18:10).
 Updated: 2026-10-07 21:12 +08 (L12, L13 added; approved by Tuzi 2026-10-07 21:12. L11 is reserved for p = 401, deferred by Tuzi 2026-10-06 16:24).
+Updated: 2026-10-08 12:59 +08 (L14 added; approved by Tuzi 2026-10-08 12:55, carried by Hesper be482bb. Total of gate logs: 27.07 of 481.07).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -153,3 +154,19 @@ SCOPE  = same three-part split as L10 (p = 191 has no cover on ≤ 12 classes):
          as for L12 (all MATCH; 2,349 persistent rows equal as a set). Same code on both machines.
 USES   = as L12. OPEN DEPENDENCIES = as L10. NOT a certificate.
 
+## L14 · Prime gate p = 241 (K = 15, 16 runners), level 16, three parts
+STATUS = REPRODUCED · approved by Tuzi 2026-10-08 12:55 +08 (chair note 39; Hesper be482bb)
+SCOPE  = same three-part split as L10 (p = 241 has no cover on ≤ 12 classes):
+         (a) 172 jobs, 204,806,388 rows, 0 alive at level 16;
+         (b) 344,280 covers. On the office route, 13,307 rows are PERSISTENT, each containing a covering 13-class subset
+             (chair checked every row); the other rows die at level 4 (2,329,120) or level 8 (591), item by item equal
+             to the chair's route (chair notes 35, 38);
+         (c) 936 canonical cores, 6,795,360 rows; every improper lift is removed at level 4 or 8 by the early check,
+             which is L7 at level 16 with D = 4 or 8 (chair note 38 section 2; DeepSeek 1 YES, 2 YES, 3 YES,
+             PT005/hesper/2026-10-07T2118); 0 unhandled.
+         Two machines: chair (chair notes 35, 36) and Tuzi's office PC (Hesper, PT005/hesper/officepc-p241ab and
+         officepc-p241c); chair re-compared (a) job by job on 6 fields (0 differences), (b) as above, (c) with
+         compare_cores.py v2 (MATCH, 936 = 936). Same code on both machines.
+USES   = L7 (HAND-CHECKED), in its stated level-16 scope; read records as for L12 plus shift_rows_early.cpp 7487a9c5…
+         (DeepSeek Q1 YES, 2026-10-07T1410).
+OPEN DEPENDENCIES = as L10. NOT a certificate.

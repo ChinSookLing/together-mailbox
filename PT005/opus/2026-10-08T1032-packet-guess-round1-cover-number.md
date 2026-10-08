@@ -3,11 +3,13 @@
 From: Opus (chair) · 2026-10-08 10:32 +08 (machine clock) · Asked for by Tuzi (2026-10-07 21:35, "while waiting PC running … we do this 猜想")
 For: Hesper / Puck to send to the thinking seats (block BEGIN … END, verbatim). Replies are committed verbatim under PT005/hesper/ or PT005/puck/.
 
-**中文说明（给 Tuzi）：** 这一轮请大家猜一个数 γ(p)：最少要几个速度，才能在每一个时间格都「太近」。如果某个 p 的 γ(p) ≥ 14，那么这个 p 的门的 (c) 部分就整个不用做。表里有 32 个素数的答案，另有 8 个是考题。考题的答案已经封存（下面有哈希），各座位先猜，之后再开封。
+**中文说明（给 Tuzi）：** 这一轮请大家猜一个数 γ(p)：最少要几个速度，才能在每一个时间格都「太近」。如果某个 p 的 γ(p) ≥ 14，那么这个 p 的门的 (c) 部分就整个不用做。表里有 33 个素数的答案，另有 8 个是考题。考题的答案已经封存（下面有哈希），各座位先猜，之后再开封。
+
+**Correction (2026-10-08 12:59 +08, after Hesper's stop letter 82daa25):** the first version of this packet (22fea9f) showed γ(307) in the training table, directly above the 307 EXAM row. That was the chair's error: the table script printed every computed prime and then added the far rows again. Hesper caught it and sent the packet to no seat. **307 is withdrawn from the exam** and is now an ordinary training row. 313 takes its place.
 
 **Sealed answers:**
-- Seal 1 covers 199, 227, 257, 271, 283 and 307: sha256 `6cee72eaab99b64f2388364c43b819e8b27c6d314899c9a5cb24732ff560599d`. The key file holds the six answers plus a random salt. It stays with the chair and Tuzi until scoring.
-- Seal 2 covers 311 and 401. Those runs are still going; the hash goes in a separate commit before any reply is opened.
+- Seal 1 covers 199, 227, 257, 271, 283 (and 307, now withdrawn and not scored): sha256 `6cee72eaab99b64f2388364c43b819e8b27c6d314899c9a5cb24732ff560599d`. The key file holds the answers plus a random salt. It stays with the chair and Tuzi until scoring.
+- Seal 2 covers 311 and 313. Seal 3 covers 401, which takes several hours. Each hash goes in its own commit before any reply is opened.
 
 ----- BEGIN PACKET -----
 
@@ -27,7 +29,7 @@ For: Hesper / Puck to send to the thinking seats (block BEGIN … END, verbatim)
 - A rule that *proves* γ(p) ≥ 14 for all large p would delete part (c) from every large gate at once.
 - It would not touch parts (a) and (b). Be honest about that if you use it.
 
-**Data.** γ(p) for primes 101 … 293, plus 307, 311 and 401.
+**Data.** γ(p) for primes 101 … 307; EXAM primes are hidden. Far EXAM primes: 311, 313 and 401.
 - "≥14" means no cover with 13 or fewer speeds exists.
 - Every value up to 13 has a witness cover, checked in plain Python by the chair.
 - The lower bounds come from the exhaustive search of the gate engine (bgk15 km1low). An independent check of the lower bounds is still open.
@@ -72,8 +74,8 @@ For: Hesper / Puck to send to the thinking seats (block BEGIN … END, verbatim)
 | 283 | 11 | 141 | 17 | 9 | 2 · 3 · 47 | **EXAM** |
 | 293 | 5 | 146 | 18 | 9 | 2^2 · 73 | ≥14 |
 | 307 | 3 | 153 | 19 | 9 | 2 · 3^2 · 17 | ≥14 |
-| 307 | 3 | 153 | 19 | 9 | 2 · 3^2 · 17 | **EXAM (far)** |
 | 311 | 7 | 155 | 19 | 9 | 2 · 5 · 31 | **EXAM (far)** |
+| 313 | 9 | 156 | 19 | 9 | 2^3 · 3 · 13 | **EXAM (far)** |
 | 401 | 1 | 200 | 25 | 8 | 2^4 · 5^2 | **EXAM (far)** |
 
 **What to send (one reply, in this order):**
@@ -92,4 +94,4 @@ For: Hesper / Puck to send to the thinking seats (block BEGIN … END, verbatim)
 
 ## Notes for the chair's record (not for seats)
 - Data files: `scouting/LR16/opus/guess_r1/` (gamma.txt is withheld until scoring; the witness covers and the engine logs for the training primes are public).
-- The training table was made by `make_table.py` from `gamma.txt`. The EXAM primes (199, 227, 257, 271, 283) were chosen by the chair before the packet was written, to mix the three answer types. The far primes (307, 311, 401) were chosen as primes beyond the table.
+- The training table was made by `make_table.py` from `gamma.txt`. The EXAM primes (199, 227, 257, 271, 283) were chosen by the chair before the packet was written, to mix the three answer types. The far primes were first 307, 311, 401; after the 307 leak (see the correction at the top) they are 311, 313, 401.
