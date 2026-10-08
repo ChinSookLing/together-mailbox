@@ -1,0 +1,6 @@
+/home/gigabyte/kit/kcascade_run.py: OK
+2026-10-08 10:14:07 +08
+km1: {'roots': 25, 'covers': 1, 'gen_secs': 10054.200600000002, 'ext_rows': 204, 'ext_survivors': 0}
+ir jobs 456 done 0 todo 456
+{"ir_jobs_done": 456, "of": 456, "rows": 17546, "casc_rows": 17546, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-10-09 03:05:03 +08
