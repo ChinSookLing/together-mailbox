@@ -9,7 +9,8 @@ For: Hesper / Puck to send to the thinking seats (block BEGIN … END, verbatim)
 
 **Sealed answers:**
 - Seal 1 covers 199, 227, 257, 271, 283 (and 307, now withdrawn and not scored): sha256 `6cee72eaab99b64f2388364c43b819e8b27c6d314899c9a5cb24732ff560599d`. The key file holds the answers plus a random salt. It stays with the chair and Tuzi until scoring.
-- Seal 2 covers 311 and 313. Seal 3 covers 401, which takes several hours. Each hash goes in its own commit before any reply is opened.
+- Seal 2 covers 311 and 313: sha256 `8a7bd4e97915762f9b572994141643144cbe53dfb89f518653bc41f8588f530c` (key made 2026-10-08 13:07:43 +08).
+- Seal 3 covers 401, which takes several hours. Its hash goes in its own commit before any reply is opened.
 
 ----- BEGIN PACKET -----
 
