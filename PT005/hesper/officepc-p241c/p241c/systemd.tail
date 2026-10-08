@@ -1,0 +1,15 @@
+9468823640e258b72010b849c151a729eaa9ab137c0fdaed5b7b0690dd2464d5  run_cores.py
+7487a9c5b926ae3310cd9c968e4d9f59e831403140081974f8273c66c8bfc053  shift_rows_early.cpp
+70c521d9cff9a9b505ee5f425bac43bc3d8c65e024d5ea8a4ffcd15ac5236cf8  compare_cores.py
+run_cores.py: OK
+shift_rows_early.cpp: OK
+compare_cores.py: OK
+km1low smax=13 canonical=936 nodes=255885697 leaves=925 secs=116.975
+312d59273a32a6fcc9b12766e047a29dce266ab30b6121b31a8406b7443c1108  km1low13_p241.txt
+2026-10-08 09:39:57 +08
+cores 936 (expected 65), all 13 distinct classes
+{"cores_done": 936, "of": 936, "rows": 6795360, "l16_lifts": 0, "unhandled": 0, "rows_unhandled": 0, "secs": 3814.2}
+2026-10-08 09:45:19 +08
+cores: mine 936 chair 936 differing/missing 0 extra 0 | duplicates mine/chair 0 0 | unreadable lines mine/chair 0 0
+mine totals: rows 6795360 l16_lifts 0 unhandled 0 rows_unhandled 0
+VERDICT: MATCH
