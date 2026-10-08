@@ -1,0 +1,18 @@
+STOP: engine exit 3: fake/f1 191 km1roots | oops
+exit=2
+STOP: p=191 root=0: file has 1 lines, engine says 2
+exit=2
+STOP: p=191 root=0: engine reports 5 covers but wrote no file
+exit=2
+STOP: p=191: km1roots says 2 roots, parsed 1 (1 distinct)
+exit=2
+{"p": 191, "roots": 11, "covers": 42114, "per_root_sum": 253914, "dedup_sha256": "9dfcd831
+{"p": 223, "roots": 13, "covers": 33694, "per_root_sum": 234028, "dedup_sha256": "abf4d355
+ALL DONE
+skip (verified) {"p": 191, "roots": 11, "covers": 42114, "per_root_sum": 253914, "dedup_sh
+{"p": 223, "roots": 13, "covers": 33694, "per_root_sum": 234028, "dedup_sha256": "abf4d355
+ALL DONE
+skip (verified) {"p": 191, "roots": 11, "covers": 42114, "per_root_sum": 253914, "dedup_sh
+skip (verified) {"p": 223, "roots": 13, "covers": 33694, "per_root_sum": 234028, "dedup_sh
+ALL DONE
+test dir: /tmp/tmp.jCYb1MfzIM
