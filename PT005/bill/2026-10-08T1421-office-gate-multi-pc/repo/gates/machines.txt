@@ -1,0 +1,4 @@
+# label user
+# A later reviewed letter adds a line after Tuzi reports id -un from that PC.
+# No line means update and the bootstrap refuse. Do not guess a user.
+office-wsl gigabyte
