@@ -7,6 +7,7 @@ Updated: 2026-10-05 11:18 +08 (L7 CHAIR-CHECKED -> HAND-CHECKED; approved by Tuz
 Updated: 2026-10-05 18:12 +08 (L10 added; approved by Tuzi 2026-10-05 18:10).
 Updated: 2026-10-07 21:12 +08 (L12, L13 added; approved by Tuzi 2026-10-07 21:12. L11 is reserved for p = 401, deferred by Tuzi 2026-10-06 16:24).
 Updated: 2026-10-08 12:59 +08 (L14 added; approved by Tuzi 2026-10-08 12:55, carried by Hesper be482bb. Total of gate logs: 27.07 of 481.07).
+Updated: 2026-10-09 10:44 +08 (L15, L16 added; approved by Tuzi in chat 2026-10-09 10:44, chair note 45. Gate total unchanged: 27.07 of 481.07).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -170,3 +171,25 @@ SCOPE  = same three-part split as L10 (p = 241 has no cover on ≤ 12 classes):
 USES   = L7 (HAND-CHECKED), in its stated level-16 scope; read records as for L12 plus shift_rows_early.cpp 7487a9c5…
          (DeepSeek Q1 YES, 2026-10-07T1410).
 OPEN DEPENDENCIES = as L10. NOT a certificate.
+
+## L15 · The cover number is at most 15: γ(p) ≤ 15 for every prime p > 16
+STATUS = HAND-CHECKED · approved by Tuzi 2026-10-09 10:44 +08 (chair notes 42, 45)
+SCOPE  = Definitions as in the 猜公式 packets: n = (p−1)/2; speed v is too near at cell t iff 16·min(vt mod p, p − vt mod p) < p;
+         γ(p) = the smallest number of speeds that are too near at every cell t = 1..n.
+         Claim: the speeds {1, …, 15} are always a cover. Proof: among the 16 points 0, x, …, 15x (x = t/p) on the circle,
+         two are within 1/16; their difference is jx with 1 ≤ j ≤ 15; equality would need 16jt = (16k ± 1)p, even = odd.
+PROOF BY = GPT, Gemini, Kimi, independently (Round 1 replies 089b06c, fc91f65, adad61b); chair re-check by hand and by
+         program for all 297 primes 17 < p < 2000 (0 exceptions).
+USES   = nothing beyond the definitions. NOT about the full LRC; it bounds the size of covers that parts (b)/(c) of a gate use.
+
+## L16 · Draft theorems T1, T2 (conditional on F5)
+STATUS = HAND-CHECKED, CONDITIONAL on F5 · approved by Tuzi 2026-10-09 10:44 +08 (chair note 45)
+SCOPE  = T1: if p > 56^13 (≈ 5.3 × 10^22) then γ(p) ≥ 14. T2: if p > 120^14 (≈ 1.3 × 10^29) then γ(p) = 15 (with L15).
+         Proof (packet aaa37b9): Lemma A (13 distinct speeds ≤ M are not a cover when p ≥ 56M, by the lonely-runner theorem
+         for 13 speeds and rounding x to t/p) + Lemma B (Dirichlet simultaneous approximation scales any 13 speeds to ≤ p/N,
+         N = ⌊(p−1)^{1/13}⌋) + scaling invariance. T2: same with 14 speeds, margin 1/15 − 1/16 = 1/240.
+F5     = the Lonely Runner Conjecture for 13 and for 14 speeds (14 and 15 runners), claimed proved by computer in
+         arXiv:2609.02604 (in the paper's notation LRC(13) and LRC(14): m speeds, threshold 1/(m+1)). Not independently checked.
+READERS = GPT, Grok, Gemini, Astra, Kimi, Qwen, GLM, Lumo: all YES on Lemma A, Lemma B, T1, T2 (Round 2, chair note 45).
+USES   = none in any gate yet: the thresholds are astronomically larger than the primes we gate. Gate total unchanged.
+NOT    = a certificate; NOT an improvement of the threshold (Round 2 found none).
