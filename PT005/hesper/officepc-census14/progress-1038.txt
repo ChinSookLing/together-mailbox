@@ -1,0 +1,9 @@
+Census14 progress — Tuzi paste, 2026-10-09 10:38 +08 (courier sandbox clock), office PC DESKTOP-O09AT0H, ~/lr16/census14/census14.jsonl.
+NOTE: Tuzi's paste was cut at the top ("up to here :"); first line is partial. Copied verbatim below. Full file to be collected at the end of the run.
+--- verbatim ---
+d15c9ef5297396cdfb", "wall_secs": 518.3, "first": ["01032a4348494b4c4e767f80959e", "01050c2225294b5c7072838f9ba9", "01050c2529444b5c7072838f9ba9"]}
+{"p": 353, "roots": 22, "covers": 496, "per_root_sum": 4526, "dedup_sha256": "55060ffbfc67fa386b9d9a2c9d4505991468194e31636334cf0148ce6f986f77", "wall_secs": 1337.2, "first": ["0102030405060708090b0c0d1e54", "01020304050708090b0c0d0e111e", "01020304050708090b0c0d111c1e"]}
+{"p": 359, "roots": 22, "covers": 21, "per_root_sum": 204, "dedup_sha256": "77e818c97d89b2e28dbeea3decd19dc94d3e402174930b695aecd4bdf5defba5", "wall_secs": 876.8, "first": ["01031a202f323d517b7e81989ba5", "01040507090b0d13181f3272878b", "01050708090b0d131f323772879c"]}
+{"p": 367, "roots": 22, "covers": 14, "per_root_sum": 100, "dedup_sha256": "5cd766f885e9ab9809388a75233ac1036b9cff94328677f147d2b9bb3f84e00f", "wall_secs": 635.4, "first": ["0104050b0d0e3951535660999db3", "0104060b0d0e101117326781878f", "0104071e1f234d4e62676b6c8a98"]}
+gigabyte@DESKTOP-O09AT0H:~/lr16/code$
+--- end verbatim ---
