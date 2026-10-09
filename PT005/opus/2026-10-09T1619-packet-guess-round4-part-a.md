@@ -23,7 +23,7 @@ For: Hesper / Puck to send to the thinking seats. Send the block BEGIN … END v
 - Rounds 1–3 showed that (b) and (c) are governed by γ(p) ≤ 15 (ledger L15, L16), and vanish at p = 383 and 397.
 - **(a) is where the cost is.**
 
-**Data** (engine counts; "rows" = canonical rows of the irredundant branch, one per orbit under scaling by units; all from the gate engine bgk15, unmodified):
+**Data** (engine counts; "rows" = rows of the irredundant branch in the engine's canonical form (normalized under scaling by units; the engine's count, not an independently checked orbit count); all from the gate engine bgk15, unmodified):
 
 | p | p mod 16 | H | n/H | rows | surv. L2 | alive L16 | nodes | source |
 |---|---|---|---|---|---|---|---|---|
