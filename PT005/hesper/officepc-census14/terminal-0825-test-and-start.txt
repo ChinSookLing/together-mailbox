@@ -1,0 +1,26 @@
+# Verbatim terminal text pasted by Tuzi from office PC DESKTOP-O09AT0H, relayed to Hesper 2026-10-09 08:29 +08 (chat clock)
+ccb6df1d4f9c846b852e1b34121fa4ffe0ce9747f9dc7f056f831bf73e3e0346  /home/gigabyte/kit/km1census.py
+313e26eb3c585ececbed8e7d297f497112506a81536efff9678b58c634a70abb  /home/gigabyte/kit/test_km1census.sh
+d08d54ced4724accc99a92d95c4cba350232c4aa445ff619903ee0685eec1f36  ./bgk15
+STOP: engine exit 3: fake/f1 191 km1roots | oops
+exit=2
+STOP: p=191 root=0: file has 1 lines, engine says 2
+exit=2
+STOP: p=191 root=0: engine reports 5 covers but wrote no file
+exit=2
+STOP: p=191: km1roots says 2 roots, parsed 1 (1 distinct)
+exit=2
+{"p": 191, "roots": 11, "covers": 42114, "per_root_sum": 253914, "dedup_sha256": "9dfcd83199bb9bff49ec59e570c446be8a530eebf889f71a7e8bd76711f05631", "wall_secs": 22.2, "first": ["01020304050708090b0c0d0e1e40", "01020304050708090b0c0d0f4657", "01020304050708090b0c0d1c1e40"]}
+{"p": 223, "roots": 13, "covers": 33694, "per_root_sum": 234028, "dedup_sha256": "abf4d355db50ee5be3f7da5b10c8e81a502144af803e8f1de61bf8f3f2a1967e", "wall_secs": 65.3, "first": ["01020305070d103c5b5d6162646a", "01020307080a0b131a253c3f5262", "01020307080d383a3c475052686a"]}
+ALL DONE
+skip (verified) {"p": 191, "roots": 11, "covers": 42114, "per_root_sum": 253914, "dedup_sha256": "9dfcd83199bb9bff49ec59e570c446be8a530eebf889f71a7e8bd76711f05631", "wall_secs": 22.2, "first": ["01020304050708090b0c0d0e1e40", "01020304050708090b0c0d0f4657", "01020304050708090b0c0d1c1e40"]}
+{"p": 223, "roots": 13, "covers": 33694, "per_root_sum": 234028, "dedup_sha256": "abf4d355db50ee5be3f7da5b10c8e81a502144af803e8f1de61bf8f3f2a1967e", "wall_secs": 67.5, "first": ["01020305070d103c5b5d6162646a", "01020307080a0b131a253c3f5262", "01020307080d383a3c475052686a"]}
+ALL DONE
+skip (verified) {"p": 191, "roots": 11, "covers": 42114, "per_root_sum": 253914, "dedup_sha256": "9dfcd83199bb9bff49ec59e570c446be8a530eebf889f71a7e8bd76711f05631", "wall_secs": 22.2, "first": ["01020304050708090b0c0d0e1e40", "01020304050708090b0c0d0f4657", "01020304050708090b0c0d1c1e40"]}
+skip (verified) {"p": 223, "roots": 13, "covers": 33694, "per_root_sum": 234028, "dedup_sha256": "abf4d355db50ee5be3f7da5b10c8e81a502144af803e8f1de61bf8f3f2a1967e", "wall_secs": 67.5, "first": ["01020305070d103c5b5d6162646a", "01020307080a0b131a253c3f5262", "01020307080d383a3c475052686a"]}
+ALL DONE
+test dir: /tmp/tmp.IkbnWzCHui
+2026-10-09 08:25:57 +08
+[1] 15783
+nohup: ignoring input
+gigabyte@DESKTOP-O09AT0H:~/lr16/code$
