@@ -39,5 +39,6 @@ for C13 in cores[5:]:
         r["construction"]="13-class core %s minus {%d,%d}; excluded = all speeds too near at cell %d"%(C13,a,b,t); out.append(r); k+=1
     if k>=4: break
 with open(sys.argv[2] if len(sys.argv) > 2 else "pt006_constructed_cases_rebuilt.jsonl","w") as f:
-    for r in out: f.write(json.dumps(r)+"\n")
+    for i,r in enumerate(out,1):          # IDs C1..C8 and witness=null, as in the published file
+        r["slots2_node_index"]="C%d"%i; r["witness"]=None; f.write(json.dumps(r)+"\n")
 for r in out: print(r["reason"][:10],len(r["uncovered"]),len(r["candidates"]),r["max_new"],r["completions"],r["construction"][-40:])
