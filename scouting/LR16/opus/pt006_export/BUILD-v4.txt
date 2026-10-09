@@ -1,0 +1,6 @@
+compile export: gcc -O2 -DMAXNEW -o pt006_export pt006_export_v4.c
+compile harness: gcc -O2 -DMAXNEW -DHARNESS -o harness pt006_export_v4.c
+run harness: ./harness < regress28_p223.txt > regress28_harness.out
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+v4 export reproduces v3 nodes: all 16 lines identical (checked 2026-10-09 11:00:20 +08)
+source sha256: ad01411f9afb081158b96ac0a5577156124472d2b0590c9e35a01c1e9387f0ab

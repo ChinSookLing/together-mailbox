@@ -17,7 +17,10 @@ def judge(C,X,s=2):
     else: reason="EXHAUST: all 1 + n + n(n-1)/2 candidate sets checked"
     return dict(chosen=sorted(C),excluded=sorted(X),slots=s,uncovered=sorted(U),candidates=cand,pruned=not comps,reason=reason,
                 completions=len(comps),orphan_cells=orphan,max_new=mx)
-cores=[json.loads(l)["core"] for l in open("/home/claude/lr16/core223/cores.jsonl")]
+import sys, hashlib
+CORES = sys.argv[1] if len(sys.argv) > 1 else "../core223/cores.jsonl"   # public copy in the mailbox
+assert hashlib.sha256(open(CORES,"rb").read()).hexdigest() == "36bbe2ee84b1d1a51e6bb0570976731cd7e16d3ed87283bcd263996f0116abb6", "unexpected cores file"
+cores=[json.loads(l)["core"] for l in open(CORES)]
 rnd=random.Random(20261008); out=[]
 # EXHAUST: core minus two speeds a,b; exclude a,b; keep if no completion and no orphan and COUNT does not fire
 for C13 in cores:
@@ -35,6 +38,6 @@ for C13 in cores[5:]:
     if r["reason"].startswith("ORPHAN"):
         r["construction"]="13-class core %s minus {%d,%d}; excluded = all speeds too near at cell %d"%(C13,a,b,t); out.append(r); k+=1
     if k>=4: break
-with open("pt006_constructed_cases_p223.jsonl","w") as f:
+with open(sys.argv[2] if len(sys.argv) > 2 else "pt006_constructed_cases_rebuilt.jsonl","w") as f:
     for r in out: f.write(json.dumps(r)+"\n")
 for r in out: print(r["reason"][:10],len(r["uncovered"]),len(r["candidates"]),r["max_new"],r["completions"],r["construction"][-40:])
