@@ -1,0 +1,12 @@
+# Verbatim terminal text pasted by Tuzi from office PC, relayed 2026-10-09 09:08 +08 (chat clock). Progress snapshot; census still running.
+gigabyte@DESKTOP-O09AT0H:~/lr16/code$ pgrep -c -f 'bgk15 .* km1root'
+cat ~/kit/census14.log
+cat ~/lr16/census14/census14.jsonl 2>/dev/null
+10
+nohup: ignoring input
+{"p": 307, "roots": 19, "covers": 4369, "per_root_sum": 37946, "dedup_sha256": "89358882a44dcc93c76462336ae7d3aafdc4e2a77b192b8f1feaa51e9a957e6e", "wall_secs": 524.4, "first": ["010203050708090a0b0d1f54578e", "010203050708090b0d3b3c5c747d", "010203050708090b0d3b3c747b7d"]}
+{"p": 311, "roots": 19, "covers": 546, "per_root_sum": 4607, "dedup_sha256": "4f8fa3974024738c29df5d7d5ac66d29c89f1890ade6aa4cf0439edd21c8e846", "wall_secs": 381.7, "first": ["010203050708090a0b0c0d0f1973", "010203050708090a0b0c0d0f2e57", "010203050708090a0b0c0d0f2e70"]}
+{"p": 313, "roots": 19, "covers": 106, "per_root_sum": 941, "dedup_sha256": "64b18372eb7a5debb489787168c1bd7ec46cfea8e68c51c22d31c5a146f2d206", "wall_secs": 294.9, "first": ["010203050708090b0d1d1e1f5494", "010203050708090b0d1d1e1f9194", "010203141c31396466686a6b6c8d"]}
+{"p": 317, "roots": 19, "covers": 71, "per_root_sum": 513, "dedup_sha256": "740c421948894c11d19dc4369cd6edd68c2894a76fb16d9e9db54126c9b4b1cf", "wall_secs": 231.4, "first": ["0103040a0d0e101112161f2f6295", "0103044c4e5152556f7071737796", "01030c1b1e293e424b4e7e7f8190"]}
+{"p": 331, "roots": 20, "covers": 155, "per_root_sum": 1396, "dedup_sha256": "d29b2bfc1c2b99475c394d7e0ba564cb7653206bb4f0248b7f9b169ae0d93d89", "wall_secs": 436.4, "first": ["01020b0e0f1148515675778e99a1", "01020b0e0f272e485659778e9da1", "01020b0e0f2e484e5659778e9da1"]}
+gigabyte@DESKTOP-O09AT0H:~/lr16/code$
