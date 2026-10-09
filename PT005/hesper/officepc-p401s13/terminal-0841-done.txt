@@ -1,0 +1,20 @@
+# Verbatim terminal text pasted by Tuzi from office PC DESKTOP-O09AT0H, relayed to Hesper 2026-10-09 08:41 +08 (chat clock)
+gigabyte@DESKTOP-O09AT0H:~$ ps -eo pid,etime,time,stat,args | grep '[b]gk15 401 km1low'
+ls -la ~/p401s13
+total 20
+drwxr-xr-x  2 gigabyte gigabyte 4096 Oct  9 00:39 .
+drwxr-x--- 15 gigabyte gigabyte 4096 Oct  8 17:55 ..
+-rw-rw-r--  1 gigabyte gigabyte   26 Oct  9 00:39 done.txt
+-rw-rw-r--  1 gigabyte gigabyte    0 Oct  9 00:39 out401_s13.txt
+-rw-rw-r--  1 gigabyte gigabyte   73 Oct  9 00:39 run.log
+-rw-rw-r--  1 gigabyte gigabyte   26 Oct  8 17:55 start.txt
+gigabyte@DESKTOP-O09AT0H:~$ cat ~/p401s13/start.txt ~/p401s13/done.txt ~/p401s13/run.log; sha256sum ~/p401s13/*
+2026-10-08T17:55:48+08:00
+2026-10-09T00:39:38+08:00
+km1low smax=13 canonical=0 nodes=1796775707 leaves=0 secs=24228.2
+exit=0
+bbe2564823b8f28ffea1a4cd92c8258320ca878326193f2ef7c12fc7409dec98  /home/gigabyte/p401s13/done.txt
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  /home/gigabyte/p401s13/out401_s13.txt
+adfb667115dc29f8e937f42f1d6b590bac57075fa525de749b0ba148cc07c201  /home/gigabyte/p401s13/run.log
+0be13a5ef25aeb303c82bb77190fab62a18aacefc25529abb85274921d354b7f  /home/gigabyte/p401s13/start.txt
+gigabyte@DESKTOP-O09AT0H:~$
