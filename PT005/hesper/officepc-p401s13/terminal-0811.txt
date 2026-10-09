@@ -1,0 +1,15 @@
+# Verbatim terminal text, typed/pasted by Tuzi from office PC DESKTOP-O09AT0H, relayed to Hesper 2026-10-09 08:11 +08 (chat clock)
+gigabyte@DESKTOP-O09AT0H:~$ systemctl --user is-active hesper-p401s13; ls ~/p401s13; tail -5 ~/p401s13/run.log
+active
+run.log  start.txt
+gigabyte@DESKTOP-O09AT0H:~$ systemctl --user is-active hesper-p401s13; ls -la ~/p401s13; cat ~/p401s13/start.txt; cat ~/p401s13/done.txt 2>/dev/null; tail -20 ~/p401s13/run.log; tail -20 ~/p401s13/out401_s13.txt 2>/dev/null; sha256sum ~/p401s13/*
+active
+total 12
+drwxr-xr-x  2 gigabyte gigabyte 4096 Oct  8 17:55 .
+drwxr-x--- 15 gigabyte gigabyte 4096 Oct  8 17:55 ..
+-rw-rw-r--  1 gigabyte gigabyte    0 Oct  8 17:55 run.log
+-rw-rw-r--  1 gigabyte gigabyte   26 Oct  8 17:55 start.txt
+2026-10-08T17:55:48+08:00
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  /home/gigabyte/p401s13/run.log
+0be13a5ef25aeb303c82bb77190fab62a18aacefc25529abb85274921d354b7f  /home/gigabyte/p401s13/start.txt
+gigabyte@DESKTOP-O09AT0H:~$
