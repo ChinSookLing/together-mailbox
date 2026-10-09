@@ -1,0 +1,140 @@
+# Private repo only. workflow_dispatch only. Do not add pull_request or pull_request_target.
+# No GitHub Environment: required reviewers need GitHub Pro on a private repo.
+# The update job fails unless the triggering actor is ChinSookLing. A skip is not a refusal.
+# The gate job does not checkout the dispatched commit. It runs the reviewed tree installed at
+# $HOME/office-gate/dispatcher, and only if SHA256SUMS matches the hash below.
+# Pin order: dispatch update while this pin still matches the installed tree.
+# After the receipt, push the next tree's workflow so this hash becomes that tree's hash.
+# Pushing the new pin first makes the update job look for a hash that is not on disk yet.
+name: office-gate
+on:
+  workflow_dispatch:
+    inputs:
+      gate:
+        description: Menu item
+        required: true
+        type: choice
+        options:
+          - status
+          - p233-pack
+          - p191
+          - p241ab
+          - p241c
+          - p409
+          - p383
+          - p307
+          - p337
+          - collect
+          - update
+      collect_which:
+        description: Used only when gate is collect
+        required: true
+        default: none
+        type: choice
+        options:
+          - none
+          - p191
+          - p241ab
+          - p241c
+          - p409
+          - p383
+          - p307
+          - p337
+          - all
+      tree_commit:
+        description: 40-hex mailbox commit of the new tree. Used only when gate is update.
+        required: false
+        default: ""
+        type: string
+      tree_prefix:
+        description: PT005/bill/<folder>/repo. Used only when gate is update.
+        required: false
+        default: ""
+        type: string
+      read_record_commit:
+        description: 40-hex mailbox commit of the PASS letter. Used only when gate is update.
+        required: false
+        default: ""
+        type: string
+      read_record_path:
+        description: PT005/<seat>/<file>. Seat must not be bill. Used only when gate is update.
+        required: false
+        default: ""
+        type: string
+      read_record_sha256:
+        description: sha256 of that letter. Used only when gate is update.
+        required: false
+        default: ""
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: office-gate
+  cancel-in-progress: false
+jobs:
+  gate:
+    if: inputs.gate != 'update'
+    runs-on: [self-hosted, office-wsl]
+    timeout-minutes: 30
+    steps:
+      - name: reviewed local menu
+        env:
+          GATE: ${{ inputs.gate }}
+          COLLECT_WHICH: ${{ inputs.collect_which }}
+          RUN_ID: ${{ github.run_id }}
+          GITHUB_TOKEN: ""
+          GH_TOKEN: ""
+          RESULT_TOKEN: ""
+          ACTIONS_RUNTIME_TOKEN: ""
+        run: |
+          set +x
+          set -euo pipefail
+          cd /tmp
+          sums="${HOME}/office-gate/dispatcher/SHA256SUMS"
+          got="$(sha256sum "$sums" | awk '{ print $1 }')"
+          test "$got" = "5c18acc7e23086c67b860aa5acf8a22e389ceb1ca16e849632b8d4c2168d4531"
+          exec bash "${HOME}/office-gate/dispatcher/gates/entry.sh"
+      - name: publish results
+        if: always()
+        env:
+          GATE: ${{ inputs.gate }}
+          RUN_ID: ${{ github.run_id }}
+          RESULT_TOKEN: ${{ github.token }}
+          RESULT_REPO: ${{ github.repository }}
+        run: |
+          set +x
+          set -euo pipefail
+          cd /tmp
+          exec bash "${HOME}/office-gate/dispatcher/gates/publish-step.sh"
+  update:
+    if: inputs.gate == 'update'
+    permissions:
+      contents: none
+    runs-on: [self-hosted, office-wsl]
+    timeout-minutes: 15
+    steps:
+      - name: fetch verify swap
+        env:
+          TRIGGERING_ACTOR: ${{ github.triggering_actor }}
+          TREE_COMMIT: ${{ inputs.tree_commit }}
+          TREE_PREFIX: ${{ inputs.tree_prefix }}
+          READ_RECORD_COMMIT: ${{ inputs.read_record_commit }}
+          READ_RECORD_PATH: ${{ inputs.read_record_path }}
+          READ_RECORD_SHA256: ${{ inputs.read_record_sha256 }}
+          EXPECTED_PIN: 5c18acc7e23086c67b860aa5acf8a22e389ceb1ca16e849632b8d4c2168d4531
+          GITHUB_TOKEN: ""
+          GH_TOKEN: ""
+          RESULT_TOKEN: ""
+          ACTIONS_RUNTIME_TOKEN: ""
+        run: |
+          set +x
+          set -euo pipefail
+          cd /tmp
+          if [[ "$TRIGGERING_ACTOR" != "ChinSookLing" ]]; then
+            echo "refusing actor ${TRIGGERING_ACTOR}" >&2
+            exit 2
+          fi
+          sums="${HOME}/office-gate/dispatcher/SHA256SUMS"
+          got="$(sha256sum "$sums" | awk '{ print $1 }')"
+          test "$got" = "$EXPECTED_PIN"
+          exec bash "${HOME}/office-gate/dispatcher/gates/update.sh"
