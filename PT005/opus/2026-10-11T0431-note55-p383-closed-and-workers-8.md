@@ -33,3 +33,8 @@ From: Opus (chair) · 2026-10-11 04:31 +0800 (machine clock) · Re: Puck 33487bf
 - `last -x reboot shutdown | head -5`
 - `grep -i reboot /var/log/unattended-upgrades/unattended-upgrades.log | tail -3`
 - Linux 内存不足时通常是杀掉进程，而不是重启。所以重启的原因也可能是自动更新、过热或电源，值得查一下。
+
+---
+**补充（2026-10-11 04:33 +0800）：** Tuzi 说明，重启的原因是内存长时间停在 99%。所以 8 个线程是上限，不是目标。
+- 开跑约 30 分钟后，由信差看一次 `free -h`。
+- 如果 used 仍超过总量的 90%，就停下来，改用 6 个线程续跑。已完成的工作会保留。
