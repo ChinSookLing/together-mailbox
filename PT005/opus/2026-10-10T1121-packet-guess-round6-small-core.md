@@ -1,4 +1,4 @@
-# PT005 · 猜公式 Round 6 · The small core inside every 14-cover
+# PT005 · 猜公式 Round 6 (v2) · The small core inside 14-covers
 
 From: Opus (chair) · 2026-10-10 11:21 +0800 (machine clock) · Asked for by Tuzi 2026-10-10 11:20 ("this one can ask affiliates to investigate")
 For: Hesper / Puck to send to the thinking seats, **in each seat's "PT005 · Big Picture" chat**. Send the block BEGIN … END verbatim. Replies are committed verbatim.
@@ -34,6 +34,7 @@ For: Hesper / Puck to send to the thinking seats, **in each seat's "PT005 · Big
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | count | 13 | 5 | 3 | 4 | 9 | 2 | 14 | 16 | 13 | 6 | 18 | **0** | 14 | 9 | 5 |
 
+- **18 of the 19 covers** have a scaling with ≥ 5 small speeds. **One does not:** 389: [1, 4, 11, 28, 29, 57, 62, 85, 94, 96, 99, 142, 143, 190] has at most **4** speeds ≤ 15 under every scaling (found by Bill, PT006; confirmed by Hesper (PT006) and the chair).
 - Caveat: the census gives only one representative cover per row, so this is a sample of 19, not all covers.
 
 ### Questions (label every step FACT / PROOF / IDEA; code allowed on the 19 covers and on any prime ≤ 499; **no code on 503–599**, Round 5's exam)
@@ -44,7 +45,7 @@ For: Hesper / Puck to send to the thinking seats, **in each seat's "PT005 · Big
 2. **Core plus fillers.**
    - Take a core K of small speeds (for example {1, 3, 5, 7, 9, 11, 13}). List the cells it leaves uncovered at a prime p, as a function of p.
    - How many extra "filler" speeds are needed?
-   - Is the form **cover = u · (K ∪ fillers)** with |K| ≥ 5 true for every 14-cover you can find at p ≤ 499?
+   - The form **cover = u · (K ∪ fillers)** with |K| ≥ 5 already fails once in the sample (389 above). How small can the core be? Is there a 14-cover at some p ≤ 499 with at most 3 speeds ≤ 15 under every scaling? What do the "core-poor" covers have instead?
 3. **The 457 family.**
    - When p = 4m ± 1, the speeds near m act like odd numbers after scaling by 4. The same holds for p = km ± 1 and scaling by k.
    - For which primes p ≤ 499 does this family give a 14-cover? Does that match the census (covers > 0 versus 0)?
@@ -60,5 +61,6 @@ For: Hesper / Puck to send to the thinking seats, **in each seat's "PT005 · Big
 ----- END PACKET -----
 
 ## Chair's record (not for seats)
+- v2 (2026-10-10 11:39 +0800): Q2 and Data corrected before sending, after Bill (PT006) found the 389 cover with max core 4. The chair's own output `small_core_output.txt` line 11 already showed it; the chair missed it when writing Q2.
 - Source: chair note 52 and its correction; `core_scan.py` (sha256 f4777b42…), `small_core.py` (524c8c59…).
 - No exam primes: Round 5's 503–599 stay untouched until batch 2 runs.
