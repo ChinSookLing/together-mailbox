@@ -1,0 +1,291 @@
+# Shared helpers. No courier key. Do not print the environment.
+set +x
+set -euo pipefail
+
+MAILBOX_PIN=92c31a73cbcda6e4a00893bf2116aca66c5546b7
+MAILBOX_URL=https://github.com/ChinSookLing/together-mailbox.git
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PINS="$ROOT/gates/pins.sha256"
+HASH_EARLY=7487a9c5b926ae3310cd9c968e4d9f59e831403140081974f8273c66c8bfc053
+
+note() { printf '%s\n' "$*" | tee -a "${STAGE:?}/NOTE.txt" >/dev/null; }
+
+want_hash() {
+  local path="$1" line
+  line="$(awk -v p="$path" '$2 == p { print $1; exit }' "$PINS")"
+  if [[ -z "$line" ]]; then
+    echo "no pin for $path" >&2
+    return 1
+  fi
+  printf '%s\n' "$line"
+}
+
+check_hash() {
+  local file="$1" path="$2" got want
+  want="$(want_hash "$path")"
+  got="$(sha256sum "$file" | awk '{ print $1 }')"
+  if [[ "$got" != "$want" ]]; then
+    printf 'HASH FAIL %s\ngot  %s\nwant %s\n' "$path" "$got" "$want" | tee -a "${STAGE:?}/HASH_FAIL.txt" >/dev/null
+    return 1
+  fi
+  printf '%s  %s\n' "$got" "$path" >> "${STAGE:?}/HASH_OK.txt"
+}
+
+fetch_pin() {
+  local dest="$1"
+  rm -rf "$dest"
+  mkdir -p "$dest"
+  git init -q "$dest"
+  git -C "$dest" remote add origin "$MAILBOX_URL"
+  git -C "$dest" fetch -q --depth 1 origin "$MAILBOX_PIN"
+  git -C "$dest" checkout -q --detach FETCH_HEAD
+  local got
+  got="$(git -C "$dest" rev-parse HEAD)"
+  if [[ "$got" != "$MAILBOX_PIN" ]]; then
+    note "pin checkout is $got not $MAILBOX_PIN"
+    return 1
+  fi
+  printf '%s\n' "$MAILBOX_PIN" > "${STAGE:?}/mailbox_pin.txt"
+}
+
+fetch_mailbox_main() {
+  local dest="$1"
+  rm -rf "$dest"
+  mkdir -p "$dest"
+  git init -q "$dest"
+  git -C "$dest" remote add origin "$MAILBOX_URL"
+  git -C "$dest" fetch -q --depth 1 origin main
+  git -C "$dest" checkout -q --detach FETCH_HEAD
+  git -C "$dest" rev-parse HEAD | tee "${STAGE:?}/mailbox_main.txt" >/dev/null
+}
+
+# p241c-lock.txt names one mailbox file, or "-" if none is pinned yet.
+# Prints "REFUSED <why>" and returns 2, or "OK" and returns 0.
+# With a root, that one file must exist and match the sha256. No filename test.
+p241c_decide() {
+  local lock="$1" root="${2:-}" path sha got
+  path="$(awk '$1 == "path" { print $2 }' "$lock")"
+  sha="$(awk '$1 == "sha256" { print $2 }' "$lock")"
+  if [[ -z "$path" || -z "$sha" || "$path" == "-" || "$sha" == "-" ]]; then
+    printf '%s\n' "REFUSED unset"
+    return 2
+  fi
+  if [[ "$path" != PT005/* || "$path" == *".."* || "$path" == *" "* ]]; then
+    printf '%s\n' "REFUSED path"
+    return 2
+  fi
+  if [[ ! "$sha" =~ ^[0-9a-f]{64}$ ]]; then
+    printf '%s\n' "REFUSED sha"
+    return 2
+  fi
+  if [[ -n "$root" ]]; then
+    if [[ ! -f "$root/$path" ]]; then
+      printf '%s\n' "REFUSED missing"
+      return 2
+    fi
+    got="$(sha256sum "$root/$path" | awk '{ print $1 }')"
+    if [[ "$got" != "$sha" ]]; then
+      printf '%s\n' "REFUSED hash"
+      return 2
+    fi
+  fi
+  printf '%s\n' "OK"
+  return 0
+}
+
+user_bus() {
+  local uid sock
+  uid="$(id -u)"
+  export XDG_RUNTIME_DIR="/run/user/${uid}"
+  sock="${XDG_RUNTIME_DIR}/bus"
+  export DBUS_SESSION_BUS_ADDRESS="unix:path=${sock}"
+  if [[ ! -S "$sock" ]]; then
+    note "no user bus at ${sock}. Once, as an admin: sudo loginctl enable-linger $(id -un)"
+    return 1
+  fi
+}
+
+unit_active() {
+  local unit="$1"
+  user_bus || return 1
+  local state
+  state="$(systemctl --user is-active "${unit}.service" 2>/dev/null || true)"
+  [[ "$state" == "active" || "$state" == "activating" ]]
+}
+
+detach() {
+  local unit="$1" script_src="$2"
+  user_bus || return 1
+  install -d "$HOME/.config/systemd/user" "$HOME/office-gate/state"
+  local env_line=""
+  if [[ -n "${OFFICE_GATE_LOCK_GEN:-}" ]]; then
+    env_line="Environment=OFFICE_GATE_LOCK_GEN=${OFFICE_GATE_LOCK_GEN}"
+  fi
+  cat > "$HOME/.config/systemd/user/${unit}.service" <<EOF
+[Unit]
+Description=office-gate ${unit}
+[Service]
+Type=oneshot
+Restart=no
+WorkingDirectory=${HOME}
+${env_line}
+ExecStart=/bin/bash ${script_src}
+StandardOutput=append:${HOME}/office-gate/state/${unit}.log
+StandardError=append:${HOME}/office-gate/state/${unit}.log
+EOF
+  systemctl --user daemon-reload
+  systemctl --user start --no-block "${unit}.service"
+  note "started ${unit}.service from ${script_src}"
+}
+
+copy_out() {
+  local src="$1" name="$2"
+  if [[ -f "$src" ]]; then
+    cp -p "$src" "${STAGE:?}/${name}"
+  else
+    note "missing ${src}"
+  fi
+}
+
+shrink_km1() {
+  local src="$1" name="$2"
+  if [[ ! -f "$src" ]]; then
+    note "missing ${src}"
+    return 0
+  fi
+  python3 "$ROOT/gates/km1_extract.py" "$src" "${STAGE:?}/${name}.extract.txt"
+}
+
+shrink_tree() {
+  local file size list
+  list="$(mktemp)"
+  find "${STAGE:?}" -type f > "$list"
+  while IFS= read -r file; do
+    case "$file" in
+      *.extract.txt) continue ;;
+    esac
+    size="$(wc -c < "$file")"
+    if [[ "$size" -gt 20000000 ]]; then
+      sha256sum "$file" > "${file}.sha256"
+      head -n 30 "$file" > "${file}.head"
+      rm -f "$file"
+      note "large file replaced by sha256 and 30 lines: ${file##*/} (${size} bytes)"
+    fi
+  done < "$list"
+  rm -f "$list"
+}
+
+# One compute lock for every math menu. The menu holds the start lock until
+# the detached bash holds ~/kit/math.lock. That bash keeps it until it exits,
+# which is after the compute. A second menu exits 2 and does not detach.
+math_menu_lock() {
+  install -d "${HOME}/kit" "${HOME}/office-gate/state"
+  exec 8>>"${HOME}/kit/math-start.lock"
+  if ! flock -n 8; then
+    note "refusing: another menu is starting a math job"
+    exit 2
+  fi
+  exec 9>>"${HOME}/kit/math.lock"
+  if ! flock -n 9; then
+    note "refusing: math lock is held"
+    exit 2
+  fi
+}
+
+math_holder_alive() {
+  local holder="$1" pid
+  [[ -s "$holder" ]] || return 1
+  pid="$(tr -cd '0-9' < "$holder")"
+  [[ -n "$pid" ]] || return 1
+  kill -0 "$pid" 2>/dev/null
+}
+
+math_menu_wait() {
+  local holder="$1" refused="$2" polls="$3" i
+  for ((i=0; i<polls; i++)); do
+    if [[ -s "$refused" ]]; then
+      note "refusing: detached run did not start"
+      exit 2
+    fi
+    if math_holder_alive "$holder"; then
+      return 0
+    fi
+    sleep 0.1
+  done
+  return 1
+}
+
+# After the wait, do not stop the unit. A lock that is free for a moment
+# does not mean a slow child will not take it. If the child already holds
+# ~/kit/math.lock, leave it. If not, keep that lock and write a cancel file
+# for this start only. The child then refuses by itself, before python.
+# The cancel file stays, so a later start of this same generation still refuses.
+math_menu_detach() {
+  local unit="$1" script="$2"
+  local holder="${HOME}/kit/math-lock.holder"
+  local refused="${HOME}/kit/math-lock.refused"
+  local polls="${MATH_LOCK_POLLS:-300}"
+  local cancel_polls="${MATH_LOCK_CANCEL_POLLS:-300}"
+  local gen="${OFFICE_GATE_LOCK_GEN:-$(date +%s)-$$}"
+  local cancel="${HOME}/kit/math-cancel-${gen}"
+  export OFFICE_GATE_LOCK_GEN="$gen"
+  rm -f "$holder" "$refused"
+  exec 9>&-
+  detach "$unit" "$script" || {
+    note "refusing: could not start ${unit}"
+    exit 2
+  }
+  if math_menu_wait "$holder" "$refused" "$polls"; then
+    return 0
+  fi
+  exec 9>>"${HOME}/kit/math.lock"
+  if ! flock -n 9; then
+    if math_menu_wait "$holder" "$refused" 300; then
+      return 0
+    fi
+    exec 9>>"${HOME}/kit/math.lock"
+    if ! flock -n 9; then
+      note "${unit} holds the math lock; not stopping it"
+      return 0
+    fi
+    note "refusing: ${unit} released the math lock without becoming ready"
+    exit 2
+  fi
+  # Child does not hold the lock. Hold it so the child cannot take it,
+  # and leave a cancel mark so it still refuses after this menu exits.
+  printf '%s\n' "$gen" > "$cancel"
+  if math_menu_wait "$holder" "$refused" "$cancel_polls"; then
+    exec 9>&-
+    return 0
+  fi
+  note "refusing: ${unit} did not become ready; not stopping it"
+  exit 2
+}
+
+math_run_lock() {
+  install -d "${HOME}/kit"
+  local cancel=""
+  if [[ -n "${OFFICE_GATE_LOCK_GEN:-}" ]]; then
+    cancel="${HOME}/kit/math-cancel-${OFFICE_GATE_LOCK_GEN}"
+    if [[ -f "$cancel" ]]; then
+      printf '%s\n' "refused" > "${HOME}/kit/math-lock.refused"
+      echo "refusing: start was cancelled" >&2
+      exit 2
+    fi
+  fi
+  exec 9>>"${HOME}/kit/math.lock"
+  if ! flock -n 9; then
+    printf '%s\n' "refused" > "${HOME}/kit/math-lock.refused"
+    echo "refusing: math lock is held" >&2
+    exit 2
+  fi
+  if [[ -n "$cancel" && -f "$cancel" ]]; then
+    printf '%s\n' "refused" > "${HOME}/kit/math-lock.refused"
+    echo "refusing: start was cancelled" >&2
+    exit 2
+  fi
+}
+
+math_run_ready() {
+  printf '%s\n' "$$" > "${HOME}/kit/math-lock.holder"
+}
