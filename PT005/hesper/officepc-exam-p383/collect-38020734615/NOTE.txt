@@ -1,0 +1,3 @@
+RUNNING office-gate-p383
+missing /home/gigabyte/office-gate/state/p383.done
+missing /home/gigabyte/office-gate/state/p383.stopped
