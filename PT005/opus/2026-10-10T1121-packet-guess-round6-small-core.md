@@ -40,7 +40,7 @@ For: Hesper / Puck to send to the thinking seats, **in each seat's "PT005 · Big
 
 1. **Why these numbers?**
    - Explain why 7, 8, 9, 11, 13 are frequent, why 2, 3, 4, 6 are rare, and why 12 never appears.
-   - Hint to test, not an answer: a speed 2v is too near wherever v is too near at half the threshold, so small speeds with common factors may waste cells.
+   - Hint to test, not an answer: speed 2v is too near at cell t exactly when vt mod p lies within p/32 of 0 or of p/2. So speeds sharing a factor overlap in a predictable way and may waste cells.
 2. **Core plus fillers.**
    - Take a core K of small speeds (for example {1, 3, 5, 7, 9, 11, 13}). List the cells it leaves uncovered at a prime p, as a function of p.
    - How many extra "filler" speeds are needed?
