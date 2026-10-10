@@ -1,0 +1,54 @@
+--- a4/gates/p307-run.sh
++++ a5/gates/p307-run.sh
+@@ -20,6 +20,6 @@
+ math_run_ready
+ cd "${HOME}/lr16/code"
+ date '+%F %T %Z' | tee -a "${HOME}/kit/run307.time"
+-python3 "${HOME}/kit/kcascade_run.py" ./bgk15 ./cascade_k15p 307 12 "${HOME}/lr16/out307" 2>&1 | tee -a "${HOME}/kit/run307.log"
++python3 "${HOME}/kit/kcascade_run.py" ./bgk15 ./cascade_k15p 307 8 "${HOME}/lr16/out307" 2>&1 | tee -a "${HOME}/kit/run307.log"
+ date '+%F %T %Z' | tee -a "${HOME}/kit/run307.time"
+ date '+%F %T %Z' > "$STATE/p307.done"
+--- a4/gates/p337-run.sh
++++ a5/gates/p337-run.sh
+@@ -20,6 +20,6 @@
+ math_run_ready
+ cd "${HOME}/lr16/code"
+ date '+%F %T %Z' | tee -a "${HOME}/kit/run337.time"
+-python3 "${HOME}/kit/kcascade_run.py" ./bgk15 ./cascade_k15p 337 12 "${HOME}/lr16/out337" 2>&1 | tee -a "${HOME}/kit/run337.log"
++python3 "${HOME}/kit/kcascade_run.py" ./bgk15 ./cascade_k15p 337 8 "${HOME}/lr16/out337" 2>&1 | tee -a "${HOME}/kit/run337.log"
+ date '+%F %T %Z' | tee -a "${HOME}/kit/run337.time"
+ date '+%F %T %Z' > "$STATE/p337.done"
+--- a4/SHA256SUMS
++++ a5/SHA256SUMS
+@@ -11,9 +11,9 @@
+ f3fa4695b9c4722de38b8fefe6039ac073c909f19ef795a8e37e2a3a4882a057  gates/p241c-lock.txt
+ b3f276ccef17fcff29474c3e2c96ed134f8d945f8df55be3bbe528b1c27179ea  gates/p241c-run.sh
+ d3ec9ecb659748d2a16c97883f127e034b6763f0d1351a637277043266e84b07  gates/p241c.sh
+-8ad7918e0114d94f9bdcc4ee21c7fdce4d4f1f6a4d8761a69dfb40498848704d  gates/p307-run.sh
++59e80b81d0d3afef675c15ab88f1bbd4d4f9ca0c6a3b5767905e2209739aef88  gates/p307-run.sh
+ 10676bcc6c3bd451967ecebf2393aa17795bdef650f447b65c9f8c26532815e8  gates/p307.sh
+-a0203786627fe8fb72df5cac06f9b448ee7db468c7e558d9a35c111f5648cb93  gates/p337-run.sh
++b13ec2d1af13b9ec35694d9c63b504cf41401f3aca48dbb3e6008c15b9fe0fd2  gates/p337-run.sh
+ ed937a571fde67a598abea88d371a4a32a293cfbdbef659f96c3e0cb8b3650a6  gates/p337.sh
+ 4288bffb9fbe08639d23b02b8949c4c2bb204f47a075c23df942d4f60b6a58d6  gates/p383-run.sh
+ 3a445f8b74eb8c2bcde88e02a0aa15e39f6c196cc63aa29442b50ea3db7100dd  gates/p383.sh
+--- a4/.github/workflows/office-gate.yml
++++ a5/.github/workflows/office-gate.yml
+@@ -92,7 +92,7 @@
+           cd /tmp
+           sums="${HOME}/office-gate/dispatcher/SHA256SUMS"
+           got="$(sha256sum "$sums" | awk '{ print $1 }')"
+-          test "$got" = "f0e4bff69977c5dcdfb32353dc10c203270d2a92e0611802d497f38fff904e8c"
++          test "$got" = "b4f64373a7ecd426bb7dff5178c0ede504ac9e05840ad7f112b1588c681935fe"
+           exec bash "${HOME}/office-gate/dispatcher/gates/entry.sh"
+       - name: publish results
+         if: always()
+@@ -121,7 +121,7 @@
+           READ_RECORD_COMMIT: ${{ inputs.read_record_commit }}
+           READ_RECORD_PATH: ${{ inputs.read_record_path }}
+           READ_RECORD_SHA256: ${{ inputs.read_record_sha256 }}
+-          EXPECTED_PIN: f0e4bff69977c5dcdfb32353dc10c203270d2a92e0611802d497f38fff904e8c
++          EXPECTED_PIN: b4f64373a7ecd426bb7dff5178c0ede504ac9e05840ad7f112b1588c681935fe
+           GITHUB_TOKEN: ""
+           GH_TOKEN: ""
+           RESULT_TOKEN: ""
