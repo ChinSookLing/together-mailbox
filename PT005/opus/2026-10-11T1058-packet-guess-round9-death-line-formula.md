@@ -44,7 +44,7 @@ For: Hesper to send to the thinking seats, **in each seat's "PT005 · Big Pictur
    - What arithmetic makes a late survivor?
 
 **How the chair will score Question 3** (fixed now, before any reply):
-- After all replies are committed, the chair runs `findcoversN.py` (sha256 above the commit of this packet in the mailbox) for N = 22 and N = 24.
+- After all replies are committed, the chair runs `findcoversN.py` (sha256 1586938f…, already in the mailbox under guess_r8/) for N = 22 and N = 24.
 - Every prime is searched for 150 s. Primes are taken in increasing order from a start well below the predictions.
 - The **observed death line** is the largest prime with a found cover before **six consecutive primes** with none found.
 - A prediction scores if its range contains the observed death line. The closest point value wins the round.
