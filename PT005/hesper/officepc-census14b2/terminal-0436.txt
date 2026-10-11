@@ -1,0 +1,48 @@
+CRD session to DESKTOP-O09AT0H — Tuzi (csllanna@gmail.com), 2026-10-12 04:32+08
+---------------------------------------------------------------
+
+Step 1 command run (after launching Ubuntu-24.04 from Start menu):
+  clear; free -h; pgrep -af km1census; ls ~/kit/km1census.py ~/lr16/code/bgk15
+
+Step 1 terminal output (exact):
+  total        used        free      shared  buff/cache   available
+  Mem:          7.4Gi       613Mi       6.7Gi        31Mi       374Mi       6.8Gi
+  Swap:         2.0Gi          0B       2.0Gi
+  /home/gigabyte/kit/km1census.py  /home/gigabyte/lr16/code/bgk15
+  gigabyte@DESKTOP-O09AT0H:~$
+
+Interpretation:
+- pgrep -af km1census produced NO output → no km1census process was running.
+- Both files exist: /home/gigabyte/kit/km1census.py and /home/gigabyte/lr16/code/bgk15.
+
+Step 2 decision: started the census (no existing process).
+
+Step 2 command sent (via CRD Send text, then Enter):
+  cd ~/lr16/code && date '+%F %T %Z' | tee ~/kit/census14b2.time && nohup python3 ~/kit/km1census.py ./bgk15 10 ~/lr16/census14 503 509 521 523 541 547 557 563 569 571 577 587 593 599 > ~/kit/census14b2.log 2>&1 &
+
+Immediate result observed:
+  [1] 13344
+  2026-10-12 04:36:16 +08
+  gigabyte@DESKTOP-O09AT0H:~$
+  (job went to background as [1] 13344; the date|tee timestamp printed after the prompt because the trailing & backgrounded the whole && chain)
+
+Step 3 command run (a few seconds after start; remote clock was still in 04:36 minute, but the screenshot read happened several turns later — well over ~10s, and pgrep confirms the process is up):
+  clear; cat ~/kit/census14b2.time; pgrep -af km1census; tail -5 ~/kit/census14b2.log; free -h
+
+Step 3 terminal output (exact, all four parts after clear):
+  2026-10-12 04:36:16 +08
+  13347 python3 /home/gigabyte/kit/km1census.py ./bgk15 10 /home/gigabyte/lr16/census14 503 509 521 523 541 547 557 563 569 571 577 587 593 599
+  nohup: ignoring input
+                total        used        free      shared  buff/cache   available
+  Mem:           7.4Gi       740Mi       6.5Gi        31Mi       375Mi       6.7Gi
+  Swap:          2.0Gi          0B       2.0Gi
+  gigabyte@DESKTOP-O09AT0H:~$
+
+Notes on step 3 output:
+- pgrep shows PID 13347 python3 /home/gigabyte/kit/km1census.py running (the on-screen "kmlcensus" is km1census — the font makes 1 and l look similar, and the script is km1census.py).
+- The pgrep line wrapped at the "569" argument, which the sidecar read as "56" + "9" on the next line. Reassembled above.
+- tail -5 of ~/kit/census14b2.log shows only one line: "nohup: ignoring input". The script has not produced other log lines yet at the time of reading.
+- PID 13347 (running python3) differs from the shell job PID 13344 reported at launch, which is typical: 13344 was the backgrounded subshell that forked python3 (13347).
+
+Census started: YES (step 2 launched because no km1census was running at step 1).
+Disconnected via CRD side panel after reading step 3.
