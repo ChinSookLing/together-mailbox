@@ -8,6 +8,7 @@ Updated: 2026-10-05 18:12 +08 (L10 added; approved by Tuzi 2026-10-05 18:10).
 Updated: 2026-10-07 21:12 +08 (L12, L13 added; approved by Tuzi 2026-10-07 21:12. L11 is reserved for p = 401, deferred by Tuzi 2026-10-06 16:24).
 Updated: 2026-10-08 12:59 +08 (L14 added; approved by Tuzi 2026-10-08 12:55, carried by Hesper be482bb. Total of gate logs: 27.07 of 481.07).
 Updated: 2026-10-09 10:44 +08 (L15, L16 added; approved by Tuzi in chat 2026-10-09 10:44, chair note 45. Gate total unchanged: 27.07 of 481.07).
+Updated: 2026-10-11 18:35 +0800 (L17 added; approved by Tuzi in chat 2026-10-11 18:34, chair note 69. Gate total unchanged: 27.07 of 481.07).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -193,3 +194,19 @@ F5     = the Lonely Runner Conjecture for 13 and for 14 speeds (14 and 15 runner
 READERS = GPT, Grok, Gemini, Astra, Kimi, Qwen, GLM, Lumo: all YES on Lemma A, Lemma B, T1, T2 (Round 2, chair note 45).
 USES   = none in any gate yet: the thresholds are astronomically larger than the primes we gate. Gate total unchanged.
 NOT    = a certificate; NOT an improvement of the threshold (Round 2 found none).
+
+## L17 · Uniform continuous floor and linear deficit (conditional on F5)
+STATUS = HAND-CHECKED, CONDITIONAL on F5 · approved by Tuzi 2026-10-11 18:34 +08 (chair note 69)
+SCOPE  = (i) For every set K of 14 distinct positive integers, m(K) ≥ 240^(−14), where m(K) is the Lebesgue measure of
+         {x ∈ [0,1) : ‖kx‖ ≥ 1/16 for all k ∈ K}.
+         Proof: F5 gives t0 with ‖k t0‖ ≥ 1/15 for all k; cut the torus image of t ↦ (k t) into 240^14 cubes; some cube has a
+         preimage A of measure ≥ 240^(−14); for t ∈ A, t0 + (t − t1) is safe since 1/15 − 1/240 = 1/16; translation keeps measure.
+         (ii) With Dirichlet simultaneous approximation (Q = ⌊(p−1)^{1/14}⌋) and ±1 grid error per safe interval:
+         for every prime p ≥ (28·240^14)^14 + 1 and every 14-set S, U(S) ≥ p/(4·240^14); hence D(p) ≥ p/(4·240^14) and
+         δ(p) = D(p)/E(p) ≥ 1/(2·240^14).
+PROOF BY = GPT (Round 15, 73f831c) and Astra (Round 15, 6e1b0a0), independently.
+READERS = Hesper (step-by-step), chair (note 69). F5 as in L16 (here LRC(14): 14 speeds, threshold 1/15).
+MEANING = the first rigorous LINEAR lower bound on the deficit; it settles the Round 13 target "uniform δ > 0" qualitatively.
+NOT    = useful numerically: 240^(−14) ≈ 4.75 × 10^(−34) against the observed minimum 97/6864 ≈ 0.0141 (conjecture C-floor,
+         chair note 68); threshold ≈ 10^487. For γ(p) = 15 alone, L16 T2 (p > 120^14) is far stronger.
+USES   = none in any gate. Gate total unchanged.
