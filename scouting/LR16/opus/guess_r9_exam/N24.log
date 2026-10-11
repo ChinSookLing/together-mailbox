@@ -1,0 +1,26 @@
+24 701 15 miss_run 0
+24 701 15 miss_run 0
+24 709 0 miss_run 1
+24 719 6 miss_run 0
+24 727 28 miss_run 0
+24 733 21 miss_run 0
+24 739 7 miss_run 0
+24 743 11 miss_run 0
+24 751 19 miss_run 0
+24 757 1 miss_run 0
+24 761 4 miss_run 0
+24 769 11 miss_run 0
+24 773 12 miss_run 0
+24 787 10 miss_run 0
+24 797 0 miss_run 1
+24 809 3 miss_run 0
+24 811 0 miss_run 1
+24 821 1 miss_run 0
+24 823 3 miss_run 0
+24 827 0 miss_run 1
+24 829 0 miss_run 2
+24 839 0 miss_run 3
+24 853 0 miss_run 4
+24 857 0 miss_run 5
+24 859 0 miss_run 6
+RESULT N 24 observed death line 823 table [(701, 15), (709, 0), (719, 6), (727, 28), (733, 21), (739, 7), (743, 11), (751, 19), (757, 1), (761, 4), (769, 11), (773, 12), (787, 10), (797, 0), (809, 3), (811, 0), (821, 1), (823, 3), (827, 0), (829, 0), (839, 0), (853, 0), (857, 0), (859, 0)]

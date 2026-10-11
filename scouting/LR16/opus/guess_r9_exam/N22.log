@@ -1,0 +1,22 @@
+22 641 17 miss_run 0
+22 641 17 miss_run 0
+22 643 19 miss_run 0
+22 647 5 miss_run 0
+22 653 12 miss_run 0
+22 659 1 miss_run 0
+22 661 24 miss_run 0
+22 673 16 miss_run 0
+22 677 8 miss_run 0
+22 683 6 miss_run 0
+22 691 3 miss_run 0
+22 701 0 miss_run 1
+22 709 1 miss_run 0
+22 719 0 miss_run 1
+22 727 2 miss_run 0
+22 733 0 miss_run 1
+22 739 0 miss_run 2
+22 743 0 miss_run 3
+22 751 0 miss_run 4
+22 757 0 miss_run 5
+22 761 0 miss_run 6
+RESULT N 22 observed death line 727 table [(641, 17), (643, 19), (647, 5), (653, 12), (659, 1), (661, 24), (673, 16), (677, 8), (683, 6), (691, 3), (701, 0), (709, 1), (719, 0), (727, 2), (733, 0), (739, 0), (743, 0), (751, 0), (757, 0), (761, 0)]
