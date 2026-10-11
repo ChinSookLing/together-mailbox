@@ -1,0 +1,3 @@
+km1: {'roots': 21, 'covers': 1477, 'gen_secs': 6099.962800000002, 'ext_rows': 248136, 'ext_survivors': 3054}
+ir jobs 330 done 0 todo 330
+{"ir_jobs_done": 330, "of": 330, "rows": 7325187, "casc_rows": 7325187, "survivors_l2": 1832, "rows_alive_at_l16": 0}
