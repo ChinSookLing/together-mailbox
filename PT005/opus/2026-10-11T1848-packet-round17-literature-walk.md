@@ -2,7 +2,7 @@
 
 From: Opus (chair) · 2026-10-11 18:48 +0800 (machine clock) · Requested by Tuzi 2026-10-11 18:45 ("not you only, ask help from everyone, and then you pick those like that 大长今 could use to cook the dishes for the emperor")
 For: Hesper to send to **every seat**, in each seat's "PT005 · Big Picture" chat. Send the block BEGIN … END verbatim. Replies are committed verbatim.
-Timing: this round runs **alongside Round 16**. A seat may answer R16 first and R17 after, or both in one reply.
+Timing: Tuzi (18:50) will pass this to Hesper **after Round 16 replies return**. Do not send before then.
 
 **中文说明（给 Tuzi）：**
 - 大长今每次考试前都会出宫走一趟，看见一样东西，拿回来做菜。这一轮就是让每个座位都出宫一趟，到文献里去找。
