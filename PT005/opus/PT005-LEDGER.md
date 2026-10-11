@@ -9,6 +9,7 @@ Updated: 2026-10-07 21:12 +08 (L12, L13 added; approved by Tuzi 2026-10-07 21:12
 Updated: 2026-10-08 12:59 +08 (L14 added; approved by Tuzi 2026-10-08 12:55, carried by Hesper be482bb. Total of gate logs: 27.07 of 481.07).
 Updated: 2026-10-09 10:44 +08 (L15, L16 added; approved by Tuzi in chat 2026-10-09 10:44, chair note 45. Gate total unchanged: 27.07 of 481.07).
 Updated: 2026-10-11 18:35 +0800 (L17 added; approved by Tuzi in chat 2026-10-11 18:34, chair note 69. Gate total unchanged: 27.07 of 481.07).
+Updated: 2026-10-11 20:30 +0800 (L18 added; approved by Tuzi in chat 2026-10-11 20:27, chair notes 70-71. Gate total unchanged: 27.07 of 481.07).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -209,4 +210,29 @@ READERS = Hesper (step-by-step), chair (note 69). F5 as in L16 (here LRC(14): 14
 MEANING = the first rigorous LINEAR lower bound on the deficit; it settles the Round 13 target "uniform δ > 0" qualitatively.
 NOT    = useful numerically: 240^(−14) ≈ 4.75 × 10^(−34) against the observed minimum 97/6864 ≈ 0.0141 (conjecture C-floor,
          chair note 68); threshold ≈ 10^487. For γ(p) = 15 alone, L16 T2 (p > 120^14) is far stronger.
+USES   = none in any gate. Gate total unchanged.
+
+## L18 · One-large-speed inequality, and the C-floor when at most one speed exceeds 30 (UNCONDITIONAL)
+STATUS = (i) HAND-CHECKED · (ii) CHAIR-CHECKED for the class "≤ 1 speed > 30"; the sub-class "≤ 1 speed > 24" also
+         computed by Kimi's separate engine (REPRODUCED for that sub-class) · approved by Tuzi 2026-10-11 20:27 +08
+         (chair notes 70, 71)
+SCOPE  = m(K) = Lebesgue measure of {x ∈ [0,1) : ‖kx‖ ≥ 1/16 for all k ∈ K}; c(K) = number of its intervals.
+         (i) For any finite set K of positive integers and any integer v ≥ 1:
+             m(K ∪ {v}) ≥ (7/8)·m(K) − 7·c(K)/(64v); moreover the loss on each safe interval of length ℓ is at most
+             min(ℓ, ℓ/8 + 7/(64v)).
+             Proof: f = 1{‖vx‖ < 1/16} − 1/8 has period 1/v and mean 0; its primitive oscillates by exactly
+             (1/(8v))·(7/8) = 7/(64v); so on any interval the bad measure is at most ℓ/8 + 7/(64v).
+         (ii) Every 14-set K with at most one element > 30 satisfies m(K) ≥ 97/6864, with equality in that class only at
+             K* = {1..15}∖{6} and 2K*. Computed exactly (integer unit 1/(16·lcm(1..30)), 128-bit losses): all
+             C(30,14) = 145,422,675 subsets of {1..30}, and all C(30,13) = 119,759,850 subsets of {1..30} with any v ≥ 31
+             (27,170,182 exact v-checks below the point where (i) certifies the tail; 0 failures).
+             Worst one-large-speed case: K*∖{14} ∪ {56}, m = 14867/960960 (found independently by GPT, Kimi, chair).
+PROOF BY = (i) GPT and Astra (Round 16, ab5b271, b0d84d9), independently; GLM and Kimi proved the weaker c(K)/(4v) form.
+         (ii) chair engine PT005/opus/guess_r16/oneLarge.c (sha256 prefix d9c7897727721cd3), outputs out24.txt, out30.txt;
+         301 random cases + the worst case matched an independent Fraction computation (spot.py, spot30.py).
+READERS = Hesper re-computed the R16 rational values (8919f67); chair (notes 70, 71).
+MEANING = the conjecture C-floor (m(K) ≥ 97/6864 for every 14-set) is now open ONLY for 14-sets with ≥ 2 speeds > 30.
+         Does not depend on F5.
+NOT    = the full C-floor; NOT an improvement of the threshold P₀ (conditional on full C-floor, GPT's 991^14 + 1 ≈ 8.8 × 10^41).
+         Kimi's discrete lemma L-D1 (log² p error for any speed) is FALSE as stated (chair note 70) and is not part of L18.
 USES   = none in any gate. Gate total unchanged.
