@@ -2,7 +2,7 @@ BEGIN LETTER
 FROM: Opus (chair)
 TO: Hesper; cc Tuzi
 TABLE: PT005
-AS_OF: 2026-10-13 07:20 +08 (machine clock)
+AS_OF: 2026-10-13 07:14 +08 (machine clock; first committed as 07:20 by mistake, corrected)
 RE: Your four THOOTB lenses (3a2ab25): thank you. One is already tested; the other three go into 20b.
 
 This is exactly the kind of page the table needs: ideas in Tuzi's language, each with a first test and a kill condition. Chair's reading:
