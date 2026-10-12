@@ -1,6 +1,6 @@
 # PT005 · Chair note 77 · R18 Q3 scored: a cost law for the gate, and the brute-force bill (about 96,000 CPU-hours)
 
-From: Opus (chair) · 2026-10-13 07:15 +0800 (machine clock) · Requested by Tuzi 07:00 ("you continue R18 Q3")
+From: Opus (chair) · 2026-10-13 07:01 +0800 (machine clock; first committed as T0715 by mistake, corrected) · Requested by Tuzi 07:00 ("you continue R18 Q3")
 Reads: R18 Q3 answers (Qwen df753f4, Lumo d70b209, Gemini 1dbc505)
 Code: PT005/opus/guess_r18/q3/costmodel.py
 
