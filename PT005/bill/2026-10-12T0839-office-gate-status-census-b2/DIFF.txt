@@ -1,0 +1,49 @@
+diff -ru a5/repo/.github/workflows/office-gate.yml b2/repo/.github/workflows/office-gate.yml
+--- a5/repo/.github/workflows/office-gate.yml	2026-10-12 00:34:10.000000000 +0000
++++ b2/repo/.github/workflows/office-gate.yml	2026-10-12 00:39:07.281772103 +0000
+@@ -92,7 +92,7 @@
+           cd /tmp
+           sums="${HOME}/office-gate/dispatcher/SHA256SUMS"
+           got="$(sha256sum "$sums" | awk '{ print $1 }')"
+-          test "$got" = "b4f64373a7ecd426bb7dff5178c0ede504ac9e05840ad7f112b1588c681935fe"
++          test "$got" = "867b66c471108733f6fc8c57ddbd0c8d07a33617db61c3b9da52e0091a67355b"
+           exec bash "${HOME}/office-gate/dispatcher/gates/entry.sh"
+       - name: publish results
+         if: always()
+@@ -121,7 +121,7 @@
+           READ_RECORD_COMMIT: ${{ inputs.read_record_commit }}
+           READ_RECORD_PATH: ${{ inputs.read_record_path }}
+           READ_RECORD_SHA256: ${{ inputs.read_record_sha256 }}
+-          EXPECTED_PIN: b4f64373a7ecd426bb7dff5178c0ede504ac9e05840ad7f112b1588c681935fe
++          EXPECTED_PIN: 867b66c471108733f6fc8c57ddbd0c8d07a33617db61c3b9da52e0091a67355b
+           GITHUB_TOKEN: ""
+           GH_TOKEN: ""
+           RESULT_TOKEN: ""
+diff -ru a5/repo/SHA256SUMS b2/repo/SHA256SUMS
+--- a5/repo/SHA256SUMS	2026-10-12 00:34:10.000000000 +0000
++++ b2/repo/SHA256SUMS	2026-10-12 00:39:07.281772103 +0000
+@@ -23,5 +23,5 @@
+ 835dc37b26aee626773db01051d72542ad7e94d43985ef436811e7ceaa743a04  gates/publish-step.sh
+ 7745459386f2af1d6a6e412c2ac1c0fbb479567d2e82ae47927efe3dfcb6511d  gates/publish.sh
+ 9adcec538e87ccc3fc2c8aab095cfb614c784bb6532b1537baeb62cd3a246ab8  gates/self-check.sh
+-06d61d945866baffa8a81ccc10b385830572a5f0caae7d58ea62fea81fdcd5cd  gates/status.sh
++c5d3437226c100db74dfbcccec3e14c81617d1832b0f806e361bb4a9a29eee98  gates/status.sh
+ 08c4fde22618a389276f1505572874bb30bfcffec9daec9eee4d56b036d73d85  gates/update.sh
+diff -ru a5/repo/gates/status.sh b2/repo/gates/status.sh
+--- a5/repo/gates/status.sh	2026-10-12 00:34:10.000000000 +0000
++++ b2/repo/gates/status.sh	2026-10-12 00:39:02.885771913 +0000
+@@ -57,3 +57,14 @@
+     cp -- "$HOME/kit/run${p}.time" "$STAGE/run${p}.time"
+   fi
+ done
++
++# census14 batch 2. Read only. Writes only in $STAGE.
++# Does not stop the census, and does not renice or signal it. No background job.
++# No write under $HOME/lr16 or $HOME/kit.
++# A missing file leaves an empty result and does not fail this gate.
++# pgrep's own command line contains km1census, so that one line is dropped.
++# The file is empty when no census process remains.
++pgrep -af km1census | grep -v 'pgrep -af km1census' > "$STAGE/census14b2.pgrep" || true
++free -m > "$STAGE/free.txt" || true
++tail -n 20 "$HOME/kit/census14b2.log" > "$STAGE/census14b2.log.tail" || true
++tail -n 3 "$HOME/lr16/census14/census14.jsonl" > "$STAGE/census14.jsonl.tail3" || true
