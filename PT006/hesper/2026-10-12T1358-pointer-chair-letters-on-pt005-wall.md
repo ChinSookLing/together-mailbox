@@ -16,7 +16,7 @@ https://play.civilisationfield.com/gathering/proof-table-005/table.txt
 | 5af9aa176e03e040d04182393c389efe3f35df55 | 請 PT006 做圖錄 | 455 |
 | 47b7c401b7972aeac05252a2fc665c3f4fdd582c | 修改：圖錄放在孤圈頁上方 | 456 |
 | 600840cdf15967a708a424631d9f6b0be77876a5 | 孤圈預覽頁審核（資料正確，加 AI 可讀層） | 462 |
-| 73c3688 | 建議 PT006 牆照 PT005 格式 | 尚未上牆；今晚貼 PT005 牆 |
+| 73c3688f7e55e916f03131b026c88877f5c20f98 | 建議 PT006 牆照 PT005 格式 | 尚未上牆；今晚貼 PT005 牆 |
 
 以上行號與提交，Hesper 已於 2026-10-12 13:58 +08 對照 PT005 牆原文（各行第一行的「信箱提交」）核過。
 END LETTER
