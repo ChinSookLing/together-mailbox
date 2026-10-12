@@ -1,0 +1,21 @@
+100c100
+<     uint64_t nodes=0, leaves=0, canon_calls=0;
+---
+>     uint64_t nodes=0, leaves=0, canon_calls=0, dual_pruned=0;
+665a666,674
+> #ifdef DUAL_CUT
+>         if(slots>=DUAL_LO && slots<=DUAL_HI){  // LP dual y_t = 1/gmax(t) is feasible for fractional cover => lower bound
+>             uint8_t gmax[MAXN]; memset(gmax,0,sizeof gmax);
+>             for(int j=0;j<NW;j++){uint64_t w=avail.w[j];while(w){int v=64*j+__builtin_ctzll(w);w&=w-1;uint8_t g=gains[v];if(!g)continue;
+>                 Bits cu=cov[v]&unc;for(int jj=0;jj<NW;jj++){uint64_t ww=cu.w[jj];while(ww){int t=64*jj+__builtin_ctzll(ww);ww&=ww-1;if(g>gmax[t])gmax[t]=g;}}}}
+>             double lb=0;for(int j=0;j<NW;j++){uint64_t w=unc.w[j];while(w){int t=64*j+__builtin_ctzll(w);w&=w-1;lb+=1.0/gmax[t];}}
+>             if(lb>slots+1e-9){dual_pruned++;return;}
+>         }
+> #endif
+966a976,981
+> #ifdef DUAL_CUT
+>         cout<<"dual_pruned="<<G.dual_pruned<<"\n";
+> #endif
+> #ifdef EXP_SYM
+>         cout<<"depth visits\n";for(size_t d=0;d<G.sym_visits.size();d++)if(G.sym_visits[d])cout<<"  "<<d<<" "<<G.sym_visits[d]<<"\n";
+> #endif

@@ -1,0 +1,1 @@
+root=18 sub=13 raw_irred15=0 rawscan=2 nodes=281442084 leaves=2 secs=248.315

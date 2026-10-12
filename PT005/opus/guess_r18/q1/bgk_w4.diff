@@ -1,0 +1,26 @@
+100c100
+<     uint64_t nodes=0, leaves=0, canon_calls=0;
+---
+>     uint64_t nodes=0, leaves=0, canon_calls=0, w4_removed=0;
+639a640,653
+> #ifdef W4P
+>         {   // Kimi R18 proactive W4: drop any candidate x that covers all current private times of a selected class.
+>             int ns=(int)sel.size();
+>             for(int j=0;j<ns;j++){
+>                 const Bits&P=state.priv[j]; int t=-1;
+>                 for(int w=0;w<NW;w++) if(P.w[w]){t=64*w+__builtin_ctzll(P.w[w]);break;}
+>                 if(t<0) continue;
+>                 Bits cs=cand[t]&avail;
+>                 for(int w=0;w<NW;w++){uint64_t ww=cs.w[w];while(ww){int v=64*w+__builtin_ctzll(ww);ww&=ww-1;
+>                     if(!andnot(P,cov[v]).any()){avail.reset(v);w4_removed++;}}}
+>             }
+>             if(avail.count()<slots)return;
+>         }
+> #endif
+966a981,986
+> #ifdef W4P
+>         cout<<"w4_removed="<<G.w4_removed<<"\n";
+> #endif
+> #ifdef EXP_SYM
+>         cout<<"depth visits\n";for(size_t d=0;d<G.sym_visits.size();d++)if(G.sym_visits[d])cout<<"  "<<d<<" "<<G.sym_visits[d]<<"\n";
+> #endif

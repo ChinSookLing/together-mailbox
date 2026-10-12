@@ -1,0 +1,14 @@
+root=18 sub=13 raw_irred15=0 rawscan=2 nodes=281434641 leaves=2 secs=274.841
+pack_calls=70970565 pack_pruned=8787
+depth visits
+  3 1
+  4 12
+  5 158
+  6 2074
+  7 26064
+  8 307262
+  9 3475292
+  10 36889616
+  11 183858489
+  12 55939345
+  13 936328

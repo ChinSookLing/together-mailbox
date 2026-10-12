@@ -1,0 +1,31 @@
+100c100
+<     uint64_t nodes=0, leaves=0, canon_calls=0;
+---
+>     uint64_t nodes=0, leaves=0, canon_calls=0, pack_pruned=0, pack_calls=0;
+665a666,684
+> #ifdef PACK_CUT
+>         // Packing bound (sound): greedily pick uncovered cells, no two coverable by one available class.
+>         // Each picked cell needs its own future class, so more than `slots` picks => no completion.
+>         if(slots<=PACK_CUT){
+>             pack_calls++;
+>             Bits blocked; int cntp=0; bool cutp=false;
+>             for(int j=0;j<NW && !cutp;j++){
+>                 uint64_t w=unc.w[j];
+>                 while(w){
+>                     int t=64*j+__builtin_ctzll(w); w&=w-1;
+>                     if(blocked.test(t)) continue;
+>                     if(++cntp>slots){cutp=true;break;}
+>                     Bits cs=cand[t]&avail;
+>                     for(int jj=0;jj<NW;jj++){uint64_t ww=cs.w[jj];while(ww){int v=64*jj+__builtin_ctzll(ww);ww&=ww-1;blocked=blocked|cov[v];}}
+>                 }
+>             }
+>             if(cutp){pack_pruned++;return;}
+>         }
+> #endif
+966a986,991
+> #ifdef PACK_CUT
+>         cout<<"pack_calls="<<G.pack_calls<<" pack_pruned="<<G.pack_pruned<<"\n";
+> #endif
+> #ifdef EXP_SYM
+>         cout<<"depth visits\n";for(size_t d=0;d<G.sym_visits.size();d++)if(G.sym_visits[d])cout<<"  "<<d<<" "<<G.sym_visits[d]<<"\n";
+> #endif
