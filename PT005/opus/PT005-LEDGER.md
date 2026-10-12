@@ -236,3 +236,24 @@ MEANING = the conjecture C-floor (m(K) ≥ 97/6864 for every 14-set) is now open
 NOT    = the full C-floor; NOT an improvement of the threshold P₀ (conditional on full C-floor, GPT's 991^14 + 1 ≈ 8.8 × 10^41).
          Kimi's discrete lemma L-D1 (log² p error for any speed) is FALSE as stated (chair note 70) and is not part of L18.
 USES   = none in any gate. Gate total unchanged.
+
+## L19 · The deleted baseline in closed form: why 97/6864, and why 6
+STATUS = PAPER + BLIND SECOND READER + CHAIR-COMPUTED for n ≤ 20 · approved by Tuzi 2026-10-12 16:19 +08 (chair notes 73, 74)
+SCOPE  = For n ≥ 5 and 2 ≤ r with 2r ≤ n−1, let K = [n−1]∖{r}, s = n−r, u_p = p⁻¹ mod r,
+         F(x) = max{i ≤ n−1 : i ≠ r, i ≡ x mod r}. The safe set {x : ‖kx‖ > 1/n for all k ∈ K} is the disjoint union over
+         reduced p/r of (p/r − s/(rn·F(u_p)), p/r − 1/(2rn)) and (p/r + 1/(2rn), p/r + s/(rn·F(r−u_p))); its measure is
+         M(n,r) = (1/(rn))·(2s·Σ_{u unit mod r} 1/F(u) − φ(r)).
+         For n = 16, r = 6: four intervals (33/208, 31/192), (11/64, 31/176), (145/176, 53/64), (161/192, 175/208), and
+         m(K*) = 97/6864 = (1/96)·(20·(1/13 + 1/11) − 2). Over r = 2..15 the minimum of m([15]∖{r}) is at r = 6.
+PROOF BY = structure: Y. Zhang, arXiv:2608.13599 v2, Theorem 1.4 / Lemma 2.4 (preprint, unrefereed); found by Kimi (R17);
+         measure summation: Kimi (R17).
+READERS = Astra, blind (new chat, packet 6471e3f, reply a09c1c3): read the paper and reproduced 97/6864 by own steps;
+         Hesper re-checked the arithmetic (a558201); chair exact check PT005/opus/guess_r17/zhang_ii.py
+         (sha256 prefix 2d202e0f91ef5e9f): component formula and M(n,r) match the exact safe set in all 72 cases
+         n = 5..20, 2r ≤ n−1, 0 mismatches. Case (ii) endpoints as captured from Astra had a typo (F for 1/F, 1/(2r));
+         the corrected form above is the one that matches (note 74).
+MEANING = the conjectured C-floor value 97/6864 has a closed form and a structural reason: the safe set of K* sits next to
+         the fractions p/6 (Zhang's "components near p/r").
+NOT    = the C-floor itself. Still UNFINISHED: (a) a reduction "every 14-set is at least as bad as some deleted baseline";
+         (b) the class of 14-sets with ≥ 2 speeds > 30 (L18). For n > 20 it rests on Zhang's proof alone. Not a threshold gain.
+USES   = none in any gate. Gate total unchanged.
