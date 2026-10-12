@@ -1,0 +1,225 @@
+PT005 · Round 19a · Structure of covers (Opus packet ff5f466). You are a PROPOSER this round. Conclusions first: ANSWER BLOCK (≤300 words) at the top. Label every step FACT / PROOF / IDEA. UNFINISHED allowed. Tag any reference READ / ABSTRACT / MEMORY honestly. All data is pasted at the end.
+
+
+**RULE (from Tuzi):** Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+
+## PT005 · Round 19a · Structure of irredundant covers (one question)
+
+**RULES:**
+1. Numbers only from your own code or hand computation, shown. Otherwise write UNFINISHED.
+2. Label every step FACT / PROOF / IDEA.
+3. Start with an **ANSWER BLOCK** of at most 300 words.
+4. Citations are tagged READ / ABSTRACT / MEMORY.
+
+**Setup (16 runners, prime p).**
+- n = (p−1)/2 folded classes; class v is the same as p − v.
+- Class v is *too near* at time t iff 16·min(vt mod p, p − vt mod p) < p. Each class is too near at exactly m = ⌊(p−1)/16⌋ times.
+- An **irredundant 15-class cover**: 15 classes that together are too near at every t = 1..n, and none of them can be dropped.
+- The gate has to enumerate all of these. Today it **searches** for them, about 10⁸ search nodes per cover at p = 383, and 90% of the work is in dead branches. Local pruning is exhausted (chair note 75: three sound cuts tested, none faster).
+
+**The question.** Find a structural description of irredundant 15-class covers at large p, precise enough that a program could **generate** them, or a superset of them, from the description instead of searching.
+
+Give:
+- (1) the statement;
+- (2) a test of it on the real data below, with code and counts: how many of the 125 rows does it describe, and how large is the superset it generates at p = 383;
+- (3) a PROOF if you have one, otherwise IDEA.
+
+**Data** (github.com/ChinSookLing/together-mailbox, folder PT005/opus/guess_r19/):
+- `rows_383_0_10.txt`, `rows_383_14_4.txt`: all 125 irredundant covers of two real p = 383 gate jobs.
+  - Each line is 15 classes, 2 hex digits each.
+  - Every row contains class 1 (normalised by unit dilation), so small classes are partly over-represented by construction.
+- `rare_14class_covers.txt`: the rare 14-class covers at p = 379 (3 exist), 409, 419, 421 and 457 (1 each).
+- The whole gate at p = 383 has 5,171 irredundant rows. Only 2 survive the first lift.
+
+**Chair's first look (FACT on this data; what it means is IDEA):**
+
+| Test | Covers | Random sets |
+|---|---|---|
+| Classes v with min(v, p − v) ≤ 20 | 38% (713 of 1,875) | 10.5% |
+| Classes with no q ≤ 8 such that q·v is within 20 of a multiple of p | 35% | 45% |
+| Additive triples (a ± b ≡ ±c mod p inside the set), p = 383 rows | median 27 | median 17 |
+| Additive triples, 421 cover | 30 | median 12 (random 14-sets) |
+| Additive triples, 457 cover | 41 | median 11 (random 14-sets) |
+| Best dilation u·S toward small numbers (rare covers) | largest element stays at 87–164 | — |
+
+- **Dilation does not reduce the rare covers to small speed sets.** Only 457 comes close: u = 8 gives {2, 6, 8, 10, 14, 16, 17, 18, 19, 22, 23, 26, 60, 87}.
+- **The 457 cover has a run** 111..117, and 457 = 4·114 + 1.
+
+So covers look like "many small speeds, plus a structured remainder rich in additive relations". Pin this down. A theorem in the spirit of Beck–Everett (arXiv:2609.06259: tight instances satisfy a short relation with ‖c‖₁ ≤ 2k+3 and odd coordinate sum) would be ideal, but only if it is mod-p and checkable on the data.
+
+**One-line last question.** If your description is right, roughly how many candidate rows would a generator produce at p = 383? (COMPUTED, or IDEA with reasoning.)
+
+----- DATA (the same files as PT005/opus/guess_r19/, pasted in full because web is off) -----
+
+=== README.md ===
+# Round 19 data (chair, 2026-10-12)
+
+- rows_383_0_10.txt, rows_383_14_4.txt: all irredundant 15-class covers of two p = 383 gate jobs
+  (root 0 / sub 10: 11 rows; root 14 / sub 4: 114 rows). Author's engine, mode irsubrootrawc.
+  Counts and node totals identical to the office run (ir.jsonl, collect-38060748868).
+  Format: one row per line, 15 classes, each 2 hex digits, folded classes 1..191 (class v and p−v are the same class).
+  Rows are in the engine's normal form: every row contains class 1 (unit dilation), and the root/sub-root classes
+  of the job. So small classes are partly over-represented by construction.
+- rare_14class_covers.txt: the first 14-class cover found by the census at primes with 1–3 such covers
+  (379, 409, 419, 421, 457).
+- cluster.py: the chair's first-look statistic (see packet).
+
+=== rows_383_0_10.txt ===
+01040f17515963646668698498b1b5
+0107080f34353d51787c839bb0b1b3
+01030507080b0f122768b1b4b6b7b9
+0107080b0f1112344f56a5b1b3b4b6
+0107080f353d4c5658666893adb1b4
+0107080f353d4f5658666893adb1b4
+0107080f353d565866689398adb1b4
+0107080f353d56586668939badb1b4
+0107080b0f2534353d586c73789bb1
+01040f355b626366909bb1b7babcbd
+01040f35395e63666898a1a7adb1b2
+
+=== rows_383_14_4.txt ===
+010507090b0c0d29518da5b0b1b6b7
+01050708090b0d232b4b54a7b0b6b7
+01050708090b0d1119232b3d5aa7b0
+01050708090b0d1119232b3c3da7b0
+01050708090b0d1119232b3d78a7b0
+0104050607090b0d626d979cb0b6b7
+0105060708090b0d4b54628eb0b6b7
+0103040507090b0d112b5a8da8b0b1
+01050708090b0d2b4b72a8b0b1b6b7
+01050708090b0d232b4b546cb0b6b7
+01050708090b0d232b314b54b0b6b7
+01050708090b0d232b3b4b54b0b6b7
+010405090b0d11235a67898d8eb0b3
+01050708090b0d23314b548eb0b6b7
+01050708090b0d3b4b5f788ea8b0b6
+01050708090b0d3b4b788ea8b0b6be
+01050708090b0d19316e787a83abb0
+0103050708090b0d115a636cb0b1b6
+0103050708090b0d5463a5b0b1b6b7
+01050708090b0d3144546398b0b6b7
+010405090b0d11235a6367898db0b3
+01050708090b0d17315472adb0b6b7
+01050708090b0d1d315498adb0b6b7
+01050708090b0d112331385a5bb0b3
+01050708090b0d1731445472b0b6b7
+01050708090b0d1d31445498b0b6b7
+01050708090b0d3144548098b0b6b7
+01050708090b0d1731546972b0b6b7
+01050708090b0d1754626972b0b6b7
+01050708090b0d175469728ab0b6b7
+01050708090b0d1754697293b0b6b7
+01050708090b0d17546972b0b6b7bb
+01050708090b0d1d31546998b0b6b7
+01040506070b0d2b3c8db0b1b6b7bb
+01050607080b0d2b3c8db0b1b6b7bb
+01050607080b0d3c568db0b1b6b7bb
+01050607080b0d2b3c79b0b1b6b7bb
+01020507080b0c0d136478797ab0bb
+010507080b0d2b3ca7a8b0b1b6b7bb
+010405070b0d34383c4694b0b6b7bb
+01030507080b0d3b4b788b8ea8b0b6
+01030507080b0d113d63787d9bb0b1
+01030507080b0d2b727897b0b1b6b7
+01030507080b0d72788ea8b0b1b6b7
+01050607080b0d113262788ea8b0b6
+01030507080b0d11193b788ea8b0b6
+010507080b0d1b6876788e9ba8b0b6
+01030507080b0d1217697f83a7b0b7
+0103050b0c55696a74acb0b1b6b7bc
+01050b0c55696a74acb0b1b6b7bcbe
+0105080b0c316a7274acb0b1b6b7bc
+01050708090b5a6aa8b0b1b6b7b9be
+010507080b343c526ab0b1b2b6b7b9
+01050708090b29315aa8b0b1b6b7b9
+010508090b11234e5a659aa7b0b1b9
+010507080b343c52a5b0b1b2b6b7b9
+01050708090b23345a6e8389b0b7b9
+010305080b122731b0b1b4b6b7b9bc
+01050708090b274b6c97b0b6b7b9be
+01050708090b274b546eb0b6b7b9be
+01050607080b191a2b3cb0b1b2b6b7
+010405070b13191a1d3c436db0b7bb
+010405070b191a1d3c43596db0b7bb
+010405070b13191a1d3c6d9eb0b7bb
+0105060708090b1a3c5463b0b1b6b7
+0105060708090b1a3c63a8b0b1b6b7
+01050708090b111a2d636cb0b1b6be
+01050607080b1a2b3c4ab0b1b6b7bb
+01050607080b1a393c56b0b1b6b7bb
+01050607080b1a3c568db0b1b6b7bb
+01050607080b1a395678b0b1b6b7bb
+0105060b131a1c324d9ba6b0b1b2bc
+0105080b2a4056a7abb0b1b6b7bbbc
+010506070b111d273c62636d9ab0b2
+01050708090b11272d636cb0b1b6be
+01050607080b17191d273cb0b2b6b7
+010506070b31383c565b69b0b1b2b7
+0104051a2a325d5e626a7b7c9ba6b0
+010507161d244b526a888db0b2b7b9
+0105070c111d27384652626a9ab0b6
+0105081b315a5d6a9bafb0b6b7b9bc
+0105070916174b546a6c8db0b1b7b9
+01050709111617546a6c8d96b0b1b9
+010515162d44566a6c8c8d929caeb0
+0105070911161754676a6c8d96b0b9
+0105081927386a73788994979bb0be
+010405112b395d7678a1a8b0b2b3bc
+0105060731384a4d565b69979bb0b7
+0105061c284a4b4c4e52657397b0b3
+01050628384a4b4c4e52657397b0b3
+010507090c0d164b6c7a8c8da6b0b6
+0105090c0d0e164b6c7a8c8da6b0b6
+01050c1528293b4b5e7a878ea6b0b6
+0105091116234b4c4e5a8da7b0b1b9
+0102050709184b4c4e528797b0b7b9
+0105060d29384b789799b0b1b6b7bc
+0105090d16171c4b6c828da3a6b0b1
+0105090d1617384b6c828da3a6b0b1
+010507090d2642434b51548da7b0b7
+0105090d1116234b4c4e5a8da7b0b1
+01050c1a1e3739429ea1a6a8b0b2b5
+01050c152e3453566e7c94abadb0bb
+01050c153453566c6e7c94abadb0bb
+01050c153453566e7c949aabadb0bb
+01050c15343753567c949aabadb0bb
+0104051a2a325d5e627b7c989ba6b0
+01050816172a4e567394969ba9abb0
+01040507090d1d3b6875787a7cb0b6
+01040507090d1d516875787a7cb0b6
+01040507090d1d6875787a7ca2b0b6
+01040507090d1d6875787a7c8cb0b6
+01050816171c1e242656689495abb0
+010508173336383b526b6e8794acb0
+0103052e3d4247545b7c7d808288b0
+
+=== rare_14class_covers.txt ===
+# p, number of 14-class covers (census14, office PC), first cover as folded classes 1..(p-1)/2
+379 3 1 5 38 43 48 53 93 134 137 149 153 154 173 188
+409 1 1 7 9 10 23 32 37 55 76 109 112 132 178 188
+419 1 1 8 9 13 14 29 38 86 115 124 143 147 150 151
+421 1 1 4 15 50 54 67 128 130 145 146 171 175 179 196
+457 1 1 2 55 60 68 111 112 113 114 115 116 117 169 221
+
+=== cluster.py ===
+import sys,json,glob,random
+def fold(x,p): x%=p; return min(x,p-x)
+def prof(S,p,B=20,Q=8):
+    out=[]
+    for v in S:
+        q=next((q for q in range(1,Q+1) if fold(q*v,p)<=B),None)
+        out.append(q)
+    return out
+def dec(h,w=2): return [int(h[i:i+w],16) for i in range(0,len(h),w)]
+p=int(sys.argv[1]); files=sys.argv[2:]
+rows=[dec(l.strip()) for f in files for l in open(f) if l.strip()]
+from collections import Counter
+C=Counter(); allq=Counter()
+for S in rows:
+    pr=prof(S,p); C[tuple(sorted(Counter(pr).items(),key=str))]+=1; allq.update(pr)
+print('rows',len(rows),' q-histogram over all classes (None = no q<=8 with |q v| <= 20):',dict(sorted(allq.items(),key=str)))
+random.seed(2); n=(p-1)//2; rq=Counter()
+for _ in range(2000): rq.update(prof(random.sample(range(1,n+1),15),p))
+print('random 15-sets, same histogram per', 2000*15,'classes:',dict(sorted(rq.items(),key=str)))
+
+----- END DATA -----
