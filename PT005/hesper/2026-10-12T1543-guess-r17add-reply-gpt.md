@@ -1,0 +1,16 @@
+BEGIN LETTER
+FROM: Hesper (courier, for Tuzi)
+TO: Opus (chair); Tuzi
+TABLE: PT005
+AS_OF: 2026-10-12 15:43 +08
+RE: 猜公式 Round 17 ADDENDUM reply (Opus 9c7d507 seed addendum, sent as follow-up in same chat), send text r17_addendum_send.txt
+SEAT: gpt
+MODEL: GPT-6 Thinking High, web
+CHAT: https://chatgpt.com/g/g-p-6aab4b75ee5c8191b91e5cede8dea932-play-civilisation-field/c/6ac97e4e-95c0-83ec-bfde-afaf19d7ade8
+
+--- reply verbatim ---
+[Hesper capture note: Copy empty; page text captured in 2 overlapping sections; math appears in page-rendered duplicated form; line breaks lost in capture]
+ADDENDUM REPLY · PT005 Round 17 Astra · 出宮增補 · 供 Opus 主席收錄 結論 [FACT]：找到兩篇值得加入 PT005 的文獻，均已打開原始論文（READ）。 最重要的新發現是 Beck–Everett 的短整數關係定理（Short Integer Relations）。它把我們一直討論的「共振」轉化成一個有嚴格界限的必要條件。 [IDEA] 我的選擇仍然是 Dish A（統一測度下界），但會把 Dish C 的整數關係方法納入證明策略。 Ingredient 6 · Lonely Runner Relations Reference: Matthias Beck、Samuel Everett, Lonely Runner Relations, arXiv 預印本，2026。 arXiv:2609.06259v2 。 Status: READ — 已閱讀原文 Theorem 1.1、Theorem 2.1、Theorem 3.2 及相關論證。 arXiv Statement [FACT]： Theorem 2.1 證明：若一組整數速度沒有嚴格孤獨時刻（Strict Lonely Time），則必存在非零整數關係 ∑ 𝑖 𝑎 𝑖 𝑣 𝑖 = 0 i ∑ ​ a i ​ v i ​ =0 其中 ∑ 𝑖 ∣ 𝑎 𝑖 ∣ ≤ 2 𝑘 + 3 , ∑ 𝑖 𝑎 𝑖 為奇數 . i ∑ ​ ∣a i ​ ∣≤2k+3 ​ , i ∑ ​ a i ​ 為奇數. 這不是對任意速度集合都能推斷出低安全測度的定理；它的前提是不存在嚴格孤獨時刻。 arXiv Serves dish: C，輔助 A。 How it plugs in: R10 Resonance、R16 Q2、C-floor。 What it gives [PROOF]： 對 PT005 的 14-speed 集合，代入： 2 ( 14 ) + 3 = 31 . 2(14)+3= 31 ​ . 因此，若 ML ⁡ ( 𝐾 ) ≤ 1 15 , ML(K)≤ 15 1 ​ , 必存在 0 < ∑ 𝑖 ∣ 𝑎 𝑖 ∣ ≤ 31 0< i ∑ ​ ∣a i ​ ∣≤31 的短整數關係，且係數和為奇數。 Gap：…Gap： 此定理沒有證明 𝑚 ( 𝐾 ) m(K) 很小時必有上述關係。尤其 𝑚 ( 𝐾 ) m(K) 接近 C-floor 候選值，仍可能同時有 ML ⁡ ( 𝐾 ) > 1 / 15 ML(K)>1/15。 下一步需要建立： 安全測度異常小 ⟹ 可控的短整數關係 安全測度異常小⟹可控的短整數關係 目前：UNFINISHED。 這篇論文提供了值得認真嘗試的結構工具，但不能直接當作 C-floor 的證明。 Ingredient 7 · Fourteen and Fifteen Lonely Runners Reference: Jaan Allikvere, Fourteen and fifteen lonely runners, arXiv 預印本，2026。 arXiv:2609.02604v2 。 Status: READ — 已閱讀 Theorem 1.1、Lemma 2.2、Theorem 3.8 及第六節 Verification and Reproducibility。 arXiv +1 Statement [FACT]： 作者提出一項結合速度乘積界與模素數窮舉的電腦輔助證明，主定理聲稱 Lonely Runner Conjecture 對十四與十五位跑者成立。相關程式及證書有公開存檔。 arXiv Serves dish: A、B。 How it plugs in: L16、L17、F5，以及任何依賴較低跑者數結論的證明。 What it gives [PROOF，依賴原論文定理]： 對任何 14-speed 集合 𝐾 K，十五跑者結論給出某時刻 𝑡 0 t 0 ​ ，使 ∥ 𝑘 𝑡 0 ∥ ≥ 1 15 ( ∀ 𝑘 ∈ 𝐾 ) . ∥kt 0 ​ ∥≥ 15 1 ​ (∀k∈K). 令 𝑀 = max ⁡ 𝐾 M=maxK。手算安全裕量： 1 15 − 1 16 = 16 − 15 15 ⋅ 16 = 1 240 . 15 1 ​ − 16 1 ​ = 15⋅16 16−15 ​ = 240 1 ​ . 距離函數具有 Lipschitz 上界 𝑀 M。所以在 𝑡 0 t 0 ​ 附近、半徑 1 / ( 240 𝑀 ) 1/…距離函數具有 Lipschitz 上界 𝑀 M。所以在 𝑡 0 t 0 ​ 附近、半徑 1 / ( 240 𝑀 ) 1/(240M) 的時間區間內，所有速度仍滿足 1 / 16 1/16 安全條件。 因此得到： 𝑚 ( 𝐾 ) ≥ 1 120 𝑀 > 0 . m(K)≥ 120M 1 ​ >0 ​ . 這是從原論文結論推導出的連續測度界，不是原論文直接聲稱的 C-floor。 Gap： 下界依賴 𝑀 M。當最大速度增加時，它趨近於零，不能代替 L17 所需要的不依賴 𝐾 K 的固定常數。 另須注意：原文介紹了算術檢查、部分重跑與驗證腳本，但我本輪沒有獨立執行其完整證書，也沒有確認完整計算已有外部獨立複現。不能把 READ 等同於獨立驗證通過。 新全局常數：UNFINISHED。 對 Dish A 的影響 [IDEA] 這兩篇文獻合起來，提示一個更清晰的研究分工： 嚴格孤獨時刻不存在： 用 Beck–Everett 的短整數關係約束結構。 安全時刻存在，但測度很小： 需要額外的定量穩定性定理（Quantitative Stability Theorem）。 最大速度非常大： 結合 R16 的區間界，研究多個大速度能否藉短整數關係互相壓縮。 目前仍不能推出 C-floor。 最後一問：是否改變 One-Dish Pick？ NO — 仍選 Dish A。 但我會把最值得追的問題改成： 能否把 Beck–Everett 的「短整數關係是極端情況的必要條件」，提升成「連續安全測度若非常小，就必須有可量化的共振結構」？ 若這一步成立，Dish C 就可能成為完成 Dish A 的工具。 Astra · R17 ADDENDUM · TWO READ REFERENCES · NO NEW UNIFORM CONSTANT · C-FLOOR OPEN
+
+--- end verbatim ---
+END LETTER
