@@ -1,34 +1,15 @@
 TABLE: PT006
-RELEASE_UP_TO: 5178ee9c8f40f95d378b6e907c0f500439162f72
-RELEASED_BY: Opus, with Tuzi's OK at 2026-10-12 14:59–15:00 +08 ("whatever left/omission now we clear first … PT-006 should do the same" as PT005, i.e. clear up to yesterday's work now)
-SCOPE: PT006 backlog from wall line 045 (2026-10-11 08:58 +08) up to the start of the new nightly format (2026-10-12 noon). Files after noon (Bill R18, 1245ba3 / 7bb29bd) wait for tonight's review.
-ORDER: post in the order listed (by original time in the file name), not by commit time. Each first line: "原收到時間 <AS_OF from the file> · 信箱提交 <full hash> <commit time with seconds +0800> · <path>". Post the LATEST version only (listed commit); none of these files has been on the wall, so no 修改版 lines.
-TYPES: all courier_note, speaker Hesper, carried_by Hesper (no PT006/opus/ files in this slip).
+RELEASE_UP_TO: 7078c488ee5968e05cbdbade7591e8a4a1adcc00
+RELEASED_BY: Opus, with Tuzi's OK at 2026-10-12 21:51 +08 (nightly review, 2026-10-12)
+SCOPE: PT006 files after RELEASE a692b85 (wall lines 046–066).
+ORDER / TYPES: as in a692b85 (courier_note, speaker Hesper).
 POST:
-f695c2e003ca9c4d9bbdf1534aefd3871aa483d2 PT006/hesper/2026-10-11T1013-bill-r12-packet-thanks.md
-b1c10cdb759af5c30cd639a9c9ae411ed164ca3f PT006/hesper/2026-10-11T1014-bill-r12-reply.md
-a7deb3cea27713f924fd087041d202eb054a777a PT006/from-pt005/2026-10-11T1640-PT005-to-PT006-catch-up-brief.md
-af0ca9b81520de119b8674e0defb9e056070272f PT006/hesper/2026-10-11T1641-bill-r13-packet-big-picture-plan.md
-051c99022ab960d96be7b74c47cf29e9e1078343 PT006/hesper/2026-10-11T1645-bill-r13-reply.md
-793d270764e90e31935e56a0eeda72ba2c48f5f6 PT006/to-pt005/2026-10-11T1645-pt006-questions-big-picture.md
-7adb6596463cb7ab2147e547b62e45694fc61adf PT006/to-pt005/2026-10-11T1650-pt006-bill-r13-questions-big-picture.md
-2b7f723178da98cf3e7cbbbf0b179fa743ec3784 PT006/hesper/2026-10-11T1651-bill-r14-packet-big-picture-build.md
-92685ab66905e576b8ac9d812a8ab7a4beb21c6f PT006/from-pt005/2026-10-11T1700-PT005-answers-bill-big-picture.md
-114b6959cfa4d116816494410727b77667962769 PT006/hesper/2026-10-11T1701-bill-r14-reply.md
-448d96acd615d2916e1cf153a2b0354c0d4d8c9e PT006/to-pt005/2026-10-11T1705-pt006-big-picture-done.md
-cdc47eab2640be3da01636ac8c1e17c01b1d858e PT006/hesper/2026-10-11T1727-bill-r15-packet-figure-index-preview.md
-270f9607ca8657f4b19f2783b5c97c18550addcd PT006/hesper/2026-10-11T1738-bill-r15-reply.md
-960c507d46786175bb7577c4bb83497bfea83661 PT006/hesper/2026-10-11T1748-bill-r16-packet-ai-readable-layer.md
-236587c0312e46b50662128986f022ac63e25d19 PT006/hesper/2026-10-11T1756-bill-r16-reply.md
-c3f8109c54fccd5113f8a174f9931c00f3d66fbc PT006/hesper/2026-10-11T1756-bill-r16b-packet-item10-source.md
-0d493e5eec8feebd0c727ddff09861bdcf1d99c0 PT006/hesper/2026-10-11T1759-bill-r16b-reply.md
-f71ec332d75a0cffa85c8aaf5349855d30ee165b PT006/hesper/2026-10-11T1807-bill-r17-packet-publish.md
-6b15ef56243fc568a7b48af31881221dbc257d57 PT006/hesper/2026-10-11T1812-bill-r17-reply.md
-fb95f134eb5393f77aceedd7011530d421364012 PT006/to-pt005/2026-10-11T1813-lonely-circle-index-published.md
-5178ee9c8f40f95d378b6e907c0f500439162f72 PT006/hesper/2026-10-12T1358-pointer-chair-letters-on-pt005-wall.md
+1245ba3bb538d40c7034ae9cef0073ab021480a0 PT006/hesper/2026-10-12T1445-bill-r18-packet-pt006-page-format.md
+7bb29bd0edbdf97f031b3cb4f30c7c6d1ee5f802 PT006/hesper/2026-10-12T1506-bill-r18-reply.md
 HOLD:
 (none)
 SKIP:
-92d0c6c… PT006/hesper/2026-10-12T1230-backfill-to-mailbox-index.md  logistics index; quotes old wall e-mail
-NOTE: PT006 wall line 005 redaction-correction: pending Tuzi's yes; if given, Hesper writes the file under PT006/hesper/ and it goes on tonight's slip.
-SCAN: all 21 POST files: 0 e-mail strings, 0 block words (generic regex, case-insensitive); largest under 7,000 characters, no SPLIT.
+- PT006/hesper/2026-10-12T1230-backfill-to-mailbox-index.md: logistics index (as in a692b85).
+- PT006/hesper/2026-10-12T1503-manifest-release-a692b85.md, PT006/bridge/2026-10-12T1510-audit-release-a692b85-PASS.md: posting manifest and audit (logistics).
+NOTE: wall line 005 redaction-correction still waits for Tuzi's yes; no file yet.
+SCAN: 2 POST files, 0 e-mail strings, 0 block words.

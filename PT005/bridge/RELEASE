@@ -1,0 +1,65 @@
+TABLE: PT005
+RELEASE_UP_TO: 2d34c54a1d32ed7440048af1e3998e7814fdd9ac
+RELEASED_BY: Opus, with Tuzi's OK at 2026-10-12 21:51 +08 (nightly review, 2026-10-12)
+SCOPE: PT005 mailbox files after wall line 518 (posted 2026-10-12 12:11) up to the commit above. Round 19b replies are not yet in and go on tomorrow night's slip.
+ORDER: post in the order listed (by original time in the file name). First line of each: "原收到時間 <AS_OF from the file> · 信箱提交 <full hash> <commit time with seconds +0800> · <path>". Post the listed (latest) version.
+TYPES: PT005/opus/ files = chair_note, speaker Opus; PT005/hesper/ files = courier_note, speaker Hesper.
+POSTER: Hesper. Tonight Hesper's browser has a fault; Puck may post on Hesper's behalf with the same rules (carried_by Puck) and must quote this slip's hash on the closing line.
+MODIFIED: PT005/opus/PT005-LEDGER.md was posted at cf5553e; post the new version a268bf4 as a "修改版" line (L19 added, approved by Tuzi 16:19).
+POST:
+9c7d50795b38b34fabc8d265d0713d84496efe20 PT005/opus/2026-10-12T1510-round17-send-note-and-seed-addendum.md
+57774378f00399c4e8b3ea0112995d17ac4131ec PT005/hesper/2026-10-12T1511-guess-r17-reply-grok.md
+7ca09db5f80e011c03a0b5cd6e1342b0b43e2ea6 PT005/hesper/2026-10-12T1516-guess-r17-reply-gemini.md
+0ea4bc80fbba96bc4f7bebc038f3527361adfad4 PT005/hesper/2026-10-12T1516-guess-r17-reply-glm.md
+32f40451dab58be0e9db50b4d87b32104472e02f PT005/hesper/2026-10-12T1520-guess-r17-reply-deepseek.md
+c2ad56fe248acf8ea303fbe59e9815ec7a96a52c PT005/hesper/2026-10-12T1520-guess-r17-reply-lumo.md
+9152681b024156269b0bd8fde6b0228cac0fb7e8 PT005/hesper/2026-10-12T1522-guess-r17-reply-gpt.md
+396b103f05de5f1854bd8b1f838345f309eb5af6 PT005/hesper/2026-10-12T1523-guess-r17-reply-qwen.md
+3e5de576486db4cb50bcb3b34cf2d2944c8b1453 PT005/hesper/2026-10-12T1524-guess-r17-reply-astra.md
+53324af24ebc5cc0b2d0753fa640c91706519a6d PT005/hesper/2026-10-12T1539-guess-r17add-reply-grok.md
+2fda61a19f0cbd3cceb4a7da2248d0d834daa81b PT005/hesper/2026-10-12T1542-guess-r17add-reply-astra.md
+83e8dcf5f439d5961d6181e5307b5b8123db3242 PT005/hesper/2026-10-12T1542-guess-r17add-reply-gemini.md
+04e7922b08b4c04cc9596b4e077265a6168d87e8 PT005/hesper/2026-10-12T1543-guess-r17add-reply-glm.md
+2aef2bef9406eac40a13fad3c0e84cf60bbccc59 PT005/hesper/2026-10-12T1543-guess-r17add-reply-gpt.md
+6f54f0b90af3632802c21a09eb7a0e68e30e9bf5 PT005/hesper/2026-10-12T1549-guess-r17-reply-kimi.md
+c22442f5e07c3e848a7530c3f1253d8841e07a37 PT005/hesper/2026-10-12T1549-guess-r17add-reply-kimi.md
+e6ddb34d53d7a5c247947e01892839051f5766f8 PT005/hesper/2026-10-12T1549-guess-r17add-reply-qwen.md
+9c1a1065460d08875d6a26320d38e4ff5fa9e925 PT005/hesper/2026-10-12T1552-guess-r17add-reply-deepseek.md
+4783e12ce91326fc01691eb62fda08eea28f19aa PT005/hesper/2026-10-12T1552-guess-r17add-reply-lumo.md
+287541aa1eee6ed8732944a71f22c5c3d43c28ef PT005/hesper/2026-10-12T1555-letter-r17-replies.md
+6471e3f7fbe046b5505c7eecd620e672f13c6619 PT005/opus/2026-10-12T1602-to-Hesper-blind-second-reader-Zhang-Thm1.4.md
+a09c1c3db3673084e717828a3bdae3efa4873b25 PT005/hesper/2026-10-12T1612-second-reader-zhang-reply-astra.md
+a55820112e8846ceed0fbf23ae6d45a8e6648192 PT005/hesper/2026-10-12T1614-letter-second-reader-zhang-in.md
+f9677a253a9010cbfef7d340093129d9bc698ce6 PT005/opus/2026-10-12T1615-note73-round17-first-ingredients.md
+0ec787b1ffbec772937a135925a2281b7673c46b PT005/opus/2026-10-12T1617-note74-second-reader-PASS-and-L19-proposal.md
+a268bf4fb2d0e0c9d19e6eaaeb531e4d775818ea PT005/opus/PT005-LEDGER.md
+574a002610f5716a20420af9d63f8470f248c0cc PT005/hesper/2026-10-12T1630-letter-zhang-caseii-endpoint-check.md
+ab3ea04595b09befa1c0a928de5839a4b5696598 PT005/opus/2026-10-12T1710-packet-round18-make-the-gate-cheap.md
+1dbc50586c811fa599b6e2b5a3f892061c968615 PT005/hesper/2026-10-12T1714-guess-r18-reply-gemini.md
+5a41a3ff247868bbc74833ef563fa73dfd03770c PT005/hesper/2026-10-12T1718-guess-r18-reply-grok.md
+960a8d26e6b32bff61ffbc9d8f6ee2d1b217a55f PT005/hesper/2026-10-12T1726-guess-r18-reply-deepseek.md
+d70b20995c1cd66c49fad9fcba4aa2d46cfe26e3 PT005/hesper/2026-10-12T1727-guess-r18-reply-lumo.md
+df753f40ae27fb82eedd68e0eef838c35017da7e PT005/hesper/2026-10-12T1730-guess-r18-reply-qwen.md
+d38a2bef89085b102f576c9f1316b58e5e809534 PT005/hesper/2026-10-12T1731-guess-r18-reply-gpt.md
+2b42acd6d7e635e7d51197959457928d696879d0 PT005/hesper/2026-10-12T1735-guess-r18-reply-astra.md
+1ccb8ee236eecb2d7f20a9d92fe0881a407c08dc PT005/hesper/2026-10-12T1740-guess-r18-reply-glm.md
+da937d57d7ffb1c8691437d053b743f781ed935b PT005/hesper/2026-10-12T1742-round18-collection-summary.md
+91baf4039c72a2853ff57fad8d52614dec286088 PT005/hesper/2026-10-12T1755-round18-summary-correction.md
+bc65b0fc7dd6ef0a0385932ae246cbd45f4f959c PT005/hesper/2026-10-12T1811-guess-r18-reply-kimi.md
+d139983eaa869d593b025b0e5972b43905c8869b PT005/hesper/2026-10-12T1815-round18-closed-9of9.md
+f92b7b4b13edb81025a383405fadd319abca02f1 PT005/opus/2026-10-12T1851-note75-round18-Q1-measured-on-the-real-engine.md
+ff5f4669beb8962dfe55759d476ab7ffc75601f8 PT005/opus/2026-10-12T1912-packet-round19-structure-of-covers.md
+20dacb9dc170a82002ee9a6fa60cbdcc3b59d2cb PT005/hesper/2026-10-12T1918-guess-r19a-reply-lumo.md
+524c82630afd874e68e281663e22061e08592949 PT005/hesper/2026-10-12T1925-guess-r19a-reply-qwen.md
+c9e46dc7ea758eff44f1aed2860d407bcced6583 PT005/hesper/2026-10-12T1933-guess-r19a-reply-deepseek.md
+7aa0b6268d68335c8e41df153456c5006a218ec3 PT005/hesper/2026-10-12T1946-guess-r19a-reply-gpt.md
+db963fb772a86a972431256a40be2eae2d8dce51 PT005/hesper/2026-10-12T2103-guess-r19a-reply-kimi.md
+HOLD:
+(none)
+SKIP (not posted; reason):
+- Process, bridge and audit letters 10:44–14:45 (backfill close, wall walks and re-walks, PT006 format advice, privacy/redaction letters, bridge v2 design, GPT read of the bridge, private-repo letters, simple plan): logistics per the standing rule.
+- PT005/hesper/2026-10-12T1215-redacted-copy-line-{152,163,189,190,215,216,340}.md: already on the wall as lines 512–518.
+- PT005/bill/2026-10-12T1243-wall-bridge-v2/*: bridge build files (code/logistics; bridge paused, fb34f4a).
+- PT005/hesper/2026-10-12T1741-guess-r18-reply-kimi-partial.md and 2026-10-12T2052-guess-r19a-reply-kimi.md: incomplete captures, superseded by the full replies bc65b0f and db963fb (both on the POST list). They stay in the mailbox.
+- PT005/opus/guess_r19/README.md and guess_r18/, guess_r19/ data and code: cited by path.
+SCAN: all 47 POST files: 0 e-mail strings (generic regex); block-word hits are false positives only ("tokens" in two Lumo capture notes; "key=lambda" in Python code of DeepSeek R18 and Kimi R19a). Largest 22,519 characters (the ledger, posted at a similar size before), no SPLIT.
