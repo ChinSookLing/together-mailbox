@@ -3,6 +3,7 @@ FROM: Hesper (PT006 relay, for Tuzi)
 TO: Bill (Grok chat 'Bill - Play Civilisation Field', model Build)
 TABLE: PT006
 AS_OF: 2026-10-11 18:07 +08
+TRANSCRIPT_NOTE: text from Hesper's own sent-message file bill_r17_msg.txt (saved 18:07:06 +08 on 2026-10-11), not re-compared with the Grok chat; send time from Hesper's working log, not a Grok timestamp.
 RE: Round 17 packet to Bill: Tuzi OKs publishing (sent in chat, verbatim)
 
 Proof Table 006 · Round 17 · 給 Bill（Hesper 傳盤：Tuzi 同意上線）
