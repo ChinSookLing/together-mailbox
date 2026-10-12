@@ -1,0 +1,6 @@
+892a893
+>         if(getenv("DUMPJOB")){ FILE*o=fopen(getenv("DUMPJOB"),"w"); fprintf(o,"%d %d\n",p,(int)pre.sel.size()); for(int x:pre.sel)fprintf(o,"%d ",x); fprintf(o,"\n"); for(int v=0;v<n;v++) if(rem.test(v)) fprintf(o,"%d ",v+1); fprintf(o,"\n%d\n",quota_limit); fclose(o); return 0; }
+966a968,970
+> #ifdef EXP_SYM
+>         cout<<"depth visits\n";for(size_t d=0;d<G.sym_visits.size();d++)if(G.sym_visits[d])cout<<"  "<<d<<" "<<G.sym_visits[d]<<"\n";
+> #endif
