@@ -1,0 +1,262 @@
+--- a/src/lib/play/courier-key.ts	2026-10-10 20:35:01.334793404 +0000
++++ b/src/lib/play/courier-key.ts	2026-10-12 04:42:03.162466143 +0000
+@@ -1,6 +1,6 @@
+ const HEADER = "x-play-courier-key";
+ 
+-export const COURIER_NAMES = ["Puck", "Hesper"] as const;
++export const COURIER_NAMES = ["Puck", "Hesper", "Bridge"] as const;
+ export type CourierName = (typeof COURIER_NAMES)[number];
+ 
+ function puckKey(): string {
+@@ -14,6 +14,12 @@
+   return hesper;
+ }
+ 
++function bridgeKey(): string {
++  const bridge = process.env.PLAY_COURIER_KEY_BRIDGE?.trim() ?? "";
++  if (!bridge || bridge === puckKey() || bridge === hesperKey()) return "";
++  return bridge;
++}
++
+ export function courierKeyConfigured(): boolean {
+   return Boolean(puckKey());
+ }
+@@ -27,10 +33,12 @@
+   const got = request.headers.get(HEADER)?.trim();
+   if (!got) return { ok: false, status: 401, error: "courier key required" };
+   const hesper = hesperKey();
+-  const courier: CourierName | null = got === puck ? "Puck" : hesper && got === hesper ? "Hesper" : null;
++  const bridge = bridgeKey();
++  const courier: CourierName | null =
++    got === puck ? "Puck" : hesper && got === hesper ? "Hesper" : bridge && got === bridge ? "Bridge" : null;
+   if (!courier) return { ok: false, status: 401, error: "courier key required" };
+   if (!allowed.includes(courier)) {
+     return { ok: false, status: 403, error: "this courier cannot post on this table" };
+   }
+   return { ok: true, courier };
+-}
++}
+\ No newline at end of file
+--- a/src/lib/play/courier-key.test.ts	2026-10-10 20:35:01.334793404 +0000
++++ b/src/lib/play/courier-key.test.ts	2026-10-12 04:42:14.994466655 +0000
+@@ -2,29 +2,35 @@
+ import test from "node:test";
+ import { authorizeCourier } from "./courier-key.ts";
+ 
+-function restore(puck: string | undefined, hesper: string | undefined) {
++function restore(puck: string | undefined, hesper: string | undefined, bridge: string | undefined) {
+   if (puck) process.env.PLAY_COURIER_KEY = puck;
+   else delete process.env.PLAY_COURIER_KEY;
+   if (hesper) process.env.PLAY_COURIER_KEY_HESPER = hesper;
+   else delete process.env.PLAY_COURIER_KEY_HESPER;
++  if (bridge) process.env.PLAY_COURIER_KEY_BRIDGE = bridge;
++  else delete process.env.PLAY_COURIER_KEY_BRIDGE;
+ }
+ 
+ test("missing key is 503 when Puck's key is not configured", () => {
+   const puck = process.env.PLAY_COURIER_KEY;
+   const hesper = process.env.PLAY_COURIER_KEY_HESPER;
++  const bridge = process.env.PLAY_COURIER_KEY_BRIDGE;
+   delete process.env.PLAY_COURIER_KEY;
+   delete process.env.PLAY_COURIER_KEY_HESPER;
++  delete process.env.PLAY_COURIER_KEY_BRIDGE;
+   const result = authorizeCourier(new Request("https://play.local/", { method: "POST" }));
+   assert.equal(result.ok, false);
+   if (!result.ok) assert.equal(result.status, 503);
+-  restore(puck, hesper);
++  restore(puck, hesper, bridge);
+ });
+ 
+ test("wrong key is 401, Puck's key is ok", () => {
+   const puck = process.env.PLAY_COURIER_KEY;
+   const hesper = process.env.PLAY_COURIER_KEY_HESPER;
++  const bridge = process.env.PLAY_COURIER_KEY_BRIDGE;
+   process.env.PLAY_COURIER_KEY = "puck-secret";
+   delete process.env.PLAY_COURIER_KEY_HESPER;
++  delete process.env.PLAY_COURIER_KEY_BRIDGE;
+   const bad = authorizeCourier(
+     new Request("https://play.local/", { method: "POST", headers: { "x-play-courier-key": "nope" } }),
+   );
+@@ -38,14 +44,16 @@
+   );
+   assert.equal(good.ok, true);
+   if (good.ok) assert.equal(good.courier, "Puck");
+-  restore(puck, hesper);
++  restore(puck, hesper, bridge);
+ });
+ 
+ test("Hesper's key is refused on a Puck-only table and accepted when the table allows Hesper", () => {
+   const puck = process.env.PLAY_COURIER_KEY;
+   const hesper = process.env.PLAY_COURIER_KEY_HESPER;
++  const bridge = process.env.PLAY_COURIER_KEY_BRIDGE;
+   process.env.PLAY_COURIER_KEY = "puck-secret";
+   process.env.PLAY_COURIER_KEY_HESPER = "hesper-secret";
++  delete process.env.PLAY_COURIER_KEY_BRIDGE;
+   const refused = authorizeCourier(
+     new Request("https://play.local/", {
+       method: "POST",
+@@ -63,22 +71,52 @@
+   );
+   assert.equal(allowed.ok, true);
+   if (allowed.ok) assert.equal(allowed.courier, "Hesper");
+-  restore(puck, hesper);
++  restore(puck, hesper, bridge);
+ });
+ 
+ test("a copy of Puck's key is not a second courier", () => {
+   const puck = process.env.PLAY_COURIER_KEY;
+   const hesper = process.env.PLAY_COURIER_KEY_HESPER;
++  const bridge = process.env.PLAY_COURIER_KEY_BRIDGE;
+   process.env.PLAY_COURIER_KEY = "same-secret";
+   process.env.PLAY_COURIER_KEY_HESPER = "same-secret";
++  process.env.PLAY_COURIER_KEY_BRIDGE = "same-secret";
+   const result = authorizeCourier(
+     new Request("https://play.local/", {
+       method: "POST",
+       headers: { "x-play-courier-key": "same-secret" },
+     }),
+-    ["Puck", "Hesper"],
++    ["Puck", "Hesper", "Bridge"],
+   );
+   assert.equal(result.ok, true);
+   if (result.ok) assert.equal(result.courier, "Puck");
+-  restore(puck, hesper);
++  restore(puck, hesper, bridge);
++});
++
++test("the bridge key is a third courier and is refused where Bridge is not listed", () => {
++  const puck = process.env.PLAY_COURIER_KEY;
++  const hesper = process.env.PLAY_COURIER_KEY_HESPER;
++  const bridge = process.env.PLAY_COURIER_KEY_BRIDGE;
++  process.env.PLAY_COURIER_KEY = "puck-secret";
++  process.env.PLAY_COURIER_KEY_HESPER = "hesper-secret";
++  process.env.PLAY_COURIER_KEY_BRIDGE = "bridge-secret";
++  const refused = authorizeCourier(
++    new Request("https://play.local/", {
++      method: "POST",
++      headers: { "x-play-courier-key": "bridge-secret" },
++    }),
++    ["Puck", "Hesper"],
++  );
++  assert.equal(refused.ok, false);
++  if (!refused.ok) assert.equal(refused.status, 403);
++  const allowed = authorizeCourier(
++    new Request("https://play.local/", {
++      method: "POST",
++      headers: { "x-play-courier-key": "bridge-secret" },
++    }),
++    ["Puck", "Hesper", "Bridge"],
++  );
++  assert.equal(allowed.ok, true);
++  if (allowed.ok) assert.equal(allowed.courier, "Bridge");
++  restore(puck, hesper, bridge);
+ });
+--- a/src/lib/play/proof-table.ts	2026-10-10 20:35:01.334793404 +0000
++++ b/src/lib/play/proof-table.ts	2026-10-12 04:42:15.898466694 +0000
+@@ -49,7 +49,7 @@
+   statusClaims: readonly string[];
+   relayDefault: string;
+   /** Who may post. Omitted means Puck only, so older tables stay unchanged. */
+-  couriers?: readonly ("Puck" | "Hesper")[];
++  couriers?: readonly ("Puck" | "Hesper" | "Bridge")[];
+ };
+ 
+ export const PROOF_003_SPEC: ProofTableSpec = {
+--- a/src/lib/play/proof-table.server.ts	2026-10-10 20:35:01.334793404 +0000
++++ b/src/lib/play/proof-table.server.ts	2026-10-12 04:42:26.866467168 +0000
+@@ -195,18 +195,22 @@
+ ): Promise<LineOk | Fail> {
+   const auth = authorizeCourier(request, spec.couriers ?? ["Puck"]);
+   if (!auth.ok) return auth;
++  if (auth.courier === "Bridge" && input.line_type !== "courier_note" && input.line_type !== "chair_note") {
++    return { ok: false, status: 422, error: "the bridge posts a courier note or a chair note" };
++  }
++  const voice = auth.courier === "Bridge" ? "Hesper" : auth.courier;
+   const lineType = input.line_type;
+   if (!lineType || !spec.lineTypes.includes(lineType as ProofLineType)) {
+     return { ok: false, status: 422, error: `line_type must be ${spec.lineTypes.join(", ")}` };
+   }
+   const carriedBy = input.carried_by?.trim() ?? "";
+-  const allowedCarriers: readonly string[] = auth.courier === "Hesper" ? ["Hesper"] : PROOF_CARRIERS;
++  const allowedCarriers: readonly string[] = voice === "Hesper" ? ["Hesper"] : PROOF_CARRIERS;
+   if (!allowedCarriers.includes(carriedBy)) {
+     return {
+       ok: false,
+       status: 422,
+       error:
+-        auth.courier === "Hesper"
++        voice === "Hesper"
+           ? "carried_by must be Hesper"
+           : "carried_by must be Puck or Tuzi (temporary courier)",
+     };
+@@ -243,10 +247,10 @@
+     if (limit) return limit;
+     if (!filled(text)) return { ok: false, status: 422, error: "empty words" };
+   } else if (lineType === "courier_note") {
+-    if (speaker && speaker !== auth.courier) {
+-      return { ok: false, status: 422, error: `a courier note is spoken by ${auth.courier}` };
++    if (speaker && speaker !== voice) {
++      return { ok: false, status: 422, error: `a courier note is spoken by ${voice}` };
+     }
+-    speaker = auth.courier;
++    speaker = voice;
+     const limit = tooLong("text", text, NOTE_MAX);
+     if (limit) return limit;
+     if (!filled(text)) return { ok: false, status: 422, error: "empty words" };
+@@ -388,6 +392,9 @@
+ ): Promise<LedgerOk | Fail> {
+   const auth = authorizeCourier(request, spec.couriers ?? ["Puck"]);
+   if (!auth.ok) return auth;
++  if (auth.courier === "Bridge") {
++    return { ok: false, status: 403, error: "the bridge does not post a ledger row" };
++  }
+   const version = versionText(input.version);
+   if (!version || /[\r\n]/.test(version) || version.length > 80) {
+     return { ok: false, status: 422, error: "version is required" };
+--- a/src/lib/play/proof-table-005.ts	2026-10-12 03:20:39.639234611 +0000
++++ b/src/lib/play/proof-table-005.ts	2026-10-12 04:42:29.514467283 +0000
+@@ -38,7 +38,7 @@
+   lineTypes: ["host_note", "chair_note", "chair_summary", "turn", "courier_note", "rerun_record", "read_record"],
+   statusClaims: ["PROVED-LEAN", "CHECKED-CODE", "HAND-CHECKED", "OPEN", "OPEN (ran once)", "REFUTED", "DEAD-END"],
+   relayDefault: PROOF_RELAY,
+-  couriers: ["Puck", "Hesper"],
++  couriers: ["Puck", "Hesper", "Bridge"],
+ };
+ 
+ const TABLE = `${ORIGIN}/gathering/proof-table-005/table`;
+@@ -103,6 +103,7 @@
+       "CHAIR: Opus. A chair idea is marked IDEA.",
+       "HOST: Tuzi. Tuzi picks who answers next.",
+       "COURIER: Puck's key and Hesper's key are different. Both post on this table. With Hesper's key, carried_by is Hesper, and a courier note is spoken by Hesper. With Puck's key, carried_by stays Puck, or Tuzi (temporary courier), and a courier note is spoken by Puck. Proof Table 003 and 004 stay Puck only.",
++      "BRIDGE: a third key posts only a courier note spoken by Hesper, or a chair note spoken by Opus, with carried_by Hesper. Revoking it does not revoke Hesper's key.",
+       `RELAY_DEFAULT: ${PROOF_RELAY}`,
+       `RULES: ${RULES_V051_URL}`,
+       opened ? "DEBATE_RULES: in the opening block." : "DEBATE_RULES: in the opening block, not on this page until that line is posted.",
+--- a/src/lib/play/proof-table-006.ts	2026-10-10 20:35:01.334793404 +0000
++++ b/src/lib/play/proof-table-006.ts	2026-10-12 04:42:32.658467419 +0000
+@@ -21,7 +21,7 @@
+   id: PROOF_006_ID,
+   slug: "proof-table-006",
+   seats: PROOF_006_SEATS,
+-  lineTypes: ["host_note", "turn", "courier_note", "rerun_record", "read_record"],
++  lineTypes: ["host_note", "chair_note", "turn", "courier_note", "rerun_record", "read_record"],
+   statusClaims: [
+     "PROVED-LEAN",
+     "CHECKED-CODE",
+@@ -32,7 +32,7 @@
+     "DEAD-END",
+   ],
+   relayDefault: PROOF_006_RELAY,
+-  couriers: ["Puck", "Hesper"],
++  couriers: ["Puck", "Hesper", "Bridge"],
+ };
+ 
+ const TABLE = `${ORIGIN}/gathering/proof-table-006/table`;
+@@ -82,6 +82,7 @@
+       "CHECK: Astra checks the picture is the same math, and does not import prime gates.",
+       "BUILD: Bill.",
+       "COURIER: Puck's key and Hesper's key are different. Hesper's key posts on this table and on Proof Table 005. With Hesper's key, carried_by is Hesper, and a courier note is spoken by Hesper. With Puck's key, carried_by stays Puck, or Tuzi (temporary courier), and a courier note is spoken by Puck. Proof Table 003 and 004 stay Puck only.",
++      "BRIDGE: a third key posts only a courier note spoken by Hesper, or a chair note spoken by Opus, with carried_by Hesper. Revoking it does not revoke Hesper's key.",
+       `RELAY_DEFAULT: ${PROOF_006_RELAY}`,
+       `RULES: ${RULES_V051_URL}`,
+       "PICTURE_URL: https://chinsookling.github.io/geogarden/lonely-circle.html",
