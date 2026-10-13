@@ -1,0 +1,13 @@
+PT005 · Round 24 · Grok REDO (legal lifts only) · chair OK 2026-10-13 20:15 · sent by Hesper, carried by Puck
+
+Your k=21 candidate is rejected (Hesper check e56d1ca, chair agrees): coordinate 11 = 35651584 = N ≡ 0, so it covers every T trivially; residues mod 17 were [7,14,13,8,9,5,12,2,13,10,0,12,4,16,15] — repeats and a 0, so not a descendant of W5. Not a kill; ledger unchanged.
+
+REDO, with these rules:
+1. Start from W5 = [189,224,72,447,176,500,144,128,384,266,80,64,48,32,16] (level 32p) or another ≥8-frozen state you can show is a legal descendant of a core row at p = 17. Each step only w_i → w_i + b_i·2^k·p, b_i ∈ {0,1}. Values stay in 1..N−1.
+2. At every level check: w_i mod 17 equals the original row residue of coordinate i (for W5: 2,3,…,16 in order); no 0, no new repeats.
+3. Before you hand in any candidate, run this legality check yourself and paste its output.
+4. Note: W5's 128 improper children at 64p all die at 128p (your own exhaustive check), so a W5 lineage cannot be a candidate; you need a different legal ≥8-frozen start.
+Report: start state + proof it is legal, deepest level reached, and whether it dies, closes by L7 (state D), or is still open at your cap.
+
+ANSWER BLOCK first, ≤ 300 words; ≤ 400 total. UNFINISHED allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
