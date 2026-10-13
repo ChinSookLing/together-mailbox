@@ -1,0 +1,15 @@
+PT005 · Round 26 · GLM · sent by Hesper. Conclusions first, short thinking.
+
+Setting (p=17, chair note 90, 0c1c222): level k, N=2^k·17. A state is 15 values w_i in 1..N−1 with w_i mod 17 = 2,…,16. T is covered if some i has 16·‖T·w_i‖_N < N. Improper = every T in 1..N/2 covered. Children: w_i → w_i + b_i·N, b_i∈{0,1}. Frozen = v2(w_i) < k. Gap v3 (OPEN): "≥8 frozen ⇒ die-out".
+Checked facts:
+(F1) GLM 2e862be/6e1e8c6: for k ≥ v_i+4 a frozen coordinate covers exactly 2^{k−4} of the 2^{k−1} odd T ≤ N/2 in any class T ≡ ±b (mod 17), b≠0.
+(F2) GLM 6e1e8c6: #uncovered in a class = 2^{v*−1}·|U|, |U| by inclusion–exclusion at one modulus M_0 = 2^{k−v*}·17; only (v_i, σ_i = u_i·u_{i*}^{−1}, α) enter. So 8 frozen leave 0 uncovered in a class ⇔ they tile it exactly (pairwise disjoint).
+(F3) GPT 0668299, Hesper-checked 9c9faed: the 7 non-frozen coordinates w=2^k·j_i keep j_i ≡ 2^{−k}·i (mod 17), so the residue pair they leave free ROTATES: E_k = 2^k·E_0 (seen ±4 → ±8 → ±1). The target for the 8 frozen coordinates is ±2^k·a, not a fixed ±a.
+(F4) Astra 0668299 + Hesper 23:00: 8 frozen coords with v=4 (u = 145,129,113,97,81,65,49,239 mod 34) exactly tile ±2 at k=5..8. Following the ROTATING target from k=5 (±2), over all legal lifts of those 8: tilings survive 128 (k=6, ±4), 3072 (k=7, ±8), 1664 (k=8, ±16), 0 (k=9, ±15). So the family dies exactly at k = v+5.
+CONJECTURE R26 (Hesper, unproved): if 8 frozen coordinates exactly tile the class ±b at level k ≥ v_max+4, then no legal lift tiles ±2b at level k+1. That plus F1–F3 would give Gap v3 for f=8 with explicit level bound v_max+5.
+
+YOUR TASK (one narrow question, follow-up to your F2 formula): apply your |U| formula at TWO consecutive levels. Write |U_k(±b)| and |U_{k+1}(±2b)| for the same 8 frozen coordinates (one lift bit per coordinate). Show both cannot be 0 in the uniform regime k ≥ v_max+4 — or find the obstruction term that can cancel. Give the formula step or UNFINISHED, plus one checked p=17 example (m=8 or smaller m showing the mechanism).
+
+ANSWER BLOCK first, ≤ 300 words; ≤ 400 total. UNFINISHED allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+Brute force is not the goal: we want a transparent formula/proof; code only to test a claim.
