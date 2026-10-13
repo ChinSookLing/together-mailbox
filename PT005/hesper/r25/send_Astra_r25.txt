@@ -1,0 +1,14 @@
+PT005 · Round 25 · Astra · sent by Hesper, carried by Puck
+
+Setting (p=17, chair note 90, 0c1c222): level k, N=2^k·p. A state is 15 values w_i in 1..N−1 with w_i mod 17 = 2,3,…,16 (coordinate i keeps its residue). T is covered if some i has 16·‖T·w_i‖_N < N. Improper = every T in 1..N/2 covered. Children: w_i → w_i + b_i·N, b_i∈{0,1}. Frozen = v2(w_i) < k (v2 never changes again). Die-out is permanent. Gap v3 (OPEN): "≥8 frozen ⇒ die-out".
+Facts so far (R24/R24c, all checked):
+(F1) GLM 2e862be: for k ≥ v_i+5 a frozen coordinate covers exactly 1/8 of odd T ≤ N/2; coverage of (v,u) depends only on T mod 2^{k−v}·p.
+(F2) GLM b20611e (Hesper verified in code): |C_a ∩ C_b| = 2^{v0−1}·#S, S = {odd t < M0 : ‖t‖_{M0} < M0/16 and ‖σt‖_{M1} < M1/16}, M_j = 2^{k−v_j}p, σ = u1·u0^{−1} mod M1. Only the ratio σ survives.
+(F3) Astra/GPT (Puck f436ed9): two same-valuation frozen sets CAN be disjoint (w=19 vs 1069 at k=8; 3 vs 55 at k=5); 8-set exact tilings at k=5..8: 0 legal.
+(F4) Hesper (checked k=5): a non-frozen coordinate (w ≡ 0 mod 2^k, w = 2^k·j) covers T iff T ≡ 0 or ±j^{−1} (mod 17). So 7 non-frozen coordinates cover at most 15 of the 17 residues mod 17: with f ≥ 8 frozen, some pair ±a (mod 17) is left to the frozen coordinates alone.
+NEW ROUTE (Hesper, unproved): by F1–F4, "≥8 frozen ⇒ die-out" reduces to a RESTRICTED LONELY-RUNNER statement: f ≥ 8 frozen coordinates (fixed 2-adic digits as k grows) cannot cover every odd T ≡ ±a (mod 17), T ≤ N/2, at every level. Lonely Runner for ≤ 8 speeds is known with gap 1/(n+1) ≥ 1/9 > 1/16, but here time T is restricted (odd, one residue pair mod 17) and the moduli 2^{k−v_i}p differ.
+
+YOUR TASK (one narrow question): prove or break the RESTRICTED LR REDUCTION. Either (a) prove: for f ≥ 8 frozen coordinates and a free pair ±a mod 17, some odd T ≡ ±a (mod 17), T ≤ N/2, is uncovered by all frozen coordinates at some level ≤ k + c (explicit c, or an explicit closed formula in p), e.g. by rescaling to a standard LR instance (state exactly which known LR result and which extra hypothesis you need), or (b) break it with an explicit legal p=17 state: 8 frozen coordinates covering all odd T ≡ ±a (mod 17) for several consecutive levels (check by code). Aim for a formula valid for all p, not a census.
+
+ANSWER BLOCK first, ≤ 300 words; ≤ 400 total. UNFINISHED allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
