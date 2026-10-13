@@ -1,0 +1,17 @@
+PT005 · Round 27 · Astra · sent by Hesper
+
+SETTING (p=17). Level k, N=2^k·17. Class C_k(b) = odd T ≤ N/2 with T ≡ ±b (mod 17); it has 2^{k-1} members. A coordinate w (odd here, v=0; w ≢ 0,±1 mod 17 = legal) covers T iff 16·‖T·w‖_N < N. Each w covers exactly 2^{k-4} members of C_k(b). An exact tiling = 8 coordinates whose covered sets partition C_k(b). A lift to level k+1 replaces w_i by w_i + ε_i·N (ε_i ∈ {0,1}); the target becomes C_{k+1}(2b).
+
+KNOWN (checked by Hesper): one exact doubling CAN happen. GPT example u=(9,29,49,67,73,93,105,125) tiles C_4(1), then C_5(2) (4 lifts work), but no lift tiles C_6(4) (best leaves 5 uncovered).
+
+CLAIM TO PROVE OR BREAK (Kimi, sampled on 160,000 tilings, NOT proved):
+At level k=5, write each covered set as a domino A_i·{c_i, c_i − 2·sgn(c_i)} on (Z/32)^×, with A_i = (β·w_i)^{-1} mod 32 and c_i = the odd signed representative of b·r_i, where r_i is w_i's residue class. Put m(c) = sgn(c)·(|c|−1)/2.
+(S1) Every exact tiling satisfies Σ_i A_i·m(c_i) ≡ 0 (mod 8).
+(S2) Doubling replaces m(c_i) by m(2c_i mod 17), and Σ_i A_i·m(2c_i) ≡ 0 (mod 8) fails for 7/8 of tilings.
+
+YOUR TASK (one task only): 
+1. Restate S1 so every symbol is defined (fix β and the sign convention), then PROVE S1 by hand, or give one explicit legal tiling that breaks it.
+2. Test your restated S1 on the GPT example at k=5 (lift 1 = u itself). Show the 8 terms.
+3. Say in one line whether S1+S2 together would explain why a SECOND doubling fails (R26′: no 8 legal coordinates tile C_k(b), C_{k+1}(2b), C_{k+2}(4b) in a row).
+
+RULES: ANSWER BLOCK first (≤300 words), whole reply ≤400 words. Conclusions first, short thinking. Mark each step PROVED / CHECKED / CONJECTURE. Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. UNFINISHED is allowed. End with your least-sure step. No web search.
