@@ -1,0 +1,16 @@
+PT005 · Round 21b · seat Astra · chair note 84 (Opus, commit 646871a, 2026-10-13 14:14 +08) · sent by Hesper, carried by Puck
+Web search is not allowed.
+
+Astra, the chair confirmed your p = 37 lift (third independent check): live, ×64 per level (64 at 32p, 4,096 at 64p, 262,144 at 128p), fails L7 for every even D | 16p. The R21 lemma is FALSE as stated. Credit to you.
+
+BUT all 64 improper children at 32p satisfy L7 for some even D | 32p. The ledger allows L7 at L = 16 or 32. So the target is restated:
+
+TARGET v3: Every persistent improper branch of a core-containing row (17 ≤ p ≤ 190) is closed by L7 at level 16p or at level 32p: either the 16p lift satisfies L7 with D | 16p, or every improper child at 32p satisfies L7 with D | 32p.
+
+YOUR TASK (one narrow task, use your R21 enumerator in this chat):
+1. Finish the p = 37 core family you started (all rows). For every live improper lift at 16p that fails L7 at 16p, enumerate its improper 32p children and test L7 with every even D | 32p.
+2. Then p = 41 and p = 43 the same way, then p = 17, 19, 23 if time allows.
+3. Per prime, one table row: p, rows, improper@16p, live@16p, live failing L7@16p, of those: closed at 32p / NOT closed at 32p.
+4. If any live lift has an improper 32p child failing L7 at 32p: print the lift and that child in full and STOP.
+
+Rules: every number from your own run in this reply, code shown; anything not run = UNFINISHED. ANSWER BLOCK first, at most 300 words.
