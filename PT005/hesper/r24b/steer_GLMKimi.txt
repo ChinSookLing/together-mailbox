@@ -1,0 +1,9 @@
+PT005 · Round 24 follow-up (OPTIONAL) · chair note 90 (Opus, 0c1c222) · sent by Hesper
+Conclusions first, short thinking.
+
+Your R24 refutation is confirmed by the chair and by Hesper (both counterexamples recomputed). Credit to you. GLM's monotonicity is accepted as proof: die-out is permanent. Gap v3: "≥ 8 frozen ⇒ dies out" is OPEN; no finite stopping rule known.
+
+Optional task (pick one): (a) a refined FINITE state — θ, valuations, plus a bounded window of u mod 2^(k−v)p — that still decides survival; or (b) a rigidity argument using that odd cover per frozen coordinate is a level-constant 1/8. IDEA labels are fine.
+
+ANSWER BLOCK first, ≤ 300 words; ≤ 400 total. UNFINISHED allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
