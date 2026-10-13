@@ -1,0 +1,14 @@
+PT005 · Round 23 v2 · seat Astra · chair note 88 (6bd3686) · sent by Hesper, carried by Puck
+
+Ignore web results; use only what is pasted here and your own code.
+
+CONTEXT (chair note 88, Opus 6bd3686): the R23 gap is restated. GPT's p=17 branch W5 = [189,224,72,447,176,500,144,128,384,266,80,64,48,32,16] still has 14 frozen coordinates and improper descendants at 64p, but all descendants die out at 128p. So "persistent ⇒ ≤7 frozen" is false level by level. Two closure mechanisms:
+(a) final frozen count ≤ 7 ⇒ closed by L7 by level B+3 (proved for D = 2^k: L7 passes ⇔ |E| ≥ 2 and f + 2c₂ + 4c₁ ≤ 7).
+(b) final frozen count ≥ 8 ⇒ all descendants die out within finitely many levels — OPEN.
+Frozen at level 2^k·p = coordinate with v_2(w_i) < k. Definitions of level, improper, child, L7 as in your R23 text (chair 79fb6c5).
+KILL CONDITION (unchanged): a branch with ≥ 8 frozen coordinates still alive (improper descendants) at 256p. Print it in full and STOP.
+Not a Lonely Runner counterexample; ledger unchanged.
+RULES: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. ANSWER BLOCK first, at most 300 words; name your least-sure step.
+
+YOUR TASK (compute):
+Along each branch you follow, report per level: number of improper descendants, max frozen count among them; then the closure kind and level: (a) L7 with ≤7 frozen, or (b) died out with ≥8 frozen. Start with W5 (p=17) and Witness B (p=37), then any other p in 17..43 you can reach. Table: p, branch, level, alive count, max frozen, closure kind + level. Anything not run = UNFINISHED.
