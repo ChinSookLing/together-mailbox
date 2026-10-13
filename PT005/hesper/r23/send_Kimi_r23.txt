@@ -1,0 +1,23 @@
+PT005 · Round 23 · seat Kimi · chair notes 86 (e17651a) §3 + 87 (ee255da) · sent by Hesper
+
+Ignore web results; use only what is pasted here and your own code.
+
+WHERE WE ARE (chair notes 85–87):
+- p = 37, row R = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,16]. Witness A (W16 = [112,2,336,448,5,6,192,8,416,528,48,160,13,14,16]) closes by L7 at 32p. Witness B (W16 = [112,2,336,448,5,80,192,8,416,528,48,160,13,236,16]) has 32 L7-failing children at 32p; all 2,048 improper descendants at 64p pass L7 (D = 64).
+- p = 17 (GPT): W5 = [189,224,72,447,176,500,144,128,384,266,80,64,48,32,16] is improper at 32p and fails L7; its 128 improper children at 64p all fail L7; at 128p there are no improper descendants (it dies out).
+- Freeze–decay lemma (GLM; chair agrees, for D = 2^k): at level 2^k·p with D = 2^k, v_i = v_2(w_i); coordinates with v_i ≥ k leave E; a coordinate with v_i < k is FROZEN (its valuation never changes again) and costs D/2, D/4, D/8 when k − v_i = 1, 2, ≥3. L7 passes ⇔ |E| ≥ 2 and f + 2c₂ + 4c₁ ≤ 7 (f, c₂, c₁ = number of E-coordinates with k − v_i ≥ 3, = 2, = 1). So a branch with at most 7 frozen coordinates closes a few levels after its last freeze (table uses the conservative bound B+3).
+
+DEFINITIONS (chair 79fb6c5): level N = 2^k·p; too near at T: 16·min(T·w mod N, N − T·w mod N) < N; improper at N: every T = 1..N/2 covered by some coordinate, and at least two odd coordinates; child at 2N: w'_i = w_i + b_i·N (b_i ∈ {0,1}). L7 at level N for even D | N: E = {i : D ∤ w_i}, g_i = gcd(D, w_i); handled if |E| ≥ 2 and Σ_{i∈E} g_i·⌈(D/g_i)/8⌉ < D.
+CLOSED (chair note 87, ee255da): a branch is closed at level k if EITHER every improper descendant at level k passes L7 with D | 2^k·p, OR it has no improper descendants at level k (died out). Both count. Every report must say WHICH kind and AT WHICH level.
+
+THE GAP (chair note 86, e17651a): every persistent branch (17 ≤ p ≤ 190, core-containing row) has at most 7 frozen coordinates.
+KILL CONDITION: a branch with 8 or more frozen coordinates that is still alive (has improper descendants) at 256p. If you find one, print it in full and STOP.
+This is not a Lonely Runner counterexample; the ledger is unchanged.
+
+RULES: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. ANSWER BLOCK first, at most 300 words; name your least-sure step.
+
+YOUR TASK (proof):
+1. ALIGN (one line): define exactly the level of the "last freeze" you use, and give your closure bound in that indexing. (GLM wrote K+2 with "freezes at level K with v_i = K−1"; Kimi wrote B+3. The table uses B+3 until you align.)
+2. PROVE "persistent ⇒ at most 7 frozen coordinates", or say exactly which step fails. Idea to test: an improper lift must be too near at every odd time; frozen odd coordinates spread their phases, so 8 of them should leave some odd time uncovered.
+3. If your argument fails, say what extra fact about the residues mod p it would need.
+Conclusions first, short thinking. At most 400 words total.
