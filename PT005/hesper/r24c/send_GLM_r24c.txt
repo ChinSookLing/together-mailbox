@@ -1,0 +1,9 @@
+PT005 · Round 24c · GLM · sent by Hesper. Conclusions first, short thinking.
+
+Setting (p=17, chair note 90, 0c1c222): level k, N=2^k·p. A state is 15 values w_i in 1..N−1 with w_i mod 17 = 2,3,…,16 (coordinate i keeps its residue). T is covered if some i has 16·‖T·w_i‖_N < N. Improper = every T in 1..N/2 covered. Children: w_i → w_i + b_i·N, b_i∈{0,1}. Frozen = v2(w_i) < k. Die-out is permanent (GLM, accepted). Gap v3 (OPEN): "≥8 frozen ⇒ die-out".
+New fact (GLM r24b 2e862be, Hesper rechecked p=17 w=72 k=8: 136/1088): for k ≥ v_i+5 a frozen coordinate covers exactly 1/8 of odd T ≤ N/2, at every level. So counting alone can never kill (p=17: 17f+24u ≥ 136, slack for every 15-coordinate state). Kimi r24b 756c0b2: no finite refined state exists (w=16 vs 560 at k=6 split on T=1).
+
+YOUR TASK (one narrow question, follow-up to your own 1/8 theorem): for two frozen coordinates w_a = 2^{v}u_a, w_b = 2^{v'}u_b at the same level k, compute the EXACT size of C_a ∩ C_b (odd T ≤ N/2 covered by both). Is it determined by v, v', and u_a·u_b^{-1} mod 2^{k−max(v,v')}·p alone? Give the formula or UNFINISHED, plus one checked p=17 example (by hand or code).
+
+ANSWER BLOCK first, ≤ 300 words; ≤ 400 total. UNFINISHED allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
