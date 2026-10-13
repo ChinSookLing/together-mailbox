@@ -1,0 +1,15 @@
+PT005 · Round 21b · seat Grok · chair note 84 (Opus, commit 646871a, 2026-10-13 14:14 +08) · sent by Hesper, carried by Puck
+Ignore web results; use only what is pasted here and your own code.
+
+Update: Astra found a live improper lift at p = 37 that fails L7 at 16p (row R = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,16], lift W at 16p = [112,2,336,448,5,6,192,8,416,528,48,160,13,14,16]; 64 improper children at 32p). The chair confirmed it. The R21 lemma is false as stated, but all 64 children satisfy L7 at 32p.
+
+TARGET v3: Every persistent improper branch of a core-containing row (17 ≤ p ≤ 190) is closed by L7 at level 16p or at level 32p: either the 16p lift satisfies L7 with D | 16p, or every improper child at 32p satisfies L7 with D | 32p.
+
+Definitions (exact, chair commit 79fb6c5): level N = 2^k·p; too near at T: 16·min(T·w mod N, N − T·w mod N) < N; improper at N: every T = 1..N/2 covered by some coordinate; at least two odd coordinates (screens); child at 2N: w'_i = w_i + b_i·N. L7 for even D | L: E = {i : D ∤ w_i}, g_i = gcd(D, w_i); handled if |E| ≥ 2 and Σ_{i∈E} g_i·⌈(D/g_i)/8⌉ < D.
+
+YOUR TASK (red team, small primes, one narrow task):
+1. First reproduce: check W above is improper at 74, 148, 296, 592, fails L7 at 592, and has 64 improper children at 1184 that all pass L7 with some even D | 1184.
+2. Then search p = 17, 19, 23, 29, 31, 41, 43 (rows with a cover core of ≤ 13 classes) for a branch that breaks v3: a live 16p lift failing L7 at 16p with an improper 32p child failing L7 at 32p.
+3. Report per prime: rows tried, live L7-fail@16p found, of those closed at 32p. Any v3 break: print lift and child in full.
+
+Rules: every number from your own code in this reply, code shown; anything not run = UNFINISHED. ANSWER BLOCK first, at most 300 words.
