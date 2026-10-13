@@ -1,0 +1,1 @@
+TOTAL rows 4015 level16_lifts 368192 unhandled_lifts 0 rows_with_unhandled 0
