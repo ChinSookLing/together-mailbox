@@ -1,0 +1,16 @@
+mod p ±R: True
+74 True odd 2
+148 True odd 2
+296 True odd 2
+592 True odd 2
+D 2 L 2 L<D False
+D 4 L 8 L<D False
+D 8 L 8 L<D False
+D 16 L 18 L<D False
+D 74 L 150 L<D False
+D 148 L 298 L<D False
+D 296 L 588 L<D False
+D 592 L 1170 L<D False
+improper children 32p: 64 [704, 2, 928, 448, 5, 6, 192, 8, 416, 1120, 640, 160, 13, 14, 608]
+Astra child in set: True
+improper children 64p of child: 64
