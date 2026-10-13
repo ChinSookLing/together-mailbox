@@ -1,0 +1,11 @@
+SETTING (p=17, same as R26/R27). Level k, N=2^k·17. Class C_k(b) = odd T ≤ N/2 with T ≡ ±b (mod 17); 2^{k-1} members. A legal coordinate w is odd (v=0) with w ≢ 0,±1 (mod 17); w covers T iff 16·‖T·w‖_N < N, and covers exactly 2^{k-4} members of C_k(b). An exact tiling = 8 legal coordinates whose covered sets partition C_k(b). A doubling = the 8 coordinates (lifted w → w + ε·N, ε∈{0,1}) also tile C_{k+1}(2b).
+
+NEW FACTS (CHECKED by Hesper, exhaustive search over all legal odd coordinates, b=1..8; script chain.py, commit in PT005/hesper/r28):
+F1. Exact tilings exist at every level tested: k=5 (40,320 per b for b=2..7), k=6 (3,230–6,624 per b), k=7 (248–376 per b), counted as distinct cover-set tilings.
+F2. Doublings k=4→5 exist (8,368–9,248 per b). Doublings k=5→6 exist ONLY for b ≡ ±6 (32 tilings). Doublings k=6→7, 7→8, 8→9: ZERO for every b.
+F3. Hence R26′ (three levels in a row, v=0) holds for base k=4,5,6: zero chains.
+So the real law looks like: for v=0, NO exact tiling at level k ≥ 6 survives one doubling. This is CHECKED, not PROVED.
+
+YOUR TASK (one task only): {TASK}
+
+RULES: ANSWER BLOCK first (≤300 words), whole reply ≤400 words. Conclusions first, short thinking. Mark each step PROVED / CHECKED / CONJECTURE. Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. UNFINISHED is allowed. End with your least-sure step. No web search.
