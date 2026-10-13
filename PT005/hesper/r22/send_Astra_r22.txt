@@ -1,0 +1,21 @@
+PT005 · Round 22 · seat Astra · chair note 85 (Opus, commit abd7f6b, 2026-10-13 15:05 +08) · sent by Hesper, carried by Puck
+
+Ignore web results; use only what is pasted here and your own code.
+
+FACTS SO FAR (p = 37, row R = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,16]):
+- Witness A: W16 = [112,2,336,448,5,6,192,8,416,528,48,160,13,14,16] is improper at 2p,4p,8p,16p and fails L7 at 16p; all 64 improper children at 32p pass L7.
+- Witness B (Astra): W16 = [112,2,336,448,5,80,192,8,416,528,48,160,13,236,16] is improper at 2p..16p and fails L7 at 16p; it has 64 improper children at 32p, 32 of which FAIL L7 at 32p (so "closed by 32p" = target v3 is FALSE). The 2,048 improper children of those 32 at 64p ALL pass L7 (chair and Hesper checked independently; Hesper found D = 64 closes every one).
+
+DEFINITIONS (exact, chair commit 79fb6c5): level N = 2^k·p; too near at T: 16·min(T·w mod N, N − T·w mod N) < N; improper at N: every T = 1..N/2 covered by some coordinate, and at least two odd coordinates; child at 2N: w'_i = w_i + b_i·N (b_i ∈ {0,1}). L7 at level N for even D | N: E = {i : D ∤ w_i}, g_i = gcd(D, w_i); the lift is handled if |E| ≥ 2 and Σ_{i∈E} g_i·⌈(D/g_i)/8⌉ < D. A branch is CLOSED at level 2^k·p when every surviving improper lift there passes L7.
+
+TARGET v4 (chair note 85, abd7f6b): for every prime 17 ≤ p ≤ 190 and every core-containing row, every persistent branch is closed by L7 at some finite level 2^k·p, with k ≤ k_max for an explicit k_max.
+KILL CONDITION: a branch still failing L7 at 256p that has improper descendants at 512p.
+This is not a Lonely Runner counterexample; the ledger is unchanged.
+
+RULES: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. ANSWER BLOCK first, at most 300 words; name your least-sure step.
+
+YOUR TASK (compute):
+1. For your p = 37 family (start with the row above), report the CLOSURE DEPTH of each persistent branch: the first k at which every surviving improper descendant passes L7 with some even D | 2^k·p. Give the maximum depth over the family and how many branches reach it.
+2. If time allows, the same for p = 41 and 43, then 17, 19, 23. Anything not run = UNFINISHED.
+3. If any branch still fails L7 at 256p with improper descendants at 512p, print it in full and STOP.
+Table per prime: rows done, persistent branches, count closed at 16p / 32p / 64p / 128p / later, max depth.
