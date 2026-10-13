@@ -1,0 +1,11 @@
+PT005 · Round 26c · DeepSeek · sent by Hesper, carried by Puck. Web off. DeepThink on.
+
+Setting (p=17, N=2^k·17). A frozen coordinate w (w mod 17 ∈ {2..16}, v=v2(w)<k) covers odd T if 16·‖T·w‖_N < N. Class C_k(b) = odd T ≤ N/2 with T ≡ ±b (mod 17); |C_k(b)| = 2^{k−1}. Legal lift from level k to k+1: w → w or w + N (N = level-k modulus). The 7 non-frozen coordinates force the target to rotate: class ±b at level k, ±2b at k+1, ±4b at k+2.
+NEW FACT (R26, GPT/Astra, Hesper-checked d456db0 + PT005/hesper/r26c/cex_check.py): the one-step obstruction is FALSE. Example v=0: u=(9,29,49,67,73,93,105,125) (residues 9,12,15,16,5,8,3,6) tiles C_4(1) exactly (each covers 1 of 8) and C_5(2) exactly with zero lifts. At k=5 exactly 4 lift vectors tile C_5(2): (9,29,49,67,73,93,105,125), (9,29,321,339,73,365,377,125), (281,301,49,67,345,93,105,397), (281,301,321,339,345,365,377,397). At k=6, C_6(4) has 32 members, each coordinate covers 4, but the best lift of any of these 4 covers only 27 or 23 — no tiling (count 0). Astra example (53,207,39,59,27,11,63,81) does the same: C_4(7) → 4 tilings of C_5(14) → 0 of C_6(11). Older v=4 family: dies at k=v+5.
+NEW CONJECTURE R26′ (Hesper, unproved): no 8 frozen coordinates exactly tile three consecutive rotated classes C_k(b), C_{k+1}(2b), C_{k+2}(4b) with legal lifts when k ≥ v_max+4.
+
+YOUR TASK (one narrow question): prove or break R26′ in the EQUAL-VALUATION case v_i = v for all 8. Hint for a route: with all v equal, after dividing by 2^v the covering of C_k(b) by w is a statement about the odd parts u_i modulo 2^{k−v}·17; exact tiling means the 8 sets {T : 16‖T·u_i‖ < M} partition the class. Show what exact tiling at k and at k+1 forces on the lift bits and on the u_i (mod 2^{k−v+1}), then show the level k+2 condition contradicts it. Give the proof step, or a counterexample checked by code (8 frozen, residues in 2..16 distinct, three consecutive exact tilings), or UNFINISHED.
+
+ANSWER BLOCK first, ≤ 300 words; ≤ 400 total. UNFINISHED allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+Brute force is not the goal: we want a transparent formula/proof; code only to test a claim.
