@@ -1,0 +1,21 @@
+mod p ±R W16: True
+mod p ±R W32: True
+W16 improper @ 74 True
+W16 improper @ 148 True
+W16 improper @ 296 True
+W16 improper @ 592 True
+W32 improper @1184 True
+child relation: True
+W16 L7 passing D @592: []
+W32 L7 passing D @1184: []
+2 2 False
+4 4 False
+8 8 False
+16 18 False
+32 40 False
+74 150 False
+148 298 False
+296 592 False
+592 1178 False
+1184 2344 False
+children 64 L7-failing 32 W32 in fails: True
