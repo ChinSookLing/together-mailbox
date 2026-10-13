@@ -1,0 +1,8 @@
+k 5 coords 768 lemma sum ≡ 2^(k-3)·A·m(c) mod 2^k fails: 0
+k 6 coords 1536 lemma sum ≡ 2^(k-3)·A·m(c) mod 2^k fails: 0
+distinct cover pairs 64 sizes {2}
+value const per pair: True doubled const: False
+k5 b2 pair-tilings 40320 S1 violations 0 doubled dist [5192, 5040, 4928, 5040, 5176, 5008, 4928, 5008]
+u mod17 [9, 12, 15, 16, 5, 8, 3, 6]
+u doubled terms [-175, -21, 68, 66, 25, 147, -50, 63] 123
+Astra mod17 [2, 3, 5, 8, 10, 11, 12, 13]
