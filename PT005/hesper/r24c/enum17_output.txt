@@ -1,0 +1,6 @@
+Hesper enum17.py output (2026-10-13 21:0x +08, sandbox Python, 110 s cap):
+k=0 root (2..16, N=17) improper: True
+k=1 N=34 improper=15907 frozen_hist={0:1,1:14,2:86,3:316,4:804,5:1542,6:2334,7:2857,8:2857,9:2334,10:1542,11:804,12:316,13:86,14:14}
+k=2: not finished in 110 s (the tree explodes; estimate from probe below is tens of millions of nodes — an ESTIMATE, not a count).
+probe.py (30 random k=1 nodes with >=8 frozen, cap 3000 kept per level): k=2 102788, k=3 451340, then 3000 sampled -> k=4 662 -> k=5 0. Sampled, NOT exhaustive.
+Conclusion: full exhaustive census from the root is out of reach in pure Python here. UNFINISHED.
