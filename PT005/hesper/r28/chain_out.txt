@@ -1,0 +1,97 @@
+chain.py runs (python3 chain.py K LEVELS), 2026-10-14 07:4x +0800, Hesper sandbox
+k=4 b=1 levels=1 coords=8 nodes=9 chains=1 ex=[[3, 25, 23, 53, 55, 19, 21, 121]] 0.0s
+k=4 b=2 levels=1 coords=8 nodes=9 chains=1 ex=[[19, 15, 11, 5, 13, 3, 7, 9]] 0.0s
+k=4 b=3 levels=1 coords=8 nodes=9 chains=1 ex=[[3, 9, 7, 21, 19, 11, 13, 41]] 0.0s
+k=4 b=4 levels=1 coords=8 nodes=9 chains=1 ex=[[21, 13, 23, 5, 27, 3, 7, 11]] 0.0s
+k=4 b=5 levels=1 coords=8 nodes=9 chains=1 ex=[[3, 9, 7, 13, 11, 31, 5, 25]] 0.0s
+k=4 b=6 levels=1 coords=8 nodes=9 chains=1 ex=[[25, 23, 91, 5, 7, 3, 29, 11]] 0.0s
+k=4 b=7 levels=1 coords=8 nodes=9 chains=1 ex=[[37, 61, 7, 9, 11, 3, 5, 19]] 0.0s
+k=4 b=8 levels=1 coords=8 nodes=9 chains=1 ex=[[29, 11, 13, 9, 7, 3, 5, 15]] 0.0s
+k=4 b=1 levels=2 coords=112 nodes=124601 chains=9248 ex=[[37, 27, 11, 31, 157, 193, 53, 139]] 1.6s
+k=4 b=2 levels=2 coords=112 nodes=119658 chains=8384 ex=[[41, 25, 11, 49, 235, 71, 21, 245]] 1.5s
+k=4 b=3 levels=2 coords=112 nodes=122566 chains=8432 ex=[[3, 23, 37, 105, 55, 215, 231, 113]] 1.5s
+k=4 b=4 levels=2 coords=112 nodes=152571 chains=9232 ex=[[3, 21, 13, 19, 53, 5, 75, 27]] 1.9s
+k=4 b=5 levels=2 coords=112 nodes=122591 chains=8368 ex=[[3, 19, 13, 45, 7, 97, 127, 191]] 1.5s
+k=4 b=6 levels=2 coords=112 nodes=119992 chains=8384 ex=[[3, 19, 55, 121, 231, 185, 249, 99]] 1.5s
+k=4 b=7 levels=2 coords=112 nodes=125874 chains=9248 ex=[[3, 53, 15, 109, 121, 39, 27, 95]] 1.6s
+k=4 b=8 levels=2 coords=112 nodes=152791 chains=9232 ex=[[3, 49, 47, 129, 127, 177, 207, 241]] 1.9s
+k=4 b=1 levels=3 coords=224 nodes=6489 chains=0 ex=[] 0.2s
+k=4 b=2 levels=3 coords=224 nodes=7309 chains=0 ex=[] 0.2s
+k=4 b=3 levels=3 coords=224 nodes=6326 chains=0 ex=[] 0.2s
+k=4 b=4 levels=3 coords=224 nodes=7144 chains=0 ex=[] 0.2s
+k=4 b=5 levels=3 coords=224 nodes=6136 chains=0 ex=[] 0.2s
+k=4 b=6 levels=3 coords=224 nodes=6134 chains=0 ex=[] 0.2s
+k=4 b=7 levels=3 coords=224 nodes=6741 chains=0 ex=[] 0.2s
+k=4 b=8 levels=3 coords=224 nodes=8350 chains=0 ex=[] 0.2s
+k=5 b=1 levels=1 coords=56 nodes=52845 chains=14833 ex=[[3, 49, 47, 43, 37, 117, 107, 251]] 0.3s
+k=5 b=2 levels=1 coords=64 nodes=109601 chains=40320 ex=[[37, 27, 11, 21, 13, 19, 3, 5]] 0.6s
+k=5 b=3 levels=1 coords=64 nodes=109601 chains=40320 ex=[[3, 53, 15, 75, 55, 21, 27, 81]] 0.6s
+k=5 b=4 levels=1 coords=64 nodes=109601 chains=40320 ex=[[41, 25, 11, 39, 7, 37, 19, 9]] 0.6s
+k=5 b=5 levels=1 coords=64 nodes=109601 chains=40320 ex=[[3, 19, 55, 9, 7, 39, 193, 79]] 0.6s
+k=5 b=6 levels=1 coords=64 nodes=109601 chains=40320 ex=[[3, 23, 37, 19, 7, 209, 79, 129]] 0.6s
+k=5 b=7 levels=1 coords=64 nodes=109601 chains=40320 ex=[[3, 19, 13, 9, 7, 63, 25, 117]] 0.6s
+k=5 b=8 levels=1 coords=56 nodes=52845 chains=14833 ex=[[3, 21, 13, 19, 29, 5, 75, 81]] 0.3s
+k=6 b=1 levels=1 coords=224 nodes=575487 chains=6624 ex=[[3, 97, 95, 225, 223, 139, 149, 523]] 15.5s
+k=6 b=2 levels=1 coords=208 nodes=415176 chains=3526 ex=[[3, 21, 27, 413, 353, 299, 395, 319]] 10.6s
+k=6 b=3 levels=1 coords=208 nodes=350210 chains=3446 ex=[[3, 37, 59, 285, 291, 539, 131, 157]] 8.8s
+k=6 b=4 levels=1 coords=208 nodes=344616 chains=3338 ex=[[3, 23, 99, 13, 73, 227, 141, 291]] 8.8s
+k=6 b=5 levels=1 coords=208 nodes=309746 chains=3322 ex=[[3, 37, 279, 329, 521, 471, 285, 349]] 7.8s
+k=6 b=6 levels=1 coords=208 nodes=336254 chains=3582 ex=[[3, 47, 37, 275, 173, 479, 463, 309]] 8.5s
+k=6 b=7 levels=1 coords=208 nodes=314231 chains=3230 ex=[[3, 39, 211, 215, 435, 379, 99, 521]] 8.1s
+k=6 b=8 levels=1 coords=208 nodes=370398 chains=4082 ex=[[3, 41, 77, 93, 297, 39, 285, 207]] 9.4s
+k=7 b=1 levels=1 coords=448 nodes=62933 chains=272 ex=[[3, 291, 253, 797, 541, 547, 835, 1085]] 3.9s
+k=7 b=2 levels=1 coords=448 nodes=68747 chains=344 ex=[[3, 131, 413, 675, 547, 541, 957, 1085]] 4.3s
+k=7 b=3 levels=1 coords=448 nodes=59949 chains=280 ex=[[3, 99, 643, 989, 547, 541, 445, 1085]] 3.8s
+k=7 b=4 levels=1 coords=448 nodes=60265 chains=280 ex=[[3, 275, 269, 813, 541, 547, 1085, 819]] 3.8s
+k=7 b=5 levels=1 coords=448 nodes=61260 chains=344 ex=[[3, 275, 269, 813, 541, 547, 819, 1085]] 3.8s
+k=7 b=6 levels=1 coords=448 nodes=57384 chains=248 ex=[[3, 269, 275, 813, 819, 445, 643, 1085]] 3.6s
+k=7 b=7 levels=1 coords=448 nodes=59063 chains=376 ex=[[3, 393, 695, 413, 259, 675, 829, 1085]] 3.7s
+k=7 b=8 levels=1 coords=448 nodes=61835 chains=352 ex=[[3, 515, 29, 1059, 541, 547, 573, 1085]] 3.8s
+k=5 b=1 levels=2 coords=224 nodes=21699 chains=0 ex=[] 0.6s
+k=5 b=2 levels=2 coords=224 nodes=17697 chains=0 ex=[] 0.5s
+k=5 b=3 levels=2 coords=224 nodes=18068 chains=0 ex=[] 0.5s
+k=5 b=4 levels=2 coords=224 nodes=20028 chains=0 ex=[] 0.6s
+k=5 b=5 levels=2 coords=224 nodes=17598 chains=0 ex=[] 0.5s
+k=5 b=6 levels=2 coords=224 nodes=16038 chains=32 ex=[[3, 261, 251, 381, 253, 315, 125, 131]] 0.5s
+k=5 b=7 levels=2 coords=224 nodes=15642 chains=0 ex=[] 0.4s
+k=5 b=8 levels=2 coords=224 nodes=18761 chains=0 ex=[] 0.5s
+k=6 b=1 levels=2 coords=448 nodes=5523 chains=0 ex=[] 0.3s
+k=6 b=2 levels=2 coords=448 nodes=4087 chains=0 ex=[] 0.3s
+k=6 b=3 levels=2 coords=448 nodes=4396 chains=0 ex=[] 0.3s
+k=6 b=4 levels=2 coords=448 nodes=3833 chains=0 ex=[] 0.2s
+k=6 b=5 levels=2 coords=448 nodes=4342 chains=0 ex=[] 0.3s
+k=6 b=6 levels=2 coords=448 nodes=4130 chains=0 ex=[] 0.3s
+k=6 b=7 levels=2 coords=448 nodes=4980 chains=0 ex=[] 0.3s
+k=6 b=8 levels=2 coords=448 nodes=4265 chains=0 ex=[] 0.3s
+k=5 b=1 levels=3 coords=448 nodes=2818 chains=0 ex=[] 0.2s
+k=5 b=2 levels=3 coords=448 nodes=2135 chains=0 ex=[] 0.1s
+k=5 b=3 levels=3 coords=448 nodes=2801 chains=0 ex=[] 0.2s
+k=5 b=4 levels=3 coords=448 nodes=2619 chains=0 ex=[] 0.2s
+k=5 b=5 levels=3 coords=448 nodes=3044 chains=0 ex=[] 0.2s
+k=5 b=6 levels=3 coords=448 nodes=2662 chains=0 ex=[] 0.2s
+k=5 b=7 levels=3 coords=448 nodes=2806 chains=0 ex=[] 0.2s
+k=5 b=8 levels=3 coords=448 nodes=3543 chains=0 ex=[] 0.2s
+k=6 b=1 levels=3 coords=896 nodes=3363 chains=0 ex=[] 0.5s
+k=6 b=2 levels=3 coords=896 nodes=2536 chains=0 ex=[] 0.4s
+k=6 b=3 levels=3 coords=896 nodes=3191 chains=0 ex=[] 0.5s
+k=6 b=4 levels=3 coords=896 nodes=2362 chains=0 ex=[] 0.4s
+k=6 b=5 levels=3 coords=896 nodes=3365 chains=0 ex=[] 0.5s
+k=6 b=6 levels=3 coords=896 nodes=3240 chains=0 ex=[] 0.5s
+k=6 b=7 levels=3 coords=896 nodes=3381 chains=0 ex=[] 0.5s
+k=6 b=8 levels=3 coords=896 nodes=3211 chains=0 ex=[] 0.5s
+k=7 b=1 levels=2 coords=896 nodes=4390 chains=0 ex=[] 0.7s
+k=7 b=2 levels=2 coords=896 nodes=4274 chains=0 ex=[] 0.6s
+k=7 b=3 levels=2 coords=896 nodes=4225 chains=0 ex=[] 0.6s
+k=7 b=4 levels=2 coords=896 nodes=3390 chains=0 ex=[] 0.5s
+k=7 b=5 levels=2 coords=896 nodes=4483 chains=0 ex=[] 0.7s
+k=7 b=6 levels=2 coords=896 nodes=3962 chains=0 ex=[] 0.6s
+k=7 b=7 levels=2 coords=896 nodes=4492 chains=0 ex=[] 0.7s
+k=7 b=8 levels=2 coords=896 nodes=3330 chains=0 ex=[] 0.5s
+k=8 b=1 levels=2 coords=1792 nodes=5143 chains=0 ex=[] 1.9s
+k=8 b=2 levels=2 coords=1792 nodes=6038 chains=0 ex=[] 2.1s
+k=8 b=3 levels=2 coords=1792 nodes=6436 chains=0 ex=[] 2.3s
+k=8 b=4 levels=2 coords=1792 nodes=5886 chains=0 ex=[] 2.1s
+k=8 b=5 levels=2 coords=1792 nodes=5899 chains=0 ex=[] 2.1s
+k=8 b=6 levels=2 coords=1792 nodes=6221 chains=0 ex=[] 2.2s
+k=8 b=7 levels=2 coords=1792 nodes=6161 chains=0 ex=[] 2.2s
+k=8 b=8 levels=2 coords=1792 nodes=5688 chains=0 ex=[] 2.0s
