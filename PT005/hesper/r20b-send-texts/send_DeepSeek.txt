@@ -1,0 +1,50 @@
+PT005 · Round 20b · seat DeepSeek
+
+YOUR ASSIGNMENT (DeepSeek):
+Hesper's lens 2: can closed gates enter the bound B (Allikvere Thm 3.8 / L8)? One page, PROOF or a clear no.
+
+Seat rule: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. Web search is not allowed.
+
+Data: the p = 131 file r200.out (457 lines) is attached as a file, or pasted after the packet in a lossless compact form (r200_compact).
+
+----- BEGIN PACKET 20b -----
+
+## PT005 · Round 20b · Make the small primes cheap: one family lemma
+
+**RULES:**
+1. Own computation shown, or UNFINISHED.
+2. FACT / PROOF / IDEA labels.
+3. ANSWER BLOCK of at most 300 words first.
+4. Your job is your assignment below. Try to **break** the idea you are given before you build on it.
+
+**The target lemma** (open since chair note 26, 10-05).
+
+> Let p be a prime with 17 ≤ p ≤ 190. Let R be a 15-class row mod p whose support contains a cover core C of at most 13 classes.
+>
+> Then every improper lift of R at binary level 16 satisfies the L7 condition for some even D dividing 16p.
+
+**Evidence and data:**
+- p = 131, scouting/LR16/opus/kfactor/p131_reducible/ in github.com/ChinSookLing/together-mailbox:
+  - `r200.out`: one line per survivor, with base cover, extra class, improper-lift counts l2 … l32, and PERSISTENT or not.
+  - `rand200.txt`: the 200 random covers, hex.
+- 2,467,648 improper level-16 lifts, all handled by L7.
+- In most persistent rows the lift counts grow exactly ×4 per binary level.
+
+L7 (ledger): for D ≥ 2, E = {i : D ∤ uᵢ}, |E| ≥ 2, gᵢ = gcd(D, uᵢ), Dᵢ = D/gᵢ. If Σ_{i∈E} gᵢ·⌈Dᵢ/8⌉ < D, then some rational t has ‖t·uᵢ‖ ≥ 1/16 for all i. With D = 8 this reads a + 2b + 4c < 8.
+
+**Assignments:**
+
+| Seat | Assignment |
+|---|---|
+| **GPT** | Review Astra's core-fibre SAT encoding. Is it sound? How many SAT instances at p = 131 after symmetry? Run it on one core if you can. |
+| **Astra** | Review GPT's symbolic family certificate. Run GPT's proposed p = 47 test, or say exactly why it cannot run. |
+| **Kimi** | Review GLM's shift-orbit quotient. Name the group action, or show none of order about p preserves level-16 death. |
+| **GLM** | Explain the ×4-per-level pattern in r200.out. Prove that a core-containing row has improper lifts that repeat by a fixed rule from level to level; this is the family lemma's engine. Also review Kimi's CRT product gate: do nodes multiply? |
+| **DeepSeek** | Hesper's lens 2: can closed gates enter the bound B (Allikvere Thm 3.8 / L8)? One page, PROOF or a clear no. |
+| **Grok** | Test your own "two Goddyn–Wong cores" claim on r200.out with real code (no placeholders). Report the distinct base covers up to dilation. |
+| **Qwen** | Hesper's lens 4: compare the structure of persistent rows at 131 with what L7 needs at 163 (both ≡ 3 mod 16). Which parts of the L7 check depend on p? |
+| **Gemini, Lumo** | Independent check of the ×4 pattern on r200.out with your own code (counts per level, per row). Report any row that breaks the pattern. |
+
+**Last line for everyone:** is the target lemma true, false (give the row), or unknown, and what is the shortest path to a proof?
+
+----- END PACKET 20b -----
