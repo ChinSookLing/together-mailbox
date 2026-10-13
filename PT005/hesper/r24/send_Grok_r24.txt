@@ -1,0 +1,20 @@
+PT005 · Round 24 · seat Grok · chair note 89 (6681665) · sent by Hesper, carried by Puck
+
+Ignore web results; use only what is pasted here and your own code.
+
+WHERE WE ARE (chair notes 88 6bd3686, 89 6681665):
+- Two closure mechanisms. (a) final frozen count <= 7 => closed by L7 at level K+2 (proved for D = 2^k; K = last freeze level, K_i = least k with v_2(w_i) < k; table keeps the safe bound B+3). (b) final frozen count >= 8 => all descendants die out within finitely many levels: OPEN.
+- Data: p=17 W5 = [189,224,72,447,176,500,144,128,384,266,80,64,48,32,16]: frozen 10 at 32p, 14 at 64p, no improper descendants at 128p (died out). p=37 Witness A = [112,2,336,448,5,6,192,8,416,528,48,160,13,14,16] closes by L7 at 32p; Witness B = [112,2,336,448,5,80,192,8,416,528,48,160,13,236,16] closes by L7 at 64p, max frozen 6.
+- R23 wall (GLM, Kimi): each frozen coordinate covers exactly 1/8 of the odd T, so 8 frozen have zero slack and counting cannot finish. Even frozen and unfrozen coordinates also cover odd T (p=17, 32p: T=15 covered only by 72 and 144). Unfrozen values are forced: c_i ≡ r_i·2^(−k) (mod p).
+- GLM's reduction (R24 subject): the configuration depends on the level k only through k mod ord_p(2), so survival per (p, row) is a FINITE question. ord_p(2): p=17→8, 19→18, 23→11, 29→28, 31→5, 37→36, 41→20, 43→14.
+
+DEFINITIONS (chair 79fb6c5): level N = 2^k·p; too near at T: 16·min(T·w mod N, N − T·w mod N) < N; improper at N: every T = 1..N/2 covered by some coordinate, and at least two odd coordinates; child at 2N: w'_i = w_i + b_i·N (b_i ∈ {0,1}). Frozen at level 2^k·p: v_2(w_i) < k (its valuation never changes again). L7 at level N for even D | N: E = {i : D ∤ w_i}, g_i = gcd(D, w_i); handled if |E| ≥ 2 and Σ_{i∈E} g_i·⌈(D/g_i)/8⌉ < D. Closed at level k = every improper descendant passes L7, or none exist (died out); always say which kind and at which level.
+
+KILL CONDITION (note 89): a state with >= 8 frozen coordinates that survives a full period of ord_p(2) levels. If you find one, print it in full and STOP.
+This is not a Lonely Runner counterexample; the ledger is unchanged.
+
+RULES: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. ANSWER BLOCK first, at most 300 words; name your least-sure step.
+
+YOUR TASK (red team, compute):
+Try to BREAK GLM's reduction: find a branch (17 ≤ p ≤ 43, core-containing row) whose survival depends on more than k mod ord_p(2) — for example two levels k and k + ord_p(2) with the same reduced state but different numbers of improper children, or a coordinate where p divides w_i/2^(v_i) and the 1/8 count changes.
+Start with p = 31 (shortest period, 5) and p = 17 (period 8). Report: p, row/branch, the two levels compared, reduced state, improper-children counts at each, verdict BREAKS / HOLDS on this case. Anything not run = UNFINISHED. Also report any kill-condition hit.
