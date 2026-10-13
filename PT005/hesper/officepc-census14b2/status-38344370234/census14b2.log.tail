@@ -1,0 +1,13 @@
+nohup: ignoring input
+{"p": 503, "roots": 31, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 4924.2, "first": []}
+{"p": 509, "roots": 31, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 3637.0, "first": []}
+{"p": 521, "roots": 32, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 5980.3, "first": []}
+{"p": 523, "roots": 32, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 5138.0, "first": []}
+{"p": 541, "roots": 33, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 5283.8, "first": []}
+{"p": 547, "roots": 34, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 10822.7, "first": []}
+{"p": 557, "roots": 34, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 6036.5, "first": []}
+{"p": 563, "roots": 35, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 12501.4, "first": []}
+{"p": 569, "roots": 35, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 9364.8, "first": []}
+{"p": 571, "roots": 35, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 8712.9, "first": []}
+{"p": 577, "roots": 36, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 17044.0, "first": []}
+{"p": 587, "roots": 36, "covers": 0, "per_root_sum": 0, "dedup_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "wall_secs": 11240.5, "first": []}
