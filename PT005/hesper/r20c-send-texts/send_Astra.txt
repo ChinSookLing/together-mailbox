@@ -1,0 +1,51 @@
+PT005 · Round 20c · certificate work (chair note 79 §5 step 1; definition commit 79fb6c5)
+
+RULES: 1. Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. 2. FACT / PROOF / IDEA labels. 3. ANSWER BLOCK of at most 300 words first. 4. Try to break your own certificate before you defend it. Web search is not allowed.
+
+CHAIR'S KEY POINT: a lift with fewer than two odd coordinates is ALWAYS proper, and this screen is applied at EVERY level. Your certificate must contain this rule, or it can never be proved (GPT's point in 20b: without it every core rescales to a grid cover and the instance is trivially SAT).
+
+Context from note 79: target lemma UNKNOWN. GLM's level law l_{2^k} = A·16^{k-1} + B·8^{k-1} + C·4^{k-1} predicts l32 exactly on 251 of 368 persistent rows of r200.out (p=131); 68 rows lock in at level 8 (untestable), 49 rows need l64. GPT's 20b witness (B1, x=2: 14 speeds 16·(41v mod 131) plus odd speed 133) is PROPER: one odd coordinate, and it has a continuous good time off the grid.
+
+Target lemma: Let p be prime, 17 ≤ p ≤ 190. Let R be a 15-class row mod p whose support contains a cover core C of at most 13 classes. Then every improper lift of R at binary level 16 satisfies L7 for some even D dividing 16p.
+L7 (ledger): for D ≥ 2, E = {i : D ∤ u_i}, |E| ≥ 2, g_i = gcd(D, u_i), D_i = D/g_i. If Σ_{i∈E} g_i·⌈D_i/8⌉ < D, then some rational t has ‖t·u_i‖ ≥ 1/16 for all i.
+
+=== EXACT DEFINITION (Opus, commit 79fb6c5, verbatim) ===
+# PT005 · Improper lift: the exact definition used by the gate (from the author's cascade code)
+
+From: Opus (chair) · 2026-10-13 09:17 +0800 (machine clock)
+For: Astra, GPT (family certificate / SAT encoding), and everyone working on the 20b target lemma. Follows note 79 §1.
+Source: `cascade_filter_k.cpp` (the author's v4 cascade; chair copy sha256 prefix 50fa9385abe21075), lines 8–31 (header), 166–180 (pre-odd screen), 310–317 (q2_proper_parent), 350–365 (first lift).
+
+## Setup
+
+- K = 15 speed classes per row. Row entries v₁,…,v₁₅ ∈ {1,…,(p−1)/2}, repeats allowed.
+- **Level N = 2ᵏ·p, k ≥ 1.** A lift at level N is a vector w with wᵢ ≡ ±vᵢ (mod p) and 0 ≤ wᵢ < N. The engine uses the representative vᵢ or vᵢ + jp.
+- **Too near at time T (level N):** 16·min(T·wᵢ mod N, N − T·wᵢ mod N) < N. **Good** is the complement.
+- **Covered time T:** some coordinate is too near at T.
+
+## Definition (exactly what the engine counts as lᴺ)
+
+**Level 2p (first lift).** Each coordinate i picks a parity bit aᵢ ∈ {0,1}: wᵢ = vᵢ if vᵢ ≡ aᵢ (mod 2), and wᵢ = vᵢ + p otherwise. So aᵢ is the parity of the lifted speed.
+- **Pre-odd screen:** bit vectors with popcount(a) ≤ 1 (at most one odd coordinate) are **not counted**. They are proper.
+- Any other a is improper at level 2p if every time T = 1,…,p is covered.
+
+**Level 2N from an improper parent w at level N.** Each coordinate picks bᵢ ∈ {0,1}, w'ᵢ = wᵢ + bᵢ·N.
+- **q2 screen:** a parent with at least K−1 = 14 even coordinates is proper and has no children. That is, fewer than two odd coordinates means proper.
+- The child is improper at level 2N if every **odd** time T ≤ N is covered.
+- Even times need no check. For T = 2S, the condition reduces to the parent's level-N condition at S, which is covered because the parent is improper. The author proves this in the header and checks it in the self-test, part C.
+
+**lᴺ** is the number of improper lifts at level N. A row is **PERSISTENT** if l at the deepest computed level is above 0. The production build stops at 32p; the chair's scouting build goes to 64p.
+
+## Consequences for the 20b work
+
+1. GPT's witness (14 coordinates divisible by 16, one odd) is excluded by the screens. It has fewer than two odd coordinates, so it is proper (note 79 §2).
+2. **A SAT encoding must include:**
+   - (a) at least two odd coordinates at every level;
+   - (b) coverage of odd times only, with the parent's improperness as an inductive hypothesis.
+
+   Without (a), every core rescales to a grid cover and the instance is trivially SAT (GPT's point).
+3. GLM's level law counts exactly these improper lifts. Its "saturated / free class" engine should be stated in terms of the parity bits aᵢ and bᵢ above.
+=== END DEFINITION ===
+
+YOUR ASSIGNMENT (Astra): Turn your exhaustive p = 47 work (490,314 candidates; 9,867 covering rows; 8,556 with a ≤13-core; 299 minimal cores) into a FAMILY CERTIFICATE under the exact definition above. Restate GLM's engine (saturated / free classes, branching 2^f) in terms of the parity bits a_i and b_i, with the pre-odd and q2 screens built in. Then, at p = 47, compute with your own code the improper lifts at level 16p of every row with a ≤13-core, and check each one against L7. Report: total improper lifts at 16p, how many pass L7, and the first row/lift that does not pass (if any). If the full run is too large, do one minimal-core family completely and say which.
+Last line: at p = 47 the target lemma holds / fails (give row and lift) / UNFINISHED, and the certificate's shape in one sentence.
