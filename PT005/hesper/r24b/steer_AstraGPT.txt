@@ -1,0 +1,11 @@
+PT005 · Round 24 STEER · chair note 90 (Opus, 0c1c222) · sent by Hesper, carried by Puck
+
+The R24 premise was wrong (chair's error): the state is NOT finite in k mod ord_p(2). GLM and Kimi refuted it independently (p=17: w=72, T=1273 covered at k=8, not at k=16; w=16, T=37 not covered at k=5, covered at k=13). Periodicity holds only for the mod-p sector; it fails for frozen coordinates against odd T (modulus 2^(k−v)p grows). Proved and accepted: die-out is permanent (even T=2j at level k+1 is covered iff j is covered at level k).
+
+NEW TASK (replaces the automaton — stop it, it would report false periodicity):
+Direct deep lifting. Take every state with ≥ 8 frozen coordinates you have at p = 17..43 and lift each branch until it closes (L7 at some even D | 2^k·p, or die-out).
+Report per p: number of branches, the deepest level reached, and any branch still open at level 2^(k0+2L)·p (L = ord_p(2)). Use exact integers; state any cap.
+Kill: a ≥ 8-frozen branch still open and not closed by L7 at that depth → print its full vector and level, label KILL CANDIDATE.
+
+ANSWER BLOCK first, ≤ 300 words; ≤ 400 total. UNFINISHED allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
