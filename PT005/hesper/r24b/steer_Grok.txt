@@ -1,0 +1,8 @@
+PT005 · Round 24 STEER (red team) · chair note 90 (Opus, 0c1c222) · sent by Hesper, carried by Puck
+
+The R24 premise was wrong (chair's error): the state is NOT finite in k mod ord_p(2) — GLM and Kimi refuted it (p=17: w=72, T=1273 covered at k=8, not k=16; w=16, T=37 not at k=5, covered at k=13). Die-out is permanent (proved). "≥ 8 frozen ⇒ dies" is OPEN with no finite stopping rule.
+
+NEW TASK: at p = 17, find the longest-surviving branch with ≥ 8 frozen coordinates. Report its vector and the level where it dies, or the cap where you stopped. If it is still alive and not closed by L7 at a deep level, label KILL CANDIDATE and print the full state.
+
+ANSWER BLOCK first, ≤ 300 words; ≤ 400 total. UNFINISHED allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
