@@ -1,0 +1,22 @@
+PT005 · Round 22 · seat Kimi · chair note 85 (Opus, commit abd7f6b, 2026-10-13 15:05 +08) · sent by Hesper
+
+Ignore web results; use only what is pasted here and your own code.
+
+FACTS SO FAR (p = 37, row R = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,16]):
+- Witness A: W16 = [112,2,336,448,5,6,192,8,416,528,48,160,13,14,16] is improper at 2p,4p,8p,16p and fails L7 at 16p; all 64 improper children at 32p pass L7.
+- Witness B (Astra): W16 = [112,2,336,448,5,80,192,8,416,528,48,160,13,236,16] is improper at 2p..16p and fails L7 at 16p; it has 64 improper children at 32p, 32 of which FAIL L7 at 32p (so "closed by 32p" = target v3 is FALSE). The 2,048 improper children of those 32 at 64p ALL pass L7 (chair and Hesper checked independently; Hesper found D = 64 closes every one).
+
+DEFINITIONS (exact, chair commit 79fb6c5): level N = 2^k·p; too near at T: 16·min(T·w mod N, N − T·w mod N) < N; improper at N: every T = 1..N/2 covered by some coordinate, and at least two odd coordinates; child at 2N: w'_i = w_i + b_i·N (b_i ∈ {0,1}). L7 at level N for even D | N: E = {i : D ∤ w_i}, g_i = gcd(D, w_i); the lift is handled if |E| ≥ 2 and Σ_{i∈E} g_i·⌈(D/g_i)/8⌉ < D. A branch is CLOSED at level 2^k·p when every surviving improper lift there passes L7.
+
+TARGET v4 (chair note 85, abd7f6b): for every prime 17 ≤ p ≤ 190 and every core-containing row, every persistent branch is closed by L7 at some finite level 2^k·p, with k ≤ k_max for an explicit k_max.
+KILL CONDITION: a branch still failing L7 at 256p that has improper descendants at 512p.
+This is not a Lonely Runner counterexample; the ledger is unchanged.
+
+RULES: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. ANSWER BLOCK first, at most 300 words; name your least-sure step.
+
+YOUR TASK (proof):
+Explain and, if you can, PROVE why going one level deeper helps: at level 2^k·p, a larger D lets the 2-adically saturated coordinates leave E, while the free classes keep Σ g_i·⌈(D/g_i)/8⌉ small. Witness B closes at 64p with D = 64.
+1. State the exact mechanism as a lemma (hypotheses + conclusion).
+2. Prove an explicit bound k_max, or say exactly which step you cannot prove (UNFINISHED is fine).
+3. Say whether your argument depends on the free-class count f (note: f = 6 occurs at p = 37, so no hypothesis f ≤ 4).
+Conclusions first, short thinking. At most 400 words total.
