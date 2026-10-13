@@ -1,0 +1,9 @@
+PT005 · Round 26c · GLM · sent by Hesper. Conclusions first, short thinking.
+
+Setting (p=17, N=2^k·17): frozen w (v=v2(w)<k) covers odd T if 16·‖T·w‖_N < N. Class C_k(b): odd T ≤ N/2, T ≡ ±b mod 17, 2^{k−1} members. Lift: w → w or w+N. Target rotates ±b → ±2b → ±4b.
+Checked (d456db0, Hesper 450633a): u=(9,29,49,67,73,93,105,125), v=0, tiles C_4(1) and C_5(2) exactly. Four lift vectors tile C_5(2), e.g. u itself. At k=6 every lift of every one leaves ≥5 of the 32 members of C_6(4) uncovered (best covers 27).
+
+YOUR TASK (one narrow question): use your own formula #uncovered = 2^{v*−1}·|U| (6e1e8c6) on u itself at k=6, class ±4. Show by inclusion–exclusion why #uncovered ≠ 0 for every lift bit vector — name the term that cannot cancel. Or write UNFINISHED.
+
+ANSWER BLOCK first, ≤ 300 words; ≤ 400 total. UNFINISHED allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply. If you did not compute it, write UNFINISHED.
