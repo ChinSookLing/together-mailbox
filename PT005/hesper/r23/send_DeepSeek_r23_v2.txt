@@ -1,0 +1,43 @@
+PT005 · Round 23 · seat DeepSeek · chair notes 86 (e17651a) §3 + 87 (ee255da) · sent by Hesper, carried by Puck
+
+Ignore web results; use only what is pasted here and your own code.
+
+WHERE WE ARE (chair notes 85–87):
+- p = 37, row R = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,16]. Witness A (W16 = [112,2,336,448,5,6,192,8,416,528,48,160,13,14,16]) closes by L7 at 32p. Witness B (W16 = [112,2,336,448,5,80,192,8,416,528,48,160,13,236,16]) has 32 L7-failing children at 32p; all 2,048 improper descendants at 64p pass L7 (D = 64).
+- p = 17 (GPT): W5 = [189,224,72,447,176,500,144,128,384,266,80,64,48,32,16] is improper at 32p and fails L7; its 128 improper children at 64p all fail L7; at 128p there are no improper descendants (it dies out).
+- Freeze–decay lemma (GLM; chair agrees, for D = 2^k): at level 2^k·p with D = 2^k, v_i = v_2(w_i); coordinates with v_i ≥ k leave E; a coordinate with v_i < k is FROZEN (its valuation never changes again) and costs D/2, D/4, D/8 when k − v_i = 1, 2, ≥3. L7 passes ⇔ |E| ≥ 2 and f + 2c₂ + 4c₁ ≤ 7 (f, c₂, c₁ = number of E-coordinates with k − v_i ≥ 3, = 2, = 1). So a branch with at most 7 frozen coordinates closes a few levels after its last freeze (table uses the conservative bound B+3).
+
+DEFINITIONS (chair 79fb6c5): level N = 2^k·p; too near at T: 16·min(T·w mod N, N − T·w mod N) < N; improper at N: every T = 1..N/2 covered by some coordinate, and at least two odd coordinates; child at 2N: w'_i = w_i + b_i·N (b_i ∈ {0,1}). L7 at level N for even D | N: E = {i : D ∤ w_i}, g_i = gcd(D, w_i); handled if |E| ≥ 2 and Σ_{i∈E} g_i·⌈(D/g_i)/8⌉ < D.
+CLOSED (chair note 87, ee255da): a branch is closed at level k if EITHER every improper descendant at level k passes L7 with D | 2^k·p, OR it has no improper descendants at level k (died out). Both count. Every report must say WHICH kind and AT WHICH level.
+
+THE GAP (chair note 86, e17651a): every persistent branch (17 ≤ p ≤ 190, core-containing row) has at most 7 frozen coordinates.
+KILL CONDITION: a branch with 8 or more frozen coordinates that is still alive (has improper descendants) at 256p. If you find one, print it in full and STOP.
+This is not a Lonely Runner counterexample; the ledger is unchanged.
+
+RULES: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. ANSWER BLOCK first, at most 300 words; name your least-sure step.
+
+YOUR TASK (second reader):
+0. Record: chair note 87 keeps your R22 conclusion (L7 usable at level 2^k·p for D | 2^k·p) and DELETES your sentence "for D ∤ N the residue w mod D is also determined" — a lift fixes w only mod N.
+1. Read GLM's freeze–decay proof below line by line. For each step: CORRECT / GAP (say what is missing) / WRONG (show where).
+2. Check the chair's claim: D = 2^k·p does not help, because every speed is nonzero mod p, so each term is about D/8 and the condition becomes roughly |E| ≤ 7. Verdict: CORRECT / WRONG / UNFINISHED.
+At most 400 words.
+
+GLM's R22 reply (3dae056), verbatim:
+**ANSWER BLOCK**
+
+**Lemma (freeze–decay).** Hypotheses: level N=2^k·p (k≥3), D=2^k, v_i=v₂(w_i); lifts add b_i·2^k·p. Arithmetic (mine): v₂(x+y)=v₂(x) when v₂(y)>v₂(x); ⌈2^m/8⌉=2^{m−3} for m≥3, =1 for m∈{1,2}.
+
+Conclusion: (a) v_i<k ⇒ v₂ frozen at v_i forever; freezes happen once per coordinate, at level K with v_i=K−1; v_i≥k ⇒ D|w_i, i∉E (saturated coordinates leave E). (b) i∈E ⇒ g_i=2^{v_i} and g_i⌈(D/g_i)/8⌉ = D/8, D/4, D/2 as k−v_i≥3, =2, =1. (c) L7 passes ⇔ |E|≥2 and f+2c₂+4c₁≤7, where f, c₂, c₁ count E-coordinates with k−v_i≥3, =2, =1.
+
+Proof: (a),(b) are these facts (v₂(2^k·p)=k); (c) sums (b), divides by D/8. Hand check (mine), witness B at 16p: E={2,5,8,13,236}, valuations {1,0,3,0,2}, Σ=2+2+8+2+4=18>16 — fails, as given.
+
+Depth helps: a frozen coordinate's weight (D/8 units) decays 4→2→1 as k passes v_i+1, v_i+2, v_i+3, then stays 1 — free classes always cost exactly D/8, saturated cost 0; only fresh freezes (weight 4) push the sum past 7, and each coordinate freezes once. Improper ⇒≥2 odd coordinates; lifts add even numbers ⇒≥2 frozen at v=0: |E|≥2 automatic.
+
+(2) Proved, conditional: last freeze at level K, F≤7 coordinates ever frozen ⇒ for every k≥K+2 all k−v_i≥3, so Σ=F·D/8≤7D/8<D: L7 passes. Per-branch k_max=K+2. UNFINISHED: a uniform bound on K and F for 17≤p≤190 — proving from the covering structure that persistent improper branches freeze ≤7 coordinates, shallowly (the 256p kill condition's impossibility). Given counts 64, 32, 2,048 and D=64 closure: not recomputed.
+
+(3) Needs f≤7, not f≤4. F=6: Σ=6·D/8=3D/4<D after decay — closure by K+2; mid-decay closure also occurs: given facts through (c) give 32p failure 4+2·1+4·1=10>7 and 64p closure 5+2·1=7 (f=4, 5 my counts from B; one v=4 freeze, none at v=5, forced by the given facts). So f=6 is admissible; F≥8 fails at every k≥K+2.
+
+Least-sure step: I assumed D=2^k; divisors D=2^a·p were not analyzed.
+
+
+**Hand work.** gcd(16,w_i) on E: 2,1,8,1,4; ⌈(16/g_i)/8⌉: 1,2,1,2,1; products 2,2,8,2,4; Σ=18>16. Also ⌈2/8⌉=⌈4/8⌉=1; 2^m/8=2^{m−3} for m≥3.
