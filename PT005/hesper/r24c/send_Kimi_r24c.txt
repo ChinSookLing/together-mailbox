@@ -1,0 +1,9 @@
+PT005 · Round 24c · Kimi · sent by Hesper
+
+Setting (p=17, chair note 90, 0c1c222): level k, N=2^k·p. A state is 15 values w_i in 1..N−1 with w_i mod 17 = 2,3,…,16 (coordinate i keeps its residue). T is covered if some i has 16·‖T·w_i‖_N < N. Improper = every T in 1..N/2 covered. Children: w_i → w_i + b_i·N, b_i∈{0,1}. Frozen = v2(w_i) < k. Die-out is permanent (GLM, accepted). Gap v3 (OPEN): "≥8 frozen ⇒ die-out".
+New fact (GLM r24b 2e862be, Hesper rechecked p=17 w=72 k=8: 136/1088): for k ≥ v_i+5 a frozen coordinate covers exactly 1/8 of odd T ≤ N/2, at every level. So counting alone can never kill (p=17: 17f+24u ≥ 136, slack for every 15-coordinate state). Kimi r24b 756c0b2: no finite refined state exists (w=16 vs 560 at k=6 split on T=1).
+
+YOUR TASK (one narrow question): the full p=17 census from the root w=(2,…,16), N=17, explodes: Hesper counts 15907 improper nodes at k=1 (N=34), and k=2 did not finish (sampled tens of millions). Find a REDUCTION that makes it feasible: e.g. the cover set of coordinate i depends only on w_i, so group nodes by the tuple of per-coordinate cover masks; or a symmetry (T → −T, multiplying by units) that merges nodes; or prove nodes with ≤7 frozen can be skipped for Gap v3. State the reduction precisely, say why it is exact, and estimate (with your own computation, or UNFINISHED) the reduced size at k=2.
+
+ANSWER BLOCK first, ≤ 300 words; ≤ 400 total. UNFINISHED allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
