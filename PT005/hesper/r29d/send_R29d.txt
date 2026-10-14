@@ -1,0 +1,55 @@
+PT005 · Round 29d · {SEAT} · sent by {CARRIER}
+
+THIS ROUND SERVES PROOF STEP: R26' base level (k=5 -> 6, p=17), criterion F1 part (B), one class. Your part: {PART}.
+
+SETUP (p=17, N=544). Coordinates: 8 legal odd w_i mod 544 (w ~ 544-w, w mod 17 not in {0,±1}) whose covers tile C_5(b) (each member hit once). Lifts w_i + 544e (e = 0,1) must 2-cover C_6(2b): every member hit exactly twice, by two different coordinates. Member t hit by (i,a) and (j,c) gives the XOR edge ε_i ⊕ ε_j = a ⊕ c ⊕ 1. Doubling ⟺ this XOR system is solvable (no odd cycle). Graph: 8 vertices, 32 edges, each vertex degree 8.
+F1: doubling ⟺ all w_i in ONE class ±c0 (mod 8), c0 ∈ {1,3}, and σ = #{w_i ≡ ±c0 (mod 16)} odd.
+
+KNOWN (you may use, do not reprove):
+(C) CHECKED, p=17 k=5->6 only (Astra R29b; Puck fd0621c; Hesper ca39ee2): one class and σ odd ⇒ b ≡ ±6 (mod 17). Method: label member t by t' = ±t with t' ≡ b (mod 17); t' mod 32 is a bijection onto the 16 odd residues. With A = w^-1 (mod 32), c = signed odd representative of b·w (mod 17), s = sign(c), e = 2c − 17s: the real level-5 cover read mod 32 is L = A{c, c−2s}; the two lifts together, read mod 32, are 2 × U with U = A{e−4,e−2,e,e+2} (e>0) or A{e−2,e,e+2,e+4} (e<0). A finite search of this L+U relaxation leaves only b=6.
+
+KNOWN from R29c (CHECKED, Hesper 61bec05 and this commit; not proved):
+- one class, sigma even: 664 tilings, all unsolvable. 650 contain an odd digon (two coordinates sharing 2 members with different labels) - that case is done.
+- The other 14 have NO odd digon. In all 14: every coordinate pair that shares members shares 2 or 4; 4 pairs share 4 members and form a PERFECT MATCHING; 8 pairs share 2 members and form TWO DISJOINT 4-CYCLES; each 4-cycle has ODD label sum (so it is the odd cycle). There is no odd triangle (Grok's R29c triangle (0,7,2) is false: pair 0-2 shares no member).
+- one class, sigma odd: 16 tilings, all b=6, all solvable; graph connected, 16 pairs each sharing exactly 2 members.
+
+PART L (lemma): prove that in one class with sigma even and no odd digon, the pairs sharing 2 members form two disjoint 4-cycles, each with odd label sum. Build the 4-cycle from the tiling: say which members each edge uses and why the labels add to 1 (mod 2), reducing to sigma via L/U mod 32. A check over the 14 examples is CHECKED, not PROVED.
+
+PART S (solvable): prove that in one class with sigma odd the XOR system is solvable: give a general rule for epsilon_i (from w_i, c0, b) and show every member's equation holds, or prove every cycle has even label sum. The 16 solutions are listed; earlier search found no simple bit/Legendre formula, so look for a rule using the L/U structure (sign s, e, A = w^-1 mod 32).
+
+DATA, 14 sigma-even no-digon tilings (index i = position in ws; labels in cycle order):
+b=1 c0=1 ws=[7, 231, 265, 41, 95, 129, 143, 177] mult4=[(0, 1), (2, 3), (4, 5), (6, 7)] | 0-4-2-7-0 labels [0, 0, 0, 1] ; 1-6-3-5-1 labels [0, 1, 0, 0]
+b=1 c0=3 ws=[27, 197, 109, 211, 163, 61, 245, 75] mult4=[(0, 1), (2, 3), (4, 5), (6, 7)] | 0-5-6-3-0 labels [1, 0, 0, 0] ; 1-2-7-4-1 labels [1, 0, 1, 1]
+b=2 c0=1 ws=[73, 199, 233, 175, 39, 209, 63, 97] mult4=[(0, 2), (1, 4), (3, 5), (6, 7)] | 0-7-1-3-0 labels [0, 0, 0, 1] ; 2-5-4-6-2 labels [0, 1, 0, 0]
+b=2 c0=3 ws=[107, 29, 267, 131, 243, 165, 141, 5] mult4=[(0, 2), (1, 3), (4, 6), (5, 7)] | 0-6-5-3-0 labels [0, 1, 1, 1] ; 1-7-4-2-1 labels [1, 0, 1, 1]
+b=3 c0=1 ws=[9, 263, 161, 25, 247, 145, 127, 111] mult4=[(0, 4), (1, 3), (2, 6), (5, 7)] | 0-7-1-2-0 labels [1, 0, 0, 0] ; 3-6-4-5-3 labels [0, 1, 1, 1]
+b=3 c0=3 ws=[179, 229, 59, 77, 93, 43, 195, 213] mult4=[(0, 3), (1, 2), (4, 6), (5, 7)] | 0-2-4-7-0 labels [0, 1, 0, 0] ; 1-3-5-6-1 labels [1, 0, 1, 1]
+b=4 c0=1 ws=[249, 79, 23, 215, 159, 57, 113, 193] mult4=[(0, 5), (1, 6), (2, 3), (4, 7)] | 0-1-2-7-0 labels [1, 1, 0, 1] ; 3-4-5-6-3 labels [1, 0, 1, 1]
+b=4 c0=3 ws=[125, 181, 11, 227, 147, 261, 45, 91] mult4=[(0, 3), (1, 2), (4, 6), (5, 7)] | 0-1-4-7-0 labels [0, 0, 0, 1] ; 2-3-5-6-2 labels [1, 1, 1, 0]
+b=5 c0=1 ws=[223, 151, 121, 15, 185, 87, 257, 49] mult4=[(0, 6), (1, 5), (2, 4), (3, 7)] | 0-1-7-2-0 labels [1, 1, 1, 0] ; 3-5-6-4-3 labels [1, 0, 1, 1]
+b=5 c0=3 ws=[219, 19, 83, 155, 253, 117, 189, 53] mult4=[(0, 3), (1, 2), (4, 6), (5, 7)] | 0-4-7-1-0 labels [1, 0, 0, 0] ; 2-3-6-5-2 labels [0, 1, 0, 0]
+b=6 c0=1 ws=[47, 217, 191, 55, 183, 89, 81, 225] mult4=[(0, 6), (1, 5), (2, 7), (3, 4)] | 0-1-7-3-0 labels [1, 1, 0, 1] ; 2-4-6-5-2 labels [1, 1, 1, 0]
+b=6 c0=3 ws=[149, 259, 157, 115, 21, 251, 13, 123] mult4=[(0, 4), (1, 2), (3, 6), (5, 7)] | 0-2-7-3-0 labels [0, 1, 0, 0] ; 1-4-6-5-1 labels [1, 0, 0, 0]
+b=8 c0=1 ws=[241, 65, 71, 105, 201, 167, 207, 31] mult4=[(0, 6), (1, 7), (2, 5), (3, 4)] | 0-2-7-4-0 labels [1, 0, 0, 0] ; 1-3-6-5-1 labels [0, 1, 0, 0]
+b=8 c0=3 ws=[3, 173, 139, 37, 99, 269, 235, 133] mult4=[(0, 4), (1, 5), (2, 6), (3, 7)] | 0-3-5-6-0 labels [1, 1, 0, 1] ; 1-7-4-2-1 labels [1, 1, 1, 0]
+
+DATA, 16 sigma-odd tilings with one solution eps (the other is its complement):
+b=6 c0=1 ws=[151, 23, 145, 105, 233, 265, 113, 81] eps=[0, 0, 0, 0, 0, 1, 1, 0]
+b=6 c0=1 ws=[199, 71, 193, 57, 185, 231, 161, 225] eps=[0, 0, 1, 0, 0, 1, 0, 0]
+b=6 c0=1 ws=[247, 95, 193, 215, 183, 63, 65, 223] eps=[0, 0, 1, 1, 0, 1, 1, 0]
+b=6 c0=1 ws=[249, 143, 217, 241, 263, 113, 15, 175] eps=[0, 1, 1, 1, 0, 1, 1, 0]
+b=6 c0=1 ws=[249, 167, 121, 191, 7, 159, 39, 127] eps=[0, 1, 0, 1, 0, 0, 1, 1]
+b=6 c0=1 ws=[47, 73, 201, 41, 215, 111, 87, 79] eps=[0, 1, 1, 0, 0, 0, 0, 1]
+b=6 c0=1 ws=[49, 25, 57, 207, 209, 89, 79, 177] eps=[0, 0, 1, 0, 1, 0, 0, 0]
+b=6 c0=1 ws=[97, 23, 9, 55, 257, 159, 31, 129] eps=[0, 1, 0, 0, 1, 0, 0, 1]
+b=6 c0=3 ws=[147, 141, 109, 19, 21, 269, 11, 43] eps=[0, 1, 0, 0, 1, 1, 0, 1]
+b=6 c0=3 ws=[147, 261, 133, 115, 179, 5, 27, 155] eps=[0, 1, 1, 1, 1, 1, 0, 0]
+b=6 c0=3 ws=[149, 213, 181, 83, 173, 211, 243, 45] eps=[0, 0, 1, 1, 1, 1, 0, 1]
+b=6 c0=3 ws=[195, 259, 181, 227, 53, 235, 75, 107] eps=[0, 0, 0, 1, 0, 1, 0, 1]
+b=6 c0=3 ws=[197, 165, 37, 219, 77, 13, 45, 91] eps=[0, 1, 1, 1, 0, 0, 1, 1]
+b=6 c0=3 ws=[245, 117, 157, 267, 125, 139, 11, 93] eps=[0, 0, 1, 0, 0, 0, 0, 1]
+b=6 c0=3 ws=[3, 261, 229, 131, 251, 125, 163, 253] eps=[0, 0, 1, 0, 0, 0, 1, 0]
+b=6 c0=3 ws=[99, 189, 61, 29, 227, 59, 123, 91] eps=[0, 1, 1, 0, 0, 1, 1, 0]
+
+FORMAT: ANSWER BLOCK first, <=300 words, <=400 words total (data not counted). STATUS PROVED / PARTIAL / UNFINISHED; the proof or the exact step reached; least-sure step. Label each claim PROVED / CHECKED / CONJECTURE / UNFINISHED. A claim checked on examples is CHECKED, not PROVED.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED - do not estimate or invent numbers.
