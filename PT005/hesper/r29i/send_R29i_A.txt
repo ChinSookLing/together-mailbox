@@ -1,0 +1,29 @@
+PT005 R29i — Part A, the last hand step (one narrow task, ONE round only). THIS ROUND SERVES PROOF STEP: F1 mixed class (p=17, k=5->6), hand proof of the mod-16 lemma.
+Web off. Start with an ANSWER BLOCK (max 300 words): status PROVED / PARTIAL / UNFINISHED, the main claim, and your least-sure step. Whole reply max 400 words plus code.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+Code may only CHECK a hand argument; a finite search certificate alone is already done (CHECKED x2, R29h) and earns no credit this round.
+
+SETUP: same as R29h (p=17, N=544, canonical reps 1 <= w < 272). 8 coordinates tile C_5(b); lifts must 2-cover C_6(2b); member hit by (i,a),(j,c) gives XOR edge eps_i xor eps_j = a xor c xor 1. Mixed = w mod 8 not all in one class {c0,8-c0}.
+Classes: A = {1,7} mod 8, B = {3,5} mod 8. In the 150 length-8 cases the XOR graph is one Hamiltonian 8-cycle alternating A,B, each mod-8 residue appears twice.
+
+ALREADY ESTABLISHED (R29h):
+- LEMMA (CHECKED x2, computer-assisted, Astra + GPT, rerun by Hesper and Puck): the 8 values w mod 16 are pairwise distinct. Both certificates say it holds WITHOUT the Hamiltonian hypothesis: enough that every shared member is cross-class, so each class's four U_i (lift footprints) tile the 16 odd positions mod 32, and the 8 L_i (base footprints) are complementary across the two classes.
+- DeepSeek (hand): every edge ratio w_j/w_i mod 32 lies in {+-3, +-11}; hence adjacent and distance-2 vertices are distinct mod 16.
+- Grok (hand): if two coordinates with the same residue mod 8 sit at cycle distance 2, the double-step multiplier is 9 or 25 mod 32, which swaps their residues mod 16 (1<->9, 3<->11, 5<->13, 7<->15).
+- Observed (Puck, 8 supplied cycles, 32/32): equal mod-8 residues always at distance 2, never 4.
+- With the lemma, Astra's formula H = Q + D gives Q = 0, D = 1, so the cycle label sum is odd: not doublable.
+
+TASK: give a HAND proof of the lemma by EITHER route:
+(a) Cycle route: prove no two coordinates with equal w mod 8 sit at cycle distance 4 (e.g. via the ratio set {+-3,+-11} mod 32: show a 4-step product equal to 1 mod 16 is impossible for a legal cycle). Then DeepSeek + Grok finish it.
+(b) Partition route (no Hamiltonian hypothesis): from "each class's four U_i tile the odd residues mod 32" and "the L-footprints of A and B are complementary", derive directly that w mod 16 are distinct. Write U_i and L_i explicitly as functions of w mod 32 and b first.
+Say which route you took. If you get only part, write PARTIAL and name the exact gap in one line.
+
+DATA (same 8 rows; cycle order, labels[k] = edge cycle_ws[k] -> cycle_ws[k+1]):
+b=1 cycle_ws=[9, 59, 111, 77, 263, 213, 161, 195] labels=[0, 1, 0, 0, 1, 1, 1, 1]
+b=2 cycle_ws=[183, 251, 81, 115, 89, 21, 191, 157] labels=[0, 1, 0, 1, 0, 0, 1, 0]
+b=3 cycle_ws=[3, 201, 133, 241, 269, 71, 139, 31] labels=[1, 0, 0, 1, 0, 0, 0, 1]
+b=4 cycle_ws=[41, 195, 95, 213, 231, 77, 177, 59] labels=[0, 1, 0, 1, 1, 1, 1, 0]
+b=5 cycle_ws=[3, 127, 139, 263, 269, 145, 133, 9] labels=[0, 0, 1, 0, 0, 0, 1, 1]
+b=6 cycle_ws=[97, 29, 233, 165, 175, 243, 39, 107] labels=[0, 0, 1, 0, 0, 0, 1, 1]
+b=7 cycle_ws=[3, 201, 133, 207, 269, 71, 139, 65] labels=[0, 1, 0, 1, 1, 1, 1, 0]
+b=8 cycle_ws=[59, 9, 195, 127, 213, 263, 77, 145] labels=[1, 0, 0, 0, 0, 1, 0, 1]
