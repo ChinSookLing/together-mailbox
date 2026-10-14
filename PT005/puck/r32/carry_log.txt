@@ -1,0 +1,41 @@
+PT005 R32 — Puck carry log (four seats)
+CARRIED_BY: Puck
+PACKET: PT005/hesper/r32/send_R32.txt @ e5e1815 (staged /workspace/pt5_send_R32.txt 21:28:18 +0800)
+ROUND: R32, "the weaker parity" — F1 mixed class, every prime p >= 17, k=5->6, odd label sum
+All four prompts sent first (window ~21:29-21:32 +0800, right after Puck's own census finished at 21:29), then replies collected.
+Web/search OFF on every seat (packet line "Web off"); DeepThink ON and Search OFF for DeepSeek; no Stop/Skip/Regenerate used.
+Exact per-seat SENT stamps were not persisted in the R32 raw files (they carry no header block this round);
+RECEIVED times below are the file save times on the box, which is when each reply was collected.
+
+| Seat     | Sent (+0800)        | Received (+0800)     | Status | Saved file                |
+|----------|---------------------|----------------------|--------|---------------------------|
+| Astra    | ~21:29-21:32 (window) | 21:53:15           | PARTIAL | raw-Astra.txt            |
+| GPT      | ~21:29-21:32 (window) | 21:50:12           | PARTIAL | raw-GPT.txt              |
+| DeepSeek | ~21:29-21:32 (window) | 21:34:22           | PARTIAL | raw-DeepSeek.txt         |
+| Grok     | ~21:29-21:32 (window) | 21:33:15           | PARTIAL | raw-Grok.txt             |
+
+All files under /workspace/mbx_pt5/PT005/puck/r32/.
+
+Model / mode shown (standing seats, same chats as R31; the R32 raw files carry no MODEL header):
+- Astra  — ChatGPT (GPT-5 · The Civilisation Field custom GPT), chatgpt.com TCF custom GPT
+- GPT    — ChatGPT (GPT-5 · Plus), chatgpt.com direct chat
+- DeepSeek — DeepSeek (chat.deepseek.com · PT005 · Big Picture), DeepThink ON, Search OFF
+- Grok   — Expert (Grok UI mode), grok.com
+
+Web search off / DeepThink on:
+- Web search OFF: yes, all four (packet instructs "Web off"; same standing setup as R30/R31 READMEs).
+- DeepThink ON: yes, DeepSeek only (that is the only seat with a DeepThink toggle). Not applicable to the other three.
+
+Per-seat content and problems:
+- Astra — PARTIAL. Conditional hand proof of a new weaker parity lemma (each mod-8 residue twice + mod-32 distinctness + edge ratios in {+-3,+-11} => Q=0), plus a hand check of the p=103 counterexample (Q=6 even, H=1). Explicitly does NOT claim the general-p F1 theorem. Problems: slowest seat (reply in ~21 min after send window, last collected at 21:53); the answer block mixes a "PROVED" sub-heading for the sub-lemma with an overall PARTIAL, which can be misread; the two general-p gaps (mod-8 balance and mod-32 distinctness) remain open.
+- GPT — PARTIAL. Structural lemma for all odd p: every vertex of the alternating Hamiltonian 8-cycle joins one neighbour by an outer pair and the other by an inner pair, giving the four unsigned mod-16 types {+-1},{+-7},{+-3},{+-5} twice each; sign balance not proved, so (i) and (ii) both unfinished. Problems: second-slowest (collected 21:50); reply text is mangled by MathML/token artefacts (formula fragments split across lines) so the saved raw file needs cleanup before it is quoted; exact gap (the two sign-balance equations) still open.
+- DeepSeek — PARTIAL. Proved (ii) conditional on (i) using Grok's distance-2 pairing: same residue mod 8 at cycle distance 2 forces mod-16 residues to differ by 8, so exactly four coordinates have epsilon=1, hence Q=0 and H=1; checked on the p=103 counterexample. Problems: (i) itself not proved — the exact gap is excluding four coordinates with the same w mod 8 (all-same-mod8 case inside one parity class); reply also carries MathML artefacts around the formulas.
+- Grok — PARTIAL. Claims both (i) and (ii): alternation gives four A and four B vertices, admissible ratios mod 32 map A onto B, and only the two-per-residue distribution stays a single 8-cycle; every edge flips the q-bit, so exactly four q=1 coordinates and Q=0, H=1. Problems: its least-sure step is exactly the claim that every cross-class edge flips q — asserted by checking generators +-3,+-5,+-11,+-13 rather than derived from the covering condition, so this is not yet a general proof (it states the remaining gap itself); fastest reply (21:33) and the saved text includes UI paste artefacts ("Python / Copy / Copied") plus broken inline-math rendering.
+
+Puck's own checks this round (not seat replies):
+- 2026-10-14T2129-puck-check-r32-parity.md — CHECKED, data MATCH: census p=17/19/23 = 150/172/316, all 638/638 satisfy (i) and (ii); q-table and the p=103 counterexample MATCH Hesper e5e1815. Data only, not a proof.
+- out_r32_pairs.txt — distance-2 pairing + sum-eps parity check, all cases pass.
+- out_r32_seats.txt — the seats' new claims re-checked: mod-32 distinctness, unsigned mod-32 classes, edge ratios in {+-3,+-11}, unsigned mod-16 types twice, n1=n7 and n3=n5 all hold 150/172/316; p=103 cex ratios all in {3,11}.
+
+Round result: 4/4 PARTIAL, no PROVED, no breakthrough yet; general-p proof of (i)+(ii) still open.
+Housekeeping problem: PT005/puck/r32/ is still untracked in git (not committed), and this carry_log.txt is being added now.

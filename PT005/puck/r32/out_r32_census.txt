@@ -1,0 +1,6 @@
+PP 17 length8 mixed 150 (i) each mod8 twice 150 (ii) Q even 150 both 150 fails []
+elapsed_s 4.162
+PP 19 length8 mixed 172 (i) each mod8 twice 172 (ii) Q even 172 both 172 fails []
+elapsed_s 9.899
+PP 23 length8 mixed 316 (i) each mod8 twice 316 (ii) Q even 316 both 316 fails []
+elapsed_s 35.001
