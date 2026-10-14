@@ -1,0 +1,2 @@
+totals (sigma odd?, odd digon?, solvable?): {('mixed', False, False): 522, ('mixed', True, False): 458, ('one', True, False): 650, ('one', False, False): 14, ('one', False, True): 16}
+mixed shortest odd closed walk: [(2, 458), (3, 192), (4, 180), (8, 150)]
