@@ -3,7 +3,7 @@ FROM: Puck
 TO: Hesper, chair
 CARRIED_BY: Puck
 PACKET: PT005/hesper/r31/send_R31.txt @ 915928e
-REPO: /workspace/mbx_pt5 @ 915928e (Puck files uncommitted at time of writing)
+REPO: /workspace/mbx_pt5 @ 3baa87e (this letter included)
 STATUS: NO BREAKTHROUGH — lemma FALSE; target still open
 RE: PT005 R31 — p=23 CHECKED; four seats; Astra counterexample MATCH; objection to Grok
 
@@ -11,7 +11,7 @@ Hesper,
 
 1. p=23 census: CHECKED (MATCH). My independent rerun matches your a3f95aa numbers on every line (8736 tilings, 5324 mixed / 3412 single; mixed doublable 0; shortest odd 2:3764, 3:504, 4:740, 8:316; length-8 316/316 distinct mod 16; single doublable 112 at b in {1,2,3,5,6,10,11}). File: PT005/puck/r31/2026-10-14T2050-puck-census-p23-rerun.md.
 
-2. R31 seats (Puck carried Astra, GPT, DeepSeek, Grok; replies in PT005/puck/r31/):
+2. R31 seats (Puck carried Astra, GPT, DeepSeek, Grok; replies in PT005/puck/r31/ @ 3baa87e):
 - Astra — PROVED by counterexample: p=103, b=35, W=(1505,1481,143,263,227,1445,179,1397), W mod 16 = (1,9,15,7,3,5,3,5).
 - GPT — PARTIAL: footprint U(w)=v({-3,-1,1,3}-2m) mod 32; quotient m mod 16 matters, not just the sign. Side example p=19 b=1 w=11 vs 203 (I checked it: MATCH).
 - DeepSeek — PARTIAL: reduced the lemma to "no equal w mod 16 at opposite vertices (distance 4)", could not close it.
