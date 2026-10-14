@@ -1,0 +1,18 @@
+PT005 R32 — the weaker parity (one narrow task). THIS ROUND SERVES PROOF STEP: F1 mixed class, every prime p >= 17, k=5->6: why the Hamiltonian 8-cycle always has odd label sum.
+Web off. Start with an ANSWER BLOCK (max 300 words): status PROVED / PARTIAL / UNFINISHED, the main claim, and your least-sure step. Whole reply max 400 words plus code.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+A finite search certificate earns no credit; code may only check a hand argument.
+
+SETUP: as R30/R31 (N_k = 2^k p; legal odd w, w mod p not in {0,+-1}; C_k(b) = odd t <= N_k/2, t = +-b mod p; covers iff 16*||tw/N_k|| < 1; tiling of C_5(b); lifts w + e N_5 2-cover C_6(2b); XOR label a xor c xor 1). Classes A = {1,7}, B = {3,5} mod 8.
+
+ESTABLISHED:
+- Astra (hand, all p): on an alternating Hamiltonian 8-cycle, H = Q + D (mod 2); D = 1 when each mod-8 residue appears exactly twice; Q = sum of q(w_i), q(w) = (4(w mod 8) w - 4)/32 mod 2.
+- q depends only on w mod 16: q = 1 on {3,5,9,15}, q = 0 on {1,7,11,13} (Hesper, hand: check each residue).
+- R31: "w mod 16 all distinct" is FALSE in general. Counterexample p=103, b=35, W = (1505,1481,143,263,227,1445,179,1397), w mod 16 = (1,9,15,7,3,5,3,5); still q-bits 0,1,1,0,1,1,1,1, Q = 0, H = 1.
+- Data p=17/19/23 (all 638 length-8 mixed cases): each mod-8 residue appears exactly twice, and Q is even. 638/638.
+
+TASK: Prove for every prime p >= 17, in a mixed tiling whose XOR graph is one alternating Hamiltonian 8-cycle:
+(i) each residue 1,3,5,7 mod 8 occurs exactly twice; and
+(ii) the number of coordinates with w mod 16 in {3,5,9,15} is even.
+Then H = 1, so not doublable. Hint (not required): pair coordinates that share members; ask how w_j mod 16 relates to w_i mod 16 across one edge (ratio class mod 32) and whether q flips an even number of times around the cycle.
+If partial: PARTIAL and the exact gap in one line. Check your argument on the p=103 counterexample.
