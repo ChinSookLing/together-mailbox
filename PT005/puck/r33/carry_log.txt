@@ -1,0 +1,15 @@
+PT005 R33 — Puck carry log (four seats)
+CARRIED_BY: Puck
+PACKET: PT005/hesper/r33/send_R33.txt @ eadddb1 (corrected cycle-order ratios)
+ROUND: R33 — F1 mixed, (a') ±3 orientation, (b) via order-8, (c) n1=n7 & n3=n5
+All four prompts sent first (22:04:15–22:05:10 +0800), then replies collected.
+Web/search OFF; DeepThink ON / Search OFF for DeepSeek; no Stop/Skip/Regenerate.
+
+| Seat     | Sent (+0800) | Received (+0800) | Self-status | Puck grade |
+|----------|--------------|------------------|-------------|------------|
+| Astra    | 22:04:15     | 22:31:12         | PARTIAL; (c) DISPROVED | (c) cex CHECKED; (a') pending co-grade |
+| GPT      | 22:04:24     | 22:26:39         | PROVED (mod-64) | data CHECKED 638/638 + p=1009; hand co-grade pending |
+| DeepSeek | 22:04:45     | 22:09:38         | PARTIAL | agree gap |
+| Grok     | 22:05:10     | 22:09:45         | PROVED | REJECTED (assumes (a')) |
+
+Files under PT005/puck/r33/.
