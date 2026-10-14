@@ -1,0 +1,9 @@
+1 224 {(False, 0, (False,)): 224}
+2 188 {(False, 0, (False,)): 188}
+3 196 {(False, 0, (False,)): 196}
+4 192 {(False, 0, (False,)): 192}
+5 216 {(False, 0, (False,)): 200, (False, 1, (False,)): 16}
+6 236 {(False, 0, (False,)): 220, (True, 1, (True,)): 16}
+7 236 {(False, 0, (False,)): 220, (False, 1, (False,)): 16}
+8 172 {(False, 0, (False,)): 156, (False, 1, (False,)): 16}
+48 Counter({2: 48}) Counter({5: 16, 7: 16, 8: 16})
