@@ -1,0 +1,28 @@
+PT005 R29f — Part S (one narrow task). THIS ROUND SERVES PROOF STEP: F1 single-class, sigma odd.
+Web off. Start with an ANSWER BLOCK (max 300 words): status PROVED / PARTIAL / UNFINISHED, the main claim, and your least-sure step. Whole reply max 400 words plus code.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+
+SETUP (p=17, N=544). Coordinates: 8 legal odd w_i mod 544 (w ~ 544-w, w mod 17 not in {0,±1}) whose covers tile C_5(b) (each member hit once). Lifts w_i + 544e (e = 0,1) must 2-cover C_6(2b): every member hit exactly twice, by two different coordinates. Member t hit by (i,a) and (j,c) gives the XOR edge ε_i ⊕ ε_j = a ⊕ c ⊕ 1. Doubling ⟺ the XOR system is solvable (no odd cycle).
+
+KNOWN (CHECKED, not proved): for sigma even with no odd digon (14 cases), every w normalizes to b*w = +-7 (mod 17) and the 4-cycles are a -> 7a (mod 32); that gives an odd cycle. For sigma odd (b=6) this normalization FAILS: in every one of the 16 cases, +-b*w mod 17 takes 7 different values {1,2,3,4,5,7,8}.
+NEW CLUE (CHECKED by Hesper and Puck): with the representatives below, w mod 32 takes only 3 or 4 values. 12 of 16 cases: 3 values with multiplicities 3,3,2. Other 4: 4 values with multiplicities 3,2,2,1. Ratios between the values are always in {+-1, +-7, +-9} (mod 32).
+
+TASK: (1) Explain why sigma odd forces this mod-32 distribution (3+3+2 or 3+2+2+1). (2) Using it (and the edge rule eps_i xor eps_j = a xor c xor 1), prove every cycle of the XOR graph has EVEN label sum, so the system is solvable. Check your argument on all 16 below. If you only get (1), say PARTIAL.
+
+DATA, 16 sigma-odd tilings (one solution eps each; complement is the other):
+b=6 c0=1 ws=[151, 23, 145, 105, 233, 265, 113, 81] eps=[0, 0, 0, 0, 0, 1, 1, 0] | type=[1, 1, 0, 1, 1, 1, 0, 0] | w mod 32 counts={9: 3, 17: 3, 23: 2}
+b=6 c0=1 ws=[199, 71, 193, 57, 185, 231, 161, 225] eps=[0, 0, 1, 0, 0, 1, 0, 0] | type=[1, 1, 0, 1, 1, 1, 0, 0] | w mod 32 counts={1: 3, 7: 3, 25: 2}
+b=6 c0=1 ws=[247, 95, 193, 215, 183, 63, 65, 223] eps=[0, 0, 1, 1, 0, 1, 1, 0] | type=[1, 0, 0, 1, 1, 0, 0, 0] | w mod 32 counts={1: 2, 23: 3, 31: 3}
+b=6 c0=1 ws=[249, 143, 217, 241, 263, 113, 15, 175] eps=[0, 1, 1, 1, 0, 1, 1, 0] | type=[1, 0, 1, 0, 1, 0, 0, 0] | w mod 32 counts={7: 1, 15: 3, 17: 2, 25: 2}
+b=6 c0=1 ws=[249, 167, 121, 191, 7, 159, 39, 127] eps=[0, 1, 0, 1, 0, 0, 1, 1] | type=[1, 1, 1, 0, 1, 0, 1, 0] | w mod 32 counts={7: 3, 25: 2, 31: 3}
+b=6 c0=1 ws=[47, 73, 201, 41, 215, 111, 87, 79] eps=[0, 1, 1, 0, 0, 0, 0, 1] | type=[0, 1, 1, 1, 1, 0, 1, 0] | w mod 32 counts={9: 3, 15: 3, 23: 2}
+b=6 c0=1 ws=[49, 25, 57, 207, 209, 89, 79, 177] eps=[0, 0, 1, 0, 1, 0, 0, 0] | type=[0, 1, 1, 0, 0, 1, 0, 0] | w mod 32 counts={15: 2, 17: 3, 25: 3}
+b=6 c0=1 ws=[97, 23, 9, 55, 257, 159, 31, 129] eps=[0, 1, 0, 0, 1, 0, 0, 1] | type=[0, 1, 1, 1, 0, 0, 0, 0] | w mod 32 counts={1: 3, 9: 1, 23: 2, 31: 2}
+b=6 c0=3 ws=[147, 141, 109, 19, 21, 269, 11, 43] eps=[0, 1, 0, 0, 1, 1, 0, 1] | type=[0, 0, 0, 0, 1, 0, 1, 1] | w mod 32 counts={11: 2, 13: 3, 19: 2, 21: 1}
+b=6 c0=3 ws=[147, 261, 133, 115, 179, 5, 27, 155] eps=[0, 1, 1, 1, 1, 1, 0, 0] | type=[0, 1, 1, 0, 0, 1, 1, 1] | w mod 32 counts={5: 3, 19: 3, 27: 2}
+b=6 c0=3 ws=[149, 213, 181, 83, 173, 211, 243, 45] eps=[0, 0, 1, 1, 1, 1, 0, 1] | type=[1, 1, 1, 0, 0, 0, 0, 0] | w mod 32 counts={13: 2, 19: 3, 21: 3}
+b=6 c0=3 ws=[195, 259, 181, 227, 53, 235, 75, 107] eps=[0, 0, 0, 1, 0, 1, 0, 1] | type=[0, 0, 1, 0, 1, 1, 1, 1] | w mod 32 counts={3: 3, 11: 3, 21: 2}
+b=6 c0=3 ws=[197, 165, 37, 219, 77, 13, 45, 91] eps=[0, 1, 1, 1, 0, 0, 1, 1] | type=[1, 1, 1, 1, 0, 0, 0, 1] | w mod 32 counts={5: 3, 13: 3, 27: 2}
+b=6 c0=3 ws=[245, 117, 157, 267, 125, 139, 11, 93] eps=[0, 0, 1, 0, 0, 0, 0, 1] | type=[1, 1, 0, 1, 0, 1, 1, 0] | w mod 32 counts={11: 3, 21: 2, 29: 3}
+b=6 c0=3 ws=[3, 261, 229, 131, 251, 125, 163, 253] eps=[0, 0, 1, 0, 0, 0, 1, 0] | type=[0, 1, 1, 0, 1, 0, 0, 0] | w mod 32 counts={3: 3, 5: 2, 27: 1, 29: 2}
+b=6 c0=3 ws=[99, 189, 61, 29, 227, 59, 123, 91] eps=[0, 1, 1, 0, 0, 1, 1, 0] | type=[0, 0, 0, 0, 0, 1, 1, 1] | w mod 32 counts={3: 2, 27: 3, 29: 3}
