@@ -1,0 +1,31 @@
+PP 17
+(('mixed', 1), 'unsolvable') 136
+(('mixed', 2), 'unsolvable') 102
+(('mixed', 3), 'unsolvable') 110
+(('mixed', 4), 'unsolvable') 112
+(('mixed', 5), 'unsolvable') 136
+(('mixed', 6), 'unsolvable') 134
+(('mixed', 7), 'unsolvable') 150
+(('mixed', 8), 'unsolvable') 100
+(('single', 1), 'unsolvable') 88
+(('single', 2), 'unsolvable') 86
+(('single', 3), 'unsolvable') 86
+(('single', 4), 'unsolvable') 80
+(('single', 5), 'unsolvable') 80
+(('single', 6), 'solvable') 16
+(('single', 6), 'unsolvable') 86
+(('single', 7), 'unsolvable') 86
+(('single', 8), 'unsolvable') 72
+mixed shortest odd cycle lengths {3: 192, 2: 458, 4: 180, 8: 150}
+mixed total 980 mod8 sets Counter({(1, 3, 5, 7): 928, (1, 3, 5): 15, (3, 5, 7): 15, (1, 3, 7): 11, (1, 5, 7): 11})
+by b x shortest [((1, 2), 50), ((1, 3), 40), ((1, 4), 24), ((1, 8), 22), ((2, 2), 36), ((2, 3), 24), ((2, 4), 24), ((2, 8), 18), ((3, 2), 38), ((3, 3), 32), ((3, 4), 18), ((3, 8), 22), ((4, 2), 52), ((4, 3), 16), ((4, 4), 24), ((4, 8), 20), ((5, 2), 62), ((5, 3), 32), ((5, 4), 20), ((5, 8), 22), ((6, 2), 76), ((6, 3), 16), ((6, 4), 24), ((6, 8), 18), ((7, 2), 102), ((7, 3), 8), ((7, 4), 18), ((7, 8), 22), ((8, 2), 42), ((8, 3), 24), ((8, 4), 28), ((8, 8), 6)]
+mod16 distinct counts by shortest-odd length:
+  length-2: 210/458 have 8 distinct; full={8: 210, 5: 72, 4: 174, 3: 2}
+  length-3: 0/192 have 8 distinct; full={7: 18, 6: 114, 5: 40, 4: 20}
+  length-4: 180/180 have 8 distinct; full={8: 180}
+  length-8: 150/150 have 8 distinct; full={8: 150}
+n_mixed 980 n_single 680 n_total 1660
+mixed doublable (solvable) 0
+single doublable total 16
+single doublable by b {6: 16}
+elapsed_s 3.756

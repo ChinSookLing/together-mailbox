@@ -1,0 +1,60 @@
+p=103 b=35 N5=3296 N6=6592 N5/2=1648
+W = [1505, 1481, 143, 263, 227, 1445, 179, 1397]
+[MATCH] p=103 is prime
+[MATCH] b in 1..(p-1)/2
+  w=1505: odd=True w<N5/2=True w mod p=63
+  w=1481: odd=True w<N5/2=True w mod p=39
+  w=143: odd=True w<N5/2=True w mod p=40
+  w=263: odd=True w<N5/2=True w mod p=57
+  w=227: odd=True w<N5/2=True w mod p=21
+  w=1445: odd=True w<N5/2=True w mod p=3
+  w=179: odd=True w<N5/2=True w mod p=76
+  w=1397: odd=True w<N5/2=True w mod p=58
+[MATCH] all 8 coordinates legal (odd, 1<=w<N5/2, w mod p not in {0,+-1})
+[MATCH] 8 distinct coordinates
+|C5(35)| = 16
+  cover5(1505) = [35, 241]
+  cover5(1481) = [583, 859]
+  cover5(143) = [1407, 1613]
+  cover5(263) = [789, 1065]
+  cover5(227) = [377, 653]
+  cover5(1445) = [171, 447]
+  cover5(179) = [995, 1271]
+  cover5(1397) = [1201, 1477]
+[MATCH] exact tiling: every t in C5(b) covered exactly once :: hit counts [1]
+[MATCH] cover pairs equal Astra's printed certificate
+2b mod p = 70; |C6(2b)| = 32
+[MATCH] exact 2-cover: every t in C6(2b) hit exactly twice by the 16 lifts :: hit counts [2]
+[MATCH] no coordinate's two lifts share a member (A0 & A1 empty)
+[MATCH] no C6 member hit twice by the same coordinate (no self-loops)
+XOR edges (i,j): labels per shared C6 member
+  (0, 4): [0, 0, 0, 0]
+  (0, 7): [0, 0, 0, 0]
+  (1, 4): [1, 1, 1, 1]
+  (1, 5): [0, 0, 0, 0]
+  (2, 5): [1, 1, 1, 1]
+  (2, 6): [1, 1, 1, 1]
+  (3, 6): [1, 1, 1, 1]
+  (3, 7): [1, 1, 1, 1]
+[MATCH] each edge's labels consistent across its shared members
+[MATCH] simple XOR graph is one Hamiltonian 8-cycle (8 edges, all deg 2, connected) :: 8 edges, deg2=True, comp=8
+cycle (from 0): [0, 4, 1, 5, 2, 6, 3, 7]
+classes along cycle: ['A', 'B', 'A', 'B', 'A', 'B', 'A', 'B'] mod8: [1, 3, 1, 5, 7, 3, 7, 5]
+[MATCH] cycle alternates A={1,7} / B={3,5}
+[MATCH] cycle equals Astra's 0->4->1->5->2->6->3->7 (up to direction)
+labels along cycle: [0, 1, 0, 1, 1, 1, 1, 0]
+[MATCH] labels along cycle equal Astra's (0,1,0,1,1,1,1,0)
+[MATCH] H = sum labels = 1 (mod 2) -> XOR system unsolvable :: sum=5 H=1
+[MATCH] brute force over 2^8 assignments: no solution (not doublable) :: 0 solutions
+[MATCH] mixed: both classes present, each odd residue mod 8 exactly twice :: mod8=[1, 1, 7, 7, 3, 5, 3, 5]
+W mod 16 = [1, 9, 15, 7, 3, 5, 3, 5]
+[MATCH] W mod 16 equals claimed (1,9,15,7,3,5,3,5)
+[MATCH] W mod 16 NOT pairwise distinct (lemma counterexample) :: 6 distinct; repeated [3, 5]
+  residue 3: coords [227, 179] idx [4, 6] cycle distance 4
+  residue 5: coords [1445, 1397] idx [5, 7] cycle distance 4
+W mod 32 = [1, 9, 15, 7, 3, 5, 19, 21] (8 distinct)
+  INFO: W IS distinct mod 32 yet NOT distinct mod 16 -> Grok's step 'distinct mod 32, therefore distinct mod 16' is a non-sequitur.
+GPT side check p=19 b=1: w=11 (mod32=11, bal=-8) U=[3, 17, 23, 29]; w=203 (mod32=11, bal=-6) U=[1, 7, 21, 27]
+[MATCH] GPT side check: footprints {3,17,23,29} vs {1,7,21,27} as GPT computed (differ despite same w mod 32 and sign)
+
+SUMMARY: 20/20 checks MATCH -> MATCH
