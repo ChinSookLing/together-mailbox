@@ -1,0 +1,23 @@
+PT005 · Round 28b · sent by Hesper
+Conclusions first, short thinking. ANSWER BLOCK in the first 300 words, ≤400 words total. UNFINISHED is allowed. Name your least-sure step.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+
+Setup. p=17, k=5, N=17·32=544. C_k(b) = odd t ≤ N/2 with t ≡ ±b (mod 17). A legal coordinate w is odd, w mod 17 ∉ {0,±1}. w covers t at level k iff 16·‖tw‖_N < N. A doubling = 8 legal w tiling C_5(b) (each member covered once) whose lifts w+ε_iN (ε_i∈{0,1}) tile C_6(2b) at N'=1088.
+
+Checked facts (Hesper, exhaustive over b=1..8):
+• For EVERY b, 172–236 tilings of C_5(b) project to an exact 2-cover of C_6(2b) (each member hit once by ε=0 or ε=1 of two different w's).
+• Choosing ε then becomes an XOR system: member hit by (w_i,a) and (w_j,c) forces exactly one of ε_i=a, ε_j=c. Solvable iff the 8-vertex graph has no odd-parity cycle.
+• Only b=6 survives: 16 tilings. Every other b: all fail. Every b=6 survivor has exactly 3 coordinates that are quadratic residues mod 17.
+
+Failing example, b=3: w = 3,53,59,215,269,57,219,213. Lift covers of C_6(6) (ε=0 | ε=1):
+3: 11,351,363,385 | 159,181,193,533
+53: 227,329,431,533 | 11,113,215,317
+59: 147,295,351,499 | 45,193,249,397
+215: 91,147,329,521 | 23,215,397,453
+269: 113,283,453,465 | 79,91,261,431
+57: 57,249,363,419 | 125,181,295,487
+219: 45,159,283,487 | 57,261,385,499
+213: 317,419,465,521 | 23,79,125,227
+
+TASK (one only): Find an invariant that forces an odd XOR cycle for b ≢ ±6 (mod 17) and fails exactly for b ≡ ±6. Hint: the parity bit is ⌊t·w/N⌋ mod 2; look at how it depends on w mod 64 and on b's odd representative.
+ANSWER BLOCK: (1) PROVED / PARTIAL / UNFINISHED; (2) the invariant in one or two lines; (3) one odd cycle in the b=3 example above, written as w→w→…, with the members; (4) least-sure step.
