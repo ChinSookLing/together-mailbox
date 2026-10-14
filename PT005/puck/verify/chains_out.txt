@@ -1,0 +1,96 @@
+k=4 L=1 b=1 keytilings=1 chains=5764801 ex=[3, 25, 23, 53, 55, 19, 21, 121]
+k=4 L=1 b=2 keytilings=1 chains=5764801 ex=[19, 15, 11, 5, 13, 3, 7, 9]
+k=4 L=1 b=3 keytilings=1 chains=5764801 ex=[3, 9, 7, 21, 19, 11, 13, 41]
+k=4 L=1 b=4 keytilings=1 chains=5764801 ex=[21, 13, 23, 5, 27, 3, 7, 11]
+k=4 L=1 b=5 keytilings=1 chains=5764801 ex=[3, 9, 7, 13, 11, 31, 5, 25]
+k=4 L=1 b=6 keytilings=1 chains=5764801 ex=[25, 23, 91, 5, 7, 3, 29, 11]
+k=4 L=1 b=7 keytilings=1 chains=5764801 ex=[37, 61, 7, 9, 11, 3, 5, 19]
+k=4 L=1 b=8 keytilings=1 chains=5764801 ex=[29, 11, 13, 9, 7, 3, 5, 15]
+k=4 L=2 b=1 keytilings=9248 chains=9248 ex=[3, 25, 39, 73, 55, 27, 21, 149]
+k=4 L=2 b=2 keytilings=8384 chains=8384 ex=[19, 15, 11, 31, 167, 269, 79, 191]
+k=4 L=2 b=3 keytilings=8432 chains=8432 ex=[3, 53, 7, 155, 73, 143, 233, 139]
+k=4 L=2 b=4 keytilings=9232 chains=9232 ex=[21, 13, 29, 5, 37, 3, 45, 11]
+k=4 L=2 b=5 keytilings=8368 chains=8368 ex=[3, 9, 7, 13, 257, 115, 23, 243]
+k=4 L=2 b=6 keytilings=8384 chains=8384 ex=[25, 23, 91, 5, 55, 45, 207, 235]
+k=4 L=2 b=7 keytilings=9248 chains=9248 ex=[37, 61, 13, 165, 87, 129, 5, 59]
+k=4 L=2 b=8 keytilings=9232 chains=9232 ex=[29, 43, 57, 37, 39, 155, 245, 165]
+k=4 L=3 b=1 keytilings=0 chains=0 ex=None
+k=4 L=3 b=2 keytilings=0 chains=0 ex=None
+k=4 L=3 b=3 keytilings=0 chains=0 ex=None
+k=4 L=3 b=4 keytilings=0 chains=0 ex=None
+k=4 L=3 b=5 keytilings=0 chains=0 ex=None
+k=4 L=3 b=6 keytilings=0 chains=0 ex=None
+k=4 L=3 b=7 keytilings=0 chains=0 ex=None
+k=4 L=3 b=8 keytilings=0 chains=0 ex=None
+k=5 L=1 b=1 keytilings=14833 chains=3797248 ex=[3, 49, 47, 43, 37, 117, 107, 251]
+k=5 L=1 b=2 keytilings=40320 chains=3664388 ex=[37, 27, 11, 21, 13, 19, 3, 5]
+k=5 L=1 b=3 keytilings=40320 chains=3664388 ex=[3, 53, 15, 75, 55, 21, 27, 81]
+k=5 L=1 b=4 keytilings=40320 chains=3664912 ex=[41, 25, 11, 39, 7, 37, 19, 9]
+k=5 L=1 b=5 keytilings=40320 chains=3664912 ex=[3, 19, 55, 9, 7, 39, 193, 79]
+k=5 L=1 b=6 keytilings=40320 chains=3664388 ex=[3, 23, 37, 19, 7, 209, 79, 129]
+k=5 L=1 b=7 keytilings=40320 chains=3664388 ex=[3, 19, 13, 9, 7, 63, 25, 117]
+k=5 L=1 b=8 keytilings=14833 chains=3797248 ex=[3, 21, 13, 19, 29, 5, 75, 81]
+k=5 L=2 b=1 keytilings=0 chains=0 ex=None
+k=5 L=2 b=2 keytilings=0 chains=0 ex=None
+k=5 L=2 b=3 keytilings=0 chains=0 ex=None
+k=5 L=2 b=4 keytilings=0 chains=0 ex=None
+k=5 L=2 b=5 keytilings=0 chains=0 ex=None
+k=5 L=2 b=6 keytilings=32 chains=32 ex=[3, 261, 315, 131, 251, 125, 381, 253]
+k=5 L=2 b=7 keytilings=0 chains=0 ex=None
+k=5 L=2 b=8 keytilings=0 chains=0 ex=None
+k=5 L=3 b=1 keytilings=0 chains=0 ex=None
+k=5 L=3 b=2 keytilings=0 chains=0 ex=None
+k=5 L=3 b=3 keytilings=0 chains=0 ex=None
+k=5 L=3 b=4 keytilings=0 chains=0 ex=None
+k=5 L=3 b=5 keytilings=0 chains=0 ex=None
+k=5 L=3 b=6 keytilings=0 chains=0 ex=None
+k=5 L=3 b=7 keytilings=0 chains=0 ex=None
+k=5 L=3 b=8 keytilings=0 chains=0 ex=None
+k=6 L=1 b=1 keytilings=6624 chains=6624 ex=[3, 97, 95, 225, 223, 139, 149, 523]
+k=6 L=1 b=2 keytilings=3526 chains=9188 ex=[3, 21, 27, 413, 353, 299, 395, 319]
+k=6 L=1 b=3 keytilings=3446 chains=8548 ex=[3, 37, 59, 285, 291, 539, 131, 157]
+k=6 L=1 b=4 keytilings=3338 chains=9592 ex=[3, 23, 99, 13, 73, 227, 141, 291]
+k=6 L=1 b=5 keytilings=3322 chains=9016 ex=[3, 37, 279, 329, 521, 471, 285, 349]
+k=6 L=1 b=6 keytilings=3582 chains=8260 ex=[3, 47, 37, 275, 173, 479, 463, 309]
+k=6 L=1 b=7 keytilings=3230 chains=6276 ex=[3, 39, 211, 215, 435, 379, 99, 521]
+k=6 L=1 b=8 keytilings=4082 chains=9856 ex=[3, 41, 77, 93, 297, 39, 285, 207]
+k=6 L=2 b=1 keytilings=0 chains=0 ex=None
+k=6 L=2 b=2 keytilings=0 chains=0 ex=None
+k=6 L=2 b=3 keytilings=0 chains=0 ex=None
+k=6 L=2 b=4 keytilings=0 chains=0 ex=None
+k=6 L=2 b=5 keytilings=0 chains=0 ex=None
+k=6 L=2 b=6 keytilings=0 chains=0 ex=None
+k=6 L=2 b=7 keytilings=0 chains=0 ex=None
+k=6 L=2 b=8 keytilings=0 chains=0 ex=None
+k=6 L=3 b=1 keytilings=0 chains=0 ex=None
+k=6 L=3 b=2 keytilings=0 chains=0 ex=None
+k=6 L=3 b=3 keytilings=0 chains=0 ex=None
+k=6 L=3 b=4 keytilings=0 chains=0 ex=None
+k=6 L=3 b=5 keytilings=0 chains=0 ex=None
+k=6 L=3 b=6 keytilings=0 chains=0 ex=None
+k=6 L=3 b=7 keytilings=0 chains=0 ex=None
+k=6 L=3 b=8 keytilings=0 chains=0 ex=None
+k=7 L=1 b=1 keytilings=272 chains=272 ex=[3, 291, 253, 797, 541, 547, 835, 1085]
+k=7 L=1 b=2 keytilings=344 chains=344 ex=[3, 131, 413, 675, 547, 541, 957, 1085]
+k=7 L=1 b=3 keytilings=280 chains=280 ex=[3, 99, 643, 989, 547, 541, 445, 1085]
+k=7 L=1 b=4 keytilings=280 chains=280 ex=[3, 275, 269, 813, 541, 547, 1085, 819]
+k=7 L=1 b=5 keytilings=344 chains=344 ex=[3, 275, 269, 813, 541, 547, 819, 1085]
+k=7 L=1 b=6 keytilings=248 chains=248 ex=[3, 269, 275, 813, 819, 445, 643, 1085]
+k=7 L=1 b=7 keytilings=376 chains=376 ex=[3, 393, 695, 413, 259, 675, 829, 1085]
+k=7 L=1 b=8 keytilings=352 chains=352 ex=[3, 515, 29, 1059, 541, 547, 573, 1085]
+k=7 L=2 b=1 keytilings=0 chains=0 ex=None
+k=7 L=2 b=2 keytilings=0 chains=0 ex=None
+k=7 L=2 b=3 keytilings=0 chains=0 ex=None
+k=7 L=2 b=4 keytilings=0 chains=0 ex=None
+k=7 L=2 b=5 keytilings=0 chains=0 ex=None
+k=7 L=2 b=6 keytilings=0 chains=0 ex=None
+k=7 L=2 b=7 keytilings=0 chains=0 ex=None
+k=7 L=2 b=8 keytilings=0 chains=0 ex=None
+k=8 L=2 b=1 keytilings=0 chains=0 ex=None
+k=8 L=2 b=2 keytilings=0 chains=0 ex=None
+k=8 L=2 b=3 keytilings=0 chains=0 ex=None
+k=8 L=2 b=4 keytilings=0 chains=0 ex=None
+k=8 L=2 b=5 keytilings=0 chains=0 ex=None
+k=8 L=2 b=6 keytilings=0 chains=0 ex=None
+k=8 L=2 b=7 keytilings=0 chains=0 ex=None
+k=8 L=2 b=8 keytilings=0 chains=0 ex=None

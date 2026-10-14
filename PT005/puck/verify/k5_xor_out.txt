@@ -1,0 +1,16 @@
+b=1 candidates=224 classes=112 (solvable,legendre_prod)->{(False, 1): 224} solvable=0
+b=2 candidates=188 classes=112 (solvable,legendre_prod)->{(False, 1): 188} solvable=0
+b=3 candidates=196 classes=112 (solvable,legendre_prod)->{(False, 1): 196} solvable=0
+b=4 candidates=192 classes=112 (solvable,legendre_prod)->{(False, 1): 192} solvable=0
+b=5 candidates=216 classes=112 (solvable,legendre_prod)->{(False, 1): 200, (False, -1): 16} solvable=0
+b=6 candidates=236 classes=112 (solvable,legendre_prod)->{(False, 1): 220, (True, -1): 16} solvable=16
+b=7 candidates=236 classes=112 (solvable,legendre_prod)->{(False, 1): 220, (False, -1): 16} solvable=0
+b=8 candidates=172 classes=112 (solvable,legendre_prod)->{(False, 1): 156, (False, -1): 16} solvable=0
+TOTAL candidates 1660 kimi mismatches 0 kimi non-class-invariant 0
+odd-Legendre dead: 48 by b {5: 16, 7: 16, 8: 16} with odd digon: 48 without: 0
+odd-digon pairs per dead tiling: {2: 48}
+example (5, [3, 93, 195, 95, 179, 193, 13, 161], 2)
+example (5, [105, 263, 195, 9, 89, 247, 61, 227], 2)
+example (5, [109, 263, 55, 147, 179, 247, 71, 25], 2)
+example (5, [111, 93, 259, 179, 269, 79, 77, 177], 2)
+example (5, [111, 207, 261, 191, 229, 27, 145, 161], 2)
