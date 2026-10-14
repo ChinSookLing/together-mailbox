@@ -1,0 +1,6 @@
+PP 17 {'mod32 distinct': 150, 'unsigned mod32 classes distinct': 150, 'edge ratios in +-3,+-11': 150, 'unsigned mod16 types each x2': 150, 'n1=n7 and n3=n5': 150, 'total': 150} edge ratio classes (unsigned mod32): {3: 2456, 11: 2344}
+PP 19 {'mod32 distinct': 172, 'unsigned mod32 classes distinct': 172, 'edge ratios in +-3,+-11': 172, 'unsigned mod16 types each x2': 172, 'n1=n7 and n3=n5': 172, 'total': 172} edge ratio classes (unsigned mod32): {3: 2836, 11: 2668}
+PP 23 {'mod32 distinct': 316, 'unsigned mod32 classes distinct': 316, 'edge ratios in +-3,+-11': 316, 'unsigned mod16 types each x2': 316, 'n1=n7 and n3=n5': 316, 'total': 316} edge ratio classes (unsigned mod32): {3: 5204, 11: 4908}
+cex mod32 [1, 9, 15, 7, 3, 5, 19, 21]
+cex ratios [3, 11, 11, 3, 11, 3, 11, 3]
+{1: 2, 7: 2, 3: 2, 5: 2} 1 1 2 2
