@@ -1,0 +1,28 @@
+PT005 R30 — p=19 transfer (one narrow task). THIS ROUND SERVES PROOF STEP: F1 for general p — does the p=17 mixed-class obstruction carry to every prime p, k=5->6?
+Web off. Start with an ANSWER BLOCK (max 300 words): status PROVED / PARTIAL / UNFINISHED, the main claim, and your least-sure step. Whole reply max 400 words plus code.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+Goal is a formula/proof valid for all p, not more counting. Code only to check a claim.
+
+SETUP (general prime p, 16 runners): N_k = 2^k p. Legal coordinate: odd w mod N_k, w ~ N_k - w (rep 1 <= w < N_k/2), w mod p not in {0, +-1}. Member set C_k(b) = odd t <= N_k/2 with t = +-b mod p. w covers t iff 16*||t w / N_k|| < 1 (distance to nearest multiple of N_k, times 16, less than N_k). A tiling at k=5 = coordinates whose cover sets partition C_5(b). Lifts w + e N_5 (e=0,1) must 2-cover C_6(2b) by two different coordinates; member hit by (i,a),(j,c) gives XOR edge eps_i xor eps_j = a xor c xor 1; doubling <=> no odd-label cycle. Mixed = w mod 8 not inside one class {1,7} or {3,5}.
+
+RESULTS (p=17 CHECKED x2 earlier; p=19 Hesper 6b102e4, OPEN pending Puck rerun):
+- p=17: 980 mixed, 0 doublable; shortest odd cycle 2:458, 3:192, 4:180, 8:150. Single class: 16 doublable (all at b=6).
+- p=19: 2412 tilings (1312 mixed, 1100 single), 0 doublable. Mixed shortest odd cycle 2:680, 3:120, 4:340, 8:172; none 5-7. Single class: 0 doublable.
+- Both p: every length-8 and length-4 case has 8 distinct w mod 16; length 3 never does (p=19: all 120 have 6).
+- p=17 tools (R29g-i): on a Hamiltonian 8-cycle, label sum H = Q + D (mod 2) (Astra), Q = mod-16 carry sum, D = 1 from the two matchings on Z/8; distinct w mod 16 => Q = 0 => H = 1. Edge ratios mod 32 in {+-3,+-11} (DeepSeek).
+
+TASK: Show which parts of the p=17 argument are independent of p.
+(1) Prove or break: for every prime p >= 17, the Hamiltonian length-8 mixed case has H = 1 by the same Q + D formula. Name exactly where p enters (e.g. through w mod p, the choice of signed member = 2b mod p, the 17 in t = 2b + 17 s), and whether that step changes for p=19.
+(2) If time: why does the single class double at p=17 (b=6 only) but never at p=19? Give the condition on (p, b) you think decides it, and check it against these two facts only.
+Check on the p=19 rows below (tiling order, NOT cycle order). If partial, write PARTIAL and name the exact gap in one line.
+
+DATA p=19, one length-8 mixed case per b:
+b=1 ws=[11, 49, 125, 87, 217, 179, 293, 255] w_mod16=[11, 1, 13, 7, 9, 3, 5, 15]
+b=2 ws=[213, 175, 99, 137, 167, 205, 91, 129] w_mod16=[5, 15, 3, 9, 7, 13, 11, 1]
+b=3 ws=[5, 157, 223, 233, 71, 147, 299, 81] w_mod16=[5, 13, 15, 9, 7, 3, 11, 1]
+b=4 ws=[123, 239, 275, 87, 217, 29, 181, 65] w_mod16=[11, 15, 3, 7, 9, 13, 5, 1]
+b=5 ws=[3, 73, 155, 231, 225, 301, 149, 79] w_mod16=[3, 9, 11, 7, 1, 13, 5, 15]
+b=6 ws=[45, 121, 107, 183, 273, 259, 197, 31] w_mod16=[13, 9, 11, 7, 1, 3, 5, 15]
+b=7 ws=[3, 295, 149, 9, 161, 301, 155, 143] w_mod16=[3, 7, 5, 9, 1, 13, 11, 15]
+b=8 ws=[53, 271, 99, 119, 185, 205, 251, 33] w_mod16=[5, 15, 3, 7, 9, 13, 11, 1]
+b=9 ws=[3, 41, 117, 263, 79, 301, 187, 225] w_mod16=[3, 9, 5, 7, 15, 13, 11, 1]
