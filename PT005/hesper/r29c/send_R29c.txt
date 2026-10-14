@@ -1,0 +1,22 @@
+PT005 · Round 29c · {SEAT} · sent by {CARRIER}
+
+THIS ROUND SERVES PROOF STEP: R26' base level (k=5 -> 6, p=17), criterion F1, one-class case. Your part: {PART}.
+
+SETUP (p=17, N=544). Coordinates: 8 legal odd w_i mod 544 (w ~ 544-w, w mod 17 not in {0,±1}) whose covers tile C_5(b) (each member hit once). Lifts w_i + 544e (e = 0,1) must 2-cover C_6(2b): every member hit exactly twice, by two different coordinates. Member t hit by (i,a) and (j,c) gives the XOR edge ε_i ⊕ ε_j = a ⊕ c ⊕ 1. Doubling ⟺ this XOR system is solvable (no odd cycle). Graph: 8 vertices, 32 edges, each vertex degree 8.
+F1: doubling ⟺ all w_i in ONE class ±c0 (mod 8), c0 ∈ {1,3}, and σ = #{w_i ≡ ±c0 (mod 16)} odd.
+
+KNOWN (you may use, do not reprove):
+(C) CHECKED, p=17 k=5->6 only (Astra R29b; Puck fd0621c; Hesper ca39ee2): one class and σ odd ⇒ b ≡ ±6 (mod 17). Method: label member t by t' = ±t with t' ≡ b (mod 17); t' mod 32 is a bijection onto the 16 odd residues. With A = w^-1 (mod 32), c = signed odd representative of b·w (mod 17), s = sign(c), e = 2c − 17s: the real level-5 cover read mod 32 is L = A{c, c−2s}; the two lifts together, read mod 32, are 2 × U with U = A{e−4,e−2,e,e+2} (e>0) or A{e−2,e,e+2,e+4} (e<0). A finite search of this L+U relaxation leaves only b=6.
+
+CHECKED on all 1660 class-tilings (Hesper r29c/check, this commit):
+- one class, σ even: 664 tilings, all unsolvable. 650 contain an odd digon (two coordinates sharing two members with different labels); 14 do not (their pair pattern: 8 coordinate pairs sharing 2 members, 4 pairs sharing 4).
+- one class, σ odd: 16 tilings, all solvable, all b=6; graph connected, 16 coordinate pairs each sharing exactly 2 members.
+- mixed classes: 980, all unsolvable; 458 with an odd digon, 522 without.
+- No simple bit formula (bits 3..8 of w, w mod 16 flag, Legendre) gives the solution ε in the 16 survivors.
+
+PART (B), for every seat except Astra: prove that in one class, the XOR system is solvable ⟺ σ odd. REQUIRED: say explicitly which cycle(s) you use and how they are built from the tiling (which members, which coordinates, in what order). A count over an enumeration is not a proof. Expected route: sum the labels of a cycle built from the L/U structure and reduce to σ (mod 2); the 14 no-digon σ-even cases need a longer cycle.
+
+PART (A), Astra only: prove mixed classes ⇒ an odd cycle. Try your mod-32 L+U projection on mixed classes (two classes ±1 and ±3 mod 8). Note that 522 of 980 mixed failures have no odd digon, so the argument must be global.
+
+FORMAT: ANSWER BLOCK first, ≤300 words, ≤400 words total. STATUS PROVED / PARTIAL / UNFINISHED; the proof or the exact step reached; least-sure step. Label each claim PROVED / CHECKED / CONJECTURE / UNFINISHED. A claim checked on one example is CHECKED, not PROVED.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.

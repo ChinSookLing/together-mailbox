@@ -1,0 +1,15 @@
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (False, None, 1, True, False, ((2, 14), (4, 1))) 96
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (False, None, 1, True, False, ((2, 16),)) 204
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (False, None, 1, True, False, ((2, 8), (4, 4))) 72
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (False, None, 1, True, False, ((4, 8),)) 150
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (False, None, 1, True, True, ((2, 10), (4, 3))) 96
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (False, None, 1, True, True, ((2, 8), (4, 4))) 272
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (False, None, 1, True, True, ((2, 9), (4, 2), (6, 1))) 48
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (False, None, 1, True, True, ((4, 8),)) 42
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (True, 0, 1, True, False, ((2, 8), (4, 4))) 14
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (True, 0, 1, True, True, ((2, 4), (6, 4))) 96
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (True, 0, 1, True, True, ((2, 8), (4, 4))) 310
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (True, 0, 1, True, True, ((4, 8),)) 24
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (True, 0, 2, True, True, ((4, 8),)) 196
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (True, 0, 4, True, True, ((8, 4),)) 24
+(oneclass,sig,ncomp,unsolv,has_odd_digon,pair-multiplicities) (True, 1, 1, False, False, ((2, 16),)) 16
