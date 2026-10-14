@@ -1,0 +1,9 @@
+U0 class A
+split [1, 31] [3, 29] neighbour classes [['B'], ['B']]
+split [1, 29] [3, 31] neighbour classes [['A'], ['A']]
+split [1, 3] [29, 31] neighbour classes [['A', 'B'], ['A', 'B']]
+S cands [[1, 3, 5, 7]]
+C cands [[9, 19, 29, 31]]
+junction survivals without chord 0
+reverse survivals 0
+GPT cands [([1, 3, 29, 31], 4, 'A'), ([1, 11, 21, 31], 2, 'B'), ([1, 3, 5, 31], 3, 'A'), ([1, 27, 29, 31], 3, 'A')]

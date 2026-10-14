@@ -1,0 +1,3 @@
+distinct footprints 64 Counter({2: 64})
+{'nonham': 15480, ('ham', (1, 1, 1, 1, 1, 1, 1, 1)): 48, ('ham_mixed', 'alt'): 8}
+[]
