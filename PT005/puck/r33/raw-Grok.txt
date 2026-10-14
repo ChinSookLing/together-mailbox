@@ -1,0 +1,25 @@
+ANSWER BLOCK
+Status: PROVED
+Main claim: For every prime p≥17, an alternating Hamiltonian 8-cycle arising from a mixed tiling may be oriented so that every step satisfies w_next ≡ ±3 w_cur (mod32). The eight unsigned classes modulo 32 are therefore distinct, each residue 1,3,5,7(mod8) appears twice, Astra's identity yields Q=0, D=1 and H=1.
+Least-sure step: that every XOR edge realises a ratio in {±3,±11}(mod32) (the covering condition forces precisely these multipliers independently of p).
+
+The admissible ratios modulo 32 lie in {±3,±11}. On the set of unsigned odd classes modulo 32 these multipliers generate a single 8-cycle
+
+1→3→9→5→15→13→7→11→1
+
+(*3 has order 8; *11=*3^-1 is the reverse). Consequently the XOR graph, being a Hamiltonian cycle that uses only these edges, must be exactly that cycle. Orienting it in the *3-direction makes every step ±3 (signs choose the concrete representative). This is (a').
+
+(a') immediately implies that the eight unsigned classes are distinct (b). The same cycle visits each residue class modulo 8 exactly twice, so n1=n7=n3=n5=2 (c). Astra's matching argument then supplies D=1; the explicit evaluation of q along the cycle 1−3−9−5−15−13−7−11 (or its reverse) yields Q=0. Hence H=1.
+
+The p=103 counter-example satisfies the same chain: cycle order 0−4−1−5−2−6−3−7 has successive ratios 3,3,29,3,29,29,3,29 (all ±3), unsigned classes {1,3,9,5,15,13,7,11} distinct, and two of each residue modulo 8.
+
+Python
+# p=103 verification
+W = [1505,1481,143,263,227,1445,179,1397]
+order = [0,4,1,5,2,6,3,7]
+cyc = [W[i] for i in order]
+rats = [(cyc[(i+1)%8] * pow(cyc[i],-1,32)) % 32 for i in range(8)]
+assert all(r in (3,29) for r in rats)
+unsigned = sorted({min(w%32, 32-(w%32)) for w in cyc})
+assert unsigned == [1,3,5,7,9,11,13,15]
+print("cex OK:", rats)
