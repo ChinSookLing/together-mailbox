@@ -1,0 +1,28 @@
+PT005 R29h — Part A, one-way lemma (one narrow task). THIS ROUND SERVES PROOF STEP: F1 mixed class (p=17, k=5->6), the length-8 obstruction.
+Web off. Start with an ANSWER BLOCK (max 300 words): status PROVED / PARTIAL / UNFINISHED, the main claim, and your least-sure step. Whole reply max 400 words plus code.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+
+SETUP (p=17, N=544), same as R29g. Coordinates: 8 legal odd w_i mod 544 (w ~ 544-w, w mod 17 not in {0,+-1}) whose covers tile C_5(b) (each member hit once). Lifts w_i + 544e (e = 0,1) must 2-cover C_6(2b): every member hit exactly twice, by two different coordinates. Member t hit by (i,a) and (j,c) gives the XOR edge eps_i xor eps_j = a xor c xor 1. Doubling <=> no cycle with odd label sum. "Mixed" = the 8 values w mod 8 are not all in one class {c0, 8-c0}. (Each tiling has exactly one w per coordinate, so w mod 16 is well defined; CHECKED Puck 42db2c2.)
+
+WHERE WE ARE (R29g, CHECKED unless marked):
+- 980 mixed tilings, 0 doublable. Shortest odd cycle: 2 (458), 3 (192), 4 (180), 8 (150); none 5-7.
+- The 150 length-8 cases: XOR graph = ONE Hamiltonian 8-cycle, each edge 4 parallel member-edges with equal label; every edge joins class {1,7} to class {3,5}.
+- Astra (R29g, PARTIAL): on such an 8-cycle, label sum H = Q + D (mod 2), where Q is a sum over the 8 coordinates of a mod-16 carry bit and D is the wrap-around parity of two perfect matchings on Z/8 (class +-1 gives a step-1 matching, class +-3 a step-3 matching; their union is one 8-cycle only when phases agree, giving D = 1). If w mod 16 takes all 8 odd classes, Q = 0, so H = 1: not doublable.
+- Count of distinct w mod 16 among the 8 coordinates, by shortest odd cycle (CHECKED, Hesper ee55873 + this table):
+  length 8: always 8 (150/150). length 4: always 8 (180/180). length 2: 8 in 210, fewer in 248. length 3: NEVER 8 (counts 4:20, 5:40, 6:114, 7:18).
+  So "all 8 classes" does NOT imply length 8. Only the one-way statement is wanted.
+
+TASK (pick (1) first; (2) only if (1) is done):
+(1) Prove: if a mixed tiling's XOR graph is a single Hamiltonian 8-cycle whose edges join class {1,7} to class {3,5}, then the 8 values w mod 16 are pairwise distinct. (This is Astra's missing step; with it, H = 1 for all 150 by Q = 0, D = 1.)
+(2) Explain why a length-3 odd cycle forces two coordinates into the same class mod 16 (0/192 have all 8 classes).
+Check on the 8 rows below. If you only give a partial argument, say PARTIAL and name the exact gap.
+
+DATA, one length-8 case per b (cycle in order; labels[k] = edge cycle_ws[k] -> cycle_ws[k+1], last edge closes):
+b=1 cycle_ws=[9, 59, 111, 77, 263, 213, 161, 195] labels=[0, 1, 0, 0, 1, 1, 1, 1]
+b=2 cycle_ws=[183, 251, 81, 115, 89, 21, 191, 157] labels=[0, 1, 0, 1, 0, 0, 1, 0]
+b=3 cycle_ws=[3, 201, 133, 241, 269, 71, 139, 31] labels=[1, 0, 0, 1, 0, 0, 0, 1]
+b=4 cycle_ws=[41, 195, 95, 213, 231, 77, 177, 59] labels=[0, 1, 0, 1, 1, 1, 1, 0]
+b=5 cycle_ws=[3, 127, 139, 263, 269, 145, 133, 9] labels=[0, 0, 1, 0, 0, 0, 1, 1]
+b=6 cycle_ws=[97, 29, 233, 165, 175, 243, 39, 107] labels=[0, 0, 1, 0, 0, 0, 1, 1]
+b=7 cycle_ws=[3, 201, 133, 207, 269, 71, 139, 65] labels=[0, 1, 0, 1, 1, 1, 1, 0]
+b=8 cycle_ws=[59, 9, 195, 127, 213, 263, 77, 145] labels=[1, 0, 0, 0, 0, 1, 0, 1]
