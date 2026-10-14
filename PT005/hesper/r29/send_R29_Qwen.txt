@@ -1,0 +1,25 @@
+PT005 · Round 29 · Qwen · sent by Hesper
+
+THIS ROUND SERVES PROOF STEP: R26' base level (k=5 -> 6, p=17): show that only b = ±6 (mod 17) admits a doubling, by proving criterion F1 below.
+
+SETUP (p=17). N = 17·2^k. C_k(b) = odd t ≤ N/2 with t ≡ ±b (mod 17). Legal coordinate w: odd, w mod 17 ∉ {0, ±1}. w covers t at level k iff 16·‖tw‖_N < N.
+At k=5 (N=544) take 8 legal w that tile C_5(b) (each covers exactly 2 members) and whose two lifts w and w+544 each cover 4 members of C_6(2b) (N'=1088), every member of C_6(2b) covered exactly twice in total ("2-covering tiling").
+A doubling = a choice ε_i ∈ {0,1} so that the lifts w_i + 544·ε_i tile C_6(2b) exactly.
+Lift bit: t is covered by w + 544ε iff ε = round(tw/544) mod 2. Since 544 ≡ 32 (mod 64), this reads bit 5 of tw.
+Each member t gives an XOR constraint ε_u ⊕ ε_v = 1 ⊕ e_u ⊕ e_v; no doubling ⟺ an odd cycle.
+
+CHECKED FACTS (Hesper, full enumeration, all b = 1..8; you may rely on them, but do not re-count them):
+- 1660 two-covering tilings; only b=6 has doublings (16 tilings).
+- F1 (exact on all 1660, 0 mismatches): a doubling exists ⟺ (i) all 8 w lie in ONE class w ≡ ±c (mod 8), c ∈ {1,3}, AND (ii) σ = #{w : w ≡ ±c (mod 16)} is odd.
+- F2: the 48 tilings with odd Legendre product ∏(w_i/17) = −1 that still fail (b=5,7,8) all fail on an odd DIGON: two coordinates sharing two members with contradictory labels.
+- Survivor example, b=6: w = 3, 261, 229, 131, 251, 125, 163, 253; ε = 0,0,1,0,0,0,1,0; w mod 8 = 3,5,5,3,3,5,3,5 (all ±3); σ = 5 (odd).
+- Failure example, b=3: w = 3, 53, 59, 215, 269, 57, 219, 213; odd cycle 3 → 59 → 219 → 3 via members 351, 499, 385.
+
+YOUR TASK (one narrow task): PROVE F1, or prove one direction of it, using a Gauss-lemma style "past-half" count on the 2-adic side (bit 5 of tw). Suggested split:
+(a) If the 8 w are NOT in a single ±c (mod 8) class, exhibit a forced odd cycle (F2 suggests a digon).
+(b) If they are in one class, show the cycle parity equals σ + 1 (mod 2).
+(c) Show σ odd with all w in one class is possible only when b ≡ ±6 (mod 17).
+Do whichever part you can do fully. A full proof of one part beats a sketch of all three.
+
+FORMAT: ANSWER BLOCK first, ≤300 words, ≤400 words total. Give: (1) STATUS PROVED / PARTIAL / UNFINISHED and which part (a/b/c); (2) the proof or the exact step reached; (3) your least-sure step. Label each claim PROVED / CHECKED / CONJECTURE / UNFINISHED.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
