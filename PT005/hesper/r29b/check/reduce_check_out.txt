@@ -1,0 +1,2 @@
+compare: real L == Astra L, real lift multiset == 2 x Astra U
+coords checked 896 mismatches 0 (|cover5|,|A0+A1|) shapes {(2, 8): 896}
