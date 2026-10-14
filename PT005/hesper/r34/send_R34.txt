@@ -1,0 +1,21 @@
+PT005 R34 — local lemmas L1–L4 (one narrow task). THIS ROUND SERVES PROOF STEP: F1 mixed class, every prime p >= 17, k=5->6: close GPT's mod-64 proof that the Hamiltonian 8-cycle has odd label sum.
+Web off. Start with an ANSWER BLOCK (max 300 words): for EACH of L1, L2, L3, L4 one status line PROVED / PARTIAL / UNFINISHED, then your least-sure step. Whole reply max 400 words plus code.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+Hand derivations only; code may only check them. Check every lemma on BOTH counterexamples below.
+
+SETUP (prime p >= 17): N_5 = 32p, N_6 = 64p. Legal odd w, rep 1 <= w < 16p, w mod p not in {0,+-1}. C_6(2b) = odd t <= 32p with t = +-2b mod p. Coordinate w covers member t at level 6 via lift e in {0,1} iff 16*||t (w + 32p e) / 64p|| < 1. XOR label of a member hit by (i,a),(j,c): lambda = a xor c xor 1.
+Member position: write t = eps*2b + p u with eps = +-1 (the sign with t = 2b eps mod p); s(t) = eps*u mod 32.
+Per coordinate: d = bal_p(b w) (balanced residue in (-p/2, p/2)), m = (b w - d)/p, v = w^(-1) mod 32, c = -2 m v mod 32.
+
+LEMMAS (all p >= 17; numerically 0 failures: L1 on every legal w, every b, all p 17..139 = 741,792 coordinates; L2–L4 on 638/638 length-8 mixed cases p=17/19/23 and both cex):
+L1 (footprint): the members covered by the two lifts of w have positions exactly U = c + {+-v, +-3v} (mod 32).
+L2 (inner/outer, GPT R32): in an alternating Hamiltonian 8-cycle each vertex meets one neighbour in its inner pair {c+-v} and the other in its outer pair {c+-3v}.
+L3 (label difference): if coordinates i, j share members at positions s, s' (s + s' = 2c_i = 2c_j mod 32), then lambda(s) xor lambda(s') = (c_i - c_j)/16 mod 2. Hence equal parallel labels force a common centre c.
+L4 (label formula): with common centre c, orient inner -> outer so w_{i+1} = 3 sigma_i w_i + 32 k_i (sigma = +-1); with h_i = (2 m_i + c w_i)/32 (an integer), the edge label is lambda_i = 1 + h_i + h_{i+1} + k_i (mod 2).
+Given L1–L4: H = sum k_i, and the mod-64 product (3^8 = 33, 33^2 = 1 mod 64) forces sum k_i odd, so H = 1 (core checked by Hesper and Puck).
+
+COUNTEREXAMPLES (to other routes; GPT's route must pass them):
+(A) p=103, b=35, W = (1505,1481,143,263,227,1445,179,1397); cycle 0-4-1-5-2-6-3-7; labels in that order 0,1,0,1,1,1,1,0.
+(B) p=1009, b=500, W = (449,3161,1353,1167,917,1571,45,699); mod-8 counts (n1,n3,n5,n7) = (3,2,2,1); H = 1.
+
+TASK: prove L1, L2, L3, L4 by direct computation on t = eps*2b + p u (L1 first: show t(w+32pe) mod 64p reduces to p*(stuff depending on s, m, w) + small, and the cover test picks exactly s in c + {+-v,+-3v}). If partial: PARTIAL and the exact gap in one line per lemma.
