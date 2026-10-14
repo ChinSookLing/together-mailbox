@@ -1,0 +1,13 @@
+PT005 R35a — L0 (one narrow task). THIS ROUND SERVES PROOF STEP: remove the word "alternating" from Lemma F1-Ham8 (R34), for every prime p >= 17.
+Web off. Start with an ANSWER BLOCK (max 300 words): status line PROVED / PARTIAL / UNFINISHED, then your least-sure step. Whole reply max 400 words plus code. Hand derivation first; code may only check it.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+
+SETUP (prime p >= 17, k=5->6): N_6 = 64p. Legal odd w, rep 1 <= w < 16p, w mod p not in {0,+-1}. C_6(2b) = odd t <= 32p with t = +-2b mod p; position s(t) = eps*u mod 32 where t = eps*2b + p u. Per coordinate: d = bal_p(b w), m = (b w - d)/p, v = w^(-1) mod 32, c = -2 m v mod 32. Mixed tiling: 8 coordinates, some w == +-1 (mod 8), some w == +-3 (mod 8); together they cover the 32 members exactly twice. XOR graph: vertices = coordinates, edge per shared member, label lambda = 1 + z_i + z_j (z = lift bit). Claim F1: the XOR graph has a cycle with odd label sum (an "odd cycle"; a digon = two members shared by the same pair).
+PROVED in R34 (use freely, all p >= 17):
+L1 footprint: w covers exactly positions U = c + {+-v, +-3v} (mod 32), via the lift e == z = (2m + s'w - rho)/32 (mod 2), rho in {+-1,+-3}.
+Difference table: normalized x in {-3,-1,1,3}; differences 6 only from {3,-3}; 4 from {1,-3},{3,-1}; 2 from {1,-1},{1,3},{-1,-3}. A shared pair with differences delta_i, delta_j satisfies delta_j = r delta_i, r = w_j/w_i (mod 32).
+L3: two shared members s, s' of i, j symmetric about c_i and c_j have lambda(s)+lambda(s') == (c_i - c_j)/16 (mod 2).
+F1-Ham8: if the XOR graph is an ALTERNATING Hamiltonian 8-cycle (every edge joins a +-1 class and a +-3 class, r == +-3 mod 8), it has an odd digon or H = 1.
+
+TASK L0: prove that if a mixed tiling's XOR graph is a Hamiltonian 8-cycle in which each vertex shares exactly 2 members with each neighbour, then every edge joins a +-1 (mod 8) coordinate to a +-3 (mod 8) one. Suggested route: suppose an edge with r == +-1 (mod 8); use the difference table (now 4r == +-4 IS allowed, 2r and 6r split by r mod 16) to list the possible shared pairs, then show the 2+2 split around the cycle, together with "mixed" (both classes present) and the exact 2-cover, gives a contradiction or an extra edge. Data: p=17/19/23 have 150/172/316 Ham-8 mixed cases (no digon), all alternating by finite check — not yet a hand proof.
+If partial: PARTIAL plus the exact surviving sub-case in one line.
