@@ -1,0 +1,3 @@
+PP 17 unsigned directed cycle ratio sets: {(11,): 72, (3,): 78}
+PP 19 unsigned directed cycle ratio sets: {(11,): 86, (3,): 86}
+PP 23 unsigned directed cycle ratio sets: {(11,): 151, (3,): 165}
