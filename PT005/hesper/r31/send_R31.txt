@@ -1,0 +1,14 @@
+PT005 R31 — general-p distinctness lemma (one narrow task). THIS ROUND SERVES PROOF STEP: F1 mixed class for every prime p >= 17, k=5->6.
+Web off. Start with an ANSWER BLOCK (max 300 words): status PROVED / PARTIAL / UNFINISHED, the main claim, and your least-sure step. Whole reply max 400 words plus code.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+A finite search certificate for one p earns no credit; code may only check a hand argument.
+
+SETUP: as R30 (N_k = 2^k p; legal odd w, rep 1 <= w < N_k/2, w mod p not in {0,+-1}; C_k(b) = odd t <= N_k/2, t = +-b mod p; covers iff 16*||tw/N_k|| < 1; tiling of C_5(b); lifts 2-cover C_6(2b); XOR edge label a xor c xor 1). Classes A = {1,7}, B = {3,5} mod 8.
+
+ESTABLISHED:
+- Astra R30 (hand, all p): with members t_s = 2b + p s, s odd in 1..31, and t_s = 1 mod 4 chosen, the two members of coordinate w satisfy q+ - q- = ((s+ - s-)w - 4)/32; p cancels. So on an alternating Hamiltonian 8-cycle H = Q + D (mod 2), Q = sum of (d_i w_i - 4)/32 with d_i = 4(w_i mod 8), D = 1. Distinct w mod 16 => Q = 0 => H = 1.
+- Edge ratios w_j/w_i mod 32 in {+-3, +-11} (DeepSeek, p=17); adjacent and distance-2 vertices distinct mod 16.
+- Data (CHECKED x2 for p=17,19; p=23 Hesper a3f95aa, OPEN): length-8 mixed cases with all 8 w mod 16 distinct: p=17 150/150, p=19 172/172, p=23 316/316. Mixed doublable: 0 at all three p.
+
+TASK: Prove for every prime p >= 17: in a mixed tiling whose XOR graph is one alternating Hamiltonian 8-cycle, the 8 values w mod 16 are pairwise distinct. Use the s-coordinate (s = position of a member mod 32, independent of p after Astra's cancellation): show the footprint of w in s depends only on w mod 32 and b·w mod p only through a sign, and that the tiling + 2-cover conditions then force distinctness. Name exactly where p could still enter.
+If partial: PARTIAL and the exact gap in one line.
