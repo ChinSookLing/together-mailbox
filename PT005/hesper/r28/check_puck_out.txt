@@ -1,0 +1,12 @@
+GPT legal True mod17 [3, 3, 3, 3, 3, 3, 3, 3]
+  tiles C6(1) proj2 counts ({2}, 32) #lifts 0
+  tiles C6(2) proj2 counts ({2}, 32) #lifts 0
+  tiles C6(3) proj2 counts ({2}, 32) #lifts 0
+  tiles C6(4) proj2 counts ({2}, 32) #lifts 0
+  tiles C6(5) proj2 counts ({2}, 32) #lifts 0
+  tiles C6(6) proj2 counts ({2}, 32) #lifts 0
+  tiles C6(7) proj2 counts ({2}, 32) #lifts 0
+  tiles C6(8) proj2 counts ({2}, 32) #lifts 0
+Astra legal True mod17 [3, 6, 11, 14, 14, 3, 6, 11]
+  tiles C6(1) proj2 counts ({2}, 32) #lifts 0
+  tiles C6(3) proj2 counts ({2}, 32) #lifts 0
