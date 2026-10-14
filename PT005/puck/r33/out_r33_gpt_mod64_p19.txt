@@ -1,0 +1,2 @@
+PP 19 {'cases': 172, 'footprint_ok': 172, ('npairs', 8): 172, 'labels_consistent': 172, 'common_c': 172, 'h_integer': 172, 'steps_pm3': 172, 'lambda_formula_ok': 172, 'H_eq_sumK': 172, 'sumK_odd': 172}
+fails []

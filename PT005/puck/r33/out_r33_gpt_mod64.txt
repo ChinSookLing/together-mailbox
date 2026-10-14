@@ -1,0 +1,10 @@
+Puck independent CHECK of GPT R33 mod-64 Hamiltonian argument (638/638 length-8 mixed at p=17/19/23):
+footprint_ok, labels_consistent, common_c, h_integer, steps_pm3, lambda_formula_ok, H_eq_sumK, sumK_odd: ALL MATCH, 0 fails.
+Algebraic identity: if w'=3σw+32k (w odd), then w'/w ≡ 3σ·33^k (mod 64); cycle product ⇒ 1≡33^{1+∑k} (mod 64) with ∏σ=1 ⇒ ∑k odd.
+Data CHECKED. General proof still needs: (1) outer/inner ⇒ common c when labels consistent; (2) λ=1+h_i+h_{i+1}+k identity; (3) inconsistent-label ⇒ odd 2-cycle claim.
+PP 17 {'cases': 150, 'footprint_ok': 150, ('npairs', 8): 150, 'labels_consistent': 150, 'common_c': 150, 'h_integer': 150, 'steps_pm3': 150, 'lambda_formula_ok': 150, 'H_eq_sumK': 150, 'sumK_odd': 150}
+fails []
+PP 19 {'cases': 172, 'footprint_ok': 172, ('npairs', 8): 172, 'labels_consistent': 172, 'common_c': 172, 'h_integer': 172, 'steps_pm3': 172, 'lambda_formula_ok': 172, 'H_eq_sumK': 172, 'sumK_odd': 172}
+fails []
+PP 23 {'cases': 316, 'footprint_ok': 316, ('npairs', 8): 316, 'labels_consistent': 316, 'common_c': 316, 'h_integer': 316, 'steps_pm3': 316, 'lambda_formula_ok': 316, 'H_eq_sumK': 316, 'sumK_odd': 316}
+fails []

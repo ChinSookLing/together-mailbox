@@ -1,0 +1,2 @@
+PP 17 {'cases': 150, 'footprint_ok': 150, ('npairs', 8): 150, 'labels_consistent': 150, 'common_c': 150, 'h_integer': 150, 'steps_pm3': 150, 'lambda_formula_ok': 150, 'H_eq_sumK': 150, 'sumK_odd': 150}
+fails []
