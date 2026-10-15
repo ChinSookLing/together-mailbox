@@ -1,0 +1,30 @@
+[1] z-formula lift-bit test: 23776 (member,lift) incidences, fails=0
+
+[2] p=29: tiling=True positions=16 labels brute==formula & both members per position same pair/label: True
+    Astra table vs computed: diffs at s=[]
+    GPT endpoints/labels vs computed: diffs at s=[]
+    brute-force lift solutions: [(0, 1, 0, 0, 1, 0, 1, 0), (1, 0, 1, 1, 0, 1, 0, 1)]
+    Astra eps in sols: True;  GPT phi in sols: True;  same vector: True
+    cycle rank: position-graph (16 edges) = 9; simple graph (13 edges) = 6; components=1
+    coordinate pairs with identical (c,v): []
+[2] p=79: tiling=True positions=16 labels brute==formula & both members per position same pair/label: True
+    Astra table vs computed: diffs at s=[]
+    GPT endpoints/labels vs computed: diffs at s=[]
+    brute-force lift solutions: [(0, 1, 0, 0, 1, 1, 1, 0), (1, 0, 1, 1, 0, 0, 0, 1)]
+    Astra eps in sols: True;  GPT phi in sols: True;  same vector: True
+    cycle rank: position-graph (16 edges) = 9; simple graph (9 edges) = 2; components=1
+    coordinate pairs with identical (c,v): []
+[2] p=89: tiling=True positions=16 labels brute==formula & both members per position same pair/label: True
+    Astra table vs computed: diffs at s=[]
+    GPT endpoints/labels vs computed: diffs at s=[]
+    brute-force lift solutions: [(0, 0, 1, 1, 1, 0, 0, 0), (0, 1, 0, 0, 1, 1, 1, 1), (1, 0, 1, 1, 0, 0, 0, 0), (1, 1, 0, 0, 0, 1, 1, 1)]
+    Astra eps in sols: True;  GPT phi in sols: True;  same vector: True
+    cycle rank: position-graph (16 edges) = 10; simple graph (10 edges) = 4; components=2
+    coordinate pairs with identical (c,v): [(0, 4)]
+
+[4] Astra: p0=29 config -> p=16649, b=65: legal&distinct=True reduced same=True tiling=True labels ok=True doublable=True #sols=2 (orig 2)
+[4] GPT: p0=29 config -> p=12289, b=5: legal&distinct=True reduced same=True tiling=True labels ok=True doublable=True #sols=2 (orig 2)
+[4] Astra: p0=79 config -> p=16649, b=64: legal&distinct=True reduced same=True tiling=True labels ok=True doublable=True #sols=2 (orig 2)
+[4] GPT: p0=79 config -> p=12289, b=6: legal&distinct=True reduced same=True tiling=True labels ok=True doublable=True #sols=2 (orig 2)
+[4] Astra: p0=89 config -> p=16649, b=64: legal&distinct=True reduced same=True tiling=True labels ok=True doublable=True #sols=4 (orig 4)
+[4] GPT: p0=89 config -> p=12289, b=6: legal&distinct=True reduced same=True tiling=True labels ok=True doublable=True #sols=4 (orig 4)
