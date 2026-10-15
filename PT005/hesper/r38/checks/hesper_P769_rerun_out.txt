@@ -1,0 +1,6 @@
+Hesper own solver (hesper_r39_P769b.py: own abstract table r38_doublable_only.json x raw level-5 masks, no Puck code), run 2026-10-15 ~14:05 +08
+29 all b 216
+47 all b 640
+61 all b 640
+769 b=2 640 | b=3 640 | UNION 640 | equal to p61 set: True
+773 b=2 640 | b=3 640 | UNION 640 | equal to p61 set: True
