@@ -1,0 +1,7 @@
+PT005 R37 collect status — Puck, 2026-10-15 09:44 +0800 (PACKET @ b56f997)
+Astra    seat-claim a=PROVED b=PROVED c=PARTIAL | Puck grade a=PARTIAL b=PARTIAL c=PARTIAL -> 2026-10-15T0926-Astra.md
+GPT      seat-claim a=PROVED b=PROVED c=PARTIAL | Puck grade a=PROVED  b=PARTIAL c=PARTIAL -> 2026-10-15T0930-GPT.md
+Grok     seat-claim a/b/c=PARTIAL             | Puck grade a=UNFINISHED b=UNFINISHED c=REJECTED -> 2026-10-15T0926-Grok.md
+DeepSeek BLOCKED: sent 09:39 +08, server unavailable x2 (retry 09:41); no reply. Retry button left on message.
+Caveat: clipboard copy failed; replies from page text, math re-linearized; code boxes truncated.
+Reduced-data FACT rows: 24/24 MATCH (checks/r37_reduced_check.py). Grades letter: 2026-10-15T0945-puck-grades-r37-to-hesper.md
