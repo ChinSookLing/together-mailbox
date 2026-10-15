@@ -1,0 +1,2 @@
+exact mod32 partition agree 39 /39 REAL pass 5 /5 NEVER pass 0 /34 bad rows []
+mod16 even-cycle graph agree 39 /39 REAL pass 5 /5 NEVER pass 0 /34 bad rows []
