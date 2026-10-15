@@ -7,42 +7,42 @@ LESSON FROM R39: the oriented half-footprint 1-cover rule was refuted (holds on 
 SETUP. Speed w (odd), prime p, level b: bw = m p + d, |d| < p/2; footprint (c,v): v = w^-1 mod 32, c = -2 m v mod 32, U = c + {+-v, +-3v} mod 32, v ~ -v (we store v in 1..15). k=5 rule (PROVED): level-5 footprint depends only on (m mod 32, w mod 32, sgn d, b mod 2). Affine group: (c,v) -> (a c + 2t, a v), a odd. PROVED (two solvers): of 7,168 mixed doublable 8-footprint exact 2-covers (39 affine orbits), exactly 640 = 5 orbits (each size 128) are realized by an exact k=5 tiling, at every prime p >= 47.
 
 DATA: one representative per orbit, 8 footprints (c,v), label REAL or NEVER, orbit size.
-REAL size128:
-REAL size128:
-REAL size128:
-REAL size128:
-REAL size128:
-NEVER size256:
-NEVER size128:
-NEVER size128:
-NEVER size128:
-NEVER size128:
-NEVER size256:
-NEVER size128:
-NEVER size128:
-NEVER size256:
-NEVER size128:
-NEVER size128:
-NEVER size256:
-NEVER size256:
-NEVER size256:
-NEVER size256:
-NEVER size256:
-NEVER size256:
-NEVER size128:
-NEVER size256:
-NEVER size256:
-NEVER size256:
-NEVER size256:
-NEVER size256:
-NEVER size128:
-NEVER size128:
-NEVER size128:
-NEVER size256:
-NEVER size128:
-NEVER size128:
-NEVER size128:
-NEVER size128:
-NEVER size128:
-NEVER size256:
-NEVER size256:
+REAL size128: (0,1) (0,1) (6,11) (6,11) (12,1) (12,1) (22,1) (22,1)
+REAL size128: (0,1) (0,1) (8,1) (14,3) (16,1) (16,3) (18,3) (24,1)
+REAL size128: (0,1) (0,5) (2,5) (4,5) (8,1) (24,1) (28,5) (30,5)
+REAL size128: (0,1) (0,7) (2,11) (6,11) (12,1) (20,1) (26,11) (30,11)
+REAL size128: (0,1) (2,1) (8,11) (10,1) (14,1) (16,11) (22,1) (24,1)
+NEVER size256: (0,1) (0,1) (0,5) (0,5) (6,15) (6,15) (10,1) (10,1)
+NEVER size128: (0,1) (0,1) (0,5) (0,5) (6,15) (6,15) (26,15) (26,15)
+NEVER size128: (0,1) (0,1) (0,5) (0,5) (10,1) (10,1) (22,1) (22,1)
+NEVER size128: (0,1) (0,1) (0,7) (0,9) (0,13) (0,15) (14,3) (18,3)
+NEVER size128: (0,1) (0,1) (0,13) (0,15) (2,13) (8,15) (24,15) (30,13)
+NEVER size256: (0,1) (0,1) (2,13) (2,13) (14,3) (14,3) (16,3) (16,3)
+NEVER size128: (0,1) (0,1) (2,13) (2,13) (16,3) (16,3) (30,13) (30,13)
+NEVER size128: (0,1) (0,1) (2,13) (16,1) (16,3) (16,7) (16,9) (30,13)
+NEVER size256: (0,1) (0,3) (0,5) (2,15) (8,15) (10,1) (10,3) (18,13)
+NEVER size128: (0,1) (0,3) (0,7) (0,15) (6,11) (12,11) (20,11) (26,11)
+NEVER size128: (0,1) (0,3) (0,7) (0,15) (12,13) (14,3) (18,3) (20,13)
+NEVER size256: (0,1) (0,3) (0,13) (0,15) (2,3) (18,3) (22,5) (22,11)
+NEVER size256: (0,1) (0,3) (2,3) (2,13) (6,11) (16,1) (16,3) (22,11)
+NEVER size256: (0,1) (0,3) (2,3) (10,1) (10,3) (16,11) (18,1) (24,1)
+NEVER size256: (0,1) (0,3) (6,11) (12,11) (12,13) (16,1) (16,9) (18,3)
+NEVER size256: (0,1) (0,5) (0,7) (2,5) (8,5) (10,9) (10,11) (18,9)
+NEVER size256: (0,1) (0,5) (2,1) (6,15) (8,15) (24,5) (26,15) (30,15)
+NEVER size128: (0,1) (0,5) (2,1) (22,1) (24,1) (24,5) (26,15) (30,15)
+NEVER size256: (0,1) (0,5) (2,3) (4,3) (4,15) (6,3) (6,15) (10,1)
+NEVER size256: (0,1) (0,5) (2,3) (4,3) (6,3) (10,1) (20,1) (22,1)
+NEVER size256: (0,1) (0,5) (2,5) (2,7) (10,9) (16,9) (24,11) (26,5)
+NEVER size256: (0,1) (0,5) (2,11) (4,7) (20,11) (22,1) (22,5) (26,15)
+NEVER size256: (0,1) (0,5) (4,1) (4,15) (6,15) (10,1) (12,1) (28,1)
+NEVER size128: (0,1) (0,5) (4,1) (4,15) (6,15) (26,15) (28,1) (28,15)
+NEVER size128: (0,1) (0,5) (4,1) (10,1) (12,1) (20,1) (22,1) (28,1)
+NEVER size128: (0,1) (0,5) (4,13) (8,15) (10,3) (22,3) (24,15) (28,13)
+NEVER size256: (0,1) (0,7) (2,7) (4,5) (4,11) (12,7) (28,11) (30,15)
+NEVER size128: (0,1) (0,7) (2,11) (4,15) (6,11) (26,11) (28,15) (30,11)
+NEVER size128: (0,1) (0,15) (2,3) (8,11) (14,3) (18,3) (24,11) (30,3)
+NEVER size128: (0,1) (0,15) (2,7) (2,9) (8,3) (24,3) (30,7) (30,9)
+NEVER size128: (0,1) (0,15) (4,1) (4,15) (10,1) (18,3) (18,13) (26,1)
+NEVER size128: (0,1) (0,15) (6,1) (8,13) (10,1) (22,1) (24,13) (26,1)
+NEVER size256: (0,1) (2,1) (4,13) (6,11) (12,1) (16,3) (18,3) (22,1)
+NEVER size256: (0,1) (2,3) (4,15) (6,3) (8,15) (12,1) (22,5) (26,13)
