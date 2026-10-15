@@ -1,0 +1,13 @@
+29 groups so far 2912 bad 0
+31 groups so far 6272 bad 0
+37 groups so far 11168 bad 0
+41 groups so far 17248 bad 0
+43 groups so far 23968 bad 0
+47 groups so far 32064 bad 0
+53 groups so far 42464 bad 0
+59 groups so far 55456 bad 0
+61 groups so far 69376 bad 0
+67 groups so far 86032 bad 0
+71 groups so far 104288 bad 0
+769 groups so far 488774 bad 0
+RESULT groups 488774 non-function 0
