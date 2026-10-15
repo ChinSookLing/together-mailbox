@@ -1,0 +1,23 @@
+PT005 R42 courier — prompt: /workspace/mbx_pt5/PT005/hesper/r42/send_R42.txt @9fad630 (sent verbatim; composer text verified equal before send). Times UTC+8, 2026-10-15.
+RECEIVED = time completion was first observed (polled), not exact finish time.
+
+astra
+  url: https://chatgpt.com/g/g-p-6a0c6eca096c81919e9670129af54799-the-civilisation-field/c/6aceac9d-c250-83ec-a3f3-d6e455dbac54
+  sent: 17:09:14   received: <=17:17:30
+  model: ChatGPT (standing chat), picker High
+  claimed status: PARTIAL
+gpt
+  url: https://chatgpt.com/c/6ad09897-cfec-83ec-92ac-fa1bc22729fe
+  sent: 17:10:47   received: between 17:17:30 and 17:22:30
+  model: GPT-6, Thinking High, new non-temporary chat
+  claimed status: "PROVED" (= counterexample: claims target statement is FALSE)
+deepseek
+  url: https://chat.deepseek.com/a/chat/s/e008b16c-7253-44d7-ab76-60faf3f73202
+  sent: 17:11:27   received: <=17:17:30 (thought 29 s)
+  model: DeepSeek, DeepThink ON, Search OFF
+  claimed status: (1) PARTIAL, (2) UNFINISHED
+grok
+  url: https://grok.com/c/1ba0812d-bc9c-4654-82be-eb6f2745909a
+  sent: 17:13:16   received: ~17:17:00 (Worked for 3m 43s)
+  model: Grok Expert, new chat. NOTE: web search was NOT off — no toggle found in UI; reply shows 15 sources.
+  claimed status: UNFINISHED

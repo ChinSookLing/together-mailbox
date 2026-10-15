@@ -1,0 +1,13 @@
+types=128 (c even mod32 x v odd up to sign); 2-cover multisets: 3862624
+mixed 2-covers: 3632192
+n distribution over (k,beta): map[0:106496 2:1299456 4:4452480 6:1299456 8:106496] odd-n: 0
+R16 true: beta0 100640 beta1 100640 both 34432 either(k) 166848
+brute vs Hakimi disagreements: 0
+counting-holds-but-R16-false (k,beta): 81152
+tau1 mismatches: beta0 132416 beta1 132416 total 264832; tau1 image not in mixed set: 0
+k with R16(k,0)!=R16(k,1): 132416
+TEST1 2cover=true mixed=true inSet=true | beta0 brute=true hak=true n=4 d=[0 0 0 0 0 0 2 2] | beta1 brute=true hak=true n=4 d=[0 0 0 0 0 0 2 2]
+TEST2 2cover=true mixed=true inSet=true | beta0 brute=true hak=true n=2 d=[0 0 0 0 0 0 1 1] | beta1 brute=true hak=true n=6 d=[0 0 0 1 1 1 1 2]
+TEST3 2cover=true mixed=true inSet=true | beta0 brute=false hak=false n=4 d=[-2 0 0 0 0 2 2 2] | beta1 brute=false hak=false n=4 d=[-2 -2 0 0 2 2 2 2]
+TEST4 2cover=true mixed=true inSet=true | beta0 brute=false hak=false n=2 d=[-1 -1 0 0 1 1 1 1] | beta1 brute=false hak=false n=6 d=[-2 0 1 1 1 1 2 2]
+(per-pattern lines omitted in this copy; full file on box /workspace/r42/check/out.txt)
