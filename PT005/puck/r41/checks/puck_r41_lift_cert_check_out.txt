@@ -1,0 +1,28 @@
+Astra 1 0 PASS 
+Astra 1 1 PASS 
+Astra 2 0 PASS 
+Astra 2 1 PASS 
+Astra 3 0 PASS 
+Astra 3 1 PASS 
+Astra 4 0 PASS 
+Astra 4 1 PASS 
+Astra 5 0 PASS 
+Astra 5 1 PASS 
+Astra total 10 /10
+GPT 1 0 PASS 
+GPT 1 1 PASS 
+GPT 2 0 PASS 
+GPT 2 1 PASS 
+GPT 3 0 PASS 
+GPT 3 1 PASS 
+GPT 4 0 PASS 
+GPT 4 1 PASS 
+GPT 5 0 PASS 
+GPT 5 1 PASS 
+GPT total 10 /10
+orbit 1 distinct (config,beta) covered 256
+orbit 2 distinct (config,beta) covered 256
+orbit 3 distinct (config,beta) covered 256
+orbit 4 distinct (config,beta) covered 256
+orbit 5 distinct (config,beta) covered 256
+transport checks 2560 fails 0
