@@ -1,0 +1,5 @@
+{"label": "p131 row a", "level_p": 1, "open_nodes": 1, "examined": 1, "f_hist": {"0": 1}, "died_here": 0, "S_hist": {}, "maxS": 0, "f>=9_died": 0, "children_closed_by_L7": 0, "children_open": 5}
+{"label": "p131 row a", "level_p": 2, "open_nodes": 5, "examined": 5, "f_hist": {"2": 2, "3": 2, "4": 1}, "died_here": 1, "S_hist": {"null": 1}, "maxS": 0, "f>=9_died": 0, "children_closed_by_L7": 12, "children_open": 20}
+{"label": "p131 row a", "level_p": 4, "open_nodes": 20, "examined": 20, "f_hist": {"3": 7, "4": 13}, "died_here": 13, "S_hist": {"null": 13}, "maxS": 0, "f>=9_died": 0, "children_closed_by_L7": 24, "children_open": 32}
+{"label": "p131 row a", "level_p": 8, "open_nodes": 32, "examined": 32, "f_hist": {"4": 32}, "died_here": 32, "S_hist": {"null": 32}, "maxS": 0, "f>=9_died": 0, "children_closed_by_L7": 0, "children_open": 0}
+{"label": "p131 row a", "END": "no open nodes"}
