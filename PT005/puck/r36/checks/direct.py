@@ -28,5 +28,6 @@ def test(p,b,W):
                 elif g[y]!=g[x]^l: ok=False
     m8={w%8 for w in W}; mixed=not any(m8<={c,8-c} for c in (1,3))
     return dict(k5=k5,k6=k6,mixed=mixed,doublable=ok,lifts=[g[i] for i in range(8)], m8=sorted(m8))
-for args in [(19,1,[175,165,241,219,79,27,271,45]),(23,8,[113,225,99,239,193,271,237,159]),(29,1,[397,47,443,335,123,81,197,207])]:
-    print(args[0],args[1],test(*args))
+if __name__=="__main__":
+  for args in [(19,1,[175,165,241,219,79,27,271,45]),(23,8,[113,225,99,239,193,271,237,159]),(29,1,[397,47,443,335,123,81,197,207])]:
+      print(args[0],args[1],test(*args))
