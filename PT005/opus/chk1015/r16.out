@@ -1,0 +1,12 @@
+mixed doublable 7168 R16 beta0 640 beta1 640 beta-agree on all True
+mod32 lift where R16 holds: 1280 of 1280
+mod32 lift where R16 fails (should be 0): 0
+orbits of R16-true: [128, 128, 128, 128, 128]
+orbits of all mixed doublable: 39
+(0,1)(0,1)(6,11)(6,11)(12,1)(12,1)(22,1)(22,1) in7168 True R16 True True lift True True
+(0,1)(0,1)(8,1)(14,3)(16,1)(16,3)(18,3)(24,1) in7168 True R16 True True lift True True
+(0,1)(0,5)(2,5)(4,5)(8,1)(24,1)(28,5)(30,5) in7168 True R16 True True lift True True
+(0,1)(0,7)(2,11)(6,11)(12,1)(20,1)(26,11)(30,11) in7168 True R16 True True lift True True
+(0,1)(2,1)(8,11)(10,1)(14,1)(16,11)(22,1)(24,1) in7168 True R16 True True lift True True
+(0,1)(0,1)(0,5)(0,5)(6,15)(6,15)(10,1)(10,1) in7168 True R16 False False lift False False
+(0,1)(0,3)(0,7)(0,15)(6,11)(12,11)(20,11)(26,11) in7168 True R16 False False lift False False

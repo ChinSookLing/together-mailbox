@@ -1,0 +1,24 @@
+import json,random,subprocess,re,sys,os
+from concurrent.futures import ThreadPoolExecutor
+E_="/home/claude/lr16/code15/code/bgk15"; C="/home/claude/lr16/code15/code/cascade_k15p"
+M="/home/claude/together-mailbox/"
+F={383:"PT005/hesper/officepc-exam-p383/collect-38060748868/p383/ir.jsonl",397:"PT005/hesper/l397/collect-38496413434/p397/ir.jsonl",431:"PT005/hesper/officepc-p431/collect/p431/ir.jsonl"}
+rng=random.Random(1015); picks=[]
+for p,f in F.items():
+    L=[json.loads(x) for x in open(M+f)]
+    s=[d for d in L if d['casc_survivors']>0]; picks.append((p,rng.choice(s)))
+    picks.append((p,rng.choice([d for d in L if d['casc_survivors']==0])))
+def job(a):
+    p,d=a; r,s=d['r'],d['s']; f=f"/home/claude/spot1015/ir_{p}_{r}_{s}.txt"
+    g=subprocess.run([E_,str(p),"irsubrootrawc",str(r),str(s),f],capture_output=True,text=True).stdout
+    m=re.search(r"raw_irred\d+=(\d+) rawscan=(\d+) nodes=(\d+) .*secs=([\d.]+)",g)
+    c=subprocess.run([C,str(p),"filter",f],capture_output=True,text=True); os.remove(f)
+    t=re.search(r"TOTAL rows=(\d+) survivors=(\d+)",c.stderr+c.stdout)
+    mine=dict(rows=int(m[1]),nodes=int(m[3]),casc_rows=int(t[1]),casc_survivors=int(t[2]))
+    office={k:d[k] for k in mine}
+    line=json.dumps(dict(p=p,r=r,s=s,mine=mine,office=office,match=mine==office,my_secs=float(m[4])))
+    open("/home/claude/spot1015/out.jsonl","a").write(line+"\n")
+for p,d in picks: print(p,d['r'],d['s'],d['secs'],d['casc_survivors'])
+sys.stdout.flush()
+with ThreadPoolExecutor(2) as ex: list(ex.map(job,picks))
+print("DONE")
