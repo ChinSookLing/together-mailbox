@@ -1,0 +1,2 @@
+{"label": "B p=37", "level_p": 16, "open_nodes": 1, "examined": 1, "f_hist": {"6": 1}, "died_here": 0, "S_hist": {}, "maxS": 0, "f>=9_died": 0, "children_closed_by_L7": 64, "children_open": 0}
+{"label": "B p=37", "END": "no open nodes"}
