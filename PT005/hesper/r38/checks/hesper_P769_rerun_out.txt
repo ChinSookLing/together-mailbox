@@ -1,4 +1,5 @@
 Hesper own solver (hesper_r39_P769b.py: own abstract table r38_doublable_only.json x raw level-5 masks, no Puck code), run 2026-10-15 ~14:05 +08
+NOTE (14:15): the CLI of hesper_r39_P769b.py loops b in {2,3} only (p29=80, p47=394, p61=624, as Puck found). The all-b lines below come from hesper_r39_sanity_allb.py. At p=61, b in {2,3} reaches only 624: "two b suffice" is a P>768 fact.
 29 all b 216
 47 all b 640
 61 all b 640
