@@ -1,0 +1,6 @@
+p29 odd_z 0 odd_k 0 match True
+p79 odd_z 0 odd_k 0 match True
+p89 odd_z 0 odd_k 0 match True
+ham103 odd_z 4 odd_k 4 match True
+ham1009 odd_z 4 odd_k 4 match True
+OK
