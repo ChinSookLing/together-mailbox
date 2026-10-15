@@ -1,0 +1,3 @@
+{"label": "W5 p=17", "level_p": 32, "open_nodes": 1, "examined": 1, "f_hist": {"10": 1}, "died_here": 0, "S_hist": {}, "maxS": 0, "f>=9_died": 0, "children_closed_by_L7": 0, "children_open": 128}
+{"label": "W5 p=17", "level_p": 64, "open_nodes": 128, "examined": 128, "f_hist": {"14": 128}, "died_here": 128, "S_hist": {"1": 128}, "maxS": 1, "f>=9_died": 128, "children_closed_by_L7": 0, "children_open": 0}
+{"label": "W5 p=17", "END": "no open nodes"}
