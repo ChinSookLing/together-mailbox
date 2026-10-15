@@ -1,0 +1,5 @@
+p=43 b=2 alone: 88 configs, inside 640-set: True
+p=47 b=2 alone: 248 configs, inside 640-set: True
+p=53 b=2 alone: 264 configs, inside 640-set: True
+p=59 b=2 alone: 392 configs, inside 640-set: True
+p=61 b=2 alone: 576 configs, inside 640-set: True
