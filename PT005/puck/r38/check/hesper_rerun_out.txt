@@ -1,0 +1,20 @@
+Puck rerun of Hesper hesper_r39_P769b.py as committed in 0dade56, 2026-10-15 ~14:10 +08
+29 b 2 56
+29 b 3 24
+29 UNION 80
+47 b 2 248
+47 b 3 272
+47 UNION 394
+61 b 2 576
+61 b 3 496
+61 UNION 624
+769 b 2 640
+769 b 3 640
+769 UNION 640
+773 b 2 640
+773 b 3 640
+773 UNION 640
+--- variant all b in 1..p//2 for p<100 (check/hesper_rerun_allb_variant.py)
+29 UNION 216
+47 UNION 640
+61 UNION 640
