@@ -1,0 +1,9 @@
+doublable 8704 mixed doublable 7168 realized 640 R subset MD True
+all 2-covers True
+orbits 39 sizes [128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256, 256] sum 7168
+real orbits 5 fully real True
+send rows 39 correct 39 distinct orbits 39
+oriented rule: MD 2048 realized 128
+sum c ==0 mod16: MD 7168 of 7168
+W footprint ((2, 5), (10, 5), (16, 5), (18, 9), (20, 5), (24, 5), (26, 9), (28, 5)) 2cover True in MD True oriented False
+True
