@@ -1,0 +1,24 @@
+== claimR.py p=17/19/23
+17 ('mixed-ham8', 'MATCH') 192
+17 ('mixed-nonham', 'MATCH') 788
+17 ('single-ham8', 'MATCH') 316
+17 ('single-nonham', 'MATCH') 364
+17 fail examples []
+19 ('mixed-ham8', 'MATCH') 220
+19 ('mixed-nonham', 'MATCH') 1092
+19 ('single-ham8', 'MATCH') 516
+19 ('single-nonham', 'MATCH') 584
+19 fail examples []
+23 ('mixed-ham8', 'MATCH') 648
+23 ('mixed-nonham', 'MATCH') 4676
+23 ('single-ham8', 'MATCH') 1716
+23 ('single-nonham', 'MATCH') 1696
+23 fail examples []
+== abstractR.py
+('mixed', 'ham8', 'obstructed') 8
+('mixed', 'nonham', 'DOUBLABLE') 116
+('mixed', 'nonham', 'obstructed') 14468
+('single', 'ham8', 'obstructed') 48
+('single', 'nonham', 'DOUBLABLE') 52
+('single', 'nonham', 'obstructed') 836
+mixed doublable examples [[[1, 3, 29, 31], [1, 3, 29, 31], [5, 15, 17, 27], [5, 15, 17, 27], [19, 21, 23, 25], [19, 21, 23, 25], [7, 9, 11, 13], [7, 9, 11, 13]], [[1, 3, 29, 31], [1, 3, 29, 31], [5, 7, 17, 27], [5, 7, 17, 27], [19, 21, 23, 25], [19, 21, 23, 25], [9, 11, 13, 15], [9, 11, 13, 15]], [[1, 3, 29, 31], [1, 3, 29, 31], [17, 19, 21, 23], [17, 19, 21, 23], [7, 9, 11, 13], [7, 9, 11, 13], [5, 15, 25, 27], [5, 15, 25, 27]], [[1, 3, 29, 31], [1, 3, 29, 31], [7, 13, 19, 25], [7, 13, 19, 25], [9, 15, 21, 27], [9, 15, 21, 27], [5, 11, 17, 23], [5, 11, 17, 23]], [[1, 3, 29, 31], [1, 3, 5, 31], [15, 17, 19, 21], [5, 7, 17, 27], [19, 21, 23, 25], [7, 9, 11, 13], [23, 25, 27, 29], [9, 11, 13, 15]]]
