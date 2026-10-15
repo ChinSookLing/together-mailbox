@@ -1,0 +1,10 @@
+p=17 tilings 1660 (mixed 980, one-class 680); doubled: mixed 0, one-class 16; Astra agree 1660/1660; GPT-raw agree 1660/1660; GPT mod32/signed 1638 (22 dis)
+p=19 tilings 2412 (mixed 1312, one 1100); doubled mixed 0, one 0; Astra 2412/2412; GPT-raw 2412/2412; mod32/signed 38 dis
+p=23 tilings 8736 (mixed 5324, one 3412); doubled mixed 0, one 112; Astra 8736/8736; GPT-raw 8736/8736; mod32/signed 225 dis
+p=29 tilings 59268 (mixed 42830, one 16438); doubled mixed 416, one 352; Astra 59268/59268; GPT-raw 59268/59268; mod32/signed 2712 dis
+p=31 tilings 99968 (mixed 70256, one 29712); doubled mixed 840, one 1440; Astra 99968/99968; GPT-raw 99968/99968; mod32/signed 5031 dis
+p=37 not finished (python brute force too slow)
+
+Structure (struct_out): mixed tilings, XOR graph (labels from Astra criterion)
+ p<=23: every non-doublable mixed graph either has an odd digon, or is 8-cycle (2^8, odd by F1-Ham8), or is 3-/4-regular-ish with longer odd cycle. NO mixed tiling with odd-digon-free theta-type graph (degrees 2^6,3^2) or (2,3^4,4^3).
+ p=29 doubled mixed (416): 208 with distinct-neighbour degrees (2,2,2,2,2,2,3,3) no odd digon; 208 with (2,3,3,3,3,4,4,4) no odd digon; all connected.
