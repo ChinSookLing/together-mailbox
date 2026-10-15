@@ -1,0 +1,21 @@
+[1] G-orbits: 128: 22 256: 17 REAL@128: 5 REAL@256: 0
+[2] (Gsize, Hsize, tau_in_H) distribution: Counter({(128, 64, False): 22, (256, 128, False): 17})
+[3] among tau_in_H=True: beta agree? True
+[3] among tau_in_H=False: beta agree? True
+[3] tau_in_H=False count 39
+[3b] tau_in_H True: 0 agree True | False: 39 agree True
+[4] size256: all fail R16 both? True
+[4] size256: all overfill beta0? True
+[4] size256: all overfill BOTH? False
+[4] size256: tau_in_H? Counter({False: 17})
+[4] size128: tau_in_H? Counter({False: 22})
+[4] size128 H-orbit sizes Counter({64: 22})
+[4] size256 H-orbit sizes Counter({128: 17})
+[5] forced-agreement orbits: mismatches 0
+[6] split orbits 39 R16_0 false 34 overfill0 33 REAL 5
+[7] among R16 configs, all A/B mod32 options: A same/cross 5120 5120 B same/cross 10240 10240
+[8] beta0: configs with same-sheet R16 choice 62 /640; choices ss/all 62 / 1600
+[8] beta1: configs with same-sheet R16 choice 62 /640; choices ss/all 62 / 1600
+[9] constructive 2-edge-color lift: beta0 ok/fail 62 578 | beta1 ok/fail 62 578
+[10] all same-sheet R16 choices: coloring-lift ok 124 fail 0
+[done]
