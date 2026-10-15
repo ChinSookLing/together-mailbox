@@ -1,0 +1,26 @@
+PT005 R41. THIS ROUND SERVES PROOF STEP: turn the two computer-checked facts about rule R16 into hand proofs.
+Think as long as you need (High). Start with an ANSWER BLOCK (max 300 words): for (1) and (2) separately, status PROVED / PARTIAL / UNFINISHED, the key idea in one line, least-sure step. Max 600 words total plus any code. Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+
+SETUP. A configuration k = 8 footprints (c_i, v_i): c_i even in Z/32, v_i odd in 1..15 (v ~ -v). It is a doublable exact 2-cover: the sets U_i = c_i + {±v_i, ±3v_i} cover every odd residue mod 32 exactly twice. Mixed = strides not all in {1,7} mod 8 and not all in {3,5} mod 8. There are 7,168 mixed doublable configurations.
+Level parity beta in {0,1}. Put h_i = c_i/2 mod 16. Each runner gives a DOMINO of two residues of parity beta+1:
+- Type I (h_i ≡ beta mod 2): {h_i - v_i, h_i + v_i}
+- Type II (h_i ≢ beta mod 2): {h_i, h_i + 2·eps_i·v_i}, eps_i = ±1 free.
+R16(k, beta): some choice of the eps_i makes the 8 dominoes mod 16 cover each of the 8 residues of parity beta+1 exactly twice.
+PROVED: every real exact k=5 tiling satisfies R16, and R16 holds on exactly the 640 realized configurations (5 affine orbits). Affine group: (c,v) -> (a c + 2t, a v), a odd. Translation tau_t: c -> c + 2t (so h -> h + t).
+PROVED by hand: R16(tau_t k, beta) = R16(k, beta + t mod 2), and R16(a·k, beta) = R16(k, beta).
+CHECKED only (exhaustive, two solvers): R16(k,0) = R16(k,1) for all 7,168 k.
+
+TASK (1). Prove by hand that R16(tau_1 k, beta) = R16(k, beta) for the SAME beta, for every mixed doublable k. Do NOT use "R16 is constant on affine orbits" or beta-agreement: under odd t that is the same statement (circular). Your proof must use the 2-cover property of k (it is false for arbitrary 8 footprints — say where you use it).
+
+TASK (2). Mod-32 LIFT. Over Z/32 a Type I runner has dominoes {H - v, H + v} and Type II {H, H + 2 eps v}, with H = c/2 + 16·lift, lift in {0,1}. Prove (or construct by hand) that whenever R16(k, beta) holds, lifts and signs exist making the 8 dominoes an exact partition of the 16 residues mod 32 of parity beta+1. Warning: "every cycle of the mod-16 graph is even" is not enough by itself; each edge carries a Z/2 voltage (whether its two ends lift to the same half), so a cycle lifts iff its voltage parity fits. A simple same-sheet colouring works for only 62 of the 640.
+
+TEST DATA (one per REAL orbit; R16 true at both beta):
+(0,1)(0,1)(6,11)(6,11)(12,1)(12,1)(22,1)(22,1)
+(0,1)(0,1)(8,1)(14,3)(16,1)(16,3)(18,3)(24,1)
+(0,1)(0,5)(2,5)(4,5)(8,1)(24,1)(28,5)(30,5)
+(0,1)(0,7)(2,11)(6,11)(12,1)(20,1)(26,11)(30,11)
+(0,1)(2,1)(8,11)(10,1)(14,1)(16,11)(22,1)(24,1)
+NEVER examples (R16 false at both beta):
+(0,1)(0,1)(0,5)(0,5)(6,15)(6,15)(10,1)(10,1)
+(0,1)(0,3)(0,7)(0,15)(6,11)(12,11)(20,11)(26,11)
+Least-sure step is required. UNFINISHED is a fine answer.
