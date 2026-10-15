@@ -1,0 +1,4 @@
+{"label": "p131 row b", "level_p": 1, "open": 1, "parity_bad_kids": 6, "S_hist": {}, "kids_open": 5}
+{"label": "p131 row b", "level_p": 2, "open": 5, "closedL7": 16, "parity_bad_kids": 0, "died": 1, "S_hist": {"2": 1}, "kids_open": 17}
+{"label": "p131 row b", "level_p": 4, "open": 17, "closedL7": 56, "parity_bad_kids": 0, "died": 10, "S_hist": {"2": 10}, "kids_open": 0}
+{"label": "p131 row b", "END": "no open nodes"}

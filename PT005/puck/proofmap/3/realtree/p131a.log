@@ -1,0 +1,5 @@
+{"label": "p131 row a", "level_p": 1, "open": 1, "parity_bad_kids": 5, "S_hist": {}, "kids_open": 5}
+{"label": "p131 row a", "level_p": 2, "open": 5, "closedL7": 12, "parity_bad_kids": 0, "died": 1, "S_hist": {"2": 1}, "kids_open": 20}
+{"label": "p131 row a", "level_p": 4, "open": 20, "parity_bad_kids": 0, "died": 13, "closedL7": 24, "S_hist": {"2": 13}, "kids_open": 32}
+{"label": "p131 row a", "level_p": 8, "open": 32, "parity_bad_kids": 0, "died": 32, "S_hist": {"2": 32}, "kids_open": 0}
+{"label": "p131 row a", "END": "no open nodes"}
