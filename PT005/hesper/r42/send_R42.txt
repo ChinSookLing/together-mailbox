@@ -1,0 +1,27 @@
+PT005 R42. THIS ROUND SERVES PROOF STEP: hand proof that R16 does not depend on beta (same-beta translation), now in ORIENTATION form.
+Think as long as you need (High). Start with an ANSWER BLOCK (max 300 words): status PROVED / PARTIAL / UNFINISHED, key idea in one line, least-sure step. Max 600 words total plus any code. Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+
+SETUP (same as R41). k = 8 footprints (c_i, v_i), c_i even in Z/32, v_i odd (v ~ -v); U_i = c_i + {±v_i, ±3v_i} cover every odd residue mod 32 exactly twice; mixed = strides not all in {1,7} mod 8 and not all in {3,5} mod 8 (7,168 such k). h_i = c_i/2 mod 16. Level parity beta in {0,1}; V_beta = the 8 residues mod 16 of parity beta+1.
+R16(k,beta): Type I runner (h_i ≡ beta mod 2) gives domino {h_i - v_i, h_i + v_i}; Type II runner gives {h_i, h_i + 2 eps_i v_i}, eps_i = ±1 free; some eps-choice covers each residue of V_beta exactly twice.
+
+NEW REFORMULATION (immediate from the definition). Every Type II runner always covers its anchor h_i; its only freedom is h_i + 2v_i versus h_i - 2v_i. So let
+ fixed_beta(r) = #(Type I dominoes containing r) + #(Type II anchors h_i = r), d(r) = 2 - fixed_beta(r) on V_beta,
+ G_beta(k) = multigraph on V_beta with one edge {h_i + 2v_i, h_i - 2v_i} per Type II runner.
+Then R16(k,beta) ⇔ d ≥ 0 and G_beta can be ORIENTED so each vertex r has in-degree d(r) (each edge points to the end it covers). By Hakimi's theorem: ⇔ d ≥ 0, |E(G)| = Σd, and e(S) ≤ d(S) for every vertex set S.
+
+TRANSLATION tau_1 at the SAME beta flips every runner's type. So G_beta(tau_1 k) has one edge {h_i + 1 ± 2v_i} for each runner that was Type I in k, and its fixed counts come from {h_i + 1 ± v_i} (old Type II) plus anchors h_i + 1 (old Type I).
+
+CHECKED by Hesper sandbox (script r42_orient.py in PT005/hesper/r42/, all 7,168 k, both beta):
+- The number n of Type II runners is always even: n ∈ {2,4,6}; tau_1 sends n to 8 - n.
+- When R16 holds: every d(r) ∈ {0,1,2}, and (n, multiset of d) is one of (2:{0×6,1×2}), (4:{0×4,1×4}), (4:{0×5,1×2,2×1}), (4:{0×6,2×2}), (6:{0×3,1×4,2×1}), (6:{0×4,1×2,2×2}).
+- The counting conditions alone (d ≥ 0 and |E| = Σd on every component) are NOT enough: 128 (k,beta) satisfy them with R16 false. So a proof must use the subset condition or the 2-cover.
+
+TASK. Prove by hand: for every mixed doublable k and each beta, G_beta(k) has a valid orientation ⇔ G_beta(tau_1 k) has one. Suggested route (you may choose another): (a) prove n is even using the 2-cover; (b) translate the exact 2-cover of the U_i into an identity linking fixed_beta(k) and fixed_beta(tau_1 k) (hint: the midpoints of {c+v, c+3v} and {c-v, c-3v} are c ± 2v); (c) use it to send a Hall/Hakimi-violating set S for one problem to a violating set for the other. Do NOT assume beta-agreement or orbit constancy (circular). Say exactly where you use the 2-cover — the statement is false for arbitrary footprints.
+
+TEST DATA (REAL, R16 true at both beta):
+(0,1)(0,1)(6,11)(6,11)(12,1)(12,1)(22,1)(22,1)
+(0,1)(0,5)(2,5)(4,5)(8,1)(24,1)(28,5)(30,5)
+NEVER (R16 false at both beta):
+(0,1)(0,1)(0,5)(0,5)(6,15)(6,15)(10,1)(10,1)
+(0,1)(0,3)(0,7)(0,15)(6,11)(12,11)(20,11)(26,11)
+Least-sure step is required. UNFINISHED is a fine answer.
