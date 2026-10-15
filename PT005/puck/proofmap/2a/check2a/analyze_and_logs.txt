@@ -1,0 +1,56 @@
+### analyze.py
+import json, glob
+from collections import defaultdict, Counter
+from predict import predict
+rows=[]
+for f in sorted(glob.glob('rows_p*.json'),key=lambda x:int(x.split('_p')[1][:-5])):
+    rows+=json.load(open(f))
+per=defaultdict(lambda:[0,0,0,0,0,0])
+kf=defaultdict(set); kp=defaultdict(set)
+for r in rows:
+    key=tuple(tuple(x) for x in r[2]); pr,_=predict(key)
+    s=per[r[0]]; s[0]+=1; s[1]+=r[3]
+    if len(r)>7: s[2]+=r[7]; s[3]+=r[5]; s[4]+=(r[5] and r[3])
+    s[5]+= (pr!=r[3])
+    kf[key].add(r[3]); kp[key].add(r[0])
+print('p tested doublable 2cover_mod64 mixed_tested mixed_doublable predictor_mismatch')
+for p in sorted(per): print(p,*per[p])
+print('total rows',len(rows),'distinct reduced keys',len(kf),'keys with conflicting flags',sum(len(v)>1 for v in kf.values()))
+multi=[k for k in kf if len(kp[k])>=2]
+print('keys seen at >=2 primes',len(multi),'of which doublable',sum(True in kf[k] for k in multi))
+dk=[k for k in kf if True in kf[k]]
+print('distinct doublable keys',len(dk),'primes-per-doublable-key hist',sorted(Counter(len(kp[k]) for k in dk).items()))
+print('doublable keys with an odd c:',sum(any(c%2 for c,_,_ in k) for k in dk))
+
+### analyze_out.txt
+p tested doublable 2cover_mod64 mixed_tested mixed_doublable predictor_mismatch
+17 32 0 0 0 0 0
+23 224 0 0 0 0 0
+29 3776 0 0 0 0 0
+31 7312 0 0 0 0 0
+37 16064 0 0 0 0 0
+41 40896 214 214 16000 0 0
+43 55104 0 0 0 0 0
+47 111392 0 0 60736 0 0
+53 169664 0 39 101568 0 0
+59 382976 94 1673 220608 62 0
+61 222272 262 2001 138528 42 0
+67 419184 429 3311 243136 59 0
+71 452256 654 3353 262432 222 0
+101 96000 92 235 55614 19 0
+211 96000 138 285 55614 58 0
+total rows 2073152 distinct reduced keys 1909198 keys with conflicting flags 0
+keys seen at >=2 primes 21229 of which doublable 0
+distinct doublable keys 1832 primes-per-doublable-key hist [(1, 1832)]
+doublable keys with an odd c: 1832
+
+### run logs (json summaries per prime)
+{"p": 41, "nb": 20, "sols": 21184, "timed_out_b": 0, "level6_tilings_tested": 40896, "doublable_crit": 214, "doublable_brute": 214, "crit_vs_brute_mismatch": 0, "struct_bad": 40682, "struct_ok": 214, "max_members_hit_twice": 64, "sec": 9.6}
+{"p": 47, "nb": 23, "sols": 57824, "timed_out_b": 0, "level6_tilings_tested": 111392, "doublable_crit": 0, "doublable_brute": 0, "crit_vs_brute_mismatch": 0, "struct_bad": 111392, "struct_ok": 0, "max_members_hit_twice": 60, "sec": 19.3}
+{"p": 53, "nb": 26, "sols": 85344, "timed_out_b": 0, "level6_tilings_tested": 169664, "doublable_crit": 0, "doublable_brute": 0, "crit_vs_brute_mismatch": 0, "struct_bad": 169625, "struct_ok": 39, "max_members_hit_twice": 64, "sec": 29.0}
+{"p": 59, "nb": 29, "sols": 197376, "timed_out_b": 0, "level6_tilings_tested": 382976, "doublable_crit": 94, "doublable_brute": 94, "crit_vs_brute_mismatch": 0, "struct_bad": 381303, "struct_ok": 1673, "max_members_hit_twice": 64, "sec": 52.5}
+{"p": 61, "nb": 30, "sols": 222272, "timed_out_b": 0, "level6_tilings_tested": 222272, "doublable_crit": 262, "doublable_brute": 262, "crit_vs_brute_mismatch": 0, "struct_bad": 220271, "struct_ok": 2001, "max_members_hit_twice": 64, "sec": 54.1}
+{"p": 67, "nb": 33, "sols": 419184, "timed_out_b": 0, "level6_tilings_tested": 419184, "doublable_crit": 429, "doublable_brute": 429, "crit_vs_brute_mismatch": 0, "struct_bad": 415873, "struct_ok": 3311, "max_members_hit_twice": 64, "sec": 86.8}
+{"p": 71, "nb": 35, "sols": 452256, "timed_out_b": 0, "level6_tilings_tested": 452256, "doublable_crit": 654, "doublable_brute": 654, "crit_vs_brute_mismatch": 0, "struct_bad": 448903, "struct_ok": 3353, "max_members_hit_twice": 64, "sec": 98.0}
+{"p": 101, "nb": 16, "sols": 48000, "timed_out_b": 0, "level6_tilings_tested": 96000, "doublable_crit": 92, "doublable_brute": 92, "crit_vs_brute_mismatch": 0, "struct_bad": 95765, "struct_ok": 235, "max_members_hit_twice": 64, "sec": 10.0}
+{"p": 211, "nb": 16, "sols": 48000, "timed_out_b": 0, "level6_tilings_tested": 96000, "doublable_crit": 138, "doublable_brute": 138, "crit_vs_brute_mismatch": 0, "struct_bad": 95715, "struct_ok": 285, "max_members_hit_twice": 64, "sec": 243.8}
