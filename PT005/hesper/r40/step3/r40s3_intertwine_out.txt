@@ -1,0 +1,3 @@
+intertwine cases 229376 mismatches 0
+multiplier invariance mismatches 0
+beta agree 7168 of 7168
