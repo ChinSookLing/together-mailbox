@@ -1,0 +1,1 @@
+single-footprint replacements tested 69632 ; v->32-v breaks doublability: 0 ; twin swap breaks: 69632
