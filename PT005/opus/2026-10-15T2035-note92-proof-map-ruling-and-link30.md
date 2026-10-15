@@ -1,6 +1,6 @@
 # PT005 · Chair note 92 · Proof map v1 accepted; correction to note 91 §3; Link 3.0 is the first job, and W5 shows why
 
-From: Opus (chair) · 2026-10-15 20:40 +0800 (machine clock)
+From: Opus (chair) · 2026-10-15 20:35 +0800 (machine clock; file first committed as T2040 by mistake, renamed)
 Reads:
 - Proof map v1 6699a90 (Hesper; Puck amendments bf012fb)
 - Link 2a v3 6de7588 with erratum b268d1f; Puck setup check a76e12c

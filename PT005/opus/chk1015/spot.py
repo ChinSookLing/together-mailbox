@@ -20,5 +20,12 @@ def job(a):
     open("/home/claude/spot1015/out.jsonl","a").write(line+"\n")
 for p,d in picks: print(p,d['r'],d['s'],d['secs'],d['casc_survivors'])
 sys.stdout.flush()
-with ThreadPoolExecutor(2) as ex: list(ex.map(job,picks))
+import os
+done=set()
+if os.path.exists("/home/claude/spot1015/out.jsonl"):
+    for l in open("/home/claude/spot1015/out.jsonl"):
+        d=json.loads(l); done.add((d['p'],d['r'],d['s']))
+todo=sorted([(p,d) for p,d in picks if (p,d['r'],d['s']) not in done], key=lambda x:x[1]['secs'])
+print("todo",[(p,d['r'],d['s']) for p,d in todo]); sys.stdout.flush()
+with ThreadPoolExecutor(2) as ex: list(ex.map(job,todo))
 print("DONE")
