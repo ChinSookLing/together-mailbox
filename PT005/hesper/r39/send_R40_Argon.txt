@@ -1,0 +1,48 @@
+PT005 R40 (Argon). THIS ROUND SERVES PROOF STEP: find the invariant that separates the 5 REAL orbits from the 34 NEVER orbits.
+Think as long as you need (High). Before you answer, RUN your candidate rule on ALL 39 rows below and report the 39 results; a rule that fails one row is wrong. Then give the hand proof why real tilings force it.
+Start with an ANSWER BLOCK (max 300 words): status PROVED / PARTIAL / UNFINISHED, the rule in one line, the 39-row check result (e.g. 39/39), least-sure step. Max 600 words plus code. Any number you report must come from your own calculation in this reply. If you did not compute it, write UNFINISHED.
+
+LESSON FROM R39: the oriented half-footprint 1-cover rule was refuted (holds on only 128 of 640 real configs, fails the real p=29, b=1 tiling W=(19,179,441,339,397,313,237,77)); sum c_i == 0 mod 16 holds on all 7,168, so it separates nothing.
+
+SETUP. Speed w (odd), prime p, level b: bw = m p + d, |d| < p/2; footprint (c,v): v = w^-1 mod 32, c = -2 m v mod 32, U = c + {+-v, +-3v} mod 32, v ~ -v (we store v in 1..15). k=5 rule (PROVED): level-5 footprint depends only on (m mod 32, w mod 32, sgn d, b mod 2). Affine group: (c,v) -> (a c + 2t, a v), a odd. PROVED (two solvers): of 7,168 mixed doublable 8-footprint exact 2-covers (39 affine orbits), exactly 640 = 5 orbits (each size 128) are realized by an exact k=5 tiling, at every prime p >= 47.
+
+DATA: one representative per orbit, 8 footprints (c,v), label REAL or NEVER, orbit size.
+REAL size128:
+REAL size128:
+REAL size128:
+REAL size128:
+REAL size128:
+NEVER size256:
+NEVER size128:
+NEVER size128:
+NEVER size128:
+NEVER size128:
+NEVER size256:
+NEVER size128:
+NEVER size128:
+NEVER size256:
+NEVER size128:
+NEVER size128:
+NEVER size256:
+NEVER size256:
+NEVER size256:
+NEVER size256:
+NEVER size256:
+NEVER size256:
+NEVER size128:
+NEVER size256:
+NEVER size256:
+NEVER size256:
+NEVER size256:
+NEVER size256:
+NEVER size128:
+NEVER size128:
+NEVER size128:
+NEVER size256:
+NEVER size128:
+NEVER size128:
+NEVER size128:
+NEVER size128:
+NEVER size128:
+NEVER size256:
+NEVER size256:
