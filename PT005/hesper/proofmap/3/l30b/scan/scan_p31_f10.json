@@ -1,0 +1,386 @@
+{
+ "p": 31,
+ "fmax": 10,
+ "nodes": [
+  {
+   "w32p": [
+    288,
+    64,
+    104,
+    32,
+    112,
+    375,
+    384,
+    448,
+    254,
+    196,
+    496,
+    236,
+    12,
+    121,
+    260
+   ],
+   "track": [
+    {
+     "level": 32,
+     "nodes": 1,
+     "examined": 1,
+     "f": [
+      10
+     ],
+     "nodes_with_dead_fibre": 1,
+     "dead_fibres_minmax": [
+      3,
+      3
+     ],
+     "free_pairs_opus": [
+      10
+     ],
+     "children_distinct": 0
+    }
+   ]
+  },
+  {
+   "w32p": [
+    296,
+    321,
+    416,
+    200,
+    384,
+    96,
+    112,
+    496,
+    176,
+    128,
+    379,
+    488,
+    8,
+    480,
+    168
+   ],
+   "track": [
+    {
+     "level": 32,
+     "nodes": 1,
+     "examined": 1,
+     "f": [
+      10
+     ],
+     "nodes_with_dead_fibre": 0,
+     "dead_fibres_minmax": [
+      0,
+      0
+     ],
+     "free_pairs_opus": [
+      10
+     ],
+     "children_distinct": 0
+    }
+   ]
+  },
+  {
+   "w32p": [
+    496,
+    96,
+    320,
+    416,
+    480,
+    384,
+    56,
+    495,
+    220,
+    432,
+    77,
+    400,
+    468,
+    108,
+    276
+   ],
+   "track": [
+    {
+     "level": 32,
+     "nodes": 1,
+     "examined": 1,
+     "f": [
+      10
+     ],
+     "nodes_with_dead_fibre": 1,
+     "dead_fibres_minmax": [
+      2,
+      2
+     ],
+     "free_pairs_opus": [
+      10
+     ],
+     "children_distinct": 0
+    }
+   ]
+  },
+  {
+   "w32p": [
+    251,
+    408,
+    436,
+    128,
+    64,
+    60,
+    256,
+    416,
+    16,
+    159,
+    288,
+    496,
+    456,
+    112,
+    376
+   ],
+   "track": [
+    {
+     "level": 32,
+     "nodes": 1,
+     "examined": 1,
+     "f": [
+      10
+     ],
+     "nodes_with_dead_fibre": 1,
+     "dead_fibres_minmax": [
+      6,
+      6
+     ],
+     "free_pairs_opus": [
+      10
+     ],
+     "children_distinct": 0
+    }
+   ]
+  },
+  {
+   "w32p": [
+    64,
+    384,
+    300,
+    137,
+    8,
+    176,
+    128,
+    416,
+    424,
+    496,
+    277,
+    488,
+    72,
+    224,
+    240
+   ],
+   "track": [
+    {
+     "level": 32,
+     "nodes": 1,
+     "examined": 1,
+     "f": [
+      10
+     ],
+     "nodes_with_dead_fibre": 1,
+     "dead_fibres_minmax": [
+      5,
+      5
+     ],
+     "free_pairs_opus": [
+      10
+     ],
+     "children_distinct": 0
+    }
+   ]
+  },
+  {
+   "w32p": [
+    264,
+    256,
+    104,
+    151,
+    432,
+    392,
+    160,
+    425,
+    256,
+    320,
+    448,
+    496,
+    115,
+    48,
+    232
+   ],
+   "track": [
+    {
+     "level": 32,
+     "nodes": 1,
+     "examined": 1,
+     "f": [
+      10
+     ],
+     "nodes_with_dead_fibre": 1,
+     "dead_fibres_minmax": [
+      5,
+      5
+     ],
+     "free_pairs_opus": [
+      11
+     ],
+     "children_distinct": 0
+    }
+   ]
+  },
+  {
+   "w32p": [
+    476,
+    96,
+    176,
+    16,
+    152,
+    160,
+    201,
+    136,
+    192,
+    496,
+    288,
+    112,
+    20,
+    416,
+    217
+   ],
+   "track": [
+    {
+     "level": 32,
+     "nodes": 1,
+     "examined": 1,
+     "f": [
+      10
+     ],
+     "nodes_with_dead_fibre": 1,
+     "dead_fibres_minmax": [
+      4,
+      4
+     ],
+     "free_pairs_opus": [
+      10
+     ],
+     "children_distinct": 0
+    }
+   ]
+  },
+  {
+   "w32p": [
+    456,
+    400,
+    5,
+    112,
+    480,
+    40,
+    154,
+    320,
+    352,
+    496,
+    416,
+    128,
+    411,
+    256,
+    144
+   ],
+   "track": [
+    {
+     "level": 32,
+     "nodes": 1,
+     "examined": 1,
+     "f": [
+      9
+     ],
+     "nodes_with_dead_fibre": 1,
+     "dead_fibres_minmax": [
+      3,
+      3
+     ],
+     "free_pairs_opus": [
+      9
+     ],
+     "children_distinct": 0
+    }
+   ]
+  },
+  {
+   "w32p": [
+    496,
+    176,
+    365,
+    336,
+    192,
+    32,
+    72,
+    400,
+    416,
+    377,
+    293,
+    160,
+    424,
+    480,
+    128
+   ],
+   "track": [
+    {
+     "level": 32,
+     "nodes": 1,
+     "examined": 1,
+     "f": [
+      9
+     ],
+     "nodes_with_dead_fibre": 1,
+     "dead_fibres_minmax": [
+      3,
+      3
+     ],
+     "free_pairs_opus": [
+      9
+     ],
+     "children_distinct": 0
+    }
+   ]
+  },
+  {
+   "w32p": [
+    128,
+    464,
+    392,
+    416,
+    480,
+    88,
+    320,
+    151,
+    160,
+    40,
+    424,
+    496,
+    440,
+    72,
+    27
+   ],
+   "track": [
+    {
+     "level": 32,
+     "nodes": 1,
+     "examined": 1,
+     "f": [
+      10
+     ],
+     "nodes_with_dead_fibre": 1,
+     "dead_fibres_minmax": [
+      2,
+      2
+     ],
+     "free_pairs_opus": [
+      10
+     ],
+     "children_distinct": 0
+    }
+   ]
+  }
+ ]
+}
