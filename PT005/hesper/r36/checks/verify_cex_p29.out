@@ -1,0 +1,5 @@
+p 29 b 1 legal True distinct True mod8 [3, 1, 5, 7, 5, 7, 5, 1]
+ k5 members 16 counts {1}
+ k6 2-cover counts [2]
+ k6 members 32 exact lifts 2 [(0, 1, 0, 0, 1, 0, 1, 0), (1, 0, 1, 1, 0, 1, 0, 1)]
+ XOR graph edges 13 deg [3, 2, 3, 4, 3, 4, 3, 4]
