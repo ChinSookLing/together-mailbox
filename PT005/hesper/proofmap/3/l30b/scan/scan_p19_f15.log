@@ -1,0 +1,21 @@
+FOUND 19 f 14 [288, 292, 33, 109, 271, 2, 138, 86, 195, 304, 49, 250, 20, 255, 222]
+FOUND 19 f 14 [284, 48, 86, 200, 85, 238, 69, 20, 212, 66, 304, 302, 218, 224, 184]
+FOUND 19 f 14 [304, 82, 282, 18, 50, 116, 98, 210, 134, 69, 286, 58, 203, 192, 94]
+FOUND 19 f 14 [198, 28, 192, 229, 181, 47, 145, 161, 304, 62, 3, 222, 236, 68, 276]
+FOUND 19 f 15 [147, 269, 158, 103, 304, 299, 157, 5, 108, 201, 172, 167, 289, 255, 49]
+FOUND 19 f 14 [142, 14, 56, 115, 189, 304, 218, 12, 116, 90, 256, 199, 282, 105, 154]
+FOUND 19 f 14 [252, 292, 86, 115, 294, 149, 236, 240, 155, 153, 160, 132, 218, 304, 6]
+FOUND 19 f 14 [59, 300, 298, 36, 10, 132, 6, 218, 22, 3, 43, 224, 304, 7, 138]
+FOUND 19 f 15 [254, 291, 109, 241, 140, 119, 125, 203, 63, 37, 66, 304, 31, 172, 39]
+FOUND 19 f 12 [60, 28, 55, 252, 46, 32, 304, 32, 181, 44, 200, 258, 244, 224, 10]
+19 {"level": 32, "nodes": 1, "examined": 1, "f": [14], "nodes_with_dead_fibre": 1, "dead_fibres_minmax": [7, 7], "free_pairs_opus": [8], "children_distinct": 0}
+19 {"level": 32, "nodes": 1, "examined": 1, "f": [14], "nodes_with_dead_fibre": 1, "dead_fibres_minmax": [4, 4], "free_pairs_opus": [8], "children_distinct": 0}
+19 {"level": 32, "nodes": 1, "examined": 1, "f": [14], "nodes_with_dead_fibre": 1, "dead_fibres_minmax": [2, 2], "free_pairs_opus": [8], "children_distinct": 0}
+19 {"level": 32, "nodes": 1, "examined": 1, "f": [14], "nodes_with_dead_fibre": 1, "dead_fibres_minmax": [5, 5], "free_pairs_opus": [8], "children_distinct": 0}
+19 {"level": 32, "nodes": 1, "examined": 1, "f": [15], "nodes_with_dead_fibre": 0, "dead_fibres_minmax": [0, 0], "free_pairs_opus": [10], "children_distinct": 0}
+19 {"level": 32, "nodes": 1, "examined": 1, "f": [14], "nodes_with_dead_fibre": 1, "dead_fibres_minmax": [7, 7], "free_pairs_opus": [8], "children_distinct": 0}
+19 {"level": 32, "nodes": 1, "examined": 1, "f": [14], "nodes_with_dead_fibre": 1, "dead_fibres_minmax": [5, 5], "free_pairs_opus": [8], "children_distinct": 0}
+19 {"level": 32, "nodes": 1, "examined": 1, "f": [14], "nodes_with_dead_fibre": 1, "dead_fibres_minmax": [5, 5], "free_pairs_opus": [8], "children_distinct": 0}
+19 {"level": 32, "nodes": 1, "examined": 1, "f": [15], "nodes_with_dead_fibre": 1, "dead_fibres_minmax": [5, 5], "free_pairs_opus": [10], "children_distinct": 0}
+19 {"level": 32, "nodes": 1, "examined": 1, "f": [12], "nodes_with_dead_fibre": 1, "dead_fibres_minmax": [5, 5], "free_pairs_opus": [7], "children_distinct": 0}
+DONE 19 10
