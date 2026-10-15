@@ -1,0 +1,16 @@
+PT005 R38 — follow-up to your R37 answer (open problem). THIS ROUND SERVES PROOF STEP: turn your R37 criterion into a STRUCTURAL theorem (which footprint configurations are doublable, and why) and explain the small-prime threshold.
+Web off. Start with an ANSWER BLOCK (max 300 words): status line for (A), (B) each PROVED / PARTIAL / UNFINISHED, your theorem in one line, then your least-sure step. Whole reply max 600 words plus code. Hand derivation first; code may only check it.
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+
+GRADED (your R37): (a) PROVED and graded stronger than every other seat: cycle parity depends only on the footprints (c_i, v_i). Convention note (independent check): s - c - delta*v must be taken as INTEGER subtraction with s, c in 0..31 (taking it mod 32 or signed gives errors, e.g. p=17, b=1, W=(7,41,71,105,167,201,231,265)). Your (b) and (c) were PARTIAL; your small-prime obstruction argument was not valid. This round continues exactly there.
+
+NEW DATA (computed by us, verify any number you use):
+- Abstract enumeration: multisets of 8 footprints U_i = c_i + {+-v_i, +-3v_i} mod 32 (c even, v odd, v ~ -v) forming an exact 2-cover of the 16 odd residues: 3,862,624. Doublable by your criterion: 8,704. Mixed (v mod 8 not all in {1,7} or all in {3,5}): 3,632,192, of which doublable 7,168.
+- Mixed doublable split by sorted degree sequence of the simple XOR graph (11 classes): (3,3,3,3,4,4,4,4) 1152; (1^8) 1024; (3^6,4,4) 1024; (2,2,3,3,3,3,4,4) 1024; (3,3,4^6) 512; (2^6,3,3) 512; (2^5,3,3,4) 512; (2,3^4,4^3) 512; (4^8) 384; (1,1,2,2,3^4) 256; (1,1,3^6) 256. NO doublable mixed config has degree sequence (2^8) (Ham-8), consistent with F1-Ham8.
+- Real tilings: p=29 has 416 mixed doublings, all without odd digon, in two graph types (2^6,3,3) and (2,3^4,4^3), 208 each. For p <= 23 every mixed tiling graph either has an odd digon, or is the 8-cycle, or is 3- or 4-regular and not doublable (census observation, not a proof).
+- k=5 rule (PROVED): level-5 footprint depends only on (m mod 32, w mod 32, sgn d, b mod 2); the abstract table above does NOT yet impose the k=5 tiling condition.
+
+TASK.
+(A) Structural theorem: give a rule on (c_i, v_i) alone that decides doublability without enumerating cycles (e.g. a sum over digons and over vertices of a class function of v mod 8 or c mod 8), prove it, and derive F1-Ham8 as a corollary. Explain in one paragraph why parity cancels in non-Hamiltonian graphs.
+(B) Realizability: prove (or give the exact gap) why no mixed doubling exists for p in {17, 19, 23} while one exists at p = 29. Which of the 11 classes can be realized by an exact k=5 tiling at some prime, and what is the smallest prime for each class you can decide?
+If partial: PARTIAL plus the exact surviving gap in one line per part.
