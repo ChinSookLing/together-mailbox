@@ -1,0 +1,3 @@
+{"label": "A p=37", "level_p": 16, "open_nodes": 1, "examined": 1, "f_hist": {"5": 1}, "died_here": 0, "S_hist": {}, "maxS": 0, "f>=9_died": 0, "children_closed_by_L7": 32, "children_open": 32}
+{"label": "A p=37", "level_p": 32, "open_nodes": 32, "examined": 32, "f_hist": {"6": 32}, "died_here": 0, "S_hist": {}, "maxS": 0, "f>=9_died": 0, "children_closed_by_L7": 2048, "children_open": 0}
+{"label": "A p=37", "END": "no open nodes"}
