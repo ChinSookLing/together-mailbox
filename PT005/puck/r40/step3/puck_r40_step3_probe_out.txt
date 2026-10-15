@@ -1,0 +1,46 @@
+[data] mixed 7168 REAL 640 NEVER 6528
+[A] intertwine R16(act(k,1,t),beta)==R16(k,beta+t mod 2): cases 20480 mismatches 0
+[B] H-invariance (odd a, even t) of R16(.,beta): cases 163840 mismatches 0
+[C] R16(k,0)==R16(k,1) on all MD: 7168 / 7168 | R16 set size beta0 640 beta1 640
+[D] shift c+=16 (h+=8) preserves R16(.,beta): mismatches on 100 configs x 2: 0
+[E] nA(beta=0) among REAL: {2: 128, 4: 384, 6: 128}
+[E] nA(beta=0) among NEVER: {2: 896, 4: 4736, 6: 896}
+[F] per-REAL-rep (one per orbit) R16-choice counts and mod32-cover counts:
+   REAL orbits 5
+   nA0 4 R16ch (6, 1) mod32 (32, 16) rep ((0, 1), (0, 1), (6, 11), (6, 11), (12, 1), (12, 1), (22, 1), (22, 1))
+   nA0 6 R16ch (1, 6) mod32 (4, 8) rep ((0, 1), (0, 1), (8, 1), (14, 3), (16, 1), (16, 3), (18, 3), (24, 1))
+   nA0 6 R16ch (1, 2) mod32 (2, 4) rep ((0, 1), (0, 5), (2, 5), (4, 5), (8, 1), (24, 1), (28, 5), (30, 5))
+   nA0 4 R16ch (1, 2) mod32 (4, 8) rep ((0, 1), (0, 7), (2, 11), (6, 11), (12, 1), (20, 1), (26, 11), (30, 11))
+   nA0 4 R16ch (1, 4) mod32 (4, 8) rep ((0, 1), (2, 1), (8, 11), (10, 1), (14, 1), (16, 11), (22, 1), (24, 1))
+[G] for each REAL orbit rep: fraction of R16 choices that lift to mod32:
+   beta 0 choices 6 lift 2 nA 4
+   beta 1 choices 1 lift 1 nA 4
+   beta 0 choices 1 lift 1 nA 6
+   beta 1 choices 6 lift 2 nA 2
+   beta 0 choices 1 lift 1 nA 6
+   beta 1 choices 2 lift 2 nA 2
+   beta 0 choices 1 lift 1 nA 4
+   beta 1 choices 2 lift 2 nA 4
+   beta 0 choices 1 lift 1 nA 4
+   beta 1 choices 4 lift 2 nA 4
+[H] R16-true count 640
+[H] among R16-true: mod32 cover fails (both betas checked): 0 of 1280
+[H] among 200 R16-false sample: any mod32 cover: 0
+[I] R16 multigraph cycle types on REAL orbit reps (beta=0):
+   nA 4 {(2, 2, 2, 2): 2, (2, 2, 4): 4} rep ((0, 1), (0, 1), (6, 11), (6, 11)) ...
+   nA 6 {(2, 6): 1} rep ((0, 1), (0, 1), (8, 1), (14, 3)) ...
+   nA 6 {(8,): 1} rep ((0, 1), (0, 5), (2, 5), (4, 5)) ...
+   nA 4 {(2, 6): 1} rep ((0, 1), (0, 7), (2, 11), (6, 11)) ...
+   nA 4 {(2, 6): 1} rep ((0, 1), (2, 1), (8, 11), (10, 1)) ...
+[J] lift fractions with A/B counts:
+   beta 0 A 4 B 4 cho 6 lift 2
+   beta 1 A 4 B 4 cho 1 lift 1
+   beta 0 A 6 B 2 cho 1 lift 1
+   beta 1 A 2 B 6 cho 6 lift 2
+   beta 0 A 6 B 2 cho 1 lift 1
+   beta 1 A 2 B 6 cho 2 lift 2
+   beta 0 A 4 B 4 cho 1 lift 1
+   beta 1 A 4 B 4 cho 2 lift 2
+   beta 0 A 4 B 4 cho 1 lift 1
+   beta 1 A 4 B 4 cho 4 lift 2
+[done]
