@@ -10,10 +10,12 @@ Updated: 2026-10-08 12:59 +08 (L14 added; approved by Tuzi 2026-10-08 12:55, car
 Updated: 2026-10-09 10:44 +08 (L15, L16 added; approved by Tuzi in chat 2026-10-09 10:44, chair note 45. Gate total unchanged: 27.07 of 481.07).
 Updated: 2026-10-11 18:35 +0800 (L17 added; approved by Tuzi in chat 2026-10-11 18:34, chair note 69. Gate total unchanged: 27.07 of 481.07).
 Updated: 2026-10-11 20:30 +0800 (L18 added; approved by Tuzi in chat 2026-10-11 20:27, chair notes 70-71. Gate total unchanged: 27.07 of 481.07).
-Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY.
+Updated: 2026-10-15 22:54 +0800 (L20–L22 added as PROVISIONAL gates, status OFFICE-RUN, CHAIR-SPOT-CHECKED; approved by Tuzi in chat 2026-10-15 18:31, chair note 91 §5. Gate totals: closed 27.07; provisional 18.00; together 45.07 of 481.07).
+Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY · OFFICE-RUN, CHAIR-SPOT-CHECKED.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
-  not a theorem. A status applies only to its SCOPE.
+  not a theorem. OFFICE-RUN, CHAIR-SPOT-CHECKED = one full run on Tuzi's office PC; the chair regenerated the job list and
+  re-ran sampled jobs with exact agreement; no second full run (provisional). A status applies only to its SCOPE.
 
 ---
 
@@ -257,3 +259,22 @@ MEANING = the conjectured C-floor value 97/6864 has a closed form and a structur
 NOT    = the C-floor itself. Still UNFINISHED: (a) a reduction "every 14-set is at least as bad as some deleted baseline";
          (b) the class of 14-sets with ≥ 2 speeds > 30 (L18). For n > 20 it rests on Zhang's proof alone. Not a threshold gain.
 USES   = none in any gate. Gate total unchanged.
+
+## L20–L22 · Prime gates p = 383, 397, 431 (K = 15, 16 runners), level 16, part (a) only (γ(p) = 15)
+STATUS = OFFICE-RUN, CHAIR-SPOT-CHECKED (PROVISIONAL) · approved by Tuzi 2026-10-15 18:31 +08 (chair note 91 §5, letter 9ec58fe)
+SCOPE  = For these primes there is no cover on ≤ 14 classes (γ(p) = 15): the reducible-branch generator finds 0 covers
+         (km1: 383 → 23 roots, 0 covers; 397 → 24 roots, 0 covers; 431 → 26 roots, 0 covers), in agreement with the
+         office-PC 14-cover census. So parts (b) and (c) of the L10 split are empty and part (a) alone is the gate:
+         L20 · p = 383: (a) 415 jobs, 5,171 rows, 0 alive at level 16 (run 2026-10-10 09:48 → 17:00 +08, collect 38060748868);
+         L21 · p = 397: (a) 436 jobs, 23,452 rows, 0 alive at level 16 (run 2026-10-13 19:22 → 2026-10-14 08:07 +08, collect 38496413434);
+         L22 · p = 431: (a) 514 jobs, 1,382 rows, 0 alive at level 16 (run 2026-10-14 09:40 → 2026-10-15 04:33 +08, collect 38642331474).
+         Level-2 cascade survivors (2 per gate) all die before level 16; the "deep" field is empty in every job.
+ONE MACHINE = Tuzi's office PC (Hesper), runner kcascade_run.py sha256 90632d55… (equal to the chair's copy).
+CHAIR CHECKS = (1) job list regenerated with bgk15 irroots/irsubroots on the chair machine: 415/436/514, equal as sets;
+         (2) spot reruns on the chair machine, seed 1015, one random job and one cascade-survivor job per gate, compared on
+         rows, nodes, cascade rows, cascade survivors: 6 of 6 MATCH (p383 jobs (21,9) and (0,0); p397 (12,4) and (0,0); p431 (12,19) and (0,0)); results PT005/opus/chk1015/spot_out.jsonl. Script PT005/opus/chk1015/spot.py.
+NOT    = REPRODUCED (no second full run). Counted in a separate provisional line; becomes closed when a second machine
+         reproduces part (a), or by a later explicit decision of Tuzi.
+USES   = L15 (γ ≤ 15) and the L10 three-part split (reading parts (b), (c) as empty when γ = 15).
+OPEN DEPENDENCIES = as L10.
+Gate totals: closed 27.07; provisional 18.00 (log 383 + log 397 + log 431); together 45.07 of 481.07.

@@ -1,0 +1,6 @@
+{"p": 383, "r": 21, "s": 9, "mine": {"rows": 0, "nodes": 563400482, "casc_rows": 0, "casc_survivors": 0}, "office": {"rows": 0, "nodes": 563400482, "casc_rows": 0, "casc_survivors": 0}, "match": true, "my_secs": 580.699}
+{"p": 431, "r": 12, "s": 19, "mine": {"rows": 5, "nodes": 1040250709, "casc_rows": 5, "casc_survivors": 0}, "office": {"rows": 5, "nodes": 1040250709, "casc_rows": 5, "casc_survivors": 0}, "match": true, "my_secs": 538.044}
+{"p": 397, "r": 12, "s": 4, "mine": {"rows": 39, "nodes": 1865969946, "casc_rows": 39, "casc_survivors": 0}, "office": {"rows": 39, "nodes": 1865969946, "casc_rows": 39, "casc_survivors": 0}, "match": true, "my_secs": 933.767}
+{"p": 383, "r": 0, "s": 0, "mine": {"rows": 165, "nodes": 4550812466, "casc_rows": 165, "casc_survivors": 2}, "office": {"rows": 165, "nodes": 4550812466, "casc_rows": 165, "casc_survivors": 2}, "match": true, "my_secs": 2231.94}
+{"p": 397, "r": 0, "s": 0, "mine": {"rows": 809, "nodes": 7600285912, "casc_rows": 809, "casc_survivors": 2}, "office": {"rows": 809, "nodes": 7600285912, "casc_rows": 809, "casc_survivors": 2}, "match": true, "my_secs": 3523.3}
+{"p": 431, "r": 0, "s": 0, "mine": {"rows": 20, "nodes": 8222218442, "casc_rows": 20, "casc_survivors": 1}, "office": {"rows": 20, "nodes": 8222218442, "casc_rows": 20, "casc_survivors": 1}, "match": true, "my_secs": 4018.47}
