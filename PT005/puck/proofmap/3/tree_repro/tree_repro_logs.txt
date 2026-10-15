@@ -1,0 +1,39 @@
+## out_p17
+{"label": "W5 p=17", "level_p": 32, "open": 1, "examined": 1, "f_hist": {"10": 1}, "died": 0, "S_hist": {}, "maxS": 0, "died_f>=9": 0, "died_no_dead_single": 0, "children_closed_L7": 0, "children_open": 128}
+{"label": "W5 p=17", "level_p": 64, "open": 128, "examined": 128, "f_hist": {"14": 128}, "died": 128, "S_hist": {"1": 128}, "maxS": 1, "died_f>=9": 128, "died_no_dead_single": 0, "children_closed_L7": 0, "children_open": 0}
+{"label": "W5 p=17", "END": "no open nodes"}
+## out_p37A
+{"label": "A p=37", "level_p": 16, "open": 1, "examined": 1, "f_hist": {"5": 1}, "died": 0, "S_hist": {}, "maxS": 0, "died_f>=9": 0, "died_no_dead_single": 0, "children_closed_L7": 32, "children_open": 32}
+{"label": "A p=37", "level_p": 32, "open": 32, "examined": 32, "f_hist": {"6": 32}, "died": 0, "S_hist": {}, "maxS": 0, "died_f>=9": 0, "died_no_dead_single": 0, "children_closed_L7": 2048, "children_open": 0}
+{"label": "A p=37", "END": "no open nodes"}
+## out_p37B
+{"label": "B p=37", "level_p": 16, "open": 1, "examined": 1, "f_hist": {"6": 1}, "died": 0, "S_hist": {}, "maxS": 0, "died_f>=9": 0, "died_no_dead_single": 0, "children_closed_L7": 64, "children_open": 0}
+{"label": "B p=37", "END": "no open nodes"}
+## out_p131a
+{"label": "p131 a", "level_p": 1, "open": 1, "examined": 1, "f_hist": {"0": 1}, "died": 0, "S_hist": {}, "maxS": 0, "died_f>=9": 0, "died_no_dead_single": 0, "children_closed_L7": 0, "children_open": 7}
+{"label": "p131 a", "level_p": 2, "open": 7, "examined": 7, "f_hist": {"0": 1, "1": 1, "2": 2, "3": 2, "4": 1}, "died": 3, "S_hist": {"None": 2, "2": 1}, "maxS": 2, "died_f>=9": 0, "died_no_dead_single": 3, "children_closed_L7": 12, "children_open": 20}
+{"label": "p131 a", "level_p": 4, "open": 20, "examined": 20, "f_hist": {"3": 7, "4": 13}, "died": 13, "S_hist": {"2": 13}, "maxS": 2, "died_f>=9": 0, "died_no_dead_single": 13, "children_closed_L7": 24, "children_open": 32}
+{"label": "p131 a", "level_p": 8, "open": 32, "examined": 32, "f_hist": {"4": 32}, "died": 32, "S_hist": {"2": 32}, "maxS": 2, "died_f>=9": 0, "died_no_dead_single": 32, "children_closed_L7": 0, "children_open": 0}
+{"label": "p131 a", "END": "no open nodes"}
+## out_p131b
+{"label": "p131 b", "level_p": 1, "open": 1, "examined": 1, "f_hist": {"0": 1}, "died": 0, "S_hist": {}, "maxS": 0, "died_f>=9": 0, "died_no_dead_single": 0, "children_closed_L7": 0, "children_open": 8}
+{"label": "p131 b", "level_p": 2, "open": 8, "examined": 8, "f_hist": {"0": 1, "1": 2, "2": 2, "3": 2, "4": 1}, "died": 4, "S_hist": {"None": 3, "2": 1}, "maxS": 2, "died_f>=9": 0, "died_no_dead_single": 4, "children_closed_L7": 16, "children_open": 17}
+{"label": "p131 b", "level_p": 4, "open": 17, "examined": 17, "f_hist": {"3": 7, "4": 10}, "died": 10, "S_hist": {"2": 10}, "maxS": 2, "died_f>=9": 0, "died_no_dead_single": 10, "children_closed_L7": 56, "children_open": 0}
+{"label": "p131 b", "END": "no open nodes"}
+## out_p47_full
+{"label": "Astra p=47", "level_p": 1, "open": 1, "examined": 1, "f_hist": {"0": 1}, "died": 0, "S_hist": {}, "maxS": 0, "died_f>=9": 0, "died_no_dead_single": 0, "children_closed_L7": 0, "children_open": 341}
+{"label": "Astra p=47", "level_p": 2, "open": 341, "examined": 341, "f_hist": {"0": 1, "1": 4, "2": 5, "3": 4, "4": 4, "5": 11, "6": 29, "7": 54, "8": 66, "9": 66, "10": 56, "11": 31, "12": 9, "13": 1}, "died": 247, "S_hist": {"1": 200, "2": 22, "None": 11, "3": 10, "4": 4}, "maxS": 4, "died_f>=9": 115, "died_no_dead_single": 47, "children_closed_L7": 24, "children_open": 3598}
+{"label": "Astra p=47", "level_p": 4, "open": 3598, "examined": 3598, "f_hist": {"3": 16, "4": 4, "5": 4, "6": 2, "7": 14, "8": 32, "9": 68, "10": 114, "11": 216, "12": 632, "13": 1250, "14": 1246}, "died": 3582, "S_hist": {"1": 3248, "4": 30, "2": 190, "3": 64, "None": 50}, "maxS": 4, "died_f>=9": 3524, "died_no_dead_single": 334, "children_closed_L7": 96, "children_open": 36}
+{"label": "Astra p=47", "level_p": 8, "open": 36, "examined": 36, "f_hist": {"4": 12, "8": 4, "11": 16, "14": 4}, "died": 32, "S_hist": {"1": 24, "None": 8}, "maxS": 1, "died_f>=9": 20, "died_no_dead_single": 8, "children_closed_L7": 0, "children_open": 8}
+{"label": "Astra p=47", "level_p": 16, "open": 8, "examined": 8, "f_hist": {"12": 8}, "died": 8, "S_hist": {"1": 8}, "maxS": 1, "died_f>=9": 8, "died_no_dead_single": 0, "children_closed_L7": 0, "children_open": 0}
+{"label": "Astra p=47", "END": "no open nodes"}
+## out_p47_s7
+{"label": "Astra p=47", "level_p": 1, "open": 1, "examined": 1, "f_hist": {"0": 1}, "died": 0, "S_hist": {}, "maxS": 0, "died_f>=9": 0, "died_no_dead_single": 0, "children_closed_L7": 0, "children_open": 341}
+{"label": "Astra p=47", "level_p": 2, "open": 341, "examined": 100, "f_hist": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 4, "6": 8, "7": 16, "8": 21, "9": 17, "10": 16, "11": 11, "12": 2, "13": 1}, "died": 76, "S_hist": {"2": 8, "1": 65, "None": 1, "3": 2}, "maxS": 3, "died_f>=9": 35, "died_no_dead_single": 11, "children_closed_L7": 0, "children_open": 1004}
+{"label": "Astra p=47", "level_p": 4, "open": 1004, "examined": 100, "f_hist": {"9": 1, "10": 6, "11": 10, "12": 20, "13": 41, "14": 22}, "died": 100, "S_hist": {"1": 88, "None": 2, "2": 7, "3": 2, "4": 1}, "maxS": 4, "died_f>=9": 100, "died_no_dead_single": 12, "children_closed_L7": 0, "children_open": 0}
+{"label": "Astra p=47", "END": "no open nodes"}
+## out_p47_s8
+{"label": "Astra p=47", "level_p": 1, "open": 1, "examined": 1, "f_hist": {"0": 1}, "died": 0, "S_hist": {}, "maxS": 0, "died_f>=9": 0, "died_no_dead_single": 0, "children_closed_L7": 0, "children_open": 341}
+{"label": "Astra p=47", "level_p": 2, "open": 341, "examined": 100, "f_hist": {"1": 2, "2": 1, "4": 1, "5": 3, "6": 10, "7": 14, "8": 23, "9": 15, "10": 17, "11": 10, "12": 3, "13": 1}, "died": 73, "S_hist": {"1": 59, "None": 4, "2": 7, "3": 3}, "maxS": 3, "died_f>=9": 31, "died_no_dead_single": 14, "children_closed_L7": 0, "children_open": 1092}
+{"label": "Astra p=47", "level_p": 4, "open": 1092, "examined": 100, "f_hist": {"8": 1, "9": 4, "10": 2, "11": 5, "12": 18, "13": 35, "14": 35}, "died": 100, "S_hist": {"1": 95, "2": 5}, "maxS": 2, "died_f>=9": 99, "died_no_dead_single": 5, "children_closed_L7": 0, "children_open": 0}
+{"label": "Astra p=47", "END": "no open nodes"}
