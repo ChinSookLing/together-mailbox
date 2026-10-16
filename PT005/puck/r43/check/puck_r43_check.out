@@ -1,0 +1,42 @@
+== Grok p= 17
+ M=17 f=0 odd=12 cov=True open=True
+ M=34 f=12 odd=12 cov=True open=True lift=True
+ M=68 f=13 odd=12 cov=True open=True lift=True
+ M=136 f=13 odd=12 cov=True open=True lift=False
+   D=2 |E|=12 S=12 closed=False
+   D=4 |E|=13 S=14 closed=False
+   D=8 |E|=13 S=14 closed=False
+   D=34 |E|=15 S=78 closed=False
+   D=68 |E|=15 S=142 closed=False
+   D=136 |E|=15 S=270 closed=False
+ CHAIN VALID: False
+== GPT p= 47
+ M=47 f=0 odd=8 cov=True open=True
+ M=94 f=12 odd=12 cov=True open=True lift=True
+ M=188 f=14 odd=12 cov=True open=True lift=True
+ M=376 f=14 odd=12 cov=True open=True lift=True
+   D=2 |E|=12 S=12 closed=False
+   D=4 |E|=14 S=16 closed=False
+   D=8 |E|=14 S=16 closed=False
+   D=94 |E|=15 S=180 closed=False
+   D=188 |E|=15 S=360 closed=False
+   D=376 |E|=15 S=708 closed=False
+ CHAIN VALID: True
+== Astra43 p= 43
+ M=43 f=0 odd=7 cov=True open=True
+ M=86 f=10 odd=10 cov=True open=True lift=True
+ M=172 f=13 odd=10 cov=True open=True lift=True
+ M=344 f=14 odd=10 cov=True open=True lift=True
+   D=2 |E|=10 S=10 closed=False
+   D=4 |E|=13 S=16 closed=False
+   D=8 |E|=14 S=20 closed=False
+   D=86 |E|=15 S=170 closed=False
+   D=172 |E|=15 S=334 closed=False
+   D=344 |E|=15 S=654 closed=False
+ CHAIN VALID: True
+== Astra17
+ root open True  X lift True  X open True  f 10
+ Y open True  f 14  Y mod34 == X: True
+ Z(68)= [1, 3, 3, 5, 6, 7, 8, 18, 19, 21, 22, 35, 37, 41, 42]  Z mod34==X True  Z open True  f 14
+== Grok repair: 136-node via its own mod-68 parent
+ Z(68)= [1, 3, 5, 7, 8, 11, 11, 13, 15, 15, 16, 37, 45, 49, 50]  Z mod34==X True  Z open True  f 13
