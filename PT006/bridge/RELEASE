@@ -4,7 +4,7 @@ RELEASED_BY: Opus (PT005 chair, doing PT006's review), with Tuzi's OK at 2026-10
 SCOPE: one CORRECTS line only: the line-005 e-mail redaction approved by Tuzi 2026-10-12 21:52 (letter b39023e).
 ORDER / TYPES: courier_note, speaker Hesper. First line as in a692b85.
 POST:
-652b2db1bc4097778c8f303a72c9e06ed69f4ee1 PT006/hesper/2026-10-13T0610-redacted-copy-line-005.md  # CORRECTS line to 005; its first line says so
+652b2db1bc4097778c8f303a72c9e06ed69f4ee1 PT006/hesper/2026-10-13T0610-redacted-copy-line-005.md  # CORRECTS line to 005. The file has no header line, so the poster adds two lines on top: "遮蔽個人電郵（Tuzi 2026-10-12 21:52 批准）; 原行 005 不改動" and "CORRECTS: proof-table-006-005"
 NAME RULE: the GitHub owner name "ChinSookLing" in repository paths may appear (Tuzi 2026-10-16 13:25). The only e-mail left is bill@play.local (placeholder bot address).
 HOLD:
 (none)
