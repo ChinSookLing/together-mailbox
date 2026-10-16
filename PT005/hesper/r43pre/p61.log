@@ -1,0 +1,4 @@
+{"label": "p61 seed20261016 #1", "level_p": 1, "open": 1, "f_hist": {"0": 1}, "died": 0, "died_f>=9": 0, "S_hist": {}, "children_L7_closed": 0, "children_open": 152}
+{"label": "p61 seed20261016 #1", "level_p": 2, "open": 152, "f_hist": {"2": 4, "3": 7, "4": 14, "5": 23, "6": 33, "7": 27, "8": 15, "9": 11, "10": 10, "11": 5, "12": 2, "13": 1}, "died": 72, "died_f>=9": 15, "S_hist": {"1": 45, "2": 7, ">6": 14, "6": 1, "5": 1, "4": 3, "3": 1}, "children_L7_closed": 4, "children_open": 1292}
+{"label": "p61 seed20261016 #1", "level_p": 4, "open": 1292, "f_hist": {"3": 2, "4": 4, "5": 4, "6": 4, "7": 18, "8": 14, "9": 40, "10": 94, "11": 220, "12": 362, "13": 374, "14": 156}, "died": 1292, "died_f>=9": 1246, "S_hist": {"1": 1230, ">6": 4, "5": 8, "2": 34, "6": 2, "4": 6, "3": 8}, "children_L7_closed": 0, "children_open": 0}
+{"label": "p61 seed20261016 #1", "END": "no open nodes", "nodes": 1445, "max_depth_after_first_f>=9": 1}
