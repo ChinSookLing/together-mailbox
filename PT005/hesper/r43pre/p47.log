@@ -1,0 +1,6 @@
+{"label": "Astra R p=47", "level_p": 1, "open": 1, "f_hist": {"0": 1}, "died": 0, "died_f>=9": 0, "S_hist": {}, "children_L7_closed": 0, "children_open": 336}
+{"label": "Astra R p=47", "level_p": 2, "open": 336, "f_hist": {"2": 5, "3": 4, "4": 4, "5": 11, "6": 29, "7": 54, "8": 66, "9": 66, "10": 56, "11": 31, "12": 9, "13": 1}, "died": 242, "died_f>=9": 115, "S_hist": {"1": 200, "2": 22, "3": 10, ">6": 3, "4": 4, "5": 2, "6": 1}, "children_L7_closed": 24, "children_open": 3598}
+{"label": "Astra R p=47", "level_p": 4, "open": 3598, "f_hist": {"3": 16, "4": 4, "5": 4, "6": 2, "7": 14, "8": 32, "9": 68, "10": 114, "11": 216, "12": 632, "13": 1250, "14": 1246}, "died": 3582, "died_f>=9": 3524, "S_hist": {"1": 3248, "4": 30, "2": 190, "3": 64, "5": 22, ">6": 16, "6": 12}, "children_L7_closed": 96, "children_open": 36}
+{"label": "Astra R p=47", "level_p": 8, "open": 36, "f_hist": {"4": 12, "8": 4, "11": 16, "14": 4}, "died": 32, "died_f>=9": 20, "S_hist": {"1": 24, "5": 8}, "children_L7_closed": 0, "children_open": 8}
+{"label": "Astra R p=47", "level_p": 16, "open": 8, "f_hist": {"12": 8}, "died": 8, "died_f>=9": 8, "S_hist": {"1": 8}, "children_L7_closed": 0, "children_open": 0}
+{"label": "Astra R p=47", "END": "no open nodes", "nodes": 3979, "max_depth_after_first_f>=9": 1}
