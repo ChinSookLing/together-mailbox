@@ -11,6 +11,7 @@ Updated: 2026-10-09 10:44 +08 (L15, L16 added; approved by Tuzi in chat 2026-10-
 Updated: 2026-10-11 18:35 +0800 (L17 added; approved by Tuzi in chat 2026-10-11 18:34, chair note 69. Gate total unchanged: 27.07 of 481.07).
 Updated: 2026-10-11 20:30 +0800 (L18 added; approved by Tuzi in chat 2026-10-11 20:27, chair notes 70-71. Gate total unchanged: 27.07 of 481.07).
 Updated: 2026-10-15 22:54 +0800 (L20–L22 added as PROVISIONAL gates, status OFFICE-RUN, CHAIR-SPOT-CHECKED; approved by Tuzi in chat 2026-10-15 18:31, chair note 91 §5. Gate totals: closed 27.07; provisional 18.00; together 45.07 of 481.07).
+Updated: 2026-10-16 13:07 +0800 (L23 added, p = 443, PROVISIONAL, status OFFICE-RUN, CHAIR-SPOT-CHECKED; approved by Tuzi in chat 2026-10-16 13:07, chair notes 96, 96b. Gate totals: closed 27.07; provisional 24.09; together 51.16 of 481.07).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY · OFFICE-RUN, CHAIR-SPOT-CHECKED.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -278,3 +279,15 @@ NOT    = REPRODUCED (no second full run). Counted in a separate provisional line
 USES   = L15 (γ ≤ 15) and the L10 three-part split (reading parts (b), (c) as empty when γ = 15).
 OPEN DEPENDENCIES = as L10.
 Gate totals: closed 27.07; provisional 18.00 (log 383 + log 397 + log 431); together 45.07 of 481.07.
+
+## L23 · Prime gate p = 443 (K = 15, 16 runners), level 16, part (a) only (γ(p) = 15)
+STATUS = OFFICE-RUN, CHAIR-SPOT-CHECKED (PROVISIONAL) · approved by Tuzi 2026-10-16 13:07 +08 (chair notes 96, 96b)
+SCOPE  = as L20–L22. km1: 27 roots, 0 covers, so parts (b), (c) are empty. (a) 556 jobs, 993 rows, 0 alive at level 16
+         (run 2026-10-15 06:08 → 2026-10-16 08:31 +08, status run 38832595872, collect 38832703703, SHA256SUMS OK).
+         One level-2 cascade survivor, dies before level 16; the "deep" field is empty in every job.
+ONE MACHINE = Tuzi's office PC (Hesper); Puck file check 87b3d77 CONSISTENT.
+CHAIR CHECKS = (1) job list regenerated with bgk15 irroots/irsubroots: 556 = 556, equal as sets;
+         (2) spot reruns on the chair machine: jobs (13,4) and (0,0, the survivor job), 2 of 2 MATCH on rows, nodes,
+         cascade rows, cascade survivors (PT005/opus/chk1015/spot443_out.jsonl).
+NOT    = REPRODUCED. Provisional as L20–L22.
+Gate totals: closed 27.07; provisional 24.09 (L20–L23); together 51.16 of 481.07.
