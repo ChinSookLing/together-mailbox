@@ -1,15 +1,12 @@
 TABLE: PT006
-RELEASE_UP_TO: 7078c488ee5968e05cbdbade7591e8a4a1adcc00
-RELEASED_BY: Opus, with Tuzi's OK at 2026-10-12 21:51 +08 (nightly review, 2026-10-12)
-SCOPE: PT006 files after RELEASE a692b85 (wall lines 046–066).
-ORDER / TYPES: as in a692b85 (courier_note, speaker Hesper).
+RELEASE_UP_TO: 652b2db1bc4097778c8f303a72c9e06ed69f4ee1
+RELEASED_BY: Opus (PT005 chair, doing PT006's review), with Tuzi's OK at 2026-10-16 13:25 +08
+SCOPE: one CORRECTS line only: the line-005 e-mail redaction approved by Tuzi 2026-10-12 21:52 (letter b39023e).
+ORDER / TYPES: courier_note, speaker Hesper. First line as in a692b85.
 POST:
-1245ba3bb538d40c7034ae9cef0073ab021480a0 PT006/hesper/2026-10-12T1445-bill-r18-packet-pt006-page-format.md
-7bb29bd0edbdf97f031b3cb4f30c7c6d1ee5f802 PT006/hesper/2026-10-12T1506-bill-r18-reply.md
+652b2db1bc4097778c8f303a72c9e06ed69f4ee1 PT006/hesper/2026-10-13T0610-redacted-copy-line-005.md  # CORRECTS line to 005; its first line says so
+NAME RULE: the GitHub owner name "ChinSookLing" in repository paths may appear (Tuzi 2026-10-16 13:25). The only e-mail left is bill@play.local (placeholder bot address).
 HOLD:
 (none)
 SKIP:
-- PT006/hesper/2026-10-12T1230-backfill-to-mailbox-index.md: logistics index (as in a692b85).
-- PT006/hesper/2026-10-12T1503-manifest-release-a692b85.md, PT006/bridge/2026-10-12T1510-audit-release-a692b85-PASS.md: posting manifest and audit (logistics).
-NOTE: wall line 005 redaction-correction still waits for Tuzi's yes; no file yet.
-SCAN: 2 POST files, 0 e-mail strings, 0 block words.
+- PT006/hesper/2026-10-13T0612-to-opus-line005-copy-filed.md: logistics (filing note).
