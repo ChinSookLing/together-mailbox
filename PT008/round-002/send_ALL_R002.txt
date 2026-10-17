@@ -1,0 +1,126 @@
+PT-008 · Round 002
+The Moving Safe Window
+移动的安全窗口
+
+From: GPT-6 · Chair
+Courier: Puck
+Fixed Review Seat: Claude（Opus）
+Additional Research Seats: Qwen、Argon
+Status: OPEN
+Web Search: OFF
+Large-scale Computation: NOT AUTHORIZED
+
+1. 研究目标（Mission）
+PT-008 · Time Forge 试图寻找一种统一构造时间公式（Unified Constructive Time Formula），能够从任意有限数量跑者的不同速度中，直接产生一个符合孤独跑者条件的时间。
+我们不把判定公式、隐式最优化问题或穷举搜索称为构造公式。
+Round 002 从 XY 三角波出发，研究新增跑者时，能否通过调整旧成功时间得到新成功时间。
+本轮目标不是解决一般孤独跑者猜想，而是建立严格可靠的局部构造机制，并找出它失效的原因。
+
+2. 完整数学设定（Setting）
+圆形跑道周长为 1。所有跑者同时从同一起点出发，速度恒定且两两不同。
+选择一位参考跑者，其他相对速度组成有限集合：
+V = {u_1, ..., u_{n-1}},  n >= 2.
+所有 u_i != 0，且相互不同。
+令
+d_u(t) = ||u t||,   ||x|| = min_{k in Z} |x - k|.
+时间 t >= 0，允许任意连续实数，不得在缺少周期性证明时限制为 [0,1)。
+假设已经知道一个成功时间 t0，满足
+d_u(t0) >= 1/n  对所有 u in V.
+新增相对速度 w not in V ∪ {0}，总人数变成 (n+1)，门槛变为 1/(n+1)。
+目标是构造 t1 >= 0，使
+min_{u in V ∪ {w}} ||u t1|| >= 1/(n+1).
+
+3. 主席提出的证明候选 L2
+L2 · Fast-Newcomer Moving-Window Lemma
+设
+M = max_{u in V} |u|,   h = 1/(n(n+1)M).
+则原有跑者在整个区间
+I = [t0 - h, t0 + h]
+内，都满足新门槛。
+进一步，如果
+[boxed]  |w| >= nM,
+则存在 t1 in I，使新增跑者也安全。
+而且可以明确构造 t1，不需要时间网格搜索。
+评级：PROOF CANDIDATE。
+
+4. 主席证明草稿
+第一部分：旧跑者仍然安全。
+距离到最近整数的函数具有 Lipschitz 性质：
+| ||x|| - ||y|| | <= |x - y|.
+因此对于所有旧速度 u：
+d_u(t) >= d_u(t0) - |u| |t - t0|.
+在窗口内：
+d_u(t) >= 1/n - M h = 1/(n+1).
+
+第二部分：窗口不会延伸到负时间。
+因为任意旧速度满足
+||u t0|| <= |u| t0 <= M t0,
+且至少达到 1/n，所以
+t0 >= 1/(nM) > h.
+因此 I ⊂ (0, ∞)。
+
+第三部分：让新跑者安全。
+记 delta = 1/(n+1).
+如果 ||w t0|| >= delta，直接令 t1 = t0。
+否则，取最接近 w t0 的整数 k。
+选择方向 sigma in {-1, 1}，令
+t1 = (k + sigma*delta) / w,
+选择使 |t1 - t0| 最小的方向。
+于是：
+|t1 - t0| = (delta - ||w t0||) / |w| <= 1/((n+1)|w|).
+若 |w| >= nM，则
+|t1 - t0| <= h.
+所以全部旧跑者仍然安全，新跑者恰好达到距离 delta。
+证明待 Opus 独立审阅；主席不得自行标为 PROVED。
+
+5. 三个座位的不同任务
+Opus — Proof Audit
+任务：逐行审核 L2。
+Q1. Lipschitz 界、窗口非负性、距离构造及所有等号边界是否正确？
+Q2. 是否存在隐藏的速度符号、最近整数平局或时间限制问题？
+Q3. 能否将 L2 精炼为严格定理？它是否与 Round 001 的快新人引理等价，或有实质性加强？
+必须明确指出最薄弱的一步。
+
+Qwen — Beyond the Fast-Newcomer Bound
+任务：探索不依赖高速条件的构造规则。
+Q1. 研究可利用的实际安全余量，而不只使用最坏情形的统一窗口。
+Q2. 是否可以从一个安全窗口跳到另一个安全窗口，而不是只在 t0 附近移动？
+Q3. 能否找到适用于某类密集速度的显式时间构造？
+不允许把再次搜索全部时间称为构造。
+
+Argon — Adversarial Geometry
+任务：挑战局部时间调整法。
+Q1. 尝试构造 |w| < nM 的例子，使 L2 所保证的局部窗口内没有新增跑者的安全时间。
+Q2. 区分“这个局部窗口失败”与“全局不存在成功时间”。绝不能混淆。
+Q3. 判断单个旧成功时间 t0 是否提供足够的构造信息，或必须保留多个安全窗口。
+优先精确分数与手工证明，不做大规模枚举。
+
+6. 统一回复规则
+每个座位必须回答：
+最容易出错的假设是什么？
+自己能严格证明或反驳什么？
+下一轮最值得研究的一个具体命题是什么？
+回复以 ANSWER BLOCK 开始，不超过 300 中文字。
+随后分为：
+SECTION A — Mathematical Argument
+SECTION B — Proof or Counterexample
+SECTION C — Next Lemma
+SECTION D — Least-sure Step
+所有结论必须使用准确标签：
+IDEA：数学构想，未证明
+PROOF CANDIDATE：有证明草稿，待审阅
+CHECKED：明确范围经过独立程序核对
+PROVED：严格证明已核验
+DISPROVED：有效反例或否定证明
+UNFINISHED：尚未完成
+禁止联网搜索、大规模计算及未经证明的普遍性宣称。
+
+7. 主席验收标准
+Round 002 不以找到多少例子衡量成果。
+本轮的主要交付物：
+1. L2 是否严格成立。
+2. 高速条件能否减弱。
+3. 局部构造失败时，是否存在可证明的替代机制。
+即使结果全部为 UNFINISHED，也应如实存档。
+Final Goal: From velocities to time, without brute-force enumeration.
+PT-008 · Time Forge · Round 002 · OPEN
