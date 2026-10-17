@@ -12,6 +12,7 @@ Updated: 2026-10-11 18:35 +0800 (L17 added; approved by Tuzi in chat 2026-10-11 
 Updated: 2026-10-11 20:30 +0800 (L18 added; approved by Tuzi in chat 2026-10-11 20:27, chair notes 70-71. Gate total unchanged: 27.07 of 481.07).
 Updated: 2026-10-15 22:54 +0800 (L20–L22 added as PROVISIONAL gates, status OFFICE-RUN, CHAIR-SPOT-CHECKED; approved by Tuzi in chat 2026-10-15 18:31, chair note 91 §5. Gate totals: closed 27.07; provisional 18.00; together 45.07 of 481.07).
 Updated: 2026-10-16 13:07 +0800 (L23 added, p = 443, PROVISIONAL, status OFFICE-RUN, CHAIR-SPOT-CHECKED; approved by Tuzi in chat 2026-10-16 13:07, chair notes 96, 96b. Gate totals: closed 27.07; provisional 24.09; together 51.16 of 481.07).
+Updated: 2026-10-18 04:46 +0800 (L20 p=383 and L21 p=397 PROVISIONAL -> REPRODUCED, second machine K11; L24 p=463 added, PROVISIONAL; approved by Tuzi in chat 2026-10-18 04:46, chair notes 100, 101. Gate totals: closed 39.00; provisional 18.30 (L22, L23, L24); together 57.30 of 481.07).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY · OFFICE-RUN, CHAIR-SPOT-CHECKED.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -291,3 +292,22 @@ CHAIR CHECKS = (1) job list regenerated with bgk15 irroots/irsubroots: 556 = 556
          cascade rows, cascade survivors (PT005/opus/chk1015/spot443_out.jsonl).
 NOT    = REPRODUCED. Provisional as L20–L22.
 Gate totals: closed 27.07; provisional 24.09 (L20–L23); together 51.16 of 481.07.
+
+## L20, L21 · status change: p = 383 and p = 397 REPRODUCED (second machine)
+STATUS = REPRODUCED · approved by Tuzi 2026-10-18 04:46 +08 (chair note 101)
+SCOPE  = unchanged from L20–L22 above, for p = 383 and p = 397 only. Second full run of part (a) on K11 (GMKtec, Ryzen 9 8945HS,
+         16 threads; Hesper, PT005/hesper/k11/p383a-results and p397a-results): same pinned runner kcascade_run.py 90632d55…,
+         same patched cascade source f17094de… (chair reproduced this hash from cascade_filter_k.cpp 50fa9385… + the L2 patch).
+         Chair compared job by job (r, s, rows, nodes, casc_rows, casc_survivors, deep, n_survivor_lines):
+         383: 415 = 415 jobs, 0 differences, km1 23 roots 0 covers; 397: 436 = 436 jobs, 0 differences, km1 24 roots 0 covers.
+         Same code on both machines (not an independent re-implementation), as for L10–L14.
+         L22 (p = 431) stays PROVISIONAL.
+
+## L24 · Prime gate p = 463 (K = 15, 16 runners), level 16, part (a) only (γ(p) = 15)
+STATUS = OFFICE-RUN, CHAIR-SPOT-CHECKED (PROVISIONAL) · approved by Tuzi 2026-10-18 04:46 +08 (chair notes 99, 100)
+SCOPE  = as L20–L22. km1: 28 roots, 0 covers. (a) 589 jobs, 112 rows, 0 alive at level 16 (office PC, results PT005/hesper/officepc-p463/).
+         One level-2 cascade survivor, dies before level 16; "deep" empty in every job.
+CHAIR CHECKS = job list regenerated (bgk15 irroots/irsubroots): 589 = 589, equal as sets; spot reruns (12,18) and (0,0, survivor job):
+         2 of 2 MATCH (PT005/opus/chk1015/spot463_out.jsonl).
+NOT    = REPRODUCED.
+Gate totals: closed 39.00 (L2…L14, L20, L21); provisional 18.30 (L22 431, L23 443, L24 463); together 57.30 of 481.07.
