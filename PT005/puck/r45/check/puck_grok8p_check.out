@@ -1,0 +1,10 @@
+g8 mod 68 sorted         [1, 3, 5, 7, 8, 11, 11, 13, 15, 15, 16, 37, 45, 49, 50]
+g4_printed sorted        [1, 3, 5, 7, 8, 11, 11, 11, 13, 15, 15, 16, 37, 49, 50]
+g4_repaired sorted       [1, 3, 5, 7, 8, 11, 11, 13, 15, 15, 16, 37, 45, 49, 50]
+g8 lift of printed?      False
+g8 lift of repaired?     True
+printed 4p mod 34        True  repaired 4p mod 34 True
+printed 4p open (direct) True  is open child of 2p True
+repaired 4p open (direct) True  is open child of 2p True
+open children: printed 4p 0  repaired 4p 176
+g8 open (direct) True  g8 is open child of repaired 4p True  g8 open children 0
