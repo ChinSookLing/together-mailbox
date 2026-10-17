@@ -1,0 +1,10 @@
+comparisons 3334656 deep(d>=5) 1840464
+printed-model mismatches 326702 of which d>=5: 19266
+fixed-model mismatches 0
+first d>=5 mismatch (p,k,M,T,w,v,u,d,a,s): (11, 9, 5632, 585, 4120, 3, 515, 6, 2, 53)
+example p=17 M=2176 T=201 w=228: ||Tw||_M=132, M/16=136, direct covered=True
+example p=17 M=1088 T=511 w=2: ||Tw||_M=66, M/16=68, direct covered=True
+d=5 printed-rule accepted phases=3, 1/8 of track=4
+d=6 printed-rule accepted phases=7, 1/8 of track=8
+d=7 printed-rule accepted phases=15, 1/8 of track=16
+d=8 printed-rule accepted phases=31, 1/8 of track=32
