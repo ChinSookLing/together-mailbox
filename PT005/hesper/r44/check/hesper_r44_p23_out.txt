@@ -1,0 +1,4 @@
+X open True F1 14 F3 3
+X open children 12
+Y in children True Y open True F1 14 F3 11 Y mod 184 = X True
+Y open children 0
