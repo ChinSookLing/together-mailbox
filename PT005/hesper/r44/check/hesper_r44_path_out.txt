@@ -1,0 +1,10 @@
+19 open True legal True F1 0 F3 0
+38 open True legal True F1 14 F3 0
+76 open True legal True F1 14 F3 0
+152 open True legal True F1 14 F3 14
+304 open True legal True F1 14 F3 14
+T 19 covered by [160]
+T 57 covered by [160]
+T 95 covered by [160]
+T 133 covered by [160]
+residues mod 19 of 152-node: [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 16, 17, 18]
