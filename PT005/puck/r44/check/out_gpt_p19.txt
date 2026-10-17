@@ -1,0 +1,10 @@
+19 open True cov True odd 8 L7 False F1 0 F3 0 legal->next True
+38 open True cov True odd 14 L7 False F1 14 F3 0 legal->next True
+76 open True cov True odd 14 L7 False F1 14 F3 0 legal->next True
+152 open True cov True odd 14 L7 False F1 14 F3 14 legal->next True
+304 open True cov True odd 14 L7 False F1 14 F3 14 legal->next True
+open children of 152 parent: 2
+[191, 59, 41, 213, 195, 101, 121, 160, 47, 125, 145, 15, 73, 207, 37] F3 14
+[39, 211, 193, 61, 43, 253, 273, 160, 199, 277, 297, 167, 225, 55, 189] F3 14
+grandchildren open of [191, 59, 41, 213] ...: 0
+grandchildren open of [39, 211, 193, 61] ...: 0
