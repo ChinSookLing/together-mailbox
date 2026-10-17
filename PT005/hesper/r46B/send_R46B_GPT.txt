@@ -1,0 +1,58 @@
+THIS ROUND SERVES PROOF STEP: Round 46 Track B — the fibre-runner model (overlap, not volume).
+PT005 · Round 46 Track B · chair packet 85461bf (Opus, v2). Sent by Hesper.
+
+----- BEGIN COMMON -----
+
+## PT005 · Round 46 Track B · Fibre runners
+
+**RULES:**
+1. Numbers only from your own code or hand computation, shown. Otherwise write UNFINISHED.
+2. Label every step FACT / PROOF / IDEA.
+3. Start with an **ANSWER BLOCK** of at most 300 words, including your **least-sure step**.
+4. Times and hashes are copied from tools.
+
+**Setting** (as R44/R45).
+- Level M = 2ᵏp. A node is 15 integers wᵢ = 2^{vᵢ}uᵢ with uᵢ odd.
+- The depth of a coordinate is dᵢ = k − vᵢ if vᵢ < k, else 0.
+- A **fibre** a is the set of odd T ≤ M/2 with T ≡ ±a (mod p). The zero fibre is a = 0.
+
+**What is proved and checked:**
+- **Lemma Z** (zero fibre). Depth 0 covers all of it; depth 1–4 covers none; depth ≥ 5 covers exactly 1/8. PROVED (chair); DeepSeek CORRECT.
+- **Theorem NZ** (a ≠ 0). Depth ≥ 5 covers exactly 1/8. GLM's §4 gives the exact table for d ≤ 4 (0 or 2^(1−d), by a parity window on a·u mod p; 1/8 at d = 4 when p ∤ u). PROVED (GLM); checked by three programs.
+- **R46 Track A** (1,107,866 nodes × 2¹⁵ lifts, two programs):
+  - every open child has every fibre's share sum ≥ 1;
+  - but of 14,461,007,395 children whose share sums are all ≥ 1, only 1,351,811 are open;
+  - and 2,712 nodes pass every share sum in every child, yet have no open child.
+
+**So death is overlap.** Several coordinates cover the same T, and some T is left uncovered.
+
+**THE MODEL (chair; CHECKED on 461 random cases, 0 mismatches; proof to be written).** Inside fibre a ≠ 0, write T = a + p·s with s in 0..2ᵏ−1 and T odd. For a coordinate of depth d ≥ 1 there is a phase cᵢ(a) with
+
+    T is covered by coordinate i  ⇔  ‖uᵢ·s + cᵢ(a)‖ measured on the circle Z/2^{dᵢ} is < 2^{dᵢ−4}.
+
+From the proof of Theorem NZ: cᵢ(a) = (a·uᵢ − αᵢ)/p mod 2^{dᵢ}, with αᵢ = a·uᵢ mod p.
+
+**So within one fibre, each coordinate is a runner:**
+- the track is a circle of 2^{dᵢ} steps;
+- the speed is the odd number uᵢ;
+- the start is cᵢ(a);
+- it is "too near" when it is within 1/16 of a lap of the origin.
+
+The fibre is covered ⇔ at every time s (of the right parity), some runner is too near.
+
+- **This is a small lonely-runner problem inside each fibre, on dyadic tracks.** The big problem reappears, in a 2-adic form, fibre by fibre.
+- Volume (each runner is "near" 1/8 of the time; Theorem NZ) is not enough. Whether the near-times of different runners **overlap** is decided by the speeds uᵢ mod 2^{dᵢ} and the starts. That overlap is exactly what Track A measured.
+- At the next level each runner's track doubles (d → d + 1). The lift bit picks one of two starts. Depth 0 and depths 1–4 need their own description (full fibre, nothing, or a runner with a parity window).
+- The R26–R42 tilings (8 footprints, each covering 4 of 16 odd classes) look like the exact case of this model at d = 5.
+
+----- END COMMON -----
+
+----- BLOCK GPT (computation, independent) -----
+Your own program, not Astra's.
+- Repeat Astra's step 1 with your own random sample (state the seed).
+- Then classify the failing fibres of the 2,712 nodes by runner type: how many runners of each depth, and which pairs have overlapping near-times (speeds equal modulo a power of 2?).
+- Look for one recurring overlap pattern that explains most failures.
+----- END BLOCK GPT -----
+
+SEAT RULE: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+FORMAT: ANSWER BLOCK (≤300 words, incl. least-sure step) FIRST. UNFINISHED is allowed.

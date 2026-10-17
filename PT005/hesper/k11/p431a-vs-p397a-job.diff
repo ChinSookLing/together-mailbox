@@ -1,0 +1,50 @@
+1c1
+< # Job k11-p397a (Opus note 100 6c06321 + reply ffb6713): second-machine run of gate p = 397 part (a), office kit unchanged.
+---
+> # Job k11-p431a (Opus letter c4971c3, ledger b3aa314): second-machine run of gate p = 431 part (a), office kit unchanged.
+3,4c3,4
+< # First start: BUDGET stops new jobs at 2026-10-18 09:00 +08. Any start after that runs with no BUDGET.
+< # Restart-safe: kcascade_run.py skips jobs already in out397/ir.jsonl.
+---
+> # First start: BUDGET stops new jobs at 2026-10-19 09:00 +08. Any start after that runs with no BUDGET.
+> # Restart-safe: kcascade_run.py skips jobs already in out431/ir.jsonl.
+9c9
+< N=k11-p397a; W="$WORK/$N"; CK="$W/ckpt"; R="$W/out397"; B="$HOME/lr16/code"
+---
+> N=k11-p431a; W="$WORK/$N"; CK="$W/ckpt"; R="$W/out431"; B="$HOME/lr16/code"
+14c14
+<   cp -f "$W/run397.time" "$W/hashes.txt" "$W/lscpu.txt" "$CK/" 2>/dev/null
+---
+>   cp -f "$W/run431.time" "$W/hashes.txt" "$W/lscpu.txt" "$CK/" 2>/dev/null
+16c16
+<   tail -n 20 "$W/run397.log" > "$CK/run397.log.tail" 2>/dev/null
+---
+>   tail -n 20 "$W/run431.log" > "$CK/run431.log.tail" 2>/dev/null
+19c19
+<   printf '{"job":"%s","ir_lines":%s,"of":436,"time":"%s"}\n' "$N" "$n" "$(date '+%F %T %Z')" > "$CK/latest.json.tmp" && mv "$CK/latest.json.tmp" "$CK/latest.json"
+---
+>   printf '{"job":"%s","ir_lines":%s,"of":514,"time":"%s"}\n' "$N" "$n" "$(date '+%F %T %Z')" > "$CK/latest.json.tmp" && mv "$CK/latest.json.tmp" "$CK/latest.json"
+33c33
+< now=$(date +%s); dl=$(date -d '2026-10-18 09:00:00 +0800' +%s)
+---
+> now=$(date +%s); dl=$(date -d '2026-10-19 09:00:00 +0800' +%s)
+36c36
+< date '+%F %T %Z' | tee -a "$W/run397.time"
+---
+> date '+%F %T %Z' | tee -a "$W/run431.time"
+39c39
+<   BUDGET=$((dl - now)) python3 kcascade_run.py ./bgk15 ./cascade_k15p 397 16 "$R" 2>&1 | tee -a "$W/run397.log"
+---
+>   BUDGET=$((dl - now)) python3 kcascade_run.py ./bgk15 ./cascade_k15p 431 16 "$R" 2>&1 | tee -a "$W/run431.log"
+42c42
+<   python3 kcascade_run.py ./bgk15 ./cascade_k15p 397 16 "$R" 2>&1 | tee -a "$W/run397.log"
+---
+>   python3 kcascade_run.py ./bgk15 ./cascade_k15p 431 16 "$R" 2>&1 | tee -a "$W/run431.log"
+45c45
+< date '+%F %T %Z' | tee -a "$W/run397.time"
+---
+> date '+%F %T %Z' | tee -a "$W/run431.time"
+50c50
+< if (( rc == 0 && n >= 436 )); then date '+%F %T %Z' > "$STATE/$N.done"; echo "DONE $N"; fi
+---
+> if (( rc == 0 && n >= 514 )); then date '+%F %T %Z' > "$STATE/$N.done"; echo "DONE $N"; fi
