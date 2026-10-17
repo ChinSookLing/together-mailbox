@@ -1,0 +1,8 @@
+p=47 VIOLATIONS: 0
+p=47 by F3: [nodes, nodes with open child] {0: [3935, 102], 2: [36, 4], 3: [8, 0]}
+p=53 VIOLATIONS: 0
+p=53 by F3: [nodes, nodes with open child] {0: [1612, 115], 2: [794, 24], 3: [176, 0]}
+p=59 VIOLATIONS: 0
+p=59 by F3: [nodes, nodes with open child] {0: [1341, 65]}
+p=61 VIOLATIONS: 0
+p=61 by F3: [nodes, nodes with open child] {0: [1445, 81]}
