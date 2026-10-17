@@ -1,0 +1,44 @@
+{"SELFTEST_agree": 960, "of": 960}
+{"label": "p47 Astra row (realtree)", "level_p": 1, "open_nodes": 1, "open_nodes_pm_canon": 1, "children_open_next": 336, "secs": 0.0}
+{"label": "p47 Astra row (realtree)", "level_p": 2, "open_nodes": 336, "open_nodes_pm_canon": 336, "children_open_next": 3598, "secs": 0.3}
+{"label": "p47 Astra row (realtree)", "level_p": 4, "open_nodes": 3598, "open_nodes_pm_canon": 3598, "children_open_next": 36, "secs": 3.4}
+{"label": "p47 Astra row (realtree)", "level_p": 8, "open_nodes": 36, "open_nodes_pm_canon": 36, "children_open_next": 8, "secs": 3.4}
+{"label": "p47 Astra row (realtree)", "level_p": 16, "open_nodes": 8, "open_nodes_pm_canon": 8, "children_open_next": 0, "secs": 3.5}
+{"label": "p53 seed20261016 row", "level_p": 1, "open_nodes": 1, "open_nodes_pm_canon": 1, "children_open_next": 167, "secs": 0.0}
+{"label": "p53 seed20261016 row", "level_p": 2, "open_nodes": 167, "open_nodes_pm_canon": 167, "children_open_next": 1444, "secs": 0.2}
+{"label": "p53 seed20261016 row", "level_p": 4, "open_nodes": 1444, "open_nodes_pm_canon": 1444, "children_open_next": 858, "secs": 1.5}
+{"label": "p53 seed20261016 row", "level_p": 8, "open_nodes": 858, "open_nodes_pm_canon": 858, "children_open_next": 112, "secs": 2.4}
+{"label": "p53 seed20261016 row", "level_p": 16, "open_nodes": 112, "open_nodes_pm_canon": 112, "children_open_next": 0, "secs": 2.6}
+{"label": "p59 seed20261016 row", "level_p": 1, "open_nodes": 1, "open_nodes_pm_canon": 1, "children_open_next": 412, "secs": 0.0}
+{"label": "p59 seed20261016 row", "level_p": 2, "open_nodes": 412, "open_nodes_pm_canon": 412, "children_open_next": 928, "secs": 0.4}
+{"label": "p59 seed20261016 row", "level_p": 4, "open_nodes": 928, "open_nodes_pm_canon": 928, "children_open_next": 0, "secs": 1.2}
+{"label": "p61 seed20261016 row", "level_p": 1, "open_nodes": 1, "open_nodes_pm_canon": 1, "children_open_next": 152, "secs": 0.0}
+{"label": "p61 seed20261016 row", "level_p": 2, "open_nodes": 152, "open_nodes_pm_canon": 152, "children_open_next": 1292, "secs": 0.2}
+{"label": "p61 seed20261016 row", "level_p": 4, "open_nodes": 1292, "open_nodes_pm_canon": 1292, "children_open_next": 0, "secs": 1.3}
+{"label": "GPT p47 chain root", "level_p": 1, "open_nodes": 1, "open_nodes_pm_canon": 1, "children_open_next": 513, "secs": 0.0}
+{"label": "GPT p47 chain root", "level_p": 2, "open_nodes": 513, "open_nodes_pm_canon": 513, "children_open_next": 11218, "secs": 0.5}
+{"label": "GPT p47 chain root", "level_p": 4, "open_nodes": 11218, "open_nodes_pm_canon": 11218, "children_open_next": 92, "secs": 10.2}
+{"label": "GPT p47 chain root", "level_p": 8, "open_nodes": 92, "open_nodes_pm_canon": 92, "children_open_next": 0, "secs": 10.3}
+{"label": "Astra p43 chain root", "level_p": 1, "open_nodes": 1, "open_nodes_pm_canon": 1, "children_open_next": 388, "secs": 0.0}
+{"label": "Astra p43 chain root", "level_p": 2, "open_nodes": 388, "open_nodes_pm_canon": 388, "children_open_next": 13514, "secs": 0.4}
+{"label": "Astra p43 chain root", "level_p": 4, "open_nodes": 13514, "open_nodes_pm_canon": 13514, "children_open_next": 7080, "secs": 12.2}
+{"label": "Astra p43 chain root", "level_p": 8, "open_nodes": 7080, "open_nodes_pm_canon": 7080, "children_open_next": 0, "secs": 18.8}
+{"label": "Astra p17 chain @2p", "level_p": 2, "open_nodes": 1, "open_nodes_pm_canon": 1, "children_open_next": 540, "secs": 0.0}
+{"label": "Astra p17 chain @2p", "level_p": 4, "open_nodes": 540, "open_nodes_pm_canon": 540, "children_open_next": 6712, "secs": 0.5}
+{"label": "Astra p17 chain @2p", "level_p": 8, "open_nodes": 6712, "open_nodes_pm_canon": 6712, "children_open_next": 760, "secs": 6.4}
+{"label": "Astra p17 chain @2p", "level_p": 16, "open_nodes": 760, "open_nodes_pm_canon": 760, "children_open_next": 0, "secs": 7.1}
+{"label": "Grok p17 chain @2p", "level_p": 2, "open_nodes": 1, "open_nodes_pm_canon": 1, "children_open_next": 176, "secs": 0.0}
+{"label": "Grok p17 chain @2p", "level_p": 4, "open_nodes": 176, "open_nodes_pm_canon": 176, "children_open_next": 5800, "secs": 0.2}
+{"label": "Grok p17 chain @2p", "level_p": 8, "open_nodes": 5800, "open_nodes_pm_canon": 5800, "children_open_next": 1472, "secs": 5.4}
+{"label": "Grok p17 chain @2p", "level_p": 16, "open_nodes": 1472, "open_nodes_pm_canon": 1472, "children_open_next": 0, "secs": 6.7}
+{"label": "W5 p17 @32p", "level_p": 32, "open_nodes": 1, "open_nodes_pm_canon": 1, "children_open_next": 128, "secs": 0.0}
+{"label": "W5 p17 @32p", "level_p": 64, "open_nodes": 128, "open_nodes_pm_canon": 128, "children_open_next": 0, "secs": 0.3}
+{"chain": "GPT p47", "rows": [{"level_p": 1, "in_tree": true, "open_direct": true, "E": 0, "F3": 0, "F4": 0, "F5": 0, "open_children": 513, "height": 3}, {"level_p": 2, "in_tree": true, "open_direct": true, "E": 12, "F3": 0, "F4": 0, "F5": 0, "open_children": 170, "height": 2}, {"level_p": 4, "in_tree": true, "open_direct": true, "E": 14, "F3": 0, "F4": 0, "F5": 0, "open_children": 2, "height": 1}, {"level_p": 8, "in_tree": true, "open_direct": true, "E": 14, "F3": 12, "F4": 0, "F5": 0, "open_children": 0, "height": 0}]}
+{"chain": "Astra p43", "rows": [{"level_p": 1, "in_tree": true, "open_direct": true, "E": 0, "F3": 0, "F4": 0, "F5": 0, "open_children": 388, "height": 3}, {"level_p": 2, "in_tree": true, "open_direct": true, "E": 10, "F3": 0, "F4": 0, "F5": 0, "open_children": 94, "height": 2}, {"level_p": 4, "in_tree": true, "open_direct": true, "E": 13, "F3": 0, "F4": 0, "F5": 0, "open_children": 2, "height": 1}, {"level_p": 8, "in_tree": true, "open_direct": true, "E": 14, "F3": 10, "F4": 0, "F5": 0, "open_children": 0, "height": 0}]}
+{"chain": "Astra p17", "rows": [{"level_p": 1, "in_tree": false, "open_direct": true, "E": 0, "F3": 0, "F4": 0, "F5": 0, "open_children": 773, "height": "root (not in subtree)"}, {"level_p": 2, "in_tree": true, "open_direct": true, "E": 10, "F3": 0, "F4": 0, "F5": 0, "open_children": 540, "height": 3}, {"level_p": 4, "in_tree": true, "open_direct": true, "E": 14, "F3": 0, "F4": 0, "F5": 0, "open_children": 38, "height": 2}, {"level_p": 8, "in_tree": true, "open_direct": true, "E": 14, "F3": 10, "F4": 0, "F5": 0, "open_children": 0, "height": 0}]}
+{"chain": "Grok p17 (repaired)", "rows": [{"level_p": 1, "in_tree": false, "open_direct": true, "E": 0, "F3": 0, "F4": 0, "F5": 0, "open_children": 993, "height": "root (not in subtree)"}, {"level_p": 2, "in_tree": true, "open_direct": true, "E": 12, "F3": 0, "F4": 0, "F5": 0, "open_children": 176, "height": 3}, {"level_p": 4, "in_tree": true, "open_direct": true, "E": 13, "F3": 0, "F4": 0, "F5": 0, "open_children": 176, "height": 1}, {"level_p": 8, "in_tree": true, "open_direct": true, "E": 13, "F3": 12, "F4": 0, "F5": 0, "open_children": 0, "height": 0}]}
+{"scan_nodes": 562, "open": 418}
+
+real	0m53.778s
+user	0m54.034s
+sys	0m0.405s

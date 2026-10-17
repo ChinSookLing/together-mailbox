@@ -1,0 +1,72 @@
+== Per-tree summary
+{"tree": "p47 Astra row (realtree)", "p": 47, "truncated": false, "open_nodes_scanned": 3979, "levels": {"1": 1, "2": 336, "4": 3598, "8": 36, "16": 8}, "open_F3>=9": 0, "open_F3>=9_with_open_child": 0, "max_open_children_among_F3>=9": null, "F3>=9_by_level": {}, "F3>=9_hist_of_open_children": {}}
+{"tree": "p53 seed20261016 row", "p": 53, "truncated": false, "open_nodes_scanned": 2582, "levels": {"1": 1, "2": 167, "4": 1444, "8": 858, "16": 112}, "open_F3>=9": 0, "open_F3>=9_with_open_child": 0, "max_open_children_among_F3>=9": null, "F3>=9_by_level": {}, "F3>=9_hist_of_open_children": {}}
+{"tree": "p59 seed20261016 row", "p": 59, "truncated": false, "open_nodes_scanned": 1341, "levels": {"1": 1, "2": 412, "4": 928}, "open_F3>=9": 0, "open_F3>=9_with_open_child": 0, "max_open_children_among_F3>=9": null, "F3>=9_by_level": {}, "F3>=9_hist_of_open_children": {}}
+{"tree": "p61 seed20261016 row", "p": 61, "truncated": false, "open_nodes_scanned": 1445, "levels": {"1": 1, "2": 152, "4": 1292}, "open_F3>=9": 0, "open_F3>=9_with_open_child": 0, "max_open_children_among_F3>=9": null, "F3>=9_by_level": {}, "F3>=9_hist_of_open_children": {}}
+{"tree": "GPT p47 chain root", "p": 47, "truncated": false, "open_nodes_scanned": 11824, "levels": {"1": 1, "2": 513, "4": 11218, "8": 92}, "open_F3>=9": 8, "open_F3>=9_with_open_child": 0, "max_open_children_among_F3>=9": 0, "F3>=9_by_level": {"8": 8}, "F3>=9_hist_of_open_children": {"0": 8}}
+{"tree": "Astra p43 chain root", "p": 43, "truncated": false, "open_nodes_scanned": 20983, "levels": {"1": 1, "2": 388, "4": 13514, "8": 7080}, "open_F3>=9": 88, "open_F3>=9_with_open_child": 0, "max_open_children_among_F3>=9": 0, "F3>=9_by_level": {"8": 88}, "F3>=9_hist_of_open_children": {"0": 88}}
+{"tree": "Astra p17 chain @2p", "p": 17, "truncated": false, "open_nodes_scanned": 8013, "levels": {"2": 1, "4": 540, "8": 6712, "16": 760}, "open_F3>=9": 7472, "open_F3>=9_with_open_child": 248, "max_open_children_among_F3>=9": 8, "F3>=9_by_level": {"8": 6712, "16": 760}, "F3>=9_hist_of_open_children": {"0": 7224, "2": 144, "4": 80, "6": 20, "8": 4}}
+{"tree": "Grok p17 chain @2p", "p": 17, "truncated": false, "open_nodes_scanned": 7449, "levels": {"2": 1, "4": 176, "8": 5800, "16": 1472}, "open_F3>=9": 7272, "open_F3>=9_with_open_child": 348, "max_open_children_among_F3>=9": 14, "F3>=9_by_level": {"8": 5800, "16": 1472}, "F3>=9_hist_of_open_children": {"0": 6924, "2": 148, "4": 84, "6": 76, "8": 16, "10": 20, "14": 4}}
+{"tree": "W5 p17 @32p", "p": 17, "truncated": false, "open_nodes_scanned": 129, "levels": {"32": 1, "64": 128}, "open_F3>=9": 0, "open_F3>=9_with_open_child": 0, "max_open_children_among_F3>=9": null, "F3>=9_by_level": {}, "F3>=9_hist_of_open_children": {}}
+== Scan nodes (32p)
+{"scan_nodes": 562, "improper": 562, "open": 418, "open_F3>=9": 286, "open_with_open_child": 0, "F3_hist_open": {"4": 9, "5": 21, "6": 33, "7": 30, "8": 39, "9": 39, "10": 37, "11": 57, "12": 57, "13": 62, "14": 34}, "E_hist_open": {"9": 13, "10": 30, "12": 5, "13": 37, "14": 282, "15": 51}, "open_grandchildren_total": 0}
+== Thresholds: smallest t with [open node, X>=t => 0 open children] on ALL data (= 1 + max X over nodes WITH an open child)
+{"measure": "E", "max_over_nodes_with_open_child": 14, "threshold": 15, "nodes_with_open_child_by_value": {"0": 6, "2": 22, "3": 84, "4": 102, "5": 61, "6": 88, "7": 118, "8": 140, "9": 139, "10": 139, "11": 113, "12": 78, "13": 327, "14": 464}, "open_nodes_with_X>=threshold": 51, "max_X_any_open_node": 15}
+   E>=8: open nodes 55349, with open child 1400, by tree {'p47 Astra row (realtree)': 68, 'p53 seed20261016 row': 22, 'p59 seed20261016 row': 27, 'p61 seed20261016 row': 21, 'GPT p47 chain root': 171, 'Astra p43 chain root': 328, 'Astra p17 chain @2p': 359, 'Grok p17 chain @2p': 403, 'W5 p17 @32p': 1}
+   E>=9: open nodes 54072, with open child 1260, by tree {'p47 Astra row (realtree)': 50, 'p53 seed20261016 row': 13, 'p59 seed20261016 row': 15, 'p61 seed20261016 row': 14, 'GPT p47 chain root': 141, 'Astra p43 chain root': 264, 'Astra p17 chain @2p': 359, 'Grok p17 chain @2p': 403, 'W5 p17 @32p': 1}
+   E>=10: open nodes 51964, with open child 1121, by tree {'p47 Astra row (realtree)': 32, 'p53 seed20261016 row': 6, 'p59 seed20261016 row': 6, 'p61 seed20261016 row': 8, 'GPT p47 chain root': 102, 'Astra p43 chain root': 204, 'Astra p17 chain @2p': 359, 'Grok p17 chain @2p': 403, 'W5 p17 @32p': 1}
+{"measure": "F3", "max_over_nodes_with_open_child": 12, "threshold": 13, "nodes_with_open_child_by_value": {"0": 1256, "2": 28, "4": 1, "10": 248, "12": 348}, "open_nodes_with_X>=threshold": 2276, "max_X_any_open_node": 14}
+   F3>=8: open nodes 15185, with open child 596, by tree {'Astra p17 chain @2p': 248, 'Grok p17 chain @2p': 348}
+   F3>=9: open nodes 15126, with open child 596, by tree {'Astra p17 chain @2p': 248, 'Grok p17 chain @2p': 348}
+   F3>=10: open nodes 15039, with open child 596, by tree {'Astra p17 chain @2p': 248, 'Grok p17 chain @2p': 348}
+{"measure": "F4", "max_over_nodes_with_open_child": 3, "threshold": 4, "nodes_with_open_child_by_value": {"0": 1880, "3": 1}, "open_nodes_with_X>=threshold": 2724, "max_X_any_open_node": 14}
+   F4>=8: open nodes 2404, with open child 0, by tree {}
+   F4>=9: open nodes 2370, with open child 0, by tree {}
+   F4>=10: open nodes 2341, with open child 0, by tree {}
+{"measure": "F5", "max_over_nodes_with_open_child": 2, "threshold": 3, "nodes_with_open_child_by_value": {"0": 1880, "2": 1}, "open_nodes_with_X>=threshold": 341, "max_X_any_open_node": 13}
+   F5>=8: open nodes 62, with open child 0, by tree {}
+   F5>=9: open nodes 53, with open child 0, by tree {}
+   F5>=10: open nodes 45, with open child 0, by tree {}
+== Threshold per tree (F3)
+   p47 Astra row (realtree): max F3 with open child = 2; max F3 overall = 3
+   p53 seed20261016 row: max F3 with open child = 2; max F3 overall = 3
+   p59 seed20261016 row: max F3 with open child = 0; max F3 overall = 0
+   p61 seed20261016 row: max F3 with open child = 0; max F3 overall = 0
+   GPT p47 chain root: max F3 with open child = 0; max F3 overall = 13
+   Astra p43 chain root: max F3 with open child = 0; max F3 overall = 11
+   Astra p17 chain @2p: max F3 with open child = 10; max F3 overall = 14
+   Grok p17 chain @2p: max F3 with open child = 12; max F3 overall = 14
+   W5 p17 @32p: max F3 with open child = 4; max F3 overall = 5
+   scan: max F3 with open child = None; max F3 overall = 14
+== Corollary: open node with E>=9 at M has no open descendant at 8M  (height = #further doublings with an open descendant)
+   ('Astra p17 chain @2p', 0) 7654
+   ('Astra p17 chain @2p', 1) 308
+   ('Astra p17 chain @2p', 2) 50
+   ('Astra p17 chain @2p', 3) 1
+   ('Astra p43 chain root', 0) 19000
+   ('Astra p43 chain root', 1) 255
+   ('Astra p43 chain root', 2) 9
+   ('GPT p47 chain root', 0) 11327
+   ('GPT p47 chain root', 1) 139
+   ('GPT p47 chain root', 2) 2
+   ('Grok p17 chain @2p', 0) 7046
+   ('Grok p17 chain @2p', 1) 370
+   ('Grok p17 chain @2p', 2) 32
+   ('Grok p17 chain @2p', 3) 1
+   ('W5 p17 @32p', 0) 128
+   ('W5 p17 @32p', 1) 1
+   ('p47 Astra row (realtree)', 0) 3667
+   ('p47 Astra row (realtree)', 1) 50
+   ('p53 seed20261016 row', 0) 1218
+   ('p53 seed20261016 row', 1) 13
+   ('p59 seed20261016 row', 0) 1093
+   ('p59 seed20261016 row', 1) 15
+   ('p61 seed20261016 row', 0) 1261
+   ('p61 seed20261016 row', 1) 14
+   ('scan', 0) 418
+  violations (E>=9, height>=3): 2 {('Astra p17 chain @2p', 2, 10): 1, ('Grok p17 chain @2p', 2, 12): 1}
+== Witnesses: re-verified with the LITERAL definitions (slow path)
+{"tree": "Astra p17 chain @2p", "p": 17, "M": 136, "level_p": 8, "w": [1, 3, 3, 5, 7, 8, 18, 22, 40, 55, 69, 75, 87, 105, 110], "E": 13, "F3": 10, "F4": 0, "F5": 0, "open_literal": true, "n_open_children": 2, "child": [1, 3, 5, 7, 8, 69, 75, 87, 139, 154, 158, 176, 191, 241, 246], "child_level_p": 16, "child_is_lift": true, "child_open_literal": true, "child_counts": {"E": 14, "F3": 13, "F4": 10, "F5": 0}}
+{"tree": "Grok p17 chain @2p", "p": 17, "M": 136, "level_p": 8, "w": [1, 3, 8, 11, 13, 15, 37, 49, 73, 75, 79, 84, 113, 117, 118], "E": 14, "F3": 12, "F4": 0, "F5": 0, "open_literal": true, "n_open_children": 2, "child": [1, 13, 15, 79, 84, 118, 139, 144, 147, 173, 185, 209, 211, 249, 253], "child_level_p": 16, "child_is_lift": true, "child_open_literal": true, "child_counts": {"E": 14, "F3": 13, "F4": 12, "F5": 0}}
+{"tree": "Astra p17 chain @2p", "p": 17, "path": [{"level_p": 2, "w": [1, 1, 3, 3, 3, 5, 6, 7, 7, 8, 8, 18, 19, 21, 22], "E": 10, "F3": 0, "F4": 0, "F5": 0, "open_literal": true, "lift_of_prev": true}, {"level_p": 4, "w": [1, 1, 3, 3, 5, 7, 7, 8, 18, 19, 22, 37, 40, 42, 55], "E": 13, "F3": 0, "F4": 0, "F5": 0, "open_literal": true, "lift_of_prev": true}, {"level_p": 8, "w": [1, 3, 3, 5, 7, 8, 18, 22, 40, 55, 69, 75, 87, 105, 110], "E": 13, "F3": 10, "F4": 0, "F5": 0, "open_literal": true, "lift_of_prev": true}, {"level_p": 16, "w": [1, 3, 5, 7, 8, 69, 75, 87, 139, 154, 158, 176, 191, 241, 246], "E": 14, "F3": 13, "F4": 10, "F5": 0, "open_literal": true, "lift_of_prev": true}]}
+{"tree": "Grok p17 chain @2p", "p": 17, "path": [{"level_p": 2, "w": [1, 3, 3, 5, 7, 8, 11, 11, 11, 13, 15, 15, 15, 16, 16], "E": 12, "F3": 0, "F4": 0, "F5": 0, "open_literal": true, "lift_of_prev": true}, {"level_p": 4, "w": [1, 3, 5, 7, 8, 11, 11, 13, 15, 16, 37, 45, 49, 49, 50], "E": 13, "F3": 0, "F4": 0, "F5": 0, "open_literal": true, "lift_of_prev": true}, {"level_p": 8, "w": [1, 3, 8, 11, 13, 15, 37, 49, 73, 75, 79, 84, 113, 117, 118], "E": 14, "F3": 12, "F4": 0, "F5": 0, "open_literal": true, "lift_of_prev": true}, {"level_p": 16, "w": [1, 13, 15, 79, 84, 118, 139, 144, 147, 173, 185, 209, 211, 249, 253], "E": 14, "F3": 13, "F4": 12, "F5": 0, "open_literal": true, "lift_of_prev": true}]}

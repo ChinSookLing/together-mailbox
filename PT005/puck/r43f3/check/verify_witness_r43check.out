@@ -1,0 +1,40 @@
+== Astra p17
+ level 1p M=17 E=0 F3=0 F4=0 odd=10 allT_covered=True open=True lift_of_prev=True
+ level 2p M=34 E=10 F3=0 F4=0 odd=10 allT_covered=True open=True lift_of_prev=True
+ level 4p M=68 E=13 F3=0 F4=0 odd=10 allT_covered=True open=True lift_of_prev=True
+ level 8p M=136 E=13 F3=10 F4=0 odd=10 allT_covered=True open=True lift_of_prev=True
+    D=2 |E|=10 S=10 closed=False
+    D=4 |E|=13 S=16 closed=False
+    D=8 |E|=13 S=16 closed=False
+    D=34 |E|=15 S=80 closed=False
+    D=68 |E|=15 S=144 closed=False
+    D=136 |E|=15 S=272 closed=False
+ level 16p M=272 E=14 F3=13 F4=10 odd=10 allT_covered=True open=True lift_of_prev=True
+    D=2 |E|=10 S=10 closed=False
+    D=4 |E|=13 S=16 closed=False
+    D=8 |E|=13 S=16 closed=False
+    D=16 |E|=14 S=34 closed=False
+    D=34 |E|=15 S=80 closed=False
+    D=68 |E|=15 S=144 closed=False
+    D=136 |E|=15 S=272 closed=False
+    D=272 |E|=15 S=530 closed=False
+== Grok p17
+ level 1p M=17 E=0 F3=0 F4=0 odd=12 allT_covered=True open=True lift_of_prev=True
+ level 2p M=34 E=12 F3=0 F4=0 odd=12 allT_covered=True open=True lift_of_prev=True
+ level 4p M=68 E=13 F3=0 F4=0 odd=12 allT_covered=True open=True lift_of_prev=True
+ level 8p M=136 E=14 F3=12 F4=0 odd=12 allT_covered=True open=True lift_of_prev=True
+    D=2 |E|=12 S=12 closed=False
+    D=4 |E|=13 S=14 closed=False
+    D=8 |E|=14 S=18 closed=False
+    D=34 |E|=15 S=78 closed=False
+    D=68 |E|=15 S=142 closed=False
+    D=136 |E|=15 S=266 closed=False
+ level 16p M=272 E=14 F3=13 F4=12 odd=12 allT_covered=True open=True lift_of_prev=True
+    D=2 |E|=12 S=12 closed=False
+    D=4 |E|=13 S=14 closed=False
+    D=8 |E|=14 S=18 closed=False
+    D=16 |E|=14 S=30 closed=False
+    D=34 |E|=15 S=78 closed=False
+    D=68 |E|=15 S=142 closed=False
+    D=136 |E|=15 S=266 closed=False
+    D=272 |E|=15 S=526 closed=False
