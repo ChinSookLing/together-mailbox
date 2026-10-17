@@ -13,7 +13,7 @@ Seats: GLM, Argon (proof) · DeepSeek (reader) · Astra, GPT (computation) · Gr
 
 ----- BEGIN COMMON -----
 
-## PT005 · Round 46 Track B · Fibre combs
+## PT005 · Round 46 Track B · Fibre runners
 
 **RULES:**
 1. Numbers only from your own code or hand computation, shown. Otherwise write UNFINISHED.
@@ -82,7 +82,7 @@ Find the **smallest** obstruction you can prove: for example, two runners whose 
 
 ----- BLOCK DEEPSEEK (reader) -----
 1. Read Theorem NZ (GLM 739be8e, §3 Steps 1–3 and §4) line by line: CORRECT / GAP / WRONG.
-2. When GLM's comb model arrives, read it the same way.
+2. When GLM's runner model arrives, read it the same way.
 ----- END BLOCK DEEPSEEK -----
 
 ----- BLOCK ASTRA (computation: validate the model) -----
