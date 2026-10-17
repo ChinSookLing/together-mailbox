@@ -1,0 +1,332 @@
+PT005 R45 Track A - Hesper summary (own program hesper_r45.py)
+open nodes (distinct p,M,coords): 57840
+sha256 of sorted node list (one line per node 'p M coords', sorted by p, M, coords tuple; LF endings, trailing LF): 9268e214fb9c66cf4a826dc600d2e87e6ec7e53aed856a59a37f2f55f9a86f4d
+
+nodes per p / per level (2^k): count, max survival
+  p=17: 15591 nodes; 2p:2 (maxsurv 3); 4p:716 (maxsurv 2); 8p:12512 (maxsurv 1); 16p:2232 (maxsurv 0); 32p:1 (maxsurv 1); 64p:128 (maxsurv 0)
+  p=19: 18 nodes; 8p:1 (maxsurv 1); 16p:2 (maxsurv 0); 32p:15 (maxsurv 0)
+  p=23: 25 nodes; 8p:1 (maxsurv 1); 16p:12 (maxsurv 0); 32p:12 (maxsurv 0)
+  p=29: 9 nodes; 32p:9 (maxsurv 0)
+  p=31: 11 nodes; 32p:11 (maxsurv 0)
+  p=37: 13 nodes; 32p:13 (maxsurv 0)
+  p=41: 9 nodes; 32p:9 (maxsurv 0)
+  p=43: 20993 nodes; 1p:1 (maxsurv 3); 2p:388 (maxsurv 2); 4p:13514 (maxsurv 1); 8p:7080 (maxsurv 0); 32p:10 (maxsurv 0)
+  p=47: 15803 nodes; 1p:2 (maxsurv 4); 2p:849 (maxsurv 3); 4p:14816 (maxsurv 2); 8p:128 (maxsurv 1); 16p:8 (maxsurv 0)
+  p=53: 2582 nodes; 1p:1 (maxsurv 4); 2p:167 (maxsurv 3); 4p:1444 (maxsurv 2); 8p:858 (maxsurv 1); 16p:112 (maxsurv 0)
+  p=59: 1341 nodes; 1p:1 (maxsurv 2); 2p:412 (maxsurv 1); 4p:928 (maxsurv 0)
+  p=61: 1445 nodes; 1p:1 (maxsurv 2); 2p:152 (maxsurv 1); 4p:1292 (maxsurv 0)
+
+== F3: value -> nodes, max survival depth, nodes with >=1 open child; (max survival restricted to p>=19)
+  0: n=34686 maxsurv=4 with_open_child=1256  | p>=19: n=33968 maxsurv=4
+  2: n=6378 maxsurv=1 with_open_child=28  | p>=19: n=6378 maxsurv=1
+  3: n=1381 maxsurv=1 with_open_child=1  | p>=19: n=1381 maxsurv=1
+  4: n=186 maxsurv=1 with_open_child=1  | p>=19: n=185 maxsurv=0
+  5: n=215 maxsurv=0 with_open_child=0  | p>=19: n=87 maxsurv=0
+  6: n=10 maxsurv=0 with_open_child=0  | p>=19: n=10 maxsurv=0
+  7: n=58 maxsurv=0 with_open_child=0  | p>=19: n=58 maxsurv=0
+  8: n=28 maxsurv=0 with_open_child=0  | p>=19: n=28 maxsurv=0
+  9: n=56 maxsurv=0 with_open_child=0  | p>=19: n=56 maxsurv=0
+  10: n=6750 maxsurv=1 with_open_child=248  | p>=19: n=38 maxsurv=0
+  11: n=29 maxsurv=0 with_open_child=0  | p>=19: n=29 maxsurv=0
+  12: n=5867 maxsurv=1 with_open_child=348  | p>=19: n=11 maxsurv=0
+  13: n=1517 maxsurv=0 with_open_child=0  | p>=19: n=13 maxsurv=0
+  14: n=679 maxsurv=1 with_open_child=1  | p>=19: n=7 maxsurv=1
+
+== F4: value -> nodes, max survival depth, nodes with >=1 open child; (max survival restricted to p>=19)
+  0: n=55266 maxsurv=4 with_open_child=1882  | p>=19: n=42036 maxsurv=4
+  2: n=120 maxsurv=0 with_open_child=0  | p>=19: n=120 maxsurv=0
+  3: n=28 maxsurv=1 with_open_child=1  | p>=19: n=27 maxsurv=0
+  4: n=149 maxsurv=0 with_open_child=0  | p>=19: n=21 maxsurv=0
+  5: n=9 maxsurv=0 with_open_child=0  | p>=19: n=9 maxsurv=0
+  6: n=5 maxsurv=0 with_open_child=0  | p>=19: n=5 maxsurv=0
+  7: n=3 maxsurv=0 with_open_child=0  | p>=19: n=3 maxsurv=0
+  8: n=8 maxsurv=0 with_open_child=0  | p>=19: n=8 maxsurv=0
+  9: n=2 maxsurv=0 with_open_child=0  | p>=19: n=2 maxsurv=0
+  10: n=763 maxsurv=0 with_open_child=0  | p>=19: n=3 maxsurv=0
+  11: n=4 maxsurv=0 with_open_child=0  | p>=19: n=4 maxsurv=0
+  12: n=1476 maxsurv=0 with_open_child=0  | p>=19: n=4 maxsurv=0
+  13: n=5 maxsurv=0 with_open_child=0  | p>=19: n=5 maxsurv=0
+  14: n=2 maxsurv=0 with_open_child=0  | p>=19: n=2 maxsurv=0
+
+== F4 restricted to F0=0: value -> nodes, max survival depth, nodes with >=1 open child; (max survival restricted to p>=19)
+  11: n=1 maxsurv=0 with_open_child=0  | p>=19: n=1 maxsurv=0
+  12: n=2 maxsurv=0 with_open_child=0  | p>=19: n=2 maxsurv=0
+  13: n=4 maxsurv=0 with_open_child=0  | p>=19: n=4 maxsurv=0
+
+== zero-fibre capacity Z=[F0>0]*2^(k-1)+F4*2^(k-4) (k>=1 only): value -> nodes, max survival depth, nodes with >=1 open child; (max survival restricted to p>=19)
+  1: n=1970 maxsurv=3 with_open_child=640  | p>=19: n=1968 maxsurv=3
+  2: n=32710 maxsurv=2 with_open_child=610  | p>=19: n=31994 maxsurv=2
+  4: n=20580 maxsurv=1 with_open_child=626  | p>=19: n=8068 maxsurv=1
+  10: n=120 maxsurv=0 with_open_child=0  | p>=19: n=120 maxsurv=0
+  11: n=12 maxsurv=0 with_open_child=0  | p>=19: n=12 maxsurv=0
+  18: n=760 maxsurv=0 with_open_child=0  | p>=19: n=0 maxsurv=-
+  20: n=1472 maxsurv=0 with_open_child=0  | p>=19: n=0 maxsurv=-
+  22: n=19 maxsurv=1 with_open_child=1  | p>=19: n=18 maxsurv=0
+  24: n=23 maxsurv=0 with_open_child=0  | p>=19: n=23 maxsurv=0
+  26: n=13 maxsurv=0 with_open_child=0  | p>=19: n=13 maxsurv=0
+  28: n=5 maxsurv=0 with_open_child=0  | p>=19: n=5 maxsurv=0
+  30: n=3 maxsurv=0 with_open_child=0  | p>=19: n=3 maxsurv=0
+  32: n=8 maxsurv=0 with_open_child=0  | p>=19: n=8 maxsurv=0
+  34: n=2 maxsurv=0 with_open_child=0  | p>=19: n=2 maxsurv=0
+  36: n=3 maxsurv=0 with_open_child=0  | p>=19: n=3 maxsurv=0
+  38: n=3 maxsurv=0 with_open_child=0  | p>=19: n=3 maxsurv=0
+  40: n=2 maxsurv=0 with_open_child=0  | p>=19: n=2 maxsurv=0
+  42: n=1 maxsurv=0 with_open_child=0  | p>=19: n=1 maxsurv=0
+  48: n=128 maxsurv=0 with_open_child=0  | p>=19: n=0 maxsurv=-
+
+== Z/2^(k-1) = [F0>0] + F4/8 (k>=1 only): value -> nodes, max survival depth, nodes with >=1 open child; (max survival restricted to p>=19)
+  1.0: n=55260 maxsurv=3 with_open_child=1876  | p>=19: n=42030 maxsurv=3
+  1.25: n=120 maxsurv=0 with_open_child=0  | p>=19: n=120 maxsurv=0
+  1.375: n=29 maxsurv=1 with_open_child=1  | p>=19: n=28 maxsurv=0
+  1.5: n=151 maxsurv=0 with_open_child=0  | p>=19: n=23 maxsurv=0
+  1.625: n=13 maxsurv=0 with_open_child=0  | p>=19: n=13 maxsurv=0
+  1.75: n=5 maxsurv=0 with_open_child=0  | p>=19: n=5 maxsurv=0
+  1.875: n=3 maxsurv=0 with_open_child=0  | p>=19: n=3 maxsurv=0
+  2.0: n=8 maxsurv=0 with_open_child=0  | p>=19: n=8 maxsurv=0
+  2.125: n=2 maxsurv=0 with_open_child=0  | p>=19: n=2 maxsurv=0
+  2.25: n=763 maxsurv=0 with_open_child=0  | p>=19: n=3 maxsurv=0
+  2.375: n=3 maxsurv=0 with_open_child=0  | p>=19: n=3 maxsurv=0
+  2.5: n=1474 maxsurv=0 with_open_child=0  | p>=19: n=2 maxsurv=0
+  2.625: n=1 maxsurv=0 with_open_child=0  | p>=19: n=1 maxsurv=0
+  2.75: n=2 maxsurv=0 with_open_child=0  | p>=19: n=2 maxsurv=0
+
+notes:
+  survival_depth: 0 = no open child; else 1 + max over open children. Every listed node's full open subtree was computed (no partial subtrees).
+  source: '|'-joined labels of every completed root whose subtree contains the node.
+  Z tables use k>=1 nodes only (level-p rows k=0 omitted, 2^(k-1) undefined). Z is NOT normalised across k; the Z/2^(k-1) table is.
+  Dedupe is exact sorted tuples (no per-coordinate sign reduction), so counts differ from canon(+/-) counts in older logs.
+  Two level-p p=17 roots (R43 Grok, R43 Astra R) exceed the cap (4p frontier 0.5-0.9M nodes); replaced by their committed chain nodes at 2p/4p/8p as roots.
+  Discrepancy: the committed R43 Grok p=17 8p vector [8,113,11,49,37,73,83,11,75,50,1,15,16,3,13] is NOT a lift of its 4p vector (mod 68 it has 45, not a second 11); it is open with 0 open children, and the 4p vector itself has 0 open children. Both kept as separate roots.
+  l30b scan rows (p=19..43, 140 rows at 32p): 79 open, 61 improper-but-L7-closed or not improper (logged as NOT OPEN, skipped).
+  Cross-check: p=53 seed row gives F3=3 -> 176 nodes, 0 with open child (matches chair R44 evidence table row).
+
+roots: label status
+  witnessA_p17 p=17 M=136 done
+  witnessB_p17 p=17 M=136 done
+  W5_p17 p=17 M=544 done
+  GPT_p19_152 p=19 M=152 done
+  Astra_p23_X_184 p=23 M=184 done
+  R43_Grok_p17 p=17 M=17 capped
+  R43_GPT_p47 p=47 M=47 done
+  R43_Astra_p43 p=43 M=43 done
+  R43_Astra_p17_R p=17 M=17 capped
+  R43_Grok_p17@2p p=17 M=34 done
+  R43_Grok_p17@4p p=17 M=68 done
+  R43_Grok_p17@8p p=17 M=136 done
+  R43_GPT_p47@2p p=47 M=94 done
+  R43_GPT_p47@4p p=47 M=188 done
+  R43_GPT_p47@8p p=47 M=376 done
+  R43_Astra_p43@2p p=43 M=86 done
+  R43_Astra_p43@4p p=43 M=172 done
+  R43_Astra_p43@8p p=43 M=344 done
+  R43_Astra_p17_X@2p p=17 M=34 done
+  R43_Astra_p17_Y@8p p=17 M=136 done
+  AstraR_p47_row p=47 M=47 done
+  seed20261016_p53 p=53 M=53 done
+  seed20261016_p59 p=59 M=59 done
+  seed20261016_p61 p=61 M=61 done
+  l30b_scan_p19_f10_0 p=19 M=608 done
+  l30b_scan_p19_f10_1 p=19 M=608 done
+  l30b_scan_p19_f10_2 p=19 M=608 done
+  l30b_scan_p19_f10_3 p=19 M=608 not_open
+  l30b_scan_p19_f10_4 p=19 M=608 not_open
+  l30b_scan_p19_f10_5 p=19 M=608 done
+  l30b_scan_p19_f10_6 p=19 M=608 not_open
+  l30b_scan_p19_f10_7 p=19 M=608 not_open
+  l30b_scan_p19_f10_8 p=19 M=608 not_open
+  l30b_scan_p19_f10_9 p=19 M=608 done
+  l30b_scan_p19_f15_0 p=19 M=608 done
+  l30b_scan_p19_f15_1 p=19 M=608 done
+  l30b_scan_p19_f15_2 p=19 M=608 done
+  l30b_scan_p19_f15_3 p=19 M=608 done
+  l30b_scan_p19_f15_4 p=19 M=608 done
+  l30b_scan_p19_f15_5 p=19 M=608 done
+  l30b_scan_p19_f15_6 p=19 M=608 done
+  l30b_scan_p19_f15_7 p=19 M=608 done
+  l30b_scan_p19_f15_8 p=19 M=608 done
+  l30b_scan_p19_f15_9 p=19 M=608 done
+  l30b_scan_p23_f10_0 p=23 M=736 not_open
+  l30b_scan_p23_f10_1 p=23 M=736 not_open
+  l30b_scan_p23_f10_2 p=23 M=736 not_open
+  l30b_scan_p23_f10_3 p=23 M=736 not_open
+  l30b_scan_p23_f10_4 p=23 M=736 done
+  l30b_scan_p23_f10_5 p=23 M=736 not_open
+  l30b_scan_p23_f10_6 p=23 M=736 not_open
+  l30b_scan_p23_f10_7 p=23 M=736 not_open
+  l30b_scan_p23_f10_8 p=23 M=736 done
+  l30b_scan_p23_f10_9 p=23 M=736 not_open
+  l30b_scan_p23_f15_0 p=23 M=736 done
+  l30b_scan_p23_f15_1 p=23 M=736 done
+  l30b_scan_p23_f15_2 p=23 M=736 done
+  l30b_scan_p23_f15_3 p=23 M=736 done
+  l30b_scan_p23_f15_4 p=23 M=736 done
+  l30b_scan_p23_f15_5 p=23 M=736 done
+  l30b_scan_p23_f15_6 p=23 M=736 done
+  l30b_scan_p23_f15_7 p=23 M=736 done
+  l30b_scan_p23_f15_8 p=23 M=736 done
+  l30b_scan_p23_f15_9 p=23 M=736 done
+  l30b_scan_p29_f10_0 p=29 M=928 not_open
+  l30b_scan_p29_f10_1 p=29 M=928 not_open
+  l30b_scan_p29_f10_2 p=29 M=928 not_open
+  l30b_scan_p29_f10_3 p=29 M=928 not_open
+  l30b_scan_p29_f10_4 p=29 M=928 not_open
+  l30b_scan_p29_f10_5 p=29 M=928 not_open
+  l30b_scan_p29_f10_6 p=29 M=928 not_open
+  l30b_scan_p29_f10_7 p=29 M=928 not_open
+  l30b_scan_p29_f10_8 p=29 M=928 not_open
+  l30b_scan_p29_f10_9 p=29 M=928 not_open
+  l30b_scan_p29_f15_0 p=29 M=928 done
+  l30b_scan_p29_f15_1 p=29 M=928 done
+  l30b_scan_p29_f15_2 p=29 M=928 done
+  l30b_scan_p29_f15_3 p=29 M=928 done
+  l30b_scan_p29_f15_4 p=29 M=928 done
+  l30b_scan_p29_f15_5 p=29 M=928 done
+  l30b_scan_p29_f15_6 p=29 M=928 done
+  l30b_scan_p29_f15_7 p=29 M=928 done
+  l30b_scan_p29_f15_8 p=29 M=928 done
+  l30b_scan_p29_f15_9 p=29 M=928 not_open
+  l30b_scan_p31_f10_0 p=31 M=992 done
+  l30b_scan_p31_f10_1 p=31 M=992 not_open
+  l30b_scan_p31_f10_2 p=31 M=992 not_open
+  l30b_scan_p31_f10_3 p=31 M=992 not_open
+  l30b_scan_p31_f10_4 p=31 M=992 not_open
+  l30b_scan_p31_f10_5 p=31 M=992 not_open
+  l30b_scan_p31_f10_6 p=31 M=992 not_open
+  l30b_scan_p31_f10_7 p=31 M=992 not_open
+  l30b_scan_p31_f10_8 p=31 M=992 not_open
+  l30b_scan_p31_f10_9 p=31 M=992 not_open
+  l30b_scan_p31_f15_0 p=31 M=992 done
+  l30b_scan_p31_f15_1 p=31 M=992 done
+  l30b_scan_p31_f15_2 p=31 M=992 done
+  l30b_scan_p31_f15_3 p=31 M=992 done
+  l30b_scan_p31_f15_4 p=31 M=992 done
+  l30b_scan_p31_f15_5 p=31 M=992 done
+  l30b_scan_p31_f15_6 p=31 M=992 done
+  l30b_scan_p31_f15_7 p=31 M=992 done
+  l30b_scan_p31_f15_8 p=31 M=992 done
+  l30b_scan_p31_f15_9 p=31 M=992 done
+  l30b_scan_p37_f10_0 p=37 M=1184 done
+  l30b_scan_p37_f10_1 p=37 M=1184 done
+  l30b_scan_p37_f10_2 p=37 M=1184 not_open
+  l30b_scan_p37_f10_3 p=37 M=1184 not_open
+  l30b_scan_p37_f10_4 p=37 M=1184 not_open
+  l30b_scan_p37_f10_5 p=37 M=1184 done
+  l30b_scan_p37_f10_6 p=37 M=1184 not_open
+  l30b_scan_p37_f10_7 p=37 M=1184 not_open
+  l30b_scan_p37_f10_8 p=37 M=1184 done
+  l30b_scan_p37_f10_9 p=37 M=1184 not_open
+  l30b_scan_p37_f15_0 p=37 M=1184 done
+  l30b_scan_p37_f15_1 p=37 M=1184 done
+  l30b_scan_p37_f15_2 p=37 M=1184 done
+  l30b_scan_p37_f15_3 p=37 M=1184 done
+  l30b_scan_p37_f15_4 p=37 M=1184 done
+  l30b_scan_p37_f15_5 p=37 M=1184 not_open
+  l30b_scan_p37_f15_6 p=37 M=1184 done
+  l30b_scan_p37_f15_7 p=37 M=1184 done
+  l30b_scan_p37_f15_8 p=37 M=1184 done
+  l30b_scan_p37_f15_9 p=37 M=1184 done
+  l30b_scan_p41_f10_0 p=41 M=1312 not_open
+  l30b_scan_p41_f10_1 p=41 M=1312 not_open
+  l30b_scan_p41_f10_2 p=41 M=1312 not_open
+  l30b_scan_p41_f10_3 p=41 M=1312 not_open
+  l30b_scan_p41_f10_4 p=41 M=1312 not_open
+  l30b_scan_p41_f10_5 p=41 M=1312 not_open
+  l30b_scan_p41_f10_6 p=41 M=1312 not_open
+  l30b_scan_p41_f10_7 p=41 M=1312 done
+  l30b_scan_p41_f10_8 p=41 M=1312 done
+  l30b_scan_p41_f10_9 p=41 M=1312 not_open
+  l30b_scan_p41_f15_0 p=41 M=1312 not_open
+  l30b_scan_p41_f15_1 p=41 M=1312 done
+  l30b_scan_p41_f15_2 p=41 M=1312 done
+  l30b_scan_p41_f15_3 p=41 M=1312 done
+  l30b_scan_p41_f15_4 p=41 M=1312 not_open
+  l30b_scan_p41_f15_5 p=41 M=1312 done
+  l30b_scan_p41_f15_6 p=41 M=1312 not_open
+  l30b_scan_p41_f15_7 p=41 M=1312 done
+  l30b_scan_p41_f15_8 p=41 M=1312 done
+  l30b_scan_p41_f15_9 p=41 M=1312 done
+  l30b_scan_p43_f10_0 p=43 M=1376 not_open
+  l30b_scan_p43_f10_1 p=43 M=1376 done
+  l30b_scan_p43_f10_2 p=43 M=1376 not_open
+  l30b_scan_p43_f10_3 p=43 M=1376 not_open
+  l30b_scan_p43_f10_4 p=43 M=1376 not_open
+  l30b_scan_p43_f10_5 p=43 M=1376 done
+  l30b_scan_p43_f10_6 p=43 M=1376 not_open
+  l30b_scan_p43_f10_7 p=43 M=1376 not_open
+  l30b_scan_p43_f10_8 p=43 M=1376 not_open
+  l30b_scan_p43_f10_9 p=43 M=1376 not_open
+  l30b_scan_p43_f15_0 p=43 M=1376 not_open
+  l30b_scan_p43_f15_1 p=43 M=1376 done
+  l30b_scan_p43_f15_2 p=43 M=1376 done
+  l30b_scan_p43_f15_3 p=43 M=1376 done
+  l30b_scan_p43_f15_4 p=43 M=1376 done
+  l30b_scan_p43_f15_5 p=43 M=1376 done
+  l30b_scan_p43_f15_6 p=43 M=1376 done
+  l30b_scan_p43_f15_7 p=43 M=1376 done
+  l30b_scan_p43_f15_8 p=43 M=1376 done
+  l30b_scan_p43_f15_9 p=43 M=1376 not_open
+
+log:
+  ROOT l30b_scan_p19_f10_3 p=19 M=608 NOT OPEN, skipped
+  ROOT l30b_scan_p19_f10_4 p=19 M=608 NOT OPEN, skipped
+  ROOT l30b_scan_p19_f10_6 p=19 M=608 NOT OPEN, skipped
+  ROOT l30b_scan_p19_f10_7 p=19 M=608 NOT OPEN, skipped
+  ROOT l30b_scan_p19_f10_8 p=19 M=608 NOT OPEN, skipped
+  ROOT l30b_scan_p23_f10_0 p=23 M=736 NOT OPEN, skipped
+  ROOT l30b_scan_p23_f10_1 p=23 M=736 NOT OPEN, skipped
+  ROOT l30b_scan_p23_f10_2 p=23 M=736 NOT OPEN, skipped
+  ROOT l30b_scan_p23_f10_3 p=23 M=736 NOT OPEN, skipped
+  ROOT l30b_scan_p23_f10_5 p=23 M=736 NOT OPEN, skipped
+  ROOT l30b_scan_p23_f10_6 p=23 M=736 NOT OPEN, skipped
+  ROOT l30b_scan_p23_f10_7 p=23 M=736 NOT OPEN, skipped
+  ROOT l30b_scan_p23_f10_9 p=23 M=736 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f10_0 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f10_1 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f10_2 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f10_3 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f10_4 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f10_5 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f10_6 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f10_7 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f10_8 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f10_9 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p29_f15_9 p=29 M=928 NOT OPEN, skipped
+  ROOT l30b_scan_p31_f10_1 p=31 M=992 NOT OPEN, skipped
+  ROOT l30b_scan_p31_f10_2 p=31 M=992 NOT OPEN, skipped
+  ROOT l30b_scan_p31_f10_3 p=31 M=992 NOT OPEN, skipped
+  ROOT l30b_scan_p31_f10_4 p=31 M=992 NOT OPEN, skipped
+  ROOT l30b_scan_p31_f10_5 p=31 M=992 NOT OPEN, skipped
+  ROOT l30b_scan_p31_f10_6 p=31 M=992 NOT OPEN, skipped
+  ROOT l30b_scan_p31_f10_7 p=31 M=992 NOT OPEN, skipped
+  ROOT l30b_scan_p31_f10_8 p=31 M=992 NOT OPEN, skipped
+  ROOT l30b_scan_p31_f10_9 p=31 M=992 NOT OPEN, skipped
+  ROOT l30b_scan_p37_f10_2 p=37 M=1184 NOT OPEN, skipped
+  ROOT l30b_scan_p37_f10_3 p=37 M=1184 NOT OPEN, skipped
+  ROOT l30b_scan_p37_f10_4 p=37 M=1184 NOT OPEN, skipped
+  ROOT l30b_scan_p37_f10_6 p=37 M=1184 NOT OPEN, skipped
+  ROOT l30b_scan_p37_f10_7 p=37 M=1184 NOT OPEN, skipped
+  ROOT l30b_scan_p37_f10_9 p=37 M=1184 NOT OPEN, skipped
+  ROOT l30b_scan_p37_f15_5 p=37 M=1184 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f10_0 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f10_1 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f10_2 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f10_3 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f10_4 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f10_5 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f10_6 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f10_9 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f15_0 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f15_4 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p41_f15_6 p=41 M=1312 NOT OPEN, skipped
+  ROOT l30b_scan_p43_f10_0 p=43 M=1376 NOT OPEN, skipped
+  ROOT l30b_scan_p43_f10_2 p=43 M=1376 NOT OPEN, skipped
+  ROOT l30b_scan_p43_f10_3 p=43 M=1376 NOT OPEN, skipped
+  ROOT l30b_scan_p43_f10_4 p=43 M=1376 NOT OPEN, skipped
+  ROOT l30b_scan_p43_f10_6 p=43 M=1376 NOT OPEN, skipped
+  ROOT l30b_scan_p43_f10_7 p=43 M=1376 NOT OPEN, skipped
+  ROOT l30b_scan_p43_f10_8 p=43 M=1376 NOT OPEN, skipped
+  ROOT l30b_scan_p43_f10_9 p=43 M=1376 NOT OPEN, skipped
+  ROOT l30b_scan_p43_f15_0 p=43 M=1376 NOT OPEN, skipped
+  ROOT l30b_scan_p43_f15_9 p=43 M=1376 NOT OPEN, skipped
+  CAPPED root R43_Grok_p17 p=17 M=17: subtree > 120000 nodes (next frontier 898493 at 4p); left out
+  CAPPED root R43_Astra_p17_R p=17 M=17: subtree > 120000 nodes (next frontier 514092 at 4p); left out
