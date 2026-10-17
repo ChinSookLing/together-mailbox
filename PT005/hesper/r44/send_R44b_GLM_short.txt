@@ -1,0 +1,18 @@
+PT005 · Round 44b · GLM (short task). Conclusions first, short thinking. ANSWER BLOCK within the first 300 words; UNFINISHED allowed. Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED.
+
+Setting. p prime. Level M = 2^k·p. A node is 15 integers w_i in 1..M−1. Children at 2M: each w_i becomes w_i or w_i + M (2^15 choices).
+- T is covered if some i has 16·||T·w_i||_M < M (||x||_M = distance to nearest multiple of M).
+- Improper: every T in 1..M/2 is covered, and at least two w_i are odd.
+- L7-closed: some even D | M has |E_D| ≥ 2 and Σ_{i in E_D} g_i·ceil((D/g_i)/8) < D, where E_D = {i : D ∤ w_i}, g_i = gcd(D, w_i).
+- Open = improper and not L7-closed.
+- Depth d_i = k − v2(w_i) if v2(w_i) < k, else 0. F3 = #{i : d_i ≥ 3}.
+
+Claim tested: "for p ≥ 19, an open node with F3 ≥ 9 has no open child." It is FALSE (checked by three programs):
+- p = 19, M = 152, node [39,59,41,61,43,101,121,8,47,125,145,15,73,55,37] is open, F3 = 14. It has exactly 2 open children at 304, e.g. [191,59,41,213,195,101,121,160,47,125,145,15,73,207,37] (F3 = 14). Neither has an open child.
+- p = 17, M = 136, [1,3,3,5,7,8,18,22,40,55,69,75,87,105,110] (F3 = 10) has the open child [1,3,5,7,8,69,75,87,139,154,158,176,191,241,246] at 272.
+The p = 19 example comes from a row containing residues ±1 mod 19.
+
+YOUR TASK (one narrow question):
+1. Explain WHY these nodes survive one more doubling: which odd T at 2M are the hardest to cover, and which coordinates cover them? (Use the p = 19 example; show your arithmetic.)
+2. Propose ONE corrected statement that excludes both examples (e.g. a condition on residues w_i mod p, a larger F-threshold, or "dies within two doublings" instead of one), and say in one line why it should hold.
+Name your least-sure step.
