@@ -1,0 +1,374 @@
+THIS ROUND SERVES PROOF STEP: Round 46 Track B — the fibre-runner model (overlap, not volume).
+PT005 · Round 46 Track B · chair packet 85461bf (Opus, v2). Sent by Hesper.
+
+----- BEGIN COMMON -----
+
+## PT005 · Round 46 Track B · Fibre runners
+
+**RULES:**
+1. Numbers only from your own code or hand computation, shown. Otherwise write UNFINISHED.
+2. Label every step FACT / PROOF / IDEA.
+3. Start with an **ANSWER BLOCK** of at most 300 words, including your **least-sure step**.
+4. Times and hashes are copied from tools.
+
+**Setting** (as R44/R45).
+- Level M = 2ᵏp. A node is 15 integers wᵢ = 2^{vᵢ}uᵢ with uᵢ odd.
+- The depth of a coordinate is dᵢ = k − vᵢ if vᵢ < k, else 0.
+- A **fibre** a is the set of odd T ≤ M/2 with T ≡ ±a (mod p). The zero fibre is a = 0.
+
+**What is proved and checked:**
+- **Lemma Z** (zero fibre). Depth 0 covers all of it; depth 1–4 covers none; depth ≥ 5 covers exactly 1/8. PROVED (chair); DeepSeek CORRECT.
+- **Theorem NZ** (a ≠ 0). Depth ≥ 5 covers exactly 1/8. GLM's §4 gives the exact table for d ≤ 4 (0 or 2^(1−d), by a parity window on a·u mod p; 1/8 at d = 4 when p ∤ u). PROVED (GLM); checked by three programs.
+- **R46 Track A** (1,107,866 nodes × 2¹⁵ lifts, two programs):
+  - every open child has every fibre's share sum ≥ 1;
+  - but of 14,461,007,395 children whose share sums are all ≥ 1, only 1,351,811 are open;
+  - and 2,712 nodes pass every share sum in every child, yet have no open child.
+
+**So death is overlap.** Several coordinates cover the same T, and some T is left uncovered.
+
+**THE MODEL (chair; CHECKED on 461 random cases, 0 mismatches; proof to be written).** Inside fibre a ≠ 0, write T = a + p·s with s in 0..2ᵏ−1 and T odd. For a coordinate of depth d ≥ 1 there is a phase cᵢ(a) with
+
+    T is covered by coordinate i  ⇔  ‖uᵢ·s + cᵢ(a)‖ measured on the circle Z/2^{dᵢ} is < 2^{dᵢ−4}.
+
+From the proof of Theorem NZ: cᵢ(a) = (a·uᵢ − αᵢ)/p mod 2^{dᵢ}, with αᵢ = a·uᵢ mod p.
+
+**So within one fibre, each coordinate is a runner:**
+- the track is a circle of 2^{dᵢ} steps;
+- the speed is the odd number uᵢ;
+- the start is cᵢ(a);
+- it is "too near" when it is within 1/16 of a lap of the origin.
+
+The fibre is covered ⇔ at every time s (of the right parity), some runner is too near.
+
+- **This is a small lonely-runner problem inside each fibre, on dyadic tracks.** The big problem reappears, in a 2-adic form, fibre by fibre.
+- Volume (each runner is "near" 1/8 of the time; Theorem NZ) is not enough. Whether the near-times of different runners **overlap** is decided by the speeds uᵢ mod 2^{dᵢ} and the starts. That overlap is exactly what Track A measured.
+- At the next level each runner's track doubles (d → d + 1). The lift bit picks one of two starts. Depth 0 and depths 1–4 need their own description (full fibre, nothing, or a runner with a parity window).
+- The R26–R42 tilings (8 footprints, each covering 4 of 16 odd classes) look like the exact case of this model at d = 5.
+
+----- END COMMON -----
+
+----- BLOCK COPILOT (reader / bridge seat) -----
+You do not compute this round. Compare the Astra and GPT mismatch counts and failure classifications. In plain words, say what the runner picture is and what it would mean if it holds. Mark everything you did not check as READ.
+----- END BLOCK COPILOT -----
+
+SEAT RULE: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+FORMAT: ANSWER BLOCK (≤300 words, incl. least-sure step) FIRST. UNFINISHED is allowed.
+
+===== ATTACHED FOR COPILOT: Astra reply (verbatim) =====
+## ANSWER BLOCK — PT005 · Round 46 · Track B · Astra
+
+FACT — 原文的整数 runner 公式存在边界误差。 它把精确相位中的分数部分 \\(\alpha/p\\) 省略了，因此即使深度 \\(d\ge5\\)，也可能把实际覆盖的时间误判为未覆盖。
+
+PROOF — 正确的纤维覆盖判据：
+
+令
+
+\\[ au=pm+\alpha,\qquad 0\le\alpha\<p, \\]
+
+其中 \\(w=2^vu\\)、\\(d=k-v>0\\)。则
+
+\\[ \boxed{ T\text{ covered}\iff \left\\|us+m+\frac{\alpha}{p}\right\\|\_{2^d} <2^{d-4}. } \\]
+
+原公式仅保留 \\(us+m\\)，遗漏了 \\(\alpha/p\\)。
+
+FACT — 已找到具体反例：
+
+\\[ p=17,\quad M=2176,\quad T=201,\quad w=228. \\]
+
+此时 \\(d=5,\ a=3,\ s=116,\ u=57,\ m=10,\ \alpha=1\\)。
+
+整数模型给出距离 \\(2\\)，判定不覆盖；直接计算距离 \\(132\\)，而覆盖阈值是 \\(136\\)，因此实际覆盖。
+
+STATUS：PARTIAL。 精确模型已经得到；原始模型的零误差目标不能原样成立。接下来的统计会分别列出原始整数模型与修正模型的结果，并对 all-pass-but-dead 节点独立计算失效纤维。
+
+最不确定步骤： 对共享原始节点列表的统计，必须确认纤维位置的正负折叠与提升位定义完全一致。
+
+## 一、20,000 组随机三元组验证完成
+
+FACT — 独立随机抽样与直接计算。
+
+从上传的 `nodes_widen.csv.gz` 中抽取节点，对每个节点随机选取一组提升位及一个纤维。随机种子为 `20261018`，每个纤维内逐一检查全部实际时间 \\(T\\)。
+
+| 检查项目                     | 结果        |
+| ------------------------ | --------- |
+| 随机三元组                    | 20,000    |
+| 坐标—时间比较总数                | 7,121,565 |
+| 深度 \\(d\ge5\\) 的比较次数     | 1,625,720 |
+| 原整数模型在 \\(d\ge5\\) 的错误判定 | 19,369    |
+| 含此类错误的三元组                | 6,153     |
+| 原整数模型的整体纤维覆盖判定出现差异的三元组   | 10,508    |
+| 修正分数相位模型的错误判定            | 0         |
+
+PROOF — 误差原因： 原整数圆周模型使用严格不等式，遗漏了边界 \\(-2^{d-4}\\) 处可能由正的 \\(\alpha/p\\) 带入覆盖窗口的成员。修正模型保留该分数部分后，逐坐标与直接模乘法完全吻合。
+
+对于浅层 \\(1\le d\le4\\)，同样必须保留分数相位；深度 \\(0\\) 使用独立的模 \\(p\\) 覆盖规则。
+
+阶段裁决： 纤维 runner 的基本思想成立，但主席包中的整数相位版本不能直接用作精确覆盖测试。经过分数相位修正，20,000 组三元组实现了零误差。
+
+## 二、2,712 个 all-pass-but-dead 节点：完整逐提升统计
+
+FACT — 已对每个节点枚举全部 \\(2^{15}=32,768\\) 组提升。
+
+筛选条件为上传的 `per_node_trackA.csv.gz` 中：
+
+\\[ \texttt{children\\\_all\\\_ge1}=32768,\qquad \texttt{children\\\_open}=0. \\]
+
+独立计算还确认：这些节点的所有提升都至少有一个未覆盖时间，即不存在 fully covered child。
+
+| 素数 \\(p\\) | 节点数   | 有单一纤维阻断全部提升 | 需要多个纤维共同阻断 |
+| ---------- | ----- | ----------- | ---------- |
+| 17         | 2,232 | 2,208       | 24         |
+| 19         | 440   | 440         | 0          |
+| 23         | 40    | 40          | 0          |
+| 合计         | 2,712 | 2,688       | 24         |
+
+FACT — 关键发现： 对 2,688 个节点，至少存在一个纤维，无论选择哪组提升，该纤维内都会留下未覆盖的时间。剩余 24 个节点则不同：每个纤维分别都有可行的提升选择，但各纤维的要求无法同时满足。
+
+进一步独立计算这 24 个节点的最小阻断纤维集合：
+
+- 16 个节点：两个纤维联合即可排除全部提升。
+- 8 个节点：至少需要三个纤维联合排除全部提升。
+
+这提供了比覆盖总量更精细的两种死亡机制：单纤维内部重叠障碍与跨纤维提升相容性障碍。
+
+### 具体证书
+
+取 CSV 第 598 行的节点：
+
+\\[ p=17,\quad M=272, \\]
+
+\\[ W=(1,3,5,7,8,19,22,35,105,157,176,207,222,245,246). \\]
+
+最常失败纤维为 \\(a=1\\)，其失败提升数：
+
+\\[ \boxed{32768/32768}. \\]
+
+选择提升向量全零。上层时间 \\(T=35\\) 的纤维位置为：
+
+\\[ s=\frac{35-1}{17}=2. \\]
+
+逐个检查 \\(W\\) 后，所有坐标都不能覆盖这个 \\(T\\)。这是一个明确的无人覆盖时间证书（uncovered-time certificate）。
+
+再取第 702 行这个更特殊的节点：它的最常失败纤维是 \\(a=3\\)，失败 \\(30,648\\) 组提升，但该纤维仍存在可行提升。联合纤维 \\(a=3,5,6\\) 后，才完全排除所有提升。
+
+因此不能把全部 2,712 个节点的死亡统一解释为「某一个纤维永远无法覆盖」。
+
+## 三、可提交主席的证据文件
+
+R46 Astra 完整证据包 ZIP
+
+包含独立 C++ 程序、Python 交叉验证、20,000 组抽样输入、全部纤维统计及计算结果
+
+Round 46 技术报告
+
+完整相位修正推导、测试方法、错误证书与可复算命令
+
+2,712 个节点的最常失败纤维与时间证书
+
+每行提供节点、纤维、失败提升数、提升向量编号、未覆盖时间 T 和位置 s
+
+全部 24,968 条逐纤维统计
+
+所有节点与纤维组合的完整提升失败频率
+
+24 个跨纤维冲突节点的最小阻断集合
+
+独立验证两个或三个纤维共同阻断全部提升
+
+FACT — 独立复核： 另外使用 Python/NumPy，对选取的 14 个节点重新计算全部提升的纤维失败数，并核查所记录的 \\((T,s)\\) 证书，全部通过。
+
+完整 ZIP 的 SHA-256：
+
+`e58cf899151884cbd7e4d46d3e01ccb6ec918cd35389a263cd8a22a795cf83ee`
+
+## 最终提交意见
+
+R46 Track B：COMPUTATION COMPLETE — MODEL CORRECTION REQUIRED。
+
+本轮结果确立了两个需要分开记录的结论：
+
+PROOF — 精确纤维模型： 需要使用包含 \\(\alpha/p\\) 的分数相位（fractional phase）。不能把原始整数相位模型的边界错误解释为覆盖结构上的真实缺口。
+
+FACT — 死亡机制： 完整逐提升计算表明，绝大多数 all-pass-but-dead 节点存在单纤维内部障碍，但少数节点必须同时考虑多个纤维的提升选择相容性。
+
+因此，Track B 的下一项证明若只研究每个纤维能否分别覆盖，仍然不足以判定全局节点能否存活。 必须同时建立跨纤维共用提升位的相容条件。
+
+===== ATTACHED FOR COPILOT: GPT reply (verbatim) =====
+## ANSWER BLOCK — PT005 · R46 Track B
+
+状态：PARTIAL — 已完成独立计算及局部失败证书（Local Obstruction）；尚未完成全部节点的统一重叠定理。
+
+FACT｜随机复验。 自编 Python 程序，随机种子 `85461`，抽取 461 次，得到 445 个深度 \\(d\ge1\\) 的有效测试：
+
+- 原包的整数相位模型：24 次不匹配。
+- 修正后的分数相位模型：0 次不匹配。
+
+PROOF｜必须修正模型。 令 \\(\alpha_i=a u_i\bmod p\\)，\\(c_i=(a u_i-\alpha_i)/p\\)。正确判据是：
+
+\\[ \boxed{ \left\\|u_i s+c_i(a)+\frac{\alpha_i}{p}\right\\|\_{2^{d_i}} <2^{d_i-4} } \\]
+
+原包遗漏 \\(\alpha_i/p\\)，因此边界判断错误。
+
+FACT｜2,712 个节点的独立分类。
+
+- 2,688 个节点（约 99.1%）：至少存在一条非零纤维（nonzero fibre），无论怎样选择全部 lift bits，该纤维都不能完全覆盖。
+- 24 个节点：每条纤维单独都存在完整覆盖方案，但没有共同的全局方案。
+- 2,712 个节点的零纤维（zero fibre）都能在某种 lift 选择下覆盖。
+
+FACT｜重叠结构。 在全零 lift 的代表性子节点中，20,715 条失败纤维全部出现深度 5 runner 之间的覆盖重叠；但速度模 \\(32\\) 相同或相反并非重叠的必要条件。
+
+最不确定的一步： 能否将这些局部不可满足的 lift 约束转化为适用于任意深度的结构定理，而非仅限本次有限数据。
+
+## PROOF｜发现主要死亡机制：反足点冲突（Antipodal Conflict）
+
+这比单纯统计 runner 重叠更强：它提供一个适用于一般偶数层级 \\(M\\) 的严格死亡引理。
+
+设父节点层级为 \\(M\\)，子节点层级为 \\(2M\\)。对任意奇数 \\(t\\)，定义候选集合：
+
+\\[ E_M(t)= \left\\{ i: 8\\|tw_i\\|\_M\<M \right\\}. \\]
+
+这个集合精确描述：哪些坐标在两种 lift 选择中，至少有一种能够覆盖 \\(t\\)。
+
+PROOF｜反足点死亡引理。
+
+假设
+
+\\[ E_M(t)=\\{i\\},\qquad w_i\equiv1\pmod2. \\]
+
+考察子节点内两个时点：
+
+\\[ t,\qquad M-t. \\]
+
+因为 \\(w_i+e_iM\\) 始终为奇数，
+
+\\[ (M-t)(w_i+e_iM) \equiv M-t(w_i+e_iM)\pmod{2M}. \\]
+
+两者在圆周上相隔半圈的覆盖窗口。因此，任何固定的 \\(e_i\\) 都不可能同时覆盖这两个时点。
+
+其他坐标又不属于 \\(E_M(t)\\)，无法覆盖任一时点。
+
+所以：
+
+\\[ \boxed{ |E_M(t)|=1,\quad w_i\text{ odd} \quad\Longrightarrow\quad \text{所有子节点均失败。} } \\]
+
+状态：PROVED。 这不是经验规则，也不依赖特定的素数 \\(p\\)。
+
+## FACT｜有限数据分类
+
+以下统计均来自上传的 CSV，由独立程序重新计算；深度按全零 lift 子节点计算。
+
+| 项目                     | 独立计算结果 |
+| ---------------------- | ------ |
+| 存在反足点死亡证书的节点           | 2,672  |
+| 找到的反足点死亡证书总数           | 8,368  |
+| 存在不可单独覆盖的非零纤维的节点       | 2,688  |
+| 不可单独覆盖的非零纤维总数          | 7,664  |
+| 有双时点容量不足证书的失败纤维        | 7,096  |
+| 失败纤维中有相同双 lift 覆盖足迹的数量 | 5,808  |
+
+这 2,672 个节点仅凭父层数据即可判死，不必枚举子节点。
+
+### Runner 深度分布
+
+对全部 2,712 个节点合计，每个节点有 15 个坐标。
+
+| 深度 \\(d\\) | Runner 数量 |
+| ---------- | --------- |
+| 0          | 528       |
+| 1          | 2,280     |
+| 2          | 672       |
+| 3          | 1,256     |
+| 4          | 4,944     |
+| 5          | 31,000    |
+
+其中深度 5 runner 的数量按节点划分为：
+
+| 每节点深度 5 runner 数 | 节点数   |
+| ---------------- | ----- |
+| 10               | 760   |
+| 11               | 32    |
+| 12               | 1,912 |
+| 13               | 8     |
+
+FACT｜模 \\(2^q\\) 的重叠。
+
+在全零 lift 子节点的失败纤维中，深度 5 runner 两两覆盖重叠共出现 282,081 次。其中：
+
+- 41,994 次：速度满足 \\(u_i\equiv\pm u_j\pmod{32}\\)。
+- 240,087 次：不满足该模 \\(32\\) 关系。
+
+因此，速度相同或相反并非普通覆盖重叠的必要条件。
+
+但完整的双 lift 足迹相同，是更强的特殊结构。对于深度 5 runner，这种足迹重复要求速度满足模 \\(16\\) 的正负同余。
+
+## PROOF｜具体死亡证书
+
+取上传文件第 598 行：
+
+\\[ p=17,\qquad M=272, \\]
+
+\\[ \begin{aligned} W=(&1,3,5,7,8,19,22,35,\\\    &105,157,176,207,222,245,246). \end{aligned} \\]
+
+选择非零纤维 \\(a=4\\)，考察 \\(t=89\\) 与 \\(M-t=183\\)。
+
+手算：
+
+\\[ 89\cdot3=267=272-5, \\]
+
+所以
+
+\\[ \\|89\cdot3\\|\_{272}=5<34=\frac{272}{8}. \\]
+
+对其余 14 个坐标，程序计算的最小距离为 \\(45>34\\)。
+
+因此
+
+\\[ E\_{272}(89)=\\{w=3\\}. \\]
+
+两个 lift 的直接覆盖结果：
+
+| 选择          | 覆盖 89 | 覆盖 183 |
+| ----------- | ----- | ------ |
+| \\(w=3\\)   | 否     | 是      |
+| \\(w=275\\) | 是     | 否      |
+
+结论： 无论其他 14 个 lift bits 如何选择，这个节点都不可能产生完整覆盖的子节点。
+
+这是一份无需枚举 \\(2^{15}\\) 个子节点的完整死亡证书。
+
+## FACT｜剩余节点的精确状态
+
+| 失败类别               | 节点数   | 判定方式       |
+| ------------------ | ----- | ---------- |
+| 反足点单 runner 冲突     | 2,672 | 已有一般引理     |
+| 非零纤维不可覆盖，但无双时点死亡证书 | 16    | 纤维状态 DP    |
+| 每条纤维单独可覆盖，但全局不相容   | 24    | 完整 lift 枚举 |
+| 总计                 | 2,712 |            |
+
+最后 40 个节点，我另外独立测试了 \\(40\times2^{15}=1,310,720\\) 个子节点，完整覆盖结果为零。
+
+这说明反足点引理解决了绝大多数本轮例子，但不是充分且必要的完整分类。
+
+## IDEA｜下一步证明方向
+
+建议主席将 Antipodal Singleton Lemma 独立保存为一个严格引理。
+
+后续可研究：
+
+\\[ |E_M(t)|\ge2 \\]
+
+时，不同时间对如何对 lift bits 施加互相冲突的约束。
+
+特别是最后 24 个节点：每一条纤维都有自己的解，但所有纤维没有共同解。这表明需要一种跨纤维的布尔约束模型（Global Lift-Constraint Model），可能与早前的 XOR cycle 结构衔接。
+
+## 可复现程序
+
+PT005 R46 Track B · GPT 独立完整复算程序
+
+纯 Python；读取两份上传的 gzip CSV；包含随机复验、runner 深度、纤维 DP、反足点证书及剩余节点枚举。
+
+详细 runner 重叠统计程序
+
+包含成对 near-time 重叠、速度同余、相同覆盖足迹等统计。
+
+最终判定： R46 Track B 获得一个可证明的局部死亡机制，并在所给数据中覆盖 2,672 个失败节点。余下的 40 个节点仍需更强的结构解释；有限计算已确认其无完整覆盖子节点。
