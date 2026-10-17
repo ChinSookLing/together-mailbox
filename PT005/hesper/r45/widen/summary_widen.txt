@@ -1,0 +1,452 @@
+PT005 R45 Track A WIDEN - Hesper summary (hesper_r45_widen.py on top of hesper_r45.py; same rules)
+open nodes (distinct p,M,coords) in completed widen subtrees: 1107866
+sha256 of sorted node list (one line per node 'p M coords', sorted by p, M, coords; LF, trailing LF): 211dcd59f514bdc1ffc2aea6c7a5fce8e095cfed09393106890db84026a796bd
+roots processed: 4179 (status: {'done': 3890, 'capped': 22, 'deferred': 267}); listed in roots_widen.txt in processing order
+
+roots by group: status counts
+  W5sib_a16p: {'done': 2881, 'deferred': 255}
+  W5sib_a8p: {'done': 302, 'deferred': 12, 'capped': 18}
+  puck596: {'done': 596}
+  seed20261016_p19: {'done': 12, 'capped': 3}
+  seed20261016_p23: {'done': 14, 'capped': 1}
+  seed20261016_p29: {'done': 15}
+  seed20261016_p31: {'done': 3}
+  seed20261016_p37: {'done': 15}
+  seed20261016_p41: {'done': 15}
+  seed20261016_p43: {'done': 8}
+  seed20261016_p47: {'done': 8}
+  seed20261016_p53: {'done': 7}
+  seed20261016_p59: {'done': 7}
+  seed20261016_p61: {'done': 7}
+
+nodes per p / per level (2^k): count, max survival
+  p=17: 326623 nodes; 8p:596 (maxsurv 1); 16p:2534 (maxsurv 2); 32p:43477 (maxsurv 2); 64p:247232 (maxsurv 1); 128p:32784 (maxsurv 0)
+  p=19: 73988 nodes; 2p:12 (maxsurv 3); 4p:1388 (maxsurv 2); 8p:48404 (maxsurv 1); 16p:24184 (maxsurv 0)
+  p=23: 252042 nodes; 2p:14 (maxsurv 4); 4p:7204 (maxsurv 3); 8p:174872 (maxsurv 2); 16p:65728 (maxsurv 1); 32p:4224 (maxsurv 0)
+  p=29: 22825 nodes; 2p:15 (maxsurv 2); 4p:14194 (maxsurv 1); 8p:8616 (maxsurv 0)
+  p=31: 2141 nodes; 2p:3 (maxsurv 2); 4p:1002 (maxsurv 1); 8p:1136 (maxsurv 0)
+  p=37: 2765 nodes; 2p:15 (maxsurv 3); 4p:1370 (maxsurv 2); 8p:1132 (maxsurv 1); 16p:248 (maxsurv 0)
+  p=41: 12629 nodes; 2p:15 (maxsurv 3); 4p:1146 (maxsurv 2); 8p:5652 (maxsurv 1); 16p:5816 (maxsurv 0)
+  p=43: 313908 nodes; 1p:8 (maxsurv 4); 2p:5300 (maxsurv 3); 4p:168692 (maxsurv 2); 8p:118084 (maxsurv 1); 16p:21824 (maxsurv 0)
+  p=47: 33692 nodes; 1p:8 (maxsurv 3); 2p:2302 (maxsurv 2); 4p:30950 (maxsurv 1); 8p:432 (maxsurv 0)
+  p=53: 44917 nodes; 1p:7 (maxsurv 4); 2p:1648 (maxsurv 3); 4p:23520 (maxsurv 2); 8p:16238 (maxsurv 1); 16p:3504 (maxsurv 0)
+  p=59: 10423 nodes; 1p:7 (maxsurv 3); 2p:1954 (maxsurv 2); 4p:6238 (maxsurv 1); 8p:2224 (maxsurv 0)
+  p=61: 11913 nodes; 1p:7 (maxsurv 3); 2p:2272 (maxsurv 2); 4p:9578 (maxsurv 1); 8p:56 (maxsurv 0)
+
+== F3: value -> nodes, max survival depth, nodes with >=1 open child; | p>=19: n, maxsurv
+  0: n=278869 maxsurv=4 with_open_child=12912  | p>=19: n=278869 maxsurv=4
+  2: n=107986 maxsurv=1 with_open_child=1242  | p>=19: n=107986 maxsurv=1
+  3: n=104202 maxsurv=2 with_open_child=2014  | p>=19: n=103900 maxsurv=2
+  4: n=106353 maxsurv=2 with_open_child=1273  | p>=19: n=62876 maxsurv=1
+  5: n=300380 maxsurv=1 with_open_child=1042  | p>=19: n=53852 maxsurv=1
+  6: n=15236 maxsurv=1 with_open_child=424  | p>=19: n=15236 maxsurv=1
+  7: n=44820 maxsurv=1 with_open_child=24  | p>=19: n=11332 maxsurv=1
+  8: n=7612 maxsurv=0 with_open_child=0  | p>=19: n=7612 maxsurv=0
+  9: n=1964 maxsurv=0 with_open_child=0  | p>=19: n=1964 maxsurv=0
+  10: n=4128 maxsurv=1 with_open_child=248  | p>=19: n=3880 maxsurv=0
+  11: n=41708 maxsurv=1 with_open_child=8  | p>=19: n=41708 maxsurv=1
+  12: n=58592 maxsurv=1 with_open_child=500  | p>=19: n=58188 maxsurv=1
+  13: n=24580 maxsurv=1 with_open_child=4  | p>=19: n=23076 maxsurv=1
+  14: n=11436 maxsurv=0 with_open_child=0  | p>=19: n=10764 maxsurv=0
+
+== F4: value -> nodes, max survival depth, nodes with >=1 open child; | p>=19: n, maxsurv
+  0: n=656311 maxsurv=4 with_open_child=18370  | p>=19: n=655715 maxsurv=4
+  2: n=42790 maxsurv=2 with_open_child=102  | p>=19: n=42488 maxsurv=0
+  3: n=113413 maxsurv=2 with_open_child=1089  | p>=19: n=69936 maxsurv=1
+  4: n=252904 maxsurv=1 with_open_child=130  | p>=19: n=5672 maxsurv=0
+  5: n=36640 maxsurv=0 with_open_child=0  | p>=19: n=3856 maxsurv=0
+  6: n=2992 maxsurv=0 with_open_child=0  | p>=19: n=2992 maxsurv=0
+  7: n=104 maxsurv=0 with_open_child=0  | p>=19: n=104 maxsurv=0
+  10: n=760 maxsurv=0 with_open_child=0  | p>=19: n=0 maxsurv=-
+  11: n=32 maxsurv=0 with_open_child=0  | p>=19: n=32 maxsurv=0
+  12: n=1912 maxsurv=0 with_open_child=0  | p>=19: n=440 maxsurv=0
+  13: n=8 maxsurv=0 with_open_child=0  | p>=19: n=8 maxsurv=0
+
+== F4 restricted to F0=0: value -> nodes, max survival depth, nodes with >=1 open child; | p>=19: n, maxsurv
+
+== zero-fibre capacity Z=[F0>0]*2^(k-1)+F4*2^(k-4) (k>=1 only): value -> nodes, max survival depth, nodes with >=1 open child; | p>=19: n, maxsurv
+  1: n=13550 maxsurv=4 with_open_child=4188  | p>=19: n=13550 maxsurv=4
+  2: n=265282 maxsurv=3 with_open_child=8687  | p>=19: n=265282 maxsurv=3
+  4: n=377442 maxsurv=2 with_open_child=5458  | p>=19: n=376846 maxsurv=2
+  10: n=42790 maxsurv=2 with_open_child=102  | p>=19: n=42488 maxsurv=0
+  11: n=69936 maxsurv=1 with_open_child=32  | p>=19: n=69936 maxsurv=1
+  12: n=1448 maxsurv=0 with_open_child=0  | p>=19: n=1448 maxsurv=0
+  13: n=3856 maxsurv=0 with_open_child=0  | p>=19: n=3856 maxsurv=0
+  14: n=2992 maxsurv=0 with_open_child=0  | p>=19: n=2992 maxsurv=0
+  15: n=104 maxsurv=0 with_open_child=0  | p>=19: n=104 maxsurv=0
+  18: n=760 maxsurv=0 with_open_child=0  | p>=19: n=0 maxsurv=-
+  19: n=32 maxsurv=0 with_open_child=0  | p>=19: n=32 maxsurv=0
+  20: n=1912 maxsurv=0 with_open_child=0  | p>=19: n=440 maxsurv=0
+  21: n=8 maxsurv=0 with_open_child=0  | p>=19: n=8 maxsurv=0
+  22: n=43477 maxsurv=2 with_open_child=1057  | p>=19: n=0 maxsurv=-
+  24: n=4224 maxsurv=0 with_open_child=0  | p>=19: n=4224 maxsurv=0
+  48: n=247232 maxsurv=1 with_open_child=130  | p>=19: n=0 maxsurv=-
+  104: n=32784 maxsurv=0 with_open_child=0  | p>=19: n=0 maxsurv=-
+
+== Z/2^(k-1) = [F0>0] + F4/8 (k>=1 only): value -> nodes, max survival depth, nodes with >=1 open child; | p>=19: n, maxsurv
+  1.0: n=656274 maxsurv=4 with_open_child=18333  | p>=19: n=655678 maxsurv=4
+  1.25: n=42790 maxsurv=2 with_open_child=102  | p>=19: n=42488 maxsurv=0
+  1.375: n=113413 maxsurv=2 with_open_child=1089  | p>=19: n=69936 maxsurv=1
+  1.5: n=252904 maxsurv=1 with_open_child=130  | p>=19: n=5672 maxsurv=0
+  1.625: n=36640 maxsurv=0 with_open_child=0  | p>=19: n=3856 maxsurv=0
+  1.75: n=2992 maxsurv=0 with_open_child=0  | p>=19: n=2992 maxsurv=0
+  1.875: n=104 maxsurv=0 with_open_child=0  | p>=19: n=104 maxsurv=0
+  2.25: n=760 maxsurv=0 with_open_child=0  | p>=19: n=0 maxsurv=-
+  2.375: n=32 maxsurv=0 with_open_child=0  | p>=19: n=32 maxsurv=0
+  2.5: n=1912 maxsurv=0 with_open_child=0  | p>=19: n=440 maxsurv=0
+  2.625: n=8 maxsurv=0 with_open_child=0  | p>=19: n=8 maxsurv=0
+
+== F0 split
+  survival>0: n=19691  F0=0: 0  F0>=1: 19691
+  survival=0: n=1088175  F0=0: 0  F0>=1: 1088175
+
+== EXCEPTIONS (completed subtrees). Full list: exceptions_widen.tsv
+  nodes with (F4>=1 or Z/2^(k-1)>1) and survival>0, other than W5 itself: 1320
+    p=17 16p surv=1 F0=6 F4=2 rootgroup=W5sib_a8p: 32
+    p=17 16p surv=1 F0=7 F4=2 rootgroup=W5sib_a8p: 44
+    p=17 16p surv=1 F0=8 F4=2 rootgroup=W5sib_a8p: 12
+    p=17 16p surv=2 F0=8 F4=2 rootgroup=W5sib_a8p: 14
+    p=17 32p surv=1 F0=1 F4=3 rootgroup=W5sib_a16p: 128
+    p=17 32p surv=1 F0=1 F4=3 rootgroup=W5sib_a8p: 24
+    p=17 32p surv=1 F0=2 F4=3 rootgroup=W5sib_a16p: 192
+    p=17 32p surv=1 F0=2 F4=3 rootgroup=W5sib_a8p: 72
+    p=17 32p surv=1 F0=3 F4=3 rootgroup=W5sib_a16p: 128
+    p=17 32p surv=1 F0=5 F4=3 rootgroup=W5sib_a16p: 127
+    p=17 32p surv=1 F0=6 F4=3 rootgroup=W5sib_a16p: 128
+    p=17 32p surv=1 F0=7 F4=3 rootgroup=W5sib_a16p: 256
+    p=17 32p surv=2 F0=8 F4=3 rootgroup=W5sib_a16p: 1
+    p=17 64p surv=1 F0=7 F4=4 rootgroup=W5sib_a16p: 2
+    p=17 64p surv=1 F0=8 F4=4 rootgroup=W5sib_a16p: 128
+    p=23 16p surv=1 F0=1 F4=3 rootgroup=seed20261016_p23_#3: 32
+  survival>0 nodes with F0=0: 0
+
+== capped / deferred roots (left out of CSV). Partial data in partial_info.jsonl (levels expanded before stop)
+  nodes in capped/deferred partial levels with >=1 open child (so survival>=1) and F4>=1 or F0=0: 60265
+    p=17 16p F0>=1 F4=2: 30
+    p=17 32p F0>=1 F4=3: 10829
+    p=17 64p F0>=1 F4=4: 49406
+
+log (caps / deferrals / not open):
+  CAPPED root seed20261016_p19_#2_c489 p=19 M=38: subtree > 120000 nodes (next frontier 216264 at 16p); left out
+  CAPPED root seed20261016_p19_#3_c196 p=19 M=38: subtree > 120000 nodes (next frontier 245352 at 16p); left out
+  CAPPED root seed20261016_p19_#5_c328 p=19 M=38: subtree > 120000 nodes (next frontier 372296 at 16p); left out
+  CAPPED root seed20261016_p23_#3_c235 p=23 M=46: subtree > 120000 nodes (next frontier 234320 at 16p); left out
+  DEFERRED root W5sib_a16p_2361 p=17 M=544: compute budget, level 128p has 32768 open nodes (18368 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2362 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2363 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2364 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2365 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2366 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2367 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2376 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2377 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2378 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2379 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2380 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2381 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2382 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2383 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2392 p=17 M=544: compute budget, level 128p has 65624 open nodes (65624 unexpanded > 5000); seen so far 66777; left out
+  DEFERRED root W5sib_a16p_2393 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_2394 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2395 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_2396 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2397 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_2398 p=17 M=544: compute budget, level 128p has 65624 open nodes (65624 unexpanded > 5000); seen so far 66777; left out
+  DEFERRED root W5sib_a16p_2399 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_2408 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2409 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_2410 p=17 M=544: compute budget, level 128p has 65624 open nodes (65624 unexpanded > 5000); seen so far 66777; left out
+  DEFERRED root W5sib_a16p_2411 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_2412 p=17 M=544: compute budget, level 128p has 65624 open nodes (65624 unexpanded > 5000); seen so far 66777; left out
+  DEFERRED root W5sib_a16p_2413 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_2414 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2415 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_2424 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2425 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2426 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2427 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2428 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2429 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2430 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2431 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2440 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2441 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2442 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2443 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2444 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2445 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2446 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2447 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2600 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2601 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2602 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2603 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2604 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2605 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2606 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2607 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2616 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2617 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2618 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2619 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2620 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2621 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2622 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2623 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2632 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_2633 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_2634 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_2635 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_2636 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_2637 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_2638 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_2639 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_2648 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_2649 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_2650 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_2651 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_2652 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_2653 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_2654 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_2655 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_2664 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2665 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2666 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2667 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2668 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2669 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2670 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2671 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2680 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2681 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2682 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2683 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2684 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2685 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2686 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2687 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2792 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_2793 p=17 M=544: compute budget, level 128p has 65584 open nodes (65584 unexpanded > 5000); seen so far 66737; left out
+  DEFERRED root W5sib_a16p_2794 p=17 M=544: compute budget, level 128p has 65592 open nodes (65592 unexpanded > 5000); seen so far 66745; left out
+  DEFERRED root W5sib_a16p_2795 p=17 M=544: compute budget, level 128p has 65640 open nodes (65640 unexpanded > 5000); seen so far 66793; left out
+  DEFERRED root W5sib_a16p_2796 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2797 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2798 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2799 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2800 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_2801 p=17 M=544: compute budget, level 128p has 65592 open nodes (65592 unexpanded > 5000); seen so far 66745; left out
+  DEFERRED root W5sib_a16p_2802 p=17 M=544: compute budget, level 128p has 65584 open nodes (65584 unexpanded > 5000); seen so far 66737; left out
+  DEFERRED root W5sib_a16p_2803 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2804 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2805 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2806 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2807 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2816 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_2817 p=17 M=544: compute budget, level 128p has 65592 open nodes (65592 unexpanded > 5000); seen so far 66745; left out
+  DEFERRED root W5sib_a16p_2818 p=17 M=544: compute budget, level 128p has 65584 open nodes (65584 unexpanded > 5000); seen so far 66737; left out
+  DEFERRED root W5sib_a16p_2819 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2820 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2821 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2822 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2823 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2824 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_2825 p=17 M=544: compute budget, level 128p has 65584 open nodes (65584 unexpanded > 5000); seen so far 66737; left out
+  DEFERRED root W5sib_a16p_2826 p=17 M=544: compute budget, level 128p has 65592 open nodes (65592 unexpanded > 5000); seen so far 66745; left out
+  DEFERRED root W5sib_a16p_2827 p=17 M=544: compute budget, level 128p has 65640 open nodes (65640 unexpanded > 5000); seen so far 66793; left out
+  DEFERRED root W5sib_a16p_2828 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2829 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2830 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2831 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2840 p=17 M=544: compute budget, level 128p has 65624 open nodes (65624 unexpanded > 5000); seen so far 66777; left out
+  DEFERRED root W5sib_a16p_2841 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_2842 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2843 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_2844 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2845 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_2846 p=17 M=544: compute budget, level 128p has 65624 open nodes (65624 unexpanded > 5000); seen so far 66777; left out
+  DEFERRED root W5sib_a16p_2847 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_2856 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2857 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_2858 p=17 M=544: compute budget, level 128p has 65624 open nodes (65624 unexpanded > 5000); seen so far 66777; left out
+  DEFERRED root W5sib_a16p_2859 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_2860 p=17 M=544: compute budget, level 128p has 65624 open nodes (65624 unexpanded > 5000); seen so far 66777; left out
+  DEFERRED root W5sib_a16p_2861 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_2862 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2863 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_2872 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_2873 p=17 M=544: compute budget, level 128p has 65584 open nodes (65584 unexpanded > 5000); seen so far 66737; left out
+  DEFERRED root W5sib_a16p_2874 p=17 M=544: compute budget, level 128p has 65592 open nodes (65592 unexpanded > 5000); seen so far 66745; left out
+  DEFERRED root W5sib_a16p_2875 p=17 M=544: compute budget, level 128p has 65640 open nodes (65640 unexpanded > 5000); seen so far 66793; left out
+  DEFERRED root W5sib_a16p_2876 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2877 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2878 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2879 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2880 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_2881 p=17 M=544: compute budget, level 128p has 65592 open nodes (65592 unexpanded > 5000); seen so far 66745; left out
+  DEFERRED root W5sib_a16p_2882 p=17 M=544: compute budget, level 128p has 65584 open nodes (65584 unexpanded > 5000); seen so far 66737; left out
+  DEFERRED root W5sib_a16p_2883 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2884 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2885 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2886 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2887 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2896 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_2897 p=17 M=544: compute budget, level 128p has 65592 open nodes (65592 unexpanded > 5000); seen so far 66745; left out
+  DEFERRED root W5sib_a16p_2898 p=17 M=544: compute budget, level 128p has 65584 open nodes (65584 unexpanded > 5000); seen so far 66737; left out
+  DEFERRED root W5sib_a16p_2899 p=17 M=544: compute budget, level 128p has 65536 open nodes (65536 unexpanded > 5000); seen so far 66689; left out
+  DEFERRED root W5sib_a16p_2900 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2901 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2902 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2903 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2904 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_2905 p=17 M=544: compute budget, level 128p has 65584 open nodes (65584 unexpanded > 5000); seen so far 66737; left out
+  DEFERRED root W5sib_a16p_2906 p=17 M=544: compute budget, level 128p has 65592 open nodes (65592 unexpanded > 5000); seen so far 66745; left out
+  DEFERRED root W5sib_a16p_2907 p=17 M=544: compute budget, level 128p has 65640 open nodes (65640 unexpanded > 5000); seen so far 66793; left out
+  DEFERRED root W5sib_a16p_2908 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2909 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_2910 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_2911 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3016 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3017 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3018 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3019 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3020 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3021 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3022 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3023 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3024 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3025 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3026 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3027 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3028 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3029 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3030 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3031 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3040 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3041 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3042 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3043 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3044 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3045 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3046 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3047 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3048 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3049 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3050 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3051 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3052 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3053 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3054 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3055 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3064 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_3065 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_3066 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_3067 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_3068 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_3069 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_3070 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_3071 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_3080 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_3081 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_3082 p=17 M=544: compute budget, level 128p has 65552 open nodes (65552 unexpanded > 5000); seen so far 66705; left out
+  DEFERRED root W5sib_a16p_3083 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_3084 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_3085 p=17 M=544: compute budget, level 128p has 65616 open nodes (65616 unexpanded > 5000); seen so far 66769; left out
+  DEFERRED root W5sib_a16p_3086 p=17 M=544: compute budget, level 128p has 65608 open nodes (65608 unexpanded > 5000); seen so far 66761; left out
+  DEFERRED root W5sib_a16p_3087 p=17 M=544: compute budget, level 128p has 65544 open nodes (65544 unexpanded > 5000); seen so far 66697; left out
+  DEFERRED root W5sib_a16p_3096 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3097 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3098 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3099 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3100 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3101 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3102 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3103 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3104 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3105 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3106 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3107 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3108 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3109 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3110 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3111 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3120 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3121 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3122 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3123 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3124 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3125 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3126 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3127 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3128 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3129 p=17 M=544: compute budget, level 128p has 65576 open nodes (65576 unexpanded > 5000); seen so far 66729; left out
+  DEFERRED root W5sib_a16p_3130 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3131 p=17 M=544: compute budget, level 128p has 65600 open nodes (65600 unexpanded > 5000); seen so far 66753; left out
+  DEFERRED root W5sib_a16p_3132 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3133 p=17 M=544: compute budget, level 128p has 32768 open nodes (32768 unexpanded > 5000); seen so far 33537; left out
+  DEFERRED root W5sib_a16p_3134 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a16p_3135 p=17 M=544: compute budget, level 128p has 32784 open nodes (32784 unexpanded > 5000); seen so far 33553; left out
+  DEFERRED root W5sib_a8p_280 p=17 M=272: compute budget, level 64p has 37068 open nodes (37068 unexpanded > 5000); seen so far 37837; left out
+  DEFERRED root W5sib_a8p_281 p=17 M=272: compute budget, level 64p has 37384 open nodes (37384 unexpanded > 5000); seen so far 38177; left out
+  DEFERRED root W5sib_a8p_284 p=17 M=272: compute budget, level 64p has 36864 open nodes (36864 unexpanded > 5000); seen so far 37633; left out
+  DEFERRED root W5sib_a8p_285 p=17 M=272: compute budget, level 64p has 36864 open nodes (36864 unexpanded > 5000); seen so far 37633; left out
+  CAPPED root W5sib_a8p_288 p=17 M=272: subtree > 120000 nodes (next frontier 150408 at 64p); left out
+  CAPPED root W5sib_a8p_289 p=17 M=272: subtree > 120000 nodes (next frontier 152784 at 64p); left out
+  CAPPED root W5sib_a8p_292 p=17 M=272: subtree > 120000 nodes (next frontier 149952 at 64p); left out
+  CAPPED root W5sib_a8p_293 p=17 M=272: subtree > 120000 nodes (next frontier 149760 at 64p); left out
+  CAPPED root W5sib_a8p_296 p=17 M=272: subtree > 120000 nodes (next frontier 141968 at 64p); left out
+  CAPPED root W5sib_a8p_297 p=17 M=272: subtree > 120000 nodes (next frontier 142880 at 64p); left out
+  CAPPED root W5sib_a8p_298 p=17 M=272: subtree > 120000 nodes (next frontier 141472 at 64p); left out
+  CAPPED root W5sib_a8p_299 p=17 M=272: subtree > 120000 nodes (next frontier 141312 at 64p); left out
+  CAPPED root W5sib_a8p_300 p=17 M=272: subtree > 120000 nodes (next frontier 329016 at 64p); left out
+  CAPPED root W5sib_a8p_301 p=17 M=272: subtree > 120000 nodes (next frontier 339248 at 64p); left out
+  CAPPED root W5sib_a8p_302 p=17 M=272: subtree > 120000 nodes (next frontier 327680 at 64p); left out
+  CAPPED root W5sib_a8p_303 p=17 M=272: subtree > 120000 nodes (next frontier 328344 at 64p); left out
+  DEFERRED root W5sib_a8p_304 p=17 M=272: compute budget, level 64p has 37068 open nodes (37068 unexpanded > 5000); seen so far 37837; left out
+  DEFERRED root W5sib_a8p_305 p=17 M=272: compute budget, level 64p has 37384 open nodes (37384 unexpanded > 5000); seen so far 38177; left out
+  DEFERRED root W5sib_a8p_308 p=17 M=272: compute budget, level 64p has 36864 open nodes (36864 unexpanded > 5000); seen so far 37633; left out
+  DEFERRED root W5sib_a8p_309 p=17 M=272: compute budget, level 64p has 36864 open nodes (36864 unexpanded > 5000); seen so far 37633; left out
+  CAPPED root W5sib_a8p_312 p=17 M=272: subtree > 120000 nodes (next frontier 150408 at 64p); left out
+  CAPPED root W5sib_a8p_313 p=17 M=272: subtree > 120000 nodes (next frontier 152784 at 64p); left out
+  CAPPED root W5sib_a8p_316 p=17 M=272: subtree > 120000 nodes (next frontier 149952 at 64p); left out
+  CAPPED root W5sib_a8p_317 p=17 M=272: subtree > 120000 nodes (next frontier 149760 at 64p); left out
+  DEFERRED root W5sib_a8p_320 p=17 M=272: compute budget, level 64p has 36944 open nodes (36944 unexpanded > 5000); seen so far 37713; left out
+  DEFERRED root W5sib_a8p_321 p=17 M=272: compute budget, level 64p has 36884 open nodes (36884 unexpanded > 5000); seen so far 37653; left out
+  DEFERRED root W5sib_a8p_324 p=17 M=272: compute budget, level 64p has 37148 open nodes (37148 unexpanded > 5000); seen so far 37917; left out
+  DEFERRED root W5sib_a8p_325 p=17 M=272: compute budget, level 64p has 37216 open nodes (37216 unexpanded > 5000); seen so far 38069; left out
+  CAPPED root W5sib_a8p_328 p=17 M=272: subtree > 120000 nodes (next frontier 149536 at 64p); left out
+  CAPPED root W5sib_a8p_329 p=17 M=272: subtree > 120000 nodes (next frontier 149848 at 64p); left out
+
+not processed (compute budget), in roots order after the last processed root:
+  W5sib_a8p: 4436 roots
+  W5sib_a4p: 7184 roots
+  W5sib_a2p: 10252 roots
+  W5sib_a1p: 15892 roots
+
+notes:
+  Rules: identical to table 1 (hesper_r45.py imported unchanged: open = improper and not L7-closed; children x or x+M;
+  exact sorted-tuple dedupe; per-root cap 120000 nodes, capped roots left out). CSV columns as table 1; the source column
+  lists up to 3 root labels then '+N more' (puck596 roots nest, so some nodes have many labels).
+  Roots (roots_widen.txt = every processed root, in processing order; roots_widen_all.txt = the full planned list):
+   puck596_*: Puck's p=17 nodes, puck_f3_nodes.json.gz trees 'Astra p17 chain @2p' (248) + 'Grok p17 chain @2p' (348),
+     records with Puck's F3>=8 and open_children>=1. All 596 open; all subtrees already inside table 1 (no new nodes beyond it).
+   seed20261016_p{p}_#i: rows as r43pre tree3.py pick(): random.Random(20261016), sorted 15 x randrange(1,(p+1)//2),
+     first improper at level p, distinct up to +/- canon (pick.py; reproduces p53/59/61 #1 exactly). p>=43: rows #1..#8 as
+     level-p roots (p53/59/61 #1 excluded = table 1). NB p43 #1 equals table 1's R43_Astra_p43 row.
+     p=19..41: every level-p row caps at 4p (probe: p19 #1 4p frontier 120006; p29 #1 4p frontier 2893820), so rows
+     #1..#5 each give 3 open 2p children drawn by random.Random(20261017*1000 + p*16 + i).sample (indices in labels _cJ).
+     p=31: the only improper level-p row is [1..15] (16*dist<31 forces x = +-t^-1 for each t), so 1 row x 3 children.
+     p=29 needed 22705..495619 tries per row; p=31 1018470 tries.
+   W5sib_a{L}p_j: every open child of W5's ancestor at L*p (W5 mod L*p; all ancestors 1p..16p are open).
+     Children counts: a16p 3136, a8p 4768, a4p 7184, a2p 10252, a1p 15892. Processed: all a16p; a8p_0..a8p_331 (in order).
+  Compute-budget rule (W5sib roots only): a root whose next level has >5000 unexpanded nodes is DEFERRED (left out of
+  the CSV like a capped root). Deferred/capped roots' expanded levels are kept in partial_info.jsonl.gz (levels and
+  every expanded node with >=1 open child, with F vector) - those nodes have survival >= 1 regardless of deeper levels.
+  Typical deferred a16p root: 32p root -> 768 open at 64p -> 32768 at 128p (128 of the 64p nodes have 256 open
+  children each); 128p level not expanded.
+  Engine: memo of open children shared across roots (seeded from table-1 state; same function), 2 worker processes;
+  memo entries reachable only from capped/deferred roots were dropped between runs (prune3.py) - no effect on outputs.
+  Spot checks with the plain definition (is_open_plain at node and child): p=23 16p exception nodes, p=17 16p surv=2
+  nodes, p=17 64p nodes - all confirmed open with open children.
+  nodes_widen.csv and nodelist_widen.txt are committed gzipped (gzip -n; >100 MB raw); the node-list sha256 above is of the
+  uncompressed text.
