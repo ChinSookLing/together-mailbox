@@ -1,0 +1,17 @@
+PT005 · Round 44b · Argon (short task, fibre route). Rule 1 is strict: any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED. Conclusions first. ANSWER BLOCK within the first 300 words, with your least-sure step.
+
+Setting. p prime. Level M = 2^k·p. A node is 15 integers w_i in 1..M−1. Children at 2M: each w_i becomes w_i or w_i + M.
+- T is covered if some i has 16·||T·w_i||_M < M (||x||_M = distance to nearest multiple of M).
+- Improper: every T in 1..M/2 is covered, and at least two w_i are odd.
+- L7-closed: some even D | M has |E_D| ≥ 2 and Σ_{i in E_D} g_i·ceil((D/g_i)/8) < D, E_D = {i : D ∤ w_i}, g_i = gcd(D, w_i).
+- Open = improper and not L7-closed. Depth d_i = k − v2(w_i) if v2(w_i) < k, else 0. F3 = #{i : d_i ≥ 3}.
+
+The claim "p ≥ 19, open, F3 ≥ 9 ⇒ no open child" is FALSE (three programs):
+- p = 19, M = 152: [39,59,41,61,43,101,121,8,47,125,145,15,73,55,37] (open, F3 = 14) has the open child [191,59,41,213,195,101,121,160,47,125,145,15,73,207,37] at 304.
+- Checked fact (GLM + Hesper): at 304 the odd T = 19, 57, 95, 133 (odd multiples of p) are covered ONLY by 160 = 8 + 152. A coordinate covers T = jp (j odd) at level 2M only if ||j·w'||_{2^(k+1)} < 2^(k−3); the 14 deep odd coordinates cannot, so the "zero fibre" T ≡ 0 mod p is carried by the single shallow coordinate (v2 = k) lifted to v2 ≥ k+1.
+- p = 23, M = 184: X = [10,26,28,56,78,94,95,99,100,121,122,142,146,162,172] (F3 = 3) has 12 open children; one, Y = [26,28,94,95,99,100,142,146,162,194,240,262,305,306,356], has F3 = 11. Y has no open child.
+
+YOUR TASK (one narrow question): the zero fibre.
+1. For a node at level M = 2^k·p, state exactly which coordinates (by v2 and residue mod 2^(k+1)) can cover the odd T = jp at 2M, and prove it.
+2. Using this, prove or refute: "If an open node at level M has no coordinate with v2(w_i) = k (and none with v2 ≥ k+1 that already covers the zero fibre), it has no open child." Test it on the p = 19 and p = 23 examples above (show the arithmetic).
+3. One line: does this give a better replacement for the F3 lemma than counting F3?
