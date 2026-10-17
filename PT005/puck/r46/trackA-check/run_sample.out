@@ -1,0 +1,15 @@
+selected 20000 nodes 22712
+AGG {'ge1': 348736045, 'lt1': 395490771, 'lt1_cov': 0, 'cov': 34087, 'open': 33137, 'cov_par': 10, 'cov_l7': 940, 'tm': 0, 'trip': 9944820, 'nodes': 22712, 'not_exact': 0, 'dead_all': 2756, 'ovdeath': 348702908}
+MISMATCH vs Hesper per_node {}
+17 {'ge1': 187744768, 'lt1': 79609344, 'lt1_cov': 0, 'cov': 7802, 'open': 7546, 'cov_par': 0, 'cov_l7': 256, 'tm': 0, 'trip': 2202930}
+19 {'ge1': 39420928, 'lt1': 18906112, 'lt1_cov': 0, 'cov': 6300, 'open': 6300, 'cov_par': 0, 'cov_l7': 0, 'tm': 0, 'trip': 534000}
+23 {'ge1': 81804160, 'lt1': 68109440, 'lt1_cov': 0, 'cov': 6458, 'open': 6458, 'cov_par': 0, 'cov_l7': 0, 'tm': 0, 'trip': 1647000}
+29 {'ge1': 5838848, 'lt1': 7104512, 'lt1_cov': 0, 'cov': 140, 'open': 140, 'cov_par': 0, 'cov_l7': 0, 'tm': 0, 'trip': 177750}
+31 {'ge1': 598016, 'lt1': 745472, 'lt1_cov': 0, 'cov': 0, 'open': 0, 'cov_par': 0, 'cov_l7': 0, 'tm': 0, 'trip': 19680}
+37 {'ge1': 319520, 'lt1': 1449952, 'lt1_cov': 0, 'cov': 260, 'open': 4, 'cov_par': 0, 'cov_l7': 256, 'tm': 0, 'trip': 30780}
+41 {'ge1': 509264, 'lt1': 7584432, 'lt1_cov': 0, 'cov': 766, 'open': 766, 'cov_par': 0, 'cov_l7': 0, 'tm': 0, 'trip': 155610}
+43 {'ge1': 26970840, 'lt1': 159773992, 'lt1_cov': 0, 'cov': 9074, 'open': 9050, 'cov_par': 0, 'cov_l7': 24, 'tm': 0, 'trip': 3761340}
+47 {'ge1': 4024280, 'lt1': 14751784, 'lt1_cov': 0, 'cov': 552, 'open': 540, 'cov_par': 0, 'cov_l7': 12, 'tm': 0, 'trip': 412560}
+53 {'ge1': 759896, 'lt1': 25847720, 'lt1_cov': 0, 'cov': 1404, 'open': 1036, 'cov_par': 0, 'cov_l7': 368, 'tm': 0, 'trip': 657720}
+59 {'ge1': 45363, 'lt1': 5590733, 'lt1_cov': 0, 'cov': 745, 'open': 714, 'cov_par': 7, 'cov_l7': 24, 'tm': 0, 'trip': 154800}
+61 {'ge1': 700162, 'lt1': 6017278, 'lt1_cov': 0, 'cov': 586, 'open': 583, 'cov_par': 3, 'cov_l7': 0, 'tm': 0, 'trip': 190650}
