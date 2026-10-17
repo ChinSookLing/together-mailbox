@@ -1,0 +1,8 @@
+parent open True odd 14 F1 14 F3 14
+open children 2
+(39, 43, 55, 61, 160, 167, 189, 193, 199, 211, 225, 253, 273, 277, 297) open True F3 14
+  open grandchildren 0
+(15, 37, 41, 47, 59, 73, 101, 121, 125, 145, 160, 191, 195, 207, 213) open True F3 14
+  open grandchildren 0
+puck child True legal True
+puck child True legal True
