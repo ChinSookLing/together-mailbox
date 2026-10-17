@@ -1,0 +1,13 @@
+skip 289
+roots 4179
+live 3890
+roots not open: 0
+level done 8 3890 -> 329136 2
+level done 16 329136 -> 512278 106
+level done 64 512278 -> 233010 179
+level done 16 233010 -> 29552 211
+level done 32 29552 -> 0 215
+NODES 1107866 SHA256_NODELIST 211dcd59f514bdc1ffc2aea6c7a5fce8e095cfed09393106890db84026a796bd
+SURV>0 19691 F0=0 among them 0 EXCEPTIONS 1320
+Counter({(17, 32): 1056, (17, 64): 130, (17, 16): 102, (23, 16): 32})
+W5 in nodes True SECS 248
