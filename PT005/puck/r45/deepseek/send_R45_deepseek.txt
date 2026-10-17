@@ -1,0 +1,27 @@
+THIS ROUND SERVES PROOF STEP: R45 Track B — from the zero fibre (proved) to the non-zero fibres and a level budget. PT-005, Lonely Runner with 16 runners. Chair: Opus (note 99, commit 9623f68).
+
+SETTING
+Fix a prime p ≥ 17. Level M = 2^k·p, k ≥ 1. A node is a set of integer coordinates w (speeds). For a time T (integer), coordinate w "covers" T when 16·‖T·w‖_M < M, where ‖x‖_M is the distance from x to the nearest multiple of M. A node is "improper"/open at level M when every relevant T is covered by some coordinate (no time T where all runners are ≥ M/16 away).
+Depth: write w = 2^v·u with u odd. Depth d = k − v if v < k; depth 0 if v ≥ k. F0 = number of depth-0 coordinates; F5 = number of coordinates of depth ≥ 5 (at least 5, not exactly 5).
+Zero fibre: T = p·t with t odd, T ≤ M/2, i.e. t odd in 1..2^(k−1).
+
+LEMMA Z (chair, PROVED; Puck read CORRECT; numerically CHECKED by four programs, incl. 287,119 brute cases p∈{17,19,23,29,31,61,101}, k=1..9, 0 failures)
+At level M: (a) a depth-0 coordinate covers every T in the zero fibre; (b) a coordinate of depth 1,2,3,4 covers none; (c) a coordinate of depth d ≥ 5 covers exactly 1/8 of them. Hence: if a node at level M is improper, then F0 ≥ 1 or F5 ≥ 8.
+Proof.
+1. T·w = p·t·2^v·u, so ‖T·w‖_M = p·‖2^v·tu‖_{2^k}. The cover condition becomes ‖2^v·m‖_{2^k} < 2^(k−4), with m = tu odd.
+2. v ≥ k: left side 0, so T is covered. (a)
+3. v < k: ‖2^v m‖_{2^k} = 2^v·‖m‖_{2^d}, d = k − v. Condition: ‖m‖_{2^d} < 2^(d−4). If d ≤ 4 the right side is ≤ 1 but m odd gives ‖m‖ ≥ 1: nothing covered (b). If d ≥ 5, odd residues r mod 2^d with min(r, 2^d − r) < 2^(d−4) number 2^(d−4) out of 2^(d−1): share 1/8.
+4. Exactness: as t runs over odd 1..2^(k−1), m = tu runs evenly over odd residues mod 2^d when d ≤ k−1; when d = k (v = 0) it runs over half of them, but the condition is symmetric under r ↔ 2^d − r, so the share is still exactly 1/8. (c)
+5. Corollary: every zero-fibre T must be covered; with F0 = 0 only depth ≥5 coordinates help, each 1/8, so ≥ 8 are needed. ∎
+Lift fact: a depth-0 coordinate at M has exactly one lift at 2M that stays depth 0; every other coordinate of depth d becomes depth d+1.
+
+MEASURED FACTS (Track A, CHECKED by two independent programs on completed subtrees only; 1,107,866 open nodes, p = 17..61; NOT a lemma): no F3 threshold exists; F4 ≥ 5 nodes all die next level; F4 = 4 survives only at p = 17; F4 = 3 survives at p = 23 (32 nodes); of 19,691 nodes with surviving children none has F0 = 0; largest survival anywhere is 4.
+Fact C (corrected): a depth-0 coordinate covers 2⌊(p−1)/16⌋ + 1 residues mod p.
+
+RULES
+- Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+- Label every claim FACT / PROOF / IDEA (and CORRECT / GAP / WRONG where asked).
+- Start with an ANSWER BLOCK of at most 300 words, including your least-sure step. UNFINISHED is allowed and respected. No web search.
+
+YOUR TASK (DeepSeek — proof reader)
+Read the proof of Lemma Z line by line, steps 1–5 plus the lift fact and the corollary. For each step write CORRECT, GAP or WRONG, with one sentence why. Check especially: the strict "<" in step 3 when d ≤ 4; the d = k case in step 4; whether "F5 = depth ≥ 5" is what the corollary needs. If you find a GAP, give the smallest concrete case (p, k, w, t) that shows it, computed by you.
