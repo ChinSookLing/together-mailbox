@@ -1,0 +1,8 @@
+w=0 lit in every clause at M=38: True nclauses 19
+M 38 with0 dead2 False without0 dead2 True uncovered-free-T (clause empty) w/o0: 0
+M 76 with0 dead2 False without0 dead2 True uncovered-free-T (clause empty) w/o0: 0
+M 152 with0 dead2 False without0 dead2 True uncovered-free-T (clause empty) w/o0: 2
+M 304 with0 dead2 False without0 dead2 True uncovered-free-T (clause empty) w/o0: 6
+M 608 with0 dead2 False without0 dead2 True uncovered-free-T (clause empty) w/o0: 6
+M 1216 with0 dead2 False without0 dead2 True uncovered-free-T (clause empty) w/o0: 24
+M 2432 False True
