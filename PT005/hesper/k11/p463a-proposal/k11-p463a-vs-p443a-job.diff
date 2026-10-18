@@ -1,0 +1,44 @@
+1c1
+< # Job k11-p443a (Opus spec 0677a27, ruling abdb543): second-machine run of gate p = 443 part (a), office kit unchanged.
+---
+> # Job k11-p463a (Opus note 106 §2 214cd6b + answers a379d43), second-machine run of gate p = 463 part (a), office kit unchanged.
+4c4
+< # Restart-safe: kcascade_run.py skips jobs already in out443/ir.jsonl.
+---
+> # Restart-safe: kcascade_run.py skips jobs already in out463/ir.jsonl.
+9c9
+< N=k11-p443a; W="$WORK/$N"; CK="$W/ckpt"; R="$W/out443"; B="$HOME/lr16/code"
+---
+> N=k11-p463a; W="$WORK/$N"; CK="$W/ckpt"; R="$W/out463"; B="$HOME/lr16/code"
+14c14
+<   cp -f "$W/run443.time" "$W/hashes.txt" "$W/lscpu.txt" "$CK/" 2>/dev/null
+---
+>   cp -f "$W/run463.time" "$W/hashes.txt" "$W/lscpu.txt" "$CK/" 2>/dev/null
+16c16
+<   tail -n 20 "$W/run443.log" > "$CK/run443.log.tail" 2>/dev/null
+---
+>   tail -n 20 "$W/run463.log" > "$CK/run463.log.tail" 2>/dev/null
+19c19
+<   printf '{"job":"%s","ir_lines":%s,"of":556,"time":"%s"}\n' "$N" "$n" "$(date '+%F %T %Z')" > "$CK/latest.json.tmp" && mv "$CK/latest.json.tmp" "$CK/latest.json"
+---
+>   printf '{"job":"%s","ir_lines":%s,"of":589,"time":"%s"}\n' "$N" "$n" "$(date '+%F %T %Z')" > "$CK/latest.json.tmp" && mv "$CK/latest.json.tmp" "$CK/latest.json"
+36c36
+< date '+%F %T %Z' | tee -a "$W/run443.time"
+---
+> date '+%F %T %Z' | tee -a "$W/run463.time"
+39c39
+<   BUDGET=$((dl - now)) python3 kcascade_run.py ./bgk15 ./cascade_k15p 443 16 "$R" 2>&1 | tee -a "$W/run443.log"
+---
+>   BUDGET=$((dl - now)) python3 kcascade_run.py ./bgk15 ./cascade_k15p 463 16 "$R" 2>&1 | tee -a "$W/run463.log"
+42c42
+<   python3 kcascade_run.py ./bgk15 ./cascade_k15p 443 16 "$R" 2>&1 | tee -a "$W/run443.log"
+---
+>   python3 kcascade_run.py ./bgk15 ./cascade_k15p 463 16 "$R" 2>&1 | tee -a "$W/run463.log"
+45c45
+< date '+%F %T %Z' | tee -a "$W/run443.time"
+---
+> date '+%F %T %Z' | tee -a "$W/run463.time"
+50c50
+< if (( rc == 0 && n >= 556 )); then date '+%F %T %Z' > "$STATE/$N.done"; echo "DONE $N"; fi
+---
+> if (( rc == 0 && n >= 589 )); then date '+%F %T %Z' > "$STATE/$N.done"; echo "DONE $N"; fi
