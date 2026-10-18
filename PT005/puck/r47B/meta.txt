@@ -9,3 +9,10 @@ Send texts built verbatim from f6b6c50 (COMMON + seat block + seat rule), commit
 - Grok: send_R47B_GROK.txt, sent 15:03:19 +08, new chat https://grok.com/c/92dcf57a-a2f1-430a-ba4a-efdea73fbbcf, Expert; no web-search toggle exists (left default).
 - Copilot: NOT sent yet — its block compares Astra and GPT; Puck sends after both replies are in.
 Rules kept: all sent first, no Stop / Regenerate. Replies collected on later visits into PT005/puck/r47B/.
+
+UPDATE 2026-10-18 15:29 +08 (Puck)
+- Collected Astra, GPT, DeepSeek; Grok "model temporarily unavailable" (no Regenerate). Files + Puck check committed 3faed81.
+- TIME CORRECTION: the reply headers say "collected ~15:25-15:35" and check/REPORT.md says 15:45; the true box clock times were collection ~15:21-15:23 and report ~15:25 +08.
+- Copilot: copilot/send_R47B_COPILOT.txt pasted + R47B_reply_ASTRA.md and R47B_reply_GPT.md attached, sent ~15:26:50 +08, new chat https://copilot.com/chat/conversation/c05fd70f-00bc-47d2-b504-1266bdcf82bf (mode Auto, no web). Collect next visit.
+- Hark: summary posted to Hesper ~15:27:45 +08 (labelled "Puck 15:50" by mistake; actual ~15:28).
+- Open: Grok red-team seat (needs resend on a later visit, fresh chat), DeepSeek needs GLM proof when it arrives.
