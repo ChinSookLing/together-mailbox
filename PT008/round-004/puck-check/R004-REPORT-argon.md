@@ -1,0 +1,17 @@
+# PT-008 R004 · Puck independent check of ARGON reply (mailbox 546b39b)
+Exact Fractions; code chk_argon.py (+common.py). CHECKED = no violation in stated finite test (not a proof); nothing here is PROVED.
+Seat notes: header says Gemini 3.1 Pro, Thinking High, web/Personal Intelligence off (as reported by carrier; not independently verifiable). Self-labels: CHECKED / DISPROVED; no PROVED. Mislabel: "Q2 DISPROVED" and "T1 DISPROVED" overstate (see below).
+
+| # | Claim | Verdict |
+|---|---|---|
+| 1 | Necessary condition: every local max lies in C = Cpeak ∪ Ccross (peaks (2k+1)/(2u); crossings k/(ui+uj) or k/|ui−uj|) | CHECKED: 35,531 local maxima, 0 outside C. Remark: the |ui−uj| term is never needed (0 maxima of difference-only form) and Argon's derivation "ui t−k1=−(uj t−k2) ⇒ t=k/(ui+uj) or k/|ui−uj|" is wrong for the second branch (opposite slopes give only the sum); harmless because C is a superset. Equivalent to Opus T1' necessity |
+| 2 | Counterexample V={1,3,4}, n=4: t=1/4 has ||1/4||=||3/4||=1/4, ||4/4||=0, g=0 (a "ghost peak") | CHECKED exact; g(1/4)=0 and it is a strict local min. Same phenomenon as Opus B3 ({1,2,3}, t=1/3) — not new |
+| 2b | "T1 DISPROVED" | Mislabel/overreach: round-004 T1 was a question that explicitly said not to assume all crossings are maxima; the counterexample refutes only the strawman "every crossing is a peak", which Opus already refuted and corrected (T1'). It does not refute T1' |
+| 3 | "Many" crossings are ghosts that get suppressed into local minima | Partly CHECKED: opposite-slope valid crossings not on the envelope: 49.6% (m=3, integer speeds ≤12, 21,220 crossings) and 67.1% (m=4, 42,692). But only 19.3% / 25.9% of ghosts are local minima, and all of those are g=0 cases; the rest are just non-maxima. "Suppressed into local minima" holds only for the g=0 subset |
+| 3b | Concrete values at t=1/5 for {1,3,4}: 1/5, 2/5, 1/5; g=1/5, a true peak | CHECKED exact (t=1/5 is a strict local max, value 1/5; below n=4 threshold 1/4; best local max on [0,3] is 2/7 at 4/7, so {1,3,4} has success time 4/7: g=2/7>=1/4) |
+| 4 | V={1,−1}: functions coincide, maxima only at k+1/2; Type B must exclude |ui|=|uj| | CHECKED (maxima 1/2,3/2,5/2…) |
+| 5 | |C∩[0,1]| = O(m²·max|u|) | CHECKED as an upper-bound-shaped estimate: observed counts (44–652) were below m²·max in all 9 tested (m,max) cases; no lower-bound or tightness claimed |
+| 6 | Q2 "DISPROVED": critical times can only be a candidate pool; no enumeration-free formula t=F(V) | NOT CHECKED as a statement (about non-existence of a formula; no proof offered). Counter-evidence: for |V|=2 an enumeration-free success time exists (Opus F(a,b)): 0 failures /2000 exact pairs, and its proof is in Opus's reply. So "DISPROVED" is unsupported; correct label is UNFINISHED / "selection from C needs g-evaluation" |
+| 7 | Next lemma "Scale Decoupling": well-separated speeds ⇒ fast set always has a local max inside slow safe window | NOT CHECKED (no precise statement; not yet a lemma). Argon marks it a proposal |
+| 8 | Section D idea: character sums ∑e^{2πi u t} to bypass enumeration | NOT CHECKED (heuristic, UNFINISHED by its own label) |
+Agreement/disagreement with Opus: agrees that crossings can be off-envelope; adds no new formula. Disagrees only in tone: Opus proves exact T1' (local maxima = sum-form on-envelope points) and an explicit F(a,b) for 3 runners; Argon calls Q2 DISPROVED without handling that case.
