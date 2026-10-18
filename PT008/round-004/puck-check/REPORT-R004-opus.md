@@ -1,0 +1,13 @@
+# Independent check of Opus PT-008 R004 (exact Fractions, no floats for pass/fail)
+Code: chk.py (run `python3 chk.py`, ~50 s). Raw output: output.txt. Seeds: T1' 1,2,3; B5 7; B1 1,2; B2 1,2; C2 rat 1.
+Method: g is piecewise linear; all breakpoints/crossings (k/2a, c/(a+b), c/(b-a)) enumerated over one full period D (lcm of speed denominators); strict local max tested by comparing g at candidate vs midpoints to neighbouring candidates (exact). Sets: 1-4 random integer/rational speeds, period<=12.
+
+- **B1 / T1' (both directions): CHECKED** in scope. 450 sets, 11,196 local maxima: 0 maxima not of claimed form (conditions 1-3); 0 claimed-form points (conditions 1-3 met) that are not strict local maxima; 0 cases g(t*)!=v. Endpoint t=0 is a min (g(0)=0). Interval claim max=max(endpoints, T1' points): 300 random intervals, 0 violations. Candidate-count bound 2mT*sum(a) (read as m=|A|): 0 violations (reading of m is ambiguous).
+- **B2 (success exists => T1' point with g>=1/n): CHECKED**, 400 sets, all 400 had a success time, 0 violations (weak test: success always existed in samples).
+- **B3 ({1,2,3}, t=1/3): CHECKED** exactly: ||1/3||=||2/3||=1/3 but ||3*1/3||=0, g=0, not a local max. (Same-slope crossings never maxima: covered by T1' test, no counterexample.)
+- **B4 ({1,sqrt2} sup not attained): CHECKED (reasoning+exact).** Not attained: g=1/2 needs sqrt2 rational. Sup=1/2: at t=q/2 with convergents p/q of sqrt2, p,q both odd (5,7),(29,41),(169,239),(985,1393),(5741,8119): 2q^2-p^2=1 exactly, so ||sqrt2 t||>=1/2-1/(4p), exact bounds 13/28, 81/164, 477/956,... ->1/2. (Kronecker not needed.)
+- **B5 F(a,b)=ceil((a+b)/(3a))/(a+b), a<b, n=3 (threshold 1/3): CHECKED.** 1,711 integer pairs 1<=a<b<60 plus 22,000 random rational pairs (huge/tiny ratios included): 0 failures of g(F)>=1/3 and 0 failures of ||aF||=||bF||. F(1,4)=2/5, F(1,2)=1/3, F(1,3)=1/2 as stated. Single-speed F=1/(2a) trivially g=1/2.
+- **C2 (Pair-Selection, 3 speeds x<y<z, delta=1/4, c<pair sum): CHECKED for the stated small-case numbers.** Integers 1..24: 2,024 triples; (min,max) only fails 12 (all {1,2,4},{1,3,4} and integer multiples: (1,2,4),(1,3,4),(2,4,8),(2,6,8),(3,6,12),(3,9,12),(4,8,16),(4,12,16),(5,10,20),(5,15,20),(6,12,24),(6,18,24)); (mid,max) only fails 8; both fail 0; (min,mid) fails 218 — all match Opus's counts exactly. Rational speeds (278 random triples, denominators 2-6, c up to s*D): 0 failures of "min-max or mid-max works". This supports but does not prove C2 (IDEA); real/irrational speeds untested.
+- Extra: {1,2,4} t=1/3 g=1/3>=1/4 (mid,max, c=2) holds (covered in C2 run).
+
+No VIOLATED claims. Nothing labelled PROVED by me; CHECKED = no violation in stated scope with counts above.
