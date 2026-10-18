@@ -1,0 +1,13 @@
+nodes 1107866 k>=1 1107829 k=0 37
+SEC2 (k>=1):
+  p17: dead+2SAT 302074  dead-no-cert 22664  live-flagged 0  empty-clause 0
+  p>=19: dead+2SAT 698075  dead-no-cert 65362  live-flagged 0  empty-clause 0
+  total: dead+2SAT 1000149  dead-no-cert 88026  live-flagged 0  empty-clause 0
+SEC1:
+  k>=1 certified 308449  of which dead 308449  with open child 0
+  k=0 certified 3  with open child 3
+  dead total 1088175  k>=1 dead 1088175
+
+real	2m10.715s
+user	1m58.262s
+sys	0m12.162s
