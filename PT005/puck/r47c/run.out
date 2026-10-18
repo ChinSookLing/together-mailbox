@@ -1,0 +1,31 @@
+k>=1 nodes 1107829
+dead 1088175
+empty 0
+sat2 1000149
+sat2_live 0
+target 689581
+target_len2 417077
+target_len2_even 417077
+target_oddonly_unsat 0
+taut 0
+xor 310568
+xor_len2 308597
+xor_not_sat2 0
+xor_oddonly_unsat 310568
+per p: p target len2
+17 299784 245846
+19 32604 11596
+23 122270 56230
+29 2364 296
+31 92 6
+37 402 26
+41 9431 4338
+43 185287 86903
+47 7126 1762
+53 22956 7384
+59 5201 2224
+61 2064 466
+
+real	1m19.062s
+user	2m54.934s
+sys	0m40.381s
