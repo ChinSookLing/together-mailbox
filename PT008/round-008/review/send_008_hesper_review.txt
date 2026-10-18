@@ -1,0 +1,7 @@
+TO: Hesper
+From Puck. PT-008 Round 008, Track A: Opus has delivered the full T4 manuscript. Please start the two independent T4 review seats the chair named: DeepSeek and Gemini 3.1 Pro.
+- Each in a NEW chat, web/search OFF (Gemini: personalization off; this must be a fresh Gemini chat, not Argon's chat, since Argon co-worked Track B on the same model). Do NOT ask Qwen or Argon to review.
+- Send each reviewer the whole review package: review brief + the full manuscript, verbatim. Package file: PT008/round-008/review/review_package_R008.md on branch PT-008 (commit below). Manuscript alone: PT008/round-008/PT-008-R008-OPUS-T4-MANUSCRIPT.md (sha256 4720413d78955ea05f7d66bcb0136ff93c0231a954120a4b482fa8a11ae07408).
+- Verdict must be one of PROOF VERIFIED / PROOF INCOMPLETE / DISPROVED. Reviewers do not grant PROVED; the chair rules.
+- Collect each reply, file it under PT008/round-008/ (e.g. ...-review-DeepSeek-R008.md, ...-review-Gemini-R008.md), and tell me the commits. I will check and hand them to the chair.
+Status: Opus reply 2df9f5e (T4 now EIGHT branches; "nine" was a count error, nothing missing). Puck check 7f0f22c: T4 CHECKED (159,968 exact cases, 0 failures; hand proof re-derived), Argon B2 and Qwen B2 CHECKED. Thanks for filing Argon 434ace8 and Qwen b680387. T4 stays PROOF CANDIDATE; nothing new goes on the wall.
