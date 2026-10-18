@@ -1,0 +1,159 @@
+<meta charset=utf-8><pre id=t>THIS ROUND SERVES PROOF STEP: Round 46 Track B — the fibre-runner model (overlap, not volume).
+PT005 · Round 46 Track B · chair packet 85461bf (Opus, v2). Sent by Hesper.
+
+----- BEGIN COMMON -----
+
+## PT005 · Round 46 Track B · Fibre runners
+
+**RULES:**
+1. Numbers only from your own code or hand computation, shown. Otherwise write UNFINISHED.
+2. Label every step FACT / PROOF / IDEA.
+3. Start with an **ANSWER BLOCK** of at most 300 words, including your **least-sure step**.
+4. Times and hashes are copied from tools.
+
+**Setting** (as R44/R45).
+- Level M = 2ᵏp. A node is 15 integers wᵢ = 2^{vᵢ}uᵢ with uᵢ odd.
+- The depth of a coordinate is dᵢ = k − vᵢ if vᵢ &lt; k, else 0.
+- A **fibre** a is the set of odd T ≤ M/2 with T ≡ ±a (mod p). The zero fibre is a = 0.
+
+**What is proved and checked:**
+- **Lemma Z** (zero fibre). Depth 0 covers all of it; depth 1–4 covers none; depth ≥ 5 covers exactly 1/8. PROVED (chair); DeepSeek CORRECT.
+- **Theorem NZ** (a ≠ 0). Depth ≥ 5 covers exactly 1/8. GLM&#x27;s §4 gives the exact table for d ≤ 4 (0 or 2^(1−d), by a parity window on a·u mod p; 1/8 at d = 4 when p ∤ u). PROVED (GLM); checked by three programs.
+- **R46 Track A** (1,107,866 nodes × 2¹⁵ lifts, two programs):
+  - every open child has every fibre&#x27;s share sum ≥ 1;
+  - but of 14,461,007,395 children whose share sums are all ≥ 1, only 1,351,811 are open;
+  - and 2,712 nodes pass every share sum in every child, yet have no open child.
+
+**So death is overlap.** Several coordinates cover the same T, and some T is left uncovered.
+
+**THE MODEL (chair; CHECKED on 461 random cases, 0 mismatches; proof to be written).** Inside fibre a ≠ 0, write T = a + p·s with s in 0..2ᵏ−1 and T odd. For a coordinate of depth d ≥ 1 there is a phase cᵢ(a) with
+
+    T is covered by coordinate i  ⇔  ‖uᵢ·s + cᵢ(a)‖ measured on the circle Z/2^{dᵢ} is &lt; 2^{dᵢ−4}.
+
+From the proof of Theorem NZ: cᵢ(a) = (a·uᵢ − αᵢ)/p mod 2^{dᵢ}, with αᵢ = a·uᵢ mod p.
+
+**So within one fibre, each coordinate is a runner:**
+- the track is a circle of 2^{dᵢ} steps;
+- the speed is the odd number uᵢ;
+- the start is cᵢ(a);
+- it is &quot;too near&quot; when it is within 1/16 of a lap of the origin.
+
+The fibre is covered ⇔ at every time s (of the right parity), some runner is too near.
+
+- **This is a small lonely-runner problem inside each fibre, on dyadic tracks.** The big problem reappears, in a 2-adic form, fibre by fibre.
+- Volume (each runner is &quot;near&quot; 1/8 of the time; Theorem NZ) is not enough. Whether the near-times of different runners **overlap** is decided by the speeds uᵢ mod 2^{dᵢ} and the starts. That overlap is exactly what Track A measured.
+- At the next level each runner&#x27;s track doubles (d → d + 1). The lift bit picks one of two starts. Depth 0 and depths 1–4 need their own description (full fibre, nothing, or a runner with a parity window).
+- The R26–R42 tilings (8 footprints, each covering 4 of 16 odd classes) look like the exact case of this model at d = 5.
+
+----- END COMMON -----
+
+----- BLOCK DEEPSEEK (reader) -----
+1. Read Theorem NZ (GLM 739be8e, §3 Steps 1–3 and §4) line by line: CORRECT / GAP / WRONG.
+2. When GLM&#x27;s runner model arrives, read it the same way.
+----- END BLOCK DEEPSEEK -----
+
+SEAT RULE: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+FORMAT: ANSWER BLOCK (≤300 words, incl. least-sure step) FIRST. UNFINISHED is allowed.
+
+
+----- BEGIN INLINE: GLM 739be8e (Theorem NZ), PT005/hesper/r45/2026-10-17T1752-reply-glm.md, pasted by carrier -----
+
+SEAT: GLM
+ROUND: PT005 R45 Track B (non-zero fibre)
+MODEL: GLM-5.3 (chat.z.ai; reasoning automatic, no toggle)
+WEB: OFF (no toggle exposed; no web template used)
+CHAT URL: https://chat.z.ai/c/1567c695-46da-4a02-b0b3-20c9e17599fa
+SEND TIME: 2026-10-17 17:08 +08
+COLLECTED TIME: 2026-10-17 17:51 +08
+TEXT SHA256: d5a0c6e26e677edb2ac5a0eb02034c9a94abf66cab34ce9671b469192901917b
+CARRIED_BY: Hesper
+STATUS: OPEN
+---
+VERBATIM GLM REPLY — PT005 GLM R45
+Source: https://chat.z.ai/c/1567c695-46da-4a02-b0b3-20c9e17599fa
+Collected 2026-10-17 17:50 +08. Regenerate button visible (generation complete); full message expanded via &quot;Show full message&quot;; extract_content region=full returned the entire reply ending at &quot;Script saved at /home/z/my-project/scripts/r45_nonzero_fibre.py for rerunning or extending to further primes.&quot; with no truncation. The in-page Copy button copy was truncated by the OS clipboard at &quot;…ru ≡ r′u (mod N) for…(truncated)&quot;, so the reply_text below is taken from the page&#x27;s own rendered text (verbatim, not edited), starting at the ANSWER BLOCK and ending at the Summary for the chair. Thought Process, tool-use chips (Explored/Wrote/Ran), and the two-line preamble (&quot;No prior worklog...&quot; / &quot;All checks pass...&quot;) are excluded per task instructions.
+
+**ANSWER BLOCK**
+
+Convention (matching the zero fibre&#x27;s T ≤ M/2): the non‑zero fibre is N_a = {T odd, 1 ≤ T ≤ M/2, T ≡ ±a (mod p)}, and **|N_a| = 2^{k−1}** (proved, §1). Let w = 2^v·u (u odd), α = au mod p, N = 2^d·p.
+
+**MAIN RESULT (PROVED §3, machine‑checked §5): if d ≥ 5, one coordinate covers exactly 2^{k−4} times of N_a — exactly 1/8 — for every p, a, u with v ≤ k−5.** This is the exact mirror of Lemma Z(c): a depth‑≥5 coordinate covers exactly 1/8 of *every* fibre, zero or non‑zero. Independence of p and a holds precisely for d ≥ 5.
+
+Full count (all depths; PROVED §2–4, CHECKED §5), with τ_d = 2^{d−4}p:
+
+| depth | # covered T in N_a | share |
+|---|---|---|
+| d ≥ 5 | 2^{k−4} (unconditional) | 1/8 |
+| d = 4 | 2^{k−4}·[α ≠ 0] (0 iff p\|u) | 1/8 or 0 |
+| d = 3 | 2^{k−3}·[α odd ∧ 2α&lt;p, ∨ α even ∧ 2α&gt;p] | 0 or 1/4 |
+| d = 2 | 2^{k−2}·[α odd ∧ 4α&lt;p, ∨ α even ∧ 4α&gt;3p] | 0 or 1/2 |
+| d = 1 | 2^{k−1}·[α odd ∧ 8α&lt;p, ∨ α even ∧ 8α&gt;7p] | 0 or 1 |
+| d = 0 | 2^{k−1}·[16‖2^{v−k}α‖_p &lt; p] | 0 or 1 (Fact‑C arc; depends on v, not just d) |
+
+Verification: brute force vs formula, p ∈ {17,19}, k = 1..6, v = 0..k+2, 36 odd u (incl. p|u, p²|u, u&lt;0), all a: **47,736 configs, 0 mismatches**; 3,672 depth‑≥5 configs all equal 2^{k−4} (456 with α = 0); harness re‑proved Lemma Z on 2,808 configs, 0 mismatches.
+
+Least‑sure step: reading &quot;one period&quot; as the half period [1, M/2]. On the full period every count doubles (2^{k−3} for d ≥ 5); the 1/8 share is convention‑free. Second: the p | u branch of uniformity (§3, step 2) — proved, but it is where a naive &quot;multiplication by u is a bijection&quot; argument fails.
+
+---
+
+## §1 Setup and fibre size — PROOF
+
+N_a = {T : 1 ≤ T ≤ M/2, T odd, T ≡ ±a (mod p)}, a ∈ {1,…,p−1}; N_a = N_{p−a}. Odd T ≡ a in [0,M): T = a + ps, 0 ≤ s &lt; 2^k, T odd ⟺ s ≡ 1−a (mod 2), giving 2^{k−1} of them; likewise for −a. The involution T ↦ M−T (odd↔odd, a↔−a, cover‑preserving since Nu | Mu for d ≤ k, no fixed points because M/2 ≡ 0 mod p) halves the full period, so |N_a| = 2^{k−1}. (Also verified directly in code: 0 fibre‑size failures, 0 partition failures — the fibres ±a, a = 1..(p−1)/2, exactly partition the odd non‑multiples of p in [1, M/2].)
+
+## §2 Reduction — PROOF
+
+For v &lt; k, d = k−v, N = 2^d·p: the nearest multiple of M = 2^kp to 2^v·x is 2^v × (nearest multiple of N to x), so ‖Tw‖_M = 2^v·‖Tu‖_N and
+
+  **T covered ⟺ 16·‖Tu‖_N &lt; N ⟺ ‖Tu‖_N &lt; 2^{d−4}·p** — a condition on Tu mod N only, with **no k left in it**.
+
+(This is exactly Lemma Z&#x27;s reduction with modulus 2^d·p; the zero fibre is the case T ≡ 0 mod p, where the factor p strips out and the modulus becomes 2^d.) For v ≥ k: ‖Tw‖_M = 2^k·‖2^{v−k}Tu‖_p, and Tu mod p is *constant* on each sign of the fibre, so depth 0 is all‑or‑nothing per fibre: covered ⟺ 16·‖2^{v−k}α‖_p &lt; p.
+
+## §3 Main theorem (d ≥ 5) — PROOF
+
+**Theorem NZ.** p odd, k ≥ d ≥ 5, w = 2^v·u, a ≢ 0. Then #{T ∈ N_a covered} = 2^{k−4}.
+
+**Step 1 (uniformity).** Let α = au mod p, R_α = {r ∈ [0,N) : r odd, r ≡ α (mod p)} (|R_α| = 2^{d−1}). The map T ↦ Tu mod N from F₊ = {T ∈ [0,M) : odd, ≡ a} onto R_α is exactly 2^{k−d}‑to‑1. *T = a + ps with s ≡ 1−a (2), 0 ≤ s &lt; 2^k; T ≡ T′ (mod N) ⟺ 2^d | s−s′ (p odd), and within one parity class s runs over 2^{k−1} ≥ 2^{d−1} values hitting each of the 2^{d−1} classes mod 2^d exactly 2^{k−d} times — so T mod N covers S_a = {odd, ≡ a mod p} uniformly. Then multiply by u: if p ∤ u, u is a unit mod N. **If p | u** (so α = 0), ru ≡ r′u (mod N) forces 2^d | r−r′ (because v_p(N) = 1 ≤ v_p(u) kills the p‑part) together with p | r−r′ (both ≡ a), hence r = r′ by CRT — injective either way, and |S_a·u| = 2^{d−1} = |R_α| with S_a·u ⊆ R_α. ∎
+
+**Step 2 (arc count).** Write r = α + pσ, σ ∈ [0, 2^d); r odd ⟺ σ ≡ 1−α (mod 2). The arc {r : 16‖r‖_N &lt; N} = [0, τ) ∪ (N−τ, N), τ = 2^{d−4}p ≥ 2p. The lower piece admits σ ∈ {0,…,2^{d−4}−1} (2^{d−4} consecutive integers ⟹ 2^{d−5} of each parity); the upper piece admits σ ∈ {2^d−2^{d−4},…,2^d−1} (again 2^{d−5} per parity; when α = 0 it shrinks to {2^d−2^{d−4}+1,…,2^d−1}, which still contains exactly 2^{d−5} odd σ). Endpoints: σ = 2^{d−4}−1 gives r = τ−p+α ≤ τ−1 (inside); σ = 2^d−2^{d−4} gives r = N−τ+α, inside for α ≥ 1 and exactly the excluded endpoint N−τ for α = 0 (the shrunken block). Hence n(d,p,α) := |R_α ∩ arc| = 2^{d−4} for every α ∈ [0,p) — this is where d ≥ 5 (τ ≥ 2p) is used: at d = 4, τ = p and odd multiples of p sit at distance exactly p, so α = 0 dies.
+
+**Step 3 (halving).** r ↦ N−r bijects R_α → R_{−α} preserving ‖r‖_N, so n(−α) = n(α); and T ↦ M−T bijects covered‑(≡a) with covered‑(≡−a). Full‑period covered = 2^{k−d}(n_α + n_{−α}) = 2^{k−d}·2^{d−3}; half period: 2^{k−4}. ∎
+
+## §4 The other depths — PROOF (same Steps 1–3, different arc)
+
+For d ≤ 4, τ ≤ p, so the lower piece admits only σ = 0 (r = α: needs α odd, α &lt; τ) and the upper only σ = 2^d−1 (r = N−p+α, ‖r‖ = p−α &lt; τ ⟺ α &gt; p−τ: needs α even, α ≥ 1). So n = [α odd ∧ α &lt; τ] + [α even ∧ α &gt; p−τ], τ = 2^{d−4}p; at d = 4 this is [α odd] + [α even ≠ 0] = [α ≠ 0]. Multiplying by 2^{k−d} and Step 3 gives the table; d = 0 is §2. Combining: C = 2^{k−d}·n for all d ≥ 1 — equivalently C = 2^v·(count at level N = 2^dp for speed u), since the half period at level M is 2^v copies of the half period at level N.
+
+## §5 Computation — CHECKED (all numbers from this run)
+
+Script:
+/home/z/my-project/scripts/r45_nonzero_fibre.py
+(brute force over the actual fibre, no shortcuts). Output verbatim:
+text
+fibre-size failures: 0 | partition failures: 0
+nonzero-fibre configs: 47736 | formula mismatches: 0
+depth&gt;=5 configs: 3672 | C != 2^(k-4): 0 | alpha=0 among them: 456
+Lemma-Z harness configs: 2808 | mismatches: 0
+observed brute counts by depth: {0:[0,1,2,4,8,16,32], 1:[0,1,2,4,8,16,32],
+2:[0,1,2,4,8,16], 3:[0,1,2,4,8], 4:[0,1,2,4], 5:[2,4], 6:[4]}
+arc-count checks (p in {17,19,23,29,31}, d=1..7, all alpha): 833 | mismatches: 0
+The observed value sets match the table exactly (d ≤ 4: only 0 or 2^{k−d}; d ≥ 5: only 2^{k−4}). Illustrative brute table, p = 17, k = 6 (|N_a| = 32), u = 1, rows = a ∈ {1,2,3,4,8,9,15,16}:
+text
+v=0 (d=6): [4,4,4,4,4,4,4,4] v=5 (d=1): [32,0,0,0,0,0,0,32]
+v=1 (d=5): [4,4,4,4,4,4,4,4] v=6 (d=0): [32,0,0,0,0,0,0,32]
+v=2 (d=4): [4,4,4,4,4,4,4,4] v=7 (d=0): [0,0,0,0,32,32,0,0]
+v=3 (d=3): [8,0,8,0,0,0,0,8] v=8 (d=0): [0,0,0,32,0,0,0,0]
+u=17 (α=0), a=1, v=0..5: [4,4,0,0,0,0]
+Note d = 4 with α = 0 (u = 17) gives 0, while d = 5, 6 still give 4 — the boundary case of Step 2, confirmed.
+
+## §6 Level budget consequence — IDEA
+
+Since each depth‑≥5 coordinate covers exactly 1/8 of every fibre and each depth‑4 coordinate with p ∤ u covers exactly 1/8 of every non‑zero fibre (and 0 of the zero fibre), the union bound gives, for every fibre a with no depth‑0 coordinate in its Fact‑C arc:
+
+(F5 + F4′)/8 + Σ_{d=1}^{3} 2^{1−d}·F_d^{win(a)} ≥ 1
+
+F4′ = #{depth‑4 coords with p ∤ u}, where &quot;win(a)&quot; is the parity window on au mod p from the table. Clean special case: F0 = 0 and no depth‑≤3 coordinate in fibre a&#x27;s window ⟹ F5 + F4′ ≥ 8 — the non‑zero‑fibre analogue of Lemma Z&#x27;s corollary, but with depth‑4 (p ∤ u) coordinates promoted to fully useful. Warning for Track B: unlike the zero fibre, depths 1–3 are not harmless here — a depth‑1 coordinate with α in its window swallows an entire fibre (observed: C = 32 of 32 above), and a depth‑3 coordinate with p ∤ u covers 1/4 of each fibre in a u‑dependent subset of fibres. So a budget argument that ignores low depths must first control au mod p window hits. (Whether the measured Track‑A survivals correlate with such window hits is a testable prediction: UNFINISHED, not computed here.)
+
+Summary for the chair: the non‑zero fibres behave exactly like the zero fibre for depth ≥ 5 (exactly 1/8 each, proved + 47,736 brute checks), depth 4 helps non‑zero fibres only when p ∤ u (then exactly 1/8), and depths ≤ 3 are all‑or‑nothing per fibre with explicit parity windows on au mod p. Script saved at /home/z/my-project/scripts/r45_nonzero_fibre.py for rerunning or extending to further primes.
+
+END OF VERBATIM REPLY
+----- END INLINE GLM 739be8e -----
+</pre>

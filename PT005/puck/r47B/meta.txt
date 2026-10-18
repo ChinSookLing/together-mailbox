@@ -16,3 +16,8 @@ UPDATE 2026-10-18 15:29 +08 (Puck)
 - Copilot: copilot/send_R47B_COPILOT.txt pasted + R47B_reply_ASTRA.md and R47B_reply_GPT.md attached, sent ~15:26:50 +08, new chat https://copilot.com/chat/conversation/c05fd70f-00bc-47d2-b504-1266bdcf82bf (mode Auto, no web). Collect next visit.
 - Hark: summary posted to Hesper ~15:27:45 +08 (labelled "Puck 15:50" by mistake; actual ~15:28).
 - Open: Grok red-team seat (needs resend on a later visit, fresh chat), DeepSeek needs GLM proof when it arrives.
+
+UPDATE 2026-10-18 16:08 +08 (Puck)
+- Copilot collected (copilot/2026-10-18T1608-COPILOT.md + raw). READ only; Astra/GPT number gaps come from different sampling seeds (20261018 vs 47047), not errors.
+- Grok red-team seat RESENT in fresh chat https://grok.com/c/317f5894-7913-45fe-8b58-acd5c928f185 at 16:07:57 +08 (Expert; no web-search toggle exists). Was working, no "unavailable" error. Collect next visit.
+- Still open: DeepSeek reader waits for a GLM proof (GLM R47B UNFINISHED, b160464/9cc6b26).
