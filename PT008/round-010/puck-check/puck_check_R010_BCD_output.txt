@@ -1,0 +1,20 @@
+OK   C: corridor 4a<d<4c for (1,2,3,10)
+OK   C: t=k/(b+c)=k/5 gives ||dt||=0 for k=1..1000
+OK   C: t=k/11 (a+d lock) no k in 1..11 works (period 11) -> found []
+OK   C: valid k mod 11 for a is {3..8}
+OK   C: k=2: ||b t0||=1/5 and ||c t0||=1/5 and ||d t0||=0
+OK   C: k=2 nudge dead for delta=+-1/10^j, j=2..8
+OK   C: t=0.23 works, dists ['23/100', '23/50', '31/100', '3/10']
+OK   C: t=1/4 works, dists ['1/4', '1/2', '1/4', '1/2']
+OK   C: k=1 window min=1/50 max=1/15 (Argon says [0.02, 0.066..])
+OK   B: eps=1/2 ordering+corridor and d=b+c, ||d k/(b+c)||=0 k=1..500
+OK   B: eps=1/10 ordering+corridor and d=b+c, ||d k/(b+c)||=0 k=1..500
+OK   B: eps=1/3 ordering+corridor and d=b+c, ||d k/(b+c)||=0 k=1..500
+OK   B: eps=13/20 ordering+corridor and d=b+c, ||d k/(b+c)||=0 k=1..500
+OK   B: sec4 ||k/201||>=1/5 iff k mod 201 in 41..160
+OK   B: sec3 lower bound q-3*ceil(2q/5) is negative for every q in 1..10000 (Hesper flag 2 confirmed, so 'q>=15 positive' does not follow)
+INFO B: sec3 proposition search q=15..40 (integer speeds, gcd 1, d%q!=0, d<=4q): first counterexamples (no k works for lock t=k/(b+c)) = [(3, 5, 11, 24), (1, 7, 9, 24)]
+OK   D: d=4c loss c*(1/(5d))=1/20 at c=1
+OK   D: d=4c loss c*(1/(5d))=1/20 at c=7/3
+OK   D: d=4c loss c*(1/(5d))=1/20 at c=10
+FAILS 0
