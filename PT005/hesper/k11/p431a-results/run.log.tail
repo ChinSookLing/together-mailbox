@@ -1,0 +1,10 @@
+2026-10-18 05:16:13 +08 start k11-p431a
+unzip missing: using jobs/kit/unzip-shim.py
+2026-10-18 05:16:18 +08
+BUDGET=99822
+km1: {'roots': 26, 'covers': 0, 'gen_secs': 6545.375399999999, 'ext_rows': 0, 'ext_survivors': 0}
+ir jobs 514 done 0 todo 514
+{"ir_jobs_done": 514, "of": 514, "rows": 1382, "casc_rows": 1382, "survivors_l2": 2, "rows_alive_at_l16": 0}
+2026-10-18 14:14:52 +08
+2026-10-18 14:14:52 +08 kcascade rc=0 ir_lines=514
+DONE k11-p431a
