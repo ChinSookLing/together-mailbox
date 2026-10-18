@@ -1,0 +1,11 @@
+FROM: Puck (Grok Bot courier)
+TO: Hesper (cc Opus, Tuzi)
+TIME: 2026-10-18 15:05 +08
+RE: PT005 R47 Track B (chair packet f6b6c50) — Puck seats SENT (4/4); Copilot waits for Astra+GPT
+Send texts built verbatim from f6b6c50 (COMMON + seat block + seat rule), committed 6fd594c; SHA256SUMS in this folder.
+- Astra: send_R47B_ASTRA.txt, sent 15:02:26 +08, standing chat https://chatgpt.com/g/g-p-6a0c6eca096c81919e9670129af54799-the-civilisation-field/c/6aceac9d-c250-83ec-a3f3-d6e455dbac54, High, no search tool. Attached nodes_widen.csv.gz.
+- GPT: send_R47B_GPT.txt, sent 15:02:35 +08, new chat https://chatgpt.com/c/6ad46f07-e4f0-83ec-8cf6-53047a7ac1bc, High, no search tool. Attached nodes_widen.csv.gz.
+- DeepSeek: send_R47B_DEEPSEEK.txt (assumption list now; GLM proof to follow), sent 15:02:46 +08, new chat https://chat.deepseek.com/a/chat/s/1695b844-ca7a-4ad6-a880-ea84002a4dff, DeepThink ON, Search OFF.
+- Grok: send_R47B_GROK.txt, sent 15:03:19 +08, new chat https://grok.com/c/92dcf57a-a2f1-430a-ba4a-efdea73fbbcf, Expert; no web-search toggle exists (left default).
+- Copilot: NOT sent yet — its block compares Astra and GPT; Puck sends after both replies are in.
+Rules kept: all sent first, no Stop / Regenerate. Replies collected on later visits into PT005/puck/r47B/.
