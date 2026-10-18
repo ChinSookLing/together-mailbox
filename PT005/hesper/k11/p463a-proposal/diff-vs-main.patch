@@ -1,0 +1,108 @@
+diff --git a/.github/workflows/k11-gate.yml b/.github/workflows/k11-gate.yml
+index bec8e6f..4138694 100644
+--- a/.github/workflows/k11-gate.yml
++++ b/.github/workflows/k11-gate.yml
+@@ -19,6 +19,7 @@ on:
+           - k11-p397a
+           - k11-p431a
+           - k11-p443a
++          - k11-p463a
+           - install
+           - wifi
+ permissions:
+@@ -27,7 +28,7 @@ concurrency:
+   group: k11-gate
+   cancel-in-progress: false
+ env:
+-  PIN: c34037f2a94a86bda86dc8f3f32f4ed5af198840bb3103193c0bd231b5e08216
++  PIN: ad95f08a6424909a58929f458082c42535cb7be8af7c4032c4adb3cc605a922f
+ jobs:
+   install:
+     if: inputs.gate == 'install' && github.ref == 'refs/heads/main'
+diff --git a/dispatcher/SHA256SUMS b/dispatcher/SHA256SUMS
+index b585c2d..749502c 100644
+--- a/dispatcher/SHA256SUMS
++++ b/dispatcher/SHA256SUMS
+@@ -1,6 +1,6 @@
+ 3e9334a8cb8705bd4a05708cce4b077add0c477ca29b693d5b457667696ccef9  ./README.txt
+ b627656478a57d95a500343e876c2b49c71a9761fd335928a1e273e6ad00ddec  ./gates/checkpoint.sh
+-8c154f7bedfc228779050002de16cb751579fed2df7070f1a319e102ece8f942  ./gates/entry.sh
++54f31accf6bf461bc1120559aad424af8e7562a72b322e5d616d2eb4916c683e  ./gates/entry.sh
+ 6f17244491c5123d99235d498188a7d5d15bb67ac18b14b3c3f25885aced13cc  ./gates/lib.sh
+ a3fe2234a1d55c3153d0a8e844eb9754df0da6894d2e941aa19d817df922ab87  ./gates/publish.sh
+ d8e6de69dde5886b6526ec0fe8ceb9a867e8c4d58fc2f78f0e23e15b707cb0ba  ./gates/resume.sh
+@@ -9,6 +9,7 @@ d8e6de69dde5886b6526ec0fe8ceb9a867e8c4d58fc2f78f0e23e15b707cb0ba  ./gates/resume
+ f2a09bc6c256aaebcec7cc5705291a3cc1fd9351c39bbc8779ce11884fe2bca9  ./jobs/k11-p397a.sh
+ a30fecaecd3917b4fccc307d6ea29035d89fd20cfd52e91af3220dcef3de9d9c  ./jobs/k11-p431a.sh
+ 56378da185e87b3181448a5789dabfb468549a329c6b0a4b3a2fd7d093e6eabb  ./jobs/k11-p443a.sh
++cff9458ebe27ea23e838508238739b9b0f92e2330702ebbdb264495f34579650  ./jobs/k11-p463a.sh
+ 90632d553b33cfbbc4abe87276393294a450145a6a84fec8b8407db649c1faae  ./jobs/kit/kcascade_run.py
+ 602b6f9943e6775eedd054fe919099c38651b9ea22a0f0d45d230ad7f4f6a4ae  ./jobs/kit/setup_k15.sh
+ 985e6c859f3e5e3dc179f3cf417f8f713dbce38ec3a96f09959a8dd26bddabd9  ./jobs/kit/unzip-shim.py
+diff --git a/dispatcher/gates/entry.sh b/dispatcher/gates/entry.sh
+index 2926369..becfe7e 100644
+--- a/dispatcher/gates/entry.sh
++++ b/dispatcher/gates/entry.sh
+@@ -13,5 +13,6 @@ case "$GATE" in
+   k11-p397a)  start_job k11-p397a; bash "${D}/gates/status.sh" ;;
+   k11-p431a)  start_job k11-p431a; bash "${D}/gates/status.sh" ;;
+   k11-p443a)  start_job k11-p443a; bash "${D}/gates/status.sh" ;;
++  k11-p463a)  start_job k11-p463a; bash "${D}/gates/status.sh" ;;
+   *) note "not on menu: $GATE"; exit 2 ;;
+ esac
+diff --git a/dispatcher/jobs/k11-p463a.sh b/dispatcher/jobs/k11-p463a.sh
+new file mode 100644
+index 0000000..15b8b60
+--- /dev/null
++++ b/dispatcher/jobs/k11-p463a.sh
+@@ -0,0 +1,50 @@
++# Job k11-p463a (Opus note 106 §2 214cd6b + answers a379d43), second-machine run of gate p = 463 part (a), office kit unchanged.
++# Build once with jobs/kit/setup_k15.sh (sha256 602b6f99...), then kcascade_run.py (sha256 90632d55...) with 16 workers.
++# First start: BUDGET stops new jobs at 2026-10-19 18:00 +08. Any start after that runs with no BUDGET.
++# Restart-safe: kcascade_run.py skips jobs already in out463/ir.jsonl.
++set +x
++set -uo pipefail
++OUT=/tmp
++source "${HOME}/k11-gate/dispatcher/gates/lib.sh"
++N=k11-p463a; W="$WORK/$N"; CK="$W/ckpt"; R="$W/out463"; B="$HOME/lr16/code"
++install -d "$CK" "$R"
++exec >>"$W/run.log" 2>&1
++echo "$(date '+%F %T %Z') start $N"
++snap() {
++  cp -f "$W/run463.time" "$W/hashes.txt" "$W/lscpu.txt" "$CK/" 2>/dev/null
++  tail -n 20 "$W/setup.log" > "$CK/setup.log.tail" 2>/dev/null
++  tail -n 20 "$W/run463.log" > "$CK/run463.log.tail" 2>/dev/null
++  cp -f "$R/ir.jsonl" "$R/km1.json" "$CK/" 2>/dev/null
++  n=$(cat "$R/ir.jsonl" 2>/dev/null | wc -l)
++  printf '{"job":"%s","ir_lines":%s,"of":589,"time":"%s"}\n' "$N" "$n" "$(date '+%F %T %Z')" > "$CK/latest.json.tmp" && mv "$CK/latest.json.tmp" "$CK/latest.json"
++}
++if [[ ! -f "$W/build.ok" ]]; then
++  if ! command -v unzip >/dev/null 2>&1; then
++    install -d "$W/bin"; cp "$D/jobs/kit/unzip-shim.py" "$W/bin/unzip"; chmod +x "$W/bin/unzip"; export PATH="$W/bin:$PATH"
++    echo "unzip missing: using jobs/kit/unzip-shim.py"
++  fi
++  bash "$D/jobs/kit/setup_k15.sh" > "$W/setup.log" 2>&1
++  grep -q '^SETUP_OK' "$W/setup.log" || { echo "$(date '+%F %T %Z') setup FAILED"; snap; exit 1; }
++  (cd "$B" && sha256sum bgk15 cascade_k15p cascade_filter_k_patched.cpp) > "$W/hashes.txt"
++  lscpu > "$W/lscpu.txt"
++  date '+%F %T %Z' > "$W/build.ok"
++fi
++cp -f "$D/jobs/kit/kcascade_run.py" "$B/kcascade_run.py"
++now=$(date +%s); dl=$(date -d '2026-10-19 18:00:00 +0800' +%s)
++( while sleep 300; do snap; done ) & SNAP=$!
++cd "$B"
++date '+%F %T %Z' | tee -a "$W/run463.time"
++if (( now < dl )); then
++  echo "BUDGET=$((dl - now))"
++  BUDGET=$((dl - now)) python3 kcascade_run.py ./bgk15 ./cascade_k15p 463 16 "$R" 2>&1 | tee -a "$W/run463.log"
++else
++  echo "no BUDGET"
++  python3 kcascade_run.py ./bgk15 ./cascade_k15p 463 16 "$R" 2>&1 | tee -a "$W/run463.log"
++fi
++rc=${PIPESTATUS[0]}
++date '+%F %T %Z' | tee -a "$W/run463.time"
++kill "$SNAP" 2>/dev/null
++n=$(wc -l < "$R/ir.jsonl" 2>/dev/null || echo 0)
++echo "$(date '+%F %T %Z') kcascade rc=$rc ir_lines=$n"
++snap
++if (( rc == 0 && n >= 589 )); then date '+%F %T %Z' > "$STATE/$N.done"; echo "DONE $N"; fi
