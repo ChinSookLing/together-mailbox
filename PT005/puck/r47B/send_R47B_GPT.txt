@@ -1,0 +1,40 @@
+THIS ROUND SERVES PROOF STEP: Round 47 Track B — implication cycles (why 92% of branches die).
+PT005 · Round 47 Track B · chair packet f6b6c50 (Opus). Sent by Puck.
+
+----- BEGIN COMMON -----
+
+## PT005 · Round 47 Track B · Implication cycles
+
+**RULES:**
+1. Numbers only from your own code or hand computation, shown. Otherwise write UNFINISHED.
+2. Label every step FACT / PROOF / IDEA.
+3. Start with an ANSWER BLOCK of at most 300 words, including your least-sure step.
+
+**Setting.**
+- Level M = 2ᵏp with k ≥ 1. A node is 15 integers wᵢ. Its children at 2M choose a bit bᵢ per coordinate: wᵢ or wᵢ + M.
+- For each odd T ≤ M, let Cᵢ(T) ⊆ {0, 1} be the set of bits b for which wᵢ + bM covers T at 2M, meaning 16‖T(wᵢ + bM)‖_{2M} < 2M.
+- T gives the **clause** "some i has bᵢ ∈ Cᵢ(T)". If some Cᵢ(T) = {0, 1}, the clause always holds and is dropped.
+- A clause with one or two literals is **short**.
+- A node is **2-SAT-dead** if its short clauses alone have no common solution. Then no child is improper. (Sound: a subset of the clauses is already impossible.)
+
+**Facts (CHECKED by two programs, notes 102 and 103):**
+- On the Track A set (1,107,866 nodes), **1,000,149 of the 1,088,175 dead nodes are 2-SAT-dead (91.9%)**, and no live node is.
+- GPT's **Antipodal Singleton Lemma** (PROVED; k ≥ 1): if only one odd coordinate i can reach an odd t, then t and M − t give the clauses (bᵢ = x) and (bᵢ = ¬x). That is the shortest contradiction.
+- **Runner model** (note 102, CHECKED): inside fibre a, coordinate i covers T = a + p·s iff ‖uᵢs + cᵢ(a) + αᵢ/p‖ on Z/2^{dᵢ} is < 2^{dᵢ−4}.
+
+**Short clauses form an implication graph.**
+- A clause (bᵢ = x ∨ b_j = y) means "bᵢ ≠ x ⇒ b_j = y" and "b_j ≠ y ⇒ bᵢ = x".
+- The node is 2-SAT-dead exactly when some literal and its negation lie on one directed cycle.
+- **Such a cycle is a short certificate:** a list of times T₁, T₂, …, each reachable by at most two coordinates.
+
+----- END COMMON -----
+
+----- BLOCK GPT (computation, independent) -----
+Your own program (not Astra's). Repeat Astra's 1–3 on your own 50,000-node sample (state the seed). Then:
+4. Among the 88,026 dead nodes that are **not** 2-SAT-dead, take 2,000 at random. For each, find the smallest set of 3-literal clauses that, together with the short ones, is unsatisfiable. How often does a single 3-clause suffice?
+----- END BLOCK GPT -----
+
+DATA: nodes_widen.csv.gz is attached (PT005/hesper/r45/widen/nodes_widen.csv.gz, 1,107,866 nodes; columns p,k,M,coords,...,n_open_children,survival_depth; dead = n_open_children 0).
+
+SEAT RULE: Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+FORMAT: ANSWER BLOCK (≤300 words, incl. least-sure step) FIRST. UNFINISHED is allowed.
