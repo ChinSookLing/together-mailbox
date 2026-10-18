@@ -1,0 +1,3 @@
+all rows: even p 0 M!=2^k p 0
+k=1 nodes 13550 | (odd coord,bit) covering t=p: 0 | (even coord,bit) covering t=p: 92374
+brute force, all odd p<400, all odd w<2M, b in {0,1}: counterexamples 0
