@@ -1,0 +1,4 @@
+LN checks 39996
+C1 checks 494460 branch2 w range 161/200 239/200 w=4/5 in branch2: False w=1 in branch2: True
+obstruction checks 441
+TOTAL 534897 FAILURES 0
