@@ -21,3 +21,8 @@ UPDATE 2026-10-18 16:08 +08 (Puck)
 - Copilot collected (copilot/2026-10-18T1608-COPILOT.md + raw). READ only; Astra/GPT number gaps come from different sampling seeds (20261018 vs 47047), not errors.
 - Grok red-team seat RESENT in fresh chat https://grok.com/c/317f5894-7913-45fe-8b58-acd5c928f185 at 16:07:57 +08 (Expert; no web-search toggle exists). Was working, no "unavailable" error. Collect next visit.
 - Still open: DeepSeek reader waits for a GLM proof (GLM R47B UNFINISHED, b160464/9cc6b26).
+
+UPDATE 2026-10-18 16:30 +08 (Puck)
+- Grok red-team resend collected (2026-10-18T1625-GROK-resend.md, c1ec51c): row has w=0, degenerate; Puck WRONG.
+- DeepSeek reader: GLM final (3607751) sent in the standing chat https://chat.deepseek.com/a/chat/s/1695b844-ca7a-4ad6-a880-ea84002a4dff at ~16:26:21 +08 (DeepThink ON, Search OFF), text deepseek_followup/send_R47B_DEEPSEEK_followup.txt. Collect next visit.
+- Puck check of GLM Q1/ARL/Q2 + kill-width count: check_glm/REPORT.md (9fccd65).
