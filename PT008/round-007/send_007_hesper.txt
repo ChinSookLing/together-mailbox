@@ -1,0 +1,213 @@
+TO: Hesper
+From Puck. GPT-6 (chair) ruled R006 PARTIAL and issued Round 007 "The Missing Region". The pack below is for your two seats: Qwen (Track B, Independent Formula Partition) and Argon (Track C, Attack the Closure). Web search off; Gemini personalization off before sending to Argon. Same flow as R006: send the whole pack, collect each reply, file it in PT008/round-007/. I will check the replies and hand them to the chair. Opus has Track A. The chair authorised sending R007 but no new large-scale search, and no new PROVED items go on the wall.
+R006 ratings: Qwen R1 = PROOF CANDIDATE (chair wrote its own algebra proof), Qwen closest-pair heuristic = DISPROVED; Argon isolated-point necessity = PROOF CANDIDATE, its generalisation to all success components = UNFINISHED.
+
+# PT-008 · Round 007 · The Missing Region
+
+**From:** GPT-6（Chair）\
+**Courier:** Puck\
+**Seats:** Opus / Qwen / Argon\
+**Status:** OPEN\
+**WEB:** OFF
+
+## 共同背景
+
+Time Forge 研究孤独跑者猜想的统一时间构造。
+
+本轮只处理四跑者：
+
+参考速度为 0，另外三个相对速度的绝对值满足
+
+[\
+0\<a\<b\<c.\
+]
+
+目标是直接构造 (t\geq0)，使：
+
+[\
+\min(|at|,|bt|,|ct|)\geq\frac14.\
+]
+
+其中 (|x|) 表示到最近整数的距离。
+
+不得预设速度为整数、具有共同周期或可以把时间限制在 ([0,1))。
+
+已有三跑者公式：
+
+[\
+F_3(a,b)=\
+\frac{\lceil(a+b)/(3a)\rceil}{a+b}.\
+]
+
+R006 提出 PLS 及多项特殊区域构造，但没有完成一般四跑者公式。
+
+以下两个区域已有主席手工证明候选：
+
+**区域 R1**
+
+若
+
+[\
+\frac{5b}{3}\leq c\leq8a-b,\
+]
+
+取
+
+[\
+t=\frac2{b+c}.\
+]
+
+**区域 S6-A**
+
+若
+
+[\
+3a\leq c\leq11a\
+]
+
+且
+
+[\
+\frac5{12}(a+c)\leq b\leq\frac7{12}(a+c),\
+]
+
+取
+
+[\
+t=\frac3{a+c}.\
+]
+
+这两个构造的代数证明已由主席写出，但还需独立审阅。
+
+## Track A · Opus — Coverage Closure
+
+任务：审查 R006 的 Phase-Lock Sweep 证明，并研究现有构造区域的并集。
+
+请首先给出 S1、S2、S3、S4、S5 和 PLS 的完整精确定义。
+
+不得仅引用此前轮次的名称。
+
+然后：
+
+1. 修正 S2 的 Nudge 定义与双向性。
+2. 定义 S4 的 (k\_{ac})。
+3. 为 S5 明确增加 (b\leq3a)，或证明替代条件。
+4. 将 S6-A 纳入构造族。
+5. 将所有区域改写为速度比例
+
+   [\
+   x=b/a,\qquad y=c/a\
+   ]
+
+   上的精确不等式。
+6. 尝试证明这些区域覆盖所有
+
+   [\
+   1\<x\<y.\
+   ]
+
+特别处理 (c\geq3b) 与此前尚未覆盖的区域。
+
+如果无法覆盖全部参数空间，请输出一个精确描述的剩余区域，而不是只给出网格统计。
+
+**验收要求：** 一个完整覆盖证明，或一个严格证明仍不被覆盖的参数区域。
+
+## Track B · Qwen — Independent Formula Partition
+
+任务：独立寻找四跑者的分段时间公式，不依赖 Opus 的覆盖率统计。
+
+已知：
+
+[\
+t=\frac2{b+c}\
+]
+
+和
+
+[\
+t=\frac3{a+c}\
+]
+
+分别有可证明的有效区域。
+
+请研究更一般的配对形式：
+
+[\
+t=\frac{k}{a+b},\qquad\
+t=\frac{k}{a+c},\qquad\
+t=\frac{k}{b+c}.\
+]
+
+重点不是枚举整数 (k)，而是建立由速度比例决定 (k) 的代数选择规则。
+
+请回答：
+
+1. 是否存在有限数量、与速度大小无关的分段规则？
+2. 如果需要随速度比例增长的整数参数，能否用 floor/ceil 直接给出？
+3. 能否推出新的非平凡速度区域，并完整证明？
+4. 三跑者的上取整机制能否扩展到第三个约束？
+
+请独立审阅 R1 与 S6-A 的代数证明。
+
+**验收要求：** 新的显式构造及证明，或证明某个候选构造族不足以覆盖全部情况。
+
+## Track C · Argon — Attack the Closure
+
+任务：尝试推翻过强的区域覆盖宣称。
+
+特别检查：
+
+1. S6-A 的充分条件是否正确，包括全部等号边界？
+2. R1 和 S6-A 是否存在隐含的相位分支遗漏？
+3. 所有现有规则是否可能同时失效，而完整孤独跑者条件仍有解？
+4. “所有成功区间均含某个 (k/(x+y)) 时间”是否确实成立？
+5. 临界点选择原则是否受到正长度区间、孤立点或同速度分支的影响？
+
+请将以下三种结论明确区分：
+
+- 指定公式失败；
+- 整个构造规则族失败；
+- 孤独跑者猜想失败。
+
+三者不能混为一谈。
+
+允许给出有理数速度的手工反例。
+
+**验收要求：** 一个严格有效的反例，或一个能够消除现有证明缺口的引理。
+
+## 共同纪律
+
+- WEB OFF，不联网。
+- 不进行大规模计算。
+- 所有新数值必须自行计算，展示算式或短程序；否则 UNFINISHED。
+- 有限精确分数核对只支持 CHECKED，不支持一般 PROVED。
+- 任何新增公式必须给出精确适用条件。
+- 不得把有限候选检查当作统一构造原理。
+- 若证明未闭合，直接标 UNFINISHED。
+- 已有定理可以使用，但须说明其准确适用范围。
+
+标签：
+
+IDEA / CHECKED / PROOF CANDIDATE / PROVED / DISPROVED / UNFINISHED
+
+新结论的正式 PROVED 评级由主席在独立审阅后决定。
+
+## 回复格式
+
+**ANSWER BLOCK（最多 300 中文字）**
+
+- 本轮主要结论与评级
+- 证明成功或失败的准确范围
+- 下一项最重要的缺口
+- Least-sure Step
+
+然后：
+
+SECTION A — 精确命题\
+SECTION B — 手工证明\
+SECTION C — 反例或剩余区域\
+SECTION D — 下一步建议及 UNFINISHED
+
+**Round 007 的唯一总目标：缩小并严格描述完整四跑者构造与现有公式之间的差距。**
+
+PT-008 · R007 · OPEN
