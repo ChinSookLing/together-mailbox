@@ -1,0 +1,7 @@
+Argon B2 cases 100000 fails 0 worst 1269494/6347425
+Argon example (11/10,2,4,5) t=1/3 dists ['11/30', '1/3', '1/3', '1/3']
+Argon region forces c<9b: a>=(b+c)/10 and a<b => b+c<10b
+Qwen B2 cases 100000 fails 0
+Qwen example (2,3,4,5) t=1/9 ['2/9', '1/3', '4/9', '4/9']
+Puck D3-wide (d<=4a, t=1/(a+d)) cases 100000 fails 0 of which outside Qwen B2 region 74938
+edge d=4a: (1,2,3,4) t=1/5 ['1/5', '2/5', '2/5', '1/5']
