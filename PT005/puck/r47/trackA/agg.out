@@ -1,0 +1,52 @@
+rows 1107866
+('cert', 0, 'surv0', False) 19654
+('cert', 0, 'surv0', True) 779726
+('cert', 1, 'surv0', True) 308449
+('oddM',) 37
+-- by p (p,cert,surv0)
+(17, 0, False) 1885
+(17, 0, True) 322464
+(17, 1, True) 2274
+(19, 0, False) 2323
+(19, 0, True) 37916
+(19, 1, True) 33749
+(23, 0, False) 4261
+(23, 0, True) 136378
+(23, 1, True) 111403
+(29, 0, False) 977
+(29, 0, True) 3386
+(29, 1, True) 18462
+(31, 0, False) 116
+(31, 0, True) 164
+(31, 1, True) 1861
+(37, 0, False) 149
+(37, 0, True) 1483
+(37, 1, True) 1133
+(41, 0, False) 245
+(41, 0, True) 10522
+(41, 1, True) 1862
+(43, 0, False) 6147
+(43, 0, True) 216981
+(43, 1, True) 90772
+(47, 0, False) 752
+(47, 0, True) 8456
+(47, 1, True) 24476
+(53, 0, False) 1822
+(53, 0, True) 32104
+(53, 1, True) 10984
+(59, 0, False) 324
+(59, 0, True) 7043
+(59, 1, True) 3049
+(61, 0, False) 653
+(61, 0, True) 2829
+(61, 1, True) 8424
+-- no cert: (surv0, minE) counts
+(False, 1) 12575
+(False, 2) 7074
+(False, 3) 5
+(True, 1) 755369
+(True, 2) 24357
+-- no cert & surv0: pair/E0
+('has_pair_t', False, 'E0', 0) 27
+('has_pair_t', True, 'E0', 0) 779699
+-- 2712 all-pass-but-dead group: {('cert', 1): 2672, ('cert', 0): 40}

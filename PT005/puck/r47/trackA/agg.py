@@ -1,7 +1,7 @@
-import collections
+import collections, gzip
 C=collections.Counter(); byp=collections.Counter(); minEd=collections.Counter(); k2712=collections.Counter(); pairdead=collections.Counter()
 n=0
-for line in open('per_node_r47.tsv'):
+for line in gzip.open('per_node_r47.tsv.gz','rt'):
     if line.startswith('csv_line'): continue
     a=line.rstrip('\n').split('\t'); n+=1
     p,M,surv,nopen=int(a[1]),int(a[2]),int(a[3]),int(a[4])
