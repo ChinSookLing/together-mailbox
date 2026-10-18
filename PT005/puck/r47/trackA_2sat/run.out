@@ -1,0 +1,19 @@
+nodes 1107866
+SEC1 singleton cert (level k, cert, dead): count
+  ('k=0', False, False) 26
+  ('k=0', True, False) 11
+  ('k>=1', False, False) 19654
+  ('k>=1', False, True) 779726
+  ('k>=1', True, True) 308449
+SEC2 2-SAT (result, dead, group): count
+  ('NA', False, 'p>=19') 37
+  ('none', False, 'p17') 1885
+  ('none', False, 'p>=19') 17769
+  ('none', True, 'p17') 22664
+  ('none', True, 'p>=19') 65362
+  ('sat2', True, 'p17') 302074
+  ('sat2', True, 'p>=19') 698075
+
+real	1m22.761s
+user	2m55.714s
+sys	0m54.708s
