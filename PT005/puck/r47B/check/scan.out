@@ -1,0 +1,11 @@
+candidates 88026
+done 0 bad 0
+done 10000 bad 0
+done 20000 bad 0
+done 30000 bad 0
+done 40000 bad 0
+done 50000 bad 468
+done 60000 bad 477
+done 70000 bad 477
+done 80000 bad 661
+TOTAL CSV-dead but covering child exists (pair-count of half-masks, distinct choices): 1549
