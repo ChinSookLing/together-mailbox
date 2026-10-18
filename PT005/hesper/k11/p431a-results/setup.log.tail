@@ -1,0 +1,17 @@
+fifteen_runners_code_and_logs.zip: OK
+basegen_k_campaign.cpp: OK
+bgk_incremental_gain.h: OK
+cascade_filter_k.cpp: OK
+71c71
+< static_assert(2 * K < 29, "tight lookup assumes 2K < P for P >= 29");
+---
+> static_assert(2 * K < 89, "CHAIR SCOUTING PATCH: tight lookup needs 2K < P; only P >= 89 used");
+K=15 p=239 n=119 m=14 VEC=1 NW=8
+e5481fe40453f03f800943b5c738f771a12f686fd1996bee1feb9ed92c9f3809  bgk15
+735a06802a3baea5f46989bae8a5c5574fbf181766be3862b39f04c9367f9b2d  cascade_k15p
+f17094dea9eb35cf749a5e91842468ff04ca3a3af34804405b743a123faad877  cascade_filter_k_patched.cpp
+CPU(s):                                  16
+Model name:                              AMD Ryzen 9 8945HS w/ Radeon 780M Graphics
+CPU(s) scaling MHz:                      32%
+g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+SETUP_OK
