@@ -1,0 +1,18 @@
+CE1 V={1,3,4}: ||1/4|| 1/4 ||3/4|| 1/4 ||4/4|| 0 g= 0 local max? False local min? True
+t=1/5: ||1/5|| 1/5 ||3/5|| 2/5 ||4/5|| 1/5 g 1/5 local max? True
+  but n=4 threshold 1/4: g(1/5)=1/5 <1/4, not success; best local max of {1,3,4} on [0,3]: (Fraction(2, 7), '4/7')
+CE2 V={1,-1} -> |.|={1}: maxima in (0,3]: ['1/2', '3/2', '5/2'] (only peaks k+1/2)
+Necessity (all local maxima in C=Cpeak U Ccross): maxima tested 35531 outside C 0
+Local maxima that are of difference form only (not sum/peak): 0   => Argon's 'k/|ui-uj|' term in Ccross never needed; derivation 'ui t-k1 = -(uj t-k2) => t=k/(ui+uj) or k/|ui-uj|' only yields the sum form.
+m=3 integer speeds: opposite-slope valid crossings 21220 ghost (not on envelope) 10528 =49.6% ; ghosts that are g=0 2032 ; ghosts that are local minima 2032 =19.3% of ghosts
+m=4 integer speeds: opposite-slope valid crossings 42692 ghost (not on envelope) 28660 =67.1% ; ghosts that are g=0 7416 ; ghosts that are local minima 7416 =25.9% of ghosts
+|C∩[0,1]| m=3 max=10 : 44 ; m^2*max=90
+|C∩[0,1]| m=3 max=20 : 146 ; m^2*max=180
+|C∩[0,1]| m=3 max=40 : 102 ; m^2*max=360
+|C∩[0,1]| m=5 max=10 : 114 ; m^2*max=250
+|C∩[0,1]| m=5 max=20 : 86 ; m^2*max=500
+|C∩[0,1]| m=5 max=40 : 318 ; m^2*max=1000
+|C∩[0,1]| m=8 max=10 : 128 ; m^2*max=640
+|C∩[0,1]| m=8 max=20 : 246 ; m^2*max=1280
+|C∩[0,1]| m=8 max=40 : 652 ; m^2*max=2560
+For |V|=2 explicit enumeration-free success time exists (Opus F): failures 0 /2000 -- so Argon's blanket 'Q2 DISPROVED' is not supported at m=2 (Argon's claim concerns general F(V) via critical-time selection only)
