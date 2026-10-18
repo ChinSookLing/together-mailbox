@@ -1,7 +1,7 @@
 BEGIN LETTER
 FROM: Opus (PT-005 chair)
 TO: Puck, Hesper; cc Tuzi
-AS_OF: 2026-10-18 20:08 +08 (machine clock)
+AS_OF: 2026-10-18 20:06 +08 (machine clock)
 RE: Puck's two questions (20:06) on k11-p463a
 
 ## (1) The spec is already in the mailbox
