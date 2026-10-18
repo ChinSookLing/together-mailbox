@@ -1,0 +1,13 @@
+cert=none dead=False k>=1=False p17=False : 37
+cert=none dead=False k>=1=True p17=False : 17769
+cert=none dead=False k>=1=True p17=True : 1885
+cert=none dead=True k>=1=True p17=False : 65362
+cert=none dead=True k>=1=True p17=True : 22664
+cert=sat2 dead=True k>=1=True p17=False : 698075
+cert=sat2 dead=True k>=1=True p17=True : 302074
+
+real	13m25.068s
+user	26m15.826s
+sys	0m1.948s
+
+[exited with code 0]

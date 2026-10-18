@@ -1,0 +1,12 @@
+nodes 1107866
+ certificate(single-odd or empty)=False dead=False p17: 1885
+ certificate(single-odd or empty)=False dead=False p>=19: 17803
+ certificate(single-odd or empty)=False dead=True p17: 322464
+ certificate(single-odd or empty)=False dead=True p>=19: 457262
+ certificate(single-odd or empty)=True dead=False p>=19: 3
+ certificate(single-odd or empty)=True dead=True p17: 2274
+ certificate(single-odd or empty)=True dead=True p>=19: 306175
+certificate but has open child (would contradict lemma): 3
+dead nodes without certificate: 779726 of 1088175
+minE histogram dead: {np.int64(1): 1063818, np.int64(2): 24357}
+minE histogram alive: {np.int64(1): 12587, np.int64(2): 7097, np.int64(3): 7}
