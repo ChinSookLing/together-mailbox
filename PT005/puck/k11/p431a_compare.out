@@ -1,0 +1,4 @@
+K11 514 office 514 same (r,s) set True
+mismatches per field {'rows': 0, 'nodes': 0, 'casc_rows': 0, 'casc_survivors': 0, 'deep': 0, 'n_survivor_lines': 0}
+K11 rows 1382 casc_rows 1382 survivors 2 survivor (r,s) [(0, 0), (0, 7)] nodes 1276818583063 cpu_h 114.07
+office rows 1382 casc_rows 1382 survivors 2 survivor (r,s) [(0, 0), (0, 7)] nodes 1276818583063 cpu_h 130.22
