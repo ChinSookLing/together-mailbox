@@ -1,0 +1,17 @@
+== Lemma R2: t=3/(b+c), exact region ==
+  random (1,x,y): 100000 | in R2 but formula fails: 0 | formula works outside R2: 8 (of which with x+y>12/5: 0; the rest is the at in [5/4,7/4] branch, not needed)
+== Lemma P1: k=ceil((a+c)/4a), t=k/(a+c) on {y>=3, x<3, (1+y)(3-x)>=4x} ==
+  random points (1/3 exactly on the curve): 100000, failures: 0, violations of 1/4<=at<=1/2, 1/4<bt<=3/4: 0
+== Lemma E: Argon formula with m=1 on {5/3<x<7/3, y>=4x/(3x-5)-x}: see chk_argon_r007.py (60000 pts, 0 failures) ==
+
+== Coverage algebra: every 1<x<y lies in one case region (random + boundaries) ==
+  random rational (1,x,y): 300000, F4 failures: 0, case chosen outside its proven region: 0, case counts: {1: 14910, 2: 216570, 3: 16499, 3.5: 1712, 4: 2741, 4.5: 34747, 5: 12821}
+  exact boundary/corner points: 275, F4 failures: 0 []
+  ALL integer triples 0<a<b<c<=120: 280840, F4 failures: 0
+  example (1, 2, 3): case 1, t=1/4, g=1/4
+  example (1, 2, 10): case 4, t=1/4, g=1/4
+  example (5, 6, 56): case 4.5, t=4/61, g=20/61
+  example (7, 13, 44): case 4, t=1/19, g=6/19
+  example (10, 22, 33): case 3.5, t=3/43, g=13/43
+  example (2, 3, 7): case 3, t=1/5, g=2/5
+  example (1, 2, 120): case 4.5, t=31/121, g=31/121

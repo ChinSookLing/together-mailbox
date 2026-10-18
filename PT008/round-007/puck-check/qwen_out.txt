@@ -1,0 +1,44 @@
+== [A.1] Pairing reduction: t=k/(p+q) => ||pt||=||qt|| ==
+  30000 random (p,q,k): mismatches 0
+
+== [A.2] R1 ==
+  header form 5x/3<=y<=8-x/3 contains (1,2,7.3): True -> t=20/93  ||at||,||bt||,||ct|| = 20/93, 40/93, 40/93  g=20/93 (FAILS); correct form y<=8-x excludes it: False
+  random points in R1 (y<=8-x, the form Qwen's proof uses): 59999, failures 0
+  R1 nonempty only for x<=3 (5x/3<=8-x): corner (1,3,5): t=1/4  ||at||,||bt||,||ct|| = 1/4, 1/4, 1/4  g=1/4
+
+== [A.3] S6-A equality boundaries as worded by Qwen ==
+  y=3 (x=2): at=3/4, ||at||=1/4  (Qwen writes '||at||=3/4'; the value 3/4 is at itself, the distance is 1/4)
+  y=11 (x=5): t=1/4  ||at||,||bt||,||ct|| = 1/4, 1/4, 1/4  g=1/4
+  x=5(1+y)/12 at y=3: t=3/4  ||at||,||bt||,||ct|| = 1/4, 1/4, 1/4  g=1/4
+
+== [A.4] N1: 1<x<y<=3, t=1/(a+c) ==
+  random: 60000, failures 0; exactness: t=1/(a+c) needs ||1/(1+y)||>=1/4 <=> y<=3
+  remark 'x->y- gives ||bt||->1/4' checked at (1,1.999,2): t=1/3  ||at||,||bt||,||ct|| = 1/3, 1001/3000, 1/3  g=1/3 -> limit is 1/(1+y), =1/4 only when y=3
+  at y=3, x->3-: t=1/4  ||at||,||bt||,||ct|| = 1/4, 1000001/4000000, 1/4  g=1/4
+
+== [B.1] no finite y-independent k set ==
+  k/(a+c) family: least k with ||k/(1+y)||>=1/4 is ceil((1+y)/4) for y>=3: True
+  all three families: (1,2,3m), m=2..40: some k<=K with 4K<3m+1 succeeds in 0 cases (0 => no fixed bound on k works; R006 Puck D.3 family)
+
+== [B.2] k=ceil((1+y)/4), t=k/(a+c): k/(1+y) in [1/4, 1/4+1/(1+y)) within [1/4,1/2] for y>=3 ==
+  30000 random y: violations 0
+  -> Qwen leaves the x-condition open. Puck: for x<3 a simple sufficient condition is x <= 3(1+y)/(5+y) (region P1, chk_cover_r007.py: 0 failures)
+
+== [B.3] N2: t=2/(a+b) for 5/3<=x<=7 ==
+  pair condition ||at||=||bt||>=1/4 on [5/3,7]: 30000 random x, failures 0; just outside: x=1.66 -> 33/133, x=7.01 -> 200/801
+  Qwen's numeric example (x,y)=(3.5,4): t=4/9  ||at||,||bt||,||ct|| = 4/9, 4/9, 2/9  g=2/9 -> ||16/9||=2/9 < 1/4: FAILS (Qwen wrote all >= 1/4)
+  y=4, x in (35/12,4): N2 works on 395/999 grid points; smallest working x = 8573/2400 (~3.5721); exact threshold x>=25/7=3.5714: True
+  e.g. (1,3,4): t=1/2  ||at||,||bt||,||ct|| = 1/2, 1/2, 0  g=0  -- covered instead by Argon B.2 (x>=7/3): t=3/7  ||at||,||bt||,||ct|| = 3/7, 2/7, 2/7  g=2/7
+
+== [C.2] gaps ==
+  G1 (y=4): R1 covers x<=12/5: True True | S6-A covers [25/12,35/12]: True True True
+     with Argon B.2 (x>=7/3) the y=4 slice is fully covered: grid x in (1,4), 3000 pts, uncovered: 0
+  G2 'y>11 no coverage' vs Qwen's own N2 at (1,3,13.5): t=1/2  ||at||,||bt||,||ct|| = 1/2, 1/2, 1/4  g=1/4 | and Argon B.2 covers all x>=7/3
+  G3 example (1.5,3.5): in R1 = True -> t=2/5  ||at||,||bt||,||ct|| = 2/5, 2/5, 2/5  g=2/5 (so NOT a gap)
+  G3 as defined {3<y<11, x<5(1+y)/12, y<5x/3}: 200000 random (x,y), points found: 0 (algebra: needs x<15/11 and x>9/5 -> empty)
+
+== [C.3] example a=1,b=2,c=100, t=25/102 ==
+   t=25/102  ||at||,||bt||,||ct|| = 25/102, 25/51, 25/51  g=25/102 -> ||at||=25/102<1/4: NOT a success time
+   k<=3 over all three sums succeeds? [(1, 3), (2, 3)]
+   successes k/(a+c), k<=40: [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37] | k/(b+c), k<=40: [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38] | k/(a+b), k<=3: [1, 2]
+   e.g. Qwen's own B.2 rule k=ceil(101/4)=26: t=26/101  ||at||,||bt||,||ct|| = 26/101, 49/101, 26/101  g=26/101
