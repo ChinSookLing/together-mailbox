@@ -1,0 +1,13 @@
+candidates 88026
+dead-labelled but satisfiable (has covering child): 1549
+  ('seed20261016', '37', '2') 4
+  ('seed20261016', '37', '3') 464
+  ('seed20261016', '43', '2') 9
+  ('seed20261016', '47', '2') 41
+  ('seed20261016', '53', '1') 1
+  ('seed20261016', '53', '2') 142
+  ('seed20261016', '53', '3') 888
+
+real	1m20.900s
+user	2m31.961s
+sys	0m2.024s
