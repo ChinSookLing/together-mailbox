@@ -1,0 +1,18 @@
+# PT-008 R004 · Puck independent check of QWEN reply (mailbox 38008c1)
+Exact Fractions only; code chk_qwen.py (+common.py). Labels: CHECKED = no violation found in the stated finite test (NOT a proof); VIOLATED = exact counterexample; NOT CHECKED. Nothing here is PROVED.
+Seat notes: header says Qwen3.8-Max, Thinking ON, web OFF; carrier saw a transient "Qwen3.7-Plus" label on a reload (stale display per carrier; identity not independently verifiable). Self-labels: Qwen writes "已证完备性" and "本轮已证" (two-speed theorem), but uses PROOF CANDIDATE for the three-speed claim; it never writes the word PROVED. Chair rule: seats must not self-upgrade, so treat "已证" as PROOF CANDIDATE.
+
+| # | Claim | Verdict |
+|---|---|---|
+| Q1 | Classification: every local max of g is type A (peak, g=1/2) or C (t=(k+l+1)/(u+v), ||ut||=||vt||=g) or endpoint | CHECKED: 34,126 local maxima (400 random V, int+rational, t<=3), 0 outside A/C |
+| Q1b | Converse as literally stated (on-envelope sum-crossing point => strict local max) | CHECKED: 37,759 cases, 0 non-maxima |
+| Q1c | Same-slope (difference-form) crossings are never maxima; Type B too wide | CHECKED (agrees with Opus B3): brute-force local-max set == Opus T1' set in 300/300 V |
+| Q2a | Two-speed: first local max of g is t*=1/(u+v), value u/(u+v) | CHECKED 600/600 pairs |
+| Q2b | Two-speed theorem as STATED: "on [0,1/(2u)] g has a UNIQUE max point t*" | VIOLATED when v>2u. Exact: u=1,v=10: g(1/11)=1/11 but g(1/4)=1/4 (1/4<=1/(2u)=1/2). Also u=1,v=20/3: maxima 3/23,6/23,9/23 with true max 9/23>u/(u+v). Failed in 246/600 random pairs, all with v>2u; 0 failures when v<=2u. Proof error: in (1/(u+v),1/(2u)] it assumes g=1-vt decreasing, but ||vt|| turns up again at t=1/v which lies inside the interval when v>2u. Correct statement: t* is the FIRST local max (that is Q2a) |
+| Q2c | Corollary g(t*)>=1/3 iff v<=2u; numeric examples (2,3)->t*=1/5,g=2/5; (1,3)->t*=1/4,g=1/4 | CHECKED (2000/2000; examples exact) |
+| Q2d | "Two speeds: t=1/(u+v) is an explicit construction, realises t=F(V) for |V|=2" | VIOLATED as success-time formula: g(1/(u+v))<1/3 in 1218/2000 pairs (all v>2u), e.g. {1,3}: g(1/4)=1/4<1/3 although a success time exists (Opus F(1,3)=1/2, g=1/2). Qwen's own corollary admits this, but the "F(V) realised" wording overreaches. Opus F(a,b)=ceil((a+b)/(3a))/(a+b): 0 failures /2000 |
+| Q3a | Three speeds u1<u2<u3: ||u2 t*||>u1/(u1+u3) at t*=1/(u1+u3) (middle speed does not interfere); hence t* is a local max of g_V | CHECKED 5000/5000 (both the inequality and local-max). Case analysis in the text is valid (hand-check of both cases consistent) |
+| Q3b | Remark: u1–u2 crossing 1/(u1+u2) is "later but higher" | later/higher true as numbers, but that point is NOT a local max of g_V in 3446/5000 triples (killed by u3); text omits the on-envelope caveat though it says "not necessarily global optimum" |
+| D | UNFINISHED conjecture: for |V|=3 maxima on [0,1/u1] are exactly {1/(ui+uj)} on envelope | VIOLATED (it was left UNFINISHED, so informational): 1500/1500 integer triples have maxima with numerator k>1, e.g. V={3,6,8}: maxima 1/7, 3/14, 3/11 (3/14, 3/11 are not 1/(ui+uj)) — correct form is k/(ui+uj) |
+| Opus | Agreement with Opus T1' | Full agreement on classification and on the "same-slope/ non-envelope crossings are not maxima" correction. Qwen's A (peak) = Opus a=b case. Qwen's two-speed result is only the first peak; Opus F(a,b) gives an always-successful time, Qwen's t* is not. Qwen has no analogue of Opus's real-speed non-existence of optimum ({1,√2}) |
+Not checked: hand proof text of Section B beyond the numeric/structure checks; the infinite-interval statements; degenerate "speeds extremely close" remarks (D) — NOT CHECKED.
