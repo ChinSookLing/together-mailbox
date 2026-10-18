@@ -1,0 +1,21 @@
+4a5
+> # v2 2026-10-18: job-by-job compare report-only (Opus 2012 §3, Puck objection 55af412); PIN re-hash of main SHA256SUMS before install.
+44c45
+<     # 3. job-by-job vs office p443 (line order may differ, so compare by (r,s))
+---
+>     # 3. job SET must equal office p443 (hard); line order may differ, so key by (r,s)
+46a48
+>     # job-by-job field compare = REPORT ONLY (chair ruling 2012 §3: ledger condition, not a chain stop)
+48c50
+<     if bad: fail(f"{len(bad)} jobs differ from office, first {bad[:3]}")
+---
+>     print(f"REPORT (not a stop): job-by-job vs office p443 on {KEYS[2:]}: {len(bad)}/556 differ" + (f", first {bad[:3]}" if bad else ""))
+50c52
+<     print("CHAIN: ALL CHECKS PASS — 556 jobs, 556 distinct, rows 993, survivors 1, alive@16 0, km1 27/0, 0/556 job differences vs office")
+---
+>     print("CHAIN: ALL CHECKS PASS — 556 jobs, 556 distinct, rows 993, survivors 1, alive@16 0, km1 27/0, job set = office p443")
+88a91,94
+>     import hashlib
+>     sf = gh("contents_get", f"owner={OWNER}", f"repo={REPO}", "path=dispatcher/SHA256SUMS", "ref=main")
+>     sums = base64.b64decode(sf["content"]) if isinstance(sf, dict) and "content" in sf else b""
+>     if hashlib.sha256(sums).hexdigest() != pin: fail("main dispatcher/SHA256SUMS hash != PIN")
