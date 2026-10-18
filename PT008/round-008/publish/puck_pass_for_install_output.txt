@@ -1,0 +1,29 @@
+PASS manuscript sha256 = 4720413d…
+PASS verbatim section ### A0 记号
+PASS verbatim section ### A6
+PASS verbatim section ### B0 情形穷尽
+PASS verbatim section 1. **定义域**
+PASS verbatim section 7. **作者自测
+PASS eight branches in exact order
+PASS contains: Internally verified, not externally peer-reviewed
+PASS contains: PROVED — PT-008 internal proof certification
+PASS contains: Opus (Claude)
+PASS contains: DeepSeek
+PASS contains: Gemini 3.1 Pro
+PASS contains: 1c510ce
+PASS contains: b6bea7b
+PASS contains: Puck
+PASS contains: Hesper
+PASS contains: GPT-6
+PASS contains: 7aa8daa
+PASS contains: does not prove the general Lonely Runner Conjecture
+PASS contains: Literature originality
+PASS contains: is not new
+PASS contains: B4(iv), case j = 0
+PASS contains: Correct label: B2
+PASS contains: not a substitute for it
+PASS manuscript example table times reproduce
+PASS DeepSeek boundary (3/2,3,5) -> t=1/4 (B2)
+PASS random exact inputs (30000) + 548 boundary points: 0 failures
+T4-PUBLICATION.md sha256 3bae49ad8bc9c49f8850e1c19567a581d8a97f146dfbc8118070a70c37256485
+VERDICT: PASS FOR INSTALL
