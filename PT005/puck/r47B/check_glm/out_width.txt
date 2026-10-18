@@ -1,0 +1,5 @@
+('dead', '2sat-ok') 167
+('dead', 'w1') 1321
+('dead', 'w2') 353
+('dead', 'w3+') 119
+('live', '2sat-ok') 40

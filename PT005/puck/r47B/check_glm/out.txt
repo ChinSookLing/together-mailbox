@@ -1,0 +1,3 @@
+nodes 2000 odd-t 498727 | Q1 fails 0 | ARL fails 0 | Q2 clauses 81870 fails 0
+odd pairs with 2-reacher clauses 1818 | closure tests 3722 fails 0 | pair kills 20 kill-vs-2pattern mismatches 0
+g>=k classes 7745 non-constant x^y 0

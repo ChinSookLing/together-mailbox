@@ -1,0 +1,18 @@
+Puck: PT005 · Round 47 Track B · follow-up for the DeepSeek reader seat (chair packet f6b6c50, BLOCK DEEPSEEK).
+
+GLM's proof has now arrived (filed by Hesper, commit 3607751, collected 16:10 +08). Please do the first part of your block now: read GLM's proof line by line and mark each step CORRECT / GAP / WRONG, with a one-line reason. Use the assumption list you already wrote and say which of those assumptions GLM makes, silently or openly.
+
+Same rules as before: numbers only from your own calculation shown, otherwise UNFINISHED; label FACT / PROOF / IDEA; start with an ANSWER BLOCK of at most 300 words including your least-sure step. No web search.
+
+----- BEGIN GLM PROOF (verbatim) -----
+ANSWER BLOCK — BLOCK GLM: the two-runner forcing rule.
+Notation: ρᵢ(T) := Twᵢ/p mod 2^{k+1} (runner); W₀ := (−2^{k−3}, 2^{k−3}), W₁ := 2^k + W₀ (half-width 2^{k−3} = (2M/16)/p).
+Q1 — PROOF. For odd T: b ∈ Cᵢ(T) ⟺ ‖ρᵢ(T) − b·2^k‖ < 2^{k−3}; so Cᵢ(T) = {0}, {1} or ∅ as ρᵢ ∈ W₀, W₁ or neither, and **{0,1} is impossible** (gap 2^k − 2^{k−2} > 0; the drop-rule is vacuous). Proof: T odd ⇒ TM ≡ M (mod 2M) ⇒ T(wᵢ+bM) ≡ Twᵢ + bM, so coverage ⟺ ‖Twᵢ+bM‖_{2M} < M/8 ⟺ ‖ρᵢ + b·2^k‖ < 2^{k−3} (÷p; ±2^k coincide mod 2^{k+1}). ∎
+Q2 — PROOF. If i, j are the only reachers of odd T, the clause is (bᵢ = x ∨ b_j = y), x = 1 ⟺ ρᵢ(T) ∈ W₁, y = 1 ⟺ ρ_j(T) ∈ W₁; occurrence ⟺ ρᵢ ∈ W_x ∧ ρ_j ∈ W_y ∧ all other ρ_ℓ ∉ W₀∪W₁ (⟺ ‖Tw_ℓ‖{2M} ∈ [M/8, 7M/8], since dist(r,M) = M − ‖r‖{2M}). Pair diagnostic: Δᵢⱼ := ρ_j − ρᵢ = T(w_j−wᵢ)/p must lie in W_y − W_x = V_{x⊕y}, V₀ = (−2^{k−2}, 2^{k−2}), V₁ = 2^k + (−2^{k−2}, 2^{k−2}): equal bits ⟺ separation < 2^{k−2}; opposite bits ⟺ antipodal separation < 2^{k−2}. ∎
+Q3, Antipodal Reacher Lemma — PROOF. For odd t, every ℓ: ρ_ℓ(M−t) ≡ 2^k(wₗ mod 2) − ρ_ℓ(t) (mod 2^{k+1}); hence wₗ odd ⇒ Cₗ(M−t) = ¬Cₗ(t) (bit-complement); wₗ even ⇒ Cₗ(M−t) = Cₗ(t). Proof: (M−t)wₗ = Mwₗ − twₗ; Mwₗ/p ≡ 2^k(wₗ mod 2); r ↦ 2^k − r swaps W₀ ↔ W₁, r ↦ −r fixes both. ∎ Corollary (= Singleton Lemma): singleton t, odd reacher i, bit x ⇒ M−t singleton, bit 1−x ⇒ units (bᵢ = x), (bᵢ = 1−x) contradict; kill length 2. (All-∅ target would be an empty clause, length 1.)
+Q3, shortest two-coordinate kills — PROOF (wᵢ, w_j odd, k ≥ 2). Clause (bᵢ=x ∨ b_j=y) forbids assignment (1−x, 1−y); pair (i,j) kills ⟺ all four bit-patterns occur. Patterns close under complement (Lemma), so a minimal certificate is {t₁, t₂, M−t₁, M−t₂} with patterns of t₁, t₂ differing in exactly one bit; kill cycle ℓᵢˣ → ℓ_j^{1−y} → ℓᵢ^{1−x} → ℓ_j^y → ℓᵢˣ (ℓᵢˣ : "bᵢ = x"). Length 4 minimal: L clauses forbid ≤ L assignments; length-2 kills need units.
+Q3, exact conditions — PROOF. In fibre a (T = a+ps, s ≡ a+1 mod 2, s < 2^k; 2^{k−1} targets; ρᵢ(s) = awᵢ/p + wᵢs injective): Δ(s) = a(w_j−wᵢ)/p + (w_j−wᵢ)s, g := v₂(w_j−wᵢ) ≥ 1, orbit = full 2^{g+1}Z-coset (size 2^{k−g}). Necessarily both V₀, V₁ reachable: automatic for g ≤ k−3; g = k−2 fails only if a(w_j−wᵢ)/p ≡ 2^{k−2} (mod 2^{k−1}); g = k−1 iff min(‖Δ₀‖, ‖Δ₀−2^k‖) < 2^{k−2}; g ≥ k: Δ frozen — no in-fibre kill. Exact sufficiency: ∃ s₁ ≠ s₂ with patterns (x,y) at s₁, (x,1−y) at s₂ (or i-flipped), and 13 bystanders outside W₀∪W₁ at both. Cross-fibre: same tests per fibre.
+Least-sure step (IDEA): translating my parametrization (uᵢ = wᵢ mod 2^{k+1}, offset awᵢ/p, dᵢ = k+1; k after the odd-T restriction) into note 102's (uᵢ, cᵢ, αᵢ, dᵢ) — every lemma above is proved from the common coverage inequality, but that bookkeeping is unverified; reachers assumed odd.
+No UNFINISHED items — all constants (2^{k−3}, 2^{k−2}, 2^{k−1}, 2^{k−g}, 4, 2) are derived above.
+----- END GLM PROOF -----
+
