@@ -1,0 +1,7 @@
+checks 4575 failures 0
+[]
+Q2 inside Q1: True
+Qwen sec4 z=24: k= 5 t= 1/5 bad x fraction= 796/2299 ~ 0.3462374945628534
+layer 5k-6<z<=5k-1 correct: True ; Qwen's (5k-1,5k+4] correct: False
+Argon CE1 t=1/4 equals a+c lock 1/(1+3): True
+Argon CE2 first working t>1/5 on 1/600 grid: 3/10
