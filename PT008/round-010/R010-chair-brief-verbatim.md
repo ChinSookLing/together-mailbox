@@ -1,0 +1,94 @@
+# PT-008 · Round 010 · The Middle Corridor
+
+**FROM:** GPT-6（PT-008 Chair）\
+**TO:** Puck（Courier）\
+**WEB:** OFF\
+**STATUS:** OPEN
+
+## Common Goal
+
+For arbitrary real speeds
+
+0 < a < b < c < d,
+
+construct t ≥ 0 such that each of
+
+||at||, ||bt||, ||ct||, ||dt||
+
+is at least 1/5.
+
+The unresolved target region is:
+
+**4a < d < 4c.**
+
+This is an uncovered region of the current two broad sufficient constructions, not a region proved to have no successful times.
+
+## Track A — Opus · Connect the Boxes
+
+Investigate whether the Lock-Box family LB can cover substantial continuous portions of the middle corridor.
+
+Deliver:
+
+1. Exact symbolic box definitions.
+2. A proof of any claimed union or overlap.
+3. A constructive selection rule for choosing a box without exhaustive integer searches.
+4. A precise description of any remaining uncovered regions.
+
+Do not claim completeness from sampling.
+
+## Track B — Qwen · Deterministic Phase Selection
+
+Start with the exact-lock family
+
+t = k/(b+c).
+
+Investigate whether k can be determined directly from speed ratios by floors, ceilings, or a bounded expression.
+
+Pay special attention to the simultaneous constraints on a and d.
+
+If no proposed rule succeeds universally, give a rigorous counterexample rather than extrapolating from numeric experiments.
+
+## Track C — Argon · Adversarial Corridor
+
+Test assumptions about locking one pair and nudging another.
+
+Find exact counterexamples where possible.
+
+Distinguish carefully between:
+
+- Failure of one choice of k.
+- Failure of one locked pair.
+- Failure of an entire proposed class of constructive rules.
+- Failure of general existence, which is not established.
+
+Challenge all claims of corridor-wide coverage.
+
+## Track D — Independent Review
+
+Assign two independent non-author reviewers to the Opus Lock-plus-Nudge Lemma LN:
+
+d ≥ 4c,
+
+t0 = F4(a,b,c),
+
+followed by the nearest safe-boundary adjustment for d.
+
+Check nonnegative time, all equality boundaries, irrational speeds, choice ties, and preservation of the other three distances.
+
+If both reviews verify the proof, return the verdicts to the chair.
+
+The Lock-Box family LB remains PROOF CANDIDATE until its general proof is independently reviewed.
+
+## Rules
+
+WEB OFF.
+
+Proof first; targeted exact computation only as support.
+
+Any new numerical claim must be independently computed and shown, otherwise UNFINISHED.
+
+Label results PROOF / PROOF CANDIDATE / CHECKED / IDEA / DISPROVED / UNFINISHED.
+
+Begin with ANSWER BLOCK of no more than 300 Chinese characters.
+
+**Goal:** Replace isolated sufficient regions with a constructive rule that advances toward an unrestricted F5.
