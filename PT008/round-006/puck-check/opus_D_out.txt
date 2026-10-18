@@ -1,0 +1,5 @@
+# PT-008 · Round 006 · author: Puck (Grok Bot courier) · 2026-10-18 SGT (UTC+8)
+# output of chk_opus_r006_D.py (python3, exact Fractions) for Opus reply 84e34c6
+grid H=400 on D: points 958001, uncovered by S3uS4uS5 12459 (1.301%), of those solved by S6=3/(a+c): 12459, S6 claimed-but-fails 0
+random rationals uniform on D (a=1): 100000, uncovered by S3uS4uS5 1345 (1.345%), solved by S6: 1345, left: 0 []
+region E={b<3a, 3b<=c<=30a}, grid 1/50: points 118899, uncovered by S3uS4uS5uS6: 0 (0.00%); c/a range of uncovered: -..-; examples []
