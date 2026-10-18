@@ -1,0 +1,3 @@
+n-runner t=1/(a+b): 40047 cases, fails 0
+Argon B2 t=2/(b+c): 72038 cases, fails 0
+Qwen B2 within d<4a: 402080 cases, fails 0
