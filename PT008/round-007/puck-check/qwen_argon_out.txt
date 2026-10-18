@@ -1,0 +1,19 @@
+Argon rule x>=7/3 (random): tested 20000, failures 0 
+Argon rule boundary set: 56 cases, failures 0
+  Argon rule at x<7/3 (Fraction(11, 5), Fraction(33, 10)) ok
+  Argon rule at x<7/3 (Fraction(2, 1), Fraction(5, 1)) ok
+  Argon rule at x<7/3 (Fraction(23, 10), Fraction(6, 1)) ok
+Argon R1 statement test (1,3/2,7): t=2/(b+c) 4/17 dists 4/17 6/17 6/17 FAILS -> 8-x/3 is wrong, true bound 8-x
+R1 t=2/(b+c): tested 20000, failures 0 
+S6-A t=3/(a+c): tested 20000, failures 0 
+Qwen N1 t=1/(a+c): tested 20000, failures 0 
+  N1 boundary (Fraction(1001, 1000), Fraction(3, 1)) True
+  N1 boundary (Fraction(2999, 1000), Fraction(3, 1)) True
+  N1 boundary (Fraction(3, 2), Fraction(3, 1)) True
+N2 pair part at x=5/3,3,7: [Fraction(1, 4), Fraction(1, 2), Fraction(1, 4)]  just below 5/3: 1997/7997
+Qwen N2 example (1,7/2,4) t=2/(a+b): dists 4/9 4/9 2/9 -> c distance 2/9 <1/4
+N2 at y=4 on x in (35/12,4): covers x from 3.5716666666666668 (exact boundary 25/7 = 3.5714285714285716 )
+Qwen G3 point (1.5,3.5): in R1 range? True ; t=2/(b+c) ok? True [Fraction(2, 5), Fraction(2, 5), Fraction(2, 5)]
+Qwen C.3 (1,2,100) t=25/102: dists 25/102 25/51 25/51 FAILS (a distance 25/102 < 1/4)
+  bounded k<=5, x=3/2,y=(1+x)*10: successes []
+  bounded k<=5, x=3/2,y=(1+x)*50: successes []

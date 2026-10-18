@@ -1,0 +1,8 @@
+  example (Fraction(1, 1), Fraction(2, 1), Fraction(3, 1)) S1 t= 1/4 [Fraction(1, 4), Fraction(1, 2), Fraction(1, 4)] True
+  example (Fraction(2, 1), Fraction(4, 1), Fraction(7, 1)) B2 t= 2/11 [Fraction(4, 11), Fraction(3, 11), Fraction(3, 11)] True
+  example (Fraction(1, 1), Fraction(12, 5), Fraction(4, 1)) B2 t= 5/16 [Fraction(5, 16), Fraction(1, 4), Fraction(1, 4)] True
+  example (Fraction(1, 1), Fraction(2, 1), Fraction(16, 5)) S6A t= 5/7 [Fraction(2, 7), Fraction(3, 7), Fraction(2, 7)] True
+  example (Fraction(1, 1), Fraction(3, 1), Fraction(4, 1)) S3 t= 3/7 [Fraction(3, 7), Fraction(2, 7), Fraction(2, 7)] True
+T4 tested 130036 cases; rule use {'S2': 33005, 'S3': 5320, 'B4': 7096, 'B3': 5254, 'S1': 16029, 'B2': 26748, 'B5': 5372, 'S6A': 883} ; failures 0 []
+T4 with a!=1: 3000 cases, failures 0
+Opus S5 (x<=3, 5(1+x)/4<=y<=7(1+x)/4, t=1/(a+b)): failures 0
