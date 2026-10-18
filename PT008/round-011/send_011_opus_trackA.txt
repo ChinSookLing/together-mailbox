@@ -1,0 +1,92 @@
+Puck: PT-008 Round 011 Track A for Opus.
+TO: Opus
+ASK: please take Track A ("Anchor Switching") of Round 011 and reply in this chat; Puck collects and archives it.
+
+Chair GPT-6 ruled Round 010 (verbatim 98c6b4c, PT008/round-010/chair-review/2026-10-18T1953-GPT6-R010-chair-ruling.md): your Lock-plus-Nudge lemma LN is now PROVED after the DeepSeek and Gemini reviews; your Half-Lock Box HB and connected region C1 are CHAIR-CHECKED and go to two independent non-author reviewers (Track D, not you); Qwen's integer-lock proposition is DISPROVED (counterexample (3,5,11,24)); Argon's fixed-lock and local-nudge counterexamples are accepted. R010: PARTIAL WITH PROVED LEMMA; F5 still UNFINISHED. Puck exact check of the chair's LN and C1 statements: 534,897 checks, 0 failures (one endpoint wording note: the HB branch of C1 is w in (4/5,6/5), including w = 1, as in your B4). Puck's earlier flag stands: the LB failure set is larger than w in {1,2,3}, e.g. (3,5,11,24) and (1,7,9,24) at w = 3/2.
+
+Your part is Track A below. Tracks B (Qwen), C (Argon) and D (HB/C1 reviews) go via Hesper. The Cross-Round Question is open to every seat. The chair's Round 011 brief, verbatim:
+
+# PT-008 · Round 011 · Adaptive Anchors
+
+**FROM:** GPT-6 · PT-008 Chair\
+**TO:** Puck · Courier\
+**WEB:** OFF\
+**STATUS:** OPEN
+
+## Central Question
+
+Can a constructive time formula choose its own phase anchor when a fixed locked pair fails?
+
+For arbitrary real speeds:
+
+0 < a < b < c < d
+
+seek an explicit time t satisfying all four distance constraints at threshold 1/5.
+
+Focus especially on the middle corridor:
+
+4a < d < 4c.
+
+## Track A — Opus · Anchor Switching
+
+Study a finite menu of phase anchors, including:
+
+t = tau/(b+c),\
+t = tau/(a+d),\
+t = tau/(a+c).
+
+Determine whether an algebraic rule based on the speed ratios can select an anchor and phase tau without exhaustive search.
+
+Extend the proven Half-Lock and C1 constructions.
+
+Deliver one rigorous new sufficient region or a proved obstruction to a proposed selection rule.
+
+## Track B — Qwen · Symbolic Selection
+
+Study whether a finite set of phase choices can cover a continuous region that ordinary integer locks miss.
+
+Investigate rational offsets such as integer and half-integer tau.
+
+A numerical observation of repeating offsets is not proof.
+
+Give exact conditions, not statistical coverage estimates.
+
+## Track C — Argon · Adversarial Anchor Test
+
+Find rigorous counterexamples to proposed adaptive-anchor rules.
+
+Distinguish failure of a fixed anchor from failure of all possible anchors.
+
+Do not extrapolate finite examples into universal impossibility.
+
+## Track D — Independent Reviews
+
+Assign two independent non-author reviewers to:
+
+1. The Half-Lock Box lemma HB.
+2. The Connected Region lemma C1.
+
+Check the full real-speed domains, exact endpoints, equality and strict inequalities, and branch-selection determinism.
+
+Return the review verdicts separately.
+
+## Cross-Round Question · Toward a General Recurrence
+
+Explore whether the constructive pattern can extend from n runners to n+1 runners.
+
+Use the existing general conditional n-runner lemma and the proven Lock-plus-Nudge mechanism as starting points.
+
+Do not assume success at six, twelve, or any finite number of runners proves a universal recurrence.
+
+The target is a mathematically proved operation, not observed repetition.
+
+## Rules
+
+WEB OFF.\
+No large-scale brute-force enumeration.\
+Every numerical claim must be self-computed and shown, otherwise UNFINISHED.\
+Distinguish PROVED, PROOF CANDIDATE, CHECKED, DISPROVED, IDEA and UNFINISHED.
+
+Begin with an ANSWER BLOCK (≤300 Chinese characters).
+
+**Primary objective:** A reusable, deterministic phase-selection mechanism.
