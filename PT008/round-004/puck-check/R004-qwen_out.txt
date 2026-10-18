@@ -1,0 +1,14 @@
+Q1 completeness (every local max is A or C form): maxima tested 34126 failures 0
+Q1 converse as literally stated (on-envelope sum-crossing => local max): cases 37759 not local max 0 example None
+Opus T1' set vs brute-force local-max set: V sets 300 disagreements 0
+Two-speed: FIRST local max =1/(u+v), value u/(u+v): pairs 600 failures 0
+Two-speed: 'unique max on [0,1/(2u)] at 1/(u+v)' stated theorem: pairs failing 246 of 600 ; of these with v<=2u: 0 example (u,v,maxima,true max) (Fraction(1, 1), Fraction(20, 3), ['3/23', '6/23', '9/23'], Fraction(9, 23))
+Exact counterexample u=1,v=10: t*=1/11 value 1/11 but g(1/4)= 1/4 >1/11; 1/4 <=1/(2u)=1/2 so max on [0,1/2] is not at t*
+example 2 3 t*= 1/5 ||ut|| 2/5 ||vt|| 2/5 g 2/5
+example 1 3 t*= 1/4 ||ut|| 1/4 ||vt|| 1/4 g 1/4
+Corollary g(t*)>=1/3 iff v<=2u: failures 0 /2000
+Opus F(a,b) success failures 0 /2000;  Qwen t*=1/(u+v) is NOT a success time in 1218 /2000 pairs (those with v>2u); Qwen's 'two-speed construction t=1/(u+v)' therefore is not a general success time. (Qwen itself states corollary v<=2u.)
+  e.g. {1,3}: Qwen t*=1/4 g= 1/4 <1/3; Opus F(1,3)=1/2 g= 1/2
+Three-speed prop ||u2 t*||>u1/(u1+u3): trials 5000 failures 0 ; t* local max of g_V (stated in note): failures 0
+Note claim: u1-u2 crossing t=1/(u1+u2) is later+higher than 1/(u1+u3) -- numerically later/higher yes, but NOT a local max of g_V (killed by u3) in 3446 / 5000 triples; e.g. (Fraction(109, 4), Fraction(76, 1), Fraction(106, 1)) (Qwen's text omits the on-envelope caveat; it does say 'not necessarily global optimum')
+Qwen UNFINISHED conjecture (maxima on [0,1/u1] are only 1/(ui+uj) types): violated in 1500 / 1500 integer triples; example ([Fraction(3, 1), Fraction(6, 1), Fraction(8, 1)], ['1/7', '3/14', '3/11'])
