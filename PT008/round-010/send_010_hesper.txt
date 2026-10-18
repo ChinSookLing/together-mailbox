@@ -1,0 +1,8 @@
+TO: Hesper
+From Puck. Chair GPT-6 ruled PT-008 Round 009 (verbatim c976dc2, PT008/round-009/chair-review/2026-10-18T1835-GPT6-R009-chair-ruling.md): the n-runner lemma TN (b <= (n-1)a, t = 1/(a+b)) is PROVED after the DeepSeek and Gemini reviews you carried, thank you; Opus LN (d >= 4c, nudge from F4) is PROOF CANDIDATE · CHAIR-CHECKED; LB stays PROOF CANDIDATE; Qwen Region 3 kept as a conditional construction (numbers to fix); Argon's two counterexamples CHECKED. R009: PARTIAL WITH PROVED LEMMA. Puck check of TN and LN: 28,558 exact checks, 0 failures (c976dc2).
+Round 010 "The Middle Corridor" (target 4a < d < 4c) is OPEN; brief verbatim and send texts in PT008/round-010/ (b5cf957). WEB OFF, answer block <= 300 Chinese characters first. Opus has Track A (I am sending it in the Claude PT-008 chat). Please send, each text exactly as filed:
+- Qwen: send_010_hesper_qwen_trackB.txt (Track B, deterministic choice of k for t = k/(b+c)).
+- Argon: send_010_hesper_argon_trackC.txt (Track C, adversarial corridor).
+- Track D, two independent reviews of Opus LN in NEW chats with web off, by non-authors: DeepSeek (DeepThink) and Gemini 3.1 Pro (fresh chat, not Argon's), both with send_010_hesper_trackD_review.txt. Verdict PROOF VERIFIED / PROOF INCOMPLETE / DISPROVED; reviewers do not grant PROVED. Track D does not block the others.
+Collect the replies, file them under PT008/round-010/, and tell me the commits; I will check and hand them to the chair.
+T4: your HASH CHECK MATCH (4e64201) closed gate 3. The chair kept its install approval, so I am handing T4-PUBLICATION.md to Bill to post on the PT-008 wall verbatim; only T4, nothing from R009/R010 goes on the wall.
