@@ -1,0 +1,28 @@
+<!-- PT-008 · Round 006 · Puck check of QWEN reply · author: Puck (Grok Bot courier) · 2026-10-18 13:50 SGT (UTC+8)
+     sources checked: pack b10d664 (PT008/round-006/pack_R006.txt), Qwen reply 306c683 (PT008/round-006/2026-10-18T1336-reply-Qwen-R006.md),
+     conventions: R005 chair ruling 5a3b1b2, R005 puck-check 11375dc/b087fdf/c85bb4f
+     script: chk_qwen_r006.py (+ common_r006.py), output: qwen_out.txt. Suggestions only; grading is the chair's. -->
+# PT-008 R006 · Puck independent check of QWEN reply (306c683)
+
+Setting: track length 1, ‖x‖ = distance to nearest integer, speeds 0<a<b<c, success iff min(‖at‖,‖bt‖,‖ct‖) ≥ 1/4. Exact Fractions. Exhaustive: all 34,220 integer triples with c ≤ 60; plus 100,000 random rational triples (half placed inside the region). "CHECKED" means no counterexample in the stated test *and* I re-derived the proof by hand; it is not PROVED. Seat self-label: Qwen uses PROOF CANDIDATE for its main claim (allowed). Carrier flag: the reply is **cut off mid-sentence at the end of Section D**.
+
+| # | Qwen claim | Puck check | Suggested status |
+|---|---|---|---|
+| A.1 | Pair-sum lemma: t=k/(u+v) ⇒ ‖ut‖=‖vt‖ | True (ut+vt=k). 0 mismatches in 20,000 random pairs. **Typo:** the text writes ‖ct‖=‖k−ut‖; it should be ‖vt‖=‖k−ut‖. The table under it is correct. | CHECKED (fix typo) |
+| A.3 | (2,4,7), t=2/11: distances 4/11, 3/11, 3/11 | Exact: 4/11, 3/11, 3/11; g=3/11 ≥ 1/4. (2,4,7) is inside R1. | CHECKED |
+| Q1/B | **Main:** if 8a/3 ≤ b+c ≤ 8a and 5b/3 ≤ c ≤ 7b, then t=2/(b+c) succeeds | Proof re-derived, every step correct, works for real speeds. 6,464 integer triples in R1 (18.89%), **0 violations**; 100,000 random rationals, 0 violations. Boundary points (1,3,5), (3,6,10) give g=1/4 exactly. | **PROOF CANDIDATE, Puck found no error** (a general proof, not just numbers) |
+| B+ | (Puck addition) The region is **exact**: t=2/(b+c) works **iff** (a,b,c) ∈ R1 | Each step in Qwen's proof is an "iff": ‖bt‖ ≥ 1/4 ⇔ 2b/(b+c) ∈ [1/4,3/4] ⇔ 5b/3 ≤ c ≤ 7b, and ‖at‖ ≥ 1/4 ⇔ 8a/3 ≤ b+c ≤ 8a. Integer and random tests: 0 triples succeed outside R1. | CHECKED (Puck remark) |
+| B' | (Puck simplification) R1 = { 5b/3 ≤ c ≤ 8a−b } | b+c ≥ 8a/3 follows from c ≥ 5b/3 and b>a; c ≤ 7b follows from c ≤ 8a−b < 7b. So R1 is nonempty only if b ≤ 3a, and then c < 7a. 0 mismatches (integer and 100,000 rational). | CHECKED (suggest stating R1 this way) |
+| C.2 | Known family "c ≤ 3a, t=1/(4a), 已证（PROVED）" | **Grade misquoted.** The pack (§3) and the R005 chair ruling 5a3b1b2 list it as PROOF CANDIDATE, not PROVED. The maths is fine. Coverage (c ≤ 60): c ≤ 3a covers 45.03%; R1 adds 3,948 new triples with c>3a (e.g. (1,2,4), (1,2,5), (1,3,5), (2,3,7), (2,4,7)); the union is 56.57%. Overlap exists, e.g. (2,3,5). | Grade wording fix needed |
+| C.3 | Outside R1 other branches are needed; R1, R2, R3 might not cover everything | Restates the open problem. | UNFINISHED (IDEA) |
+| C.4 | Heuristic: choose the denominator b+c "when c−b is smallest (closest pair)" | **Does not hold.** Its own example (2,4,7) has b−a=2 < c−b=3. In fact, inside R1 we always have c−b ≥ 2b/3 ≥ b−a (since a ≥ b/3), so c−b is never the strictly smallest gap there. 0 of 6,464 R1 triples have c−b<b−a. Also, for (2,4,7) other denominators also work (2/6, 4/6, 3/9, 6/9). | DISPROVED as worded (witness (2,4,7)) |
+| D.1 | t=1/(a+c) (k=1) corresponds to c ≤ 3a | True and exact: works iff c ≤ 3a (proof: a/(a+c) ≥ 1/4 ⇔ c ≤ 3a, and then b/(a+c) ∈ [1/4,3/4]). 0 integer mismatches. | CHECKED |
+| D.2 | k=2,3 with a+c "may cover new regions" | Numerical info only: of the 14,862 integer triples outside c ≤ 3a and R1, 2/(a+c) succeeds for 3,405 and 3/(a+c) for 4,948. No region is stated or proved. | IDEA / UNFINISHED |
+| D.3 | Open question: is there (a,b,c) where all k ∈ {1..4} fail with all three sum denominators? | **Yes. Answered with exact witnesses.** 2,302 integer triples with c ≤ 60 fail every k ≤ 4. Smallest by c: (1,3,12), (1,4,12). General family: (1,2,3m) has sums 3, 3m+1, 3m+2. ‖c·k/3‖=0, and ‖k/(3m+1)‖, ‖k/(3m+2)‖ < 1/4 whenever k < (3m+1)/4. So **for every fixed K, the triples (1,2,3m) with 3m+1 > 4K defeat all k ≤ K**, which means k must grow with c/a. These triples still have success times: (1,2,18) first works at k=5 (success set nonempty, e.g. t=25/36), (1,2,30) at k=8, (1,2,60) at k=16. | Puck answer: CHECKED (exact family + proof) |
+| D.4 | (truncated) "works for irrational speeds too (证明中未用到有理…)" | The visible part is correct: the Section B proof uses only real inequalities. 60-digit spot checks with √2, √17, √3, √5 inside R1 give min distance ≥ 0.27. Whatever followed the cut is **not checkable**. | CHECKED for the visible part; rest NOT CHECKABLE (truncation) |
+
+## Summary for the chair (suggestions only)
+- New rigorous mechanism: **t = 2/(b+c) on R1 = {5b/3 ≤ c ≤ 8a−b}**. The proof is correct and general (valid for real speeds), and the region is exact (iff). It strictly extends c ≤ 3a (covers (2,4,7); union 56.6% of integer triples ≤ 60). Suggested: PROOF CANDIDATE with no error found, ready for chair review. It meets the pack's acceptance line "at least one new rigorous construction mechanism".
+- Fixes: A.1 typo (‖vt‖); C.2 grade misquote (c ≤ 3a is PROOF CANDIDATE, not PROVED); drop or reword the C.4 heuristic (contradicted by (2,4,7)).
+- Open: the full cover is unproved. Puck's D.3 family (1,2,3m) shows no fixed bound on k can work, so a full rule must choose k growing with c/a.
+- Caveat: Section D is cut off (306c683 header). Nothing after "(证明中未用到有理" can be graded. A re-collect of the tail is optional; the main claim is complete in Section B.

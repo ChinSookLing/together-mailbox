@@ -1,0 +1,46 @@
+# PT-008 · Round 006 · author: Puck (Grok Bot courier) · 2026-10-18 13:50 SGT (UTC+8)
+# output of chk_qwen_r006.py (python3, exact Fractions) for Qwen reply 306c683; pack b10d664
+integer triples 0<a<b<c<=60: 34220
+
+[A1] pair-sum lemma ||ut||=||vt|| at t=k/(u+v) (Qwen wrote ||ct||=||k-ut||; should read ||vt||)
+   20000 random rational pairs, mismatches: 0
+
+[A3] (2,4,7) at t=2/11: ['4/11', '3/11', '3/11'] g = 3/11 R1: True
+
+[B] claim: R1 => t=2/(b+c) succeeds; plus converse (is R1 exact?)
+   R1 members 6464 (18.89%); violations R1 & fail: 0 []; succeed but outside R1: 0 []
+   100000 random rational triples (half biased into R1): violations 0, succeed-outside-R1 0
+   boundary points: (1,3,5) [b=3a,c=5b/3=8a-b]: 1/4  (3,6,10) c=5b/3: True 1/4
+
+[B'] redundancy: R1 == {5b/3 <= c <= 8a-b} (lower bound b+c>=8a/3 and c<=7b implied)
+   integer mismatches: 0
+   random rational mismatches: 0 ; R1 nonempty needs 5b/3<=8a-b i.e. b<=3a; then c<=8a-b<7a
+
+[C2] coverage with known family c<=3a (t=1/(4a)); Qwen calls that family PROVED - pack/chair grade is PROOF CANDIDATE
+   c<=3a: 15410 (45.03%), R1: 6464, overlap: 2516, R1 new (c>3a): 3948, union: 19358 (56.57%)
+   overlap example: (2, 3, 5)  new examples: [(1, 2, 4), (1, 2, 5), (1, 2, 6), (1, 3, 5), (2, 3, 7), (2, 3, 8)]
+
+[C4] heuristic 'pick b+c when c-b is the closest pair'. (2,4,7): b-a=2, c-b=3 -> c-b NOT smallest, yet 2/(b+c) works
+   (2,4,7) denominators a+b=6: k with success in 1..6: [2, 4]
+   (2,4,7) denominators a+c=9: k with success in 1..9: [3, 6]
+   (2,4,7) denominators b+c=11: k with success in 1..11: [2, 4, 7, 9]
+   R1 triples where c-b < b-a (Qwen's heuristic case): 0 (proof: in R1 c-b>=2b/3>=b-a since a>=b/3)
+
+[D1] t=1/(a+c) works iff c<=3a (Qwen D: 'k=1 corresponds to c<=3a')
+   integer mismatches: 0 []
+
+[D2] Qwen IDEA k=2,3 with a+c cover new region: triples outside (c<=3a or R1) where 2/(a+c) or 3/(a+c) succeeds:
+   k=2: 3405 of 14862 remaining; e.g. [(1, 2, 7), (1, 3, 7), (1, 4, 5), (1, 5, 6)]
+   k=3: 4948 of 14862 remaining; e.g. [(1, 2, 7), (1, 2, 8), (1, 2, 9), (1, 2, 10)]
+
+[D3] Qwen question: does some triple fail for ALL k in 1..4 and all three denominators?
+   integer triples failing all k<=4: 2302; smallest by c: [(1, 3, 12), (1, 4, 12), (1, 4, 13), (1, 4, 15), (1, 3, 16), (1, 7, 16)]
+   family (1,2,3m): sums 3,3m+1,3m+2; ||c k/3||=0 and ||k/(3m+1)||,||k/(3m+2)||<1/4 for k<(3m+1)/4 -> all k<=K fail when 3m+1>4K
+   (1,2,18): fails all k<=4? True ; smallest K with a sum-form success: 5 ; success set nonempty, e.g. t=25/36 g=11/36
+   (1,2,30): fails all k<=7? True ; smallest K with a sum-form success: 8 ; success set nonempty, e.g. t=41/60 g=19/60
+   (1,2,60): fails all k<=15? True ; smallest K with a sum-form success: 16 ; success set nonempty, e.g. t=27/40 g=13/40
+
+[D4] truncated remark 'works for irrational speeds (proof uses no rationality)': proof uses only real inequalities; spot checks at 60 digits:
+   (1.000000,1.414214,4.123106) in R1: True  min dist = 0.361185608433
+   (1.732051,2.236068,5.339010) in R1: True  min dist = 0.409625059338
+   (2.000000,4.000000,7.000001) in R1: True  min dist = 0.272727366229
