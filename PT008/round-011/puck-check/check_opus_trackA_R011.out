@@ -1,0 +1,24 @@
+n=4: (n-1)^2/(n+1) = 9/5
+n=5: (n-1)^2/(n+1) = 8/3
+n=6: (n-1)^2/(n+1) = 25/7
+n=7: (n-1)^2/(n+1) = 9/2
+n=8: (n-1)^2/(n+1) = 49/9
+A7: tau in (0,3] (step 1/1000) safe for all b at c=4a: [Fraction(1, 1)]
+A7 example (1,5/2,4,11/2), tau=1: min dist 1/10
+B7 ('1', '3/2', '2', '5') t= 6/25 dists ['6/25', '9/25', '12/25', '1/5'] ok True
+B7 ('1', '2', '8/3', '5') t= 6/25 dists ['6/25', '12/25', '9/25', '1/5'] ok True
+B7 ('1', '5/4', '7/4', '41/10') t= 12/41 dists ['12/41', '15/41', '20/41', '1/5'] ok True
+B2 equivalence 4a>=2ac/(4a-c) <=> c<=8a/3 (a=1, c grid in (1,4)): mismatches 0
+WL n=5 domain: 40000 cases, 0 failures
+K5 c<=8a/3: 60000 cases, 0 failures
+K_n n=4: 15000 cases, 0 failures
+GW n=4 domain: 8000 cases, 0 failures
+K_n n=5: 15000 cases, 0 failures
+GW n=5 domain: 8000 cases, 0 failures
+K_n n=6: 15000 cases, 0 failures
+GW n=6 domain: 8000 cases, 0 failures
+K_n n=7: 15000 cases, 0 failures
+GW n=7 domain: 8000 cases, 0 failures
+K_n n=8: 15000 cases, 0 failures
+GW n=8 domain: 8000 cases, 0 failures
+AC1: 30000 cases, 0 failures
