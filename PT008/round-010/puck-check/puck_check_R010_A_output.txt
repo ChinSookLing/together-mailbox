@@ -1,0 +1,14 @@
+OK   A3 HB succeeds on exact grid incl. all closed edges (77531 points), failures=0
+OK   A4 C1 selection rule succeeds on exact grid (206040 points, 115120 inside Omega, HB branch used 79560), failures=0 (rule checked on whole box, not only Omega)
+OK   A4 boundary w=6/5: frac=1/5 in A, both LB(1) and HB succeed at s=5,r=8/7
+OK   Omega <=> 4/s < w < 4r/(1+r) (a=1 scaling)
+OK   A2 ['1', '3', '4', '7']: d=1(b+c), in Omega, ||d k/(b+c)||=0 for k=1..300
+OK   A2 ['1', '2', '3', '10']: d=2(b+c), in Omega, ||d k/(b+c)||=0 for k=1..300
+OK   A2 ['1', '6/5', '4', '78/5']: d=3(b+c), in Omega, ||d k/(b+c)||=0 for k=1..300
+OK   B2 (1,3,4,7) t=1/5 works, dists ['1/5', '2/5', '1/5', '2/5']; tau=(b+c)t=7/5
+OK   C4 (1,3,4,7) not in C1: s=7>5, r=4/3>8/7
+OK   B4 example (1,2.16,2.34,4.5): s=9/2 r=13/12 w=1 in Omega; t=1/3 dists ['1/3', '7/25', '11/50', '1/2']
+OK   D3 (1,3,4,7): t=1/5 locks a+c=5 and b+d=10
+FAILS 0
+OK   EXTRA (3, 5, 11, 24) in Omega, w=3/2 NOT integer, every LB(k) t=k/16 fails (all k mod 16); a working time exists, e.g. t=67/1000
+OK   EXTRA (1, 7, 9, 24) in Omega, w=3/2 NOT integer, every LB(k) t=k/16 fails (all k mod 16); a working time exists, e.g. t=1/5
