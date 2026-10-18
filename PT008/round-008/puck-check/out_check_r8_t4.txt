@@ -1,0 +1,17 @@
+cases 159968 fails 0
+branches {'S2': 42875, 'S3': 18650, 'S1': 20999, 'B4': 13795, 'B2': 44830, 'B5': 8962, 'B3': 7728, 'S6A': 2129}
+('1', '2', '3') branch S1 (claimed S1) t 1/4 (claimed 1/4) dists ['1/4', '1/2', '1/4'] OK
+('1', '2', '6') branch S2 (claimed S2) t 3/8 (claimed 3/8) dists ['3/8', '1/4', '1/4'] OK
+('1', '3', '4') branch S3 (claimed S3) t 3/7 (claimed 3/7) dists ['3/7', '2/7', '2/7'] OK
+('2', '4', '7') branch B2 (claimed B2) t 2/11 (claimed 2/11) dists ['4/11', '3/11', '3/11'] OK
+('1', '5/2', '16/5') branch B3 (claimed B3) t 10/19 (claimed 10/19) dists ['9/19', '6/19', '6/19'] OK
+('1', '3/2', '16/5') branch B2 (claimed B2) t 20/47 (claimed 20/47) dists ['20/47', '17/47', '17/47'] OK
+('1', '12/5', '4') branch B2 (claimed B2) t 5/16 (claimed 5/16) dists ['5/16', '1/4', '1/4'] OK
+('1', '2', '16/5') branch S6A (claimed S6A) t 5/7 (claimed 5/7) dists ['2/7', '3/7', '2/7'] OK
+('1', '29/10', '59/10') branch B4 (claimed B4) t 5/11 (claimed 5/11) dists ['5/11', '7/22', '7/22'] OK
+('1', '29/10', '17/2') branch B5 (claimed B5) t 25/57 (claimed 25/57) dists ['25/57', '31/114', '31/114'] OK
+B 2 0 s ['8/3', '8'] r ['5/3', '7']
+B 3 1 s ['4', '12'] r ['5/7', '7/5']
+B 4 1 s ['16/3', '16'] r ['9/7', '11/5']
+B 5 1 s ['20/3', '20'] r ['13/7', '3']
+10/3<11: True  25/11<3: True  10/3<49/11: True
