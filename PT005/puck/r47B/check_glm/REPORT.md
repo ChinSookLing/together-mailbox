@@ -10,4 +10,5 @@ Own code (puck_chk_glm_r47b.py, puck_kill_width.py), own seed 20262642, 2,000 ra
    - two coordinates (short clauses on one pair alone UNSAT; mostly units plus pair clauses, only 20 pure 4-clause pair kills): 353
    - three or more coordinates: 119
    So GLM's pure two-coordinate kill explains little; the Singleton Lemma does most of the work, and 119/1,793 (6.6%) need a cycle through >=3 coordinates, which no lemma covers yet.
+4. Grok red-team resend collected (2026-10-18T1625-GROK-resend.md): its 'survival depth >= 7' row at p=19 contains w=0 (bit 0 kept at every level), so every clause is trivially satisfied. Degenerate; with w=0 removed the row dies at M=76. 0 dataset rows have a zero coordinate. Puck: WRONG.
 Grading view (Puck): GLM Q1, ARL, Q2 PROVED-on-paper + CHECKED by two programs; Q3 pair-kill = PROOF CANDIDATE; "No UNFINISHED" not accepted (even reachers, >=3-coordinate cycles open). Chair grades.
