@@ -1,0 +1,60 @@
+== [B.2] Argon formula: x=b/a>=7/3, m=floor(x/2), k=ceil((m+1/4)(b+c)/b), t=k/(b+c) ==
+  integer triples c<=80 with b>=7a/3: 35189, failures: 0, violations of the proof's bounds (m+1/4<=bt<m+3/4, 1/4<=at<3/4): 0
+  random rational (1,x,y), x in [7/3,10^4], y-x in (0,10^6]: 100000, failures: 0, bound violations: 0
+  targeted boundary points: 48, failures: 0, min g = 1/4
+  example x=7/3, y=x+1e-9: t=9000000000/14000000003  ||at||,||bt||,||ct|| = 5000000003/14000000003, 6999999997/14000000003, 6999999997/14000000003  g=5000000003/14000000003
+  example (3,7,100): t=20/107  ||at||,||bt||,||ct|| = 47/107, 33/107, 33/107  g=33/107
+  irrational spot checks: ['0.3614', '0.372', '0.3118', '0.4764']
+
+== [B.2 threshold] is x>=7/3 needed? Argon formula for 1<x<7/3 ==
+  random (1,x,y), 1<x<7/3: 40000, formula fails at 25705
+  witness ('1', '2', '3') [x<7/3]: t=4/5  ||at||,||bt||,||ct|| = 1/5, 2/5, 2/5  g=1/5 -> FAILS
+  witness ('2', '3', '8') [x<7/3]: t=1/11  ||at||,||bt||,||ct|| = 2/11, 3/11, 3/11  g=2/11 -> FAILS
+  witness ('1', '17/10', '20') [x<7/3]: t=40/217  ||at||,||bt||,||ct|| = 40/217, 68/217, 68/217  g=40/217 -> FAILS
+  (1,2,5) for contrast (formula happens to work): t=5/7  ||at||,||bt||,||ct|| = 2/7, 3/7, 3/7  g=2/7
+
+== [Puck extension E] same formula with m=1 for 5/3<x<7/3 and y >= 4x/(3x-5) - x ==
+  random points in E (incl. 20000 exactly on the curve y=4x/(3x-5)-x): 60000, failures: 0
+  on-curve example (1,2,6): t=5/8  ||at||,||bt||,||ct|| = 3/8, 1/4, 1/4  g=1/4
+  just below curve (1,2,5.999): t=5000/7999  ||at||,||bt||,||ct|| = 2999/7999, 2001/7999, 2001/7999  g=2001/7999
+
+== [A, R1 as written by Argon] 5x/3 <= y <= 8 - x/3 (correct pack form is y <= 8 - x) ==
+  (1,2,7.3): in Argon's written R1? True; in true R1 (c<=8a-b)? False; t=20/93  ||at||,||bt||,||ct|| = 20/93, 40/93, 40/93  g=20/93
+  random points in the 8-x/3 version: 50000, failures of t=2/(b+c): 20012 (all failures lie in 8-x < y <= 8-x/3)
+  random points in true R1 (y<=8-x): 50000, failures: 0
+
+== [B.1] S6-A with equality boundaries ==
+  (1,5/3,3) in S6-A=True: t=3/4  ||at||,||bt||,||ct|| = 1/4, 1/4, 1/4  g=1/4
+  (1,7/3,3) in S6-A=True: t=3/4  ||at||,||bt||,||ct|| = 1/4, 1/4, 1/4  g=1/4
+  (1,5,11) in S6-A=True: t=1/4  ||at||,||bt||,||ct|| = 1/4, 1/4, 1/4  g=1/4
+  (1,7,11) in S6-A=True: t=1/4  ||at||,||bt||,||ct|| = 1/4, 1/4, 1/4  g=1/4
+  (1,2,19/5) in S6-A=True: t=5/8  ||at||,||bt||,||ct|| = 3/8, 1/4, 3/8  g=1/4
+  (1,35/12,4) in S6-A=True: t=3/5  ||at||,||bt||,||ct|| = 2/5, 1/4, 2/5  g=1/4
+  (1,25/12,4) in S6-A=True: t=3/5  ||at||,||bt||,||ct|| = 2/5, 1/4, 2/5  g=1/4
+  random points in S6-A: 50000, failures: 0
+
+== [Q2 hidden phase branch] t=3/(a+c) also works OUTSIDE S6-A ==
+  exact condition: 3<=y<=11 and 3x/(1+y) mod 1 in [1/4,3/4], i.e. x/(1+y) in [1/12,1/4] U [5/12,7/12] U [3/4,11/12]
+  (1,3/2,7) in S6-A=False: t=3/8  ||at||,||bt||,||ct|| = 3/8, 7/16, 3/8  g=3/8
+  (1,2,11) in S6-A=False: t=1/4  ||at||,||bt||,||ct|| = 1/4, 1/2, 1/4  g=1/4
+  (1,8,10) in S6-A=False: t=3/11  ||at||,||bt||,||ct|| = 3/11, 2/11, 3/11  g=2/11
+
+== [A, S2-Nudge] y<=3: I_ac=[1/(4a),3/(4c)] nonempty and contains t=1/(a+c), which succeeds ==
+  random 1<x<y<=3: 50000, exceptions: 0
+
+== [C] Argon G_1 example 10:22:33 (x=2.2, y=3.3) ==
+  in S6-A: True ; t=3/(a+c): t=3/43  ||at||,||bt||,||ct|| = 13/43, 20/43, 13/43  g=13/43
+  t=k/(a+b), k=1..12 successes: [8, 11, 12]
+  t=k/(a+c), k=1..12 successes: [3, 7, 11]
+  t=k/(b+c), k=1..12 successes: [4, 9]
+  note: G_1 as written (x in (1.8,2.33), 1.4x<y<1.66x) contains y<=3 points, e.g. (1,1.9,2.7) in N1: True
+
+== [C/D closure] 'union = whole region, no remaining gap' ==
+  Using ONLY the formulas Argon actually defines (y<=3 [S2/N1], R1, S6-A, B.2; 'S5-Nudge' and G_m are not defined):
+  random (x,y): 200000, uncovered: 35676, mismatches vs Puck's exact set U={1<x<7/3, y>8-x}: 0
+  Stronger: points of U where all four TIMES (1/(a+c), 2/(b+c), 3/(a+c), B.2) actually fail:
+  integer triples a<=12, b<40, c<60 in U with all four times failing: 152
+  witness (5, 6, 56): N1 5/61 | R1 5/31 | S6 15/61 | B.2 15/62
+     -> 'specified formulas fail', NOT a conjecture counterexample: k=ceil((a+c)/4a)=4, t=4/61 (Puck P1) t=4/61  ||at||,||bt||,||ct|| = 20/61, 24/61, 20/61  g=20/61
+  witness (7, 13, 44): N1 7/51 | R1 14/57 | S6 4/17 | B.2 14/57
+     -> 'specified formulas fail', NOT a conjecture counterexample: t=3/(b+c)=1/19 (Puck R2) t=1/19  ||at||,||bt||,||ct|| = 7/19, 6/19, 6/19  g=6/19
