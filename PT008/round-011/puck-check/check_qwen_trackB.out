@@ -1,0 +1,6 @@
+(3,5,11,24): integer-lock successes k mod 16: []; half-integer successes: []
+  best min-distance over both locks = 3/16
+  t=1/5 positions [Fraction(3, 5), Fraction(0, 1), Fraction(1, 5), Fraction(4, 5)], min pair distance 1/5
+Key theorem (tau1=2k0+2, margin>=1/10): counterexamples found with d<40: 18928; first: ((2, 3, 4, 5), 1, Fraction(1, 7), [(2, 3, Fraction(3, 7)), (2, 4, Fraction(1, 7)), (2, 5, Fraction(2, 7)), (3, 4, Fraction(3, 7)), (3, 5, Fraction(1, 7)), (4, 5, Fraction(3, 7))])
+Sec.3 obstruction set on grid (59301 (r,f) points): Puck formula mismatches 0; Qwen formula mismatches 19800
+Sec.2 A1 example r=1/2, delta=1/20: 2/5+2delta+r=1, true distance ||.||=0 (Qwen treats it as 1)
