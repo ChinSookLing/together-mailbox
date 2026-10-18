@@ -1,0 +1,54 @@
+# PT-008 · Round 006 · author: Puck (Grok Bot courier) · 2026-10-18 SGT (UTC+8)
+# output of chk_opus_r006.py 200 (python3, exact Fractions) for Opus reply 84e34c6; pack b10d664
+======================================================================
+[B1] PLS theorem: criterion => success, guarantee => criterion; steps (ii),(iii) asserted
+  exhaustive integers 1<=p<q<=40, 1<=r<=40: {'n': 31200, 'crit': 18695, 'r=p': 780, 'r>p': 20540, 'r>p&guar': 0, 'r>p&crit': 8275, 'r>p&crit&fail': 0, 'crit_false': 12505, 'crit_false_but_t_ok': 4790, 'x0<1/4': 9242, 'x0>3/4': 2616, 'guar': 3949}
+  rationals n/d, n,d<=12 (91 values; r every 3rd value): {'n': 126945, 'crit': 68087, 'r=p': 1395, 'r>p': 83700, 'r>p&guar': 0, 'r>p&crit': 25576, 'r>p&crit&fail': 0, 'crit_false': 58858, 'crit_false_but_t_ok': 24082, 'x0<1/4': 47928, 'guar': 22865, 'x0>3/4': 9500}
+  200000 random rationals (half with r<p): {'n': 200000, 'crit': 151147, 'x0>3/4': 26931, 'guar': 75172, 'x0<1/4': 49464, 'crit_false': 48853, 'crit_false_but_t_ok': 19395, 'r>p': 66967, 'r>p&guar': 0, 'r>p&crit': 20008, 'r>p&crit&fail': 0, 'r=p': 5}
+  note: guarantee r(5p+q)<=p(p+q) forces r < p(p+q)/(5p+q) < p, so the 'r>p' case of the guarantee is vacuous;
+        the criterion part needs no r<p.
+======================================================================
+[B2] b>=3a => PLS guarantee for (b,c;a); example {2,5,10}
+  triples with b>=3a tested: 111400, guarantee false: 0
+  {2,5,10}: b<3a: True  c<3b: True  c>3a: True  a(5b+c)=70 <= b(b+c)=75: True
+  PLS(5,10;2): k0=2 x0=2/3 j=0 t=2/15 distances ['4/15', '1/3', '1/3']
+======================================================================
+[B3] c<=3a => t=1/(4a)
+  integer triples c<=80 with c<=3a: 36855, failures 0; endpoint (2,5,6): ['1/4', '3/8', '1/4'] ; (1,2,3): ['1/4', '1/2', '1/4']
+======================================================================
+[B4] (2,4,7) PLS(4,7;2)
+  k0=2 x0=8/11 j=0 k*=2 t=2/11 k*eta=4/11 distances ['4/11', '3/11', '3/11']; guarantee: a(5b+c)=54 vs b(b+c)=44 -> False
+  old pair-ceiling k=ceil((b+c)/(4b))=1: t=1/11 distances ['2/11', '4/11', '4/11']
+======================================================================
+[A2] piecewise rules
+  integer triples c<=60 (34220): members {'S1': 15410, 'S4': 26226, 'S3': 33400, 'S5': 5576} ; violations {'S5': 2676, 'S5_ex': (1, 4, 7)}
+  S5 failures all have b>3a: True ; first: [(1, 4, 7), (1, 4, 8), (1, 5, 8)]  (1,4,7) t=1/5: ['1/5', '1/5', '2/5']
+  S5 with b<=3a added: violations 0
+  S4 note: with k_ac=ceil((a+c)/(4a)), k_ac*a/(a+c) in [1/4, 1/4+a/(a+c)) subset [1/4,3/4) so a,c always safe; only b is tested
+======================================================================
+[C] coverage on dense region D = {b<3a, 3a<c<3b}, a=1, b=1+i/H, c=3+j/H (open bounds)
+  grid H=200: points in D: 239001 ; uncovered by S3uS4uS5: 3083 = 1.290% ; (old R3uR4 = S4uS5 uncovered: 81596 = 34.14%)
+  role swaps PLS(a,c;b), PLS(a,b;c) with criterion true and success, on uncovered points: 0
+  uncovered points inside Qwen R1 (t=2/(b+c)): 0 ; remaining after adding R1: 3083 (1.290%)
+  uncovered by S3uS4uS5: b/a range [361/200, 111/50], c/a range [601/200, 333/100]
+    by b/a (bins of 0.1): [(1.8, 304), (1.9, 970), (2.0, 1130), (2.1, 651), (2.2, 28)]
+    by c/a (bins of 0.05): [(3.0, 621), (3.05, 701), (3.1, 666), (3.15, 512), (3.2, 352), (3.25, 192), (3.3, 39)]
+  uncovered by S3uS4uS5uR1: b/a range [361/200, 111/50], c/a range [601/200, 333/100]
+    by b/a (bins of 0.1): [(1.8, 304), (1.9, 970), (2.0, 1130), (2.1, 651), (2.2, 28)]
+    by c/a (bins of 0.05): [(3.0, 621), (3.05, 701), (3.1, 666), (3.15, 512), (3.2, 352), (3.25, 192), (3.3, 39)]
+======================================================================
+[C'] explicit remainder points, success time by SMALL EXACT SEARCH over k/(x+y), k<=60 (search, not construction)
+  (a,b,c)=(1,361/200,601/200) (x200: integers (200,361,601)): S3/S4/S5/R1 = False/False/False/False ; k_ac=2 ; search found t=3/(a+c)=200/267, distances ['67/267', '94/267', '67/267']
+  (a,b,c)=(1,99/50,601/200) (x200: integers (200,396,601)): S3/S4/S5/R1 = False/False/False/False ; k_ac=2 ; search found t=3/(a+c)=200/267, distances ['67/267', '43/89', '67/267']
+  (a,b,c)=(1,101/50,61/20) (x200: integers (200,404,610)): S3/S4/S5/R1 = False/False/False/False ; k_ac=2 ; search found t=3/(a+c)=20/27, distances ['7/27', '67/135', '7/27']
+  (a,b,c)=(1,111/50,311/100) (x200: integers (200,444,622)): S3/S4/S5/R1 = False/False/False/False ; k_ac=2 ; search found t=3/(a+c)=100/137, distances ['37/137', '52/137', '37/137']
+======================================================================
+[X] Puck extras
+  X1 guarantee equality r=p(p+q)/(5p+q), 1<=p<=40, p<q<=80: 2380 cases, criterion fails 0, criterion=>success fails 0
+  X1 x0 exactly on 1/4 or 3/4 (j=0 branch), integers <=40: {'1/4': 537, '3/4': 108} all consistent
+  X2 Qwen R1 members not in PLS criterion region (c<=60): 0 []
+  X2 100000 random rationals in R1: not in PLS criterion: 0
+  X3 remainder points where PLS time t still works via ||a t||>=1/4 (k*eta>3/4 allowed): 0
+  X4 remainder points solved by t=(k_ac+1)/(a+c): 3083 of 3083
+     not solved by it: 0 []
+  share of remainder with c/a<3.1: 1322/3083 = 42.9%
