@@ -1,0 +1,5 @@
+header ['p', 'k', 'M', 'coords', 'F0', 'F1', 'F2', 'F3', 'F4', 'F5', 'n_open_children', 'survival_depth', 'source']
+
+real	1m28.672s
+user	0m57.486s
+sys	0m30.207s
