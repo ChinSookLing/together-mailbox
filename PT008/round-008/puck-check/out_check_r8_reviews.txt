@@ -1,0 +1,10 @@
+DeepSeek S2 (1,2,6): a,b,c=1,2,6 t=3/8 dists=['3/8', '1/4', '1/4'] r=c/b=3 s=(b+c)/a=8 -> OK
+DeepSeek 'B4 boundary' (3/2,3,5) with t=1/2: a,b,c=3/2,3,5 t=1/2 dists=['1/4', '1/2', '1/2'] r=c/b=5/3 s=(b+c)/a=16/3 -> OK
+Same point under T4 order (B2 first, r=5/3), t=1/4 per Hesper: a,b,c=3/2,3,5 t=1/4 dists=['3/8', '1/4', '1/4'] r=c/b=5/3 s=(b+c)/a=16/3 -> OK
+DeepSeek G/S6-A (1,21/10,63/20), t=3/(a+c): a,b,c=1,21/10,63/20 t=60/83 dists=['23/83', '40/83', '23/83'] r=c/b=3/2 s=(b+c)/a=21/4 -> OK
+Gemini G/S6-A (1,31/15,31/10), t=3/(a+c): a,b,c=1,31/15,31/10 t=30/41 dists=['11/41', '20/41', '11/41'] r=c/b=3/2 s=(b+c)/a=31/6 -> OK
+Gemini B4(iv) chain b(b+c)-a(5b+c) >= (2/3)b(c-b) > 0 on b>=3a, c>b: 45030 grid cases, 0 failures
+  symbolic: a<=b/3 and 5b+c>0 give b(b+c)-a(5b+c) >= b^2+bc-(5b^2+bc)/3 = (2/3)b(c-b)
+Gemini G bound (r<5/3, s<16/3 => c<10a/3): 1456 grid cases, 0 failures
+DeepSeek B4(iv) j=0 remark: j*eta = 0 meets the same upper bound; wording fix, not a gap (agree)
+ALL OK
