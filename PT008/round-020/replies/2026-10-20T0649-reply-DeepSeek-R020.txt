@@ -1,0 +1,114 @@
+R020 4/4 DeepSeek
+
+ANSWER BLOCK：CLR v2 仍是条件性框架；LS 对有理形状证明 R 非空且余量 \ge1/20，给出确定性 m=\operatorname{denom}((B+C)F_4)，是有限显式选择器但仅有理且仍需 s 下界。PS 对可公度簇给闭式 n（例外集精确），测度零。APS 对给定参考整数给开区域，参考整数选择 UNFINISHED。Q-ERC1 空集分类正确；Q-ERC2 密度论证不能推出联合非空，GAP。审阅：PS VERIFIED，LS VERIFIED，APS VERIFIED（条件性），Q-ERC1 VERIFIED，Q-ERC2 GAP FOUND。一般选择器 UNFINISHED，F5 未闭合。
+
+---
+
+Track D · Effective Constructivity
+
+1. 假设
+
+· CLR v2：参考形状 (\theta_0,w_0)，整数 m,Q，周期条件 Q/m,Q\theta_0/m,Qw_0/m\in\mathbb Z，非空安全余数集 R，最大循环间隔 G，余量 \mu_b,\mu_c,\mu_d，且 s\ge5G/(3m)、\tau|\theta-\theta_0|\le\min(\mu_b,\mu_c)、\tau|w-w_0|\le\mu_d。
+· PS：(b,c,d)=g(B,C,E) 可公度，P=1/g，x=\operatorname{frac}(aP)，\varphi_0=\operatorname{frac}(at_0)，t_0=F_4(b,c,d)。
+· LS：有理形状 0<B<C<E，\tau^*=(B+C)F_4(B,C,E)，m=\operatorname{denom}(\tau^*)，Q=m(B+C)。
+· APS：给定参考整数 0<B<C<E，P=B/b，r_c=cP-C，r_d=dP-E，x=\operatorname{frac}(aP)，e=\min(x,1-x)>0。
+· Q-ERC1：有理 \theta=p/q（q\ge3），w=p'/q' 最简。
+· Q-ERC2：w=n\in\mathbb Z_{>0}，\theta=p/q，相位格 1/m，Q=mq。
+
+2. 所选相位格与时间
+
+· CLR v2：\tau=k/m，t=\tau/(b+c)，k=k_0+\min_{\rho\in R}((\rho-k_0)\bmod Q)，k_0=\lceil ms/5\rceil。
+· PS：t=t_0+nP，n 由 (S0)–(S2) 闭式给出。
+· LS：m=\operatorname{denom}((B+C)F_4)，\rho^*=m\tau^*\bmod Q，Q=m(B+C)；在 CLR v2 中取 R\ni\rho^*。
+· APS：t=t_0+nP，n 用 PS 选择器，且需 n|r_c|\le\|ct_0\|-1/5、n|r_d|\le\|dt_0\|-1/5。
+· Q-ERC1：m=1，R_1=\{k\bmod L:\|k\theta\|\ge1/5,\|kw\|\ge1/5\}。
+· Q-ERC2：\tau=k/m，Q=mq。
+
+3. 选择器有定义且终止
+
+· CLR v2：R 非空时，有限查表，步数 \le G，终止。
+· PS：x\ne0 时 n=\lceil\Delta/x\rceil 或 \lceil\Delta'/y\rceil，有限；例外 x=0,\varphi_0\notin A 明确不适用。
+· LS：F_4 有限分支，m 显式；R 非空由 F_4 保证，终止。
+· APS：给定参考整数时，n 有限；但参考整数选择未定义。
+· Q-ERC1：分类定理，不是选择器；R_1 由模运算定义。
+· Q-ERC2：条件 BC 是存在性同义反复，未给出有效选择。
+
+4. 每位跑者安全
+
+· CLR v2：已认证。
+· PS：b,c,d 相位不变；a 由 n 落入 A。证明正确。
+· LS：在 \tau^* 处 B F_4,C F_4,E F_4 距离均 \ge1/4，余量 \ge1/20；周期条件使 \rho^* 处相位相同。
+· APS：b 相位不变；c,d 偏移由判据控制；a 同 PS。
+· Q-ERC1：分类，不构造。
+· Q-ERC2：未证明联合非空。
+
+5. 反例/障碍
+
+· PS 例外：(1,2,3,4)，g=1，aP=1，t_0=1/8，\varphi_0=1/8\notin A，PS 不适用；由 TN 覆盖。
+· APS：半径 \propto e/(2/5+e)，a\ll b 时 e 小，不能覆盖全部。
+· Q-ERC2：密度正不能推出交集非空；条件 BC 不是可检验代数条件。
+· 一般无理选择：无有效上界，UNFINISHED。
+
+6. 与已认证构造差别
+
+· LS 补足了 CLR v2 对有理形状的 R 非空和统一余量 1/20，这是对 CLR v2 缺失引理的实质补足；但 CLR v2 的 s 下界仍在。
+· PS 覆盖可公度簇对任意 s，但可公度测度零。
+· APS 给出无理附近开区域，但参考整数选择未定。
+· Q-ERC1 是空集分类，不是选择器。
+
+---
+
+审阅：Opus PS（第一审）
+
+结论：条件性选择器（可公度簇）。PROOF VERIFIED。
+
+假设与选择器明确；b,c,d 相位不变，a 由闭式 n 落入 A；例外集精确。无未声明存在性。比 CLR v2 多解决：对可公度簇任意 s 可用；但仅测度零，不是普适规则。分类：条件性选择器。
+
+---
+
+审阅：Opus APS（第一审）
+
+结论：条件性充分条件（给定参考整数）。PROOF VERIFIED（条件性）。
+
+证明正确：b 精确不变，c,d 偏移受判据控制，a 同 PS。无未声明存在性。但它需要参考整数 (B,C,E)；选择该整数的规则未给出，故作为完整选择器 UNFINISHED。比 CLR v2 多解决：无理形状附近开区域；但半径随 e 缩小。
+
+---
+
+审阅：Opus LS（第二审）
+
+结论：有理形状的相位格选择器。PROOF VERIFIED。
+
+\tau^*=(B+C)F_4(B,C,E)，m=\operatorname{denom}(\tau^*)，Q=m(B+C)。在 \tau^* 处三个距离 \ge1/4，余量 \ge1/20；周期条件成立，故 \rho^*\in R。这证明有理形状的 R 非空且余量有统一下界，补足了 CLR v2 的缺失引理。但 CLR v2 的 s\ge5G/(3m) 仍需，故不是对所有 s 的普适选择器。分类：条件性选择器（有理形状 + s 下界）。
+
+数值复核：V5 形状 (B,C,E)=(1,2,3)，F_4=1/4，\tau^*=3/4，m=4，Q=12，\rho^*=3，余量 1/20。与 CLR v2 的 R=\{3,9\} 一致。
+
+---
+
+审阅：Q-ERC1（第二审）
+
+结论：m=1 空集分类定理。PROOF VERIFIED。
+
+结论：R_1=\emptyset\iff w\in\mathbb Z。证明用 CRT 与鸽笼；需注意 q'=2 时 g\le2 已单独处理，投影大小估计正确。无未声明存在性。它不是选择器，只分类空集。比 CLR v2 多解决：明确 m=1 何时失败。
+
+---
+
+审阅：Q-ERC2（第一审）
+
+结论：分数分母修复条件。GAP FOUND。
+
+问题：
+
+1. 充分性证明用“三个条件各排除 <2/5，联合密度 \ge(3/5)^3>0”推出联合安全集非空。密度正不能推出交集非空；需要更精细的模结构或鸽笼。
+2. 条件 BC 是“存在 k 同时满足 b,c,d”，这是同义反复，不是可检验的代数条件。
+3. 因此作为选择器无定义；作为充分条件证明不完整。分类：需非空安全集的选择器，但未证明。
+
+---
+
+四账本
+
+· PROOF VALIDITY：PS PROOF VERIFIED（条件性）；LS PROOF VERIFIED（条件性）；APS PROOF VERIFIED（条件性）；Q-ERC1 PROOF VERIFIED；Q-ERC2 GAP FOUND。CLR v2 维持 PROVED。
+· INDEPENDENT REVIEW：本回复为 DeepSeek 独立非作者审阅；未参考其他审阅人本轮意见。
+· NEW COVERAGE：LS 对有理形状的 R 非空和余量 1/20 是实质补足；PS/APS 与已认证有重叠；一般无理新覆盖 UNFINISHED。
+· COMPUTATIONAL CHECK：V5、V4、主席反例的 PS/LS 数值均手算展示，与原文一致；未用随机测试作为证明。
+
+通向一般 n 的一行：CLR v2 的余数表框架对 n 维相位格同样适用，若 F_n 存在，LS 的 m=\operatorname{denom}((B+C)F_n) 可推广；但一般 F_n 仍 UNFINISHED。
