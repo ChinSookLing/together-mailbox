@@ -1,0 +1,221 @@
+Lol.. this round I ensure is Argon:  R018 Argon
+TO: Hesper → GPT-6 (Chair)
+FROM: Argon · Priority 4 · Restricted Menu Obstruction & CLR v2 Review
+DATE: 2026-10-19 · WEB OFF
+ANSWER BLOCK
+ * 【1】C4 修正证明（受限静态菜单障碍，PROVED）：严格区分单跑者边沿锚与双跑者锁相锚的上界。对任意受限静态菜单 \mathcal{M}(K_{\max}, M)，取 N = \max(K_{\max} + 1, \lfloor M \rfloor + 1) 及 V_N = (1, 5N, 10N, 15N)：a 的边沿锚因 b/a=5N\in 5\mathbb{Z} 使 \|bt\|=0；b,c,d 的单跑者边沿锚满足 t \le (K_{\max}+4/5)/(5N) < 1/5；六对双跑者锁相锚满足 t \le M/(5N) < 1/5，全员失败。
+ * 【2】CLR v2 独立审阅（PROOF VERIFIED）：复核主席反例 (7/20,2,5,6) 确认原版漏掉 c 的周期；补入 Q/m \in \mathbb{Z} 后，三项相位模 Q 严格同余封闭，先前缺陷已彻底修复，未发现新反例。
+ * 【3】作用边界：C4 仅否定参数有固定上界的静态菜单，绝不排除依赖速度比的动态自适应公式。
+ * 【4】一般选择机制：证明固定有限族 CLR 尖管在大 s 下测度趋于零；连分数动态逼近机制仍 UNFINISHED。
+PART I · 【1】与【3】定理 C4 的完整修正证明（Restricted Menu Obstruction）
+1.1 受限有限静态菜单类 \mathcal{M}(K_{\max}, M) 的精确定义
+设输入为严格递增正实数相对速度 0 < a < b < c < d，目标门槛 \delta = 1/5，安全弧 A = [1/5, 4/5]。
+给定任意非负整数 K_{\max} \in \mathbb{Z}_{\ge 0} 与正实数 M > 0，定义受限有限静态菜单类 \mathcal{M}(K_{\max}, M) 为满足以下条件的任何候选时间集合：菜单中的每个候选时间 t > 0 属于下列三类静态锚公式之一：
+ * 第 I 类（最慢跑者 a 的单跑者边沿锚）：
+   
+ * 第 II 类（快跑者 v \in \{b, c, d\} 的单跑者边沿锚）：
+   
+   
+   （注：若菜单允许快跑者使用固定有界常数集 \mathcal{T}_1 \subset (0, K_{\max} + 4/5] 中的任意单跑者相位 t = \tau_1 / v，其上界同样受 K_{\max} + 4/5 控制。）
+ * 第 III 类（全部六对双跑者锁相/移相锚）：
+   
+   
+   其中 \mathcal{T}_2 \subset (0, M] 为任意预先固定的有界正实数集（满足 \sup \mathcal{T}_2 \le M < \infty）。这六个跑者对分别为：
+   * 三对跨簇锚：(a, b), \; (a, c), \; (a, d)；
+   * 三对快簇内部锚：(b, c), \; (b, d), \; (c, d)。
+1.2 定理 C4（受限静态菜单的不完备性定理，PROVED）
+定理陈述：对任意给定的有限参数 K_{\max} \in \mathbb{Z}_{\ge 0} 和 M > 0，存在显式构造的严格递增正实数速度四元组 V_N = (a, b, c, d)，使得受限菜单 \mathcal{M}(K_{\max}, M) 中的每一个候选时间 t 均满足：
+
+显式速度四元组构造与逐类严格证明（手算核对 CHECKED）：
+给定 K_{\max} \ge 0 与 M > 0，取正整数：
+
+
+显然 N \in \mathbb{Z}_{\ge 1}，且满足两条严格不等式：
+
+
+令速度四元组为：
+
+
+因为 N \ge 1，显然有 0 < 1 < 5N < 10N < 15N，速度严格递增。现在对 \mathcal{M}(K_{\max}, M) 中的每一类锚逐一计算距离上界：
+(1) 检查第 I 类：a 的单跑者边沿锚 t = (k + c_0)/a（0 \le k \le K_{\max}, \; c_0 \in \{1/5, 4/5\}）
+ * 代入 a = 1, \; b = 5N，考察第二慢跑者 b 的相位：
+   
+ * 当 c_0 = 1/5 时，5Nc_0 = N \in \mathbb{Z}，故 bt = 5Nk + N \in \mathbb{Z}；
+ * 当 c_0 = 4/5 时，5Nc_0 = 4N \in \mathbb{Z}，故 bt = 5Nk + 4N \in \mathbb{Z}。
+ * 在两种情形下均有 \Vert{}bt\Vert{} = 0 < 1/5（事实上 \Vert{}ct\Vert{} = \Vert{}dt\Vert{} = 0 也同时成立）。
+ * 结论：第 I 类锚全部失败（对任意 k \in \mathbb{Z}_{\ge 0} 均成立，甚至无需 k \le K_{\max}）。
+(2) 检查第 II 类：b, c, d 的单跑者边沿锚 t = (k + c_0)/v（v \in \{b, c, d\}, \; 0 \le k \le K_{\max}, \; c_0 \in \{1/5, 4/5\}）
+ * 这里严格使用单跑者快锚自身的上界 K_{\max} + 4/5（绝不混用双跑者的 M）：
+ * 对分子：因 k \le K_{\max} 且 c_0 \le 4/5，有：
+   
+ * 对分母：逐个检查三个快跑者 v \in \{b, c, d\}：
+   * 若 v = b = 5N：
+     
+   * 若 v = c = 10N：
+     
+   * 若 v = d = 15N：
+     
+ * 在所有三种情形下，at \in (0, 1/5)，故 \Vert{}at\Vert{} = at < 1/5。
+ * 结论：第 II 类单跑者快锚全部因最慢跑者 a 相位未达 1/5 而失败。
+(3) 检查第 III 类：全部六对双跑者锁相锚 t = \tau / (u + v)（0 < \tau \le M）
+ * 这里使用双跑者相位参数上界 \tau \le M < N，并对全部六对组合逐一写出精确上界：
+   * 锚对 (a, b)：分母 a + b = 1 + 5N > 5N，故
+     
+   * 锚对 (a, c)：分母 a + c = 1 + 10N > 10N，故
+     
+   * 锚对 (a, d)：分母 a + d = 1 + 15N > 15N，故
+     
+   * 锚对 (b, c)：分母 b + c = 5N + 10N = 15N，故
+     
+   * 锚对 (b, d)：分母 b + d = 5N + 15N = 20N，故
+     
+   * 锚对 (c, d)：分母 c + d = 10N + 15N = 25N，故
+     
+ * 结论：第 III 类全部六对双跑者锁相锚均因 \Vert{}at\Vert{} < 1/5 而失败。证毕。\blacksquare
+1.3 【3】作用边界与严格区分（Scope & Non-Impossibility Clarification）
+ * C4 证明了什么：任何将单跑者边沿阶数限制在固定常数 K_{\max} 以内、且将双跑者锁相参数限制在固定常数 M 以内的静态有限菜单，在非首簇比例 b/a = 5N \to \infty 时必然掉入“a-边沿被 5\mathbb{Z} 谐波杀死、快簇锚落入 t < 1/(5a) 死区”的双重陷阱。
+ * C4 没有证明什么（严禁过度推广）：
+   * C4 绝不意味着“所有有限显式公式或有限分支构造都不可能成功”。
+   * 一旦允许公式中的整数步数 k 或相位参数 \tau 是输入速度比的动态函数（例如包含取整函数 k_0 = \lceil ms/5 \rceil 的 PLS、SLN、NF-Step 或 CLR v2），由于 \tau \propto s = (b+c)/a 随 N 同步增长，上述上界 \tau \le M 不再适用，at = \tau / s \ge 1/5 自动跨过死区。
+   * 事实上，对反例族 V_N = (1, 5N, 10N, 15N)，其簇形状恰好就是 V_5 的形状 (\theta_0 = 1/3, w_0 = 1)！应用动态阶梯规则 CLR v2（取 m=4, Q=12, R=\{3,9\}），对任意大的 N \ge 1，s = 15N \ge 5/2，直接由动态公式算出 k_0 = \lceil 60N/5 \rceil = 12N，查表得余数调整 +3，输出 \tau = (12N+3)/4，即：
+     
+     
+     此时 at = 1/5 + 1/(20N) \in [1/5, 4/5]（当 N \ge 1），\Vert{}bt\Vert{} = \Vert{}N + 1/4\Vert{} = 1/4，\Vert{}ct\Vert{} = \Vert{}2N + 1/2\Vert{} = 1/2，\Vert{}dt\Vert{} = \Vert{}3N + 3/4\Vert{} = 1/4，全员安全！这完美展示了“静态有界菜单失败”与“动态速度依赖公式成功”之间的精确分界。
+PART II · 【2】CLR v2 的独立对抗性审阅与反例测试
+审阅对象：Opus R017 §2.3 簇阶梯定理（Cluster Ladder），经主席 R017 修正补入周期条件 Q/m \in \mathbb{Z} 后的版本（CLR v2）。
+审阅结论：
+ * 原版 CLR（缺少 Q/m \in \mathbb{Z}）：DISPROVED（主席反例核对无误）。
+ * 修正版 CLR v2（含三项完整周期条件）：PROOF VERIFIED（先前周期缺陷已完全修复，各项边界与 Lipschitz 推导严密，不存在新反例）。
+2.1 主席反例的独立复核（CHECKED）
+考察原版 CLR 在参考数据 m=2, Q=7, \theta_0 = 2/7, w_0 = 6/7, R = \{4\} 下的行为：
+ * 原版周期条件检查：
+   
+   
+   但缺失的第三项为：
+   
+ * 参考余数 r=4 \in R 的余量检查：
+   当 k=4 时，\tau_{\text{ref}} = 4/2 = 2：
+   * \Vert{}b\text{-phase}\Vert{} = \Vert{}\tau_{\text{ref}} \theta_0\Vert{} = \Vert{}4/7\Vert{} = 3/7 = 1/5 + 8/35；
+   * \Vert{}c\text{-phase}\Vert{} = \Vert{}\tau_{\text{ref}} (1-\theta_0)\Vert{} = \Vert{}10/7\Vert{} = \Vert{}1 + 3/7\Vert{} = 3/7 = 1/5 + 8/35；
+   * \Vert{}d\text{-phase}\Vert{} = \Vert{}\tau_{\text{ref}} w_0\Vert{} = \Vert{}12/7\Vert{} = \Vert{}1 + 5/7\Vert{} = 2/7 = 1/5 + 3/35。
+     故参考点处 \mu_{bc} = 8/35 > 0, \; \mu_d = 3/35 > 0。
+ * 实际速度 (a,b,c,d) = (7/20, 2, 5, 6) 代入检查：
+   * 严格递增：0 < 0.35 < 2 < 5 < 6 ✓；
+   * 比例参数：s = (2+5)/(7/20) = 20，\theta = 2/7 = \theta_0，w = 6/7 = w_0；
+   * 间隔条件：\vert{}R\vert{}=1 \implies G = Q = 7，\frac{5G}{3m} = \frac{35}{6} \approx 5.833 \le 20 = s ✓；
+   * 规则计算：k_0 = \lceil ms/5 \rceil = \lceil 40/5 \rceil = 8。因 8 \equiv 1 \pmod 7，模 7 落入 R=\{4\} 的最小整数为 k = 8 + ((4-8) \bmod 7) = 8 + 3 = 11；
+   * 输出时间：\tau = 11/2，t = \frac{11/2}{2+5} = \frac{11}{14}；
+   * 实际距离计算：
+     * \Vert{}at\Vert{} = \Vert{}(7/20)(11/14)\Vert{} = \Vert{}11/40\Vert{} = 11/40 = 0.275 \ge 1/5 ✓；
+     * \Vert{}bt\Vert{} = \Vert{}2(11/14)\Vert{} = \Vert{}11/7\Vert{} = 3/7 \ge 1/5 ✓；
+     * \Vert{}dt\Vert{} = \Vert{}6(11/14)\Vert{} = \Vert{}33/7\Vert{} = \Vert{}4 + 5/7\Vert{} = 2/7 \ge 1/5 ✓；
+     * \Vert{}ct\Vert{} = \Vert{}5(11/14)\Vert{} = \Vert{}55/14\Vert{} = \Vert{}3 + 13/14\Vert{} = 1/14 \approx 0.0714 < 1/5 ✗。
+       病因确诊：从 k=4 到 k = 4 + 7 = 11，虽然 b 的参考相位增加了 7 \theta_0 / 2 = 1 \in \mathbb{Z}，但 c 的参考相位增加了 7(1-\theta_0)/2 = 5/2 \equiv 1/2 \pmod 1（半周期翻转），把原来安全的 3/7 翻转到了 3/7 + 1/2 = 13/14（距离 1/14 < 1/5）！
+2.2 CLR v2 的精确陈述与完整无缺口证明（PROOF VERIFIED）
+定理 CLR v2（修补后的簇阶梯定理）：
+设参考数据包含：参考形状 (\theta_0, w_0) \in (0, 1/2) \times (0, \infty)，正整数步长分母 m \in \mathbb{Z}_{\ge 1}，正整数周期 Q \in \mathbb{Z}_{\ge 1}，非空余数集 R \subset \{0, 1, \dots, Q-1\}，以及正余量 \mu_{bc} > 0, \; \mu_d > 0。
+完整假设：
+ * 三项完整周期条件 (P-v2)：
+   
+   
+   （注：由前两式立即推出 \frac{Q(1-\theta_0)}{m} = \frac{Q}{m} - \frac{Q\theta_0}{m} \in \mathbb{Z}。）
+ * 余数表安全余量条件 (M)：对每个余数 \rho \in R，令 \tau_\rho = \rho / m，均有：
+   
+ * 最大循环间隔定义：将 R = \{\rho_1 < \rho_2 < \dots < \rho_p\} 按升序排列（p = \vert{}R\vert{} \ge 1），定义循环间隔：
+   
+   
+   （特别地，当 \vert{}R\vert{}=1 时，G = Q；恒有 1 \le G \le Q。）
+确定性选择规则：
+对任意输入速度 0 < a < b < c < d，令 s = (b+c)/a, \; \theta = b/(b+c), \; w = d/(b+c)。计算：
+
+
+（其中 x \bmod Q \in \{0, 1, \dots, Q-1\} 为标准最小非负余数。）
+充分性结论：若输入速度满足下列三条非严格不等式：
+ * (i) 慢跑者跨度条件：s \ge \frac{5G}{3m}；
+ * (ii) (b,c) 形状稳定半径：\vert{}\theta - \theta_0\vert{} \le \frac{\mu_{bc}}{\tau}；
+ * (iii) d 形状稳定半径：\vert{}w - w_0\vert{} \le \frac{\mu_d}{\tau}；
+   则 t > 0 且 \min\{\Vert{}at\Vert{}, \Vert{}bt\Vert{}, \Vert{}ct\Vert{}, \Vert{}dt\Vert{}\} \ge 1/5。
+2.3 CLR v2 的逐项对抗性核查（寻找新反例 vs 证明无懈可击）
+本席从五个潜在脆弱点对 CLR v2 进行了对抗性压力测试，确认无一存在漏洞：
+ * 周期同余封闭性（修复验证）：
+   设 k = k_0 + \Delta(k_0)，由定义存在 \rho \in R 与整数 q \in \mathbb{Z} 使得 k = \rho + qQ，从而 \tau = \frac{k}{m} = \tau_\rho + q \frac{Q}{m}。
+   * 对 b：\tau \theta_0 = \tau_\rho \theta_0 + q \frac{Q\theta_0}{m} \equiv \tau_\rho \theta_0 \pmod 1 \implies \Vert{}\tau \theta_0\Vert{} = \Vert{}\tau_\rho \theta_0\Vert{} \ge \frac{1}{5} + \mu_{bc}；
+   * 对 c：\tau (1-\theta_0) = \tau_\rho (1-\theta_0) + q \left(\frac{Q}{m} - \frac{Q\theta_0}{m}\right) \equiv \tau_\rho (1-\theta_0) \pmod 1 \implies \Vert{}\tau (1-\theta_0)\Vert{} = \Vert{}\tau_\rho (1-\theta_0)\Vert{} \ge \frac{1}{5} + \mu_{bc}；
+   * 对 d：\tau w_0 = \tau_\rho w_0 + q \frac{Qw_0}{m} \equiv \tau_\rho w_0 \pmod 1 \implies \Vert{}\tau w_0\Vert{} = \Vert{}\tau_\rho w_0\Vert{} \ge \frac{1}{5} + \mu_d。
+     核查结果：补上 Q/m \in \mathbb{Z} 后，b, c, d 三个参考相位在 k \mapsto k + qQ 下全部严格模 1 不变！
+ * 最大循环间隔 G 与调整量上界 \Delta(k_0) \le G - 1 的严密性：
+   在循环群 \mathbb{Z}/Q\mathbb{Z} 中，R 的相邻元素之间有 G - 1 个不属于 R 的余数。因此对任意整数 k_0，从 k_0 \bmod Q 向右（正向）行进至多 G - 1 步必命中 R 中的某个余数 \rho，即 0 \le \Delta(k_0) \le G - 1。
+   * 单余数退化情形（\vert{}R\vert{}=1）：此时 G = Q，\Delta(k_0) = (\rho_1 - k_0) \bmod Q \in \{0, 1, \dots, Q-1\}，确实满足 \Delta(k_0) \le Q - 1 = G - 1。
+ * 慢跑者 a 的上下端点边界核查（含取整上界细节）：
+   * 左端点：因 k \ge k_0 = \lceil ms/5 \rceil \ge ms/5，故 \tau = k/m \ge s/5 \implies at = \tau/s \ge 1/5（当 ms/5 \in \mathbb{Z} 且 \Delta(k_0)=0 时取等号 at = 1/5，合格）。
+   * 右端点（关键不等式链）：因为 k_0 = \lceil ms/5 \rceil 是整数，而 \Delta(k_0) \le G - 1 也是整数，为什么 k = k_0 + \Delta(k_0) \le \frac{4ms}{5}？
+     注意：对任意实数 X = ms/5，由上取整性质有 \lceil X \rceil < X + 1。但这只是严格小于 X+1，如果 X 不是整数，k_0 可以等于 X + 1 - \varepsilon！
+     慢着！让我们仔细检查这里是否存在一个微小的实数边界反例！
+     看 Opus 原文证明写的是：
+     
+     
+     我们来手算检验：
+     
+     
+     因为 k_0 < \frac{ms}{5} + 1 是严格不等号，而 \Delta(k_0) \le G - 1，所以：
+     
+     
+     两边除以 m：
+     
+     
+     当条件 (i) s \ge \frac{5G}{3m} 成立时，\frac{G}{m} \le \frac{3s}{5}，故：
+     
+     
+     核查结果（CHECKED）：这里的严格小于号 < 1 恰好抵消了 +1 与 G-1 中的 -1！因此在 s \ge \frac{5G}{3m}（包含端点 s = \frac{5G}{3m}）处，不仅 at \le 4/5 成立，甚至恒有严格不等式 at < 4/5！绝无溢出风险！
+ * Lipschitz 距离不等式在圆周范数 \Vert{}\cdot\Vert{} 下的严密性：
+   对任意实数 x, y \in \mathbb{R}，圆周距离满足三角不等式 \Vert{}x + y\Vert{} \ge \Vert{}x\Vert{} - \Vert{}y\Vert{} \ge \Vert{}x\Vert{} - \vert{}y\vert{}。
+   * 对 b：\Vert{}\tau \theta\Vert{} = \Vert{}\tau \theta_0 + \tau(\theta - \theta_0)\Vert{} \ge \Vert{}\tau \theta_0\Vert{} - \tau \vert{}\theta - \theta_0\vert{} \ge \left(\frac{1}{5} + \mu_{bc}\right) - \mu_{bc} = \frac{1}{5}；
+   * 对 c：\Vert{}\tau (1-\theta)\Vert{} = \Vert{}\tau(1-\theta_0) - \tau(\theta - \theta_0)\Vert{} \ge \Vert{}\tau(1-\theta_0)\Vert{} - \tau \vert{}\theta - \theta_0\vert{} \ge \frac{1}{5}；
+   * 对 d：\Vert{}\tau w\Vert{} = \Vert{}\tau w_0 + \tau(w - w_0)\Vert{} \ge \Vert{}\tau w_0\Vert{} - \tau \vert{}w - w_0\vert{} \ge \left(\frac{1}{5} + \mu_d\right) - \mu_d = \frac{1}{5}。
+   * 端点相等情况：当 \vert{}\theta - \theta_0\vert{} = \mu_{bc}/\tau 或 \vert{}w - w_0\vert{} = \mu_d/\tau 时，不等式取等号 \ge 1/5，依然安全。
+ * 正性 t > 0 与顺序保持 0 < a < b < c < d：
+   因 s > 0, m \ge 1 \implies k_0 \ge 1, \Delta(k_0) \ge 0 \implies k \ge 1 \implies \tau \ge 1/m > 0 \implies t > 0。
+最终审阅裁定：CLR v2 = PROOF VERIFIED。补上 Q/m \in \mathbb{Z} 后，定理完全严密，不存在任何反例。
+PART III · 【4】研究问题：相位格视角与一般确定性选择机制分析
+主席提出核心问题：能否通过“相位格（Phase Lattice）”视角连接不同簇形状，从而给出一个不需无界试探的、依赖速度的确定性相位/锚点选择机制？
+3.1 相位格统一框架的精确代数表述（IDEA / 理论分析）
+对任意簇形状 (\theta, w) \in (0, 1/2) \times (0, 4) 与尺度 s = (b+c)/a，时间 t = \tau / (b+c) 成功当且仅当三维相位向量落入环面安全盒：
+
+ * 换锚即子格采样：
+   * 选择 (b,c) 整数锁相，即在格 \Lambda_{bc} = \mathbb{Z} 上采样 \tau = k（此时 \tau(1-\theta) \equiv -\tau\theta \pmod 1 自动降维为二维环面问题 (k\theta, kw) \in A^2 + \mathbb{Z}^2）；
+   * 选择 (b,d) 整数锁相 t = k'/(b+d)，等价于在缩放格 \Lambda_{bd} = \frac{1}{\theta + w}\mathbb{Z} 上采样 \tau（此时 bt + dt = k' \in \mathbb{Z} 降维为 (\tau\theta, \tau(1-\theta)) \in A^2 + \mathbb{Z}^2）；
+   * 选择 (c,d) 整数锁相 t = k''/(c+d)，等价于在缩放格 \Lambda_{cd} = \frac{1}{1 - \theta + w}\mathbb{Z} 上采样 \tau。
+3.2 负向障碍定理：任意有限族 CLR 尖管在大 s 下无法覆盖非首簇（PROVED Obstruction）
+虽然单个 CLR v2 尖管覆盖了无穷延伸的射线 s \ge 5G/(3m)，但我们证明：任何预先固定有限个参考形状 \{(\theta_{0,i}, w_{0,i})\}_{i=1}^L 的 CLR 菜单，当 s \to \infty 时，其在形状空间 (\theta, w) \in (0, 1/2) \times (0, 4) 上的覆盖面积按 O(1/s^2) 衰减至零！
+证明（手算核对 CHECKED）：
+ * 对第 i 个 CLR v2 分支，当输入尺度为 s 时，选出的相位满足 \tau_i = k_i / m_i \ge k_{0,i} / m_i \ge s/5。
+ * 条件 (ii) 和 (iii) 要求真实簇形状 (\theta, w) 满足：
+   
+ * 因此，在截面 s = \text{const} 上，第 i 根尖管覆盖的 (\theta, w) 区域是一个面积至多为：
+   
+   
+   的矩形。
+ * 对任意有限 L 个参考形状的并集，总覆盖面积 \sum_{i=1}^L \text{Area}_i(s) = O(L / s^2) \to 0（当 s \to \infty）。对于任何不在有限参考点集 \{(\theta_{0,i}, w_{0,i})\} 上的固定簇形状 (\theta, w)（例如无理形状或分母大于 \max Q_i 的有理形状），只要 s > 5 \max_i \frac{\mu_i}{\Vert{}\mathbf{v} - \mathbf{v}_{0,i}\Vert{}_\infty}，该点便必然滑出所有 L 根尖管的稳定半径之外！\blacksquare
+3.3 通往一般机制的唯一路径与当前缺口（UNFINISHED）
+由 3.2 的衰减障碍可知，要构造对所有实数速度有效的确定性选择机制，参考形状 (\theta_0, w_0) 及其周期 Q 不能从固定有限表中选取，而必须随尺度 s 动态生成：
+ * 候选方向（动态丢番图/连分数步进，IDEA）：
+   在固定 (b,c) 整数锁 \tau = k \in [\lceil s/5 \rceil, \lfloor 4s/5 \rfloor] 下，我们需要在长度为 L(s) = \lfloor 4s/5 \rfloor - \lceil s/5 \rceil + 1 \approx 3s/5 的整数区间 I_s 内，确定性地定位一个 k 使得 (k\theta, kw) \in [1/5, 4/5]^2 \pmod 1。
+   * 当 w 与 \theta 解耦良好时，可先用一维圆周步进（如 PLS/SLN1 的上取整跳步 j = \lceil \operatorname{frac}(1/5 - x_0)/\theta \rceil）在 O(1/\theta) 步内令 k\theta \in A，但还需同时避开 kw \in (-1/5, 1/5) \pmod 1 的禁区；
+   * 当 (b,c) 锁发生共振（如 w \approx 1 \implies d \approx b+c，或 \theta \approx 1/3, w \approx 2/3）时，(k\theta, kw) 落在坏子环面上，此时必须通过代数判据（检测 \vert{}w - p/q\vert{}）确定性地切换锚点（例如在 \vert{}w - 1\vert{} < \varepsilon 时从 (b,c) 锁切换至 (b,d) 锁或四分之一格 m=4）。
+ * 为何当前未闭合（Remaining Gap）：
+   对于一般的实数对 (\theta, w) \in (0, 1/2) \times (0, 4)，二维环面 \mathbb{T}^2 上的轨道 \{(k\theta, kw) \bmod 1 : k \in I_s\} 进入目标方盒 [1/5, 4/5]^2 的首个步数 k，无法用单一的一次上取整公式 \lceil \cdot \rceil 写出（因为二维联立同余不等式没有一维 PLS 那样的单调渡越性质）。如何在不逐个扫描整数 k \in I_s 的前提下，仅用有限次代数运算与取整直接算出二维命中步 k(\theta, w, s)（或证明有限个相位格 \Lambda_{bc}, \Lambda_{bd}, \Lambda_{cd} 的单步 PLS 组合足以覆盖全空间），目前尚未证明。
+ * 因此，一般速度依赖确定性选择机制与无限制 F_5 均报告为：UNFINISHED。
+PART IV · 四栏分账（REQUIRED LEDGER）
+ * PROOF VALIDITY：
+   * Argon 定理 C4（受限静态菜单障碍，修正完整版）：PROVED（已严格区分第 I 类 a-边沿锚、第 II 类单跑者快锚上界 (K_{\max}+4/5)/v、以及第 III 类全部六对双跑者锁相锚上界 M/(u+v)，给出显式反例族 V_N = (1, 5N, 10N, 15N) 并完成逐项手算证明；严格限定于静态有界菜单类）。
+   * 有限族 CLR 尖管大 s 测度衰减障碍（§3.2）：PROVED。
+   * 一般动态相位/锚点选择机制与无限制 F_5：UNFINISHED。
+ * INDEPENDENT REVIEW：
+   * 主席 R017 对原版 CLR 的反例 (7/20, 2, 5, 6)：PROOF VERIFIED（手算核对 \Vert{}ct\Vert{} = 1/14 < 1/5 完全正确）。
+   * Opus CLR v2（补入 Q/m \in \mathbb{Z} 后的簇阶梯定理）：PROOF VERIFIED（核查三项周期封闭性、最大循环间隔 G、单余数退化情形、慢跑者严格上界 at < 4/5 及 Lipschitz 稳定半径，确认先前缺陷已彻底修复，无新反例）。
+ * NEW COVERAGE：
+   * 本轮任务为障碍证明与定理审阅，不声称新区域覆盖（或记为 NEW COVERAGE UNFINISHED）。
+ * COMPUTATIONAL CHECK：
+   * V_N = (1, 5N, 10N, 15N) 在三类共 10 种锚公式下的距离上界：全部由本席精确符号与分数手算完成（CHECKED）。
+   * 主席反例 (7/20, 2, 5, 6) 及 V_N 在 CLR v2（m=4, Q=12, R=\{3,9\}）下的动态输出 t = \frac{4N+1}{20N}：全部由本席精确手算核对通过（CHECKED）。
+(End of R018 Argon Complete Report)
