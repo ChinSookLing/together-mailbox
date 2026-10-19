@@ -1,0 +1,541 @@
+WHO（给谁）：DeepSeek —— PT-008 Round 019 · Phase Lattice Switching · Track D — DeepSeek: Effective Phase Selection
+WHERE（贴到哪）：DeepSeek 新对话「PT-008 DeepSeek R019」（深度思考开，联网关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R019 4/4 DeepSeek」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 019 · Phase Lattice Switching, for DeepSeek.
+TO: DeepSeek
+ASK: do YOUR track (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: a deterministic, speed-dependent rule that chooses the phase lattice (τ=k/m) and the phase, with proof, instead of a longer list of successful examples. Unrestricted F5 still UNFINISHED.
+
+############ PART 0 · 你的任务（主席原文）############
+Track D — DeepSeek: Effective Phase Selection
+
+Study whether simultaneous phase conditions admit an effective selection bound depending on the input speed ratios.
+
+Separate three situations:
+
+1. Rational cluster shapes with nonempty safe residue sets.
+2. Rational cluster shapes with empty integer-phase safe sets.
+3. Irrational cluster shapes.
+
+Investigate what additional hypotheses are necessary to make a constructive selection rule possible.
+
+Verify any use of Kronecker-type density statements against the actual dimensional and rational-independence assumptions.
+
+Review Opus’s symbolic lattice-switch arguments independently.
+
+
+############ PART 1 · 主席 R019 中心问题与共同要求（原文）############
+Central Research Question
+
+Given 0 < a < b < c < d, can we select a phase lattice and an explicit phase, depending deterministically on the speeds, without unbounded trial search?
+
+Write S=b+c, s=S/a, θ=b/S, w=d/S, and t=τ/S.
+
+The four safety constraints are
+
+||τ/s||, ||τθ||, ||τ(1−θ)||, ||τw|| ≥ 1/5.
+
+A choice of τ must satisfy all four, not only the three faster runners.
+
+Common Mathematical Requirement
+
+Every proposed rule must specify:
+
+* exact speed hypotheses;
+* the phase lattice;
+* a deterministic formula or finite bounded selector;
+* why the selected phase exists;
+* proof that all four distances reach 1/5;
+* whether it yields genuinely new coverage beyond certified rules.
+
+Avoid treating an unbounded search as a closed-form selection rule.
+
+Important Limitations
+
+No author may promote their own result.
+
+WEB OFF.
+
+Hand proof first. Computations only support, not replace, a universal proof.
+
+All numerical claims require displayed hand calculations or code; otherwise UNFINISHED.
+
+Maintain separate fields for validity, independent review, novelty, and numerical checks.
+
+Reply as R019 1/4 through R019 4/4.
+
+
+############ R018 账本（主席 R018 正式裁决，2026-10-19）############
+R018 CLOSED — PARTIAL · CLR v2 REPAIRED AND CERTIFIED · B4⁺ NOVELTY CORRECTED · R019 OPEN。
+- Opus CLR v2：PROVED（PT-008 内部认证），限于完整假设：Q/m、Qθ0/m、Qw0/m ∈ ℤ；非空安全余数集 R⊂{0..Q−1}、最大循环间隔 G；μ_b、μ_c、μ_d 取 R 上最小值且严格为正；s ≥ 5G/(3m)；τ|θ−θ0| ≤ min(μ_b,μ_c)，τ|w−w0| ≤ μ_d。规则 k0=⌈ms/5⌉，k=k0+min_{ρ∈R}((ρ−k0) mod Q)，τ=k/m，t=τ/(b+c)。
+  主席反例修复：(7/20,2,5,6)，Q=14，R={4,10}，G=8 → t=5/7，距离 (1/4,3/7,3/7,2/7)。
+- Opus B4⁺ 充分性：PROVED（31/4≤b/a≤31，61/31≤c/b≤64/31，81/31≤d/b≤84/31 ⇒ t=31/(5b)）。
+- 「B4⁺ 整块为新覆盖」：DISPROVED —— 角点 (1,31,61,81) 同属 TE-AL 与 TE-AU（t=1/5 与 t=4/5 四距离均为 1/5）。覆盖差集另作研究。
+- Argon C4：PROVED，仅限其定义的受限有限静态菜单 M(Kmax,M)；反例族 V_N=(1,5N,10N,15N)，N=max(Kmax+1,⌊M⌋+1)。V_N 有成功时间 t_N=(4N+1)/(20N)，距离 (1/5+1/(20N),1/4,1/2,1/4)。不得推广到所有有限/自适应公式。
+- Argon「有限 CLR 家族在大 s 下形状覆盖面积 → 0」：PROOF CANDIDATE，待条件审阅。
+- Qwen Q-PSR：有条件的正确构造，属 CLR v2 在 m=1、零形状偏差下的特例；不得计为第二条一般机制。有理形状的联合整数相位安全集可能为空。
+- 先前已认证（R017）：Q-B2；TE-AL/TE-AU；a-never-active obstruction；LE；LE-1（仅必要刻画）。Q-FSR 为固定整数 k 的正确充要刻画。
+- 一般确定性相位选择：UNFINISHED。无限制 F5：UNFINISHED。不批准上墙。
+
+############ Hesper 精确分数核对（仅事实，不作裁决）############
+V5=(1,5/2,5,15/2)：θ=1/3，w=1（b+c=d）。取 Q=3m（满足三项周期条件），全部严格安全余数集：
+m=1：空（kw=k∈ℤ，‖kw‖=0）；m=2：空；m=3：R={2,7}，距离 (2/9,4/9,1/3)；m=4：R={3,9}，距离 (1/4,1/2,1/4)；m=5：R={3,4,6,9,11,12}（含距离恰为 1/5 者）；m=6：R={4,14}；m=7：R={5,16}；m=8：R={5,6,18,19}。
+即 V5 形状下，最小可用分母为 m=3（不只 m=4）。
+其他见证点：V1=(1,11/10,3,41/10) SLN1；V2=(1,2,3,9/2) Q-B2/TE-AU t=2/5；V3=(1,3,4,7) TE-AL t=1/5；V4=(1,30,60,80) CLR(m=1,Q=9,R={4,5}) t=11/45；V5 CLR(m=4,Q=12,R={3,9}) t=3/10。
+
+############ PART 2 · Opus R018 原文（CLR v2 完整证明，原样）############
+R018 Opus
+
+Opus:
+TO: Hesper → GPT-6 (Chair)　Priority 1 · CLR Repair　Date: 2026-10-19　WEB OFF
+
+---
+
+## ANSWER BLOCK
+
+- **承认错误**：R017 的 CLR 原版周期条件漏掉了 c 的相位周期。主席的反例成立（本席复算：‖55/14‖ = 1/14）。原版 **DISPROVED**，本席撤回原陈述。
+- **CLR v2**：周期条件改为三项，**Q/m、Qθ₀/m、Qw₀/m 均为整数**；余量对 b、c、d 分别设定。已从第一原理重证：余数表定理、间隔界 G、单余数情形、全部端点。——**PROOF CANDIDATE**
+- **在主席反例上的修复**：取 Q = 14，得 R = {4, 10}，τ = 5，t = 5/7，成功。
+- **能否放宽为"只对所选余数"的条件**：**不能**。主席的反例正是"所选余数在参考点安全、却不周期"的情形。真正可以放宽的，是改用近似周期，但只在有界的 s 范围内成立。
+- **一般选择机制**：**UNFINISHED**。附一个精确的约化方向（IDEA）。
+
+---
+
+## 1 CLR v2（修正后的定理）
+
+### 1.1 陈述
+**数据**：
+- 参考形状 θ₀ ∈ (0, ½)，w₀ > 0；
+- 相位步长 1/m（m ≥ 1 为整数）；
+- 周期 Q ≥ 1；
+- 非空余数集 R ⊂ {0, 1, …, Q−1}，且 0 ∉ R。
+
+**周期假设 (P2)**：**Q/m ∈ ℤ，Qθ₀/m ∈ ℤ，Qw₀/m ∈ ℤ。**
+（等价地：Qθ₀/m、Q(1−θ₀)/m、Qw₀/m 均为整数。）
+
+**参考余量**：对每个 ρ ∈ R，令 τ_ρ = ρ/m，要求
+- ‖τ_ρ θ₀‖ ≥ 1/5 + μ_b
+- ‖τ_ρ (1−θ₀)‖ ≥ 1/5 + μ_c
+- ‖τ_ρ w₀‖ ≥ 1/5 + μ_d
+
+其中 μ_b, μ_c, μ_d ≥ 0。
+
+**间隔**：G = max_{ρ∈R} g(ρ)，其中 g(ρ) 是从 ρ 沿 ℤ/Q 前进到 R 中下一个元素的步数。|R| = 1 时 G = Q。
+
+**规则**：k₀ = ⌈ms/5⌉，k = k₀ + min_{ρ∈R} ((ρ − k₀) mod Q)，**τ = k/m，t = τ/(b+c)**。
+
+**结论**：若 0 < a < b < c < d，s = (b+c)/a，θ = b/(b+c)，w = d/(b+c)，并且满足
+- (i) s ≥ 5G/(3m)
+- (ii) τ·|θ − θ₀| ≤ min(μ_b, μ_c)
+- (iii) τ·|w − w₀| ≤ μ_d
+
+则 t > 0，且 ‖at‖, ‖bt‖, ‖ct‖, ‖dt‖ ≥ 1/5。
+
+### 1.2 证明（第一原理）
+**引理 1（三个坐标都周期）**：对整数 k 与 j，令 k′ = k + jQ。对 u ∈ {θ₀, 1−θ₀, w₀}，有 (k′/m)u = (k/m)u + j·(Qu/m)。由 (P2)，Qθ₀/m 与 Qw₀/m 是整数，且 Q(1−θ₀)/m = Q/m − Qθ₀/m 也是整数。所以三个相位的小数部分只依赖 k mod Q。∎
+
+**引理 2（间隔界）**：调整量 δk = min_{ρ∈R} ((ρ − k₀) mod Q) ≤ G − 1。
+证明：若 k₀ mod Q ∈ R，则 δk = 0。否则 k₀ mod Q 严格落在两个循环相邻的余数 ρ_i 与 ρ_{i+1} 之间，所以 δk = ((ρ_{i+1} − k₀) mod Q) ≤ g(ρ_i) − 1 ≤ G − 1。∎
+
+**主证明**：
+- **a**：τ = k/m ≥ k₀/m ≥ s/5。又 k₀ < ms/5 + 1，所以 k ≤ k₀ + G − 1 < ms/5 + G，τ < s/5 + G/m ≤ 4s/5，最后一步用到 (i)。所以 at = τ/s ∈ [1/5, 4/5)，‖at‖ ≥ 1/5。
+- **b**：令 ρ = k mod Q ∈ R。由引理 1，frac((k/m)θ₀) = frac(τ_ρ θ₀)，所以 ‖τθ₀‖ ≥ 1/5 + μ_b。而 τθ = τθ₀ + τ(θ − θ₀)，由 (ii)，偏移 ≤ μ_b。由 Lipschitz 性，‖bt‖ = ‖τθ‖ ≥ 1/5。
+- **c**：ct = τ(1−θ) = τ(1−θ₀) − τ(θ − θ₀)。由引理 1（**这里用到 Q/m ∈ ℤ**），‖τ(1−θ₀)‖ ≥ 1/5 + μ_c；偏移 ≤ μ_c，所以 ‖ct‖ ≥ 1/5。
+- **d**：dt = τw₀ + τ(w − w₀)，同理，‖dt‖ ≥ 1/5。
+- **正性**：τ ≥ s/5 > 0。∎
+
+### 1.3 逐项检查
+- **单余数情形** |R| = 1：G = Q，δk ≤ Q − 1，条件 (i) 为 s ≥ 5Q/(3m)。证明不变。
+- **端点**：
+  - (i) 取等号时，τ < s/5 + G/m = 4s/5 仍是严格不等式，合格。
+  - (ii)(iii) 取等号时，偏移恰好等于余量，距离 ≥ 1/5，合格。
+  - μ = 0 也允许，此时形状必须与参考形状完全相同。
+- **三个坐标**：b、c、d 各用自己的余量。R017 的错误正是只检查了 b、d 的周期，c 的周期没有被保证。
+- **为什么要求 0 ∉ R**：k ≡ 0 时 τ 是 Q/m 的倍数，三个相位都是整数，距离为 0，所以 0 永远不会是安全余数。这一条只是记号上的清理。
+
+### 1.4 主席反例的复核与修复（本席计算）
+**复核原版**：m = 2，Q = 7，θ₀ = 2/7，w₀ = 6/7，R = {4}。速度 (7/20, 2, 5, 6)：s = 7/(7/20) = 20，k₀ = ⌈40/5⌉ = 8，k = 11，τ = 11/2，t = 11/14。ct = 55/14 = 3 + 13/14，‖ct‖ = 1/14 < 1/5。**原版失败，确认。** 原因：Q/m = 7/2 ∉ ℤ。
+
+**用 v2 修复**：取 Q = 14，于是 Q/m = 7，Qθ₀/m = 2，Qw₀/m = 6，都是整数。✓
+- 逐个检查 k = 1, …, 13（τ = k/2）：只有 **k = 4 与 k = 10** 三项距离都 ≥ 1/5，两者的三项距离都是 (3/7, 3/7, 2/7)。所以 R = {4, 10}。
+- 间隔：4 → 10 为 6，10 → 18（≡ 4）为 8，所以 G = 8。
+- 余量：μ_b = μ_c = 3/7 − 1/5 = 8/35，μ_d = 2/7 − 1/5 = 3/35。
+- 条件 (i)：s ≥ 5·8/6 = 20/3，而 s = 20，成立。
+- 规则：k₀ = 8，δk = min((4−8) mod 14, (10−8) mod 14) = min(10, 2) = 2，k = 10，**τ = 5，t = 5/7**。
+- 距离：at = (7/20)(5/7) = 1/4；bt = 10/7，‖·‖ = 3/7；ct = 25/7，‖·‖ = 3/7；dt = 30/7，‖·‖ = 2/7。全部 ≥ 1/5。✓
+
+**V4、V5 仍有效**：V4 的 m = 1，Q = 9，Q/m = 9；V5 的 m = 4，Q = 12，Q/m = 3。两者 Q/m 都是整数，R017 中的余数表与计算不变。
+
+---
+
+## 2 周期假设能否放宽为"只对所选余数"？
+
+**结论：不能**，原因如下。
+- 证明中真正用到的是：对规则实际选出的每一个 k（它与 ρ ∈ R 同余，但 k 可以远大于 ρ），三个相位与参考点 ρ 相同。
+- k − ρ = jQ，相位的变化是 j·(Qu/m)。只要某个坐标的 Qu/m ∉ ℤ，这个变化就是 j·frac(Qu/m)，**与 ρ 是哪个余数无关**，并且随 j（也就是随 s）累积。所以"对所选余数"的任何条件，都不能代替"对每个坐标"的周期条件。
+- 主席的反例正是这种情形：ρ = 4 在参考点安全，但 c 的坐标 Q(1−θ₀)/m = 5/2 ∉ ℤ，k = 11（j = 1）就失败了。
+
+**可以成立的放宽（PROOF CANDIDATE）：近似周期，s 有界**。
+若对每个坐标 u，有 |Qu/m − n_u| ≤ η_u（n_u ∈ ℤ），则在规则选出的 k 处，相位的累积偏差 ≤ ⌊k/Q⌋·η_u < ((ms/5 + G)/Q)·η_u。只要
+**((ms/5 + G)/Q)·η_u + τ·|形状偏差| ≤ μ_u**
+对三个坐标都成立，证明照样成立。
+- 这只对**有界**的 s 成立，因为左边随 s 增长。
+- 它本质上等价于选一个更近的有理参考形状，所以不是新的机制。
+
+---
+
+## 3 研究问题：依赖速度的一般选择机制
+
+**状态：UNFINISHED。** 下面是本席能给出的精确约化方向。
+
+**IDEA（相位格连接不同簇形状）**：
+1. 对任意实数形状 (θ, w)，由同时逼近（Dirichlet 型），存在分母 Q′ ≤ L 的有理形状 (θ₀, w₀) = (p/Q′, p′/Q′)，误差约为 L^{−1/2} 量级。
+2. CLR v2 需要两件事：
+   - (i) s ≥ 5G/(3m)，而 G ≤ Q；
+   - (ii)(iii) 误差 × τ ≤ μ，而 τ ≈ s/5。
+3. 两者兼容的前提，是对分母为 Q′ 的有理三速度簇 (Q′θ₀, Q′(1−θ₀), Q′w₀)，存在余量 **μ ≳ s·L^{−1/2}** 的安全余数。
+
+**缺口**：本席**无法证明**有理簇必有这样大的余量。分母为 Q′ 时，相位是 1/(mQ′) 的倍数，安全余数的余量可以小到 0。所以这条链在第 3 步断开。这也正好指出了真正缺少的引理："有理三速度簇在门槛 1/5 下，存在余量不小于某个 c(Q) 的安全相位"，并且需要 c(Q) 下降得比逼近误差慢。
+
+---
+
+## 四个账本栏
+- **PROOF VALIDITY**：CLR 原版 DISPROVED（本席接受）。CLR v2：PROOF CANDIDATE。§2 的"不能放宽"论证与近似周期版本：PROOF CANDIDATE。§3：IDEA / UNFINISHED。
+- **INDEPENDENT REVIEW**：CLR v2 待非作者审阅（主席已安排 DeepSeek）。本席不审自己的结果。
+- **NEW COVERAGE**：CLR v2 相对已认证清单的覆盖增量 **NEW COVERAGE UNFINISHED**。
+- **COMPUTATIONAL CHECK**：§1.4 的全部数值为本席精确分数计算（余数表逐个 k 列出）。没有使用随机测试作为证据。
+############ PART 3 · Qwen R018 原文（Q-PSR；主席裁定为 CLR v2 m=1 特例，原样）############
+Qwen: R018 Qwen
+
+# ANSWER BLOCK（Priority 3 · Selecting the Phase · Qwen · R018）
+
+**接受 Q-FSR 为固定 k 的精确充要条件。** 第一版 q 步规则的失败根源已精确定位：窗口长度仅取 θ 的周期（3），未覆盖 w 的周期（9），正确窗口应为 lcm(3,9)=9。修正后的确定性规则（PROOF CANDIDATE）：对有理形状，取完整合法余数集 $R_L \subset \mathbb{Z}/L\mathbb{Z}$（$L = \mathrm{lcm}(q_\theta, q_w)$），由 $k_0 = \lceil s/5 \rceil$ 一步查表得 $k$，步数上界为 $G = $ 最大循环间隔。代数表达：有理情形可写成 CRT + 有限查表；无理情形不存在有限代数式。无理形状的存在性由 Kronecker 定理保证（四维有理独立时轨道稠密），但**无只依赖速度比例的有效步数上界**——不能由单坐标稠密推出同时安全。相位格视角可连接同分母有理形状，但无法消除无理情形的无界试探。一般确定性选择机制：**UNFINISHED**。
+
+---
+
+## 第一部分：Q-FSR 的接受与精确复述
+
+**Q-FSR（已接受，主席 R017 裁决）：** 固定正整数 $k$，$t = k/(b+c)$ 成功当且仅当：
+
+$$\text{(C1)}\;\|k\theta\| \ge \tfrac{1}{5}, \qquad \text{(C2)}\;\|kw\| \ge \tfrac{1}{5}, \qquad \text{(C3)}\;\mathrm{frac}(k/s) \in [\tfrac{1}{5}, \tfrac{4}{5}].$$
+
+其中 $\theta = b/(b+c)$，$w = d/(b+c)$，$s = (b+c)/a$。
+
+(C3) 的等价区间形式：$\exists\, j \ge 0$：$s \in [5k/(5j+4),\; 5k/(5j+1)]$。
+
+本席不再重复证明，直接以此为工作基础。
+
+---
+
+## 第二部分：第一版 q 步规则的失败——精确诊断
+
+### §2.1 原规则陈述（已 DISPROVED）
+
+第一版声称：$k_0 = \lceil s/5 \rceil$，在 $\{k_0, k_0+1, \ldots, k_0 + q_\theta - 1\}$（$q_\theta$ 为 $\theta$ 的分母）中必存在满足 (C1)∧(C2) 的 $k$。
+
+### §2.2 失败根源
+
+V4 形状：$\theta = 1/3$（周期 $q_\theta = 3$），$w = 8/9$（周期 $q_w = 9$）。
+
+原规则窗口长度 = 3。但 (C2) 的周期为 9。在长度为 3 的窗口中，$k \bmod 9$ 只取 3 个连续值，不能保证命中 $w$ 的合法余数。
+
+**Hesper 反例验证（本席手算）：** 取 $S = b+c = 36$（即 $s = 36$，$a = 1$）。$k_0 = \lceil 36/5 \rceil = 8$。$k_0 \bmod 9 = 8$。
+
+窗口 $\{8, 9, 10\}$：
+- $k=8$：$\theta$：$8/3$，$\mathrm{frac} = 2/3$ ✓；$w$：$64/9$，$\mathrm{frac} = 1/9$，$\|1/9\| = 1/9 < 1/5$ ✗
+- $k=9$：$\theta$：$3$，$\mathrm{frac} = 0$ ✗
+- $k=10$：$\theta$：$10/3$，$\mathrm{frac} = 1/3$ ✓；$w$：$80/9$，$\mathrm{frac} = 8/9$，$\|8/9\| = 1/9 < 1/5$ ✗
+
+三步内无解。但 $k = 11$：$\theta$：$11/3$，$\mathrm{frac} = 2/3$ ✓；$w$：$88/9 = 9 + 7/9$，$\|7/9\| = 2/9 \ge 1/5$ ✓。$k=11$ 满足 (C1)∧(C2)。
+
+(C3) 验证：$\mathrm{frac}(11/36) = 11/36 \approx 0.306 \in [1/5, 4/5]$ ✓。
+
+所以 $k = 11$ 是解，但不在原窗口 $\{8,9,10\}$ 内。✓ 反例成立。
+
+### §2.3 修正
+
+窗口长度必须为 $L = \mathrm{lcm}(q_\theta, q_w)$，而非 $q_\theta$。对 V4 形状：$L = \mathrm{lcm}(3,9) = 9$。在任意 9 个连续整数中，$k \bmod 9$ 遍历所有余数，必命中合法集。
+
+---
+
+## 第三部分：修正后的确定性规则（有理形状）
+
+### §3.1 定理 Q-PSR（Phase Selection Rule，PROOF CANDIDATE）
+
+**设** $0 < a < b < c < d$，$\theta = b/(b+c) = p/q$（最简分数），$w = d/(b+c) = p'/q'$（最简分数）。令 $L = \mathrm{lcm}(q, q')$。
+
+**定义合法余数集：**
+$$R_L = \{r \in \{0, 1, \ldots, L-1\} : \mathrm{frac}(rp/q) \in [\tfrac{1}{5}, \tfrac{4}{5}] \;\text{且}\; \mathrm{frac}(rp'/q') \in [\tfrac{1}{5}, \tfrac{4}{5}]\}.$$
+
+**定义最大循环间隔：** 将 $R_L$ 的元素按升序排列为 $r_1 < r_2 < \cdots < r_{|R_L|}$，则
+$$G = \max\{r_2 - r_1,\; r_3 - r_2,\; \ldots,\; r_1 + L - r_{|R_L|}\}.$$
+（$|R_L| = 0$ 时规则不适用；$|R_L| = 1$ 时 $G = L$。）
+
+**规则：**
+1. $k_0 = \lceil s/5 \rceil$。
+2. $k = k_0 + \min_{r \in R_L} ((r - k_0) \bmod L)$。
+3. 输出 $t = k/(b+c)$。
+
+**结论：** 若 $s \ge 5G/3$，则 $t$ 满足 (C1)∧(C2)∧(C3)，即 $t$ 成功。
+
+### §3.2 证明
+
+**(C1)∧(C2)：** 由构造，$k \bmod L \in R_L$。因 $L$ 是 $\theta$ 和 $w$ 的公共周期：$\mathrm{frac}(k\theta) = \mathrm{frac}((k \bmod L) \cdot \theta)$，$\mathrm{frac}(kw) = \mathrm{frac}((k \bmod L) \cdot w)$。由 $R_L$ 的定义，(C1)∧(C2) 成立。✓
+
+**(C3)：** $k \ge k_0 = \lceil s/5 \rceil \ge s/5$，故 $k/s \ge 1/5$。
+
+上界：$k \le k_0 + G - 1 \le s/5 + 1 + G - 1 = s/5 + G$。
+
+需 $k/s \le 4/5$，即 $s/5 + G \le 4s/5$，即 $G \le 3s/5$，即 $s \ge 5G/3$。✓
+
+在此条件下：$k/s \in [1/5, 4/5]$。因 $k/s > 0$ 且 $k/s < k$（$s > 1$），$\mathrm{frac}(k/s) = k/s - \lfloor k/s \rfloor$。
+
+等等，这里需要更仔细。$k/s \in [1/5, 4/5]$ 直接给出 $\mathrm{frac}(k/s) = k/s \in [1/5, 4/5]$（因为 $k/s < 1$ 当 $k < s$）。
+
+但 $k$ 可能大于 $s$！$k_0 = \lceil s/5 \rceil$，$k \le s/5 + G$。若 $G < 4s/5$（即 $s > 5G/4$），则 $k < s$，$\mathrm{frac}(k/s) = k/s$。
+
+更一般地：$k/s \in [1/5, 4/5]$ 时，若 $k < s$，则 $\mathrm{frac}(k/s) = k/s \in [1/5, 4/5]$ ✓。若 $k \ge s$，则 $k/s \ge 1$，$\mathrm{frac}(k/s) = k/s - \lfloor k/s \rfloor$，不一定在 $[1/5, 4/5]$。
+
+**修正：** 需要 $k_0$ 的选择保证 $k/s$ 落在某个 $[j + 1/5, j + 4/5]$ 中。
+
+实际上，(C3) 要求 $\exists\, j \ge 0$：$k \in [s(j+1/5), s(j+4/5)]$。$k_0 = \lceil s/5 \rceil$ 保证 $k \ge s/5$（$j=0$ 的下界）。但 $k$ 可能超出 $[s/5, 4s/5]$（$j=0$ 的区间）而进入 $[6s/5, 9s/5]$（$j=1$）等。
+
+**关键：** 条件 $s \ge 5G/3$ 保证 $k \le s/5 + G \le s/5 + 3s/5 = 4s/5$。所以 $k \in [s/5, 4s/5]$，即 $j = 0$，$\mathrm{frac}(k/s) = k/s \in [1/5, 4/5]$。✓
+
+（若 $s < 5G/3$，则 $k$ 可能超出 $j=0$ 区间，需检查 $j \ge 1$ 的区间，规则不再一步完成。）
+
+**正性：** $k \ge 1$（因 $s > 1$ 且 $k_0 \ge 1$），$b + c > 0$。$t > 0$。✓ $\square$
+
+### §3.3 V4 形状验证（手算）
+
+$\theta = 1/3$（$q = 3$），$w = 8/9$（$q' = 9$）。$L = 9$。
+
+逐余数检查 $r = 0, 1, \ldots, 8$：
+
+| $r$ | $\mathrm{frac}(r/3)$ | $\|\cdot\|$ | $\mathrm{frac}(8r/9)$ | $\|\cdot\|$ | 合法？ |
+|---|---|---|---|---|---|
+| 0 | 0 | 0 | 0 | 0 | ✗ |
+| 1 | 1/3 | 1/3 | 8/9 | 1/9 | ✗（$w$） |
+| 2 | 2/3 | 1/3 | 16/9→7/9 | 2/9 | ✓ |
+| 3 | 0 | 0 | 24/9→6/9=2/3 | 1/3 | ✗（$\theta$） |
+| 4 | 1/3 | 1/3 | 32/9→5/9 | 4/9 | ✓ |
+| 5 | 2/3 | 1/3 | 40/9→4/9 | 4/9 | ✓ |
+| 6 | 0 | 0 | 48/9→3/9=1/3 | 1/3 | ✗（$\theta$） |
+| 7 | 1/3 | 1/3 | 56/9→2/9 | 2/9 | ✓ |
+| 8 | 2/3 | 1/3 | 64/9→1/9 | 1/9 | ✗（$w$） |
+
+$R_L = \{2, 4, 5, 7\}$。$|R_L| = 4$。
+
+循环间隔：$4-2=2$，$5-4=1$，$7-5=2$，$(2+9)-7=4$。$G = 4$。
+
+条件：$s \ge 5 \cdot 4/3 = 20/3 \approx 6.67$。
+
+**V4 本身（$s = 90$）：** $k_0 = \lceil 90/5 \rceil = 18$。$18 \bmod 9 = 0$。
+$\min_{r \in \{2,4,5,7\}} ((r - 0) \bmod 9) = \min(2, 4, 5, 7) = 2$。
+$k = 18 + 2 = 20$。$t = 20/90 = 2/9$。
+
+验证：$at = 2/9$，$\|2/9\| = 2/9 \ge 1/5$ ✓。$bt = 20/3$，$\|20/3\| = 1/3$ ✓。$ct = 40/3$，$\|40/3\| = 1/3$ ✓。$dt = 160/9$，$\|160/9\| = 2/9$ ✓。成功。✓
+
+**Hesper 反例（$s = 36$）：** $k_0 = \lceil 36/5 \rceil = 8$。$8 \bmod 9 = 8$。
+$\min_{r \in \{2,4,5,7\}} ((r - 8) \bmod 9) = \min((2-8)\bmod 9, (4-8)\bmod 9, (5-8)\bmod 9, (7-8)\bmod 9)$
+$= \min(3, 5, 6, 8) = 3$。
+$k = 8 + 3 = 11$。$t = 11/36$。
+
+验证：$at = 11/36$，$\mathrm{frac} = 11/36 \approx 0.306 \in [1/5, 4/5]$ ✓。$bt = 11/3$，$\mathrm{frac} = 2/3$，$\|2/3\| = 1/3$ ✓。$ct = 22/3$，$\mathrm{frac} = 1/3$ ✓。$dt = 88/9 = 9 + 7/9$，$\|7/9\| = 2/9$ ✓。成功。✓
+
+原规则在 $k \in \{8,9,10\}$ 失败；修正规则一步给出 $k = 11$。✓
+
+### §3.4 与 Opus CLR v2 的关系
+
+CLR v2 使用**参考形状** $(\theta_0, w_0)$ 的余数表，要求实际形状 $(\theta, w)$ 在 Lipschitz 半径内。本席的 Q-PSR 直接对**实际形状**计算余数表（要求 $\theta, w$ 有理）。
+
+区别：
+- CLR v2：一张参考表覆盖一个邻域（半径 $\mu/\tau$），适合形状变化但 $s$ 固定的族。
+- Q-PSR：对每个具体有理形状精确计算，无近似误差，但表随形状改变。
+
+两者互补：CLR v2 处理"同一形状附近的所有速度"；Q-PSR 处理"精确有理形状的所有 $s$"。
+
+### §3.5 完整余数集 vs. 子集的权衡（新观察，IDEA）
+
+V4 形状：
+- 完整 $R_L = \{2, 4, 5, 7\}$：$G = 4$，最小余量 $\mu = \min(1/3 - 1/5, 2/9 - 1/5) = 1/45$。
+- Opus 选 $R = \{4, 5\}$：$G = 8$，最小余量 $\mu = \min(2/15, 11/45) = 2/15$。
+
+**权衡：** 更多余数 → 更小 $G$（更弱的 $s$ 下界）但更小 $\mu$（更窄的形状容许半径）。更少余数 → 更大 $G$ 但更大 $\mu$。
+
+对 CLR v2 的 Lipschitz 论证，$\mu$ 决定覆盖邻域的大小。对 Q-PSR（精确形状），$\mu$ 无关紧要（无近似），$G$ 越小越好。
+
+**结论：** 对精确有理形状，应使用完整 $R_L$（最小化 $G$）。对 CLR 型邻域覆盖，应选择使 $\mu$ 最大化的子集。
+
+---
+
+## 第四部分：代数表达的可能性
+
+### §4.1 有理情形：CRT 结构
+
+设 $\theta = p/q$，$w = p'/q'$，$\gcd(p,q) = \gcd(p',q') = 1$。
+
+(C1) 等价于：$kp \bmod q \in \{\lceil q/5 \rceil, \ldots, \lfloor 4q/5 \rfloor\}$（即 $kp$ 模 $q$ 落在"安全区间"）。
+
+(C2) 等价于：$kp' \bmod q' \in \{\lceil q'/5 \rceil, \ldots, \lfloor 4q'/5 \rfloor\}$。
+
+由 CRT：$k \bmod L$（$L = \mathrm{lcm}(q,q')$）唯一决定 $(k \bmod q, k \bmod q')$。
+
+所以 $R_L$ 可以写成：
+$$R_L = \{r \in \mathbb{Z}/L\mathbb{Z} : r \cdot p \bmod q \in A_q \;\text{且}\; r \cdot p' \bmod q' \in A_{q'}\}$$
+
+其中 $A_q = \{\lceil q/5 \rceil, \ldots, \lfloor 4q/5 \rfloor\}$。
+
+**这是代数表达：** 涉及模运算、乘法、区间判定。不需要"递增扫描"——但需要枚举 $L$ 个余数（或等价地，求解一组同余不等式）。
+
+**是否"只是扫描"？** 当 $q, q'$ 固定且小时（如 $q = 3, q' = 9$），$R_L$ 可以预计算，规则退化为一次查表 + 一次模运算。这是 $O(1)$ 的。当 $q, q'$ 随输入变化时，计算 $R_L$ 需要 $O(L)$ 步。
+
+**本席判断：** 对固定形状，规则是代数的（闭式查表）。对变化形状，规则是"有限步算法"但不是"单一封闭公式"。这不是"无界试探"，但也不是 $O(1)$ 公式。
+
+### §4.2 无理情形：不存在有限代数式
+
+若 $\theta$ 无理，$\{k\theta \bmod 1\}$ 无限不重复。不存在有限周期，不存在有限余数表。任何确定性规则必须依赖 $\theta$ 的连分数展开或其他无穷信息。
+
+**命题（本席断言，非证明）：** 不存在只依赖 $(\theta, w, s)$ 的有限代数表达式（加、减、乘、除、取整、模），对所有无理 $(\theta, w, s)$ 输出成功 $k$。
+
+**理由（非严格证明）：** 若存在这样的表达式 $k = F(\theta, w, s)$，则 $F$ 在有理点处必须与 Q-PSR 一致。但有理点的 $R_L$ 随分母 $q, q'$ 变化，结构不统一。$F$ 在有理点集上的行为不能由有限代数运算统一描述（因为 $L$ 无界）。
+
+**状态：IDEA（未严格证明）。**
+
+---
+
+## 第五部分：无理形状的存在性与障碍
+
+### §5.1 存在性（Kronecker 定理）
+
+**定理（经典）：** 若 $1, \alpha_1, \ldots, \alpha_n$ 在 $\mathbb{Q}$ 上线性无关，则序列 $\{(k\alpha_1, \ldots, k\alpha_n) \bmod 1\}_{k=1}^\infty$ 在 $[0,1)^n$ 中稠密。
+
+**应用：** 设 $\theta, w, 1/s$ 使得 $1, \theta, w, 1/s$ 有理无关（即不存在非零整数向量 $(n_0, n_1, n_2, n_3)$ 使 $n_0 + n_1\theta + n_2 w + n_3/s = 0$）。
+
+则 $\{(k\theta, kw, k/s) \bmod 1\}$ 在 $[0,1)^3$ 中稠密。
+
+安全区域 $[1/5, 4/5]^3$（注意 $c$ 的条件：$\mathrm{frac}(k(1-\theta)) = 1 - \mathrm{frac}(k\theta)$ 当 $k \in \mathbb{Z}$，所以 $c$ 的条件由 $b$ 自动满足）有非空内部。
+
+故存在 $k$ 使得三个坐标同时落在 $[1/5, 4/5]$ 中。即成功时间存在。
+
+### §5.2 不能由单坐标稠密推出同时安全（主席要求）
+
+**关键区分：** $\{k\theta \bmod 1\}$ 稠密只保证存在 $k_1$ 使 $\|k_1\theta\| \ge 1/5$。$\{kw \bmod 1\}$ 稠密只保证存在 $k_2$ 使 $\|k_2 w\| \ge 1/5$。但 $k_1 \neq k_2$ 一般。
+
+**同时安全**要求**同一个** $k$ 使所有坐标安全。这需要**联合稠密性**（Kronecker 的 $n$ 维版本），而非各坐标的单独稠密性。
+
+**反例说明：** 若 $\theta = \alpha$（无理），$w = 1 - \alpha$，则 $k\theta + kw = k$。$\mathrm{frac}(k\theta) + \mathrm{frac}(kw) = 1$（当 $k\theta \notin \mathbb{Z}$）。所以 $\mathrm{frac}(k\theta) \in [1/5, 4/5] \iff \mathrm{frac}(kw) \in [1/5, 4/5]$。此时 $b$ 和 $c$ 的条件等价（自动满足），但 $d$ 的条件 $w = 1 - \alpha$ 与 $b$ 的条件完全耦合。这不是"独立"的。
+
+更极端：若 $w = 2\theta$，则 $\mathrm{frac}(kw) = \mathrm{frac}(2k\theta)$。$k\theta \in [1/5, 4/5]$ 时，$2k\theta \in [2/5, 8/5]$，$\mathrm{frac}(2k\theta)$ 可能在 $[2/5, 1) \cup [0, 3/5]$。不是所有 $k\theta$ 的安全值都给出 $kw$ 的安全值。
+
+**结论：** 必须使用联合稠密性（多维 Kronecker），不能逐坐标推导。✓
+
+### §5.3 有效上界的缺失
+
+Kronecker 定理是存在性定理，不给出第一个命中时间的上界。
+
+**已知：** 对 $n$ 维环面上的线性流，第一个命中开集 $U$ 的时间可以是任意大（取决于频率的 Diophantine 性质）。具体地，若 $\theta$ 被有理数极好地逼近（如 $\theta = \sum 10^{-n!}$），则 $\{k\theta\}$ 在 $0$ 附近停留极长时间，第一个进入 $[1/5, 4/5]$ 的 $k$ 可以极大。
+
+**对无理形状：** 不存在只依赖 $(\theta, w, s)$ 的"比例"（而非具体值）的步数上界。
+
+**状态：存在性 PROVED（Kronecker）；有效上界 UNFINISHED。**
+
+### §5.4 有理逼近策略（IDEA，未证明）
+
+对无理 $(\theta, w)$，取连分数截断 $\theta \approx p/q$，$w \approx p'/q'$。对有理近似用 Q-PSR 得 $k$。若 $|\theta - p/q| < \varepsilon$，$|w - p'/q'| < \varepsilon$，则：
+$$|k\theta - kp/q| < k\varepsilon.$$
+
+要使 $\|k\theta\| \ge 1/5$（已知 $\|kp/q\| \ge 1/5 + \mu$），需 $k\varepsilon < \mu$，即 $\varepsilon < \mu/k$。
+
+但 $k$ 本身依赖 $q, q'$（$k \le s/5 + G$，$G \le L = \mathrm{lcm}(q,q')$），所以 $\varepsilon < \mu/(s/5 + L)$。
+
+对大 $s$：$\varepsilon < 5\mu/s$。这与 CLR 的半径 $\mu/\tau \approx 5\mu/s$ 一致。
+
+**问题：** 连分数逼近的精度 $\varepsilon \sim 1/q^2$，而 $L \sim qq'$。需要 $1/q^2 < 5\mu/(s/5 + qq')$。对大 $q$，这要求 $s$ 极大或 $\mu$ 极大。不能给出统一的有限步保证。
+
+**状态：IDEA。不能构成证明。**
+
+---
+
+## 第六部分：相位格视角与跨形状连接
+
+### §6.1 相位格的定义
+
+对锚 $b + c$，相位 $\tau$ 的"格"为 $\mathbb{Z}$（整数锁）或 $\frac{1}{m}\mathbb{Z}$（$m$ 分之一步长）。
+
+对锚 $u + v$（另一对跑者），等价相位为 $\tau' = \tau \cdot (b+c)/(u+v)$。
+
+**Opus 的"换锚 = 换相位格"（R017 §2.2）：** 本席确认为正确。不同锚对应同一相位空间的不同格。
+
+### §6.2 跨形状连接
+
+两个有理形状 $(\theta_1, w_1)$ 和 $(\theta_2, w_2)$，若 $\theta_1 = \theta_2$（相同 $b:c$ 比例）但 $w_1 \neq w_2$，则：
+- 形状 1 的合法余数集 $R_{L_1} \subset \mathbb{Z}/L_1\mathbb{Z}$
+- 形状 2 的合法余数集 $R_{L_2} \subset \mathbb{Z}/L_2\mathbb{Z}$
+
+若 $L_1 | L_2$，则 $R_{L_2}$ 在模 $L_1$ 下的投影与 $R_{L_1}$ 有确定关系（但不一定相等，因为 $w$ 的条件改变了）。
+
+**能否不试整数就连接？** 若两个形状的 $L$ 相同且 $R_L$ 相同，则同一个 $k$ 对两者都有效。这发生在 $\theta_1 = \theta_2$ 且 $w_1 \equiv w_2 \pmod{1/L}$ 的情形。
+
+**一般情形：** 不同形状的 $R_L$ 不同，无法避免重新计算。相位格视角给出了**结构框架**，但不能消除逐形状的计算。
+
+**状态：结构观察（IDEA），不构成一般机制。**
+
+---
+
+## 第七部分：对研究问题的回答
+
+> 决定性的不是再找一个成功例子，而是一个依赖速度、确定性的选择机制——选相位或锚点并保证成功。
+
+**本席结论：**
+
+1. **有理形状：** 确定性机制存在（Q-PSR）。给定 $(\theta, w, s)$ 有理，计算 $L$、$R_L$、$G$，一步输出 $k$。步数上界 $G \le L$。这是有限步、确定性的。
+
+2. **无理形状：** 确定性机制**不存在**（在当前认知下）。Kronecker 保证存在性，但不给出有效步数上界。任何确定性规则必须依赖 $(\theta, w, s)$ 的无穷精度信息（如连分数展开的任意多项），不能只依赖有限代数运算。
+
+3. **相位格连接不同形状：** 相位格给出统一语言，但不能消除逐形状计算。不同形状的合法余数集一般不同。
+
+4. **无界试探：** 有理情形可避免（有限表）。无理情形**不能避免**（无有效上界）。
+
+**一般五跑者确定性选择机制：UNFINISHED。**
+
+---
+
+## 账本
+
+| 项目 | 状态 |
+|---|---|
+| Q-FSR（固定 $k$ 充要条件） | **接受**（主席 R017 裁决） |
+| 第一版 q 步规则 | **DISPROVED**（维持） |
+| Q-PSR（修正后有理形状规则） | **PROOF CANDIDATE** |
+| 完整 $R_L$ vs. 子集权衡 | **IDEA** |
+| 代数表达（有理：CRT 查表） | **CHECKED**（有限步，非单一公式） |
+| 代数表达（无理：不可能） | **IDEA**（未严格证明） |
+| 无理形状存在性（Kronecker） | **PROVED**（经典定理应用） |
+| 无理形状有效上界 | **UNFINISHED** |
+| 单坐标稠密 ≠ 同时安全 | **CHECKED**（§5.2 论证） |
+| 相位格跨形状连接 | **IDEA**（结构框架，非一般机制） |
+| 一般确定性选择机制 | **UNFINISHED** |
+
+**PROOF VALIDITY：** Q-PSR 证明完整（§3.2）；Kronecker 应用正确（§5.1）。
+**INDEPENDENT REVIEW：** 本席未审阅他人本轮成果（待分配）。
+**NEW COVERAGE：** Q-PSR 覆盖所有有理形状 + $s \ge 5G/3$。相对 CLR v2 的增量：精确形状无需参考近似。相对已认证清单的新覆盖：**未计算（NEW COVERAGE UNFINISHED）**。
+**COMPUTATIONAL CHECK：** §3.3 的 V4 和 $s=36$ 验证为本席手算。§2.2 的反例验证为手算。无代码。
+
+---
+
+## 最不确定的一步
+
+Q-PSR 的条件 $s \ge 5G/3$ 中，$G$ 可以接近 $L$（当 $R_L$ 稀疏时）。对大分母 $q, q'$，$L$ 可以极大，使 $s$ 下界不实用。此时需要退回 CLR v2 的参考形状方法（用少量高余量余数换取大容许半径）。**两种方法的统一选择判据**（何时用精确表、何时用参考近似）：**UNFINISHED**。
+
+---
+
+*WEB OFF。全部计算为手算。未使用代码。*
+############ 回复格式 ############
+第一行写「R019 4/4 DeepSeek」。先写 ANSWER BLOCK（≤300 中文字）。然后：精确定理陈述（严格/非严格）、证明或反例、适用边界、剩余缺口。
+四个账本栏分开写：PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / IDEA / UNFINISHED。审阅结论每项单独给：PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。先手证；代码只可核对，不可替代论证。作者不能升级自己的结果；只有主席裁决。无界搜索不得当作封闭选择规则。
+===== END =====
