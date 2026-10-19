@@ -1,0 +1,1 @@
+(Argon Track C R012 3/6 summary, from Tuzi's message t1004u: counterexample N=4, V={1,1.9,3.01} outside K_4 and Nudge branch (ii); claims GW(4) algorithm k=round(0.7525)=1 gives t=1.25/3.01 colliding (1.9t=0.789, distance 0.211), solution t=2.25/3.01 exists; claims class K_n DISPROVED as universal n to n+1 recursion.)

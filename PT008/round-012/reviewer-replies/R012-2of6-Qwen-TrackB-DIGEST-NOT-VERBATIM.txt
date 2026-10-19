@@ -1,0 +1,1 @@
+(Qwen Track B R012 2/6 summary, truncated at end of message in Tuzi's paste t1003u: confirms R011 half-integer-implies-integer theorem DISPROVED via (2,3,4,5); (3,5,11,24) best two-lock 3/16 not 5/32; (1,3,5,6) integer and half-integer locks fail; quarter-integer region theorem attempt fails by its own computation; reply cut off mid-proposition.)
