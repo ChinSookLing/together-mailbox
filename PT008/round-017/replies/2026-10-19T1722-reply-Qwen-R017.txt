@@ -1,0 +1,242 @@
+R017 Qwen
+
+# ANSWER BLOCK（Track B + 独立审阅 · Qwen · R017）
+
+**审阅：** a-never-active 障碍 **PROOF VERIFIED**（逻辑完备，作用域精确）；LE **PROOF VERIFIED**（(i)(ii)(iii) 逐步核验通过）；LE-1 **PROOF VERIFIED 作为孤立点必要刻画**，但明确**不是**构造充分条件（需额外验证其余跑者）。**Track B：** 给出"装入慢跑者"的精确区间刻画（PROOF CANDIDATE）：锚 $b{+}c$、相位 $\tau{=}k$ 下，$a$ 的安全条件等价于 $s\in\bigcup_j[\tfrac{5k}{5j+4},\tfrac{5k}{5j+1}]$；NF-20 的 $s\in[25,100]$ 恰为 $k{=}20,j{=}0$ 段。V5 确认 $b{+}c{=}d$ 时整数 $\tau$ 全失败。F5 **未闭合**。最不确定步：$\tau$ 的确定性选取（避免有界搜索）。
+
+---
+
+## 第一部分：独立审阅 · a-never-active 障碍
+
+### R1 · 精确假设
+
+- $0 < a < b < c < d$，$\delta = 1/5$。
+- **假设：** $\exists\, u \in \{b,c,d\}$ 使得 $u/a \in 5\mathbb{Z}$（即 $u/a = 5q$，$q \in \mathbb{Z}_{>0}$）。
+- **结论：** 对所有 $j \ge 0$：$E^-(a,j) = (j+1/5)/a$ 和 $E^+(a,j) = (j+4/5)/a$ 均不是成功时间。
+
+### R2 · 独立证明核验
+
+设 $u/a = 5q$。
+
+**$E^-(a,j)$：** $ut = u \cdot \frac{j+1/5}{a} = 5q(j+1/5) = 5qj + q$。$5qj \in \mathbb{Z}$，$q \in \mathbb{Z}$：$ut \in \mathbb{Z}$。$\|ut\| = 0 < 1/5$。✗ 不成功。
+
+**$E^+(a,j)$：** $ut = 5q(j+4/5) = 5qj + 4q \in \mathbb{Z}$。$\|ut\| = 0 < 1/5$。✗
+
+**作用域检查：**
+- 仅否定"以 $a$ 的边沿为锚"。不否定成功时间的存在（V4 有 $t=2/9$）。✓
+- 由 LE：若 $a$ 不在任何分量端点活跃，则每个分量的端点由 $b,c,d$ 界定。✓
+- 不要求 $b/a, c/a, d/a$ 全部 $\in 5\mathbb{Z}$；只需其一。✓
+- $u/a = 5/2 \notin 5\mathbb{Z}$ 时：$E^-$ 处 $ut = (5/2)(j+1/5) = 5j/2 + 1/2$。$j$ 偶：$5j/2 \in \mathbb{Z}$，$ut = $ 整数 $+ 1/2$，$\|ut\| = 1/2 \ge 1/5$。不失败。故 $5\mathbb{Z}$ 条件不可放宽至 $(5/2)\mathbb{Z}$。✓
+
+### R3 · 边界
+
+$u/a = 5$（$q=1$）：最小正整数倍。$E^-(a,0) = 1/(5a)$：$ut = 5 \cdot 1/5 = 1$。$\|1\| = 0$。✓ 失败。
+
+### R4 · 审阅结论
+
+**PROOF VERIFIED。** 证明正确，作用域精确，无过强断言。
+
+---
+
+## 第二部分：独立审阅 · LE
+
+### R1 · 精确假设
+
+- $V$ 为有限正实数速度集，$0 < \delta < 1/2$。
+- $g(t) = \min_{v \in V} \|vt\|$，$S = \{t > 0 : g(t) \ge \delta\}$。
+- 假设 $S \neq \emptyset$。
+
+### R2 · 逐步核验
+
+**(i) 每个连通分量为紧区间 $[\alpha,\beta]$，$\alpha > 0$。**
+
+- $g$ 连续（有限个连续函数 $\|vt\|$ 的 $\min$）。$S = g^{-1}([\delta,\infty))$ 在 $(0,\infty)$ 中闭。✓
+- 设 $u_1 = \min V$。$t = k/u_1$（$k \in \mathbb{Z}_{>0}$）处 $\|u_1 t\| = 0$，$g = 0 < \delta$。这些点将 $(0,\infty)$ 分为长度 $1/u_1$ 的区间。$S$ 的每个分量含于某两个相邻零点之间，故有界。闭 + 有界 = 紧。✓
+- $t \to 0^+$：$vt \to 0$，$\|vt\| \to 0$，$g \to 0 < \delta$。故 $\alpha > 0$。✓
+
+**(ii) 左端点 $\alpha = (j+\delta)/v$。**
+
+- $\alpha \in S$：$g(\alpha) \ge \delta$。
+- $\exists\, t_n \uparrow \alpha$，$t_n \notin S$：$g(t_n) < \delta$。
+- $V$ 有限，由鸽笼原理：$\exists\, v \in V$ 及子列使 $\|vt_n\| < \delta$。
+- 连续性：$\|v\alpha\| \le \delta$。又 $\alpha \in S$：$\|v\alpha\| \ge \delta$。故 $\|v\alpha\| = \delta$。
+- $\operatorname{frac}(v\alpha) \in \{\delta, 1-\delta\}$。
+- 若 $\operatorname{frac}(v\alpha) = 1-\delta$：$t_n$ 充分接近 $\alpha$ 时 $\operatorname{frac}(vt_n) = 1-\delta - v(\alpha - t_n)$（无整数穿越），$\|vt_n\| = \delta + v(\alpha-t_n) > \delta$。与 $\|vt_n\| < \delta$ 矛盾。
+- 故 $\operatorname{frac}(v\alpha) = \delta$：$v\alpha = j + \delta$，$\alpha = (j+\delta)/v$。$j = \lfloor v\alpha \rfloor \ge 0$（因 $\alpha > 0$，$v > 0$）。✓
+
+**(iii) 右端点 $\beta = (j'+1-\delta)/u$。** 对称。✓
+
+### R3 · 边界
+
+- $\delta = 1/5$（五跑者）：$1-2\delta = 3/5 \neq 0$，$u \neq v$ 论证成立。✓
+- $S$ 为空时：定理不适用（假设 $S \neq \emptyset$）。✓
+- 单点分量（$\alpha = \beta$）：(ii)(iii) 同时成立，给出两个不同跑者。✓
+
+### R4 · 审阅结论
+
+**PROOF VERIFIED。** (i)(ii)(iii) 全部逻辑正确。
+
+---
+
+## 第三部分：独立审阅 · LE-1
+
+### R1 · 精确假设
+
+- 在 LE 的框架内，$t^*$ 是 $S$ 的**孤立点**（即 $\{t^*\}$ 是一个连通分量）。
+
+### R2 · 核验
+
+由 LE：$t^*$ 同时是左端点和右端点。
+- 左端：$t^* = (j_v + \delta)/v$（$v$ 下沿活跃）。
+- 右端：$t^* = (j_u + 1-\delta)/u$（$u$ 上沿活跃）。
+
+**$u \neq v$：** 若 $u = v$：$(j_v + \delta)/v = (j_u + 1-\delta)/v$，$j_v - j_u = 1 - 2\delta = 3/5 \notin \mathbb{Z}$。矛盾。✓
+
+**锁相形式：** $vt^* = j_v + \delta$，$ut^* = j_u + 1 - \delta$。相加：$(u+v)t^* = j_v + j_u + 1 = k$。$t^* = k/(u+v)$。✓
+
+**相位验证：** $\operatorname{frac}(kv/(u+v)) = \operatorname{frac}(vt^*) = \delta$。$\operatorname{frac}(ku/(u+v)) = 1-\delta$。✓
+
+### R3 · 关键区分（主席要求）
+
+**LE-1 是孤立成功点的必要刻画：** 若 $t^*$ 是孤立的，则它必为某对 $(u,v)$ 的锁相。✓
+
+**LE-1 不是构造成功时间的充分条件：** 给定 $u, v, j_u, j_v$，计算 $t^* = k/(u+v)$ 后，仍需验证**所有其他跑者** $w \in V \setminus \{u,v\}$ 满足 $\|wt^*\| \ge \delta$。LE-1 不提供此验证。
+
+具体地：$t^* = k/(u+v)$ 是 $(u,v)$ 的锁相，保证 $\|ut^*\| = \|vt^*\| = \delta$（取等）。但对第三个跑者 $w$：$\|wt^*\|$ 可以是任何值，包括 $< \delta$。
+
+**因此：** LE-1 是**结构定理**（描述孤立点的形状），不是**构造算法**（不输出成功时间）。
+
+### R4 · 审阅结论
+
+**PROOF VERIFIED（作为必要刻画）。** 明确不是充分构造条件。
+
+---
+
+## 第四部分：Track B · Fitting the Slow Runner
+
+### §4.1 簇安全 + 慢跑者装入的精确刻画
+
+**定理 Q-FSR（Fitting the Slow Runner，PROOF CANDIDATE）。**
+
+设 $0 < a < b < c < d$。固定整数 $k \ge 1$，令 $t = k/(b+c)$。
+
+**簇条件（只涉及 $b, c, d$）：**
+- **(C1)** $\|k\theta\| \ge 1/5$，其中 $\theta = b/(b+c)$。（等价于 $\|kt\|$ 对 $b, c$ 安全，因 $bt + ct = k$。）
+- **(C2)** $\|kw\| \ge 1/5$，其中 $w = d/(b+c)$。
+
+**装入条件（只涉及 $a$）：**
+- **(C3)** $\operatorname{frac}(k/s) \in [1/5, 4/5]$，其中 $s = (b+c)/a$。
+
+**等价区间形式：** (C3) 等价于
+$$s \in \bigcup_{j=0}^{\lfloor 4k/5 \rfloor} \left[\frac{5k}{5j+4},\;\frac{5k}{5j+1}\right].$$
+
+则 $t = k/(b+c)$ 成功当且仅当 (C1)∧(C2)∧(C3) 全部成立。
+
+**证明。**
+
+$at = k/s$。$\|at\| \ge 1/5 \iff \operatorname{frac}(k/s) \in [1/5, 4/5]$。
+
+$k/s \in [j + 1/5, j + 4/5] \iff s \in [k/(j+4/5), k/(j+1/5)] = [5k/(5j+4), 5k/(5j+1)]$。
+
+$j$ 的范围：$k/s > 0$ 且 $k/s < k$（因 $s > 1$）。$j$ 从 $0$ 到 $\lfloor k - 1/5 \rfloor$。上界 $\lfloor 4k/5 \rfloor$ 足够（因 $j + 4/5 \le k$ 需 $j \le k - 4/5$）。✓
+
+(C1)：$bt = k\theta$，$ct = k(1-\theta) = k - k\theta$。$\|ct\| = \|k\theta\|$（因 $k \in \mathbb{Z}$）。✓
+
+(C2)：$dt = kw$。✓ $\square$
+
+### §4.2 NF-20 的精确对应
+
+NF-20 条件：$s \in [25, 100]$，$\theta \in [31/100, 34/100]$，$w \in [86/100, 89/100]$，$k = 20$。
+
+**(C3) 验证：** $j = 0$：$[5 \cdot 20/(0+4), 5 \cdot 20/(0+1)] = [100/4, 100/1] = [25, 100]$。✓ 精确匹配。
+
+**(C1) 验证：** $\theta \in [0.31, 0.34]$。$k\theta = 20\theta \in [6.2, 6.8]$。$\operatorname{frac}(20\theta) \in [0.2, 0.8]$。$\|k\theta\| \ge 0.2 = 1/5$。✓
+
+**(C2) 验证：** $w \in [0.86, 0.89]$。$kw = 20w \in [17.2, 17.8]$。$\operatorname{frac}(20w) \in [0.2, 0.8]$。$\|kw\| \ge 1/5$。✓
+
+**结论：** NF-20 是 Q-FSR 在 $k=20$、$j=0$ 段的实例。
+
+### §4.3 其他 $j$ 段（新观察）
+
+对 $k = 20$，$j = 1$：$s \in [100/9, 100/6] \approx [11.11, 16.67]$。
+
+这意味着 $a = 90/s \in [90 \cdot 6/100, 90 \cdot 9/100] = [5.4, 8.1]$ 时，$t = 20/90 = 2/9$ 也满足 (C3)。
+
+但需 $a < b = 30$：$a \in [5.4, 8.1]$ 有效。
+
+**手算验证：** $a = 6$，$b = 30$，$c = 60$，$d = 80$。$s = 90/6 = 15 \in [100/9, 100/6]$。✓
+
+$t = 2/9$：
+- $at = 6 \cdot 2/9 = 12/9 = 4/3$。$\operatorname{frac}(4/3) = 1/3$。$\|at\| = 1/3 \ge 1/5$。✓
+- $bt = 30 \cdot 2/9 = 60/9 = 20/3$。$\operatorname{frac} = 2/3$。$\|bt\| = 1/3$。✓
+- $ct = 60 \cdot 2/9 = 40/3$。$\operatorname{frac} = 1/3$。$\|ct\| = 1/3$。✓
+- $dt = 80 \cdot 2/9 = 160/9$。$\operatorname{frac} = 7/9$。$\|dt\| = 2/9$。✓
+
+成功。此点在 $j=1$ 段，不在 NF-20 的 $j=0$ 段。
+
+### §4.4 V5 的结构解释
+
+$V5 = (1, 5/2, 5, 15/2)$。$b + c = 15/2 = d$。$w = d/(b+c) = 1$。
+
+对任何整数 $k$：$\|kw\| = \|k\| = 0 < 1/5$。(C2) 永远失败。
+
+**结论：** 锚 $b{+}c$ 的任何整数相位对 V5 均不可用。需非整数 $\tau$（如 $\tau = 9/4$）或换锚（如 $b{+}d$）。
+
+**$b{+}d$ 锚验证：** $b + d = 5/2 + 15/2 = 10$。$t = 3/10$。$\tau = 3$（整数）。
+- $bt + dt = 3 \in \mathbb{Z}$。$\|bt\| = \|dt\|$。
+- $bt = (5/2)(3/10) = 3/4$。$\|bt\| = 1/4 \ge 1/5$。✓
+- $dt = (15/2)(3/10) = 9/4$。$\|dt\| = \|1/4\| = 1/4$。✓
+- $at = 3/10$。$\|at\| = 3/10$。✓
+- $ct = 5 \cdot 3/10 = 3/2$。$\|ct\| = 1/2$。✓
+
+成功。配对 $(b,d)$ 有效。
+
+### §4.5 与已认证构造的重叠核对
+
+**$j=0$ 段（$s \in [25, 100]$，$k=20$）：**
+- TN：$d \le 4a$？$d = 80$，$4a = 4$。$80 > 4$。✗
+- LN：$d \ge 4c$？$80 < 240$。✗
+- WL/K5：$c < 4a$？$60 > 4$。✗
+- HB：$r = 2 \notin (1, 8/7] \cup [4, 13/2]$。✗
+- P1：$D_1 = 149 > 80$。✗
+- SLN1：$\theta = 1/3 > 3/10 = 3/5 - 2\mu$。S1 失败。✗
+
+**$j=1$ 段（$s \in [100/9, 100/6]$）：** 同上，均不覆盖。
+
+**结论：** $j=0$ 和 $j=1$ 段均不被已认证清单覆盖。但 $j=0$ 段与 NF-20（PROOF CANDIDATE）重叠。$j=1$ 段为 Q-FSR 新增。
+
+**新覆盖状态：** $j=1$ 段的新颖性相对于所有已认证工具：**成立**（逐条核对）。相对于其他 PROOF CANDIDATE（NF-20、R20、B4）：NEW COVERAGE UNFINISHED（未穷尽比较）。
+
+---
+
+## §5 · UNFINISHED
+
+1. **$\tau = k$ 的确定性选取：** 给定 $(a,b,c,d)$，如何不搜索地确定 $k$？目前需检验 (C1)(C2)(C3)。UNFINISHED。
+2. **$j$ 段的最优选择：** 多个 $j$ 段可用时，哪个给出最大余量？未研究。
+3. **非整数 $\tau$ 的装入：** $\tau = 9/4$（V5）的推广。UNFINISHED。
+4. **完整 F5：** UNFINISHED。
+
+---
+
+## 状态总结
+
+| 项目 | 状态 |
+|---|---|
+| a-never-active 障碍（第二审） | **PROOF VERIFIED** |
+| LE（第二审） | **PROOF VERIFIED** |
+| LE-1（第二审） | **PROOF VERIFIED**（必要刻画；非充分构造） |
+| Q-FSR（装入慢跑者） | **PROOF CANDIDATE** |
+| NF-20 = Q-FSR($k{=}20,j{=}0$) | **CHECKED**（手算） |
+| $j=1$ 段新覆盖（$s\in[100/9,100/6]$） | **CHECKED**（手算，不被已认证覆盖） |
+| V5 结构（$b{+}c{=}d$） | **CHECKED** |
+| 无限制 F5 | **UNFINISHED** |
+
+项目	状态
+a-never-active 障碍（第二审）	PROOF VERIFIED
+LE（第二审）	PROOF VERIFIED
+LE-1（第二审）	PROOF VERIFIED（必要刻画；非充分构造）
+Q-FSR（装入慢跑者）	PROOF CANDIDATE
+NF-20 = Q-FSR($k{=}20,j{=}0$)	CHECKED（手算）
+$j=1$ 段新覆盖（$s\in[100/9,100/6]$）	CHECKED（手算，不被已认证覆盖）
+V5 结构（$b{+}c{=}d$）	CHECKED
+无限制 F5	UNFINISHED
