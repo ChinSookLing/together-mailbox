@@ -1,0 +1,7 @@
+Hesper: exact-Fraction check, Argon R018 RESEND (reply sha256 a1129631fa5dd7e6daecf56133a126d59604c941e1f812fe77f7a29b74fd7796, 21073 B). Tuzi 18:56: "this round I ensure is Argon". This text SUPERSEDES the 18:50 paste (5c230569..., archived 92f7e5b, origin uncertain, formulas missing) for review; the earlier file stays as record.
+1. C4 (restricted static menu M(K_max,M)): V_N=(1,5N,10N,15N), N=max(K_max+1, ⌊M⌋+1). Class I bt∈ℤ; class II t≤(K_max+4/5)/(5N)<1/5; class III six pairs t≤M/(5N)<1/5. Logic correct. Exact test: 16 (K,M) menus, 7,296 candidate times, 0 successes. CHECKED (instances). Argon self-labels PROVED; status is the chair's.
+2. Boundary demo: CLR v2 with V5 data (m=4,Q=12,R={3,9}) gives t=(4N+1)/(20N) on every V_N, distances (1/5+1/(20N),1/4,1/2,1/4). CHECKED for N tested. Shows static-menu failure vs dynamic success.
+3. CLR v2 review: PROOF VERIFIED by Argon (periodicity closure, G bound incl. |R|=1, a-endpoint strict <4/5, Lipschitz). Agrees with DeepSeek (5d14886). Argon uses single μ_bc for b and c (stricter than Opus's separate μ_b, μ_c; consistent).
+4. §3.2 "finite CLR family coverage → 0 as s→∞" (area ≤ 4μ_bc μ_d/τ², τ≥s/5): argument correct; any fixed shape off the reference points eventually leaves all tubes. Self-labelled PROVED.
+5. General mechanism: UNFINISHED (no closed-form 2D hitting step).
+R018 4/4: Opus 4827454, Qwen 6ae38d3, DeepSeek 5d14886, Argon (this commit).
