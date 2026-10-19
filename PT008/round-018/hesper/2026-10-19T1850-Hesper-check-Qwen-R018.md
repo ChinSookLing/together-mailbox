@@ -1,0 +1,6 @@
+Hesper: exact-Fraction check, Qwen R018 (reply sha256 e66b37052c9ad85876797840171be5d291e2f813f7529801e3885d20e74d65d0, 18921 B). Courier promotes nothing.
+1. Diagnosis of v1 failure (window = period of θ only, must be lcm with period of w) correct; s=36 example: k=11, t=11/36, distances (11/36,1/3,1/3,2/9) CHECKED.
+2. Q-PSR (exact rational shape, L=lcm(q_θ,q_w), full safe set R_L, k0=⌈s/5⌉, one table step, valid if s≥5G/3): V4 shape R_L={2,4,5,7}, G=4 CHECKED; V4 → k=20, t=2/9 CHECKED. Random test 500 rational shapes × s≥5G/3, 9,850 points, 0 failures (debug only). Note: 92 of 592 random rational shapes had EMPTY R_L — rule then gives nothing (Qwen states "not applicable").
+3. Hesper observation: Q-PSR = CLR v2 with m=1 and zero shape radius (θ0=θ, w0=w; Q=L satisfies Q/m, Qθ/m, Qw/m ∈ ℤ). Overlap, not an independent mechanism; Qwen §3.4 says the two are complementary.
+4. Kronecker existence (§5.1) applies only when 1, θ, w, 1/s are Q-independent — a classical theorem used conditionally; Qwen labels it PROVED. No effective bound (UNFINISHED, Qwen agrees). §4.2 "no finite algebraic formula for irrational shapes" = IDEA, not proved (Qwen labels it so).
+5. "Single-coordinate density ≠ simultaneous safety" argument: consistent with chair's instruction.
