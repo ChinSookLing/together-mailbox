@@ -1,0 +1,9 @@
+HB verbatim block identical to v2 (after removing marked note): True
+HB lines not found verbatim in Opus source (in order): []
+HB diff hunks: 5
+C1 verbatim block identical to v2 (after removing marked note): True
+C1 lines not found verbatim in Opus source (in order): []
+C1 diff hunks: 5
+VERBATIM_OK True
+BOX-ENDPOINT tests 72 failures 0
+NUMERIC tests 112224 failures 0
