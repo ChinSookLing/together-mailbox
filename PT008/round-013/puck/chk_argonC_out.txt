@@ -1,0 +1,21 @@
+V= (Fraction(1, 1), Fraction(11, 10), Fraction(3, 1), Fraction(41, 10)) s= 41/10 r= 30/11 w= 1 theta= 11/41
+TN d<=4a: False | LN d>=4c (4c=12): False | Omega 4a<d<4c: True
+WL c<4a: True bound 2ac/(4a-c)= 6 d>=bound: False | K5 c<=8a/3: False
+HB: s in [15/8,15/2] True r in set False w in [4/5,6/5] True | C1 r<=8/7: False
+tL=1/5 dists ['1/5', '11/50', '2/5', '9/50'] X=dt_L= 41/50 0.82 ||X||= 9/50
+nudge t=(k'+σ/5)/d: k'= 1 σ= -1 t= 8/41 =1.2/4.1: False dists [0.1951219512195122, 0.2146341463414634, 0.4146341463414634, 0.2] ||ct||= 0.4146341463414634 exact 17/41 fails c: False
+T4 route t0=1/4 dists ['1/4', '11/40', '1/4', '1/40'] X= 41/40 ||X||= 1/40
+  nudge from 1/4 gives t= 12/41 same as above: False min 0.12195121951219512
+t=0.42 dists ['21/50', '231/500', '13/50', '139/500'] [0.42, 0.462, 0.26, 0.278] min>=1/5: True
+NW(5) lambdas [1.3399852180339986, 0.4739837398373984, 0.2926829268292683] cond all<=3/5: False | NW-i True NW-ii False
+SLN1 S1 theta<=3/5-2mu: True 0.2682926829268293 0.3073170731707317 | guarantee: False 2.06 4.581818181818182
+SLN-odd k0 2 k 3 k<=s(4/5-eps) True k*phi<=3/5-2mu False 1.3902439024390243 0.3073170731707317
+Qwen B region: c<4a True | max(4a,(5c-2a)/2)= 13/2 d= 41/10 in: False
+V in Opus gap G (not covered by NW, SLN1 guarantee, SLN-odd, WL, HB, C1; and in Omega?): c>=4a? False -> R requires (c>=4a) or (c<4a and d<2ac/(4a-c)): True ; in Omega: True
+LB(k) k<=59 solutions: NONE (first k with all four >=1/5)
+anchor a+b tau= 5/4 t= 25/42 min 0.21428571428571427
+anchor a+c tau= 7/4 t= 7/16 min 0.20625
+anchor a+d tau= 11/4 t= 55/102 min 0.2107843137254902
+anchor b+c tau= 7/4 t= 35/82 min 0.25
+anchor b+d tau= 9/4 t= 45/104 min 0.22596153846153846
+anchor c+d tau= 3 t= 30/71 min 0.2676056338028169

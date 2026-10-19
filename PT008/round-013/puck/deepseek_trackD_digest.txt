@@ -1,0 +1,3 @@
+DIGEST (NOT VERBATIM) of DeepSeek R013 4/4 Track D, as relayed by the parent 2026-10-19.
+R-L2: conditional recursive theorem, PROOF CANDIDATE. Two-branch selector TN / R-L2 with unresolved gap n*m < w < n*M (n=4: 4a<d<4c). GW(N)/K_N notes. K_5 corridor example (1,2,3,4.5). F5 UNFINISHED.
+Least sure: the L2 text used is a courier summary, not the chair's verbatim ruling.

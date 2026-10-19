@@ -1,0 +1,22 @@
+(1) worked example (1,3,9,20): t = 41/100 distances [0.41, 0.23, 0.31, 0.2] PASS
+NW N=5: tested 30000 sets satisfying NW; case ||X_k||<δ occurred 11419; failures 0; nesting violations 0 []
+NW N=6: tested 30000 sets satisfying NW; case ||X_k||<δ occurred 9571; failures 0; nesting violations 0 []
+NW N=7: tested 30000 sets satisfying NW; case ||X_k||<δ occurred 8194; failures 0; nesting violations 0 []
+NW-i/NW-ii vs lambda condition (N=5): 193397 random sets, mismatches 0
+SLN1: tested 20000 points in Omega satisfying hypotheses; nudge changed t in 8028; failures 0; nudge-bound violations 0; k<=s(4/5-eps) violated 0 []
+SLN-odd: tested 12567 points in Omega satisfying hypotheses; nudge changed t in 5046; failures 0; nudge-bound violations 0; k<=s(4/5-eps) violated 0 []
+(3) (1, 30, 60, 80): t=2/9 dists=['2/9', '1/3', '1/3', '2/9'] min>=1/5: True; s=90 r=2 w=8/9 theta=1/3 mu=3/20
+   TN(d<=4a) False LN(d>=4c) False Omega True WL False HB False C1 False
+   NW lambdas ['11/200', '13/20', '3/10'] NW applies False
+   SLN1: cond (S1 θ<=3/5-2mu: False , bound 3/10 )
+   SLN-odd: cond-fails k0 19 k 19 k*phi 19/3 vs 3/10 k<=s(4/5-eps) True
+(3) (1, 3, 4, 7): t=1/5 dists=['1/5', '2/5', '1/5', '2/5'] min>=1/5: True; s=7 r=4/3 w=1 theta=3/7 mu=4/35
+   TN(d<=4a) False LN(d>=4c) False Omega True WL False HB False C1 False
+   NW lambdas ['269/420', '129/140', '8/35'] NW applies False
+   SLN1: cond (S1 θ<=3/5-2mu: False , bound 13/35 )
+   SLN-odd: cond-fails k0 2 k 3 k*phi 3/7 vs 13/35 k<=s(4/5-eps) True
+   LB(20) at (1,30,60,80): t=20/90 dists ['2/9', '1/3', '1/3', '2/9']
+(3) obstruction: kθ with θ=1/3: ||k/3|| values ['0', '1/3']
+   d<3c/2 <=> mu=c/(5d)>2/15 : check samples True
+   then 1/5+mu>1/3 for d<3c/2: True
+(extra) C1 v3 rule random exact points 266, failures 0

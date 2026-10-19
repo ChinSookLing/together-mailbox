@@ -1,0 +1,12 @@
+R-L2 n=4: 5000 random exact instances (t0 from rational grid, valid for 1/n), nudge applied 2085, failures 0
+R-L2 n=5: 5000 random exact instances (t0 from rational grid, valid for 1/n), nudge applied 1604, failures 0
+R-L2 n=6: 5000 random exact instances (t0 from rational grid, valid for 1/n), nudge applied 1408, failures 0
+w=nM boundary included in tests (choice 0 of multiplier).
+n=4: TN needs d<=n*a=4a; L2-extension needs w>=nM i.e. d>=4c; gap 4a<d<4c (matches Omega).
+(1,2,3,9/2): K5(i) c<=8a/3: False | (ii) d>=4c: False | TN d<=4a: False | WL bound 6 d>=bound False | Qwen (5c-2a)/2= 13/2 d> False
+  s,r,w 5 3/2 9/10 HB False C1 False
+  NW lambdas ['83/90', '38/45', '4/15'] NW applies False
+  SLN1 S1 False guarantee False ; SLN-odd: k0 2
+  SLN-odd k 3 k<=s(4/5-eps) True kphi<=3/5-2mu False
+  a solution (smallest-denominator grid search, for the example only): 3/4 ['1/4', '1/2', '1/4', '3/8']
+  LB(k) k= 2 t= 2/5
