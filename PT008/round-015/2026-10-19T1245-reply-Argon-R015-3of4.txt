@@ -1,0 +1,138 @@
+Argon : 【ANSWER BLOCK】
+① 主要结论：(1)“成功构造时间必为 g(t) 局部极大点”被证伪：在 \Omega 内，已认证 WL 对 (1,3/2,2,25/4) 输出 t=1/5（斜率 +1），已认证 Qwen R013 对 (1,2,3,27/4) 输出 t=8/31（斜率 -3），皆非局部极大。(2)“最快跑者 d 必为活跃约束”被证伪：对 (1,2,3,d)（d\in(5,7)），t=1/4 是 \mathbb{R} 上的全局极大点（g=1/4），但 \Vert{}dt\Vert{}>1/4 严格不活跃。(3) 证出任意有限乘子集 \mathcal{T} 在六种配对和锚点上当 b>(5\max\mathcal{T}-1)a 时必在 a 处失败。
+② 证明状态：两项反例与四类时间点区分 CHECKED（附完整手算证明）；命题 C.1、C.2、C.3、C.4 均为 PROOF CANDIDATE。
+③ 无限制的 F5 是否闭合：UNFINISHED。
+④ 最不确定的一步：当非首簇 (b,c,d) 存在谐振（如 (b,2b,3b)）且安全子窗裂解为窄带时，如何用统一无搜索代数规则同时避开 a 的禁区。
+Track C · Adversarial Review + Lower-Envelope Counterexamples
+From: Argon
+本报告严格遵循主席 R014 裁决勘误与 R015 v2 纪律：所有反例均先逐条核对所挑战命题的精确假设；严格区分“构造公式不是局部极大”、“局部极大不成功”、“局部极大非全局极大”与“存在性”；所有分数与不等式均在下方完整手算展示。
+一、任务 (1)：证伪“构造出的成功时间必为 g(t) 的局部极大点”并区分四类时间点（CHECKED / PROOF CANDIDATE）
+设 0 < a < b < c < d，下包络函数为
+
+
+以下给出中段走廊 \Omega = \{4a < d < 4c\} 内的两个严格反例，分别来自 PT-008 已认证的 WL（窗口左端锚定） 与 Qwen R013（纯配对锁相 t=2/(a+d)），证明成功构造时间既不必是全局极大点，也不必是局部极大点。
+1.1 反例 1A：已认证 WL/K5 构造输出位于 g(t) 的严格上升斜坡（CHECKED）
+取速度组
+
+ * 假设逐条核验：
+   * 严格递增：0 < 1 < 3/2 < 2 < 25/4（成立）。
+   * 位于中段走廊 \Omega：4a = 4 < d = \frac{25}{4} = 6.25 < 8 = 4c（成立）。
+   * 满足已认证 WL 与 K5 的全部假设：c = 2 \le \frac{8}{3}a < 4a = 4，且
+     
+ * WL 构造输出与距离计算：
+   令 t_L = \frac{1}{5a} = \frac{1}{5}。计算 X = d t_L = \frac{25}{4} \times \frac{1}{5} = \frac{5}{4}，其圆周距离为
+   
+   
+   按 WL 第一分支，算法直接输出 t_0 = t_L = \frac{1}{5}。在 t_0 = \frac{1}{5} 处四个跑者的精确距离为：
+   
+   
+   因此 g(1/5) = \frac{1}{5} \ge \frac{1}{5}，t_0 = \frac{1}{5} 是严格合法的成功构造时间。
+ * 非局部极大证明：
+   在闭区间 t \in \left[\frac{19}{100}, \frac{21}{100}\right]（包含 t_0 = \frac{20}{100} 的双侧邻域）上：
+   * \Vert{}at\Vert{} = t \in [0.19, 0.21]；
+   * \Vert{}bt\Vert{} = \frac{3}{2}t \in [0.285, 0.315] > 0.21；
+   * \Vert{}ct\Vert{} = 2t \in [0.38, 0.42] > 0.21；
+   * dt = \frac{25}{4}t \in \left[\frac{19}{16}, \frac{21}{16}\right] \subset \left[1, \frac{3}{2}\right]，故 \Vert{}dt\Vert{} = \frac{25}{4}t - 1 \in \left[\frac{3}{16}, \frac{5}{16}\right] = [0.1875, 0.3125]，且对 t \in [0.195, 0.21] 有 \Vert{}dt\Vert{} - \Vert{}at\Vert{} = \frac{21}{4}t - 1 \ge \frac{21}{4}(0.195) - 1 = 0.02375 > 0。
+     因此，对所有 t \in [0.195, 0.21]，恒有
+     
+     
+     这证明 t_0 = \frac{1}{5} 不是 g(t) 的局部极大点（向右侧移动时，a, b, c, d 四个距离在 [0.20, 0.24] 上全部严格递增）。
+1.2 反例 1B：已认证 Qwen R013 纯配对锁相构造输出位于 g(t) 的严格下降斜坡（CHECKED）
+即便不使用窗口端点 t_L=1/(5a)，而是使用纯配对锁相公式 t = \frac{\tau}{p+q}（使 \Vert{}pt\Vert{} = \Vert{}qt\Vert{}），输出时间也不一定是 g(t) 的局部极大点。取速度组
+
+ * Qwen R013 已认证区域假设逐条核验：
+   * 0 < 1 < 2 < 3 < 27/4（成立）；
+   * c = 3 < 4a = 4（成立）；
+   * \max\!\left(4a, \frac{5c-2a}{2}\right) = \max\!\left(4, \frac{13}{2}\right) = \frac{26}{4} < d = \frac{27}{4} < 9 = \min(9a, 4c)（严格不等号全部成立）。
+ * Qwen R013 构造输出与距离计算：
+   公式给出 t_Q = \frac{2}{a+d} = \frac{2}{1 + 27/4} = \frac{8}{31}。计算四个精确距离：
+   
+   
+   于是
+   
+ * 非局部极大证明（命题 C.1 · PROOF CANDIDATE）：
+   在 t_Q = \frac{8}{31} 处，尽管配对锁令 \Vert{}at_Q\Vert{} = \Vert{}dt_Q\Vert{} = \frac{8}{31} 达到二元包络 \min(\Vert{}at\Vert{}, \Vert{}dt\Vert{}) 的局部峰值，但第三位跑者 c 的距离 \Vert{}ct_Q\Vert{} = \frac{7}{31} < \frac{8}{31} 严格更低，成为 g(t) 在 t_Q 附近的唯一活跃约束。
+   对 t \in \left(\frac{8}{31} - \epsilon, \frac{8}{31} + \epsilon\right)（取 \epsilon = \frac{1}{1000}），由连续性知 \Vert{}ct\Vert{} < \min\{\Vert{}at\Vert{}, \Vert{}bt\Vert{}, \Vert{}dt\Vert{}\}，且 \frac{24}{31} \in (\frac{1}{2}, 1)，故：
+   
+   
+   向左微调至 t_{loc} = \frac{1}{a+c} = \frac{1}{4} = \frac{8}{32} < \frac{8}{31} 时，g(1/4) = \min\!\left\{\frac{1}{4}, \frac{1}{2}, \frac{1}{4}, \frac{5}{16}\right\} = \frac{1}{4} > \frac{7}{31} = g(t_Q)。因此 t_Q = \frac{8}{31} 不是 g(t) 的局部极大点。
+1.3 在同一速度组 V_A = (1, 3/2, 2, 25/4) 上严格区分四类时间点（CHECKED）
+为回应主席要求，我们在 V_A = (1, 3/2, 2, 25/4) 上显式给出四类截然不同的时间点：
+| 类别 | 显式时间 t | 四个距离 (\Vert{}at\Vert{}, \Vert{}bt\Vert{}, \Vert{}ct\Vert{}, \Vert{}dt\Vert{}) | g(t) 值 | 下包络局部性态与证明 |
+|---|---|---|---|---|
+| 1. 仅成功时间（非局部极大） | t_0 = \frac{1}{5} (WL) | \left(\frac{1}{5},\, \frac{3}{10},\, \frac{2}{5},\, \frac{1}{4}\right) | \frac{1}{5} = 0.20 | 邻域内 g(t) = t，g'(t_0) = +1 \ne 0，成功但非局部极大 |
+| 2. 不成功的局部极大 | t_2 = \frac{4}{29} | \left(\frac{4}{29},\, \frac{6}{29},\, \frac{8}{29},\, \frac{4}{29}\right) | \frac{4}{29} \approx 0.1379 < \frac{1}{5} | 邻域内 g(t) = \min\!\left(t, 1 - \frac{25}{4}t\right)，严格局部极大但未达门槛 |
+| 3. 成功局部极大（非全局极大） | t_3 = \frac{4}{11} | \left(\frac{4}{11},\, \frac{5}{11},\, \frac{3}{11},\, \frac{3}{11}\right) | \frac{3}{11} = \frac{87}{319} \approx 0.2727 | 邻域内 g(t) = \min\!\left(\frac{25}{4}t - 2, 1 - 2t\right)，严格局部极大且 \ge \frac{1}{5}，但 < g(8/29) |
+| 4. 更高局部极大 | t_1 = \frac{8}{29} | \left(\frac{8}{29},\, \frac{12}{29},\, \frac{13}{29},\, \frac{8}{29}\right) | \frac{8}{29} = \frac{88}{319} \approx 0.2759 | 邻域内 g(t) = \min\!\left(t, 2 - \frac{25}{4}t\right)，严格局部极大，且 g(t_1) > g(t_3) |
+二、任务 (2)：挑战“最快跑者 d 一定是活跃约束”（PROOF CANDIDATE / CHECKED）
+“最快跑者 d 在成功构造时间（乃至在 g(t) 的局部或全局极大点）必为活跃约束（即 \Vert{}dt\Vert{} = g(t)）”这一说法在所有层级上均为假。
+ * 在已认证构造输出点不活跃（CHECKED）：
+   * 在反例 1A（V_A = (1, 3/2, 2, 25/4)，t_0 = 1/5）中，唯一活跃约束是最慢跑者 a（\Vert{}at_0\Vert{}=1/5），最快跑者 d 满足 \Vert{}dt_0\Vert{} = 1/4 > 1/5（不活跃）。
+   * 在反例 1B（V_B = (1, 2, 3, 27/4)，t_Q = 8/31）中，唯一活跃约束是次快跑者 c（\Vert{}ct_Q\Vert{}=7/31），最快跑者 d 满足 \Vert{}dt_Q\Vert{} = 8/31 > 7/31（不活跃）。
+ * 在 \mathbb{R} 上的全局极大点处 d 依然严格不活跃（命题 C.2 · PROOF CANDIDATE）：
+> 命题 C.2（全局极大点处最快跑者不活跃定理 · PROOF CANDIDATE）
+> 设 (a, b, c) = (1, 2, 3)，且令最快速度 d 取开区间 (5, 7) 内的任意实数（含无理数，如 d = 4\sqrt{3} - 1 \approx 5.928，或有理数 d = 27/4, 6）。则：
+>  * (1, 2, 3, d) 严格位于中段走廊 \Omega = \{4a < d < 4c\} = (4, 12) 内；
+>  * 下包络函数 g(t) = \min\{\Vert{}t\Vert{}, \Vert{}2t\Vert{}, \Vert{}3t\Vert{}, \Vert{}dt\Vert{}\} 在整个实轴 \mathbb{R} 上的全局最大值为 \max_{t \in \mathbb{R}} g(t) = \frac{1}{4} > \frac{1}{5}，在 t^* = \frac{1}{4} 处取得；
+>  * 在全局极大点 t^* = \frac{1}{4} 处，活跃约束集合仅为 \{a, c\}（\Vert{}at^*\Vert{} = \Vert{}ct^*\Vert{} = \frac{1}{4}），而最快跑者 d 恒满足 \Vert{}dt^*\Vert{} > \frac{1}{4} = g(t^*)，严格不活跃。特别地，当 d = 6 时，g(t) 在 \mathbb{R} 上的每一个全局极大点 t = k \pm \frac{1}{4}（k \in \mathbb{Z}）处均有 \Vert{}dt\Vert{} = \frac{1}{2}（最大可能余量）。
+> 
+ * 手算证明：
+   先证对任意 t \in \mathbb{R} 都有 g_{abc}(t) := \min\{\Vert{}t\Vert{}, \Vert{}2t\Vert{}, \Vert{}3t\Vert{}\} \le \frac{1}{4}，且等号成立当且仅当 t \equiv \pm \frac{1}{4} \pmod 1：
+   由周期 1 与偶对称性 g_{abc}(1-t) = g_{abc}(t)，只需考察 t \in [0, 1/2]：
+   * 当 t \in [0, 1/4] 时，\Vert{}t\Vert{} = t \le \frac{1}{4}，等号仅在 t = \frac{1}{4} 取得；
+   * 当 t \in (1/4, 3/8] 时，3t \in (3/4, 9/8]，故 \Vert{}3t\Vert{} = \vert{}1 - 3t\vert{} \le \max\!\left(\frac{1}{4}, \frac{1}{8}\right) < \frac{1}{4}；
+   * 当 t \in (3/8, 1/2] 时，2t \in (3/4, 1]，故 \Vert{}2t\Vert{} = 1 - 2t < 1 - \frac{3}{4} = \frac{1}{4}。
+     因此 \forall t \in \mathbb{R}，有 g(t) \le g_{abc}(t) \le \frac{1}{4}。
+     现取 t^* = \frac{1}{4}。此时 \Vert{}at^*\Vert{} = \frac{1}{4}，\Vert{}bt^*\Vert{} = \frac{1}{2}，\Vert{}ct^*\Vert{} = \frac{1}{4}。因 d \in (5, 7)，有 dt^* = \frac{d}{4} \in \left(\frac{5}{4}, \frac{7}{4}\right)，从而
+     
+     
+     于是 g(1/4) = \frac{1}{4}，达到 \mathbb{R} 上的全局上界 \frac{1}{4}，且在 t^* = \frac{1}{4} 的邻域内 g(t) = \min(t, 1-3t)，故 t^* = \frac{1}{4} 既是严格局部极大点又是 \mathbb{R} 上的全局极大点，而 \Vert{}dt^*\Vert{} > \frac{1}{4} 严格不活跃。
+     当 d = 6 时，g(t) 的任一全局极大点必满足 g_{abc}(t) = \frac{1}{4}，即 t = k \pm \frac{1}{4}（k \in \mathbb{Z}），此时 6t = 6k \pm \frac{3}{2}，故 \Vert{}6t\Vert{} = \frac{1}{2} > \frac{1}{4}。证毕。
+三、任务 (3)：对普遍选择规则与非首簇构造的对抗性审查（PROOF CANDIDATE）
+3.1 六种配对和锚点上任意有限乘子菜单的严格不可能性证明（命题 C.3 · PROOF CANDIDATE）
+针对 R014 裁决第三条指出的 UNFINISHED 问题（有限相位菜单是否必留缺口），我们在六种配对和锚点 p+q \in \{a+b, a+c, a+d, b+c, b+d, c+d\} 的精确范围内给出完整代数证明：
+> 命题 C.3（配对和锚点有限乘子菜单障碍定理 · PROOF CANDIDATE）
+> 设 \mathcal{T} = \{\tau_1, \dots, \tau_m\} \subset (0, +\infty) 为任意有限个正实数相位乘子组成的集合（不限整数、半整数、四分之一整数或无理数），记 \tau_{\max} = \max_{1 \le j \le m} \tau_j。考虑由全部 \binom{4}{2} = 6 种配对和锚点构成的有限候选菜单：
+> 
+> 
+> 则对中段走廊 \Omega = \{4a < d < 4c\} 内满足
+> 
+> 
+> 的任意实数速度组 (a, b, c, d)（此类速度组在 \Omega 内构成非空无界开集，例如取 M_0 = \max(3, \lceil 5\tau_{\max} \rceil)，令 (a,b,c,d) = (1, M_0, M_0+1, M_0+2)），菜单 \mathcal{M}(\mathcal{T}) 中的所有 6m 个候选时间全部失败。
+> 
+ * 手算证明：
+   任取 \{p, q\} \subset \{a, b, c, d\}（p < q）及 \tau \in \mathcal{T}。因 a < b < c < d，必有 p \ge a 且 q \ge b，从而
+   
+   
+   对于候选时间 t = \frac{\tau}{p+q}，最慢跑者 a 的相位满足：
+   
+   
+   因此 \Vert{}at\Vert{} = at < \frac{1}{5}，在跑者 a 处直接违背门槛 \frac{1}{5}。证毕。
+ * 结构推论（解释见证点 V_4 = (1, 30, 60, 80)）：
+   对 V_4 = (1, 30, 60, 80)，有 \frac{a+b}{5a} = \frac{31}{5} = 6.2。由命题 C.3 立即推出：当 \tau_{\max} = 6 时，六种配对锚点在 \tau \le 6 内的任何实数乘子 \tau 下都必然令 at \le \frac{6}{31} < \frac{1}{5}，无需枚举即可证明其全部失败。因此，任何能覆盖非首簇（b/a \gg 1）的配对锁规则，其相位乘子 \tau 必须是随速度比 b/a 无界增长的代数函数（满足 \tau \ge \frac{p+q}{5a}）。
+3.2 非首簇 (b, c, d) = (b, 2b, 3b) 的谐振锁死与安全子窗分裂障碍（命题 C.4 · PROOF CANDIDATE）
+针对 Track A/B 试图先在非首簇 (b, c, d) 上用 b+c 锚点或固定子窗选点、再并入慢跑者 a 的方案，我们构造精确谐振障碍：
+> 命题 C.4（谐振非首簇 (b, 2b, 3b) 障碍命题 · PROOF CANDIDATE）
+> 设非首簇满足 c = 2b，d = 3b，且 0 < a < b，\frac{3}{4}a < b（此时 4a < 3b = d < 8b = 4c，故 (a, b, 2b, 3b) \in \Omega）。则：
+>  * (b+c) 锚点在整数与半整数相位上全灭： 对任意整数 \tau = k \in \mathbb{Z}，t = \frac{k}{b+c} = \frac{k}{3b} 恒使 dt = k \in \mathbb{Z}，即 \Vert{}dt\Vert{} = 0 < \frac{1}{5}；对任意半整数 \tau = k + \frac{1}{2}，t = \frac{2k+1}{6b} 在 k \equiv 1 \pmod 3 时使 ct = \frac{2k+1}{3} \in \mathbb{Z}（\Vert{}ct\Vert{} = 0），在 k \not\equiv 1 \pmod 3 时使 \Vert{}bt\Vert{} = \left\Vert{}\frac{2k+1}{6}\right\Vert{} = \frac{1}{6} < \frac{1}{5}。
+>  * 非首簇完整安全集分裂为极窄双带： 在整個实轴 t \in \mathbb{R} 上，非首簇 (b, 2b, 3b) 满足 \min\{\Vert{}bt\Vert{}, \Vert{}ct\Vert{}, \Vert{}dt\Vert{}\} \ge \frac{1}{5} 当且仅当 x = bt 落在宽度仅为 \frac{1}{15} 的周期窄带内：
+>    
+>  * 首子窗选择规则的反例与无理速度比碰撞：
+>    * 对有理速度组 V_{harm} = (11, 15, 30, 45) \in \Omega（4a=44 < d=45 < 120=4c），若非首簇规则选取第一安全子窗 bt \in \left[\frac{1}{5}, \frac{4}{15}\right]（包含 (b+d) 锁 t = \frac{1}{b+d} = \frac{1}{60}，即 bt = \frac{1}{4}），则 at = \frac{11}{15}bt \in \left[\frac{11}{75}, \frac{44}{225}\right]，因 \frac{44}{225} < \frac{45}{225} = \frac{1}{5}，整条第一安全子窗在 a 处恒失败；而第二安全子窗 bt \in \left[\frac{11}{15}, \frac{4}{5}\right]（例如 t = \frac{3}{b+d} = \frac{1}{20}，bt = \frac{3}{4}）则使 at = \frac{11}{20} \in \left[\frac{1}{5}, \frac{4}{5}\right] 成功。
+>    * 对无理速度比速度组 V_{irr} = \left(1,\, \frac{5\sqrt{2}}{2},\, 5\sqrt{2},\, \frac{15\sqrt{2}}{2}\right) \in \Omega（因 \sqrt{2} \in (1.414, 1.415)，b = \frac{5\sqrt{2}}{2} \approx 3.5355，d = \frac{15\sqrt{2}}{2} \approx 10.6066 \in (4, 20\sqrt{2})），在非首簇的整个 m=0 周期内：
+>      * 第一子窗 bt \in \left[\frac{1}{5}, \frac{4}{15}\right] 给出 at = \frac{\sqrt{2}}{5}bt \in \left[\frac{\sqrt{2}}{25}, \frac{4\sqrt{2}}{75}\right] < \frac{6}{75} < \frac{1}{5}（失败）；
+>      * 第二子窗 bt \in \left[\frac{11}{15}, \frac{4}{5}\right] 给出 at = \frac{\sqrt{2}}{5}bt \in \left[\frac{11\sqrt{2}}{75}, \frac{4\sqrt{2}}{25}\right]，而因 \sqrt{2} > \frac{7}{5} = 1.4？不对，16 \times 2 = 32 < 25 \times \frac{25}{...} 精确核验：(4\sqrt{2})^2 = 32 < 25 = 5^2 不成立，實为 (4\sqrt{2})^2 = 32 > 25 = 5^2，即 \frac{4\sqrt{2}}{25} > \frac{5}{25} = \frac{1}{5}！若取 b = 4\sqrt{2}，则 V'_{irr} = (1, 4\sqrt{2}, 8\sqrt{2}, 12\sqrt{2}) \in \Omega（4 < 12\sqrt{2} < 32\sqrt{2}），在整個 m=0 周期 bt \in \left[\frac{1}{5}, \frac{4}{5}\right] 上，有 at = \frac{bt}{4\sqrt{2}} \le \frac{4/5}{4\sqrt{2}} = \frac{1}{5\sqrt{2}} < \frac{1}{5}，故 m=0 的两个子窗全部失败，必须跃迁至 m=1 周期的 bt \in \left[\frac{6}{5}, \frac{19}{15}\right]（此时 at = \frac{bt}{4\sqrt{2}} \in \left[\frac{3}{10\sqrt{2}}, \frac{19}{60\sqrt{2}}\right] \subset \left[\frac{1}{5}, \frac{4}{5}\right]，因为 (3/2)^2 = 9/4 > 2 \implies \frac{3}{10\sqrt{2}} > \frac{1}{5}）。
+> 
+ * 手算证明（第 2 条）：
+   令 x = bt \pmod 1 \in [0, 1)。由对称性先看 x \in [0, 1/2]：
+   * \Vert{}x\Vert{} \ge \frac{1}{5} \iff x \in \left[\frac{1}{5}, \frac{1}{2}\right]；
+   * 在 \left[\frac{1}{5}, \frac{1}{2}\right] 上，2x \in \left[\frac{2}{5}, 1\right]，故 \Vert{}2x\Vert{} \ge \frac{1}{5} \iff 2x \in \left[\frac{2}{5}, \frac{4}{5}\right] \iff x \in \left[\frac{1}{5}, \frac{2}{5}\right]；
+   * 在 \left[\frac{1}{5}, \frac{2}{5}\right] 上，3x \in \left[\frac{3}{5}, \frac{6}{5}\right]，故 \Vert{}3x\Vert{} \ge \frac{1}{5} \iff 3x \in \left[\frac{3}{5}, \frac{4}{5}\right] \iff x \in \left[\frac{1}{5}, \frac{4}{15}\right]。
+     由 x \leftrightarrow 1-x 对称性，在 [1/2, 1) 上唯一合法区间为 \left[1 - \frac{4}{15}, 1 - \frac{1}{5}\right] = \left[\frac{11}{15}, \frac{4}{5}\right]。证毕。
+四、仍未覆盖的条件与总结（UNFINISHED）
+ * 下包络视角的核心结论：
+   * 成功构造时间不必是 g(t) 的局部极大点（WL 在 V_A 上给斜率 +1，Qwen R013 在 V_B 上给斜率 -3）；
+   * 最快跑者 d 不必是活跃约束，甚至在 \mathbb{R} 上的严格全局极大点处也可完全不活跃（命题 C.2）；
+   * 因此，Track A/B 不应将目标设定为“寻找 g(t) 的局部峰值”或“默认假定 d 必处于边界 1/5 或与某跑者锁相构成 g(t) 峰值”，而应把配对锁 t = \tau/(p+q) 视为将二元包络 \min(\Vert{}pt\Vert{}, \Vert{}qt\Vert{}) 抬高至 \ge 1/5 的代数工具，同时用不等式保证其余两个跑者在该点处的下包络值 \ge 1/5。
+ * 无限制 F5 的剩余缺口（UNFINISHED）：
+   在中段走廊 \Omega = \{4a < d < 4c\} 内，当 (b, c, d) 既不满足 NW（速度比不够分散），又不满足 SLN1/SLN-odd（如 \theta = \frac{b}{b+c} 接近 \frac{1}{3} 且 d < \frac{3}{2}c，或处于命题 C.4 的 (b, 2b, 3b) 谐振带附近），且超出 Qwen R013/P1/B1 的 c < 4a 范围时（如 V_2 = (1, 2, 3, 9/2)、V_3 = (1, 3, 4, 7)、V_4 = (1, 30, 60, 80) 及 V_{harm} = (11, 15, 30, 45)），仍缺乏统一的确定性分支选择公式。无限制 F5 仍为 UNFINISHED。
