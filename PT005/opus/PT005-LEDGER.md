@@ -15,6 +15,7 @@ Updated: 2026-10-16 13:07 +0800 (L23 added, p = 443, PROVISIONAL, status OFFICE-
 Updated: 2026-10-18 04:46 +0800 (L20 p=383 and L21 p=397 PROVISIONAL -> REPRODUCED, second machine K11; L24 p=463 added, PROVISIONAL; approved by Tuzi in chat 2026-10-18 04:46, chair notes 100, 101. Gate totals: closed 39.00; provisional 18.30 (L22, L23, L24); together 57.30 of 481.07).
 Updated: 2026-10-18 17:08 +0800 (L22 p=431 PROVISIONAL -> REPRODUCED, second machine K11; decided by chair under Amendment 1 (e6009d8), checks: Puck own compare (letter to chair 17:07, 514/514, 0 mismatches) and chair compare (note 105). Gate totals: closed 45.07; provisional 12.23 (L23, L24); together 57.30 of 481.07).
 Updated: 2026-10-19 11:14 +0800 (L25 p=461 added, PROVISIONAL, status OFFICE-RUN, CHAIR-SPOT-CHECKED; decided by chair under Amendment 1 (e6009d8), checks: chair (note 107, c4d5ae1) and Puck four-eyes count check MATCH (1be8e2f). Gate totals: closed 45.07; provisional 18.36 (L23, L24, L25); together 63.43 of 481.07).
+Updated: 2026-10-19 16:22 +0800 (L23 p=443 PROVISIONAL -> REPRODUCED, second machine K11; decided by chair under Amendment 1 (e6009d8), checks: chair compare (note 110) and Puck own compare 0/556 differ (2004f8a). Gate totals: closed 51.16; provisional 12.27 (L24, L25); together 63.43 of 481.07).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY · OFFICE-RUN, CHAIR-SPOT-CHECKED.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -332,3 +333,11 @@ CHAIR CHECKS = job list regenerated (bgk15 irroots/irsubroots): 602 = 602, equal
          2 of 2 MATCH (PT005/opus/chk1015/spot461_out.jsonl).
 NOT    = REPRODUCED.
 Gate totals: closed 45.07 (L2…L14, L20, L21, L22); provisional 18.36 (L23 443, L24 463, L25 461); together 63.43 of 481.07.
+
+## L23 · status change: p = 443 REPRODUCED (second machine)
+STATUS = REPRODUCED · decided by chair 2026-10-19 16:22 +08 under Amendment 1 (e6009d8),
+         four-eyes: Puck (own compare, 2004f8a, 556 = 556 jobs, 0 differ) and chair (note 110).
+SCOPE  = as L20–L22 for p = 443. K11 second full run of part (a) (PT005/hesper/k11/p443a-results/, ir.jsonl sha256 651cb300…): same pinned
+         runner 90632d55…, same patched cascade source f17094de…; chair compared job by job (r, s, rows, nodes, casc_rows,
+         casc_survivors, deep, n_survivor_lines): 556 = 556, 0 differences; Σrows 993, km1 27 roots, 0 covers. Same code on both machines.
+Gate totals: closed 51.16 (L2…L14, L20, L21, L22, L23); provisional 12.27 (L24 463, L25 461); together 63.43 of 481.07.
