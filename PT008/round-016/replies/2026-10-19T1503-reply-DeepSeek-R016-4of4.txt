@@ -1,0 +1,251 @@
+Deepseek: R016 4/4
+
+ANSWER BLOCK：LE、LE-1 均审阅通过（PROOF VERIFIED）。LE 的局部方向判据与 R015 单侧窗口判据重合；新内容是分量端点必为某速度边沿、孤立点必为对向锁相。Track D：单侧窗口判据对任意实数成立；n→n+1 传递需要“方向兼容 + 窗口长度 ≥ 相位修正量”，无此不变量则不传递，已给反例。V4 由固定 k=20 的锁盒规则覆盖，含非平凡邻域；状态 PROOF CANDIDATE / 数值 CHECKED。无限制 F5 未闭合。最不确定：V4 邻域与未列出候选规则的边界重叠未穷举。
+
+---
+
+一、LE 审阅
+
+R1 精确假设
+
+V=\{v_1,\dots,v_m\}\subset(0,\infty) 有限，0<\delta<1/2，
+
+S=\{t>0:\ \|v_i t\|\ge\delta,\ i=1,\dots,m\},
+
+
+且 S\ne\varnothing。
+
+R2 符号证明复核
+
+· 连续性：g(t)=\min_i\|v_i t\| 连续，S=g^{-1}([\delta,\infty)) 在 (0,\infty) 闭。
+· 有界性：令 m_0=\min V。在 t=k/m_0 处 \|m_0 t\|=0，故 S 不能跨过这些点；每个连通分量夹在相邻 k/m_0 之间，是有界闭区间。又 t\to0^+ 时 g(t)\to0<\delta，故左端 \alpha>0。
+· 左端：存在 t_n\uparrow\alpha，t_n\notin S。有限 V 给子列及某 v 使 \|v t_n\|<\delta 无穷多次。连续性给 \|v\alpha\|\le\delta；\alpha\in S 给 \|v\alpha\|\ge\delta，故 =\delta。若 v\alpha\equiv1-\delta\pmod1，则左侧充分近处
+  \|v t\|=1-\delta-v(\alpha-t)>\delta
+
+
+  当 v(\alpha-t)<1-2\delta（因 \delta<1/2），与子列 \|v t_n\|<\delta 矛盾。故 v\alpha\equiv\delta，即
+  \alpha=\frac{j+\delta}{v},\quad j=\lfloor v\alpha\rfloor\ge0.
+· 右端对称：\beta=(j'+1-\delta)/u。
+
+R3 边界
+
+\delta\in(0,1/2) 保证 1-2\delta>0，上述左侧矛盾成立；\delta=1/2 不在假设内。孤立点作为单点紧区间 [t^*,t^*] 也包含在陈述内。
+
+R4 审阅结论
+
+PROOF VERIFIED。
+
+与 R015 单侧窗口判据对照：R015 说“右移可行 iff 无上沿活跃；左移可行 iff 无下沿活跃”。LE 的证明正是用左端必须有下沿活跃、右端必须有上沿活跃。重合部分：局部方向判据。新内容：全局分量端点必为某速度的边沿时间，且给出精确形式 E^\pm(v,j)。
+
+---
+
+二、LE-1 审阅
+
+R1 精确假设
+
+同 LE，且 t^*\in S 是 S 的孤立点。
+
+R2 符号证明复核
+
+孤立点即单点分量 [t^*,t^*]。由 LE，t^* 同时是左端和右端：
+
+t^*=\frac{j_v+\delta}{v}=\frac{j_u+1-\delta}{u}.
+
+
+若 u=v，则
+
+j_v+\delta=j_u+1-\delta
+\Rightarrow 2\delta=j_u-j_v+1\in\mathbb Z,
+
+
+与 0<2\delta<1 矛盾。故 u\ne v。相加：
+
+(u+v)t^*=j_v+\delta+j_u+1-\delta=j_u+j_v+1=:k\in\mathbb Z,
+
+
+即
+
+t^*=\frac{k}{u+v}.
+
+
+又 u t^*=j_u+1-\delta，故
+
+\operatorname{frac}\!\left(\frac{k u}{u+v}\right)
+=\operatorname{frac}(u t^*)=1-\delta.
+
+
+这正是“下沿—上沿”对向锁相的必要形式。
+
+R3 边界
+
+u=v 的排除依赖 \delta\ne1/2，已在假设内。k 是某个整数，不声称是最小整数；LE-1 是必要条件，不声称任意 k/(u+v) 都成功。
+
+R4 审阅结论
+
+PROOF VERIFIED。
+
+新内容：把孤立成功点化为两位对向活跃跑者的锁相时间，并给出 k 的整数形式。它不与 R015 判据冲突；R015 只给局部可移动性，LE-1 给孤立点的全局代数形状。注意：LE-1 不是充分条件，不能反过来把任意对向锁相当作成功点。
+
+---
+
+三、Track D · 单侧安全窗口判据（任意实数速度）
+
+设速度集 V=\{u_i>0\} 有限，阈值 \delta>0，成功点 t_0。活跃集
+
+A(t_0)=\{i:\|u_i t_0\|=\delta\}.
+
+
+对 i\in A(t_0)，相位 u_i t_0=n_i+\varepsilon_i，其中
+
+\varepsilon_i=\delta\quad\text{（下沿）}
+\quad\text{或}\quad
+\varepsilon_i=1-\delta\quad\text{（上沿）}.
+
+
+下沿活跃阻止左移，不阻止右移；上沿活跃阻止右移，不阻止左移。
+
+判据（对任意实数速度成立）：
+
+· 存在右侧正长度安全区间 \iff A(t_0) 中没有上沿活跃。
+· 存在左侧正长度安全区间 \iff A(t_0) 中没有下沿活跃。
+· 存在双侧正长度安全区间 \iff A(t_0)=\varnothing，即所有跑者有严格正余量。
+· 若同时存在下沿活跃和上沿活跃，则无任何单侧安全区间。
+
+理由：有限集，非活跃跑者有正余量；上沿活跃向右立即跌破 \delta，下沿活跃向左立即跌破 \delta。不需要假设 t_0 有正余量。
+
+反例（CHECKED）：N=4，速度 (1,3,21/5)，\delta=1/4，t_0=5/12。距离：
+
+5/12,\quad \|3\cdot5/12\|=\|5/4\|=1/4,\quad
+\|(21/5)\cdot5/12\|=\|7/4\|=1/4.
+
+
+3t_0=1+1/4 为下沿；(21/5)t_0=2-1/4 为上沿。故无左、无右单侧窗口。
+
+---
+
+四、n→n+1 的单侧传递
+
+旧总人数 N，旧阈值 1/N，旧成功点 t_0 有右侧窗口 [t_0,t_0+h]（或左侧）。新增速度 w，新阈值
+
+\delta_{\rm new}=\frac1{N+1}.
+
+
+旧跑者在新阈值下有余量至少
+
+\frac1N-\frac1{N+1}=\frac1{N(N+1)}.
+
+
+故旧跑者在 t_0 附近仍安全；传递只取决于新跑者。
+
+若 \|w t_0\|\ge\delta_{\rm new} 且 w 不是上沿活跃（对右侧传递），则 t_0 本身成功，右侧小窗口存在。若 w 上沿活跃，则右侧立即失败。若 \|w t_0\|<\delta_{\rm new}，需要移动 t 到 w 的最近安全边界；设所需右移量为
+
+\Delta_+=\frac{\delta_{\rm new}-\operatorname{frac}(w t_0)}{w}
+\quad\text{或类似到上沿的右移量}.
+
+
+精确缺失不变量：必须同时有
+
+\text{（方向兼容）}\quad \text{新速度需要移动的方向与旧窗口方向一致},
+
+
+
+\text{（长度匹配）}\quad \Delta \le h.
+
+
+仅有“成功点”不够；仅有“单侧窗口”也不够，方向必须匹配。L2 的条件 w\ge NM 只是保证所需移动量不超过一个通用上界，并不保证与任意已有单侧窗口方向兼容。
+
+失败反例：上述 NW 点 t_0=5/12 同时有下沿和上沿活跃，无任何单侧窗口。若新增速度在该点不安全且需要任一方向移动，则无法从该点传递。这正说明缺少的假设是“方向兼容且长度足够的单侧窗口”，而不是某个全局速度比条件。
+
+---
+
+五、优先见证 V4 的确定性代数构造
+
+V4：
+
+(a,b,c,d)=(1,30,60,80),\quad t=\frac{20}{b+c}=\frac{20}{90}=\frac29.
+
+
+距离：
+
+at=\frac{20}{90}=\frac29,\quad
+bt=\frac{20\cdot30}{90}=\frac{20}{3}=6+\frac23,
+
+
+
+ct=\frac{20\cdot60}{90}=\frac{40}{3}=13+\frac13,\quad
+dt=\frac{20\cdot80}{90}=\frac{160}{9}=17+\frac79.
+
+
+距离为 2/9,1/3,1/3,2/9，全部 \ge1/5。这是 k=20 的 (b,c) 整数锁：
+
+t=\frac{k}{b+c}.
+
+规则 R20（PROOF CANDIDATE）
+
+设 0<a<b<c<d。若
+
+80\le \frac{b+c}{a}\le 100,
+
+
+
+0.32\le \frac{b}{b+c}\le 0.34,
+
+
+
+0.88\le \frac{d}{b+c}\le 0.89,
+
+
+则输出
+
+t=\frac{20}{b+c}>0.
+
+
+记
+
+s=\frac{b+c}{a},\quad \theta=\frac{b}{b+c},\quad w=\frac{d}{b+c}.
+
+
+则
+
+at=\frac{20}{s},\quad bt=20\theta,\quad ct=20(1-\theta),\quad dt=20w.
+
+
+在所述区间内：
+
+at\in[0.2,0.25]\subset[1/5,4/5],
+
+
+
+bt\in[6.4,6.8],\quad \operatorname{frac}(bt)\in[0.4,0.8]\subset[1/5,4/5],
+
+
+
+ct=20-20\theta\in[13.2,13.6],\quad
+\operatorname{frac}(ct)=1-\operatorname{frac}(bt)\in[0.2,0.6]\subset[1/5,4/5],
+
+
+
+dt\in[17.6,17.8],\quad \operatorname{frac}(dt)\in[0.6,0.8]\subset[1/5,4/5].
+
+
+故四距离均 \ge1/5。V4 满足
+
+s=90,\quad \theta=1/3\approx0.3333,\quad w=8/9\approx0.8889,
+
+
+位于盒内部；该盒给出 V4 的非平凡实数邻域。规则只做有限次比较，不搜索。
+
+与已认证规则清单核对（V4，CHECKED）
+
+· TN：d\le4a 即 80\le4，否。
+· LN：d\ge4c 即 80\ge240，否。
+· WL：需 c<4a 即 60<4，否。
+· K5：需 c\le8a/3 即 60\le8/3，否。
+· HB：r=c/b=2，不在 (1,8/7]\cup[4,13/2]，否。
+· C1：需 r\le8/7，否。
+· P1/B1：下界 5c/2-a=149，80<149，否。
+· SLN1：\mu=c/(5d)=60/400=0.15，(S1) 需 \theta\le3/5-2\mu=0.3，但 \theta=1/3>0.3，否。
+· NW：\lambda_3=2c/(5d)=120/400=0.3，\lambda_2=(b/c)(1+\lambda_3)=0.5\cdot1.3=0.65>0.6，否。
+· TE：x=b/a=30；AL 需 x\in\cup[5m+1,5m+4]，30 不在；AU 需 x\in\cup[(5m+1)/4,(5m+4)/4]，30 不在，否。
+
+因此 V4 不被列出的已认证规则覆盖；R20 覆盖 V4 及其邻域。该规则是新候选，状态 PROOF CANDIDATE，数值核对为 CHECKED；不宣称已认证或闭合 F5。剩余缺口：R20 只是一个固定 k=20 的盒，不是任意速度的通用选择规则；如何由比例确定 k 仍是 UNFINISHED。
