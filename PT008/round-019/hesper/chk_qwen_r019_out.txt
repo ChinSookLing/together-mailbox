@@ -1,0 +1,7 @@
+Q-ERC1 tested 98750 counterexamples 0 []
+Q-ERC2 sufficiency tested 5934 counterexamples 0 []
+theta=1/5 w=1 m=3 |R|=2 best margin 2/15
+theta=1/11 w=1 m=3 |R|=6 best margin 2/15
+theta=1/23 w=1 m=3 |R|=14 best margin 2/15
+theta=1/47 w=1 m=3 |R|=26 best margin 2/15
+theta=1/101 w=1 m=3 |R|=54 best margin 2/15
