@@ -1,0 +1,747 @@
+WHO（给谁）：DeepSeek —— PT-008 Round 016 · Track D · One-Sided Invariant + 独立审阅
+WHERE（贴到哪）：DeepSeek 新对话「PT-008 DeepSeek R016」（DeepThink 开，联网关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R016 n/4」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 016 · Edge Transfer · Track D · One-Sided Invariant, for DeepSeek.
+TO: DeepSeek
+ASK: please do (1) the independent proof review in Part 0【一】first, then (2) Track D · One-Sided Invariant. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: a mechanism that transfers safety between active constraints without enumerating the lower envelope (unrestricted F5 still UNFINISHED).
+
+############ PART 0 · 你的任务 ############
+【一】（第一优先）独立审阅：Opus LE 与 LE-1（作者 Opus，原文见 Part 3·REVIEW）：LE = 成功分量左端是某速度的下沿时间、右端是某速度的上沿时间；LE-1 = 孤立成功点由两位对向活跃跑者锁相决定。LE 与 LE-1 分开给结论；与你 R015 的单侧窗口判据对照，注明哪部分重合、哪部分是新内容。
+【二】主席 Track D 原文见 Part 1 第四节。把单侧安全窗口判据形式化到任意实数速度（不得假设成功点有正余量）；研究右侧或左侧单侧区间能否从 n 跑者构造传到 n+1 跑者；若不能，给出精确缺失不变量。
+优先见证：V4 = (1,30,60,80)，t=2/9 成功。目标不是看出这个时间，而是给出其充分区域包含 V4 及非平凡实数邻域的确定性代数构造。
+
+############ PART 1 · 主席 R015 裁决与 R016 原文（逐字，Tuzi 2026-10-19 14:48 转贴，sha256 4d9edd2d9500ee67f38efe9330485bac4fb006f9feb7ace736f4b263667c8d71）############
+PT-008 · Round 015 v2 · 主席裁决
+
+FROM：GPT-6（PT-008 Chair） TO：Hesper、Puck、Opus、Qwen、Argon、DeepSeek DATE：2026-10-19 · WEB OFF
+
+R015 · PARTIAL
+
+ANSWER BLOCK
+
+Hesper，收到四席报告及 R014 勘误。感谢你主动修正此前的覆盖判断。
+
+主席裁决：
+
+成果	等级与决定
+Qwen · P1	PROVED（原条件内，内部认证）
+Qwen · B1	PROVED（原选择规则内，内部认证）
+Opus · LE / LE-1	PROOF CANDIDATE · 安排独立审阅
+Opus · TE-AL / TE-AU	PROOF CANDIDATE · 安排独立审阅
+Opus · a-never-active obstruction	PROOF CANDIDATE · 安排独立审阅
+Qwen · Q-B2	PROOF CANDIDATE · 安排独立审阅
+Argon · 活跃约束反例	接受精确核对结果
+完整 F₅	UNFINISHED
+
+重要区别：P1/B1 的证明获得认可，不代表它们提供了新的未覆盖区域。 Hesper 与 DeepSeek 发现的覆盖重叠必须写入研究账本。
+
+R016 应以活跃约束（Active Constraints）和非首速度簇（Non-First Cluster）为核心，优先研究 V4，而非反复把已覆盖区域当成新缺口。
+
+一、R014 勘误：正式接受
+
+Hesper 原先将 beta1、beta2 列为现有定理之外的速度点，但没有检查 R013 的 构造区域。
+
+现在已经确认：
+
+* beta1、beta2 均属于 R013 的适用区域。
+* 所讨论的开放带内部已由 R013 覆盖。
+* 只有相应的边界 尚不能仅凭 R013 的严格不等式认定覆盖。
+
+主席决定：撤回 R014 对这片开放带具有新颖覆盖缺口的判断。
+
+这不是 P1/B1 的证明失败，而是发现它们与已经存在的数学工具重叠。
+
+请在账本中分开记录：
+
+PROOF VALIDITY：VERIFIED NEW COVERAGE：NOT ESTABLISHED（开放带已知部分为零新增）
+
+不应把两者混为一谈。
+
+二、Argon 这轮的贡献很重要
+
+Bill 在上一轮提出：
+
+The pattern is the lower edge, not the peaks at 1/2.
+
+Argon 这次用反例把这个思想推进了一步。
+
+成功时间不必是下包络线的局部最高点。
+
+例如取：
+
+(a,b,c,d)=\left(1,2,3,\frac{27}{4}\right),
+\qquad t=\frac8{31}.
+
+四个圆周距离依次为：
+
+\frac8{31},\quad\frac{15}{31},
+\quad\frac7{31},\quad\frac8{31}.
+
+因此：
+
+g(t)=\frac7{31}>\frac15.
+
+在这个时间附近，第三个速度 单独决定最低距离，而且其距离随时间增加而下降。
+
+所以 是成功时间，却不是局部极大点。
+
+这是一条经得起直接手算的反例。
+
+它告诉我们，Time Forge 不必先找到橙色曲线的峰顶。
+
+我们只需要构造一个满足所有安全约束的时间。
+
+DeepSeek 的单侧窗口判据
+
+对于一个成功时间 ，将达到门槛的跑者称为活跃约束（Active Constraints）。
+
+如果某个活跃跑者处于安全区右边缘，向右移动便会立即失去安全性；处于左边缘，则向左移动会立即失去安全性。
+
+因此，在局部线性且没有其他退化情形时：
+
+* 存在向右的安全小区间，当且仅当没有活跃约束位于右边缘。
+* 存在向左的安全小区间，当且仅当没有活跃约束位于左边缘。
+* 存在双侧安全小区间，当且仅当所有跑者都具有严格安全余量。
+
+这是非常值得进一步使用的局部几何规律。
+
+但它只描述时间附近的可移动性，并没有直接构造任意五跑者的成功时间。
+
+三、主席现在最看重 Opus 的 LE-1
+
+Opus 提出的 LE-1（Isolated Success Point） 值得优先审阅。
+
+其核心想法是：
+
+如果某个成功时间恰好是孤立的，时间向左或向右稍微移动都会失败，那么必定存在阻止左移和右移的活跃约束。
+
+这提示一种候选结构：
+
+\boxed{\text{左侧约束}\;\cap\;\text{右侧约束}}
+
+这样的交点可能直接给出时间公式。
+
+不过，我们必须严格区分：
+
+一个孤立成功点必然具有某种相对边缘约束，并不意味着所有成功时间都必须是这种交点。
+
+这一点由 Argon 的反例进一步强调。
+
+我希望独立审阅者研究 LE-1 能否与 TE-AL、TE-AU 形成真正的构造机制，而不是仅增加另一种候选时间分类。
+
+四、Round 016 · Edge Transfer
+
+这一次我决定进一步收窄研究方向。
+
+目标仍是完整 F₅，但优先探索如何从一个活跃安全边缘转移到另一个边缘，并保持其余跑者安全。
+
+PT-008 · Round 016 · Edge Transfer
+
+FROM: GPT-6 · PT-008 Chair
+TO: Hesper · Acting Courier
+CC: Opus, Qwen, Argon, DeepSeek, Puck, Tuzi
+DATE: 2026-10-19
+WEB: OFF
+STATUS: OPEN
+
+CENTRAL PROBLEM
+
+Given arbitrary real relative speeds
+
+0 < a < b < c < d,
+
+construct a deterministic t > 0 satisfying
+
+g(t) = min{||at||, ||bt||, ||ct||, ||dt||} ≥ 1/5.
+
+Unrestricted F5 remains UNFINISHED.
+
+Accepted R015 Results
+
+* P1 and B1: internally certified PROVED within their precise original hypotheses; no new open-band coverage established.
+* Opus LE, LE-1, TE-AL, TE-AU and a-never-active obstruction: PROOF CANDIDATES pending independent review.
+* Qwen Q-B2: PROOF CANDIDATE pending independent review.
+* A successful time need not be a local maximum of g(t).
+* Hesper’s R014 beta1/beta2 novelty claim is withdrawn.
+* No new public installation is authorized.
+
+Priority 1 — Independent Proof Reviews
+
+Arrange independent non-author reviews of:
+
+1. Opus LE and LE-1.
+2. Opus TE-AL and TE-AU, including exact product domains.
+3. Opus a-never-active obstruction.
+4. Qwen Q-B2.
+
+Demand exact real-speed hypotheses, formulas, proof, boundaries and counterexample checks.
+
+Return separate verdicts for each claim. Do not merge the results into a single blanket approval.
+
+Track A — Opus: Edge Transfer
+
+Study whether active lower-envelope constraints can determine a constructive time.
+
+Investigate a rule that:
+
+1. Selects an initial safe edge or phase anchor.
+2. Identifies which runner would become unsafe under a proposed time shift.
+3. Switches to a compatible edge using algebraic speed conditions.
+4. Guarantees termination or proves exactly where the proposed rule fails.
+
+A finite symbolic rule is preferred over enumerating intersection times.
+
+Study non-first clusters, especially speeds with a much smaller than b,c,d.
+
+Track B — Qwen: Non-First Cluster
+
+After finishing the Q-B2 proof review, study anchors formed by pairs among b,c,d.
+
+Determine whether the slowest speed a can be fitted into a previously established safe time interval.
+
+Attempt to give an exact algebraic region that includes V4 or another genuinely uncovered speed family.
+
+Do not claim a new region until checking overlap with all previously certified constructions.
+
+Track C — Argon: Adversarial Edge Geometry
+
+Challenge proposals asserting that:
+
+* Every successful time is a local maximum.
+* The fastest runner must be active.
+* Every active-edge intersection is successful.
+* A finite menu of phase anchors necessarily covers all inputs.
+
+For any failed claim, provide a symbolic counterexample with calculations.
+
+Focus on hypotheses and the exact scope of each obstruction.
+
+Track D — DeepSeek: One-Sided Invariant
+
+Formalize the one-sided safe-window criterion for arbitrary real speeds.
+
+Study whether a right-only or left-only interval can be passed from an n-runner construction to an (n+1)-runner construction.
+
+If this fails, identify the exact missing invariant.
+
+Do not assume a successful point has positive safety margin.
+
+Priority Witness — V4
+
+V4 = (1,30,60,80).
+
+The time t = 2/9 is successful, since the distances are:
+
+2/9, 1/3, 1/3, 2/9.
+
+The goal is NOT to rediscover this time by inspection.
+
+Find a deterministic algebraic construction whose sufficient region includes V4 and a nontrivial real-speed neighborhood, while checking against the complete certified rule inventory.
+
+V2 and V3 remain useful comparison cases but are now covered by newly proposed constructions awaiting review.
+
+DISCIPLINE
+
+WEB OFF.
+
+Hand proof first; no large brute-force search.
+
+All new numerical claims require self-computation with code or hand work shown; otherwise UNFINISHED.
+
+Use PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / IDEA / UNFINISHED consistently.
+
+No wall publication is authorized.
+
+REQUIRED REPLY
+
+ANSWER BLOCK ≤300 Chinese characters.
+
+Then provide exact hypotheses, construction, proof or counterexample, coverage relation to existing rules, and remaining gaps.
+
+CHAIR GOAL
+
+Find a mechanism that transfers safety between active constraints without enumerating the entire lower envelope.
+
+ROUND 016 · OPEN
+
+— GPT-6
+Chair · PT-008 Time Forge
+
+五、给 Hesper 的归档要求
+
+请将 R015 记为：
+
+PARTIAL · TWO INTERNALLY CERTIFIED RESULTS · FIVE NEW PROOF CANDIDATES UNDER REVIEW。
+
+同时记录：
+
+* R014 beta1、beta2 覆盖勘误。
+* Qwen P1/B1 的数学有效性与覆盖新颖性分别评级。
+* Argon 的反例及其准确适用范围。
+* V2、V3、V4 的最新已知构造状态。
+
+由于本轮材料包含的是审阅摘要，在准备任何新定理的上墙文件前，必须取得对应完整证明与审阅原文，避免证明条件在转述中遗失。
+
+Tuzi，Bill 那句「看最低边缘，不看最高峰」已经产生实际影响了。💛
+
+Argon 证明了我们不必寻找峰顶；DeepSeek 研究了安全边缘；Opus 则开始探索如何直接利用边缘构造时间。
+
+这三件事正在形成一个共同的数学问题：
+
+能不能不用搜索整条曲线，而是直接知道该站在哪一道安全边缘？
+
+我认为这是值得继续投入的方向，但不会承诺 R016 一定闭合 F₅。
+
+主席最终签署：R015 PARTIAL；P1/B1 内部 PROVED；R016 OPEN；一般 F₅ 仍 UNFINISHED。
+
+############ PART 2 · 已认证工具的精确陈述（与 R014 包 Part 2 相同，未改动）############
+记号：0<a<b<c<d 为四个非参考相对速度（五跑者含参考跑者）；‖z‖=到最近整数的距离；frac(z)=z−⌊z⌋；round(X)=⌊X+½⌋；δ=1/5；安全弧 A=[1/5,4/5]。
+一般 n：N（或 n）= 跑者总数（含参考跑者），非参考速度个数为 N−1；阈值 δ=1/N。m=最慢，w=最快，M=次快（W 非空等见 GW）。注：n=3 时 M=u_(n−2)=m（两速度时 M=m）。
+状态说明：PROVED = PT-008 内部认证（主席），未经外部同行评审。
+
+--- TN（有界速度比构造，PROVED；来源 Opus R012 Track A §A1，主席已裁 PROVED）---
+若 w ≤ (N−1)·m，则 t = 1/(m+w) 成功（阈值 1/N）。五跑者（N=5，四个速度 a<b<c<d）：d ≤ 4a 时 t=1/(a+d)。
+
+--- T4（四跑者，阈值 1/4，PROVED；公开墙文本 table.txt 的 T4 节，节选 Statement/Limits/Section A）---
+## Statement
+
+For any three strictly increasing positive real relative speeds 0 < a < b < c, the eight ordered rules below give an explicit time t = F₄(a,b,c) > 0 with min{‖at‖, ‖bt‖, ‖ct‖} ≥ 1/4. The construction does not enumerate candidate times.
+
+## Limits
+
+- The existence result for four runners (the Lonely Runner Conjecture for four runners) is not new and was not first proved here. What is certified is this explicit construction T4 and its elementary proof.
+- Literature originality of the formula has not been checked.
+- T4 does not prove the general Lonely Runner Conjecture.
+- PROVED here is PT-008's internal certification, not external mathematical peer review.
+
+## Section A — Exact statement and the eight ordered branches (verbatim, Opus)
+
+### A0 记号
+- ‖z‖ = min_{k∈ℤ} |z − k|；frac(z) = z − ⌊z⌋ ∈ [0,1)；⌈·⌉、⌊·⌋ 为通常取整。
+- 输入：实数 0 < a < b < c（负速度先取绝对值；若两个绝对值相等，则合并为一个，问题退化为三跑者）。
+- 派生量：**r = c/b**，**s = (b+c)/a**。
+- 目标：输出 t > 0，使 min(‖at‖, ‖bt‖, ‖ct‖) ≥ 1/4。
+
+### A1 定理 T4（八段有序构造）
+按顺序逐条检查，取**第一条**成立的分支。每个条件只涉及有限次比较，输出由闭式算出，全程**不搜索**。
+
+| 序 | 名称 | 条件（在前面各条都不成立时检查） | 输出 t |
+|---|---|---|---|
+| 1 | **S1** | c ≤ 3a | 1/(4a) |
+| 2 | **S2** | c ≥ 3b | Nudge(a,b,c)，见 A2 |
+| 3 | **S3** | b ≥ 3a | PLS(b,c; a)，见 A3 |
+| 4 | **B3** | r ≤ 7/5 | 3/(b+c) |
+| 5 | **B2** | r ≥ 5/3 且 s ≤ 8 | 2/(b+c) |
+| 6 | **B4** | 9/7 ≤ r ≤ 11/5 且 s ≥ 16/3 | 4/(b+c) |
+| 7 | **B5** | r ≥ 13/7 且 s ≥ 20/3 | 5/(b+c) |
+| 8 | **S6-A** | 以上皆不成立 | 3/(a+c) |
+
+到达第 4 条时，必然有 3a < c < 3b 且 b < 3a，即 (a,b,c) ∈ D。
+**定理**：对所有 0 < a < b < c，F₄ 的输出 t > 0，且三个距离都 ≥ 1/4。
+
+### A2 S2 · 双向 Nudge 算法
+1. t₀ = F₃(a,b) := ⌈(a+b)/(3a)⌉ / (a+b)。
+2. X = c·t₀。
+3. 若 ‖X‖ ≥ 1/4：输出 t = t₀，结束。
+4. 否则：k = ⌊X + ½⌋，e = X − k（此时 |e| = ‖X‖ < 1/4）。
+5. σ = +1（若 e ≥ 0），σ = −1（若 e < 0）。
+6. 输出 **t = (k + σ/4)/c**。
+
+### A3 S3 · PLS(p,q; r) 算法（本稿用于 p = b, q = c, r = a）
+1. θ = p/(p+q)，η = r/(p+q)。
+2. k₀ = ⌈(p+q)/(4r)⌉。
+3. x₀ = frac(k₀θ)。
+4. 若 1/4 ≤ x₀ ≤ 3/4，令 j = 0；否则令 Δ = frac(1/4 − x₀)，j = ⌈Δ/θ⌉。
+5. 输出 **t = (k₀ + j)/(p+q)**。
+
+**适用条件**：r(5p+q) ≤ p(p+q)。在 S3 中由 b ≥ 3a 推出（见 §B3 (v)）。
+
+### A4 锁相矩形引理 B(k,m)
+设 k ≥ 1，m ≥ 0 为整数。若
+(i) 4k/3 ≤ s ≤ 4k，且
+(ii) 4k/(4m+3) − 1 ≤ r ≤ 4k/(4m+1) − 1，
+则 t = k/(b+c) 满足三个距离 ≥ 1/4。
+
+T4 使用的四块：
+
+| 分支 | (k,m) | s 范围 | r 范围 |
+|---|---|---|---|
+| B2 | (2,0) | [8/3, 8] | [5/3, 7] |
+| B3 | (3,1) | [4, 12] | [5/7, 7/5] |
+| B4 | (4,1) | [16/3, 16] | [9/7, 11/5] |
+| B5 | (5,1) | [20/3, 20] | [13/7, 3] |
+
+--- L2 Nudge（PROVED；主席 R002 裁决 PT008/round-002/GPT6-R002-chair-decision.md 第一节，以下逐字 VERBATIM 复制，不作任何改动）---
+一、L2：主席独立证明
+PROVED · 以下明确版本
+
+假设原来有 n 位跑者，已经在 t0 找到了成功时间：
+  ||u_i t0|| ≥ 1/n
+
+设旧跑者最大相对速度为：
+  M = max_i |u_i|
+
+新增跑者的相对速度为 w。
+
+定理：只要
+  |w| ≥ nM
+就能从 t0 直接构造一个新时间，使所有 n+1 位跑者同时安全。
+
+证明如下。
+
+新增跑者后，所需安全距离从 1/n 降至 1/(n+1)。
+
+所以旧跑者允许时间在 t0 附近移动，最多：
+  h = 1/(n(n+1)M)
+
+因为每位旧跑者的距离变化最多为：
+  |u_i| h ≤ M h = 1/(n(n+1))
+
+原来的安全距离减去这个变化量，恰好仍不小于 1/(n+1)。
+
+对于新跑者，如果他在 t0 已经安全，我们直接保留 t0。
+
+否则，设 k 为最接近 w t0 的整数，并令：
+  d = w t0 − k
+
+此时：
+  |d| < 1/(n+1)
+
+我们只需将新跑者相位从 d 移到最近的安全边界：
+  d' = 1/(n+1),   d ≥ 0
+  d' = −1/(n+1),  d < 0
+
+对应的新时间是：
+  t1 = t0 + (d' − d)/w
+
+它需要的时间调整最多为：
+  |t1 − t0| ≤ 1/((n+1)|w|)
+
+而由于 |w| ≥ nM，这个调整不会超过 h。
+
+因此，新跑者达到安全边界，旧跑者也继续安全。
+
+另外，原来的成功时间满足 t0 ≥ 1/(nM)，而调整量不超过 1/[n(n+1)M]，所以新时间仍为正。
+
+证毕。
+
+这是一份完整的手工证明，不依赖 Puck 的随机测试。
+
+对于 d=0 的平局，我选取正方向作为明确规则。最终还需与 Opus 原始 L2 的记号和适用范围对照，才能将原档案中的 L2 正式标记为 PROVED。
+[逐字结束。说明：R013 的 send 包里给的是 courier 摘要（非逐字）；本轮以上面逐字文本为准。主席 R003 另记：Puck 报告的 L2 退化关系未一并升级。]
+
+--- LN（Lock-plus-Nudge，五跑者 d≥4c，PROVED；公开墙文本 LN 节）---
+## Statement
+
+For any strictly increasing positive real relative speeds 0 < a < b < c < d with d ≥ 4c, start from the PROVED four-runner construction t₀ = F₄(a,b,c) (Theorem T4, threshold 1/4). If ‖dt₀‖ ≥ 1/5, output t₀; otherwise move once to the nearest time where ‖dt‖ = 1/5. The output t satisfies t > 0 and min{‖at‖, ‖bt‖, ‖ct‖, ‖dt‖} ≥ 1/5. The construction does not enumerate candidate times.
+
+## Limits
+
+- LN covers only the region d ≥ 4c; it does not give the general five-runner formula F5. The general F5 construction remains UNFINISHED. The region 4a < d < 4c is not completely covered by the two broad constructions d ≤ 4a and d ≥ 4c; some subregions already have certified or candidate constructions.
+- The existence result for five runners (the Lonely Runner Conjecture for five runners) is not new. What is certified is this explicit construction LN and its elementary proof.
+- Literature originality has not been checked.
+- PROVED here is PT-008's internal certification, not external mathematical peer review.
+
+### A3 锁相加微调引理 LN
+设 0 < a < b < c < d，且 **d ≥ 4c**。令 t₀ = F₄(a,b,c)（T4，门槛 1/4），X = dt₀。
+- 若 ‖X‖ ≥ 1/5，输出 t₀。
+- 否则令 k = ⌊X + ½⌋，e = X − k，σ = +1（若 e ≥ 0）或 −1（若 e < 0），输出 **t = (k + σ/5)/d**。
+
+则 t > 0，且四个距离都 ≥ 1/5。
+
+--- WL（窗口锚定引理，五跑者；主席 R012 裁决：PROVED 内部认证；Opus R011 A1 逐字，存档 d6a5546）---
+设 0<a<b<c<d，c<4a，且 d ≥ 2ac/(4a−c)。令 t_L = 1/(5a)，X = d·t_L。
+- 若 ‖X‖ ≥ 1/5，输出 t = t_L；
+- 否则令 k = round(X)（由当前相位确定，不是搜索），输出 t = (k+1/5)/d。
+则 t>0，且四个距离都 ≥ 1/5。
+证明要点（Opus B1）：窗口 W=[1/(5a), 4/(5c)]（c<4a 时非空）内 at,bt,ct 都在 [1/5,4/5]；d 只向右移，位移 <2/(5d)；仍在 W 内 ⟺ d ≥ 2ac/(4a−c)。
+
+--- K5（簇定理；主席 R012 裁决：PROVED 内部）---
+设 0<a<b<c≤8a/3 且 d>c。d≤4a 时取 t=1/(a+d)（TN）；d>4a 时取 t=WL(a,c,d)。（验证：c≤8a/3<4a，且 d>4a≥2ac/(4a−c) ⟺ c≤8a/3。）
+
+--- HB（半锁盒，PROVED，公开 v3；mailbox PT008/round-012/publication/final/HB-PUBLICATION-FINAL-v3.md sha256 8c07070061e341ba749e17c34faca914bd3c73a477ff02a4e2bf6a32987ba0bb；节选 Statement + Setting + Section A）---
+## Statement
+
+Notation 0 < a < b < c < d, target threshold 1/5 (δ = 1/5, safe arc A = [1/5, 4/5]); s = (b+c)/a, r = c/b, w = d/(b+c). If 15/8 ≤ s ≤ 15/2, r ∈ (1, 8/7] ∪ [4, 13/2], and 4/5 ≤ w ≤ 6/5, then t = 3/(2(b+c)) > 0 satisfies min{‖at‖, ‖bt‖, ‖ct‖, ‖dt‖} ≥ 1/5. (Shifted lock τ = 3/2; no search.)
+
+Region note (chair-required wording, R012 Gate 1 [edit 1, 2]): the set of (s, r, w) satisfying these inequalities is a union of two box-shaped sufficient regions in the speed-ratio space (s, r, w), one for r ∈ (1, 8/7] and one for r ∈ [4, 13/2], each with 15/8 ≤ s ≤ 15/2 and 4/5 ≤ w ≤ 6/5; it is not a single connected box. Where the Middle Corridor Ω = {4a < d < 4c} is discussed, the relevant set is the intersection of these regions with Ω; they are not wholly inside Ω.
+
+## Limits
+
+- HB defines a union of two box-shaped sufficient regions in the speed-ratio space (s, r, w) (r ∈ (1, 8/7] and r ∈ [4, 13/2]); it does not cover the corridor 4a < d < 4c, and these regions are not wholly contained in the Middle Corridor Ω. For the Middle Corridor, one takes the intersection of the HB regions with Ω. The general five-runner formula F5 remains UNFINISHED.
+- HB is a threshold-1/5 statement about four non-reference speeds (five runners including the reference).
+- The existence result for five runners (the Lonely Runner Conjecture for five runners) is not new. What is certified is this explicit construction and its elementary proof.
+- Literature originality has not been checked.
+- PROVED here is PT-008's internal certification, not external mathematical peer review: internally verified, not externally peer-reviewed.
+- This result does not prove the general Lonely Runner Conjecture.
+
+## Setting (verbatim, Opus)
+
+记号：0 < a < b < c < d，δ = 1/5，A = [1/5, 4/5]（安全弧）。
+坐标：s = (b+c)/a，r = c/b，w = d/(b+c)，θ = b/(b+c) = 1/(1+r) ∈ (0, ½)。
+走廊 **Ω = {4a < d < 4c}**，用坐标写成 **4/s < w < 4r/(1+r)**（所以 w < 4）。
+
+## Section A — Exact statement (verbatim, Opus)
+
+### A1 移相锁乘积定理（Shifted-Lock Product Theorem）
+任取 τ > 0，令 t = τ/(b+c)。则
+- at = τ/s
+- bt = τθ
+- ct = τ − τθ
+- dt = τw
+
+所以 t 成功，当且仅当 (s, r, w) ∈ **𝒜_τ × ℛ_τ × 𝒲_τ**，其中
+- 𝒜_τ = {s : frac(τ/s) ∈ A}
+- ℛ_τ = {r : frac(τθ) ∈ A 且 frac(τ − τθ) ∈ A}
+- 𝒲_τ = {w : frac(τw) ∈ A}
+
+**τ = k ∈ ℤ 时就是 LB(k)**：此时 frac(τ − τθ) = 1 − frac(kθ)，c 的条件由 b 的条件自动推出。每个 𝒜_k、ℛ_k、𝒲_k 都是闭区间的有限并（在有界范围内），所以 LB(k) 就是 R009 中盒子 LB(k; m_a, m_b, m_d) 的并。
+
+### A3 半锁盒 HB = 移相锁 τ = 3/2
+若 15/8 ≤ s ≤ 15/2，r ∈ (1, 8/7] ∪ [4, 13/2]，且 4/5 ≤ w ≤ 6/5，则 **t = 3/(2(b+c))** 成功。
+
+--- C1（接通区域，PROVED，公开 v3；mailbox …/final/C1-PUBLICATION-FINAL-v3.md sha256 187d4762b5d875e09e727c4481a40bbf20ee972d249fd45b8e56ceb72a6a734e；节选 Statement + A4）---
+## Statement
+
+Same notation as HB. Let C₁ = Ω ∩ {15/8 ≤ s ≤ 5, 1 < r ≤ 8/7, 4/5 ≤ w ≤ 9/5}, where Ω = {4a < d < 4c}. For every point of C₁: if frac(w) ∈ [1/5, 4/5], output t = 1/(b+c) (LB(1)); otherwise output t = 3/(2(b+c)) (HB). Both outputs satisfy t > 0 and min{‖at‖, ‖bt‖, ‖ct‖, ‖dt‖} ≥ 1/5. The rule is a single comparison, not a search. Endpoint correction adopted by the chair (R011 ruling 82f8cb8): the HB branch is executed exactly for w ∈ (4/5, 6/5); w = 4/5 takes the integer-lock branch and w = 1 stays in the HB branch. (Opus's B4 wrote [4/5, 6/5); the proof is unaffected. Rule preserved per chair Gate 1: w = 4/5 and w = 6/5 use LB(1) since frac(w) ∈ [1/5, 4/5]; w = 1 uses HB.)
+
+Note on "Connected Region" (chair Gate 1): B4 proves that the two constructions, LB(1) and HB, leave no covering gap over C₁; the geometric connectedness of C₁ as a region follows directly from its definition (an intersection of Ω with a box). These are two distinct meanings and should not be conflated.
+
+## Limits
+
+- C₁ is a thin slab: it needs 1 < c/b ≤ 8/7 and 15/8 ≤ s ≤ 5, and w ∈ [4/5, 9/5]. It is a connected region inside the corridor 4a < d < 4c, not the whole corridor. The general five-runner formula F5 remains UNFINISHED.
+- C1 depends on HB (Section A3/B3 below) and on the integer-lock box LB(1).
+- The existence result for five runners (the Lonely Runner Conjecture for five runners) is not new. What is certified is this explicit construction and its elementary proof.
+- Literature originality has not been checked.
+- PROVED here is PT-008's internal certification, not external mathematical peer review: internally verified, not externally peer-reviewed.
+- This result does not prove the general Lonely Runner Conjecture.
+
+### A4 接通区域 C₁ 与选择规则
+令 C₁ = Ω ∩ {15/8 ≤ s ≤ 5，1 < r ≤ 8/7，4/5 ≤ w ≤ 9/5}。对 C₁ 中的任意点：
+- 若 frac(w) ∈ [1/5, 4/5]，输出 **t = 1/(b+c)**（LB(1)）；
+- 否则输出 **t = 3/(2(b+c))**（HB）。
+
+两种输出都成功。整个判断是一次比较，不搜索。
+（LB(k) = A1 中 τ=k∈ℤ 的移相锁：t=k/(b+c)。C1 用 LB(1)：t=1/(b+c)，其 a、b 条件为 s∈[5/4,5] 与 θ=b/(b+c)∈A，d 条件为 frac(w)∈A（见 C1 B4）。）
+
+--- GW(N)（一般人数窗口引理；主席 R012 裁决：PROVED 内部；Opus R012 A2 逐字）---
+假设 (G1) M < (N−1)m，且 (G2) w ≥ 2mM/((N−1)m − M)。算法：
+1. t_L = δ/m，X = w·t_L = w/(Nm)，δ=1/N；
+2. 若 ‖X‖ ≥ δ：输出 t = t_L；
+3. 否则：k = round(X)，输出 t = (k+δ)/w。
+结论：t ≥ t_L > 0，且 ‖u t‖ ≥ δ 对所有非零速度 u 成立。（窗口 W=[δ/m,(1−δ)/M]；位移 <2δ/w。）
+
+--- K_N（一般人数簇定理；主席 R012：数学上的充分条件成立，递归类的完整定义见 𝒦_n；Opus R012 A3 逐字）---
+假设 (K) M ≤ (N−1)²·m/(N+1)。若 w ≤ (N−1)m：t=1/(m+w)（TN）；否则 t=GW(N) 的输出。结论：对所有满足 (K) 的集合（w 可为任意大于 M 的实数），t>0 且成功。
+门槛 (N−1)²/(N+1)：N=3 为 1；N=4 为 9/5；N=5 为 8/3；N=6 为 25/7。
+
+--- 递归类 𝒦_n（条件性；Opus R011 A5 逐字；DeepSeek、Gemini 审阅为 PROOF VERIFIED，仅限条件性，不声称覆盖所有速度集合；主席：完整定义待定，不升 PROVED）---
+𝒦₃ = 全部两速度集合（F₃，PROVED）。对 n≥4，若 V 满足以下之一，则 V∈𝒦_n：
+ (i) V 满足 K_n 的簇条件；
+ (ii) w ≥ (n−1)·M，且 V∖{w} ∈ 𝒦_{n−1}。
+对 𝒦_n 中的每个 V，F_n 由递归给出：(i) 用 K_n；(ii) 用 Nudge(F_{n−1}(V∖{w}); w, 1/n)。
+
+--- 覆盖状态的 courier 重述（非定理，只是对上面陈述的逻辑重排，请自行核对）---
+五跑者：TN 覆盖 d≤4a；LN 覆盖 d≥4c；K5/WL 覆盖 c<4a 且 d≥2ac/(4a−c)（K5 为 c≤8a/3 的子情形）；HB 覆盖 s,r,w 的两个盒（见上，与 Ω 取交）；C1 覆盖 Ω∩{15/8≤s≤5, 1<r≤8/7, 4/5≤w≤9/5}。其中 s=(b+c)/a, r=c/b, w=d/(b+c)，Ω={4a<d<4c}⟺4/s<w<4r/(1+r)。
+
+
+############ PART 2B · R014 新认证结果（主席 R014 裁决：PT-008 内部 PROVED，严格限于下列原始假设）############
+状态：PROVED = 两位非作者审阅一致 + 主席裁决（不是主席逐行复核，也不是外部同行评审）。不得去掉假设、不得把严格不等号改成非严格。
+--- 2B.1 Opus · NW(N)：PROVED，仅保证“成功时间点”，不是可传递的双侧窗口（审阅：Argon、DeepSeek）；SLN1、SLN-odd：PROVED，条件性构造，必须写全 (S1)/成功判据/奇偶条件（审阅：Qwen、DeepSeek）。作者原文（NEAR-VERBATIM，取自 R014 包 Part 3.1）：---
+## 2 引理 NW(N)：嵌套窗口递推（PROOF CANDIDATE）
+陈述：N≥4 名跑者（含参考），非零速度 u₁<…<u_k（k=N−1），δ=1/N，|A|=1−2δ。从后往前：λ_{k−1}=(u_{k−1}/u_k)·2δ；λ_i=(u_i/u_{i+1})(1+λ_{i+1})，i=k−2..1。条件(NW)：λ_i≤1−2δ，对所有 i=1..k−1。
+算法：1. L₁=δ/u₁（I₁=[L₁,L₁+λ₁/u₁]）。2. 对 i=2..k−1：X_i=u_i·L_{i−1}。若 frac(X_i)∈[δ,1−δ−λ_i] 令 p_i=X_i；否则 p_i=⌈X_i−δ⌉+δ。L_i=p_i/u_i，I_i=[L_i,L_i+λ_i/u_i]。3. X_k=u_k·L_{k−1}。若‖X_k‖≥δ 输出 t=L_{k−1}；否则输出 t=(round(X_k)+δ)/u_k。结论：t>0 且‖u_i t‖≥δ 对全部 i。
+证明：(a) 每个 I_i 落在 u_i 的一条安全弧内：i=1：u₁I₁=[δ,δ+λ₁]⊂[δ,1−δ]。i≥2 情形一：[X_i,X_i+λ_i]在同一弧内；情形二：p_i=j+δ，[p_i,p_i+λ_i]⊂[j+δ,j+1−δ]。(b) 嵌套 I_i⊂I_{i−1}：左端 p_i≥X_i 故 L_i≥L_{i−1}；右端 p_i<X_i+1，p_i+λ_i<X_i+1+λ_i=X_i+u_iλ_{i−1}/u_{i−1}，除以 u_i 得 L_i+λ_i/u_i<L_{i−1}+λ_{i−1}/u_{i−1}。(c) 最后：若‖X_k‖≥δ，t=L_{k−1}在所有 I_i 内。否则 k′=round(X_k)，X_k<k′+δ 故 t>L_{k−1}；位移 (k′+δ−X_k)/u_k<2δ/u_k=λ_{k−1}/u_{k−1}，t∈I_{k−1}；‖u_k t‖=δ。t≥L₁=δ/u₁>0。∎
+五跑者形式（N=5，(a,b,c,d)）：λ₃=2c/(5d)；λ₂=(b/c)(1+λ₃)；λ₁=(a/b)(1+λ₂)。(NW)化为（λ₃≤3/5自动成立）：(NW-i) b/c+2b/(5d)≤3/5；(NW-ii) 3b/(5a)≥1+b/c+2b/(5d)。
+展示 (1,3,9,20)：4<20<36 在Ω内；c=9≥4a 不在WL。λ₃=0.18；λ₂=59/150；λ₁=209/450，皆≤0.6。L₁=1/5。X₂=3/5，frac=0.6∉[0.2,0.8−0.393]，p₂=⌈0.4⌉+0.2=1.2，L₂=0.4。X₃=3.6，frac=0.6∈[0.2,0.62]，p₃=3.6，L₃=0.4。X₄=8，‖X₄‖=0<0.2，t=(8+0.2)/20=0.41。距离：0.41，0.23，0.31，0.2，全部≥1/5。
+结构说明（IDEA）：GW(N)相当于把 u₁..u_{k−1}合成"簇块"，窗口[δ/u₁,(1−δ)/u_{k−1}]，再做 NW 的最后一步。把"先若干簇块、再逐个嵌套"统一成递推（块嵌套窗口）是自然推广，本轮未证明。NW 是 Track D 所问的"F_{n+1}=H(区间,新速度)"型必然终止操作；限制是每步需 λ_i≤1−2δ，即速度大致按比例递增。
+
+## 3 引理 SLN：慢跑者锁相微调（PROOF CANDIDATE）
+记号：μ=c/(5d)∈(1/20,1/5)（在Ω内）；ε=a/(5d)；T=[1/5+μ,4/5−μ]，长度3/5−2μ>1/5；k₀=⌈s(1/5+ε)⌉。两条引理最后一步都是 d 的最近边界微调（L2型）：X=d·t*。若‖X‖≥1/5 输出 t*；否则 k′=round(X)，e=X−k′，σ=sign(e)（e=0取+1），输出 t=(k′+σ/5)/d。
+SLN1（步长θ）：条件(S1) θ≤3/5−2μ。算法：x₀=frac(k₀θ)。若x₀∈T，j=0；否则 j=⌈frac(1/5+μ−x₀)/θ⌉。k*=k₀+j，t*=k*/(b+c)，再对d微调。成功判据：k*≤s(4/5−ε)。保证成功条件：s(3/5−2ε)≥2+(2/5+2μ)/θ。
+SLN-odd（θ接近½）：φ=1−2θ=(c−b)/(b+c)，k=不小于k₀的最小奇数，t*=k/(b+c)，再对d微调。条件：k≤s(4/5−ε) 且 kφ≤3/5−2μ。
+证明：(i) a：at*=k*/s∈[1/5+ε,4/5−ε]。(ii) bt*+ct*=k*∈ℤ，故‖ct*‖=‖bt*‖=‖k*θ‖。SLN1：j=0 时 frac(k*θ)=x₀∈T；j≥1 时 Δ=frac(1/5+μ−x₀)∈(0,1−|T|)，jθ∈[Δ,Δ+θ)，frac(k*θ)∈[1/5+μ,1/5+μ+θ)⊂T（用(S1)）。SLN-odd：kθ=k/2−kφ/2，k奇，kθ=整数+½−kφ/2，0≤kφ/2≤3/10−μ<½，frac(kθ)=½−kφ/2∈[1/5+μ,½]⊂T。两种情形‖bt*‖=‖ct*‖≥1/5+μ。(iii) 微调：|t−t*|=(1/5−‖X‖)/d≤1/(5d)。损失：a≤ε；b<μ；c≤μ。故 a、b、c仍≥1/5，且‖dt‖≥1/5。正性：t*≥(1/5+ε)/a>1/(5a)>1/(5d)≥|t−t*|。(iv) k*<[s(1/5+ε)+1]+[(2/5+2μ)/θ+1]，所以 s(3/5−2ε)≥2+(2/5+2μ)/θ 推出 k*≤s(4/5−ε)。∎
+
+--- 2B.2 NW 不是双侧窗口的实例（DeepSeek R014，Hesper 精确分数复核 CHECKED）：N=4，速度 (1,3,21/5)，δ=1/4：λ₂=5/14，λ₁=19/42≤1/2；算法 L₂=5/12，X₃=7/4，输出 t=5/12，距离 5/12、1/4、1/4；t 向右移 u₃ 跌破 1/4，向左移 u₂ 跌破 1/4。NW 条件也不随加速度自动保持：(1,3,16/5) 满足 N=4 的 NW；加 1000 后 N=5，λ₂=9387/10000>3/5。---
+--- 2B.3 Qwen · R013 a+d、τ=2 区域：PROVED（审阅：Opus、Argon）。批准范围（主席逐字）：0<a<b<c<d，c<4a，max(4a,(5c−2a)/2) < d < min(9a,4c)；构造 t=2/(a+d)。R014 的 P1/B1 扩展不在认证内（见 Part 3A）。---
+--- 2B.4 DeepSeek · R-L2：已证明为 L2 的等价重述（不是新定理）。---
+--- 2B.5 Opus R013 §5 障碍命题（仍 PROOF CANDIDATE，未认证；NEAR-VERBATIM）：---
+## 5 障碍命题（PROOF CANDIDATE）
+命题：若 θ=1/3（c=2b）且 d<3c/2，则对每个整数 k，t*=k/(b+c) 都不满足 ‖bt*‖≥1/5+μ。所以任何"锁(b,c)、要求余量μ、再微调d"的规则（含SLN1、SLN-odd及任意k版本）在此处都失败。
+证明：frac(k/3)∈{0,1/3,2/3}，‖kθ‖∈{0,1/3}。d<3c/2 ⟺ μ=c/(5d)>2/15，1/5+μ>1/3≥‖kθ‖。∎
+区分：只否定这一族规则。在(1,30,60,80)上不带微调的普通锁相 LB(20) 直接成功：t=20/90=2/9；20θ=20/3，‖·‖=1/3；d 的相位 80×2/9=160/9=17+7/9，‖·‖=2/9。障碍针对"留余量再微调"，不是锁相本身，更不是存在性。
+
+
+
+############ PART 2C · R015 新认证结果（主席 R015 裁决：PT-008 内部 PROVED，严格限于原始假设；新覆盖：未确立）############
+P1（Qwen）：0<a<b<c<d，且 5c/2 − a ≤ d ≤ 9a。则 t = 2/(a+d) 成功（g(t) ≥ 1/5）。
+B1（Qwen 选择器）：0<a<b<c<4a，D1 = 5c/2 − a，D2 = 2ac/(4a−c)；假设 d ≥ D1 且（d ≤ 9a 或 d ≥ D2）。若 d ≥ D2 输出 WL(a,b,c,d)；否则输出 t = 2/(a+d)。若 c ≤ 36a/11，覆盖全部 d ≥ D1。
+覆盖勘误（主席接受）：β1=(10,20,31,68)、β2=(11,20,36,80) 均在 R013 a+d 区域内；当 x0 < c/a ≤ 36/11 时开放带 D1 < d < D2 整体在 R013 内，只有端点 d = D1 不在 R013 严格区域内。PROOF VALIDITY: VERIFIED；NEW COVERAGE: NOT ESTABLISHED。
+
+############ PART 3 · REVIEW 原文：Opus R015 1/4 full reply（字节级原文；完整回复 sha256 09d4a823d4c2c84fb687d4b21d74380682b063b4a1600e9da41d65ebeff32b34）############
+Opus: R015 1/4
+
+Opus:
+TO: Hesper → GPT-6 (Chair)　Track A · Non-First Cluster and Active Constraints　Date: 2026-10-19　WEB OFF
+
+---
+
+## ANSWER BLOCK
+
+- **① 主要结论**：
+  - **下沿锚定定理 LE**：每个成功区间的左端点，一定是**某位跑者的下沿时间** (j + δ)/v；右端点一定是某位跑者的上沿时间。孤立的成功点一定是两位**对向活跃**跑者的锁相时间。这把 Bill 的"下沿"观察写成了定理，也解释了为什么锁相和窗口锚定有效。
+  - **双沿规则 TE**：取 t = 1/(5a) 或 t = 4/(5a)。成功区域是比例空间中的乘积集合，同时覆盖 **V2 与 V3**；它推广了 WL 的第一分支。
+  - **障碍**：若 b/a、c/a、d/a 中有任何一个属于 5ℤ（例如 V4），则 a 的**所有**边沿时间都失败。这精确刻画了"a 永不活跃"的非首簇情形。
+- **② 状态**：以上三项为 **PROOF CANDIDATE**；见证计算为本席精确计算（自测）。
+- **③ 无限制 F5**：**未闭合**。
+- **④ 最不确定的一步**：非首簇情形（V4 型）中，活跃跑者只在 b、c、d 之间，如何**确定性地**选出 (v, j)，尚无规则。
+
+---
+
+## 0 记号
+- 0 < a < b < c < d，δ = 1/5，A = [1/5, 4/5]，g(t) = min(‖at‖, ‖bt‖, ‖ct‖, ‖dt‖)，S = {t > 0 : g(t) ≥ δ}。
+- **下沿时间**：E⁻(v, j) = (j + δ)/v，此时 v 的相位 ≡ δ，向右走距离增大。
+- **上沿时间**：E⁺(v, j) = (j + 1 − δ)/v，此时 v 的相位 ≡ 1 − δ，向右走距离减小。
+- 若 ‖v t*‖ = δ，称 v 在 t* **活跃**。
+
+---
+
+## 1 定理 LE：下沿锚定（PROOF CANDIDATE）
+
+**陈述**：设 V 为有限个正实数速度，0 < δ < ½，S 的定义同上，且 S 非空。则
+- (i) S 的每个连通分量都是紧区间 [α, β]，且 α > 0；
+- (ii) α = E⁻(v, j) 对某个 v ∈ V 与整数 j ≥ 0 成立，即 v 在 α 处以**下沿**活跃；
+- (iii) β = E⁺(u, j′) 对某个 u ∈ V 与整数 j′ ≥ 0 成立，即 u 在 β 处以**上沿**活跃。
+
+**证明**：
+- (i) g 连续，所以 S 在 (0, ∞) 中是闭集。对 u₁ = min V，点 k/u₁ 处 g = 0，所以每个分量夹在两个这样的点之间，是有界闭区间。又 t → 0⁺ 时 g(t) → 0，所以 α > 0。
+- (ii) α 是分量的左端点，所以存在 t_n ↑ α，t_n ∉ S，即 g(t_n) < δ。V 是有限集，所以有某个 v 使 ‖v t_n‖ < δ 对无穷多个 n 成立。由连续性 ‖vα‖ ≤ δ；又 α ∈ S，所以 ‖vα‖ = δ。
+  于是 vα 的小数部分是 δ 或 1 − δ。若为 1 − δ，则在 α 左侧充分近处，v 的相位略小于 1 − δ，距离 > δ，与 ‖v t_n‖ < δ 矛盾。所以 vα ≡ δ (mod 1)，即 α = (j + δ)/v，其中 j = ⌊vα⌋ ≥ 0。
+- (iii) 对称地证明。∎
+
+**推论 LE-1（孤立成功点就是锁相）**：若 t* 是 S 的孤立点，则存在 u ≠ v，使 v 在 t* 处以下沿活跃、u 以上沿活跃，并且
+**t* = k/(u + v)，k = j_u + j_v + 1 ∈ ℤ**，且 frac(k·u/(u+v)) = 1 − δ。
+
+**证明**：由 LE，t* 既是左端点又是右端点。u ≠ v，因为同一个相位不能同时 ≡ δ 和 ≡ 1−δ（δ ≠ ½）。相加得 (u+v)t* = j_u + 1 − δ + j_v + δ = j_u + j_v + 1。∎
+
+**意义**：
+- 已认证的构造，输出的要么是**边沿时间**（WL、GW、NW、LN、L2、FNW、SLN 的最后一步），要么是**锁相时间**（TN、LB、HB、Qwen 的 a+d）。LE 说明这两类时间合起来是"完备的候选形状"：任何成功区间都由它们界定。
+- 剩下的问题只是：**选哪一位跑者 v、哪一个 j**。
+
+---
+
+## 2 四个见证的活跃约束（本席精确计算）
+
+| 见证 | 成功时间 | 四个距离 | 所在分量 | 活跃约束 |
+|---|---|---|---|---|
+| V2 = (1,2,3,9/2) | 2/5 | 2/5，1/5，1/5，1/5 | 孤立点 {2/5} | c 下沿（3·2/5 = 1 + 1/5）；b 上沿（4/5）；d 上沿（9/5）。由 LE-1：(b,c) 锁 k = 0+1+1 = 2；(c,d) 锁 k = 1+1+1 = 3 |
+| V2 | 4/5 | 1/5，2/5，2/5，2/5 | [11/15, 4/5] | 左端 c 下沿（3·11/15 = 2 + 1/5）；右端 **a 上沿**（4/5） |
+| V3 = (1,3,4,7) | 1/5 | 1/5，2/5，1/5，2/5 | 孤立点 {1/5} | **a 下沿**；c 上沿（4/5）。由 LE-1：(a,c) 锁 k = 0+0+1 = 1 |
+| V3 | 4/5 | 1/5，2/5，1/5，2/5 | 孤立点 {4/5} | c 下沿（3 + 1/5）；**a 上沿** |
+| V4 = (1,30,60,80) | 2/9 | 2/9，1/3，1/3，2/9 | [11/50, 89/400]，长度 1/400 | 左端 c 下沿（60·11/50 = 13 + 1/5）；右端 d 上沿（80·89/400 = 17 + 4/5）。**a 不活跃** |
+
+**V4 分量端点的核对**：
+- t = 11/50：距离 0.22，‖6.6‖ = 0.4，‖13.2‖ = 0.2，‖17.6‖ = 0.4。
+- t = 89/400：距离 0.2225，‖6.675‖ = 0.325，‖13.35‖ = 0.35，‖17.8‖ = 0.2。
+
+（分量由本席用精确分数求出：在 2/9 附近列出全部边沿时间，逐一检查左右两侧。这一计算仅为查错，非 CHECKED。）
+
+**观察**：在 V2、V3 中，a 都能在某个分量的端点上活跃；在 V4 中，a 从不活跃（见 §4）。这正是"首簇"与"非首簇"的分界。
+
+---
+
+## 3 规则 TE：a 的双沿锚定（PROOF CANDIDATE）
+
+令 x = b/a，y = c/a，z = d/a。
+
+**规则**：
+- (AL) 若 x, y, z ∈ ⋃_{m≥0} [5m+1, 5m+4]，输出 **t = 1/(5a)**；
+- (AU) 否则，若 x, y, z ∈ ⋃_{m≥0} [(5m+1)/4, (5m+4)/4]，输出 **t = 4/(5a)**。
+
+**证明**：
+- AL：at = 1/5；ut = (u/a)/5，所以 frac(ut) ∈ A ⟺ (u/a) mod 5 ∈ [1,4] ⟺ u/a ∈ [5m+1, 5m+4]。
+- AU：at = 4/5；ut = 4(u/a)/5，frac ∈ A ⟺ 4u/a ∈ [5m+1, 5m+4]。
+
+t > 0。∎
+
+**结构**：
+- 两个区域都是 (x, y, z) 三个坐标各自独立条件的**乘积**，与 HB 的 A1 是同一类结构。
+- 由 LE，**AL 成立 ⟺ a 在某个成功分量的左端点以下沿活跃，且该端点就是 1/(5a)**；AU 同理对应右端点。这正是 TE 有效的原因。
+
+**与已认证区域的关系**：WL 的第一分支要求 c < 4a，且只用 t_L = 1/(5a)。AL 去掉了 c < 4a 的限制，允许 y、z 落在后面的弧，例如 y ∈ [6, 9]。AU 是新的。
+
+**见证**：
+- **V2**：x = 2 ∈ [6/4, 9/4]（m=1），y = 3 ∈ [11/4, 14/4]（m=2），z = 9/2 ∈ [16/4, 19/4]（m=3），走 **AU**，t = 4/5。
+  （AL 不成立：4.5 ∉ [1,4] ∪ [6,9]。）距离：‖4/5‖ = 1/5，‖8/5‖ = 2/5，‖12/5‖ = 2/5，‖18/5‖ = 2/5。✓
+- **V3**：3, 4 ∈ [1,4]，7 ∈ [6,9]，走 **AL**，t = 1/5。距离：1/5，2/5，1/5，2/5。✓
+- **V1**：z = 4.1 ∉ [1,4] ∪ [6,9]，AL 失败；x = 1.1 ∉ [1.5, 2.25]，且 1.1 > 1，不在 [1/4, 1] 内，AU 失败。（V1 已由 SLN1 覆盖。）
+- **V4**：x = 30，AL 与 AU 都失败（见 §4）。
+
+**一般 n**（PROOF CANDIDATE，同一证明）：δ = 1/N，m = 最慢速度。
+- AL_N：每个 u/m ∈ ⋃[jN+1, jN+N−1]，t = 1/(Nm)；
+- AU_N：每个 u/m ∈ ⋃[(jN+1)/(N−1), (jN+N−1)/(N−1)]，t = (N−1)/(Nm)。
+
+---
+
+## 4 障碍命题：a 永不活跃（PROOF CANDIDATE）
+
+**命题**：若 b/a、c/a、d/a 中至少一个属于 5ℤ，则 a 的**每一个**边沿时间 E^±(a, j)（任意 j ≥ 0）都不是成功时间。
+因此由 LE，每个成功分量的两个端点都是 b、c、d 的边沿，**a 在任何分量的端点上都不活跃**。
+
+**证明**：设 u/a = 5q，q ∈ ℤ。在 E⁻(a, j) 处 ut = 5q(j + 1/5) = 5qj + q ∈ ℤ；在 E⁺(a, j) 处 ut = 5qj + 4q ∈ ℤ。两种情形都有 ‖ut‖ = 0。∎
+
+- **V4**：b/a = 30 = 5·6，c/a = 60，d/a = 80，都在 5ℤ 中。所以 TE 及其所有 j 版本都必然失败；V4 的分量 [11/50, 89/400] 由 c、d 界定（§2）。
+- **区分**：这只否定"以 a 的边沿为锚"这一族。V4 有成功时间，例如 2/9。
+
+---
+
+## 5 非首簇：把 b、c、d 当主簇（UNFINISHED，附精确的问题形式）
+
+由 §4，在非首簇情形，必须从 b、c、d 的边沿中选择锚点。由 LE，这一选择可以写成精确形式：
+- a 的约束只是 t ∈ ⋃_j [(j + 1/5)/a, (j + 4/5)/a]；
+- 所以只需在 a 的某一条弧内，找到一个 {b,c,d} 的成功分量（门槛 1/5）的左端点 E⁻(v, j)，v ∈ {b, c, d}。
+
+**精确判据（不是构造）**：a 的第 j 条弧内存在成功点，**当且仅当**该弧内有限个 b、c、d 下沿时间中有一个是成功点。这是有限、精确的判定，但仍是枚举，**不作为**构造公式提交。
+
+**缺口**：一条直接由比例决定 (v, j) 的确定性规则。V4 的数据提示 v = c、j = 13，后接 d 上沿；这对应 (c,d) 的"下沿—上沿"夹逼窗口，长度为 (j_d + 4/5)/d − (j_c + 1/5)/c。把这类窗口的存在性用比例写出来，是下一步。——**UNFINISHED**
+
+---
+
+## 6 已认证构造的活跃约束（回答主席问题 1–4）
+
+| 构造 | 输出类型 | 活跃约束 |
+|---|---|---|
+| TN：1/(m+w) | (m,w) 锁 | m、w 距离相等，取等号当且仅当 w = (N−1)m |
+| WL / GW 第一分支 | 下沿 E⁻(m, 0) | m（最慢者）活跃 |
+| WL / GW 第二分支，NW、FNW 最后一步，SLN 微调 | 下沿或上沿 E^±(w, k′) | 最后加入者活跃 |
+| LN / L2 | E^±(新跑者) | 新跑者活跃 |
+| HB、LB(k)、Qwen a+d | 锁相 | 锁定的两人距离相等；一般不在边沿 |
+| TE（本稿） | E^±(a, 0) | a 活跃 |
+
+1. **能否由代数关系识别活跃跑者？** 部分可以。TE 的成立等价于"a 在分量端点活跃"（§3），而 §4 给出 a 不可能活跃的精确代数条件。
+2. **能否不默认选最快的一对？** 可以。LE-1 说明，孤立成功点一定是**对向活跃的那一对**的锁相，不一定是最快的一对（例如 V3 是 (a,c)）。
+3. **锁相或微调能否保持最小距离？** L2/LN 已证明（PROVED）；本稿没有新增。
+4. **能否推广到更大的 n？** LE、LE-1、TE、§4 障碍对任意 N 都成立，证明不依赖 N = 5。
+
+---
+
+## 7 未完成部分
+1. 非首簇情形的确定性锚点选择：**UNFINISHED**。
+2. TE ∪ 已认证 ∪ SLN 在走廊中的精确并集，尚未写成单一的不等式系统：**UNFINISHED**。
+3. 本稿各命题需非作者审阅；升格由主席决定。
+
+############ PART 3C · 见证点当前状态（Hesper 精确分数复核）############
+V1：内部 PROVED 的 SLN1 覆盖。
+V2：两个 PROOF CANDIDATE 覆盖（Opus TE-AU t=4/5；Qwen Q-B2 t=2/5），均未认证。
+V3：PROOF CANDIDATE TE-AL t=1/5，另有 FNW 候选；未认证。
+V4 = (1,30,60,80)：t=2/9 成功（距离 2/9,1/3,1/3,2/9，CHECKED）；成功分量 [11/50, 89/400]（CHECKED）；a 的全部边沿时间失败（30/1∈5ℤ，Opus 障碍）。尚无任何确定性规则覆盖 V4。
+
+############ PART 4 · 回复格式 ############
+先写 ANSWER BLOCK（≤300 中文字）。然后：精确假设（严格/非严格）、构造、证明或反例、与已认证规则的覆盖关系、剩余缺口。
+状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / IDEA / UNFINISHED。审阅结论每项单独给：PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。不做大规模暴力搜索。作者不能审自己的结果。
+===== END =====
