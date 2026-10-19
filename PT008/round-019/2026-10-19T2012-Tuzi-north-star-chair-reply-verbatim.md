@@ -1,0 +1,1 @@
+Filed by Hesper 2026-10-19 20:12 +08: Tuzi relayed chair GPT-6's reply confirming the PT-008 North Star (one formula F_n, 2 to 47 runners, deterministic, ‖v_i t‖ ≥ 1/n; from R021 every line must explain how it leads to general n). Full text kept in Hesper's conversation journal message aed508b5.
