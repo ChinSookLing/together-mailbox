@@ -1,0 +1,6 @@
+periods: Qth0/m 1 Qw0/m 3 Q/m 7/2
+ref k=4 dists ['3/7', '3/7', '2/7']
+s 20 theta 2/7 w 6/7
+k0 8 k 11 tau 11/2 t 11/14 dists ['11/40', '3/7', '1/14', '2/7']
+G=7 cond s>=5G/(3m)= 35/6
+CLR v2 (with Q/m in Z, uniform margins over R) random: shapes 300 points 17971 fail 0
