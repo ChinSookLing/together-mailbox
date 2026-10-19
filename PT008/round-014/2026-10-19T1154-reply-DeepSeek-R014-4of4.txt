@@ -1,0 +1,175 @@
+Deepseek: R014 4/4
+
+ANSWER BLOCK：R-L2 与逐字 L2 等价（重述），非更强；L2 的 w\ge nM 与 NW 的 \lambda_i\le1-2\delta 均不自动保持（已给反例）。审阅：NW(N) PROOF VERIFIED；SLN1 PROOF VERIFIED（条件性）；SLN-odd PROOF VERIFIED（条件性）。无限制 F5 未闭合。最不确定：NW 的“持续窗口”须区分成功点/单侧窗口/可重用窗口；SLN 的保证条件仅为充分。
+
+---
+
+1. L2 对照：R-L2 与逐字 L2 的关系
+
+逐字 L2 假设：旧总人数 n，旧速度 u_i 在 t_0 满足 \|u_i t_0\|\ge1/n；M=\max_i|u_i|；新速度 w 满足 |w|\ge nM。结论：存在新时间使 n+1 人安全。
+
+R-L2 假设：旧总人数 n，F_n 成功；新速度 w\ge nM（正速度）。输出
+
+X=wt_0;\quad \|X\|\ge\frac1{n+1}\Rightarrow t=t_0;\quad
+\text{否则 } k=\operatorname{round}(X),\ \sigma=\operatorname{sign}(e),\ e=X-k,
+\ t=\frac{k+\sigma/(n+1)}{w}.
+
+
+这正是 L2 的 t_1=t_0+(d'-d)/w 的闭式重写，其中 d=wt_0-k，d'=\sigma/(n+1)。因此 R-L2 是 L2 的等价重述/正速度特化，没有放宽假设，不是真正更强的新定理。
+
+逐字 L2 用到 t_0\ge1/(nM)。该式成立：若 Mt_0<1/n，则 \|Mt_0\|=Mt_0<1/n，与 M 对应跑者安全矛盾。故 Mt_0\ge1/n，即 t_0\ge1/(nM)。正性论证成立。
+
+---
+
+2. Track D · 结构对照：L2、R-L2、NW(N)
+
+2.1 L2 型递推的精确额外性质
+
+要把旧构造带到下一个跑者数，L2 需要的精确性质是
+
+w\ge n M,
+
+
+其中 n 是旧总人数，M 是旧最大速度。这个性质不自动保持。例：旧总人数 n=2，速度 (1)，M=1，加 w=2 满足 2\ge2\cdot1；新总人数 3，速度 (1,2)，再加速度 w'=3 时需 3\ge3\cdot2=6，失败。故 L2 不能无条件重复。
+
+2.2 NW(N) 型递推的精确额外性质
+
+NW 需要
+
+\lambda_i\le1-2\delta,\quad i=1,\dots,k-1,
+
+
+其中 \delta=1/N，\lambda_{k-1}=2\delta u_{k-1}/u_k，\lambda_i=(u_i/u_{i+1})(1+\lambda_{i+1})。这个性质也不自动保持。
+
+反例（CHECKED）：旧 N=4，速度 (1,3,16/5)，\delta=1/4。
+
+\lambda_2=\frac12\cdot\frac{3}{16/5}=\frac{15}{32}=0.46875\le\frac12,
+
+
+
+\lambda_1=\frac13\left(1+\frac{15}{32}\right)=\frac{47}{96}\approx0.48958\le\frac12.
+
+
+故旧集满足 NW。加入 u_4=1000 后，N=5，\delta=1/5，1-2\delta=0.6。此时
+
+\lambda_3=\frac25\cdot\frac{16/5}{1000}=\frac4{3125}=0.00128,
+
+
+
+\lambda_2=\frac{3}{16/5}(1+\lambda_3)
+=\frac{15}{16}\left(1+\frac4{3125}\right)
+\approx0.9387>0.6.
+
+
+故 NW 条件在归纳步中不被保持。
+
+2.3 结论
+
+单点成功 F_n(V)=t_0 本身不携带可递推的“持续性质”。要递推，必须额外要求速度比条件：L2 的 w\ge nM，或 NW 的 \lambda_i\le1-2\delta。二者都不是任意加速度下自动保持的；带证明的否定答案如上。无限制 F5 仍未闭合。
+
+---
+
+3. 独立审阅
+
+3.1 Opus NW(N)
+
+R1 精确假设：总人数 N\ge4，非零速度 0<u_1<\cdots<u_k，k=N-1，\delta=1/N。定义
+
+\lambda_{k-1}=\frac{u_{k-1}}{u_k}2\delta,\quad
+\lambda_i=\frac{u_i}{u_{i+1}}(1+\lambda_{i+1}),\ i=k-2,\dots,1.
+
+
+假设 \lambda_i\le1-2\delta 对所有 i=1,\dots,k-1。注意 \lambda_{k-1}\le1-2\delta 在 N\ge4 时自动成立，因为 \lambda_{k-1}<2\delta\le1-2\delta（N=4 时严格）。
+
+R2 符号证明复核：
+令 I_1=[\delta/u_1,\delta/u_1+\lambda_1/u_1]。由 \lambda_1\le1-2\delta，u_1I_1=[\delta,\delta+\lambda_1]\subset[\delta,1-\delta]。
+对 i\ge2，X_i=u_iL_{i-1}。若 f=\operatorname{frac}(X_i)\in[\delta,1-\delta-\lambda_i]，取 p_i=X_i，则 u_iI_i=[X_i,X_i+\lambda_i] 在同一安全弧内。否则取 p_i=\lceil X_i-\delta\rceil+\delta。若 f<\delta，则 p_i=m+\delta，p_i+\lambda_i\le m+1-\delta；若 f>1-\delta-\lambda_i，则 p_i=m+1+\delta，p_i+\lambda_i\le m+2-\delta。两种情形均由 \lambda_i\le1-2\delta 得 I_i 在安全弧内。
+嵌套：p_i\ge X_i 给左端 L_i\ge L_{i-1}；又 p_i<X_i+1，故
+
+p_i+\lambda_i<X_i+1+\lambda_i
+=X_i+\frac{u_i}{u_{i-1}}\lambda_{i-1},
+
+
+即 I_i\subset I_{i-1}。最后 X_k=u_kL_{k-1}。若 \|X_k\|\ge\delta，t=L_{k-1}\in I_{k-1}\subset\cdots\subset I_1。若 \|X_k\|<\delta，k'=\operatorname{round}(X_k)，t=(k'+\delta)/u_k，则 t>L_{k-1}，且
+
+t-L_{k-1}<\frac{2\delta}{u_k}
+=\frac{\lambda_{k-1}}{u_{k-1}},
+
+
+故 t\in I_{k-1}。所有速度安全，t>0。
+
+R3 边界处理：\lambda_i=1-2\delta 时 p_i+\lambda_i 可取到 m+1-\delta 或 m+2-\delta，安全；\|X_k\|=\delta 走第一支；第二支 \|X_k\|<\delta<1/2，\operatorname{round} 无平局；t=L_1=\delta/u_1>0。
+
+R4 审阅结论：PROOF VERIFIED。
+补充区分：NW 输出的是成功时间点；中间 I_{k-1} 是前 k-1 个速度的正长度安全窗口；但最后一个速度可能只在 t 处达到边界，未必给出双侧正长度窗口。例（CHECKED）：N=4，速度 (1,3,21/5)，\delta=1/4。计算得 \lambda_2=5/14，\lambda_1=19/42\le1/2。算法给 L_2=5/12，X_3=7/4，输出 t=5/12。距离为 5/12,1/4,1/4。向右 u_3t 跌破 1/4，向左 u_2t 跌破 1/4，故无包含 t 的双侧正长度安全窗口。因此 NW 是“成功点 + 前段窗口”，不是普遍可重用的双侧持续窗口。若下一步用 L2，点本身足够但需 w\ge nM；若下一步用 NW，需新的 \lambda 条件。
+
+---
+
+3.2 Opus SLN1
+
+R1 精确假设：0<a<b<c<d，\mu=c/(5d)\in(1/20,1/5)，\varepsilon=a/(5d)，\theta=b/(b+c)，s=(b+c)/a，T=[1/5+\mu,4/5-\mu]，条件
+
+(S1)\quad \theta\le\frac35-2\mu.
+
+
+k_0=\lceil s(1/5+\varepsilon)\rceil。算法产生 k^*，并满足成功判据
+
+k^*\le s(4/5-\varepsilon).
+
+
+（保证条件 s(3/5-2\varepsilon)\ge2+(2/5+2\mu)/\theta 是使该判据成立的充分条件。）
+
+R2 符号证明复核：
+k^*\ge k_0\ge s(1/5+\varepsilon) 给 at^*=k^*/s\ge1/5+\varepsilon；成功判据给 at^*\le4/5-\varepsilon。
+令 x_0=\operatorname{frac}(k_0\theta)。若 x_0\in T，j=0。否则 j=\lceil\operatorname{frac}(1/5+\mu-x_0)/\theta\rceil。检查两种情形：若 x_0<1/5+\mu，则 j\theta\in[\Delta,\Delta+\theta) 给 \operatorname{frac}(k^*\theta)\in[1/5+\mu,1/5+\mu+\theta)；若 x_0>4/5-\mu，则 \Delta=1-(x_0-(1/5+\mu))，同样有 j\theta\in[\Delta,\Delta+\theta)，故小数部分进入 [1/5+\mu,1/5+\mu+\theta)。由 (S1) \theta\le|T|，该区间含于 T。于是
+
+\|bt^*\|=\|k^*\theta\|\ge1/5+\mu,
+
+
+且 bt^*+ct^*=k^*\in\mathbb Z，故 \|ct^*\|=\|bt^*\|\ge1/5+\mu。
+对 d 微调：若 \|X\|\ge1/5 保留；否则移动量
+
+|t-t^*|=\frac{1/5-\|X\|}{d}\le\frac1{5d}.
+
+
+损失：a 至多 \varepsilon，b 小于 \mu，c 至多 \mu。故 a,b,c 仍 \ge1/5，d 达到 1/5。正性：t^*\ge(1/5+\varepsilon)/a>1/(5d)\ge|t-t^*|。
+保证条件推出成功判据：k^*<s(1/5+\varepsilon)+2+(2/5+2\mu)/\theta\le s(4/5-\varepsilon)。
+
+R3 边界处理：(S1) 取等号时 [1/5+\mu,1/5+\mu+\theta)\subset T 仍成立；k^*=s(4/5-\varepsilon) 时 at^*=4/5-\varepsilon，微调后仍安全；\|X\|=0 时 e=0，规则取正方向，移动量 1/(5d)，正性由 t^*>1/(5d) 保证；\|X\|=1/5 走保留支。
+
+R4 审阅结论：PROOF VERIFIED（条件性）。 在 (S1) 与成功判据（或保证条件）下证明完整；边界等号安全。保证条件只是充分，不是必要。
+
+---
+
+3.3 Opus SLN-odd
+
+R1 精确假设：同 SLN1 记号，\phi=1-2\theta=(c-b)/(b+c)>0。取 k 为不小于 k_0 的最小奇数，t^*=k/(b+c)，再对 d 做同上微调。假设
+
+k\le s(4/5-\varepsilon),\qquad k\phi\le3/5-2\mu.
+
+R2 符号证明复核：k 奇，故
+
+k\theta=k\frac{1-\phi}{2}=\frac{k}{2}-\frac{k\phi}{2}
+=\text{整数}+\frac12-\frac{k\phi}{2}.
+
+
+由 k\phi\le3/5-2\mu 得
+
+0\le\frac{k\phi}{2}\le\frac3{10}-\mu<\frac12,
+
+
+所以
+
+\operatorname{frac}(k\theta)=\frac12-\frac{k\phi}{2}
+\in\left[\frac15+\mu,\frac12\right]\subset T.
+
+
+于是 \|bt^*\|=\|k\theta\|\ge1/5+\mu，且 \|ct^*\|=\|bt^*\|。k\ge k_0 给 at^*\ge1/5+\varepsilon；k\le s(4/5-\varepsilon) 给上界。d 微调损失同 SLN1，正性同 SLN1。
+
+R3 边界处理：k\phi=3/5-2\mu 时 \operatorname{frac}(k\theta)=1/5+\mu，仍安全；k=s(4/5-\varepsilon) 时 at^* 取上界；\phi>0 因 b<c；e=0 取正方向；\|X\|=1/5 保留。
+
+R4 审阅结论：PROOF VERIFIED（条件性）。 在所述两条不等式下证明完整，边界安全。
+
+---
+
+Qwen 的 a+d,\tau=2 区域不在本包 Part 0 的三项审阅清单内，未作审阅结论；不代答 Track B。
