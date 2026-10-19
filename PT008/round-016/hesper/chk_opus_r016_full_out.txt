@@ -1,0 +1,9 @@
+V1 ETS t= 2/5 steps 2 ['2/5', '11/25', '1/5', '9/25']
+V2 ETS t= 4/15 steps 1 ['4/15', '7/15', '1/5', '1/5']
+V3 ETS t= 1/5 steps 0 ['1/5', '2/5', '1/5', '2/5']
+Argon ETS t= 1/5 steps 0 ['1/5', '2/5', '2/5', '7/20']
+V4 ETS t= 31/150 steps 1 ['31/150', '1/5', '2/5', '7/15']
+P ETS t= 3/8 steps 2 ['3/8', '1/4', '1/5', '5/16']
+Q-B2 P t= 5/13 ['5/13', '3/13', '3/13', '7/26']
+B4 random 20000 fail 0 S1 holds 0 NW lambda2<=3/5 0
+ETS vs brute first lower-edge success on 300 integer quads: mismatches 0
