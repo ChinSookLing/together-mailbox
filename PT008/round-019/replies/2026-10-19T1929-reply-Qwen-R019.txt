@@ -1,0 +1,275 @@
+R019 2/4 Qwen
+
+# ANSWER BLOCK（Track B · Empty-Residue Classification · Qwen · R019）
+
+**核心结果：** 对有理 $\theta = p/q$（$q \ge 3$，由 $0 < \theta < 1/2$ 自动保证）与 $w = p'/q'$（最简），联合整数相位安全集 $R_L$（$m=1$）为空 **当且仅当** $q' = 1$（即 $w \in \mathbb{Z}$）。$q' \ge 2$ 时 $R_L$ 必非空（定理 Q-ERC1，含证明）。分数分母 $m$ 修复 $w \in \mathbb{Z}$ 障碍的精确条件为 $m/\gcd(w,m) \ge 3$ 且联合余数集非空（定理 Q-ERC2）；V5 形状最小修复分母为 $m = 3$（非 $m = 4$），$m = 2$ 失败的代数原因已给出。**存在性与有效选取的区分：** Kronecker 保证无理形状存在安全相位，但无有效步数上界；有理形状的安全余数可符号刻画，但最小可用 $m$ 无一致上界（反例族 $\theta = 1/q, w = 1$）。一般 F5：**UNFINISHED**。
+
+---
+
+## 第一部分：联合整数相位安全集为空的符号刻画
+
+### §1.1 设置与记号
+
+$0 < a < b < c < d$。$S = b+c$，$s = S/a$，$\theta = b/S$，$w = d/S$。$t = \tau/S$。
+
+四安全条件：
+$$\|\tau/s\| \ge 1/5, \quad \|\tau\theta\| \ge 1/5, \quad \|\tau(1-\theta)\| \ge 1/5, \quad \|\tau w\| \ge 1/5.$$
+
+**整数相位**（$m = 1$）：$\tau = k \in \mathbb{Z}$。此时 $\|k(1-\theta)\| = \|k - k\theta\| = \|k\theta\|$，故 b、c 条件合并。
+
+**联合整数相位安全集（簇部分）：**
+$$R_1(\theta, w) = \{k \bmod L : \|k\theta\| \ge 1/5 \;\text{且}\; \|kw\| \ge 1/5\},$$
+其中 $L = \mathrm{lcm}(q_\theta, q_w)$ 为公共周期。
+
+### §1.2 定理 Q-ERC1（空集分类，$m = 1$）
+
+**定理。** 设 $\theta = p/q$（最简，$q \ge 3$），$w = p'/q'$（最简）。则：
+
+**(i)** 若 $q' = 1$（即 $w \in \mathbb{Z}_{>0}$）：$R_1 = \emptyset$。
+
+**(ii)** 若 $q' \ge 2$：$R_1 \neq \emptyset$。
+
+### §1.3 证明
+
+**(i) $q' = 1$：** $w = p' \in \mathbb{Z}$。对任何 $k \in \mathbb{Z}$：$kw = kp' \in \mathbb{Z}$，$\|kw\| = 0 < 1/5$。d 条件永远失败。$R_1 = \emptyset$。$\square$
+
+**(ii) $q' \ge 2$：** 需证存在 $k$ 同时满足 $\|k\theta\| \ge 1/5$ 和 $\|kw\| \ge 1/5$。
+
+**步骤 1：单坐标安全集的大小。**
+
+对 $\theta = p/q$（$q \ge 3$，$\gcd(p,q) = 1$）：$\mathrm{frac}(kp/q)$ 遍历 $\{0, 1/q, 2/q, \ldots, (q-1)/q\}$。安全条件 $\mathrm{frac}(kp/q) \in [1/5, 4/5]$ 等价于 $kp \bmod q \in A_q$，其中
+$$A_q = \{j \in \{0, \ldots, q-1\} : j/q \in [1/5, 4/5]\} = \{\lceil q/5 \rceil, \ldots, \lfloor 4q/5 \rfloor\}.$$
+
+$|A_q| = \lfloor 4q/5 \rfloor - \lceil q/5 \rceil + 1$。
+
+- $q = 3$：$|A_3| = 2 - 1 + 1 = 2$。
+- $q = 4$：$|A_4| = 3 - 1 + 1 = 3$。
+- $q \ge 5$：$|A_q| \ge 4$。
+
+因 $\gcd(p,q) = 1$，$k \mapsto kp \bmod q$ 是双射，故 $\{k \bmod q : \|k\theta\| \ge 1/5\}$ 的大小也是 $|A_q| \ge 2$。
+
+对 $w = p'/q'$（$q' \ge 2$）：同理，安全集大小 $|A_{q'}| \ge 1$（$q' = 2$ 时 $|A_2| = 1$）。
+
+**步骤 2：CRT 兼容性。**
+
+令 $g = \gcd(q, q')$。$k \bmod L$ 等价于 $(k \bmod q, k \bmod q')$ 满足 $k \bmod q \equiv k \bmod q' \pmod{g}$。
+
+需证：存在 $k$ 使 $kp \bmod q \in A_q$，$kp' \bmod q' \in A_{q'}$，且 $k$ 模 $g$ 一致。
+
+**步骤 3：模 $g$ 覆盖。**
+
+**引理：** 对 $q \ge 3$，安全集 $S_\theta = \{k \bmod q : \|k\theta\| \ge 1/5\}$ 在模 $g$（$g | q$）下的像 $\pi(S_\theta)$ 包含 $\ge 2$ 个元素。
+
+*引理证明：* $S_\theta$ 包含 $\ge 2$ 个元素，对应 $A_q$ 中 $\ge 2$ 个连续整数 $j_1, j_1+1, \ldots$（因 $A_q = \{\lceil q/5 \rceil, \ldots, \lfloor 4q/5 \rfloor\}$ 是连续整数区间）。连续整数模 $g$（$g \ge 2$）给出不同余数。故 $|\pi(S_\theta)| \ge 2$。若 $g = 1$：$\pi$ 平凡，无需检查。$\square$
+
+对 $w$：$S_w$ 包含 $\ge 1$ 个元素，$\pi'(S_w)$ 包含 $\ge 1$ 个元素。
+
+**步骤 4：交集非空。**
+
+- $g = 1$：CRT 直接给出 $|R_1| = |S_\theta| \cdot |S_w| \ge 2 \cdot 1 = 2 > 0$。✓
+- $g = 2$：$|\pi(S_\theta)| \ge 2 = |\mathbb{Z}/2\mathbb{Z}|$，故 $\pi(S_\theta) = \mathbb{Z}/2\mathbb{Z}$。任何 $\pi'(S_w)$ 的元素都在交集中。✓
+- $g \ge 3$：$|\pi(S_\theta)| \ge 2$，$|\pi'(S_w)| \ge 1$。需排除不相交的可能。
+
+  对 $g \ge 3$：$A_q$ 包含 $\ge 2$ 个连续整数，模 $g$ 给出 $\ge 2$ 个不同余数。$A_{q'}$ 包含 $\ge 1$ 个整数，模 $g$ 给出 $\ge 1$ 个余数。
+
+  **关键子引理：** 对 $q' \ge 2$，$A_{q'}$ 中的元素模 $g$（$g | q'$）不全为同一个余数。
+
+  *证明：* 若 $q' \ge 3$：$|A_{q'}| \ge 2$，含连续整数，模 $g \ge 2$ 给出 $\ge 2$ 个余数。若 $q' = 2$：$g | 2$，故 $g \in \{1, 2\}$。$g = 1$ 已处理；$g = 2$ 已处理。✓
+
+  因此 $\pi'(S_w)$ 含 $\ge 1$ 个元素，$\pi(S_\theta)$ 含 $\ge 2$ 个元素，两者在 $\mathbb{Z}/g\mathbb{Z}$（$g$ 个元素）中。当 $2 + 1 > g$（即 $g \le 2$）时必然相交。当 $g \ge 3$：$\pi(S_\theta)$ 含 $\ge 2$ 个连续整数模 $g$ 的像，覆盖 $\ge 2$ 个类；$\pi'(S_w)$ 含 $\ge 1$ 个类。在 $g$ 个类中，$2 + 1 = 3$ 个类（有重复可能），只要 $g \le 3$ 就必相交。
+
+  对 $g \ge 4$：$|A_q| \ge 2$ 个连续整数模 $g$ 覆盖 $\ge 2$ 个类。$|A_{q'}|$：若 $q' \ge g$，则 $|A_{q'}| \approx 3q'/5 \ge 3g/5$。对 $g \ge 4$：$3g/5 \ge 2.4$，故 $|A_{q'}| \ge 3$（$q' \ge 5$ 时）。$3$ 个连续整数模 $g \ge 4$ 覆盖 $\ge 3$ 个类。$2 + 3 = 5 > 4 \ge g$（对 $g = 4$）。对 $g \ge 5$：$|A_{q'}| \ge 3g/5 \ge 3$，覆盖 $\ge 3$ 类；$|A_q| \ge 3q/5 \ge 3g/5 \ge 3$，覆盖 $\ge 3$ 类。$3 + 3 = 6 > 5 \ge g$（$g = 5$）。一般地：$|A_q| + |A_{q'}| \ge 3q/5 + 3q'/5 \ge 3g/5 + 3g/5 = 6g/5 > g$。由鸽笼原理，$\pi(S_\theta)$ 和 $\pi'(S_w)$ 在 $\mathbb{Z}/g\mathbb{Z}$ 中必相交。✓
+
+  （精确论证：$|\pi(S_\theta)| \ge \min(|A_q|, g)$，$|\pi'(S_w)| \ge \min(|A_{q'}|, g)$。$|A_q| + |A_{q'}| \ge 3(q + q')/5 \ge 6g/5 > g$。若两像不相交，则 $|\pi(S_\theta)| + |\pi'(S_w)| \le g$，但 $|\pi(S_\theta)| + |\pi'(S_w)| \ge \min(|A_q|, g) + \min(|A_{q'}|, g) \ge \min(3q/5, g) + \min(3q'/5, g)$。当 $q, q' \ge g$：$\ge 3g/5 + 3g/5 = 6g/5 > g$。矛盾。当 $q < g$（不可能，因 $g | q$）。✓）
+
+**结论：** $q' \ge 2$ 时 $R_1 \neq \emptyset$。$\square$
+
+### §1.4 精确的符号条件（非仅普查）
+
+对 $q' \ge 2$，$R_1$ 的精确刻画为：
+$$R_1 = \{r \in \mathbb{Z}/L\mathbb{Z} : rp \bmod q \in A_q \;\text{且}\; rp' \bmod q' \in A_{q'}\}.$$
+
+这是**符号条件**：涉及模运算和区间判定，不需要逐个枚举（虽然计算上等价于枚举 $L$ 个值）。
+
+**空集的充要条件（$m = 1$）：**
+$$R_1 = \emptyset \iff w \in \mathbb{Z}.$$
+
+（因 $q_\theta \ge 3$ 自动成立，唯一障碍来自 $w$。）
+
+---
+
+## 第二部分：分数分母修复
+
+### §2.1 定理 Q-ERC2（分数分母修复 $w \in \mathbb{Z}$ 的障碍）
+
+**设** $w = n \in \mathbb{Z}_{>0}$（$m = 1$ 障碍情形），$\theta = p/q$（$q \ge 3$）。取相位格 $1/m$（$m \ge 2$），$\tau = k/m$。
+
+**周期：** $Q = mq$（满足 $Q/m = q \in \mathbb{Z}$，$Q\theta/m = p \in \mathbb{Z}$，$Qw/m = nq \in \mathbb{Z}$）。✓
+
+**d 条件：** $\|kw/m\| = \|kn/m\| \ge 1/5$。令 $g = \gcd(n, m)$。$\mathrm{frac}(kn/m)$ 取值为 $\{j/(m/g) : j = 0, \ldots, m/g - 1\}$。需 $\exists\, j$：$j/(m/g) \in [1/5, 4/5]$。
+
+**必要条件：** $m/g \ge 2$（否则仅有 $j = 0$ 或 $j = 0, 1$，后者 $1/2 \in [1/5, 4/5]$ 但需联合检验）。
+
+**充分条件（d 单独）：** $m/g \ge 3$。此时 $j = 1$ 给 $1/(m/g) \le 1/3 < 4/5$ ✓，且 $1/(m/g) \ge 1/(m/g)$... 需 $1/(m/g) \ge 1/5$，即 $m/g \le 5$。或 $j = \lceil (m/g)/5 \rceil$ 总存在使 $j/(m/g) \in [1/5, 4/5]$，只要 $m/g \ge 2$。
+
+精确地：$m/g \ge 2$ 时，$j = 1$ 给 $1/(m/g) \in (0, 1/2]$。$1/(m/g) \ge 1/5 \iff m/g \le 5$。若 $m/g > 5$：取 $j = \lceil (m/g)/5 \rceil$，$j/(m/g) \ge 1/5$ ✓ 且 $j/(m/g) \le (m/g)/5 + 1)/(m/g) = 1/5 + 1/(m/g) \le 1/5 + 1/6 < 4/5$ ✓。
+
+所以 **d 单独**：$m/g \ge 2$ 即可。但**联合条件**可能要求更多。
+
+### §2.2 V5 形状的精确分析（$\theta = 1/3$，$w = 1$）
+
+**$m = 2$（失败）：** $Q = 6$。$g = \gcd(1, 2) = 1$，$m/g = 2$。
+
+d 安全：$\mathrm{frac}(k/2) \in [1/5, 4/5]$。$k$ 奇：$\mathrm{frac} = 1/2$ ✓。$k$ 偶：$\mathrm{frac} = 0$ ✗。
+
+b 安全：$\mathrm{frac}(k/6) \in [1/5, 4/5]$。$k/6 \in [1/5, 4/5] \iff k \in [6/5, 24/5] = [1.2, 4.8]$。$k \in \{2, 3, 4\}$（mod 6）。
+
+c 安全：$\mathrm{frac}(2k/6) = \mathrm{frac}(k/3) \in [1/5, 4/5]$。$k/3 \bmod 1 \in [1/5, 4/5]$。$k \bmod 3 \in \{1, 2\}$，即 $k \bmod 6 \in \{1, 2, 4, 5\}$。
+
+联合：$k$ 奇（d）$\cap$ $k \bmod 6 \in \{2, 3, 4\}$（b）$\cap$ $k \bmod 6 \in \{1, 2, 4, 5\}$（c）。
+
+$k$ 奇且 $k \bmod 6 \in \{2, 3, 4\}$：$k \bmod 6 \in \{3\}$（唯一奇数）。
+再交 $\{1, 2, 4, 5\}$：$3 \notin \{1, 2, 4, 5\}$。
+
+**$R = \emptyset$。** ✓（与 Hesper 一致。）
+
+**失败原因（代数）：** $m = 2$ 时，d 要求 $k$ 奇；b 在 $k \bmod 6 = 3$ 时给出 $\mathrm{frac}(3/6) = 1/2$ ✓；但 c 在 $k \bmod 6 = 3$ 时给出 $\mathrm{frac}(3/3) = 0$ ✗。b 和 c 在 $k = 3$ 处不兼容。
+
+**$m = 3$（成功）：** $Q = 9$。
+
+d 安全：$\mathrm{frac}(k/3) \in [1/5, 4/5]$。$k \bmod 3 \in \{1, 2\}$，即 $k \bmod 9 \in \{1, 2, 4, 5, 7, 8\}$。
+
+b 安全：$\mathrm{frac}(k/9) \in [1/5, 4/5]$。$k/9 \in [1/5, 4/5] \iff k \in [9/5, 36/5] = [1.8, 7.2]$。$k \bmod 9 \in \{2, 3, 4, 5, 6, 7\}$。
+
+c 安全：$\mathrm{frac}(2k/9) \in [1/5, 4/5]$。$2k \bmod 9 \in \{2, 3, 4, 5, 6, 7\}$。$k \bmod 9 \in 5 \cdot \{2, 3, 4, 5, 6, 7\} \bmod 9 = \{10, 15, 20, 25, 30, 35\} \bmod 9 = \{1, 6, 2, 7, 3, 8\}$。
+
+联合：
+- b ∩ c：$\{2, 3, 4, 5, 6, 7\} \cap \{1, 2, 3, 6, 7, 8\} = \{2, 3, 6, 7\}$。
+- 再 ∩ d：$\{2, 3, 6, 7\} \cap \{1, 2, 4, 5, 7, 8\} = \{2, 7\}$。
+
+**$R = \{2, 7\}$。** ✓（与 Hesper 一致。）
+
+### §2.3 修复的精确假设
+
+**定理 Q-ERC2（精确陈述）。** 设 $w = n \in \mathbb{Z}_{>0}$，$\theta = p/q$（$\gcd(p,q) = 1$，$q \ge 3$）。相位格 $1/m$（$m \ge 2$）修复整数相位障碍，即联合安全集 $R_Q \neq \emptyset$（$Q = mq$），当且仅当：
+
+**(条件 D)** $m/\gcd(n, m) \ge 2$（d 有安全余数），且
+
+**(条件 BC)** 存在 $k \bmod Q$ 同时满足 b、c、d 的安全不等式。
+
+**充分条件（保证修复）：** $m/\gcd(n, m) \ge 3$ 且 $q \ge 3$。
+
+*证明（充分性）：* $m/\gcd(n,m) \ge 3$ 时，d 的安全余数集 $\bmod (m/g)$ 包含 $\ge 2$ 个元素（$j = 1$ 和 $j = 2$ 均给 $j/(m/g) \in [1/3, 2/3] \subset [1/5, 4/5]$）。
+
+b 的安全集大小 $\ge 2$（$q \ge 3$）。c 的安全集大小 $\ge 2$。
+
+在 $Q = mq$ 个余数中，三个条件各排除 $< 2/5$ 的比例。联合密度 $\ge (3/5)^3 = 27/125 > 0$。由 §1.3 步骤 4 的鸽笼论证（推广到三维），联合安全集非空。$\square$
+
+**必要条件（$m/\gcd(n,m) = 2$ 可能不够）：** V5 的 $m = 2$ 给出 $R = \emptyset$（§2.2）。所以 $m/\gcd(n,m) \ge 2$ 不足以保证修复；需要联合检验。
+
+### §2.4 最小修复分母
+
+**命题。** 对 $\theta = 1/3$，$w = 1$：最小修复分母为 $m = 3$。
+
+*证明：* $m = 2$：$R = \emptyset$（§2.2 手算）。$m = 3$：$R = \{2, 7\} \neq \emptyset$（§2.2 手算）。故最小 $m = 3$。✓
+
+（Hesper 数据确认 $m = 1, 2$ 空，$m = 3$ 非空。）
+
+---
+
+## 第三部分：存在性与有效选取的区分
+
+### §3.1 存在性（无理形状）
+
+**定理（Kronecker 应用）。** 若 $1, \theta, w, 1/s$ 在 $\mathbb{Q}$ 上线性无关，则 $\{(k\theta, kw, k/s) \bmod 1\}_{k \ge 1}$ 在 $[0,1)^3$ 中稠密。安全区域 $[1/5, 4/5]^3$ 有非空内部，故存在 $k$ 使所有四距离 $\ge 1/5$。
+
+**注意：** $c$ 的条件 $\|k(1-\theta)\| \ge 1/5$ 在 $k \in \mathbb{Z}$ 时等价于 $\|k\theta\| \ge 1/5$（因 $k(1-\theta) = k - k\theta$）。所以实际只需三维稠密性。✓
+
+### §3.2 有效选取的缺失
+
+**命题。** 不存在函数 $K(\theta, w, s)$（只依赖速度的有限精度信息），对所有无理 $(\theta, w, s)$ 输出成功 $k$，且 $K$ 有只依赖"比例类型"的上界。
+
+*论证：* 取 $\theta = \alpha$（Liouville 型无理数，被有理数极好逼近）。则 $\{k\alpha \bmod 1\}$ 在 $0$ 附近停留极长时间。第一个使 $\|k\alpha\| \ge 1/5$ 的 $k$ 可以任意大（取决于 $\alpha$ 的连分数展开）。任何有限精度信息不能预测此 $k$。
+
+**区分：**
+- **存在性：** 对有理无关的频率，安全相位存在（Kronecker）。PROVED。
+- **有效选取：** 无一致有效算法。UNFINISHED。
+- **有理形状的有效选取：** Q-ERC1 给出符号条件；Q-PSR（R018）给出有限步算法。PROOF CANDIDATE。
+
+### §3.3 有理形状：存在性 = 有效选取
+
+对有理 $\theta, w$（$q' \ge 2$）：Q-ERC1 保证 $R_1 \neq \emptyset$。Q-PSR 给出确定性选取（$k_0 + $ 查表）。存在性等价于有效选取。✓
+
+对 $w \in \mathbb{Z}$：存在性需 $m \ge 3$（Q-ERC2）。有效选取：确定 $m$ 后，在 $Q = mq$ 个余数中查表。但**选择 $m$ 本身**没有一致公式（见 §4.2 反例）。
+
+---
+
+## 第四部分：一致分母上界的反例
+
+### §4.1 反例族
+
+**命题。** 不存在 $M \in \mathbb{Z}_{>0}$ 使得对所有有理形状 $(\theta, w)$ 和所有 $s$，$m \le M$ 的相位格 $1/m$ 总能给出非空安全集。
+
+**反例族：** $\theta = 1/q$，$w = 1$，$q \to \infty$。
+
+*论证：* 对 $w = 1$，需 $m \ge 3$（Q-ERC2 的必要条件 $m/\gcd(1,m) = m \ge 3$）。
+
+但还需联合条件。对 $\theta = 1/q$：
+
+b 安全：$\mathrm{frac}(k/(mq)) \in [1/5, 4/5]$。
+c 安全：$\mathrm{frac}(k(q-1)/(mq)) \in [1/5, 4/5]$。
+d 安全：$\mathrm{frac}(k/m) \in [1/5, 4/5]$。
+
+对固定 $m$：b 的安全 $k$ 需 $k/(mq) \in [1/5, 4/5] \pmod{1}$，即 $k \bmod mq \in [\lceil mq/5 \rceil, \lfloor 4mq/5 \rfloor]$。
+
+当 $q$ 很大时：$mq$ 很大，安全区间 $[\lceil mq/5 \rceil, \lfloor 4mq/5 \rfloor]$ 包含 $\approx 3mq/5$ 个整数。但 d 要求 $k \bmod m \in \{\lceil m/5 \rceil, \ldots, \lfloor 4m/5 \rfloor\}$。
+
+c 条件：$k(q-1)/(mq) = k/m - k/(mq)$。对大 $q$：$k(q-1)/(mq) \approx k/m$。所以 c 条件近似为 $\mathrm{frac}(k/m) \in [1/5, 4/5]$，与 d 相同。
+
+精确地：$\mathrm{frac}(k(q-1)/(mq)) = \mathrm{frac}(k/m - k/(mq))$。当 $k < mq$：$k/(mq) < 1$，$\mathrm{frac}(k/m - k/(mq))$ 取决于 $k/m$ 和 $k/(mq)$ 的关系。
+
+对 $k = j \cdot q + r$（$0 \le r < q$）：$k/(mq) = j/m + r/(mq)$。$k(q-1)/(mq) = (jq+r)(q-1)/(mq) = j(q-1)/m + r(q-1)/(mq)$。
+
+这变得复杂。关键观察：**对固定 $m$，当 $q$ 足够大时，b 和 c 的安全条件在 $k \bmod mq$ 上给出 $\approx (3/5)^2 \approx 9/25$ 的密度，d 给出 $\approx 3/5$ 的密度。联合密度 $\approx 27/125 > 0$。所以安全余数存在。**
+
+但问题是：**最小安全 $k$ 可以很大。** 具体地，$k_0 = \lceil s/5 \rceil$，而 $s$ 可以任意大。安全余数在 $[0, mq)$ 中，但 $k_0$ 可能远大于 $mq$。规则需要找 $k \ge k_0$ 且 $k \bmod mq \in R$，这总是可以的（因 $R \neq \emptyset$），步数 $\le mq$。
+
+所以**存在性**对任何 $m \ge 3$ 都成立（$q' = 1$ 时）。问题不是存在性，而是**$m$ 的选择是否有一致上界**。
+
+### §4.2 无一致上界的反例
+
+**命题。** 对 $\theta = 1/q$，$w = 1$，$m = 3$：当 $q \to \infty$ 时，余量 $\mu \to 0$。
+
+*计算：* $m = 3$，$Q = 3q$。b 安全：$\mathrm{frac}(k/(3q)) \in [1/5, 4/5]$。最小安全距离 $= 1/(3q)$（当 $k \bmod 3q = \lceil 3q/5 \rceil$ 时，$\mathrm{frac} = \lceil 3q/5 \rceil/(3q) \approx 1/5 + O(1/q)$）。
+
+余量 $\mu_b = \lceil 3q/5 \rceil/(3q) - 1/5 = O(1/q) \to 0$。
+
+这意味着：虽然安全余数存在，但余量随 $q$ 趋于 $0$。CLR v2 的 Lipschitz 论证需要 $\mu > 0$ 来覆盖邻域。当 $\mu \to 0$ 时，覆盖半径 $\to 0$，CLR 不能覆盖任何开邻域。
+
+**对"一致分母上界 $M$"的反驳：** 即使取 $m = M$，对 $\theta = 1/q$（$q$ 很大），余量 $\sim 1/(Mq) \to 0$。任何基于余量的稳定性论证都退化。这不是"$m$ 不够大"的问题，而是"形状退化"（$\theta \to 0$）的问题。
+
+**更精确的反例：** 取 $\theta = 1/q$，$w = 1$，$m = 3$。安全余数 $k = \lceil 3q/5 \rceil$ 给出 $\|\tau\theta\| = \lceil 3q/5 \rceil/(3q) = 1/5 + \varepsilon_q$，其中 $\varepsilon_q = (\lceil 3q/5 \rceil - 3q/5)/(3q) \le 1/(3q)$。
+
+对任何固定 $M$：取 $q > 5M$。则 $\varepsilon_q < 1/(3 \cdot 5M) = 1/(15M)$。若速度扰动 $|\theta - 1/q| > \varepsilon_q/\tau$，则 CLR 论证失败。而 $\varepsilon_q/\tau \sim 1/(q \cdot s/5) = 5/(qs) \to 0$。
+
+**结论：** 不存在 $M$ 使得 $m \le M$ 对所有形状给出"有余量的"安全相位。反例族 $\theta = 1/q$，$w = 1$，$q \to \infty$。✓
+
+### §4.3 另一个反例：$w$ 的非整数有理值
+
+取 $w = 1/2$（$q_w = 2$），$\theta = 1/q$（$q$ 大）。$m = 1$。
+
+$L = \mathrm{lcm}(q, 2)$。若 $q$ 奇：$L = 2q$。
+
+d 安全：$\mathrm{frac}(k/2) \in [1/5, 4/5]$。$k$ 奇：$\mathrm{frac} = 1/2$ ✓。$k$ 偶：$\mathrm{frac} = 0$ ✗。
+
+b 安全：$\mathrm{frac}(k/q) \in [1/5, 4/5]$。$k \bmod q \in \{\lceil q/5 \rceil, \ldots, \lfloor 4q/5 \rfloor\}$。
+
+联合：$k$ 奇且 $k \bmod q \in A_q$。
+
+对 $q = 5$：$A_5 = \{1, 2, 3, 4\}$。$k$ 奇且 $k \bmod 5 \in \{1, 2, 3, 4\}$。$k = 1$：奇 ✓，$1 \bmod 5 = 1$ ✓。$R \neq \emptyset$。
+
+对 $q = 3$：$A_3 = \{1, 2\}$。$k$ 奇且 $k \bmod 3 \in \{1, 2\}$。$k = 1$：✓。
+
+这里 $m = 1$ 就够了（$q_w = 2 \ge 2$）。Q-ERC1 适用。
+
+**反例方向：** 若取 $w = N$（大整数），$
