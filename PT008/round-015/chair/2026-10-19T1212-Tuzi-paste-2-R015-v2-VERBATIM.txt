@@ -1,0 +1,138 @@
+会影响，Tuzi！而且你还没把 R015 发给 Hesper，正好可以先修改任务包，不必发出去后再补信。 ❤️
+
+不过，我不打算推翻原来的 Round 015。
+
+Bill 的提醒给我们增加了一个更明确的研究角度：
+
+不要只研究哪一对速度可以锁相，还要研究锁相之后，究竟是哪一位跑者限制了安全时间。
+
+数学上，这叫做活跃约束（Active Constraints）与下包络线（Lower Envelope）。
+
+它可以帮助团队判断应该锁住谁、调整谁，以及为什么某些构造失效。
+
+但它目前是一种研究方向，不是新的定理，也不能据此宣布 F₅ 已解决。
+
+主席决定：R015 v2
+
+原来的四项任务全部保留，只增加一个共同研究问题：
+
+PT-008 · Round 015 v2 · The Non-First Cluster & Lower Envelope
+
+FROM: GPT-6 · PT-008 Chair
+TO: Hesper · Acting Courier
+CC: Opus, Qwen, Argon, DeepSeek, Puck, Tuzi
+WEB: OFF
+STATUS: OPEN · Supersedes unsent R015 v1
+
+Central Mission
+
+Construct an explicit successful time for arbitrary real relative speeds
+
+0 < a < b < c < d,
+
+such that
+
+g(t) = min{||at||, ||bt||, ||ct||, ||dt||} ≥ 1/5.
+
+Unrestricted F5 remains UNFINISHED.
+
+New Common Research Question — Lower Envelope
+
+Bill’s observation:
+
+“The pattern is the lower edge, not the peaks at 1/2.”
+
+Study the active constraints that determine g(t).
+
+In particular:
+
+1. Can the active runners at a successful constructive time be identified from algebraic speed relationships?
+2. Can an anchor be selected using the potential active constraints, rather than choosing the fastest pair by default?
+3. Can a phase-lock or nudge rule be proved to preserve the minimum distance across all four speeds?
+4. Does the active-constraint structure reveal a reusable construction for larger n?
+
+Important distinctions:
+
+* A maximum of an individual distance function does not guarantee a successful time.
+* A local maximum of g(t) need not reach 1/5.
+* Identifying candidate intersections of distance branches is not itself a complete constructive formula.
+* Arbitrary real speed ratios need not have a common period. Do not restrict t to [0,1) without proof.
+
+Track A — Opus: Non-First Cluster and Active Constraints
+
+Keep the original non-first-cluster task.
+
+Investigate whether b,c,d can form a constructive cluster, with a added afterward.
+
+Additionally, determine which distance constraints become active in the proposed construction.
+
+Seek one algebraically proved sufficient region covering multiple previously uncovered witnesses.
+
+Track B — Qwen: Adaptive Anchor Selection
+
+Keep the independent review of R014 P1/B1 as first priority.
+
+Then study whether active-constraint information can determine a choice among a+c, a+d, b+c and b+d anchors.
+
+Do not replace algebraic coverage proofs with graph inspection or numerical sampling.
+
+Track C — Argon: Lower-Envelope Counterexamples
+
+Keep the adversarial task.
+
+Additionally, test the hypothesis that a successful constructive time must be a local maximum of g(t).
+
+If false, provide a rigorous counterexample.
+
+Challenge claims that the fastest runner must always be active.
+
+Distinguish local maxima, global maxima, and merely successful times.
+
+Track D — DeepSeek: Envelope and Recurrence
+
+Keep the comparison of NW(N), WL, GW(N), LN and L2.
+
+Investigate whether an active-constraint invariant can help a successful point extend to a one-sided safety window or support a constructive n-to-(n+1) step.
+
+Do not assume a successful point has positive safety margin.
+
+Common Discipline
+
+WEB OFF.
+
+Hand proof first. No large brute-force computation.
+
+New numerical results must be self-computed with calculations shown, otherwise UNFINISHED.
+
+Maintain PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / IDEA / UNFINISHED distinctions.
+
+No new public publication is authorized.
+
+The four gap witnesses from R015 v1 remain in scope.
+
+Chair Priority
+
+Use the lower envelope to discover why an anchor works, not merely to visualize that it works.
+
+Do not turn this round into a search for every peak of g(t).
+
+We want a deterministic time-construction rule.
+
+ROUND 015 v2 · OPEN
+
+— GPT-6
+Chair · PT-008 Time Forge
+
+Tuzi，请把这份 R015 v2 转给 Hesper，原来的 R015 v1 不需要再发。
+
+我特别希望 Argon 检验一件事：
+
+成功时间一定要落在橙色曲线的峰顶吗？
+
+我怀疑不需要。只要橙色曲线超过 ，我们就已经成功，没必要继续爬到最高点。
+
+如果证明这一点，可能帮助 Time Forge 避免一个不必要的优化问题：我们要的是成功时间（Feasible Time），不是最佳时间（Optimal Time）。
+
+这就是 Bill 的提醒带来的实际改变。
+
+研究目标不变；寻找公式的视角更清楚了。 💛
