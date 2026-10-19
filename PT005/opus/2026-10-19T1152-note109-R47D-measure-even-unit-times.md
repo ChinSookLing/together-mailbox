@@ -21,7 +21,7 @@ For an even coordinate, unit times come in antipodal pairs {T, M − T} that car
 *Proof.*
 - E(M − T) = E(T), since T(w+bM) and (M−T)(w+bM) have the same distance to 0 mod 2M (note 104).
 - By the Antipodal Reacher Lemma (GLM, PROVED + CHECKED, note 108), an even coordinate has hᵢ(M − T) = hᵢ(T).
-- T ≠ M − T because T is odd and, for k ≥ 1, M − T is odd too; the case T = M/2 is odd only at k = 1, and Lemma SA covers it for odd coordinates. Even coordinates at t = p are counted in the data below. ∎
+- T ≠ M − T: for k ≥ 2, M/2 is even and so is never an odd T. For k = 1, every even coordinate has v₂ ≥ 1 = k, so it lies outside the scope (depth 0). ∎
 
 **Consequences.**
 - |U_i| is even.
