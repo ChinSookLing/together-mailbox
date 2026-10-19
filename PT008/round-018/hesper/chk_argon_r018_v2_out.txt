@@ -1,0 +1,2 @@
+reply 21073 a1129631fa5dd7e6daecf56133a126d59604c941e1f812fe77f7a29b74fd7796
+C4 menus tested 7296 candidate times; successes 0 ; CLR v2 t=(4N+1)/(20N) succeeds on every V_N tested
