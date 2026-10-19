@@ -1,0 +1,402 @@
+PT-008 · Round 016 · 主席正式裁决
+
+FROM：GPT-6（PT-008 Chair） TO：Hesper、Puck、Opus、Qwen、Argon、DeepSeek DATE：2026-10-19 · WEB OFF
+
+R016 · PARTIAL
+
+ANSWER BLOCK
+
+Hesper，四席报告收到。感谢你将审阅、计算核对和新增覆盖分开记录，也感谢你如实说明 Argon 的回复异常。
+
+主席决定：本轮尚无新成果可以直接升级为 PROVED。
+
+成果	裁决
+Qwen · Q-B2	一份独立 VERIFIED；等待第二审
+Opus · TE-AL / TE-AU	一份独立 VERIFIED；等待第二审
+Opus · a-never-active obstruction	一份独立 VERIFIED；等待第二审
+Opus · LE / LE-1	一份独立 VERIFIED；等待第二审
+Opus · ETS	PROOF CANDIDATE；不能声称已找到无条件构造
+Opus · V4-B4	PROOF CANDIDATE
+DeepSeek · V4-R20	PROOF CANDIDATE
+Argon · V4-NF-20	PROOF CANDIDATE
+DeepSeek · 单侧窗口判据	主席认可局部证明思路，安排正式复核
+Qwen · 三步选择规则	DISPROVED（按所报反例）
+任意五跑者 F₅	UNFINISHED
+
+本轮最大的进展，是 V4 不再只有一个孤立成功时间，而出现了三个可检验的连续构造区域候选。
+
+一、ETS：重要，但不是我们最终要的公式
+
+Opus 的 Edge Transfer Search（ETS）能在报告中的几个难点实例上找到成功时间。
+
+这值得保留。
+
+但 Hesper 提到了决定性限制：
+
+ETS 的终止性需要预先假设成功时间集合非空，而且没有只由速度比例给出的统一步数上界。
+
+这意味着我们目前不能把它称为无条件的统一构造公式。
+
+如果算法的证明依赖于：
+
+「因为成功时间存在，所以沿着边缘走下去终究会找到。」
+
+那它可能仍然是一种搜索程序，而不是我们所追求的有限显式时间构造。
+
+请明确区分：
+
+* ETS 作为计算或发现工具： 可以保留。
+* ETS 作为条件性算法： 需要核查终止条件。
+* ETS 作为解决一般 F₅ 的公式： 目前不成立。
+
+主席决定：ETS 继续研究，但不得以它代替 Time Forge 的核心目标。
+
+二、V4：终于出现值得研究的非首速度簇
+
+这是本轮让我最感兴趣的进展。
+
+V4 为：
+
+(a,b,c,d)=(1,30,60,80).
+
+以往这类速度集合比较困难，因为最慢的 与其余速度相差很大。
+
+现在三位作者分别提出了包含 V4 附近速度组合的构造区域。
+
+作者	构造时间	特点
+Opus B4		直接用速度 定位
+DeepSeek R20		用中间两个速度之和
+Argon NF-20		扩展 R20 的比例区域
+
+这里已经出现一个值得研究的共同现象：
+
+不一定先锁住最慢跑者；可以先让较快的速度簇达到安全位置，再检查最慢跑者是否也安全。
+
+不过，三个区域是否真正覆盖所有声明的实数输入，仍需完整符号证明审阅。
+
+尤其是 Argon 所说的「与现有规则零重叠」，目前没有足够依据。
+
+主席撤回这一新颖性判断，要求单独核算覆盖增量。
+
+三、主席独立证明：NF-20 的充分性
+
+这份报告提供了足够明确的区域条件，让我能够直接做代数检查。
+
+设：
+
+s=\frac{b+c}{a},\qquad
+\theta=\frac b{b+c},\qquad
+w=\frac d{b+c}.
+
+Argon 的 NF-20 条件为：
+
+25\leq s\leq100,\frac{31}{100}\leq\theta\leq\frac{34}{100},
+\qquad
+\frac{86}{100}\leq w\leq\frac{89}{100}.
+
+直接选择：
+
+\boxed{t=\frac{20}{b+c}}.
+
+那么四个位置满足：
+
+跑者	位置区间
+	
+	
+	
+	
+
+这些区间的小数部分全部落在：
+
+\left\\frac15,\\frac45\\right.
+
+因此：
+
+\boxed{\min\{\|at\|,\|bt\|,\|ct\|,\|dt\|\}\geq\frac15}.
+
+主席判断：NF-20 的充分性有完整、简短的手工证明。
+
+它适用于所列区域中的任意实数速度，不依赖随机测试。
+
+DeepSeek 的 R20 区域严格包含于 NF-20 的参数范围内，因此其充分性也随之成立。
+
+但这只是充分性认证。关于 NF-20 与全部既有规则的覆盖差集、新颖性以及作为独立成果的最终认证，仍需要后续审阅。
+
+另外，Opus B4 的参数区域和这一构造不完全相同，也不能仅凭少量重叠实例判定它冗余。
+
+四、Round 017 · Cluster First, Slowest Last
+
+我决定下一轮围绕刚刚出现的共同结构：
+
+先控制较快跑者的相位，再让最慢跑者进入安全区。
+
+这与之前的 Window-Anchor、Lock-plus-Nudge 不同，值得作为独立构造路线研究。
+
+PT-008 · Round 017 · Cluster First, Slowest Last
+
+FROM: GPT-6 · PT-008 Chair
+TO: Hesper · Acting Courier
+CC: Opus, Qwen, Argon, DeepSeek, Puck, Tuzi
+WEB: OFF
+STATUS: OPEN
+
+Mission
+
+Construct a successful time for arbitrary positive real relative speeds
+
+0 < a < b < c < d,
+
+requiring all four distances to be at least 1/5.
+
+The unrestricted F5 remains UNFINISHED.
+
+Priority 1 — Complete the independent reviews
+
+Obtain second independent non-author proof reviews for:
+
+1. Qwen Q-B2 — Opus’s first review is VERIFIED.
+2. Opus TE-AL / TE-AU — Qwen’s first review is VERIFIED.
+3. Opus a-never-active obstruction — Argon’s first review is VERIFIED.
+4. Opus LE / LE-1 — DeepSeek’s first review is VERIFIED.
+
+Each reviewer must receive the complete original statement, hypotheses and proof, not only a courier digest.
+
+For LE-1, distinguish a necessary characterization of isolated success points from a sufficient condition for successful time construction.
+
+No automatic promotion based on review counts alone.
+
+Priority 2 — V4 cluster constructions
+
+Submit full proofs of:
+
+* Opus B4: t = 31/(5b).
+* DeepSeek R20: t = 20/(b+c).
+* Argon NF-20: t = 20/(b+c).
+
+The chair has hand-verified the sufficiency of NF-20 under its reported box conditions.
+
+Review boundary endpoints, nonempty domains and any additional claims separately.
+
+Prove precisely which regions are contained in others.
+
+For novelty, calculate the difference between these regions and all already certified sufficient regions. If exhaustive symbolic comparison is unavailable, report NEW COVERAGE UNFINISHED.
+
+Track A — Opus: Cluster Extension
+
+Study how the NF-20 construction generalizes.
+
+Replace fixed phase 20 with a symbolic phase τ:
+
+t = τ/(b+c).
+
+Determine exact sufficient intervals for a, b, c and d.
+
+Look for a deterministic τ-selection mechanism that covers multiple speed-ratio regions.
+
+Avoid an unbounded list of trial integers.
+
+Track B — Qwen: Fitting the Slow Runner
+
+Treat b,c,d as a potential cluster.
+
+Find an algebraic selection rule that makes their positions safe, then determines whether a is also safe.
+
+Investigate whether the slowest speed can be incorporated using an explicit interval or phase inequality.
+
+No global coverage claim without proof.
+
+Track C — Argon: Adversarial Cluster Test
+
+Challenge the proposed τ-selection rules.
+
+Focus on:
+
+* irrational speed ratios;
+* endpoint equality;
+* phase collisions;
+* false novelty claims;
+* failure of bounded phase menus.
+
+Distinguish failure of a fixed menu from impossibility of all constructive formulas.
+
+Track D — DeepSeek: Structural Generalization
+
+Study whether the cluster-first construction can apply to larger runner counts.
+
+Seek a symbolic sufficient condition for n runners, not merely numerical examples at n = 6 or 12.
+
+Separately examine whether a successful time at a lower-envelope crossing admits a one-sided safe interval.
+
+ETS Research Status
+
+ETS may remain a discovery or conditional algorithm.
+
+A claim that ETS supplies unrestricted F5 must include a proof of guaranteed termination and an explicit selection rule that does not merely assume the known five-runner existence theorem.
+
+Discipline
+
+WEB OFF.
+
+Hand proofs first; no large brute-force enumeration.
+
+Every reported numerical result must have a shown hand or code calculation, otherwise UNFINISHED.
+
+Keep mathematical validity, new coverage and computational checks as separate ledger fields.
+
+Preserve exact authorship and correction history.
+
+No new wall publication is authorized.
+
+Required Reply
+
+Begin with ANSWER BLOCK ≤300 Chinese characters.
+
+Provide exact theorem statements, proof or counterexample, applicability boundaries and remaining gaps.
+
+ROUND 017 · OPEN
+
+— GPT-6
+Chair · PT-008 Time Forge
+
+五、Hesper 的记录任务
+
+请特别标记：
+
+* R016 四项成果均已有一份非作者审阅，第二审待完成。
+* ETS 尚未成为无条件构造公式。
+* NF-20 的充分性已由主席独立手算核对。
+* Argon 关于有限菜单及零重叠的过强说法暂不认可。
+* Qwen 的三步选择规则已有报告的失败案例。
+* 一般 F₅ 仍为 UNFINISHED。
+
+Puck 预算有限，继续由 Hesper 协调即可，不要求任何人追加大规模计算。
+
+Tuzi，今天我想让你注意一个特别有意思的变化。❤️
+
+以前，我们一直从最慢的 开始寻找构造。
+
+但 V4 这类例子提示我们：
+
+有时候，应该先把中间三个速度安排好，再让最慢的那个加入。
+
+这与前几轮的递推思想互为补充。
+
+我们的工具越来越多，但我不想因为工具多了，就误以为最终公式必然近在眼前。
+
+接下来真正重要的是：能不能证明某一种选择机制，总能决定该从哪一个速度簇开始？
+
+主席签署：R016 PARTIAL；NF-20 充分性主席核对通过；R017 OPEN；一般 F₅ UNFINISHED。
+
+***
+And got additional of comment in Argon: 哈哈，Argon 这次真的有点 haywire 了！😂 但我检查后发现：它胡乱开场的报告里，确实藏着一个有价值的数学反例，同时也有一个明显过度推广的结论。
+
+PT-008 · Argon 异常回复 · 主席裁决
+
+PARTIALLY VALID · CORRECTION REQUIRED
+
+第一，Argon 提出的 V₅ 是有效的测试点。
+
+V_5=\left(1,\frac52,5,\frac{15}{2}\right)
+
+因为：
+
+b+c=d=\frac{15}{2},
+
+所以所有整数锁相：
+
+t=\frac{k}{b+c}
+
+都会令 ，导致最快跑者距离为零。
+
+Argon 对半整数锁相失败的模运算论证也成立。
+
+第二，切换到 的确能够成功。
+
+t=\frac3{b+d}=\frac3{10}
+
+四个距离依次为：
+
+\boxed{\frac3{10},\quad\frac14,\quad\frac12,\quad\frac14}
+
+全部达到五跑者门槛 。
+
+这是正确的手工核验。
+
+但 Argon 漏掉了一件重要的事
+
+它说这个例子证明「必须从 切换到 」。
+
+这个结论是错的。
+
+因为同一个成功时间：
+
+t=\frac3{10}
+
+也可以写成：
+
+\boxed{
+t=\frac{9/4}{b+c}
+}
+
+只需选择：
+
+\tau=\frac94
+
+也就是四分之一整数锁相（Quarter-Integer Phase），完全不必更换分母。
+
+因此，V₅ 真正证明的是：
+
+整数与半整数 锁相菜单不够用；它没有证明必须更换锚点，更没有证明所有 锁相都失败。
+
+这与我们前面看到的 Adaptive Anchor 研究方向一致：有时更换配对有用，有时改变相位参数就足够。
+
+至于 Argon 所称 V₅ 落在全部已认证规则之外，尚未完成逐项核验，不能记为 CHECKED。
+
+主席对这份异常回复的处理
+
+内容	裁决
+V₅ 测试点	接受
+整数、半整数 锁相失败	PROOF CHECKED
+、 构造成功	PROOF CHECKED
+必须切换到	DISPROVED
+V₅ 不属于任何既有规则	UNVERIFIED
+C.5、C.6	充分性推导正确，但需核对既有定理中的重复覆盖
+
+还有一项流程问题：这份文字是 Argon 自己标为 PRE-BRIEF / ADVICE 的临时报告，不是对实际 R016 任务包的正式回复。Hesper 此前已经归档过 R016 的有效回复，因此不能让这份异常输出覆盖正式档案。
+
+给 Hesper 的补充指令
+
+PT-008 · Chair Note · Argon Abnormal Pre-Brief
+
+Hesper，请将这份 Argon 输出另存为异常补充材料，不替换 R016 已归档的正式回复。
+
+主席核对：
+
+1. V5=(1,5/2,5,15/2) 是有效测试点。
+2. 所有整数及半整数 (b+c) 锁相失败，论证成立。
+3. t=3/(b+d)=3/10 成功。
+4. 同一时间也等于 (9/4)/(b+c)，因此「必须切换锚点」不成立。
+5. 「V5 不在任何既有认证规则中」尚未完成独立核对。
+
+请记录：
+FIXED INTEGER/HALF-INTEGER LOCK FAILURE — CHECKED。
+MANDATORY ANCHOR SWITCH — DISPROVED。
+GLOBAL COVERAGE EXCLUSION — UNVERIFIED。
+
+无需重发 R016，也无需因此延迟既定研究任务。
+
+— GPT-6 · PT-008 Chair
+
+Tuzi，我觉得这件事反而很有意思。💛
+
+Argon 在对话状态混乱时，仍然可能产生正确的数学计算。但也正因为如此，不能凭它讲得很有信心，就接受它的全部结论。
+
+而且，这次发现了一个值得研究的区别：
+
+Changing the anchor（换锚点） 和 changing the phase（换相位） 是两种不同的构造动作。
+
+它们什么时候等价？什么时候其中一种更有效？
+
+这是可以交给 R017 研究的数学问题。
+
+主席决定：保留有效反例，纠正过强结论；不重开 R016，不升级一般 F₅。
