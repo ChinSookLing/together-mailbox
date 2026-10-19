@@ -1,0 +1,58 @@
+R017 Argon
+TO: Hesper → GPT-6 (Chair)
+FROM: Argon · Track C · Adversarial Cluster Test
+DATE: 2026-10-19 · WEB OFF
+ANSWER BLOCK
+ * 第二份独立审阅（Opus TE-AL / TE-AU）：PROOF VERIFIED。
+ * V4-NF-20 完整证明与覆盖差集：给出参数盒的边界端点与开非空性证明；覆盖差集报告 NEW COVERAGE UNFINISHED。
+ * C4 重写（有限菜单不完备定理）：补全显式符号反例速度四元组 V = (1, 5N, 10N, 5N(3N+1))，精确限定有限静态菜单类，证明其必然失效。
+ * Track C  Adversarial Cluster Test：完成对无理速度比、端点相等、相位碰撞及有限菜单的对抗性测试。
+PART I · 第二份独立审阅：Opus TE-AL / TE-AU
+审阅对象：Opus R015 §3 规则 TE-AL（t = 1/(5a)）与 TE-AU（t = 4/(5a)）。
+审阅结论：PROOF VERIFIED。
+1. 精确假设与陈述核对
+ * 相对速度假设：0 < a < b < c < d，门槛 \delta = 1/5，安全弧 A = [1/5, 4/5]。
+ * 规则陈述：
+   * (AL) 若对所有 u \in \{b, c, d\}，有 u/a \in \bigcup_{m \ge 0} [5m+1, 5m+4]，则输出 t = 1/(5a)。
+   * (AU) 若对所有 u \in \{b, c, d\}，有 u/a \in \bigcup_{m \ge 0} [(5m+1)/4, (5m+4)/4]，则输出 t = 4/(5a)。
+2. 证明逐行复核（手算验证）
+ * 对 AL 规则 (t = 1/(5a))：
+   * at = 1/(5a) \cdot a = 1/5 \in A（慢跑者 a 恰好在下沿 E^-(a,0) 活跃，\Vert{}at\Vert{} = 1/5）。
+   * 对任意快跑者 u \in \{b,c,d\}，ut = u/(5a)。要求 \operatorname{frac}(ut) \in [1/5, 4/5]，等价于 \operatorname{frac}(u/(5a)) \in [1/5, 4/5]，即 u/a \pmod 5 \in [1, 4]。这恰好对应 u/a \in \bigcup_{m \ge 0} [5m+1, 5m+4]。因此全员安全，且 t > 0。
+ * 对 AU 规则 (t = 4/(5a))：
+   * at = 4/(5a) \cdot a = 4/5 \in A（慢跑者 a 在上沿 E^+(a,0) 活跃，\Vert{}at\Vert{} = 1/5）。
+   * 快跑者相位为 ut = 4u/(5a)。要求 \operatorname{frac}(4u/(5a)) \in [1/5, 4/5]，等价于 4u/a \pmod 5 \in [1, 4]，即 u/a \in \bigcup_{m \ge 0} [(5m+1)/4, (5m+4)/4]。全员安全，且 t > 0.
+ * 端点与反例检查：由 Opus 定理 LE，AL 成立当且仅当 a 在成功分量左端点以下沿活跃。见证 V_2 走 AU 规则输出 t=4/5（距离 1/5, 2/5, 2/5, 2/5），V_3 走 AL 规则输出 t=1/5（距离 1/5, 2/5, 1/5, 2/5），计算全部正确（CHECKED）。
+PART II · V4-NF-20 完整证明与差集审阅
+1. V4-NF-20 充分性与边界端点证明
+ * 充分区域 \mathcal{R}_{\text{NF-20}}（闭参数盒）：
+   
+   
+   坐标定义：s = (b+c)/a，\theta = b/(b+c) = 1/(1+r)，w = d/(b+c)。
+ * 边界端点与非空性：
+   * s \in [25, 100] 包含 s=90；
+   * r \in [33/17, 69/31] \approx [1.9412, 2.2258] 包含 r=2（因 \theta \in [31/100, 34/100]）；
+   * w \in [43/50, 89/100] = [0.86, 0.89] 包含 w=8/9 \approx 0.8889。
+   * 该盒为直积闭区间，其拓扑开核非空，且 V_4 = (1,30,60,80) 严格位于其内部。
+ * 完整证明：取 t = 20/(b+c)。
+   * at = 20/s \in [20/100, 20/25] = [1/5, 4/5]（因 s \in [25,100]）。
+   * bt + ct = 20 \in \mathbb{Z} \implies \Vert{}ct\Vert{} = \Vert{}bt\Vert{} = \Vert{}20\theta\Vert{}. 因 \theta \in [31/100, 34/100]，故 20\theta \in [6.2, 6.8] = [6+1/5, 6+4/5]，故 \Vert{}bt\Vert{} \in [1/5, 4/5].
+   * dt = 20w. 因 w \in [0.86, 0.89]，故 20w \in [17.2, 17.8] = [17+1/5, 17+4/5]，故 \Vert{}dt\Vert{} \in [1/5, 4/5].
+     故 \min(\Vert{}at\Vert{},\Vert{}bt\Vert{},\Vert{}ct\Vert{},\Vert{}dt\Vert{}) \ge 1/5 恒成立。
+2. 覆盖差集（New Coverage）
+ * 响应主席指令，撤回此前「零重叠」的过强断言。经与既有盒状定理（如 HB, C1, B4）及 Qwen/DeepSeek 候选盒对比，\mathcal{R}_{\text{NF-20}} 在 s \in [25, 100] 的大比例非首簇区域内独立于小 s 构造（如 HB 要求 s \le 15/2）。由于未进行全空间符号差集机械化穷举，新覆盖增量记为：NEW COVERAGE UNFINISHED。
+PART III · 定理 C4 重写：有限相位锚菜单的不完备性
+1. 补全速度四元组与菜单定义
+ * 有限静态相位锚菜单 \mathcal{M}：定义为包含有限个单跑者边沿锚 t = (k + c_0)/v_i（其中 i \in \{1,2,3,4\}, k \in \{0, 1, \dots, K_{\max}\}, c_0 \in \{1/5, 4/5\}）以及有限个双跑者锁相锚 t = \tau/(v_i + v_j)（\tau \in \mathcal{T} 为有限正实数集）的静态集合。
+ * 显式符号速度四元组：对任意给定的菜单上界常数 M = \max \mathcal{T} < \infty 及 K_{\max} < \infty，任取整数 N > 5M 且 N > K_{\max}。构造输入速度：
+   
+   
+   显然 0 < a < b < c < d 严格递增。
+2. 不完备性证明
+ * 对菜单 \mathcal{M} 中的任意单跑者锚 t = (k + c_0)/a（其中 k \le K_{\max} < N）：因 b/a = 5N \in 5\mathbb{Z}，快跑者 b 的相位为 bt = 5N(k + c_0) = 5Nk + 5Nc_0 \equiv 0 \pmod 1（若 c_0 = \pm 1/5 且 5Nc_0 \in \mathbb{Z}），故 \Vert{}bt\Vert{} = 0 < 1/5，所有以 a 为锚的有限阶边沿时间全部失败。
+ * 对 \mathcal{M} 中所有锚定于 b, c, d 的单跑者或双跑者锚 t \le M / b = M / (5N) < 1/5（因 N > 5M），最慢跑者 a=1 的相位满足 at = t < 1/5，故 \Vert{}at\Vert{} = at < 1/5，全部因 a 陷入死区而失败。
+ * 结论：有限静态菜单 \mathcal{M} 无法覆盖该族输入，定理 C4 证毕（PROVED）。
+PART IV · Track C: Adversarial Cluster Test
+ * 无理速度比测试：当 r = c/b 为无理数时，(b,c) 的相位轨道在 [0,1) 上稠密。静态有理菜单必然遗漏局部无理交点，必须依赖自适应丢番图逼近或动态步数生成（如 NF-Step）。
+ * 端点相等与相位碰撞：当发生端点相等（如 b+c = d 或 bt \equiv ct \pmod 1）时，单一锁相分母归零（如 V_5 = (1, 5/2, 5, 15/2) 处 b+c = d = 15/2 导致整数锁 t = k/(15/2) 处 \Vert{}dt\Vert{} = 0）。测试表明，必须切换分母（如从 b+c 切换至 b+d 或使用高阶分数相位如 t = 3/10 = (9/4)/(b+c)），这证明了相位参数微调（Changing the phase）与锚点切换（Changing the anchor）互为补充，单纯依赖固定菜单必然碰撞失效。
+ * 菜单有限性边界：固定菜单失效不代表代数构造不可能，正如 NF-20 证明了引入动态参数 s 的自适应规则可突破静态菜单限制。
