@@ -1,0 +1,428 @@
+R018 DeepSeek
+
+ANSWER BLOCK：主席 CLR 反例 CHECKED。CLR v2 数学证明 PROOF VERIFIED（需把 μ_b/μ_c/μ_d 明确取 R 上最小值）；§2「不能放宽」在限定意义下 PROOF VERIFIED。B4⁺ 充分性 PROOF VERIFIED，但「整块相对已认证规则均为新覆盖」DISPROVED：点 (1,31,61,81) 在 B4⁺ 且被已认证 TE-AL/TE-AU 覆盖。一般相位选择机制 UNFINISHED；F5 未闭合。最不确定：CLR v2 与候选规则的覆盖差集未穷尽。
+
+---
+
+一、主席 CLR 反例独立核验
+
+数据：m=2，Q=7，\theta_0=2/7，w_0=6/7，R=\{4\}。速度
+
+(a,b,c,d)=\left(\frac7{20},2,5,6\right).
+
+
+有
+
+s=\frac{b+c}{a}=\frac7{7/20}=20,\quad
+\theta=\frac2{2+5}=\frac27,\quad
+w=\frac6{7}=\frac67.
+
+
+原两项周期条件：
+
+\frac{Q\theta_0}{m}=\frac{7\cdot2/7}{2}=1\in\mathbb Z,\qquad
+\frac{Qw_0}{m}=\frac{7\cdot6/7}{2}=3\in\mathbb Z,
+
+
+但
+
+\frac Qm=\frac72\notin\mathbb Z.
+
+
+原规则：
+
+k_0=\left\lceil\frac{ms}{5}\right\rceil
+=\left\lceil\frac{2\cdot20}{5}\right\rceil=8,
+
+
+不小于 k_0 且 \equiv4\pmod7 的最小整数为 k=11。故
+
+\tau=\frac{11}{2},\qquad
+t=\frac{\tau}{b+c}=\frac{11/2}{7}=\frac{11}{14}.
+
+
+距离：
+
+at=\frac7{20}\cdot\frac{11}{14}=\frac{11}{40},
+
+
+
+bt=2\cdot\frac{11}{14}=\frac{11}{7}=1+\frac47
+\Rightarrow \|bt\|=\frac37,
+
+
+
+ct=5\cdot\frac{11}{14}=\frac{55}{14}=3+\frac{13}{14}
+\Rightarrow \|ct\|=\frac1{14}<\frac15,
+
+
+
+dt=6\cdot\frac{11}{14}=\frac{33}{7}=4+\frac57
+\Rightarrow \|dt\|=\frac27.
+
+
+故原 CLR 失败。结论：CHECKED。 原因正是缺少 Q(1-\theta_0)/m\in\mathbb Z，等价于 Q/m\in\mathbb Z。
+
+---
+
+二、CLR v2 审阅
+
+R1 精确假设
+
+参考形状 \theta_0\in(0,\tfrac12)，w_0>0，整数 m\ge1，整数 Q\ge1，非空
+
+R\subset\{0,1,\dots,Q-1\},\quad 0\notin R.
+
+
+周期假设
+
+\text{(P2)}\qquad \frac Qm\in\mathbb Z,\quad
+\frac{Q\theta_0}{m}\in\mathbb Z,\quad
+\frac{Qw_0}{m}\in\mathbb Z.
+
+
+对每个 \rho\in R，令 \tau_\rho=\rho/m，要求
+
+\|\tau_\rho\theta_0\|\ge\frac15+\mu_b,\quad
+\|\tau_\rho(1-\theta_0)\|\ge\frac15+\mu_c,\quad
+\|\tau_\rho w_0\|\ge\frac15+\mu_d.
+
+
+这里应明确 \mu_b,\mu_c,\mu_d 取 R 上的统一下界，即
+
+\mu_b=\min_{\rho\in R}\left(\|\tau_\rho\theta_0\|-\frac15\right),
+
+
+其余同理；否则后面的 (ii) 不成立。这是澄清，不是缺口。
+
+间隔 G=\max_{\rho\in R}g(\rho)，g(\rho) 为 \rho 到 R 中下一个余数的循环步数；|R|=1 时 G=Q。
+
+规则：
+
+k_0=\left\lceil\frac{ms}{5}\right\rceil,\qquad
+k=k_0+\min_{\rho\in R}\big((\rho-k_0)\bmod Q\big),
+
+
+
+\tau=\frac km,\qquad t=\frac{\tau}{b+c}.
+
+
+结论：若
+
+\text{(i)}\ s\ge\frac{5G}{3m},\qquad
+\text{(ii)}\ \tau|\theta-\theta_0|\le\min(\mu_b,\mu_c),\qquad
+\text{(iii)}\ \tau|w-w_0|\le\mu_d,
+
+
+则四距离 \ge1/5。
+
+R2 证明复核
+
+· 引理 1：Q\theta_0/m,Qw_0/m,Q/m\in\mathbb Z 推出
+  \frac{Q(1-\theta_0)}m=\frac Qm-\frac{Q\theta_0}m\in\mathbb Z.
+
+
+  对 k'=k+jQ，
+  \frac{k'}m u=\frac km u+j\frac{Qu}m,
+
+
+  三个坐标 u=\theta_0,1-\theta_0,w_0 的相位只依赖 k\bmod Q。正确。
+· 引理 2：若 k_0\bmod Q\in R，\delta k=0；否则 k_0 落在相邻余数 \rho_i,\rho_{i+1} 之间，故
+  \delta k\le g(\rho_i)-1\le G-1.
+
+
+  正确。
+· a 条：k_0\ge ms/5 给 \tau\ge s/5。又 k_0<ms/5+1，k\le k_0+G-1<ms/5+G，故
+  \tau<\frac s5+\frac Gm\le\frac s5+\frac{3s}{5}=\frac{4s}{5},
+
+
+  最后一步用 (i)。所以 \tau/s\in[1/5,4/5)，安全。
+· b 条：\rho=k\bmod Q\in R，由引理 1，
+  \operatorname{frac}(\tau\theta_0)=\operatorname{frac}(\tau_\rho\theta_0),
+
+
+  故 \|\tau\theta_0\|\ge1/5+\mu_b。而
+  \tau\theta=\tau\theta_0+\tau(\theta-\theta_0),
+
+
+  偏移 \le\tau|\theta-\theta_0|\le\mu_b，故 \|\tau\theta\|\ge1/5。
+· c 条：
+  \tau(1-\theta)=\tau(1-\theta_0)-\tau(\theta-\theta_0),
+
+
+  由引理 1（这里用 Q/m\in\mathbb Z 推出 Q(1-\theta_0)/m\in\mathbb Z），偏移 \le\min(\mu_b,\mu_c)\le\mu_c，安全。
+· d 条同理。
+· 正性：\tau\ge s/5>0。证明完整。
+
+R3 边界
+
+· |R|=1：G=Q，\delta k\le Q-1，(i) 化为 s\ge5Q/(3m)，证明不变。
+· (i) 取等：\tau<s/5+G/m=4s/5，仍严格小于 4/5 的上界，安全。
+· (ii)(iii) 取等：偏移等于余量，距离恰为 1/5，安全。
+· \mu=0：形状必须与参考形状完全相同，安全。
+· 0\notin R：k\equiv0 时三个簇相位都是整数，距离 0，必不安全；排除合理。
+
+主席反例修复复核：取 Q=14，则
+
+Q/m=7,\quad Q\theta_0/m=2,\quad Qw_0/m=6
+
+
+均为整数。枚举 k=1,\dots,13 得
+
+R=\{4,10\},
+
+
+两者距离均为 (3/7,3/7,2/7)。故
+
+\mu_b=\mu_c=\frac37-\frac15=\frac8{35},\qquad
+\mu_d=\frac27-\frac15=\frac3{35}.
+
+
+间隔 4\to10 为 6，10\to4 为 8，故 G=8。条件 (i)：
+
+s\ge\frac{5\cdot8}{3\cdot2}=\frac{20}{3},
+
+
+而 s=20 成立。规则：
+
+k_0=8,\quad
+\delta k=\min((4-8)\bmod14,(10-8)\bmod14)=2,\quad
+k=10,
+
+
+
+\tau=5,\qquad t=\frac57.
+
+
+距离：
+
+at=\frac7{20}\cdot\frac57=\frac14,
+
+
+
+bt=2\cdot\frac57=\frac{10}7=1+\frac37
+\Rightarrow \frac37,
+
+
+
+ct=5\cdot\frac57=\frac{25}7=3+\frac47
+\Rightarrow \frac37,
+
+
+
+dt=6\cdot\frac57=\frac{30}7=4+\frac27
+\Rightarrow \frac27.
+
+
+全部 \ge1/5。修复正确。
+
+R4 审阅结论
+
+CLR v2 数学有效性：PROOF VERIFIED。
+备注：\mu_b,\mu_c,\mu_d 必须解释为 R 上的统一最小值；否则 (ii) 不成立。此澄清后证明完整。
+
+---
+
+三、CLR v2 §2「不能放宽」审阅
+
+限定结论：不能只保留“所选余数在参考点安全”而完全去掉逐坐标周期条件，同时保持对所有 s 的证明。
+
+理由：实际选出的 k 与参考余数 \rho 满足 k-\rho=jQ，相位变化为
+
+j\frac{Qu}{m}.
+
+
+若某坐标 Qu/m\notin\mathbb Z，该变化随 j 累积，且与 \rho 无关。主席反例中 j=1 已失败。
+
+近似周期版本：若 |Qu/m-n_u|\le\eta_u，则累积偏差
+
+\le \frac{k}{Q}\eta_u
+\le \frac{ms/5+G}{Q}\eta_u.
+
+
+加上形状偏差 \tau|u-u_0| 后仍不超过 \mu_u 时，证明成立。但这只对有界 s 成立，因为左边随 s 增长。
+
+审阅结论：在“不能完全去掉逐坐标周期而保持所有 s”的限定意义下，PROOF VERIFIED（条件性）。若解释为“任何放宽都不可能”，则 UNFINISHED，因为有限 j 的近似周期是反例。
+
+---
+
+四、B4⁺ 审阅
+
+R1 精确假设
+
+0<a<b<c<d,\qquad
+\frac{31}{4}\le\frac ba\le31,\quad
+\frac{61}{31}\le\frac cb\le\frac{64}{31},\quad
+\frac{81}{31}\le\frac db\le\frac{84}{31}.
+
+
+输出
+
+t=\frac{31}{5b}>0.
+
+R2 充分性证明复核
+
+令 x=b/a，r=c/b，q=d/b。
+
+· bt=31/5=6+1/5，\|bt\|=1/5。
+· at=31/(5x)。x\in[31/4,31] 给
+  at\in\left[\frac{31}{5\cdot31},\frac{31}{5\cdot31/4}\right]
+=\left[\frac15,\frac45\right],
+
+
+  安全。
+· ct=(31/5)r。r\in[61/31,64/31] 给
+  ct\in\left[\frac{61}5,\frac{64}5\right]
+=\left[12+\frac15,12+\frac45\right],
+
+
+  小数部分在 [1/5,4/5]，安全。
+· dt=(31/5)q。q\in[81/31,84/31] 给
+  dt\in\left[\frac{81}5,\frac{84}5\right]
+=\left[16+\frac15,16+\frac45\right],
+
+
+  安全。
+· t>0。端点全部安全。
+
+R3 非空与端点
+
+V4：x=30,r=2,q=8/3。检查
+
+\frac{61}{31}\approx1.9677<2<\frac{64}{31}\approx2.0645,
+
+
+
+\frac{81}{31}\approx2.6129<\frac83\approx2.6667<\frac{84}{31}\approx2.7097.
+
+
+故 V4 在内部。t=31/(5\cdot30)=31/150，距离
+
+\frac{31}{150},\quad \frac15,\quad \frac25,\quad \frac7{15}
+
+
+全部 \ge1/5。
+
+R4 审阅结论
+
+B4⁺ 充分性：PROOF VERIFIED。
+但“B4⁺ 整块相对全部已认证规则都是新覆盖”DISPROVED，见下。
+
+---
+
+五、B4⁺ 覆盖新颖性：DISPROVED
+
+取
+
+(a,b,c,d)=(1,31,61,81).
+
+
+则
+
+\frac ba=31,\quad
+\frac cb=\frac{61}{31},\quad
+\frac db=\frac{81}{31}.
+
+
+三者分别落在 B4⁺ 的三个端点，故该点在 B4⁺ 内。B4⁺ 输出
+
+t=\frac{31}{5\cdot31}=\frac15.
+
+
+距离：
+
+at=\frac15,\quad
+bt=\frac{31}{5}=6+\frac15\Rightarrow\frac15,
+
+
+
+ct=\frac{61}{5}=12+\frac15\Rightarrow\frac15,\quad
+dt=\frac{81}{5}=16+\frac15\Rightarrow\frac15.
+
+
+四个距离均为 1/5。
+
+但该点被已认证 TE-AL 覆盖：检查
+
+\frac ba=31\in[31,34]\quad(m=6),
+
+
+
+\frac ca=61\in[61,64]\quad(m=12),
+
+
+
+\frac da=81\in[81,84]\quad(m=16).
+
+
+故 TE-AL 条件成立，输出
+
+t=\frac1{5a}=\frac15,
+
+
+与 B4⁺ 相同。因此该点同时属于 B4⁺ 和已认证 TE-AL。
+
+结论：B4⁺ 与已认证 TE-AL 有非空交；“B4⁺ 整块都是新覆盖”为假。
+若把“新覆盖”理解为“B4⁺ 的每一点都不被任何已认证规则覆盖”，则 DISPROVED。
+B4⁺ 的数学有效性不受影响；受影响的是覆盖新颖性主张。
+
+（补充：该点也满足 TE-AU：31\in[30.25,31]，61\in[60.25,61]，81\in[80.25,81]，输出 t=4/(5a)=4/5，距离同样安全。故与 TE-AU 也重叠。）
+
+---
+
+六、研究问题：相位格能否连接不同簇形状
+
+状态：UNFINISHED。
+
+CLR v2 的尖管半径约为
+
+\frac{\mu}{\tau}\approx\frac{5\mu}{s},
+
+
+随 s 增大而收窄。有限个参考形状无法覆盖所有 s。
+
+相位格视角的精确缺口：对任意实数形状 (\theta,w)，需找有理参考 (\theta_0,w_0)，使其同时满足
+
+\tau|\theta-\theta_0|\le\mu_b,\qquad
+\tau|w-w_0|\le\mu_d,
+
+
+且 s\ge5G/(3m)。由同时逼近可取分母 Q'\le L 的参考，误差约 L^{-1/2}；但需要有理簇的安全余量
+
+\mu\gtrsim sL^{-1/2}.
+
+
+而分母 Q' 时相位是 1/(mQ') 的倍数，安全余量可以小到 0。缺少的引理是：
+
+有理三速度簇在门槛 1/5 下，存在余量不小于 c(Q) 的安全相位，且 c(Q) 下降慢于逼近误差。
+
+此引理未证，故一般确定性相位/锚点选择机制 UNFINISHED。
+
+---
+
+七、四账本栏
+
+· PROOF VALIDITY：
+  主席 CLR 反例：CHECKED。
+  CLR v2：PROOF VERIFIED（数学有效性；\mu 需取 R 上统一最小值）。
+  §2 不能放宽：PROOF VERIFIED（条件性）；无限制不可能性声明 UNFINISHED。
+  B4⁺ 充分性：PROOF VERIFIED。
+  B4⁺ 完全非重叠：DISPROVED。
+  一般选择机制：UNFINISHED。
+· INDEPENDENT REVIEW：本回复为 DeepSeek 独立非作者审阅；未参考其他审阅人本轮意见。
+· NEW COVERAGE：
+  B4⁺ 相对已认证规则的“整块新覆盖”：DISPROVED（反例 (1,31,61,81) 被 TE-AL/TE-AU 覆盖）。
+  CLR v2 相对已认证规则的新覆盖差集：NEW COVERAGE UNFINISHED。
+· COMPUTATIONAL CHECK：上述全部数值均为本回复手算并展示；未使用随机测试作为证据。
+
+---
+
+八、审阅结论汇总
+
+· 主席 CLR 反例：CHECKED。
+· CLR v2 数学有效性：PROOF VERIFIED。
+· CLR v2 §2 不能放宽：PROOF VERIFIED（条件性）；无限制版本 UNFINISHED。
+· B4⁺ 充分性：PROOF VERIFIED。
+· B4⁺ “整块相对全部已认证规则均为新覆盖”：DISPROVED，精确反例 (1,31,61,81)。
+· 一般速度依赖确定性相位/锚点选择机制：UNFINISHED。
+· 无限制 F_5：UNFINISHED。
