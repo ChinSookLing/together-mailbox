@@ -1,0 +1,41 @@
+V1 (Fraction(1, 1), Fraction(11, 10), Fraction(3, 1), Fraction(41, 10)) s=41/10 r=30/11 w=1 theta=11/41 Omega=True
+  certified: {'TN': False, 'LN': False, 'WL_GW5': False, 'K5': False, 'HB': False, 'C1': False, 'scriptK5_ii': False} -> NOT covered by any certified rule
+  R013 candidates: {'NW5': False, 'SLN1': True, 'SLNodd': False, 'Qwen_ad2': False}  lambdas (Fraction(1813, 1353), Fraction(583, 1230), Fraction(12, 41))  WL bound 6
+  LB(k) k<=12 successes: []
+   anchor a+c tau in (1/4)Z, tau<=6 successes: ['7/4', '9/4']
+   anchor b+d tau in (1/4)Z, tau<=6 successes: ['9/4', '3']
+   anchor a+d tau in (1/4)Z, tau<=6 successes: ['11/4', '3']
+   anchor c+d tau in (1/4)Z, tau<=6 successes: ['3', '4', '17/4']
+   anchor a+b tau in (1/4)Z, tau<=6 successes: ['5/4', '13/4', '19/4', '21/4']
+   anchor b+c tau in (1/4)Z, tau<=6 successes: ['7/4', '9/4', '23/4']
+V2 (Fraction(1, 1), Fraction(2, 1), Fraction(3, 1), Fraction(9, 2)) s=5 r=3/2 w=9/10 theta=2/5 Omega=True
+  certified: {'TN': False, 'LN': False, 'WL_GW5': False, 'K5': False, 'HB': False, 'C1': False, 'scriptK5_ii': False} -> NOT covered by any certified rule
+  R013 candidates: {'NW5': False, 'SLN1': False, 'SLNodd': False, 'Qwen_ad2': False}  lambdas (Fraction(83, 90), Fraction(38, 45), Fraction(4, 15))  WL bound 6
+  LB(k) k<=12 successes: [2, 3, 4, 6, 7, 8, 12]
+   anchor a+c tau in (1/4)Z, tau<=6 successes: ['3', '5']
+   anchor b+d tau in (1/4)Z, tau<=6 successes: ['5']
+   anchor a+d tau in (1/4)Z, tau<=6 successes: ['17/4']
+   anchor c+d tau in (1/4)Z, tau<=6 successes: ['2', '3', '9/2', '11/2', '23/4', '6']
+   anchor a+b tau in (1/4)Z, tau<=6 successes: ['9/4', '15/4']
+   anchor b+c tau in (1/4)Z, tau<=6 successes: ['2', '3', '15/4', '4', '6']
+V3 (Fraction(1, 1), Fraction(3, 1), Fraction(4, 1), Fraction(7, 1)) s=7 r=4/3 w=1 theta=3/7 Omega=True
+  certified: {'TN': False, 'LN': False, 'WL_GW5': False, 'K5': False, 'HB': False, 'C1': False, 'scriptK5_ii': False} -> NOT covered by any certified rule
+  R013 candidates: {'NW5': False, 'SLN1': False, 'SLNodd': False, 'Qwen_ad2': False}  lambdas (Fraction(269, 420), Fraction(129, 140), Fraction(8, 35))  WL bound c>=4a
+  LB(k) k<=12 successes: []
+   anchor a+c tau in (1/4)Z, tau<=6 successes: ['1', '2', '3', '4', '6']
+   anchor b+d tau in (1/4)Z, tau<=6 successes: ['2', '4', '6']
+   anchor a+d tau in (1/4)Z, tau<=6 successes: []
+   anchor c+d tau in (1/4)Z, tau<=6 successes: []
+   anchor a+b tau in (1/4)Z, tau<=6 successes: []
+   anchor b+c tau in (1/4)Z, tau<=6 successes: []
+V4 (Fraction(1, 1), Fraction(30, 1), Fraction(60, 1), Fraction(80, 1)) s=90 r=2 w=8/9 theta=1/3 Omega=True
+  certified: {'TN': False, 'LN': False, 'WL_GW5': False, 'K5': False, 'HB': False, 'C1': False, 'scriptK5_ii': False} -> NOT covered by any certified rule
+  R013 candidates: {'NW5': False, 'SLN1': False, 'SLNodd': False, 'Qwen_ad2': False}  lambdas (Fraction(11, 200), Fraction(13, 20), Fraction(3, 10))  WL bound c>=4a
+  LB(k) k<=12 successes: []
+   anchor a+c tau in (1/4)Z, tau<=6 successes: []
+   anchor b+d tau in (1/4)Z, tau<=6 successes: []
+   anchor a+d tau in (1/4)Z, tau<=6 successes: []
+   anchor c+d tau in (1/4)Z, tau<=6 successes: []
+   anchor a+b tau in (1/4)Z, tau<=6 successes: []
+   anchor b+c tau in (1/4)Z, tau<=6 successes: []
+V1 SLN1: k0 2 x0 22/41 T (Fraction(71, 205), Fraction(134, 205)) j 0 k* 2 bound s(4/5-eps) 77/25 t* 20/41 X 2 t 22/41 dists ['19/41', '84/205', '16/41', '1/5'] ok True
