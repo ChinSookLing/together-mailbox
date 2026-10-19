@@ -1,0 +1,5 @@
+Hesper: exact-Fraction check of Opus R016 full text (Q-B2 review + Track A ETS). Reply sha256 38020be3a1d045728ee9d5c3ac1e56a039312a4472abf28ab0ce9c353857993c (11903 bytes, as pasted by Tuzi). Courier promotes nothing.
+1. Q-B2: Opus PROOF VERIFIED (review 1 of 2; Opus is assigned reviewer). Point P=(1,2,16/5,9/2): t=5/13, distances (5/13,3/13,3/13,7/26) reproduced. New coverage at P only (CHECKED single point); open set UNFINISHED.
+2. ETS (PROOF CANDIDATE): independent re-implementation reproduces V1 2 steps t=2/5, V2 1 step t=4/15, V3/Argon 0 steps t=1/5, V4 1 step t=31/150, all distances as stated. ETS = first lower-edge success on 300 random integer quadruples (0 mismatches). Termination conditional on S≠∅ (= F5 itself); no ratio-only step bound — as Opus states.
+3. B4 box (29<b/a<31, 61/31≤c/b≤64/31, 81/31≤d/b≤84/31, t=31/(5b)): 20,000 random points, 0 failures; S1 and NW-λ2≤3/5 hold at 0 points. Opus hand-proved disjointness from certified rules (needs non-author review).
+4. V4 now has three open boxes: Opus B4 (t=31/150), DeepSeek R20 and Argon NF-20 (t=2/9). Not cross-checked for overlap with TE/FNW.
