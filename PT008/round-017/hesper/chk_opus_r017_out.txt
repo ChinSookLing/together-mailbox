@@ -1,0 +1,16 @@
+B4+ 20000 pts fail 0
+V4 t=31/150 ['31/150', '1/5', '2/5', '7/15']
+P1 in B4 True in NF False
+P2 in B4 True in R20 False in NF True
+NF pt s50 th.31 w.87 in own True in B4+ False in B4 False
+R20 pt s90 th.32 w.885 in own True in B4+ False in B4 False
+NF pt s50 th1/3 w7/8 in own True in B4+ True in B4 False
+V4shape residue mismatch 2
+V4shape residue mismatch 7
+V4shape R margins [('1/3', '4/9'), ('1/3', '4/9')]
+V4shape CLR random fail 0
+V5shape R margins [('1/4', '1/4'), ('1/4', '1/4')]
+V5shape CLR random fail 0
+V4 CLR tau 22 ['11/45', '1/3', '1/3', '4/9']
+V5 CLR tau 9/4
+V4 nbhd: s in (85,95] tau {Fraction(22, 1)}
