@@ -1,0 +1,19 @@
+HB v3 sha256 8c07070061e341ba749e17c34faca914bd3c73a477ff02a4e2bf6a32987ba0bb 5832 bytes; differing lines: [5]
+   OK   same line count
+   OK   exactly one differing line
+   OK   differing line is 5
+   OK   line 5 equals chair text
+   OK   v2 line 5 was stale
+   OK   no CR
+   OK   ends with single LF
+   OK   v2 sha matches
+C1 v3 sha256 187d4762b5d875e09e727c4481a40bbf20ee972d249fd45b8e56ceb72a6a734e 7792 bytes; differing lines: [5]
+   OK   same line count
+   OK   exactly one differing line
+   OK   differing line is 5
+   OK   line 5 equals chair text
+   OK   v2 line 5 was stale
+   OK   no CR
+   OK   ends with single LF
+   OK   v2 sha matches
+RESULT: PASS
