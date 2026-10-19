@@ -1,0 +1,13 @@
+V2 2/5 ['2/5', '1/5', '1/5', '1/5'] component ['2/5', '2/5']
+V2 4/5 ['1/5', '2/5', '2/5', '2/5'] component ['11/15', '4/5']
+V3 1/5 ['1/5', '2/5', '1/5', '2/5'] component ['1/5', '1/5']
+V3 4/5 ['1/5', '2/5', '1/5', '2/5'] component ['4/5', '4/5']
+V4 2/9 ['2/9', '1/3', '1/3', '2/9'] component ['11/50', '89/400']
+V4 end 11/50 ['11/50', '2/5', '1/5', '2/5']
+V4 end 89/400 ['89/400', '13/40', '7/20', '1/5']
+V1 AL False AU False g(1/5a) 9/50 g(4/5a) 3/25
+V2 AL False AU True g(1/5a) 1/10 g(4/5a) 1/5
+V3 AL True AU True g(1/5a) 1/5 g(4/5a) 1/5
+V4 AL False AU False g(1/5a) 0 g(4/5a) 0
+TE predicate mismatches 0
+V4 a-edges fail True
