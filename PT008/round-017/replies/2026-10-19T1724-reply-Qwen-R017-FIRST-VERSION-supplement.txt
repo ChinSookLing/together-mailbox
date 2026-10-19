@@ -1,0 +1,260 @@
+R017 Qwen
+
+# ANSWER BLOCK（Track B + 独立审阅 · Qwen · R017）
+
+**审阅：** a-never-active 障碍 **PROOF VERIFIED**（证明正确，作用范围精确——仅否定以 $a$ 边沿为锚的规则）。LE **PROOF VERIFIED**（三分量结构、端点归属证明完备）。LE-1 **PROOF VERIFIED** 作为孤立成功点的**必要刻画**；明确区分：它不是构造成功时间的充分条件。**Track B：** 给出"簇优先、最慢者后装"的显式区间定理（PROOF CANDIDATE）：固定 $k$ 使 $b,c,d$ 安全后，$a$ 的合法值域为 $\bigcup_n [S(5n{+}1)/(5k),\; S(5n{+}4)/(5k)]$；V4 验证通过。F5 **未闭合**。最不确定步：$k$ 的确定性选取（目前需检验有限个候选）。
+
+---
+
+## 第一部分：独立审阅 · a-never-active 障碍（第二审）
+
+### R1 · 精确假设
+
+- $0 < a < b < c < d$（严格）。
+- $\delta = 1/5$。
+- $E^-(a,j) = (j+\delta)/a$，$E^+(a,j) = (j+1-\delta)/a$，$j \ge 0$ 整数。
+- **假设 (H)：** $b/a$、$c/a$、$d/a$ 中**至少一个**属于 $5\mathbb{Z}$（即 $\exists\, u \in \{b,c,d\}$，$u/a = 5q$，$q \in \mathbb{Z}_{>0}$）。
+
+### R2 · 完整证明核验
+
+设 $u/a = 5q$。
+
+**在 $E^-(a,j)$：** $t = (j+1/5)/a$。$ut = 5q(j+1/5) = 5qj + q \in \mathbb{Z}$。$\|ut\| = 0 < 1/5$。✗ 失败。
+
+**在 $E^+(a,j)$：** $t = (j+4/5)/a$。$ut = 5q(j+4/5) = 5qj + 4q \in \mathbb{Z}$。$\|ut\| = 0 < 1/5$。✗ 失败。
+
+对**所有** $j \ge 0$ 成立。✓
+
+### R3 · 作用范围
+
+- 否定对象：以 $a$ 的边沿时间 $E^\pm(a,j)$ 为输出（或为构造起点）的任何规则，包括 TE-AL、TE-AU、WL 第一分支（$t_L = 1/(5a)$）。
+- **不**否定：以其他锚点（$b{+}c$、$a{+}d$、$b{+}d$）为基础的构造。
+- **不**否定存在性：障碍只说明 $a$ 不在任何成功分量的端点上活跃（由 LE），但成功分量仍可存在（由 $b,c,d$ 的边沿界定）。
+
+### R4 · V4 验证（手算）
+
+$b/a = 30 = 5 \cdot 6$。$c/a = 60 = 5 \cdot 12$。$d/a = 80 = 5 \cdot 16$。三者均 $\in 5\mathbb{Z}$。
+
+$E^-(a,0) = 1/5$：$bt = 30/5 = 6$，$\|6\| = 0$。✗
+$E^+(a,0) = 4/5$：$bt = 24$，$\|24\| = 0$。✗
+$E^-(a,1) = 6/5$：$bt = 36$，$\|36\| = 0$。✗
+
+### R5 · 审阅结论
+
+**PROOF VERIFIED。** 证明简洁正确，作用范围精确，无过度推广。
+
+---
+
+## 第二部分：独立审阅 · LE（第二审）
+
+### R1 · 精确假设
+
+- $V = \{v_1, \ldots, v_k\}$，$0 < v_1 < \cdots < v_k$（有限个正实数）。
+- $0 < \delta < 1/2$。
+- $g(t) = \min_i \|v_i t\|$。$S = \{t > 0 : g(t) \ge \delta\}$。
+- $S \neq \emptyset$。
+
+### R2 · 完整证明核验
+
+**(i) 分量结构：**
+
+$g$ 连续（$\|v_i t\|$ 连续，有限个连续函数的最小值连续）。$S = g^{-1}([\delta, \infty))$ 在 $(0,\infty)$ 中闭。
+
+有界性：$v_1 t = n$（$n \in \mathbb{Z}_{\ge 1}$）时 $\|v_1 t\| = 0 < \delta$，故 $t = n/v_1 \notin S$。每个分量夹在相邻两个 $n/v_1$、$(n+1)/v_1$ 之间，有界。
+
+$\alpha > 0$：$t \to 0^+$ 时 $v_i t \to 0$，$\|v_i t\| \to 0 < \delta$。故 $(0, \varepsilon) \cap S = \emptyset$ 对某 $\varepsilon > 0$。✓
+
+**(ii) 左端点：**
+
+设 $[\alpha, \beta]$ 为一分量。取 $t_n \uparrow \alpha$，$t_n \notin S$。$g(t_n) < \delta$：$\exists\, i_n$ 使 $\|v_{i_n} t_n\| < \delta$。$V$ 有限，由鸽巢原理某 $v$ 出现无穷次。取子列：$\|v t_n\| < \delta$ 对所有 $n$。连续性：$\|v\alpha\| \le \delta$。又 $\alpha \in S$：$\|v\alpha\| \ge \delta$。故 $\|v\alpha\| = \delta$。
+
+$\operatorname{frac}(v\alpha) = \delta$ 或 $1-\delta$。
+
+若 $\operatorname{frac}(v\alpha) = 1-\delta$：对 $t$ 充分接近 $\alpha$ 且 $t < \alpha$：$vt < v\alpha$，$\operatorname{frac}(vt) < 1-\delta$（不跨整数），$\|vt\| = 1 - \operatorname{frac}(vt) > \delta$。这与 $\|vt_n\| < \delta$（$t_n \uparrow \alpha$）矛盾。
+
+故 $\operatorname{frac}(v\alpha) = \delta$。$v\alpha = j + \delta$，$j = \lfloor v\alpha \rfloor \ge 0$。$\alpha = (j+\delta)/v = E^-(v,j)$。✓
+
+**(iii) 右端点：** 对称。$\operatorname{frac}(u\beta) = 1-\delta$。$\beta = (j'+1-\delta)/u = E^+(u,j')$。✓
+
+### R3 · 边界/退化情形
+
+- 单点分量 $\alpha = \beta$：(ii) 给出 $v$ 下沿活跃，(iii) 给出 $u$ 上沿活跃。$u \neq v$（否则 $\delta = 1-\delta$，矛盾 $\delta \neq 1/2$）。→ LE-1。
+- $\delta \to 0^+$ 或 $\delta \to 1/2^-$：证明不依赖 $\delta$ 的具体值（只需 $\delta \in (0,1/2)$）。✓
+
+### R4 · 审阅结论
+
+**PROOF VERIFIED。** 证明完备，拓扑论证正确，端点归属严格。
+
+---
+
+## 第三部分：独立审阅 · LE-1（第二审）
+
+### R1 · 精确陈述
+
+若 $t^*$ 是 $S$ 的**孤立点**（即 $\{t^*\}$ 是 $S$ 的一个连通分量），则：
+- $\exists\, u \neq v$：$\operatorname{frac}(vt^*) = \delta$（$v$ 下沿活跃），$\operatorname{frac}(ut^*) = 1-\delta$（$u$ 上沿活跃）。
+- $t^* = k/(u+v)$，$k = j_u + j_v + 1 \in \mathbb{Z}_{\ge 1}$。
+- $\operatorname{frac}(ku/(u+v)) = 1-\delta$。
+
+### R2 · 证明核验
+
+由 LE：$t^* = \alpha = \beta$。
+
+由 (ii)：$\exists\, v$，$vt^* = j_v + \delta$。
+由 (iii)：$\exists\, u$，$ut^* = j_u + 1 - \delta$。
+
+$u \neq v$：若 $u = v$，则 $\operatorname{frac}(vt^*) = \delta$ 且 $= 1-\delta$。$\delta = 1/2$，矛盾。✓
+
+相加：$(u+v)t^* = j_v + \delta + j_u + 1 - \delta = j_u + j_v + 1 = k$。$t^* = k/(u+v)$。✓
+
+$\operatorname{frac}(ku/(u+v)) = \operatorname{frac}(ut^*) = 1-\delta$。✓
+
+### R3 · 关键区分（主席要求）
+
+**LE-1 是孤立成功点的必要刻画，不是构造成功时间的充分条件。**
+
+具体地：
+- **必要：** 若 $t^*$ 是孤立成功点，则 $t^*$ 必为某对 $(u,v)$ 的锁相时间 $k/(u+v)$。✓（已证）
+- **非充分：** 给定 $u, v, k$，$t^* = k/(u+v)$ 不一定是成功时间。还需验证**所有**跑者（不仅是 $u, v$）在 $t^*$ 处满足 $\|\cdot\| \ge \delta$。
+
+例：$(a,b,c,d) = (1,2,3,4)$，$t^* = 1/(1+3) = 1/4$（$a,c$ 锁，$k=1$）。$\|a/4\| = 1/4$，$\|c/4\| = \|3/4\| = 1/4$。但 $\|b/4\| = 1/4$，$\|d/4\| = 1$。$\|d/4\| = 0 < 1/5$。✗ 不成功。
+
+所以 LE-1 不能直接用于构造；它只说明孤立成功点的**形状**。
+
+### R4 · 审阅结论
+
+**PROOF VERIFIED**（作为必要刻画）。明确：不是充分构造条件。
+
+---
+
+## 第四部分：Track B · Fitting the Slow Runner
+
+### §4.1 结构定理（簇优先、最慢者后装）
+
+**定理 Q-CF1（Cluster-First, Slowest-Last）。** 设 $0 < a < b < c < d$，$S = b+c$，$\theta = b/S$，$w = d/S$。设存在整数 $k \ge 1$ 满足：
+
+$$\text{(C1)}\quad \|k\theta\| \ge \frac{1}{5}, \qquad \text{(C2)}\quad \|kw\| \ge \frac{1}{5}, \qquad \text{(C3)}\quad \operatorname{frac}\!\left(\frac{ka}{S}\right) \in \left[\frac{1}{5},\, \frac{4}{5}\right].$$
+
+则 $t = k/S$ 满足 $\|at\|, \|bt\|, \|ct\|, \|dt\| \ge 1/5$。
+
+**证明：**
+- $\|bt\| = \|k\theta\| \ge 1/5$（C1）。✓
+- $\|ct\| = \|k - k\theta\| = \|k\theta\| \ge 1/5$（配对：$bt + ct = k$）。✓
+- $\|at\| = \|ka/S\|$。由 (C3)：$\operatorname{frac}(ka/S) \in [1/5, 4/5]$。$\|at\| \ge 1/5$。✓
+- $\|dt\| = \|kw\| \ge 1/5$（C2）。✓ $\square$
+
+### §4.2 $a$ 的合法值域（显式区间）
+
+**(C3) 等价于：** 存在整数 $n \ge 0$ 使得
+$$n + \frac{1}{5} \le \frac{ka}{S} \le n + \frac{4}{5}$$
+$$\iff \quad \frac{S(5n+1)}{5k} \le a \le \frac{S(5n+4)}{5k}.$$
+
+故 $a$ 的合法值域为：
+$$\boxed{a \in \bigcup_{n=0}^{\infty} \left[\frac{S(5n+1)}{5k},\; \frac{S(5n+4)}{5k}\right]}$$
+
+（实际只需 $n$ 使区间与 $(0, b)$ 有交集。）
+
+每个区间长度 $= 3S/(5k)$。相邻区间间距 $= 2S/(5k)$。
+
+### §4.3 V4 验证（手算）
+
+$V4 = (1, 30, 60, 80)$。$S = 90$，$\theta = 1/3$，$w = 8/9$。$k = 20$。
+
+**(C1)：** $\|20/3\| = \|6 + 2/3\| = 1/3 \ge 1/5$。✓
+
+**(C2)：** $\|20 \cdot 8/9\| = \|160/9\| = \|17 + 7/9\| = \|7/9\| = 2/9 \ge 1/5$。✓
+
+**(C3)：** $ka/S = 20 \cdot 1/90 = 2/9$。$\operatorname{frac}(2/9) = 2/9 \in [1/5, 4/5]$。✓
+
+$a$ 的合法区间（$n=0$）：$[90 \cdot 1/100,\; 90 \cdot 4/100] = [0.9,\; 3.6]$。$a = 1 \in [0.9, 3.6]$。✓
+
+$t = 20/90 = 2/9$。距离：$2/9, 1/3, 1/3, 2/9$。全部 $\ge 1/5$。✓
+
+### §4.4 实数邻域（非平凡性）
+
+固定 $k=20$，$S=90$，$\theta=1/3$，$w=8/9$。
+
+$a$ 的合法区间 $[0.9, 3.6]$ 是开区间内部的闭区间，有非空内部 $(0.9, 3.6)$。
+
+对 $d$ 的扰动：$w = d/90$。$\|20w\| \ge 1/5$ 要求 $\operatorname{frac}(20d/90) \in [1/5, 4/5]$，即 $\operatorname{frac}(2d/9) \in [1/5, 4/5]$。$d = 80$：$160/9 = 17 + 7/9$。$\operatorname{frac} = 7/9 \in [1/5, 4/5]$。扰动范围：$7/9 - 1/5 = 26/45$，$4/5 - 7/9 = 1/45$。所以 $d$ 可增大至 $80 + 90 \cdot 1/(45 \cdot 20) \cdot 9 = 80 + 1$... 让我精确算。
+
+$20d/90 = 2d/9$。$\operatorname{frac}(2d/9)$ 需 $\in [1/5, 4/5]$。$d = 80$：$2 \cdot 80/9 = 160/9$。$\operatorname{frac} = 7/9$。上界：$\operatorname{frac} \le 4/5$。$7/9 + \Delta \le 4/5$：$\Delta \le 4/5 - 7/9 = (36-35)/45 = 1/45$。$2\Delta_d/9 = 1/45$：$\Delta_d = 9/(2 \cdot 45) = 1/10$。所以 $d \le 80.1$。
+
+下界：$\operatorname{frac} \ge 1/5$。$7/9 - \Delta \ge 1/5$：$\Delta \le 7/9 - 1/5 = 26/45$。$\Delta_d = 9 \cdot 26/(2 \cdot 45) = 26/10 = 2.6$。$d \ge 77.4$。
+
+所以 $d \in [77.4, 80.1]$ 内 $k=20$ 有效。非平凡邻域。✓
+
+### §4.5 与已认证构造的重叠核对
+
+| 构造 | 是否覆盖 V4 | 理由 |
+|---|---|---|
+| TN | ✗ | $d=80 > 4a=4$ |
+| LN | ✗ | $d=80 < 4c=240$ |
+| K5 | ✗ | $c=60 > 8a/3$ |
+| WL | ✗ | $c=60 > 4a=4$ |
+| R013 ($a{+}d$) | ✗ | $c=60 > 4a=4$ |
+| P1 | ✗ | $D_1=149 > 80=d$ |
+| HB | ✗ | $r=2 \notin (1,8/7]\cup[4,13/2]$ |
+| C1 | ✗ | $r=2 > 8/7$ |
+| SLN1 | ✗ | $\theta=1/3 > 3/10 = 3/5-2\mu$ |
+| NF-20 | ✓ | $s=90$, $\theta=1/3$, $w=8/9$ 均在盒内 |
+
+**结论：** Q-CF1 与 NF-20 在 V4 处重叠（均给出 $t=20/90$）。Q-CF1 的附加价值是：(1) 显式区间刻画 $a$ 的合法值域；(2) 结构分解（簇先行，$a$ 后装）；(3) 适用于一般 $k$，不限于 $k=20$。
+
+**新覆盖：** 相对已认证（PROVED）清单，V4 确实不被覆盖。但相对 NF-20（PROOF CANDIDATE，主席手算充分性通过），V4 已被覆盖。本定理的新覆盖增量：**未确立**（需穷尽与全部候选的符号比较）。写 **NEW COVERAGE: UNFINISHED**。
+
+### §4.6 确定性选择（$k$ 的选取）
+
+对给定 $(b, c, d)$，满足 (C1) 和 (C2) 的 $k$ 的选取：
+
+**观察：** (C1) 要求 $\operatorname{frac}(k\theta) \in [1/5, 4/5]$。(C2) 要求 $\operatorname{frac}(kw) \in [1/5, 4/5]$。
+
+若 $\theta = p/q$（有理），则 $k\theta \bmod 1$ 的周期为 $q$。在 $k = 1, \ldots, q$ 中检查即可。
+
+若 $\theta$ 无理，则 $\{k\theta\}$ 稠密，但确定性选取需要更精细的工具（如连分数逼近）。**UNFINISHED。**
+
+V4：$\theta = 1/3$（有理，周期 3）。$k \bmod 3 \in \{1, 2\}$（排除 $k \equiv 0$）。$w = 8/9$（有理，周期 9）。$20 \bmod 9 = 2$。$\operatorname{frac}(2 \cdot 8/9) = \operatorname{frac}(16/9) = 7/9 \in [1/5, 4/5]$。✓
+
+有界检验：$k \in \{1, \ldots, \operatorname{lcm}(3,9)\} = \{1, \ldots, 9\}$ 中，$k \equiv 1, 2 \pmod 3$ 且 $\operatorname{frac}(8k/9) \in [1/5, 4/5]$：$k=2$: $\operatorname{frac}(16/9)=7/9$ ✓。最小可行 $k=2$。但 $k=2$：$ka/S = 2/90 = 1/45$。$\operatorname{frac} = 1/45 < 1/5$。(C3) 失败！
+
+需 $ka/S \ge 1/5$：$k \ge S/(5a) = 90/5 = 18$。所以 $k \ge 18$。$k=20$：$20 \bmod 3 = 2$ ✓。$\operatorname{frac}(160/9) = 7/9$ ✓。$\operatorname{frac}(20/90) = 2/9$ ✓。
+
+**确定性规则（有界）：** $k_0 = \lceil S/(5a) \rceil$。在 $\{k_0, k_0+1, \ldots, k_0 + q - 1\}$（$q$ 为 $\theta$ 的周期）中找满足 (C1)(C2) 的最小 $k$。V4：$k_0 = 18$。$k=18$: $18 \bmod 3 = 0$ ✗。$k=19$: $19 \bmod 3 = 1$ ✓。$\operatorname{frac}(19 \cdot 8/9) = \operatorname{frac}(152/9) = \operatorname{frac}(16+8/9) = 8/9$。$\|8/9\| = 1/9 < 1/5$ ✗。$k=20$: ✓。
+
+至多 $q = 3$ 步。确定性。✓
+
+---
+
+## §5 · UNFINISHED
+
+1. **无理 $\theta$ 的确定性 $k$ 选取：** 需要连分数或其他工具。UNFINISHED。
+2. **新覆盖增量：** 与全部候选（NF-20、B4、R20）的符号差集未穷尽。NEW COVERAGE: UNFINISHED。
+3. **一般 $n$ 的簇优先结构：** $n > 5$ 时，"簇"含 $n-2$ 个速度，配对只消去一对。剩余约束增多。UNFINISHED。
+4. **完整 F5：** UNFINISHED。
+
+---
+
+## 状态总结
+
+| 项目 | 状态 |
+|---|---|
+| a-never-active 障碍（第二审） | **PROOF VERIFIED** |
+| LE（第二审） | **PROOF VERIFIED** |
+| LE-1（第二审，必要刻画） | **PROOF VERIFIED**（非充分构造） |
+| Q-CF1（簇优先、最慢者后装） | **PROOF CANDIDATE** |
+| $a$ 的显式合法区间 | **PROOF CANDIDATE**（Q-CF1 的推论） |
+| V4 在 Q-CF1 内 | **CHECKED**（手算） |
+| $k$ 的有界选取规则 | **CHECKED**（V4：至多 3 步） |
+| 新覆盖增量 | **UNFINISHED** |
+| 无限制 F5 | **UNFINISHED** |
+
+项目	状态
+a-never-active 障碍（第二审）	PROOF VERIFIED
+LE（第二审）	PROOF VERIFIED
+LE-1（第二审，必要刻画）	PROOF VERIFIED（非充分构造）
+Q-CF1（簇优先、最慢者后装）	PROOF CANDIDATE
+$a$ 的显式合法区间	PROOF CANDIDATE（Q-CF1 的推论）
+V4 在 Q-CF1 内	CHECKED（手算）
+$k$ 的有界选取规则	CHECKED（V4：至多 3 步）
+新覆盖增量	UNFINISHED
+无限制 F5	UNFINISHED
