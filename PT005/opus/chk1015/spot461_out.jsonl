@@ -1,0 +1,2 @@
+{"p": 461, "r": 12, "s": 8, "mine": {"rows": 0, "nodes": 3275342847, "casc_rows": 0, "casc_survivors": 0}, "office": {"rows": 0, "nodes": 3275342847, "casc_rows": 0, "casc_survivors": 0}, "match": true, "my_secs": 1283.09}
+{"p": 461, "r": 0, "s": 0, "mine": {"rows": 3, "nodes": 12180773681, "casc_rows": 3, "casc_survivors": 1}, "office": {"rows": 3, "nodes": 12180773681, "casc_rows": 3, "casc_survivors": 1}, "match": true, "my_secs": 4898.85}
