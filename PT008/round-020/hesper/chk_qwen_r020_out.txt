@@ -1,0 +1,4 @@
+Q-GATE random 20000 fail 0
+Q-GATE big-denominator 5000 fail 0
+example (1/7,1,101/100,2): tau 1/2 Q0 20 ['50/201', '101/402', '100/201'] a dist at t=tau/S 50/1407
+chair shape t=9/8 ['63/160', '1/4', '3/8', '1/4']
