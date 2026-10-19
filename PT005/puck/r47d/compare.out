@@ -1,0 +1,6 @@
+A: mine 1549 chair 1549 puck r47B 1549 mine==chair True mine==puckr47B True
+A: chair n_open nonzero 0 chair p/M mismatches 0
+A: min odd coords over all covering children 2
+A: L7 witness D/N (first even D|N closing each child, per node union): [((0.018867924528301886,), 1031), ((0.02702702702702703,), 468), ((0.02127659574468085,), 41), ((0.023255813953488372,), 9)]
+A: covering choices per node: min 8 max 32
+B: cells compared 11 rows 11 mismatching rows 0

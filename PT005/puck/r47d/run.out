@@ -1,0 +1,37 @@
+rows 1107866 k>=1 1107829
+# note 109 sec2 rerun (Puck). columns: dead depth even_coords U0 U1 U>=2_one_bit U>=2_both_bits
+live 1 51848 49380 0 2468 0
+live 2 36311 34191 0 2120 0
+live 3 1321 1321 0 0 0
+live 4 1187 1187 0 0 0
+live 5 130 130 0 0 0
+dead 1 3588379 2789219 0 569412 229748
+dead 2 3829794 2762230 0 657568 409996
+dead 3 759570 670456 0 66376 22738
+dead 4 326530 326456 0 0 74
+dead 5 279886 279882 0 0 4
+dead 6 32784 32780 0 0 4
+odd |U| count: 0
+tautological (coord covers T with both bits) clause count: 0
+unit cells with both bits: 0
+total even coords in scope: 8907740
+ pass1 s 35.0
+dead 1088175 2sat dead 1000149 2sat live 0 candidates 88026
+CSV-dead k>=1: 1088175; 2-SAT-dead: 1000149; 2-SAT-dead among live: 0; scanned (dead, not 2-SAT-dead): 88026
+nodes with >=1 covering child: 1549
+min_nodd_over_all_children: 2
+n_both: 0
+n_cover_choices: 31640
+n_cover_distinct: 31564
+n_l7: 31640
+n_l7_only: 31640
+n_lt2_only: 0
+n_lt2odd: 0
+n_open_choices: 0
+n_open_distinct: 0
+nodes_L7_witness_D_eq_2^(k+1)_only: 1549
+nodes_all_l7: 1549
+nodes_any_lt2: 0
+nodes_open_gt0: 0
+ pass2 s 63.9 total s 98.9
+exit 0 wall 100 s

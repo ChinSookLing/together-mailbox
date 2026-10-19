@@ -1,0 +1,16 @@
+CSV-dead k>=1: 1088175; 2-SAT-dead: 1000149; 2-SAT-dead among live: 0; scanned (dead, not 2-SAT-dead): 88026
+nodes with >=1 covering child: 1549
+min_nodd_over_all_children: 2
+n_both: 0
+n_cover_choices: 31640
+n_cover_distinct: 31564
+n_l7: 31640
+n_l7_only: 31640
+n_lt2_only: 0
+n_lt2odd: 0
+n_open_choices: 0
+n_open_distinct: 0
+nodes_L7_witness_D_eq_2^(k+1)_only: 1549
+nodes_all_l7: 1549
+nodes_any_lt2: 0
+nodes_open_gt0: 0
