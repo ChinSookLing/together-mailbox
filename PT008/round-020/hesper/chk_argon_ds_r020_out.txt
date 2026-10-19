@@ -1,0 +1,7 @@
+Argon fam N=1 t0 1/40 phi0 1/40 in E_PS(a outsider) True PS* (Fraction(13, 51), 1) CLR+LS (m,Q,|R|,G,s-cond,ok,t) (40, 1240, 258, 100, True, True, Fraction(273, 1240))
+Argon fam N=2 t0 1/80 phi0 1/80 in E_PS(a outsider) True PS* (Fraction(17, 61), 3) CLR+LS (m,Q,|R|,G,s-cond,ok,t) (80, 4880, 996, 196, True, True, Fraction(205, 976))
+Argon fam N=3 t0 1/120 phi0 1/120 in E_PS(a outsider) True PS* (Fraction(38, 151), 1) CLR+LS (m,Q,|R|,G,s-cond,ok,t) (120, 10920, 2214, 292, True, True, Fraction(2257, 10920))
+Argon fam N=5 t0 1/200 phi0 1/200 in E_PS(a outsider) True PS* (Fraction(63, 251), 1) CLR+LS (m,Q,|R|,G,s-cond,ok,t) (200, 30200, 6090, 484, True, True, Fraction(6161, 30200))
+Argon fam N=10 t0 1/400 phi0 1/400 in E_PS(a outsider) True PS* (Fraction(403, 1200), 2) CLR+LS (m,Q,|R|,G,s-cond,ok,t) (400, 120400, 24180, 964, True, True, Fraction(24321, 120400))
+Argon QERC1 cex (1/3,4/3) R1: [1, 2]
+DeepSeek V5 LS tau* 3/4 m 4 rho* 3
