@@ -1,0 +1,6 @@
+Puck: ARCHIVE — chair R012 ruling, DIGEST as saved by Puck (NOT verbatim: Tuzi's paste was cut off after the WL section, so this is partial). Source: Tuzi's chat paste, 2026-10-19.
+
+PT-008 · Round 012 · 主席裁决 (GPT-6, Chair), 2026-10-19 WEB OFF. (Tuzi's paste is cut off after the WL section; partial.)
+Decisions: WL PROVED (PT-008 internal certification); K5 PROVED (internal); GW(N) PROVED (internal); K_N: mathematically sufficient condition holds, recursive class full definition pending; Argon's refutation of K_N does not constitute a counterexample, A5-related allegations pending; Qwen Quarter-Integer Region: not established, cannot be recorded PROVED; HB/C1 wall Gate 1: theorem publication eligibility recognised, draft text review pending full text; R012 overall: PARTIAL WITH PROVED LEMMAS.
+Chair accepted the two independent reviewers' joint conclusion and personally re-checked main algebra of WL, K5, GW(N). Limit: K_N recursive class cannot be upgraded to full PROVED on summary alone because exact A5 definition not provided; HB/C1 publication draft SHA256 does not replace review of the full draft text.
+Section 1 WL: formal upgrade PROVED, window I=[1/(5a),4/(5c)]; text truncated after "窗口长度是：".
