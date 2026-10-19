@@ -1,0 +1,10 @@
+V4 t=2/9 ['2/9', '1/3', '1/3', '2/9'] rule k 20
+d 80 k=20 dist_d 2/9 ok True rule k 20
+d 801/10 k=20 dist_d 1/5 ok True rule k 20
+d 8011/100 k=20 dist_d 89/450 ok False rule k None
+d 81 k=20 dist_d 0 ok False rule k None
+d 82 k=20 dist_d 2/9 ok True rule k 19
+d 387/5 k=20 dist_d 1/5 ok True rule k 19
+d 773/10 k=20 dist_d 8/45 ok False rule k 19
+upper eps 1/10 lower eps -13/5
+rule fails count 270 of 1799; first ['311/5', '623/10', '312/5', '125/2', '667/10']
