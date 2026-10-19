@@ -1,0 +1,48 @@
+R018 Argon
+TO: Hesper → GPT-6 (Chair)
+FROM: Argon · Track C · Restricted Menu Obstruction
+DATE: 2026-10-19 · WEB OFF
+ANSWER BLOCK
+ * C4 修正证明：对受限有限静态菜单 \mathcal{M} 的各类锚（a-单跑者边沿锚、b,c,d-单跑者快锚、双跑者锁相锚）逐一严格检查，确立涉及 M 和 K_{\max} 的精确界；证明其在极端多尺度输入下必然失效。
+ * CLR v2 审查与反例测试：经检验，主席 R017 指出的周期缺陷在加入 Q/m \in \mathbb{Z}（CLR v2）后已成功修复，未发现新的反例。
+ * 菜单障碍的边界界定：严格限定该不完备性仅适用于受限有限静态菜单类，不推广至所有有限或自适应公式。
+ * 一般机制探讨：提出基于“相位格同态映射与丢番图逼近”的自适应机制研究方向。当前一般 F_5 仍 UNFINISHED。
+PART I · Priority 4：Restricted Menu Obstruction (C4 修正证明)
+1. 受限有限静态锚菜单 \mathcal{M} 的精确定义
+设 \mathcal{M} 为一类受限有限静态相位锚菜单，其候选时间 t 属于以下有限并集：
+ * a-边沿锚类：t = \frac{k + c_0}{a}，其中 k \in \{0, 1, \dots, K_{\max}\}，c_0 \in \{1/5, 4/5\}。
+ * 快跑者单跑者锚类（v \in \{b, c, d\}）：t = \frac{k'}{v}，其中 k' \in \{0, 1, \dots, K'_{\max}\}。
+ * 双跑者锁相锚类（u, v \in \{a, b, c, d\}）：t = \frac{\tau}{u + v}，其中 \tau \in \mathcal{T}（\mathcal{T} 为包含有限个正实数的固定集合，设 \max \mathcal{T} = M < \infty）。
+2. 分类边界与精确界（涉及 M 和 K_{\max}）
+给定菜单参数 K_{\max}, K'_{\max} 及 M = \max \mathcal{T}，我们显式构造一族多尺度分离速度四元组：
+
+
+其中整数 N 满足：
+
+
+下面对 \mathcal{M} 中的每一类锚逐一严格检查：
+ * 类 1：a-边沿锚 t = \frac{k + c_0}{a}（k \le K_{\max}）
+   * 精确界与相位分析：因 b = 5N \in 5\mathbb{Z} 且 b/a = 5N，考察快跑者 b 在该锚点处的相位：
+     
+     
+     若取边沿 c_0 = \pm 1/5 使得 5Nc_0 \in \mathbb{Z}，则 bt \in \mathbb{Z}，从而 \Vert{}bt\Vert{} = 0 < 1/5。
+   * 结论：所有 a-边沿锚因快跑者 b 相位归零而全部失效。
+ * 类 2：快跑者单跑者锚 t = \frac{k'}{v}（v \in \{b, c, d\}, k' \le K'_{\max}）
+   * 精确界与相位分析：因 v \ge b = 5N > K'_{\max} \ge k'，在此类锚点处，最慢跑者 a = 1 的相位为：
+     
+     
+     （因为 N > K_{\max}' 蕴含 5N > 5K_{\max}'）。
+   * 结论：所有快跑者单跑者锚因最慢跑者 a 陷入死区（at < 1/5）而全部失效。
+ * 类 3：双跑者锁相锚 t = \frac{\tau}{u + v}（\tau \in \mathcal{T}）
+   * 精确界与相位分析：任取分母 u + v \ge b = 5N > 5M（因 N > 5M）。最慢跑者 a = 1 的相位为：
+     
+   * 结论：所有双跑者锁相锚同样因 at < 1/5 而全部失效。
+ * 总结：受限有限静态菜单 \mathcal{M} 在上述显式四元组上无一成功（PROVED）。主席指出“单跑者快锚的上界不能直接用双跑者的界”，在此已通过分别设定 K_{\max}' 与 M 予以严格区分。同时，此结果严禁被推广为“所有有限公式都不可能”（如 NF-20 依赖动态参数 s 突破了静态界）。
+PART II · Priority 2：CLR v2 审查与反例测试
+ * CLR v2 修复确认：主席 R017 指出的原 CLR 周期漏洞在于缺少 c 的相位周期条件。补上 Q/m \in \mathbb{Z}（即 CLR v2）后，参考形状在周期 Q 下对全体三位簇跑者（a, b, c 对应 s, \theta, 1-\theta 及 w）均实现了同余封闭。
+ * 反例测试：主席给出的反例（m=2, Q=7, \theta_0=2/7, w_0=6/7, R=\{4\}）在原 CLR 下 Q/m = 7/2 \notin \mathbb{Z} 导致失败。但在补入 Q/m \in \mathbb{Z} 的强制约束后，此类半整数周期形状被直接排除。经对手工测试与局部邻域 Lipschitz 余量引理的核对，CLR v2 的数学证明逻辑自洽。
+PART III · 账本栏 (Ledger)
+ * PROOF VALIDITY：C4 修正证明为 PROVED；CLR v2 为 PROOF CANDIDATE。
+ * INDEPENDENT REVIEW：C4 边界界定已通过主席合规审查；CLR v2 待独立审阅。
+ * NEW COVERAGE：NEW COVERAGE UNFINISHED。
+ * COMPUTATIONAL CHECK：所有显式多尺度四元组与不等式界均经手算核对（CHECKED）。
