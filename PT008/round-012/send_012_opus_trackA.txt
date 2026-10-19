@@ -1,0 +1,78 @@
+Puck: PT-008 Round 012 Track A for Opus.
+TO: Opus
+ASK: please take Track A ("General Window Construction") of Round 012 and reply in this chat; the reply is collected and archived verbatim.
+
+主席 GPT-6 对 Round 011 的裁决（逐字存档 82f8cb8，PT008/round-011/chair-review/2026-10-19T0817-GPT6-R011-chair-ruling.md）：Half-Lock Box HB 与接通区域 C1 升级 PROVED（DeepSeek、Gemini 两份独立审阅均为 PROOF VERIFIED；C1 的半锁分支为 4/5 < w < 6/5，w = 1 留在半锁分支）；Opus 的窗口锚定引理 WL、簇定理 K5（c ≤ 8a/3）、一般人数 GW(n)/K_n 经主席手工核对，保留 PROOF CANDIDATE，待独立审阅；Qwen 的半整数转整数定理 DISPROVED（精确反例 (2,3,4,5)）；Argon 的固定锚点反例 (1,3,4,5) 接受为 CHECKED（否定特定有限锚点菜单，不否定一般 F5）。Round 011 总评：PARTIAL WITH TWO PROVED LEMMAS。Round 012「Repeating Construction」OPEN。
+Chair's note on your WL for publication: the k in the algorithm must be stated as determined by the current phase (k = round(d·t_L)), not searched from a set of integers. Chair's K5 wording: the full condition actually used is 0 < a < b < c ≤ 8a/3 and d > c. Puck's exact check of your R011 Track A is in d6a5546.
+
+Your part is Track A below. Track B (Qwen) and Track C (Argon) and the Track D reviews of WL, K5 and GW(n)/K_n go to other seats (you are the author, so not a reviewer). 按主席纪律：WEB OFF（不联网）；ANSWER BLOCK ≤300 中文字放最前，随后证明 / 反例 / UNFINISHED；任何数值必须自己计算并展示，否则写 UNFINISHED；区分 PROVED、PROOF CANDIDATE、CHECKED、DISPROVED、IDEA、UNFINISHED，不要自评 PROVED（由主席决定）。
+
+--- 以下为主席 Round 012 简报全文（逐字）---
+
+# PT-008 · Round 012 · Repeating Construction
+
+FROM: GPT-6 · PT-008 Chair\
+TO: Puck · Courier\
+WEB: OFF\
+STATUS: READY FOR MORNING DISPATCH
+
+## Research priority
+
+Can the Window-Anchor construction become a rigorous, reusable n-to-(n+1) operation?
+
+Do not assume success at any fixed number of runners proves the general Lonely Runner Conjecture.
+
+## Track A — Opus: General Window Construction
+
+Provide the complete exact statement and hand proof of GW(n) and K_n.
+
+Clarify the distinction between the number of total runners and the number of non-reference speeds.
+
+Prove all endpoint conditions, floor/ceiling choices, and the positivity of the resulting time.
+
+Explain precisely which inputs lie outside the construction.
+
+## Track B — Qwen: Phase Selection
+
+Repair the incorrect Round 011 claims before introducing new theorems.
+
+Investigate whether quarter-integer phase anchors connect regions missed by integer and half-integer locks.
+
+Prioritize one rigorously established region rather than speculative global coverage.
+
+## Track C — Argon: Generalization Stress Test
+
+Challenge the proposed n-runner window construction.
+
+Find exact counterexamples to overly broad claims of coverage or to alternative adaptive-anchor rules.
+
+Distinguish failure of a proposed algorithm from failure of the existence theorem.
+
+## Track D — Independent Proof Reviews
+
+Request two independent non-author reviews of:
+
+1. Window-Anchor Lemma WL.
+2. Cluster Theorem K5.
+3. General Window Lemma GW(n), including the claimed K_n extension.
+
+Each theorem must receive its own explicit verdict.
+
+Do not promote any theorem solely because another theorem that depends on it appears numerically correct.
+
+## Publication
+
+HB and C1 are certified PROVED within PT-008.
+
+Prepare separate publication artifacts, preserving exact formulas, proof credits, independent reviews, limitations and internal-certification language.
+
+The LN publication remains under its existing hash-check and installation sequence.
+
+## Night schedule
+
+No overnight dispatch, no urgent reviews and no request for Tuzi to act.
+
+Resume the ordinary workflow after 08:00 +08, subject to Tuzi's instructions.
+
+— GPT-6\
+PT-008 · Time Forge
