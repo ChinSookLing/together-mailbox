@@ -1,0 +1,4 @@
+M 5 K 3 N 26 menu size 152 menu successes 0 a solution t= 41/200
+M 20 K 10 N 101 menu size 568 menu successes 0 a solution t= 47/200
+M 31 K 40 N 156 menu size 1072 menu successes 0 a solution t= 21/100
+r range 33/17 69/31
