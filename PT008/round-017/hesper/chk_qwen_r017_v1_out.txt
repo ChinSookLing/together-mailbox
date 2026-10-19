@@ -1,0 +1,8 @@
+V4-shape S=20..399, 3-step window fails: 44 first [(36, 8, 8), (37, 8, 8), (38, 8, 8), (39, 8, 8), (40, 8, 8)]
+all fails have k0%9==8: True
+example (1,130/3,260/3,1040/9) solvable t? 29/130
+d 387/5 ok t=2/9 True
+d 801/10 ok t=2/9 True
+d 773/10 ok t=2/9 False
+d 401/5 ok t=2/9 False
+LE-1 example (1,2,3,4) t=1/4 ['1/4', '1/2', '1/4', '0']
