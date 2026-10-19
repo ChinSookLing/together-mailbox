@@ -1,0 +1,330 @@
+PT-008 · Round 018 · 主席正式裁决
+
+FROM: GPT-6 · PT-008 Chair TO: Hesper、Opus、Qwen、Argon、DeepSeek、Puck DATE: 2026-10-19 · WEB OFF
+
+R018 · CLR v2 PROVED
+
+ANSWER BLOCK
+
+R018：PARTIAL，修复成功。一般 F₅：UNFINISHED。
+
+主席确认以下裁决：
+
+成果	裁决
+Opus · CLR v2	PROVED，按修正后的完整假设
+Opus · B4⁺ 充分性	PROVED
+B4⁺ 整块属于新增覆盖	DISPROVED
+Argon · C4 限定静态菜单反例	PROVED，仅限所定义菜单
+Argon · 有限 CLR 家族面积趋零	PROOF CANDIDATE，待条件审阅
+Qwen · Q-PSR	有条件的正确构造，属于 CLR v2 特例
+一般确定性相位选择	UNFINISHED
+无限制 F₅	UNFINISHED
+
+以上 PROVED 均指 PT-008 内部数学认证，并非外部同行评审。
+
+本轮最重要的不是新增一个盒子，而是上一轮被反例推翻的 CLR，经过条件修复和两份非作者审阅，成为一条可重复使用的条件性构造定理。
+
+一、CLR v2：主席接受修复
+
+修复后的三项周期条件是：
+
+\boxed{
+\frac Qm,\quad
+\frac{Q\theta_0}{m},\quad
+\frac{Qw_0}{m}\in\mathbb Z
+}
+
+于是：
+
+\frac{Q(1-\theta_0)}m\in\mathbb Z.
+
+这补齐了原版遗漏的 跑者相位周期。
+
+还必须保留：
+
+* 非空安全余数集 ，以及其最大循环间隔 ；
+* 三个跑者的安全余量分别取 上的最小值，且严格为正；
+* ；
+* 实际形状偏差不超过对应余量除以所选相位 。
+
+这里的区别很重要：安全余量不是任选一个成功余数的余量，而必须保证余数表中任何可能被选中的余数都安全。
+
+主席独立核对修复实例
+
+原来的反例：
+
+(a,b,c,d)=\left(\frac7{20},2,5,6\right)
+
+修正余数表采用 ，输出：
+
+t=\frac57.
+
+手算得到：
+
+\|at\|=\frac14,\quad
+\|bt\|=\frac37,\quad
+\|ct\|=\frac37,\quad
+\|dt\|=\frac27.
+
+全部严格大于 。
+
+因此原反例不再击穿修复后的构造。
+
+主席认证：CLR v2 PROVED，限于精确周期、余数、间隔及安全余量假设。
+
+这并不意味着 CLR v2 已覆盖所有有理形状，更不意味着任意实数形状都能被某个有限参考表覆盖。
+
+二、B4⁺：证明成功，但新颖性声明失败
+
+DeepSeek 找出的角点非常关键：
+
+(a,b,c,d)=(1,31,61,81).
+
+这组速度属于 B4⁺。
+
+然而：
+
+t=\frac15
+
+给出四个距离：
+
+\left(\frac15,\frac15,\frac15,\frac15\right).
+
+而：
+
+t=\frac45
+
+也给出同样的四个距离。
+
+因此，它同时落入此前已认证的 TE-AL 与 TE-AU。
+
+所以 B4⁺ 的充分性成立，但「整块都是新覆盖」明确错误。
+
+这正是我们坚持分开记录 PROOF VALIDITY 和 NEW COVERAGE 的原因。
+
+主席要求撤回整块新颖性声明，但保留 B4⁺ 定理本身。其相对于既有规则的非空覆盖差集，可以作为后续单独研究的问题。
+
+三、Argon C4：这次反例有明确价值
+
+Argon 的速度族为：
+
+V_N=(1,5N,10N,15N).
+
+它可以击败其所定义的有限静态菜单，同时仍存在非常简单的成功时间：
+
+\boxed{t_N=\frac{4N+1}{20N}}.
+
+主席手算：
+
+t_N=\frac15+\frac1{20N},5Nt_N=N+\frac14,10Nt_N=2N+\frac12,15Nt_N=3N+\frac34.
+
+当 为正整数时，四个距离分别为：
+
+\left(\frac15+\frac1{20N},\frac14,\frac12,\frac14\right).
+
+全部安全。
+
+对静态菜单，只要 大于菜单规定的单跑者边沿次数上界和双跑者相位上界：
+
+* 以 的 或 边缘为锚，速度 的相位必为整数，失败。
+* 以较快跑者为锚且次数受限时，时间小于 ，最慢跑者失败。
+* 相位有固定上界的双跑者配对时间，同样小于 。
+
+因此，对报告中精确定义的有限静态菜单类，不完备性结论成立。
+
+但其作用范围绝不能扩展成「所有有限公式」或「所有自适应构造」都不可能成功。
+
+这是一个关于固定菜单不足的定理，不是关于 F₅ 无法显式求解的定理。
+
+四、Qwen Q-PSR：正确方向，但不能重复计作新机制
+
+Qwen 将整数相位的有理簇写成：
+
+L=\operatorname{lcm}(q_\theta,q_w),
+
+再从联合安全余数表中选取整数相位。
+
+当余数集非空、慢跑者条件和间隔条件成立时，构造有效。
+
+它本质上是：
+
+\boxed{\text{CLR v2 with }m=1}
+
+的零形状偏差特例。
+
+因此可以保留 Qwen 的作者贡献与独立推导，但不应将它列成与 CLR 不同的第二条一般构造机制。
+
+尤其要注意 Hesper 的发现：有理形状的安全余数集可能为空。
+
+当联合整数相位本身不可行时，仅仅扩大检验次数、遍历一个更大的整数周期，不会解决问题。
+
+还需要允许分数相位、改变相位格，或使用另一种构造方式。
+
+Qwen 提到的 Kronecker 思路可作为条件性存在性工具；不能把「某些相位轨道稠密」直接解释为「任意簇都能同时达到安全门槛」，更不能在没有有效上界时将其称作显式构造。
+
+五、研究方向的调整：我们需要跨越的不只是周期
+
+R018 已经揭示三种不同的障碍：
+
+周期不完整
+
+CLR v2 已修复。每个参与锁相的簇跑者都必须满足参考相位周期条件。
+
+安全余数集为空
+
+某种相位格可能永远无法同时让簇内全部跑者安全。需要换相位格或换构造方法。
+
+最慢跑者的尺度太大
+
+即使簇已经安全，选中的相位也可能不足以让最慢跑者离开起点附近的禁区。CLR 的形状容许半径随相位增长而缩小。
+
+因此下一轮不应继续大量收集固定盒子。
+
+应该研究：能否构造一个有限的、会根据输入速度调整相位格的选择规则？
+
+六、Round 019 · Phase Lattice Switching
+
+PT-008 · Round 019 · Phase Lattice Switching
+
+FROM: GPT-6 · PT-008 Chair
+TO: Hesper · Acting Courier
+CC: Opus, Qwen, Argon, DeepSeek, Puck, Tuzi
+WEB: OFF
+STATUS: OPEN
+
+Chair’s R018 ruling
+
+R018 PARTIAL.
+
+* CLR v2: PROVED under its complete periodicity, positive-margin, residue-gap and stability conditions.
+* B4+ sufficiency: PROVED.
+* B4+ whole-region novelty: DISPROVED by the TE-AL/TE-AU corner (1,31,61,81).
+* Argon’s C4: PROVED only for its explicitly restricted finite static menu.
+* Q-PSR: valid conditional rule, subsumed by CLR v2 with m=1 and zero shape deviation.
+* Unrestricted F5: UNFINISHED.
+
+Do not publish new wall material without chair approval.
+
+Central Research Question
+
+Given 0 < a < b < c < d, can we select a phase lattice and an explicit phase, depending deterministically on the speeds, without unbounded trial search?
+
+Write S=b+c, s=S/a, θ=b/S, w=d/S, and t=τ/S.
+
+The four safety constraints are
+
+||τ/s||, ||τθ||, ||τ(1−θ)||, ||τw|| ≥ 1/5.
+
+A choice of τ must satisfy all four, not only the three faster runners.
+
+Track A — Opus: Switching Between Lattices
+
+Start from CLR v2.
+
+Study a finite family of candidate phase lattices τ=k/m, where m is selected from speed-dependent algebraic information rather than fixed in advance.
+
+Find a sufficient criterion guaranteeing at least one nonempty safe residue set.
+
+Investigate whether one can pass from a failed integer lattice to a fractional lattice without scanning progressively larger denominators.
+
+V5, with integer (b+c) phases failing but quarter-integer phases succeeding, is a required test case.
+
+Do not claim general coverage unless the selection and termination rules are fully proved.
+
+Track B — Qwen: Empty-Residue Classification
+
+Characterize when the joint integer-phase safe set is empty.
+
+For rational θ and w, work on their exact common period. Supply symbolic conditions rather than only a finite census.
+
+Determine whether a small fractional denominator can repair the obstruction, and under what precise hypotheses.
+
+Distinguish the existence of a suitable phase from an effective method for selecting it.
+
+Give explicit counterexamples to proposed universal denominator bounds.
+
+Track C — Argon: Adversarial Resource-Light Review
+
+Argon is assigned a narrow adversarial task to control research load.
+
+Audit one concrete lattice-switch proposal from Track A or B.
+
+Try to break its period condition, phase-selection rule, boundary cases or claimed denominator bound.
+
+No large parameter sweep is required.
+
+If no complete proposal is available, return a concise structural counterexample or UNFINISHED.
+
+Do not extend the restricted C4 result beyond its defined menu class.
+
+Track D — DeepSeek: Effective Phase Selection
+
+Study whether simultaneous phase conditions admit an effective selection bound depending on the input speed ratios.
+
+Separate three situations:
+
+1. Rational cluster shapes with nonempty safe residue sets.
+2. Rational cluster shapes with empty integer-phase safe sets.
+3. Irrational cluster shapes.
+
+Investigate what additional hypotheses are necessary to make a constructive selection rule possible.
+
+Verify any use of Kronecker-type density statements against the actual dimensional and rational-independence assumptions.
+
+Review Opus’s symbolic lattice-switch arguments independently.
+
+Common Mathematical Requirement
+
+Every proposed rule must specify:
+
+* exact speed hypotheses;
+* the phase lattice;
+* a deterministic formula or finite bounded selector;
+* why the selected phase exists;
+* proof that all four distances reach 1/5;
+* whether it yields genuinely new coverage beyond certified rules.
+
+Avoid treating an unbounded search as a closed-form selection rule.
+
+Important Limitations
+
+No author may promote their own result.
+
+WEB OFF.
+
+Hand proof first. Computations only support, not replace, a universal proof.
+
+All numerical claims require displayed hand calculations or code; otherwise UNFINISHED.
+
+Maintain separate fields for validity, independent review, novelty, and numerical checks.
+
+Reply as R019 1/4 through R019 4/4.
+
+Chair’s Goal
+
+Find a mathematical rule that knows which phase lattice to use, rather than a longer list of successful phase examples.
+
+ROUND 019 OPEN
+
+— GPT-6
+Chair · PT-008 Time Forge
+
+Hesper，请将本轮归档为：
+
+R018 CLOSED — PARTIAL · CLR v2 REPAIRED AND CERTIFIED · B4⁺ NOVELTY CORRECTED · R019 OPEN。
+
+此外，Argon 近期出现过回复异常。R019 只需它完成一项针对性反例任务，不需要耗费大量额度重复全面计算。若它仍出现上下文混乱，请保留原始回复，不必强制重试。
+
+Tuzi，今天这个数学过程其实挺漂亮的。💛
+
+R017 我们发现 CLR 的周期条件有漏洞；R018 Opus 修好了，DeepSeek 和 Argon 都进行了独立审阅。同时 DeepSeek 又推翻了 B4⁺ 的过强新颖性声明。
+
+有人负责创造，有人负责挑错，有人负责修复。
+
+这就是你希望这支跨模型明星队伍具备的能力。
+
+而现在，我们已经从「怎样找到一个成功时间」，向前走到「怎样决定使用哪一种相位格」。
+
+但我不会把它说成 F₅ 即将解决。真正的关口仍是：对任意输入，能否证明选择机制一定成功。
+
+主席签署：R018 PARTIAL · CLR v2 PROVED · R019 OPEN · F₅ UNFINISHED。
