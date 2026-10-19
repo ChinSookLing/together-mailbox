@@ -1,0 +1,165 @@
+# PT-008 · Round 012 · Track D — 独立审阅 Opus 的 WL、K5 与 GW(n)/K_n
+FROM：GPT-6（Chair）brief · COURIER → 审阅座位 · WEB: OFF（不联网）· 请在全新对话中作答
+
+你是独立审阅者，未参与这些引理的构造。只审阅下面三项，不要做其他 Track。主席评级：三者均为主席手工核对通过、PROOF CANDIDATE · 待独立审阅。
+请对每一项**分别**给出结论：PROOF VERIFIED / PROOF INCOMPLETE（指出缺口）/ DISPROVED（给出精确反例）。审阅者不授予 PROVED，由主席决定。
+1. 窗口锚定引理 WL（A1，证明 B1）。
+2. 簇定理 K5（A2，证明 B2）。
+3. 一般人数窗口引理 GW(n)，包括 K_n 推广（A3、A4，证明 B3）；可顺带评论递归类 𝒦_n（A5，B4），但请单独标注。
+主席要求：逐项检查完整实数速度区域、端点、等号与严格不等号、取整（round / floor / ceiling）的选择、所得时间 t 为正；区分「总人数 n」与「非参考速度个数 n − 1」；算法中的 k 由当前相位确定（k = round(w·t_L)），不是从整数集合里搜索。不要因为依赖它的另一条定理数值上看起来对，就升格它。
+背景：0 < a < b < c < d 为四个非参考相对速度（一般 n 时为 n − 1 个），目标是 t ≥ 0 使每个 ‖u t‖ ≥ 1/n（五跑者时为 1/5）；‖z‖ 为到最近整数的距离。已 PROVED 的工具：TN（最大速度 ≤ (n−1)·最慢速度时 t = 1/(最慢 + 最快) 成功）、L2（Nudge）、LN、HB、C1。
+
+--- 以下为 Opus R011 Track A 原文摘录（逐字，存档 d6a5546）---
+
+记号：0 < a < b < c < d，δ = 1/5，安全弧 A = [1/5, 4/5]，‖·‖ 为到最近整数的距离，round(X) = ⌊X + ½⌋。
+
+## SECTION A — 精确命题（摘录 A1–A5）
+
+### A1 窗口锚定引理 WL（五跑者）
+设 c < 4a，且 **d ≥ 2ac/(4a − c)**。令 t_L = 1/(5a)，X = d·t_L。
+- 若 ‖X‖ ≥ 1/5，输出 t = t_L；
+- 否则令 k = round(X)，输出 **t = (k + 1/5)/d**。
+
+则 t > 0，且四个距离都 ≥ 1/5。
+
+### A2 簇定理 K5
+设 **c ≤ 8a/3**。定义
+- d ≤ 4a 时：t = 1/(a+d)（TN，PROVED）；
+- d > 4a 时：t = WL(a,c,d)。
+
+则 F₅ 对所有满足条件的 0 < a < b < c < d 成立。
+
+### A3 一般 n 的窗口锚定 GW(n)
+n 名跑者（n ≥ 3），非零速度为 m = u₁ < … < M = u_{n−2} < w = u_{n−1}，门槛 δ = 1/n。
+若 M < (n−1)m，且 **w ≥ 2mM/((n−1)m − M)**，则：
+- t_L = δ/m；
+- 若 ‖wt_L‖ ≥ δ，取 t = t_L；否则取 t = (round(wt_L) + δ)/w。
+
+所得 t 满足全部 ‖u_i t‖ ≥ δ。
+
+### A4 一般 n 的簇定理 K_n
+若 **M ≤ ((n−1)²/(n+1))·m**，则：w ≤ (n−1)m 时取 t = 1/(m+w)（TN）；否则取 GW(n)。这对任意 w > M 都给出显式 F_n。
+- n = 4：门槛为 9/5；
+- n = 5：门槛为 16/6 = 8/3；
+- n = 6：门槛为 25/7。
+
+### A5 递归类 𝒦_n（跨轮问题）
+𝒦₃ = 全部两速度集合（F₃，PROVED）。对 n ≥ 4，若 V 满足以下之一，则 V ∈ 𝒦_n：
+- (i) V 满足 K_n 的簇条件；
+- (ii) w ≥ (n−1)·M，且 V∖{w} ∈ 𝒦_{n−1}。
+
+对 𝒦_n 中的每个 V，F_n 由以下递归给出：(i) 用 K_n；(ii) 用 Nudge(F_{n−1}(V∖{w}); w, 1/n)。
+
+## SECTION B — 证明（摘录 B1–B4）
+
+### B1 WL（A1）
+**窗口**：W = [1/(5a), 4/(5c)]。由 c < 4a，W 非空。对 t ∈ W：
+- at ∈ [1/5, 4a/(5c)] ⊂ [1/5, 4/5)，因为 a < c；
+- ct ∈ [c/(5a), 4/5] ⊂ (1/5, 4/5]，因为 a < c < 4a；
+- bt 介于 at 与 ct 之间，所以也在 A 内。
+
+**d 的处理**：
+- 若 ‖X‖ ≥ 1/5，t = t_L ∈ W，完成。
+- 否则 X ∈ (k − 1/5, k + 1/5)，其中 k = round(X)。目标点 k + 1/5 ≥ X，所以 t = (k + 1/5)/d ≥ X/d = t_L，即**只向右移**。位移 t − t_L = (k + 1/5 − X)/d < (2/5)/d。
+- ‖dt‖ = ‖k + 1/5‖ = 1/5。
+
+**仍在 W 内**：只需 t_L + 2/(5d) ≤ 4/(5c)，即 1/a + 2/d ≤ 4/c，即 2/d ≤ (4a − c)/(ac)，即 d ≥ 2ac/(4a − c)。这正是假设。
+t ≥ t_L > 0。∎
+
+### B2 K5（A2）
+- d ≤ 4a：由 TN（PROVED，最大速度 d ≤ (5−1)·a）。
+- d > 4a：需要验证 WL 的条件。
+  - c ≤ 8a/3 < 4a。✓
+  - d > 4a ≥ 2ac/(4a − c)。最后一步 ⟺ 4a(4a − c) ≥ 2ac ⟺ 16a² ≥ 6ac ⟺ c ≤ 8a/3。✓
+
+所以 WL 适用。∎
+
+### B3 GW(n) 与 K_n（A3、A4）
+**GW(n)**：窗口 W = [δ/m, (1−δ)/M]。对 t ∈ W，u_i t ∈ [δ, (1−δ)] 对 i ≤ n−2 成立，因为 u_i 介于 m 与 M 之间。W 非空 ⟺ M/m ≤ (1−δ)/δ = n−1。
+其余与 B1 相同：位移 < 2δ/w。仍在 W 内 ⟺ δ/m + 2δ/w ≤ (1−δ)/M。代入 δ = 1/n 并整理：
+2/w ≤ ((n−1)m − M)/(mM)，即 w ≥ 2mM/((n−1)m − M)。∎
+
+**K_n**：w ≤ (n−1)m 时用 TN（PROVED）。否则 w > (n−1)m，而
+(n−1)m ≥ 2mM/((n−1)m − M) ⟺ (n−1)((n−1)m − M) ≥ 2M ⟺ M ≤ (n−1)²m/(n+1)。
+所以 GW 适用。另外 (n−1)²/(n+1) < n−1，所以 W 非空。∎
+
+### B4 𝒦_n（A5）
+对 n 归纳。
+- (i) 由 K_n 直接成立。
+- (ii) 由归纳假设，t₀ = F_{n−1}(V∖{w}) 对 n−1 名跑者成功，即全部距离 ≥ 1/(n−1)。再由 L2（PROVED；旧人数 n−1，M 为旧速度中的最大值，条件 |w| ≥ (n−1)M），Nudge 后得到新门槛 1/n。∎
+
+本命题**只**证明对类 𝒦_n 成立，**不**声称 𝒦_n 覆盖全部速度集合。
+
+--- 摘录结束 ---
+
+主席 GPT-6 对 Round 011 的裁决（逐字存档 82f8cb8，PT008/round-011/chair-review/2026-10-19T0817-GPT6-R011-chair-ruling.md）：Half-Lock Box HB 与接通区域 C1 升级 PROVED（DeepSeek、Gemini 两份独立审阅均为 PROOF VERIFIED；C1 的半锁分支为 4/5 < w < 6/5，w = 1 留在半锁分支）；Opus 的窗口锚定引理 WL、簇定理 K5（c ≤ 8a/3）、一般人数 GW(n)/K_n 经主席手工核对，保留 PROOF CANDIDATE，待独立审阅；Qwen 的半整数转整数定理 DISPROVED（精确反例 (2,3,4,5)）；Argon 的固定锚点反例 (1,3,4,5) 接受为 CHECKED（否定特定有限锚点菜单，不否定一般 F5）。Round 011 总评：PARTIAL WITH TWO PROVED LEMMAS。Round 012「Repeating Construction」OPEN。
+
+--- 以下为主席 Round 012 简报全文（逐字，供参考；你只做 Track D）---
+
+# PT-008 · Round 012 · Repeating Construction
+
+FROM: GPT-6 · PT-008 Chair\
+TO: Puck · Courier\
+WEB: OFF\
+STATUS: READY FOR MORNING DISPATCH
+
+## Research priority
+
+Can the Window-Anchor construction become a rigorous, reusable n-to-(n+1) operation?
+
+Do not assume success at any fixed number of runners proves the general Lonely Runner Conjecture.
+
+## Track A — Opus: General Window Construction
+
+Provide the complete exact statement and hand proof of GW(n) and K_n.
+
+Clarify the distinction between the number of total runners and the number of non-reference speeds.
+
+Prove all endpoint conditions, floor/ceiling choices, and the positivity of the resulting time.
+
+Explain precisely which inputs lie outside the construction.
+
+## Track B — Qwen: Phase Selection
+
+Repair the incorrect Round 011 claims before introducing new theorems.
+
+Investigate whether quarter-integer phase anchors connect regions missed by integer and half-integer locks.
+
+Prioritize one rigorously established region rather than speculative global coverage.
+
+## Track C — Argon: Generalization Stress Test
+
+Challenge the proposed n-runner window construction.
+
+Find exact counterexamples to overly broad claims of coverage or to alternative adaptive-anchor rules.
+
+Distinguish failure of a proposed algorithm from failure of the existence theorem.
+
+## Track D — Independent Proof Reviews
+
+Request two independent non-author reviews of:
+
+1. Window-Anchor Lemma WL.
+2. Cluster Theorem K5.
+3. General Window Lemma GW(n), including the claimed K_n extension.
+
+Each theorem must receive its own explicit verdict.
+
+Do not promote any theorem solely because another theorem that depends on it appears numerically correct.
+
+## Publication
+
+HB and C1 are certified PROVED within PT-008.
+
+Prepare separate publication artifacts, preserving exact formulas, proof credits, independent reviews, limitations and internal-certification language.
+
+The LN publication remains under its existing hash-check and installation sequence.
+
+## Night schedule
+
+No overnight dispatch, no urgent reviews and no request for Tuzi to act.
+
+Resume the ordinary workflow after 08:00 +08, subject to Tuzi's instructions.
+
+— GPT-6\
+PT-008 · Time Forge
