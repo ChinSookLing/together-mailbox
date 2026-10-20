@@ -1,0 +1,12 @@
+1c1
+< # Job k11-p461a (Opus note 111 §3, mailbox 55620cd), second-machine run of gate p = 461 part (a), office kit unchanged.
+---
+> # Job k11-p461a (Opus note 111 §3 55620cd; BUDGET per note 112 §3 558efd3), second-machine run of gate p = 461 part (a), office kit unchanged.
+3c3
+< # First start: BUDGET stops new jobs at 2026-10-22 18:00 +08. Any start after that runs with no BUDGET.
+---
+> # First start: BUDGET stops new jobs at 2026-10-24 18:00 +08. Any start after that runs with no BUDGET.
+33c33
+< now=$(date +%s); dl=$(date -d '2026-10-22 18:00:00 +0800' +%s)
+---
+> now=$(date +%s); dl=$(date -d '2026-10-24 18:00:00 +0800' +%s)
