@@ -1,0 +1,149 @@
+R022 4/4 DeepSeek
+
+ANSWER BLOCK：最小归纳不变量不是单个成功点，而是“带间隔界的安全族”：旧速度在新门槛下的安全集在任意长度 L_n 的窗口中至少有一点，且 L_n 可由旧数据显式给出。单点与统一正余量等价（命题 H 的统一余量版），单侧窗口由余量导出；受控间隔族严格更强，但能否从 F_n 再生未证。修订后的条件归纳引理补上左移时间域：\sigma=-1 时须 t_0-h>0 或实际位移 \Delta<t_0。审阅：H 统一余量版 PROOF VERIFIED（任意正余量版需修正）；FO PROOF VERIFIED；TL PROOF VERIFIED；OB PROOF VERIFIED（仅限 TL 保证版，过度推广 UNFINISHED）。必答：CONDITIONAL。
+
+---
+
+Track D · 最小归纳不变量
+
+1. 四类信息
+
+旧总人数 n，旧速度集 W（|W|=n-1），旧成功点 t_0 满足 \|wt_0\|\ge1/n。新门槛 \delta=1/(n+1)，统一余量
+
+\mu=\frac1n-\frac1{n+1}=\frac1{n(n+1)}.
+
+
+新增速度 u，旧最大速度 w_{\max}=\max W。
+
+· (1) 成功点：t_0。
+· (2) 统一正余量：对所有 w\in W，\|wt_0\|\ge\delta+\mu=1/n。这正是 (1) 的改写。
+· (3) 单侧安全区间：存在 h>0，使 W 在 [t_0,t_0+h] 或 [t_0-h,t_0] 上均 \ge\delta。
+· (4) 受控间隔族：存在 L>0，使 W 的安全集在任意长度 L 的窗口中至少有一点。
+
+2. 关系
+
+· (1) 与 (2) 在统一余量意义下等价；若 (2) 只要求任意正余量，则不等价，不能推出 (1)。
+· (2) ⇒ (3)：取 h=\mu/w_{\max}，由 Lipschitz 性，
+  \|w(t_0+\tau)\|\ge\|wt_0\|-w|\tau|\ge1/n-\mu=\delta,\quad |\tau|\le h.
+· (3) 是单侧连续窗口；(4) 是离散或连续的可选族，不要求方向兼容，能处理不同 u 的相位。
+
+3. 修订后的条件归纳引理
+
+输入：n,W,t_0，t_0 对旧门槛 1/n 成功；新增 u>0；方向 \sigma\in\{+1,-1\}；窗口长度 h>0。
+
+假设 (W)：对所有 w\in W 与所有 t\in[t_0,t_0+\sigma h]，有
+
+\|wt\|\ge\delta=\frac1{n+1}.
+
+
+时间域条件：
+
+· 若 \sigma=+1：只需 h>0，t_0>0。
+· 若 \sigma=-1：需 t_0-h>0；等价地，最终位移 \Delta 必须满足 \Delta<t_0。
+
+若 \|ut_0\|\ge\delta，取 \Delta=0；否则令 \Delta>0 为沿方向 \sigma 从 t_0 到 u 的最近新安全边界 \|ut\|=\delta 的最小距离。假设
+
+\Delta\le h,\qquad \text{且若 }\sigma=-1\text{ 还需 }\Delta<t_0.
+
+
+输出
+
+t=t_0+\sigma\Delta.
+
+
+证明：由 (W)，旧速度在 t 处安全；由 \Delta 定义，新速度安全；时间域条件给 t>0。∎
+
+保持性：假设不自动保持。可公度周期链是自动特例：若 W\cup\{u\} 的旧部分可公度，存在 P>0 使 wP\in\mathbb Z（w\in W），则旧相位在平移下不变，窗口可取任意长；只要 \operatorname{frac}(uP)\ne0，有限步平移可装入 u。例外是 \operatorname{frac}(uP)=0 且当前 u 不安全。
+
+4. 与 H(3)、FO 的区别
+
+· H(3)：从统一余量 \mu 导出双侧窗口，半宽 h=\mu/w_{\max}，长度由 w_{\max} 控制。
+· 本引理：直接以实际单侧窗口 h 和实际修正量 \Delta 为数据，是 H(3) 的几何弱化；但窗口信息不由 F_n 自动携带。
+· FO：取 h=\mu/w_{\max} 且 u\ge n w_{\max}，保证 \Delta\le h。本引理不要求 u 最快，只要求实际 \Delta\le h。
+
+5. 受控间隔族是否更强
+
+是。单侧窗口只能处理一个方向、一个长度；受控间隔族在任意长度 L 的窗口中至少有一点，可同时容纳不同 u 的相位修正，不需要方向兼容。但保持性更难：从 F_n 到 F_{n+1} 需证明新安全集仍有显式间隔界 L_{n+1}，且 L_{n+1} 不循环依赖原问题。此性质未证：UNFINISHED。
+
+6. E*_n 的地位
+
+PS* 的例外集 E^*_n 是当前“单点 + 可公度周期平移”选择规则的例外，不是存在性阻碍。OB 只否定 TL 保证版在短整数关系下的适用；不能推出所有归纳机制失败。是否有其他选择规则覆盖 E^*_n：UNFINISHED。
+
+---
+
+审阅 Opus 命题 H
+
+结论：H 在“统一余量 \mu=1/n-1/(n+1)”解释下，陈述 (1)⇔(2) 与 (2)⇒(3) 正确。若按原文 (2) 的“\mu_w>0”任意正余量解释，则 (2) 不能推出 (1)。主席要求明确门槛与窗口类型，正是此点。
+
+证明核验：
+
+· 统一余量版：\|wt_0\|\ge1/n 等价于 \|wt_0\|\ge\delta+\mu，正确。
+· (2)⇒(3)：Lipschitz 性给双侧窗口，正确；单侧是其子区间。
+· 原文“真正新信息只有 (4)”在统一余量版下成立；(4) 不会自动再生，正确。
+
+审阅结论：PROOF VERIFIED（统一余量版）；任意正余量版 GAP FOUND。
+
+---
+
+审阅 Opus 定理 FO
+
+结论：快局外人 u\ge n w_{\max} 时，用一次平移把 u 移到边界，旧速度由 Lipschitz 保持。正确。
+
+核验：
+
+· 位移 |t-t_0|\le\delta/u\le1/(n(n+1)w_{\max})=\mu/w_{\max}=h。
+· 旧速度：\|wt\|\ge1/n-\mu=\delta。
+· 正性：t_0\ge1/(n w_{\max})，故 t_0-h\ge1/((n+1)w_{\max})>0，左移安全。
+· 最优性：最坏需 u\ge n w_{\max}，在只用 (1)–(3) 时正确。
+· n=4 时条件 d\ge4c 即 LN，无新覆盖，正确。
+
+审阅结论：PROOF VERIFIED（条件性；无新覆盖）。
+
+---
+
+审阅 Opus 定理 TL
+
+结论：沿 P 的格传递，旧速度相位漂移由 j|r_w|\le\mu_w 控制，u 相位由 PS 选择器装入。正确。
+
+核验：
+
+· 若 r_w=0，即 PS_n 精确周期，\mu_w 可为零。
+· 保证版：PS 选择器给 j<2\delta/e+1，故 (2\delta/e+1)\max|r_w|\le\min\mu_w 充分。
+· 边界 e=\|uP\|>0 已显式假设；若 e=0 不适用。
+
+审阅结论：PROOF VERIFIED（条件性）。
+
+---
+
+审阅 Opus 定理 OB
+
+结论：若 u=\sum c_w w，K=\sum|c_w|\le2n，则 TL 保证版对每个 P>0 不成立。证明正确。
+
+核验：
+
+· e=\|uP\|\le K\max|r_w|。
+· 若 e>0，(2\delta/e+1)\max|r_w|>(2\delta/e)(e/K)=2\delta/K\ge\mu。
+· 若 e=0，TL 选择器不适用。
+
+限定：OB 只否定 TL 的保证版，不否定其他传递机制，也不能推出“所有有限/自适应构造不可能”。Opus §11 的“没有任何一类信息能对所有输入完成归纳步”超出 OB 的证明范围；该推广 UNFINISHED。
+
+审阅结论：PROOF VERIFIED（仅限 TL 保证版）；一般构造不可能性 GAP FOUND。
+
+---
+
+四账本
+
+· PROOF VALIDITY：修订条件归纳引理 PROOF CANDIDATE（时间域已补）；H 统一余量版 PROOF VERIFIED；FO PROOF VERIFIED；TL PROOF VERIFIED；OB PROOF VERIFIED（限定）。一般 F_n：UNFINISHED。
+· INDEPENDENT REVIEW：本回复为 DeepSeek 独立非作者审阅；未参考其他审阅人本轮意见。H/FO/TL/OB 各自结论如上。
+· NEW COVERAGE：FO 在 n=4 与 LN 重合，无新覆盖；PS/TL 的覆盖依赖下层 F_n 与例外集，NEW COVERAGE UNFINISHED。
+· COMPUTATIONAL CHECK：手算复核 (1,2,3,4)：t_0=1/8，\mu=1/20，w_{\max}=4，h=1/80，窗口 [9/80,11/80]，u=1 相位均 <1/5，故 (1)–(3) 不足；K 均为 2\le8，FO 不适用。该组由 TN 覆盖。未做大枚举。
+
+---
+
+必答题
+
+Does the proposed result provide a guaranteed mechanism for the induction step, or does it only describe a sufficient subset of inputs?
+
+CONDITIONAL。
+
+缺少的假设是：从 F_n 传出的带间隔界的安全族（或至少实际单侧窗口长度 h 与新增速度修正量 \Delta 满足 \Delta\le h，且左移时 t_0-h>0）。该假设不自动保持；可公度周期链是自动特例，但一般实数速度没有。故目前只描述充分子集，不是保证的 2 到 47 归纳机制。
