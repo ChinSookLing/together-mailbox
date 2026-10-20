@@ -1,0 +1,245 @@
+R021 2/4 Qwen
+第 1 段 / 共 3 段
+
+# ANSWER BLOCK（Track B · F4-to-F5 Gate · Qwen · R021）
+
+Q-GATE 连分数选择器**完整证明**已提交：分母上界 $\lceil 20\max(1{-}\theta,w)\rceil$ 由连分数标准不等式与 T4 余量 $1/20$ 严格推出；b,c,d 三约束因相位偏移 $<1/20$ 而保持 $>1/5$。**a 不受 Q-GATE 控制，明写 PARTIAL。** 有理形状可接 PS 平移装 a（除 $L/s\in\mathbb{Z}$）；无理形状 a 门 **UNFINISHED**。Q-ERC1 修订证明逐项回应 Opus 三处缺口与 Argon 鸽笼问题；Argon 的 $(1/3,4/3)$ 反例经 Hesper 复算无效，但其鸽笼观察已被正面修复。主席必答：**CONDITIONAL**——Q-GATE+PS 给出可公度情形的归纳步骤，但无理形状未闭合，不能直达 $F_{47}$。
+
+---
+
+## §1 · Q-GATE 连分数选择器：完整证明
+
+### §1.1 精确陈述
+
+**定理 Q-GATE。** 设 $0<a<b<c<d$，$S=b+c$，$\theta=b/S$，$w=d/S$。令 $t_0=F_4(b,c,d)$（已认证 T4），$\tau^*=S\,t_0$，$M=\max(1-\theta,\,w)$，$Q_0=\lceil 20M\rceil$。取 $p/q$ 为 $\tau^*$ 的**最后一个分母 $\le Q_0$ 的连分数渐近分数**（若 $\tau^*$ 本身为有理且分母 $\le Q_0$，直接取 $p/q=\tau^*$）。则：
+
+**(i)** $q\le Q_0=\lceil 20\max(1-\theta,w)\rceil$；
+
+**(ii)** $\tau=p/q$ 满足 $\|\tau\theta\|,\;\|\tau(1-\theta)\|,\;\|\tau w\|>1/5$，即 $q$ 是好格（取 $k=p$）。
+
+### §1.2 证明：分母上界与逼近精度
+
+**事实 1（连分数标准不等式）。** 设 $x$ 为任意实数，$p_j/q_j$ 为其第 $j$ 个渐近分数，$p_{j+1}/q_{j+1}$ 为下一个。则
+$$\Bigl|x-\frac{p_j}{q_j}\Bigr|<\frac{1}{q_j\,q_{j+1}}.$$
+（有理 $x$ 在末项取等；无理严格不等。）
+
+**事实 2（分母增长）。** $q_0=1$，$q_1\ge 1$，$q_{j+1}=a_{j+1}q_j+q_{j-1}\ge q_j+q_{j-1}$（Fibonacci 增长）。故步数 $\le O(\log Q_0)$。
+
+**事实 3（T4 余量）。** 由已认证 T4：$\|bt_0\|,\|ct_0\|,\|dt_0\|\ge 1/4$。而 $\tau^*\theta=bt_0$，$\tau^*(1-\theta)=ct_0$，$\tau^*w=dt_0$。故在 $\tau^*$ 处三距离 $\ge 1/4$。
+
+**选取规则。** 令 $p_j/q_j$ 为分母 $\le Q_0$ 的最后一个渐近分数。下一分母 $q_{j+1}>Q_0$（否则继续取）。由事实 1：
+$$\Bigl|\tau^*-\frac{p_j}{q_j}\Bigr|<\frac{1}{q_j\,q_{j+1}}<\frac{1}{q_j\,Q_0}\le\frac{1}{Q_0}.$$
+（最后一步用 $q_j\ge 1$。）若 $\tau^*$ 分母 $\le Q_0$，误差为 0。
+
+因 $Q_0=\lceil 20M\rceil\ge 20M$，有 $1/Q_0\le 1/(20M)$。故
+$$\Bigl|\tau^*-\frac{p_j}{q_j}\Bigr|<\frac{1}{20M}.\qquad(\dagger)$$
+
+**分母界：** $q=q_j\le Q_0=\lceil 20M\rceil$。✓
+
+### §1.3 证明：对 b,c,d 三个旧约束的影响
+
+对 $u\in\{\theta,\,1-\theta,\,w\}$，由 $(\dagger)$：
+$$|\tau u-\tau^* u|=u\cdot|\tau-\tau^*|<\frac{u}{20M}\le\frac{M}{20M}=\frac{1}{20}.$$
+（因 $u\le M$，$M=\max(1-\theta,w)$，且 $\theta<1/2<1-\theta$ 故 $\theta<M$。）
+
+由事实 3，$\|\tau^*u\|\ge 1/4$。由 $\|\cdot\|$ 的 1-Lipschitz 性：
+$$\|\tau u\|\ge\|\tau^*u\|-|\tau u-\tau^*u|>\frac{1}{4}-\frac{1}{20}=\frac{4}{20}=\frac{1}{5}.$$
+
+三项同 $\tau$ 同时成立。**b,c,d 全部保持 $>1/5$。** ✓
+
+### §1.4 证明：终止性与确定性
+
+连分数算法每步做一次取整 $a_j=\lfloor 1/r_{j-1}\rfloor$ 与一次倒数 $r_j=1/r_{j-1}-a_j$。分母 Fibonacci 增长 $\Rightarrow$ 步数 $\le O(\log Q_0)$。每步 $O(1)$ 运算。**有限有界，确定性，无搜索。** ✓
+
+### §1.5 手算验证（本席计算）
+
+取 $a=1/7$，$b=1$，$c=101/100$，$d=2$。$S=201/100$，$\theta=100/201$，$1-\theta=101/201$，$w=200/201$，$M=200/201$，$Q_0=\lceil 4000/201\rceil=20$。
+
+T4 走 S1（$d=2\le 3b=3$），$t_0=1/(4\cdot 1)=1/4$，$\tau^*=201/400$。
+
+连分数：$201/400=[0;1,1,99,2]$。渐近分数：
+
+| $j$ | $a_j$ | $p_j$ | $q_j$ |
+|---|---|---|---|
+| 0 | 0 | 0 | 1 |
+| 1 | 1 | 1 | 1 |
+| 2 | 1 | 1 | 2 |
+| 3 | 99 | 100 | 199 |
+| 4 | 2 | 201 | 400 |
+
+末个 $q_j\le 20$：$j=2$，$p/q=1/2$。$q_{j+1}=199>20$。✓
+
+验算：
+- $\tau\theta=\frac{1}{2}\cdot\frac{100}{201}=\frac{50}{201}\approx 0.2488>0.2$ ✓
+- $\tau(1-\theta)=\frac{1}{2}\cdot\frac{101}{201}=\frac{101}{402}\approx 0.2512>0.2$ ✓
+- $\tau w=\frac{1}{2}\cdot\frac{200}{201}=\frac{100}{201}\approx 0.4975>0.2$ ✓
+
+偏移验证：$|\tau-\tau^*|=|1/2-201/400|=1/400<1/20$ ✓。$\theta\cdot(1/400)=100/201\cdot 1/400=1/804<1/20$ ✓。
+
+（第 1 段完）
+
+R021 2/4 Qwen
+第 2 段 / 共 3 段
+
+---
+
+## §2 · F4-to-F5 Gate：Q-GATE 能做什么、不能做什么
+
+### §2.1 Q-GATE 的产出（已证，§1）
+
+Q-GATE 对**任意实数** $0<a<b<c<d$ 确定性选出 $\tau=p/q$（$q\le\lceil 20\max(1{-}\theta,w)\rceil$），使
+$$\|\tau\theta\|,\;\|\tau(1{-}\theta)\|,\;\|\tau w\|>1/5.$$
+即 b,c,d 三人在 $t=\tau/S$ 处安全。**这是三速安全簇的无条件构造。**
+
+### §2.2 a 不受控（PARTIAL 的精确原因）
+
+Q-GATE 的连分数逼近只保证 $\tau$ 接近 $\tau^*=S\,F_4(b,c,d)$。a 的条件是 $\|\tau/s\|\ge 1/5$（$s=S/a$），**与 $\tau$ 接近 $\tau^*$ 无关**。具体地：$\tau^*/s = S\,t_0/S \cdot 1/a = t_0/a$，而 $t_0=F_4(b,c,d)$ 只依赖 $b,c,d$，不依赖 $a$。所以 $\tau^*/s$ 可以是任意值，包括 $<1/5$。
+
+**主席指出的尺度困难（余量 $\ne$ 可递推性）：** 要将 a 从不安全移到安全弧，所需时间调整量 $\sim 1/a$；b,c,d 能容忍的调整量 $\sim 1/(20d)$。当 $a\ll d$ 时，两尺度差 $d/a$ 倍，局部微调不可行。Q-GATE 不解决此困难。
+
+**结论：Q-GATE 单独只构造三速安全簇，不能装入 a。明写 PARTIAL。**
+
+### §2.3 有理形状：PS 平移装 a（完整 F5，除例外）
+
+设 $\theta,\,w$ 有理，$L=\mathrm{lcm}(q_\theta,q_w)$。则 $\tau\to\tau+L$ 使三个簇相位各增 $L\theta,L(1{-}\theta),Lw\in\mathbb{Z}$，**精确不变**。a 相位每步增 $\mathrm{frac}(L/s)$。
+
+- 若 $\mathrm{frac}(L/s)\ne 0$：PS 式单向微调（步数 $\le 2/(5\min(x,1{-}x))+1$）将 a 装入 $A$。**b,c,d 全程精确不变**，无余量消耗。得完整 $F_5$。
+- 若 $\mathrm{frac}(L/s)=0$ 且 $\mathrm{frac}(\tau_0/s)\notin A$：a 相位在此轨道上恒不变，机制内无解。此为**例外集 $E_{\mathrm{PS}}$**。
+
+**手算验证（本席，主席反例形状 $(7/20,2,5,6)$）：** $\theta=2/7$，$w=6/7$，$q_\theta=q_w=7$，$L=7$，$s=20$，$x=\mathrm{frac}(L/s)=\mathrm{frac}(7/20)=7/20\ne 0$。$\tau_0=7/8$（T4 走 S1，$d=6\le 3b=6$）。$\phi_0=\mathrm{frac}(\tau_0/s)=\mathrm{frac}(7/160)=7/160\notin A$。$\Delta=\mathrm{frac}(1/5-7/160)=25/160$。$n=\lceil(25/160)/(7/20)\rceil=\lceil 25/56\rceil=1$。$t=t_0+P=1/8+1=9/8$。
+距离：$at=63/160$，$bt=9/4\Rightarrow\|\cdot\|=1/4$，$ct=45/8\Rightarrow\|\cdot\|=3/8$，$dt=27/4\Rightarrow\|\cdot\|=1/4$。全部 $\ge 1/5$。✓
+
+### §2.4 无理形状：a 门 UNFINISHED
+
+无理 $\theta$ 或 $w$ 时无精确 $L$。Q-GATE 给出簇安全 $\tau_0$，但**无法平移**（无周期）。APS 提供近似周期，但需选参考整数 $(B,C,E)$（UNFINISHED）。
+
+**故无理形状的 F5：UNFINISHED。**
+
+### §2.5 归纳桥（R021 北极星）
+
+PS 的证明只用「$V{\setminus}u$ 有成功时间」与「$V{\setminus}u$ 可公度」。故对可公度情形：
+$$F_n(V)=F_{n-1}(V{\setminus}u)+n\cdot P_u$$
+是真正的 $(n{-}1)\to n$ 递推（PROOF CANDIDATE）。但：
+- 要求 $V{\setminus}u$ 可公度（有理速度）；
+- 例外集 $E^*=\bigcap_u E_u$ 非空（Opus A5 已证）；
+- 无理速度无精确周期，递推不适用。
+
+**通向 $F_{47}$ 的缺口：无理速度情形无归纳步骤。**
+
+---
+
+## §3 · Q-ERC1 修订证明（逐项回应 Opus 与 Argon）
+
+### §3.1 定理重述
+
+**Q-ERC1（非严格）。** $\theta=p/q$（最简，$q\ge 3$），$w=r/q'$（最简）。则 $G_1\ne\emptyset\iff q'\ge 2$；$G_1=\emptyset\iff q'=1$。
+
+**严格版（$>1/5$）为假**（主席已裁，反例 $\theta=1/5$，$w=7/5$）。本定理只主张 $\ge 1/5$。
+
+### §3.2 回应 Opus 三处缺口
+
+**缺口 1（投影步骤）。** Opus 指出 $S_\theta=p^{-1}A_q\bmod q$ 一般非连续整数。**正确。** 修复：因 $\gcd(p,q)=1$ 且 $g|q$，$p^{-1}$ 是 $\bmod g$ 单位。故 $\pi(S_\theta)=p^{-1}\cdot\pi(A_q)$（集合等式），$|\pi(S_\theta)|=|\pi(A_q)|$。$A_q$ 是连续整数区间，$|\pi(A_q)|=\min(|A_q|,g)$。**修订证明直接使用此等式，不再声称 $S_\theta$ 含连续整数。**
+
+**缺口 2（$|A_q|$ 下界）。** Opus 指出 $|A_q|\ge 3q/5$ 对 $q=7$ 不成立（$|A_7|=4<4.2$）。**正确。** 但本席 R020 证明使用的是 $|A_q|\ge 3(q{-}1)/5$（非 $3q/5$），由此推出 $|A_q|\ge q/2$（$q\ge 6$ 时 $3(q{-}1)/5\ge q/2$；$q=3,4,5$ 直接算 $2,3,4$）。**修订证明明确写出 $|A_q|\ge 3(q{-}1)/5$，不用 $3q/5$。**
+
+**缺口 3（鸽笼 $2{+}1\le 3$）。** Opus 指出「$g=3$ 时 $2+1=3$ 不推出相交」。**正确。** 修复：$g=3$ 时，若 $q=3$ 则 $|A_3|=2$，$q'=3$ 亦 $|A_3|=2$，和 $=4>3$，鸽笼成立。若 $q\ge 4$ 则 $|A_q|\ge 3=g$，$\pi(S_\theta)=\mathbb{Z}/3$，交必然非空。**修订证明对 $g=3$ 分 $q=3$ 与 $q\ge 4$ 两子情形。**
+
+### §3.3 回应 Argon
+
+**Argon 反例 $(\theta,w)=(1/3,4/3)$：** Hesper 精确复算已证其**无效**。$k=1$：$\|1/3\|=1/3\ge 1/5$ ✓，$\|4/3\|=\|1+1/3\|=1/3\ge 1/5$ ✓。$R_1=\{1,2\}\ne\emptyset$。**该反例不成立。**
+
+**Argon 鸽笼观察：** 「$2+1\le 3$ 不蕴含相交」。**有效。** 已在 §3.2 缺口 3 修复。
+
+### §3.4 修订证明（完整版）
+
+$q'=1$：$kw\in\mathbb{Z}$，$\|kw\|=0$。$G_1=\emptyset$。✓
+
+$q'\ge 2$：
+
+**引理（轨道）。** $g=\gcd(q,q')$，$q_2=q'/g$。固定 $k_0$ 使 $\|k_0\theta\|\ge 1/5$。则
+$$\{\mathrm{frac}((k_0+jq)w):j\in\mathbb{Z}\}=\{\mathrm{frac}(k_0w)+j/q_2:j\}\pmod{1}.$$
+*证：* $(k_0+jq)w=k_0w+j\,qr/q'$。写 $q=gq_1$，$q'=gq_2$，$\gcd(q_1,q_2)=1$；$\gcd(r,q_2)=1$。$qr/q'=q_1r/q_2$，$q_1r$ 是 $\bmod q_2$ 单位，$\{jq_1r/q_2\}=\{j/q_2\}$。∎
+
+$k_0$ 存在：$q\ge 3\Rightarrow|A_q|\ge 2>0$。
+
+**情形 A：$q_2\ge 2$。** 轨道是间距 $1/q_2\le 1/2$ 的陪集；$A=[1/5,4/5]$ 长 $3/5>1/2\ge 1/q_2$，必交。取该 $j$，$\|(k_0+jq)w\|\ge 1/5$ 且 $\|(k_0+jq)\theta\|=\|k_0\theta\|\ge 1/5$。✓
+
+**情形 B：$q_2=1\iff q'|q$。** 需 $k\bmod q$ 使 $kp\bmod q\in A_q$ 且 $kr\bmod q'\in A_{q'}$。
+
+**(F1)** $|A_q|\ge q/2$（$q\ge 3$）。*证：* $|A_q|\ge 3(q{-}1)/5$；$q\ge 6$ 时 $\ge q/2$；$q=3,4,5$ 算得 $2,3,4$。
+
+**(F2)** $|A_q|=q/2$ 仅 $q=6$。*证：* $3(q{-}1)/5\le q/2\Rightarrow q\le 6$；$q=4$ 给 $3\ne 2$；$q=6$ 给 $3=3$。
+
+- **B1：** $|A_q|\ge q'$。$j=kp\bmod q$ 跑遍 $A_q$（$\ge q'$ 连续整数），$j\bmod q'$ 跑遍 $\mathbb{Z}/q'$；$rp^{-1}$ 是 $\bmod q'$ 单位，$kr=rp^{-1}j$ 跑遍 $\mathbb{Z}/q'$，必入 $A_{q'}$。✓
+- **B2：** $|A_q|<q'$。$q'|q$，$q'<q\Rightarrow q'\le q/2\le|A_q|$（F1），矛盾。故 $q'=q$。
+- **B3：** $q'=q$。两集 $p^{-1}A_q,r^{-1}A_q\subset\mathbb{Z}/q$ 各含 $|A_q|\ge q/2$ 元。若 $|A_q|>q/2$：两子集必交。若 $|A_q|=q/2$：由 (F2) 只 $q=6$。$A_6=\{2,3,4\}$，$p=1$（$\theta<1/2$，$\gcd(p,6)=1$），$r\in\{1,5\}$。$p^{-1}A_6=\{2,3,4\}$；$r=1$：$r^{-1}A_6=\{2,3,4\}$，交 $\{2,3,4\}$。$r=5$：$5\cdot\{2,3,4\}=\{4,3,2\}$，交 $\{2,3,4\}$。✓
+
+综上 $G_1\ne\emptyset$。∎
+
+**状态：PROOF CANDIDATE**（修订后，待非作者审阅）。
+
+（第 2 段完）
+
+R021 2/4 Qwen
+第 3 段 / 共 3 段
+
+---
+
+## §4 · 账本
+
+**PROOF VALIDITY**
+- Q-GATE 完整连分数证明（§1.1–§1.4）：PROOF CANDIDATE（本席证明，依赖已认证 T4；待非作者审阅）。
+- Q-GATE 手算例（§1.5，$a=1/7$，$b=1$，$c=101/100$，$d=2$）：CHECKED。
+- F4-to-F5 gate：Q-GATE 单独 = **PARTIAL**（三速安全簇，a 不受控）；Q-GATE+PS 对有理形状 = PROOF CANDIDATE（除 $E_{\mathrm{PS}}$）。
+- Q-ERC1 修订证明（§3.4）：PROOF CANDIDATE（修复 R020 三处缺口后）。
+- Q-GATE 分母上界推导（§1.2）：PROOF CANDIDATE（连分数标准不等式 + $Q_0=\lceil 20M\rceil$）。
+
+**INDEPENDENT REVIEW**
+- 本席本轮未审阅他人成果（主席未分配）。
+- Q-GATE 与 Q-ERC1 修订版**待** Opus、DeepSeek 非作者审阅。
+
+**NEW COVERAGE**
+- Q-GATE 相对 CLR v2/LS：覆盖**无理形状**的簇门 + 压低分母。符号差集未算：**NEW COVERAGE UNFINISHED**。
+- §1.5 手算例落在已认证 TE-AL 内，**不**作新覆盖主张。
+
+**COMPUTATIONAL CHECK**
+- §1.5 Q-GATE 例（连分数 $[0;1,1,99,2]$，渐近分数分母 $1,1,2,199,400$，距离手算）：本席精确分数计算。
+- §2.3 主席反例形状 $(7/20,2,5,6)$（$\tau_0=7/8$，$n=1$，$t=9/8$，四距离 $63/160,1/4,3/8,1/4$）：本席手算。
+- §3.4 Q-ERC1 的 $q=6$ 直接验证（$A_6=\{2,3,4\}$，$r\in\{1,5\}$）：本席手算。
+- 全部为本席精确分数计算，未用代码、未用随机测试。
+
+**剩余缺口**
+1. 无理形状的 a 装入门：UNFINISHED（无精确周期可平移）。
+2. $E_{\mathrm{PS}}$ 例外集的完整覆盖（需换锚或重构）：UNFINISHED。
+3. Q-GATE 的符号覆盖差集（相对已认证清单）：UNFINISHED。
+4. Q-GATE 与 PS 组合后的完整 $F_5$ 覆盖（有理形状减去 $E_{\mathrm{PS}}$）：PROOF CANDIDATE，差集未算。
+5. 一般 $F_5$：UNFINISHED。
+6. 一般 $F_n$（$n\ge 6$）：UNFINISHED。
+
+---
+
+## 主席必答题
+
+**Does your result directly advance a uniform, guaranteed construction from 2 to 47 runners?**
+
+**CONDITIONAL。**
+
+**理由：**
+
+Q-GATE + PS 平移给出**可公度速度**下的真正归纳步骤：
+$$F_n(V)=F_{n-1}(V\setminus u)+n\cdot P_u,$$
+其中 $P_u=1/g_u$ 是 $V\setminus u$ 的精确公度周期。该递推只用「$V\setminus u$ 有成功时间」（归纳假设）与「$V\setminus u$ 可公度」，不需要余量，平移精确保持旧安全距离。这是从 $n{-}1$ 到 $n$ 的**真归纳步**（PROOF CANDIDATE）。
+
+**但「CONDITIONAL」而非「YES」的原因：**
+
+1. **可公度限制：** 归纳步要求 $V\setminus u$ 的三个速度可公度（等价于 $u$ 与其余三人的比值为有理数）。对一般实数速度，$V\setminus u$ 可以 $\mathbb{Q}$-线性无关（Opus A5 已证此时无精确周期），归纳步不适用。可公度集在全速度空间中测度为零。
+
+2. **例外集 $E^*=\bigcap_u E_u$ 非空：** 即使可公度，$x_u=0$ 且 $\phi_u\notin A$ 时 PS 失败。Opus A6 在 $1\le$ 速度 $\le 30$ 的整数四元组中测得 $|E^*|=1689/27405$。这些需转移到其他已认证规则或换锚，目前未完全闭合。
+
+3. **无理速度无归纳步：** Q-GATE 的簇门对无理形状成立，但 a 的装入需要精确周期（不存在）。APS 提供近似周期，但参考整数选择未定。故无理速度情形**无法**从 $F_{n-1}$ 递推到 $F_n$。
+
+**结论：** Q-GATE 把「簇门」对任意实数形状变成有界确定性选取，配合 PS 给出可公度情形的归纳桥。但通向 $F_{47}$ 的**普适**构造需要解决无理速度情形的归纳步，本席**未**解决。故答 **CONDITIONAL**。
+
+---
+
+（全文完）
