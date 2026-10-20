@@ -1,0 +1,34 @@
+R030 3/4 Qwen
+第 1 段 / 共 3 段
+
+# ANSWER BLOCK（路线 B · 全局整数构造 · Qwen · R030）
+
+路线 B 交付：**非一般构造**，而是一个精确的「难度定位」结果。PROOF：(1) 复核主席等价式——整数向量 $q$ 可行 $\iff$ 安全时间存在（双向）；(2) 由此推出「保证对一切速度向量构造 $q$」$\iff$ 孤独跑者存在性命题，故**路线 B 未降低核心难度，只把其重述为整数可行性**。IDEA：几何数论（Minkowski）方向，未证。最不确定步：是否存在不证 LRC 的部分保证构造。FW₄ 与一般 F_n 仍 **UNFINISHED**。
+
+---
+
+## §1 · PROOF：主席等价式的完整复核
+
+**设定：** $n$ 跑者，正相对速度 $v_1,\ldots,v_{n-1}$，$\delta=1/n$。整数向量 $q=(q_1,\ldots,q_{n-1})$，$q_i\ge0$。
+
+**两两耦合不等式（主席）：** 对所有有序对 $(i,j)$，
+$$v_j q_i - v_i q_j \le (1-\delta)v_i - \delta v_j. \tag{$*$}$$
+
+**命题 1（等价性，复核主席推导）。** $(*)$ 对所有 $i,j$ 成立 $\iff$ 存在 $t>0$ 使 $\|v_i t\|\ge\delta$ 对所有 $i$（即 $t$ 安全）。
+
+**证明。**
+
+$(*)\iff v_j(q_i+\delta)\le v_i(q_j+1-\delta)\iff \dfrac{q_i+\delta}{v_i}\le\dfrac{q_j+1-\delta}{v_j}.$
+
+记 $A_i=(q_i+\delta)/v_i$，$B_i=(q_i+1-\delta)/v_i$。$(*)$ 对所有 $i,j$ $\iff$ $A_i\le B_j$ 对所有 $i,j$ $\iff$
+$$\max_i A_i\le\min_j B_j. \tag{$\dagger$}$$
+
+**$(\Rightarrow)$：** 由 $(\dagger)$，取 $t$ 满足 $\max_i A_i\le t\le\min_j B_j$。则对每个 $i$：$A_i\le t\le B_i$，即 $q_i+\delta\le v_i t\le q_i+1-\delta$。故 $v_i t\in[q_i+\delta,\,q_i+1-\delta]\subset(q_i,q_i+1)$，从而 $q_i=\lfloor v_i t\rfloor$ 且 $\mathrm{frac}(v_i t)=v_i t-q_i\in[\delta,1-\delta]$，即 $\|v_i t\|\ge\delta$。又 $t\ge A_i=(q_i+\delta)/v_i>0$。故 $t$ 安全。✓
+
+**$(\Leftarrow)$：** 设 $t$ 安全，令 $q_i=\lfloor v_i t\rfloor$。则 $\|v_i t\|\ge\delta\iff\mathrm{frac}(v_i t)\in[\delta,1-\delta]\iff q_i+\delta\le v_i t\le q_i+1-\delta$。故 $A_i\le t\le B_i$ 对所有 $i$，即 $\max_i A_i\le t\le\min_j B_j$，$(\dagger)$ 成立。✓
+
+**边界：** $i=j$ 时 $(*)$ 化为 $0\le(1-2\delta)v_i$，因 $\delta<1/2$ 恒真。非平凡约束在 $i\ne j$。✓ $\square$
+
+**注：** $q_i=\lfloor v_i t\rfloor\ge0$ 因 $v_i,t>0$。主席推导无误。
+
+（第 1 段完）
