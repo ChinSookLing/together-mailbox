@@ -1,0 +1,799 @@
+WHO（给谁）：Qwen —— PT-008 Round 026 · The Arithmetic Skeleton · Track B — Qwen: Exact Certificate Update
+WHERE（贴到哪）：Qwen 新对话「PT-008 Qwen R026」（Play CF 项目，3.8-Max thinking，web 关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R026 2/4 Qwen」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 026 · The Arithmetic Skeleton, for Qwen.
+TO: Qwen
+ASK: do YOUR track (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: decide whether the candidate skeleton (LM/HS/ACC) is reliable — covers every safe component, intervals and isolated points alike — and whether it admits a genuine n→(n+1) update and a guaranteed finite selection of a successful candidate, the step needed to reach F_47. Unrestricted F5 and general F_n still UNFINISHED.
+
+############ PART 0 · 你的任务（主席原文）############
+Track B — Qwen: Exact Certificate Update
+
+Compare the corrected interval certificate with ACC.
+
+Give a precise equivalence or non-equivalence statement for commensurable speeds.
+
+Specify which additional data must be retained to lower the threshold correctly.
+
+Investigate whether a skeleton candidate can be selected directly without enumerating all candidates.
+
+Test the isolated-point examples as well as positive-length safe intervals.
+
+
+Hesper 事实（精确分数，仅核对，非证明）：你 R025 六区间、总测度 8/63、TR 下界 1/105 已确认。主席已接受两处勘误：t=13/24 时 ‖t‖=11/24；t=23/42 时 ‖t‖=19/42。另：u-安全弧数应为 uP′（你写 uP′+1）。主席裁决：单门槛区间表不足以精确降门槛（EQ′ 反例），更新算法必须写明额外输入（原始速度或完整断点/相位资料 B_V）。Opus R025 原文（含 LM/HS/ACC）附后。
+
+############ PART 1 · 主席 R026 共同要求（原文）############
+PT-008 · Round 026 · The Arithmetic Skeleton
+
+FROM: GPT-6 · PT-008 Chair
+TO: Hesper · Acting Courier
+CC: Opus, Qwen, DeepSeek, Kimi, Puck, Argon, Tuzi
+WEB: OFF
+STATUS: OPEN
+
+R025 Chair Ruling
+
+R025 PARTIAL.
+
+MZ-ZERO is PROVED by independent chair hand proof:
+
+For V=(1,…,N), at threshold 1/(N+1), the successful times modulo 1 are exactly k/(N+1) with gcd(k,N+1)=1.
+
+Kimi and DeepSeek supplied non-author proof reviews of MZ.
+
+Opus LM, HS and ACC remain PROOF CANDIDATES requiring precise independent review.
+
+Qwen TR is an existing Lipschitz margin mechanism. Exact threshold updating from a single-threshold interval list requires additional information such as the original speeds or complete phase data.
+
+DeepSeek GBR requires non-author review; author’s self-verification does not count.
+
+General F5 and F_n remain UNFINISHED.
+
+North Star
+
+Build a uniform deterministic safe-time construction, from 2 runners to 47 runners and beyond.
+
+Do not confuse a finite candidate representation with a guaranteed successful candidate.
+
+Mandatory Distinctions
+
+Report separately:
+
+(A) A candidate skeleton exists.
+
+(B) A candidate skeleton covers every already-existing safe component.
+
+(C) For arbitrary input, the skeleton contains a successful candidate.
+
+(D) A successful candidate can be selected by a guaranteed finite operation.
+
+(B) does not imply (C) without an existence theorem.
+
+(C) does not imply the desired directly computable formula unless (D) is also established.
+
+Reply Discipline
+
+ANSWER BLOCK first, no more than 300 Chinese characters.
+
+Hand proofs first. No large brute-force search.
+
+Exact numbers only from displayed calculations or code.
+
+Use PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / UNFINISHED precisely.
+
+Keep independent review, validity, novelty and computational support separate.
+
+No new wall publication without chair authorization.
+
+Return R026 1/4 through R026 4/4.
+
+ROUND 026 OPEN
+############ R025 主席裁决（原文，节选至 R026 开题前）############
+PT-008 · Round 025 · 主席正式裁决
+
+FROM: GPT-6 · PT-008 Chair TO: Hesper、Opus、Qwen、Kimi、DeepSeek、Puck、Argon DATE: 2026-10-20 · WEB OFF
+
+R025 · PARTIAL
+
+ANSWER BLOCK
+
+R025 取得一项可严格认证的结果，以及三项值得继续研究的结构候选。一般 F₅、Fₙ 仍然 UNFINISHED。
+
+成果	主席裁决
+Opus · MZ，连续速度 的零测度安全集	PROVED，限定精确陈述
+MZ 的正测度分支	两份非作者 VERIFIED；完整范围待核
+Opus · LM	PROOF CANDIDATE，优先审阅
+Opus · HS	PROOF CANDIDATE，优先审阅
+Opus · ACC	PROOF CANDIDATE，优先审阅
+Qwen · TR 门槛放宽窗口	数学有效，属于既有 Lipschitz 窗口原理
+Qwen · 单门槛证书直接再生	不成立，必须补充底层资料
+DeepSeek · GBR 修正版	PROOF CANDIDATE；作者自审不计独立审阅
+Kimi · MZ 审阅	接受为一份非作者 PROOF VERIFIED
+自动再生非空保证	UNFINISHED
+
+主席的重点决定：R026 优先审阅 LM、HS、ACC，而不是继续寻找新的固定速度盒子。
+
+一、MZ：这一部分我能亲自完成证明
+
+Opus 给出的精确结果是：
+
+令
+
+V=(1,2,\ldots,N),\qquad
+\delta=\frac1{N+1}.
+
+在一个时间周期 中，安全集合恰好是：
+
+\boxed{
+S_\delta(V)\cap[0,1)
+
+\left\{
+\frac{k}{N+1}:
+1\le k\le N,\
+\gcd(k,N+1)=1
+\right\}.
+}
+
+主席独立证明
+
+考虑圆周上的 个位置：
+
+0,t,2t,\ldots,Nt\pmod1.
+
+如果 是安全时间，那么任意两个位置之间的圆周距离至少为：
+
+\frac1{N+1}.
+
+原因是两位置的差为 ，其中 ，恰好对应安全条件。
+
+将这些位置沿圆周排序，得到 个相邻间隔。
+
+每个间隔至少为 ，但全部间隔之和恰好为 。
+
+因此每个间隔只能等于：
+
+\frac1{N+1}.
+
+所以这些位置必须构成圆周上的等距点集。特别是：
+
+t=\frac{k}{N+1}\pmod1.
+
+为了让全部 个点互不重复，必须有：
+
+\gcd(k,N+1)=1.
+
+反过来，如果 与 互素，那么 正好遍历全部等距位置，因此每个非零差的圆周距离都至少为 。
+
+两方向均成立。证毕。
+
+这不仅证明安全集非空，而且证明它在每个周期里都是有限点集，因此 Lebesgue 测度为零。
+
+注意：对这组特殊速度，我们已经拥有直接公式，例如 。
+
+MZ 说明的是，成功时间可能全部是孤立点。
+
+它没有证明不存在统一构造；反而展示了一种最简单的成功构造。
+
+审阅资格裁决
+
+Kimi 和 DeepSeek 都可记为 MZ 的非作者审阅者。
+
+此外，主席对上述精确零测度结论已经给出独立手证，故认证：
+
+MZ-ZERO：PROVED。
+
+Opus 所述更广的正测度分支，以及 MZ-c 关于证书能力的推论，分别保留自己的适用范围和审阅状态；不能随着这一证明自动升级。
+
+二、LM、HS、ACC：这次终于像是在寻找「珍珠的结构」
+
+Opus 这轮提出的三个候选值得认真对待。
+
+LM · Lower-envelope Maxima
+
+LM 研究下包络线：
+
+g_V(t)=\min_{v\in V}\|vt\|
+
+的局部极大点。
+
+它声称：当局部极大值严格低于 时，极大点具有某种两速度锁相形式：
+
+t=\frac{j}{v+v’}.
+
+这是一个结构性命题。
+
+如果成立，它可以解释为什么我们的许多成功时间，恰好由两个速度之和作为分母。
+
+但它不能自动保证：
+
+g_V(t)\ge\frac1n.
+
+一个局部峰顶，也可能低于安全门槛。
+
+HS · Hitting Skeleton
+
+HS 更进一步。
+
+它试图建立一套与安全门槛无关的候选时间骨架 ，使每个非空安全连通分量都至少包含一个骨架点。
+
+这就比单纯寻找某个成功时间更有系统性。
+
+倘若成立，寻找安全时间可以转化为在一个有证明保证的候选骨架中选择时间。
+
+可是，证明骨架一定碰到每个已有的安全分量，仍然不等于证明任意输入一定有安全分量。
+
+ACC · Arithmetic Candidate Certificate
+
+ACC 试图将上述骨架编码成可更新的算术结构。
+
+这是三个候选里最值得研究其一般 意义的部分。
+
+如果加入速度时，能用有限的算术规则更新候选骨架，而且无须重新扫描全部时间，那就可能成为 Time Forge 的底层计算机制。
+
+不过存在一个决定性的限制：
+
+对于不可公度的实数速度，骨架一般不能简单压缩为一个共同周期内的有限表。
+
+因此主席目前只接受它作为结构候选，不认证其一般实数版本已提供有限直接构造。
+
+三者的研究关系
+
+LM：候选时间为什么有特殊形式？
+
+HS：能否保证每个安全分量碰到候选时间？
+
+ACC：候选时间结构能否有限表示并更新？
+
+尚缺：如何保证下一层存在成功候选，以及如何直接选出它？
+
+这条研究路线值得继续，但目前任何一步都不能凭后一步的设想来补证明。
+
+三、Qwen：单门槛证书不足以支持再生
+
+这里主席接受 Hesper 的纠正。
+
+假设我们只保留：
+
+S_{1/n}(V),
+
+也就是旧门槛下的安全区间。
+
+下一层需要的却是：
+
+S_{1/(n+1)}(V).
+
+这两个集合不等价。
+
+不同的速度集可能有完全相同的旧门槛安全集，却在较低门槛下产生不同的安全区间。
+
+所以，仅凭旧安全区间本身，不能一般性地恢复门槛放宽后的精确安全集。
+
+必须另外提供原始速度，或保存足够的底层断点、相位函数资料。
+
+裁决：Qwen TR 的局部窗口推导有效；其完整区间更新算法必须明确附带这些输入。
+
+另外两点勘误也接受：
+
+* 时，。
+* 时，。
+
+这些笔误不改变相应窗口定理的核心结论。
+
+四、Kimi：这次正式完成了独立审阅任务
+
+Kimi 本轮做得比 R024 更深入。
+
+它没有只是检查一个已知反例，而是对 MZ 的不同分支分别给出了独立推导，并指出较宽解释的问题。
+
+不过它审阅的是发送包中提供的版本，因此：
+
+Kimi 对旧版宽泛主张的 GAP FOUND，不代表已经推翻 Opus 在 R025 主动修正后的新版本。
+
+主席接受 Kimi 的审阅工作，并将其列为合格的 Track C 回覆。
+
+Argon 本轮休息，记录不应混淆。
+
+我建议 Kimi 再继续一轮，但只安排一个重点明确的数学任务，不必做大量计算。
+
+
+六、Hesper 的正式归档指令
+
+R025 CLOSED — PARTIAL；R026 OPEN。
+
+请记录以下裁决：
+
+* MZ-ZERO：主席独立证明通过，内部 PROVED。
+* Opus 的 LM、HS、ACC：均待独立审阅，不因抽样无反例而晋级。
+* Kimi：R025 Track C 正式回覆，非作者审阅计入。
+* DeepSeek：GBR 自审不计独立审阅。
+* Qwen：单门槛区间数据不足以执行一般性精确门槛更新，相关表述必须修正。
+* 任意实数速度的无条件再生机制：UNFINISHED。
+
+
+############ PART 2 · 你自己的 R025 原文（三段合并，原样） ############
+R025 2/4 Qwen
+第 1 段 / 共 3 段
+
+# ANSWER BLOCK（Track B · Exact Threshold Update · Qwen · R025）
+
+R024 勘误已接受（第 4 区间 $[13/24,\,23/42]$，宽 $1/168$ 不变）。本轮核心：**门槛松弛定理**——旧门槛 $\delta$ 下的孤立安全点，在新门槛 $\delta'$ 下膨胀为宽 $\ge 2\mu/w_{\max}$ 的区间（$\mu=\delta{-}\delta'=1/(n(n{+}1))$），此即再生的结构机制。更新算法：门槛松弛 → 与 $u$ 安全集求交，可公度下 $O(K\cdot uP')$ 有理运算有限终止。有限表示、有效更新、确定性选时均 **YES**；保证非空 **CONDITIONAL**（$\equiv$ 该层存在性）；无理速度 **UNFINISHED**。必答：**CONDITIONAL**——表示与更新自动再生，非空保证不自动再生。
+
+---
+
+## §1 · 门槛松弛定理：孤立点 $\to$ 正宽度区间
+
+### §1.1 定理（Threshold Relaxation, TR）
+
+**PROVED.** 设 $t_0$ 在门槛 $\delta=1/n$ 下对 $V$ 安全，即 $\|vt_0\|\ge\delta$ 对所有 $v\in V$。令 $\delta'=1/(n{+}1)$，$\mu=\delta-\delta'=1/(n(n{+}1))$，$w_{\max}=\max V$。则
+$$\bigl[t_0-\tfrac{\mu}{w_{\max}},\;t_0+\tfrac{\mu}{w_{\max}}\bigr]\subseteq S_{\delta'}(V).$$
+
+**证明：** 对 $|h|\le\mu/w_{\max}$ 与任意 $v\in V$，由 $\|\cdot\|$ 的 1-Lipschitz 性：
+$$\|v(t_0+h)\|\ge\|vt_0\|-v|h|\ge\delta-w_{\max}\cdot\tfrac{\mu}{w_{\max}}=\delta-\mu=\delta'.$$
+故 $t_0\pm h\in S_{\delta'}(V)$。区间宽 $2\mu/w_{\max}>0$。∎
+
+### §1.2 孤立点膨胀的精确含义
+
+**推论。** 若 $t_0$ 是 $S_\delta(V)$ 的**孤立**安全点（即 $S_\delta(V)$ 中 $\{t_0\}$ 为单点分量），则 $t_0$ 在 $S_{\delta'}(V)$ 中属于一个**正宽度**分量，宽 $\ge 2\mu/w_{\max}$。
+
+**这是再生可能的根本结构原因：** 即使旧门槛下安全集只有孤立点（零测度），新门槛下这些点获得正宽度区间，可与新跑者 $u$ 的安全弧相交。
+
+**与零测度定理 MZ 的关系（Opus §6.3）：** MZ 指出 $V=(1,\ldots,n)$ 加 $n{+}1$ 后，新安全集非空但测度零。TR 不矛盾：$V$ 在 $\delta'$ 下的安全集**含**孤立点的膨胀区间（正测度），但加入 $n{+}1$ 后，交集**坍缩**为孤立点（测度零）。膨胀与坍缩同时发生：膨胀是门槛降低的效果，坍缩是加入新跑者的效果。
+
+### §1.3 实际宽度可大于 $2\mu/w_{\max}$
+
+TR 给的是**下界**。实际宽度由 $m_V(t)=\min_v\|vt\|$ 的断点结构决定，可更大。
+
+$V_1=(1,3,4,7)$：$\delta=1/5$，$\delta'=1/6$，$\mu=1/30$，$w_{\max}=7$。TR 下界 $2\mu/7=2/210=1/105$。实际最宽区间 $[1/6,5/24]$ 宽 $1/24\approx 0.0417>1/105\approx 0.0095$。✓（实际宽度大 4 倍多。）
+
+---
+
+## §2 · 门槛更新 + 加入新速度的显式算法
+
+### §2.1 输入与输出
+
+**输入：**
+- 可公度速度集 $V=\{v_1<\cdots<v_k\}$（存在 $g>0$ 使 $V\subset g\mathbb{Z}$）。
+- 共同周期 $P=1/g$。
+- 新速度 $u$，满足 $u/g\in\mathbb{Q}$（写 $u/g=p/q$ 最简）。
+- 旧门槛 $\delta=1/(k{+}1)$，新门槛 $\delta'=1/(k{+}2)$。
+
+**输出：**
+- $S_{\delta'}(V\cup\{u\})$ 在 $[0,P')$ 中的全部极大闭区间表，$P'=1/\gcd(V\cup\{u\})$。
+- 若非空，输出一个安全时间（如某区间中点）。
+
+### §2.2 算法（两步）
+
+**步 1（门槛松弛）：** 由 $V$ 的断点表 $B_V$（$m_V$ 在 $[0,P/2]$ 的断点），计算 $S_{\delta'}(V)$。具体地：
+- $m_V$ 的分段线性结构不依赖门槛。
+- $S_{\delta'}(V)=\{t:m_V(t)\ge\delta'\}$ 是 $m_V$ 的上水平集。
+- 由断点表逐段判定 $m_V\ge\delta'$，输出极大区间组 $[\alpha_i,\beta_i]$，$i=1,\ldots,K$。
+
+**步 2（加入 $u$）：** 计算 $S_{\delta'}(\{u\})$ 在 $[0,P')$：
+$$S_{\delta'}(\{u\})=\bigcup_{k=0}^{uP'-1}\Bigl[\tfrac{k+\delta'}{u},\;\tfrac{k+1-\delta'}{u}\Bigr].$$
+对每对 $(i,\kappa)$，求交：
+$$\Bigl[\max\bigl(\alpha_i,\tfrac{\kappa+\delta'}{u}\bigr),\;\min\bigl(\beta_i,\tfrac{\kappa+1-\delta'}{u}\bigr)\Bigr]$$
+左端 $\le$ 右端时非空。合并所有非空交集为新极大区间组。
+
+### §2.3 确定性选时
+
+若输出非空，取任一区间 $[\alpha,\beta]$ 的中点 $t=(\alpha+\beta)/2$。则 $\min_{v\in V\cup\{u\}}\|vt\|\ge\delta'$。✓
+
+（第 1 段完）
+
+R025 2/4 Qwen
+第 2 段 / 共 3 段
+
+---
+
+## §3 · 可公度下的精确输入/输出复杂度
+
+### §3.1 输入规模
+
+设 $V=\{v_1<\cdots<v_k\}\subset g\mathbb{Z}$，$N_i=v_i/g\in\mathbb{Z}_{>0}$，$\sigma=\sum_i N_i$，$P=1/g$。
+
+**断点表 $B_V$：** 由 Opus SZ，$|B_V|\le k(\sigma+1)$。每个断点是分母 $\le 2\sigma^2$ 量级的有理数（Opus §2 断点算术形式）。**输入规模 $=O(k\sigma)$ 个有理数。**
+
+### §3.2 步 1 复杂度（门槛松弛）
+
+从 $B_V$ 提取 $S_{\delta'}(V)$：逐段判定 $m_V\ge\delta'$。
+
+- 段数 $\le|B_V|+1\le k(\sigma+1)+1$。
+- 每段一次有理比较。
+- **复杂度 $O(k\sigma)$。**
+- 输出：$K\le k(\sigma+1)+1$ 个极大区间。
+
+### §3.3 步 2 复杂度（加入 $u$）
+
+$u/g=p/q$（最简），$q'=q/\gcd(N_V,p)$，$P'=q'P$。$u$ 在 $[0,P')$ 中的安全弧数 $=uP'+1$。
+
+- 交集运算：$K$ 个旧区间 $\times$ $(uP'+1)$ 个 $u$-弧。
+- 每对一次端点比较（$\max,\min$，有理运算）。
+- **复杂度 $O(K\cdot uP')=O(k\sigma\cdot uP')$。**
+
+**有限终止：** 所有量为有理数，运算精确，无迭代、无搜索。✓
+
+### §3.4 与单门槛证书的对比（Opus EQ′）
+
+Opus 证明 $(1,2,3,4)$ 与 $(1,3,4,7)$ 在 $1/5$ 下安全集相同，在 $1/6$ 下不同（密度 $5/36$ vs $8/63$）。故**单门槛区间证书不能更新**。本算法用**断点表 $B_V$**（全门槛剖面），可更新到任意 $\delta'$。这与 Opus SPC 等价（EQ）。
+
+### §3.5 与 Opus GLC 的比较
+
+本席 R024 充分条件 $w>1/u$；Opus GLC(i) 为 $\ell\ge 2\delta'/u$。因 $2\delta'=2/(k{+}2)<1$，GLC(i) 更弱（更易满足），**更强**。本席接受：$w>1/u$ 有效但弱于 GLC(i)。GLC(i) 的论证（$u$ 相位扫过 $\ge 2\delta'$ 弧，不能全落在长 $2\delta'$ 的不安全弧内）比本席的「含完整周期」论证更精细。
+
+---
+
+## §4 · $V_1=(1,3,4,7)$ 勘误后的完整手算
+
+### §4.1 六区间（第 4 区间已更正）
+
+$S_{1/6}(V_1)$ 在 $[0,1)$ 的极大闭区间（本席逐步分数核验）：
+
+| # | 区间 | 宽 | 左端绑定速度 | 右端绑定速度 |
+|---|---|---|---|---|
+| 1 | $[1/6,\,5/24]$ | $1/24$ | $v=1,7$（$\|t\|=\|7t\|=1/6$） | $v=4$（$\|4t\|=1/6$） |
+| 2 | $[7/18,\,17/42]$ | $1/63$ | $v=3$（$\|3t\|=1/6$） | $v=7$（$\|7t\|=1/6$） |
+| 3 | $[19/42,\,11/24]$ | $1/168$ | $v=7$ | $v=4$ |
+| 4 | $[13/24,\,23/42]$ | $1/168$ | $v=4$（$\|4t\|=1/6$） | $v=7$（$\|7t\|=1/6$） |
+| 5 | $[25/42,\,11/18]$ | $1/63$ | $v=7$ | $v=3$ |
+| 6 | $[19/24,\,5/6]$ | $1/24$ | $v=4$ | $v=1,7$ |
+
+**第 4 区间端点核验（本席手算）：**
+
+$t=13/24$：$4t=52/24=13/6$，$\mathrm{frac}=1/6$，$\|1/6\|=1/6$ ✓（$v=4$ 绑定）。$7t=91/24$，$\mathrm{frac}=19/24$，$\|19/24\|=5/24>1/6$ ✓。$t=13/24$，$\|13/24\|=13/24>1/6$ ✓。$3t=39/24=13/8$，$\mathrm{frac}=5/8$，$\|5/8\|=3/8>1/6$ ✓。
+
+$t=23/42$：$7t=161/42$，$\mathrm{frac}=35/42=5/6$，$\|5/6\|=1/6$ ✓（$v=7$ 绑定）。$4t=92/42=46/21$，$\mathrm{frac}=4/21$，$\|4/21\|=4/21>1/6$ ✓。$t=23/42$，$\|23/42\|=23/42>1/6$ ✓。$3t=69/42=23/14$，$\mathrm{frac}=9/14$，$\|9/14\|=5/14>1/6$ ✓。
+
+### §4.2 总测度
+
+$2(1/24)+2(1/63)+2(1/168)=1/12+2/63+1/84$。通分 $\mathrm{lcm}(12,63,84)=252$：$21/252+8/252+3/252=32/252=8/63$。✓（与 Hesper 确认一致。）
+
+### §4.3 孤立点膨胀的完整图景
+
+$\delta=1/5$：$S_{1/5}(V_1)=\{1/5,2/5,3/5,4/5\}$（4 孤立点，测度 0）。
+$\delta'=1/6$：$S_{1/6}(V_1)$ = 6 区间，总测度 $8/63>0$。
+
+**每个孤立点膨胀为 $\ge 1$ 个正宽度区间。** 这是门槛松弛定理 §1.1 的实例。
+
+---
+
+## §5 · 无理速度比：UNFINISHED
+
+### §5.1 无有限共同周期
+
+若 $V$ 的速度比含无理数（如 $v_2/v_1\notin\mathbb{Q}$），则**不存在**有限共同周期 $P$。断点表 $B_V$ 在 $[0,\infty)$ 上有无穷多断点，无有限表示。
+
+### §5.2 Q-GATE 的局限
+
+Q-GATE（已证）对无理簇给出**单个**簇安全相位 $\tau_0$（$b,c,d$ 安全）。但：
+- 不给完整安全集 $S_{\delta'}(V)$ 的有限表示。
+- 不给门槛松弛后的区间表。
+- a 门（最慢跑者）未闭合。
+
+### §5.3 本证书不适用
+
+§2 的更新算法**要求**可公度（有限 $P$）。对无理速度比：
+- 有限表示：**不成立**。
+- 有效更新：**不成立**（无有限断点表）。
+- 状态：**UNFINISHED**（除非证明无理速度有有效有限表示，本席未证）。
+
+**主席要求「不假设无理速度有有限共同周期」，本席遵守，明写 UNFINISHED。**
+
+（第 2 段完）
+
+R025 2/4 Qwen
+第 3 段 / 共 3 段
+
+---
+
+## §6 · 账本
+
+**PROOF VALIDITY**
+- 门槛松弛定理 TR（§1.1）：PROOF CANDIDATE（本席证明，Lipschitz 论证）。
+- 孤立点膨胀推论（§1.2）：PROOF CANDIDATE（TR 直接推论）。
+- 更新算法两步（§2.2）：PROOF CANDIDATE（端点公式有限终止）。
+- 复杂度 $O(k\sigma)$（步 1）、$O(k\sigma\cdot uP')$（步 2）：PROOF CANDIDATE。
+- $V_1$ 六区间勘误版（§4，第 4 区间 $[13/24,23/42]$）：CHECKED（本席手算端点）。
+- 总测度 $8/63$：CHECKED（本席通分）。
+- 交集非空充要判据（R024 §5，整数存在性条件）：PROOF CANDIDATE。
+- 充分条件 $w>1/u$：PROOF CANDIDATE（有效但弱于 Opus GLC(i) $\ell\ge 2\delta'/u$，本席承认）。
+- 保证对任意 $u$ 非空：UNFINISHED（$\equiv$ 该层孤独跑者存在性）。
+- 无理速度：UNFINISHED（§5）。
+- 一般 $F_5$、$F_n$：UNFINISHED。
+
+**INDEPENDENT REVIEW**
+- 本席本轮未审阅他人成果（主席未分配）。
+- TR、更新算法、$V_1$ 勘误、充要判据均待非作者审阅。
+- R024 勘误（第 4 区间）已由主席接受。
+
+**NEW COVERAGE**
+- 本轮**不**主张新 $F_5$ 覆盖。门槛松弛是结构机制，非覆盖盒。$V_1$ 六区间为已有安全集的描述。**NEW COVERAGE：NOT ESTABLISHED。**
+
+**COMPUTATIONAL CHECK**
+- §4.1 六区间全部端点（$1/6,5/24,7/18,17/42,19/42,11/24,13/24,23/42,25/42,11/18,19/24,5/6$）：本席精确分数手算。
+- 第 4 区间端点 $13/24$（$v=4$ 绑定 $\|4t\|=1/6$）、$23/42$（$v=7$ 绑定 $\|7t\|=1/6$）：本席逐项核验四速度距离。
+- 总测度 $8/63$：本席通分。
+- 未用代码、未用随机测试、未做大规模穷举。
+
+---
+
+## 主席必答
+
+**Does your result supply an automatically regenerating guarantee?**
+
+**CONDITIONAL。**
+
+**精确定义：** 证书 $I_n(V)=(P;\,[\alpha_1,\beta_1],\ldots,[\alpha_K,\beta_K])$ 为 $S_{\delta'}(V)$ 在 $[0,P)$ 的全部极大闭安全区间，$\delta'=1/(n{+}1)$。
+
+**假设：** $V$ 可公度（有限 $P$）；新速度 $u$ 与 $V$ 可公度（$u/g\in\mathbb{Q}$）。
+
+**自动再生的部分（YES）：**
+1. **表示再生：** 给定 $I_n(V)$ 与 $u$，§2.2 算法确定性算出 $I_{n+1}(V\cup\{u\})$。有限步终止。
+2. **门槛松弛再生：** 孤立安全点在 $\delta\to\delta'$ 下自动膨胀为正宽度区间（TR，§1.1）。无需额外假设。
+3. **确定性选时：** 非空时取区间中点。
+
+**不自动再生的部分（缺少的假设）：**
+- **非空保证：** $I_{n+1}(V\cup\{u\})\ne\emptyset$ 当且仅当 §5 整数存在性判据成立。对**任意** $u$ 保证非空 $\iff$ 该层孤独跑者存在性为真。这不能由构造自身推出。
+- **间隔界：** 更新后最大间隔不自动保持下界（Opus GLC-FAIL 表明连初始层都不满足）。
+
+**证明：** §2.2 算法正确性由端点交集公式保证；TR 由 Lipschitz 性。**局限：** 仅可公度；无理速度 UNFINISHED；非空性不自动。
+
+**与「精确表示」和「保证非空输出」的区分（主席要求）：**
+- **精确表示：** 成立（可公度下 $I_n(V)$ 有限、可计算、可更新）。
+- **保证非空输出：** 不成立（等价于存在性定理，非构造所能推出）。
+- 二者**不可混淆**：机器能算出下一层安全集，不等于能证明它非空。
+
+**独立审阅状态：** TR、更新算法、充要判据均待非作者审阅。$V_1$ 勘误已主席接受。
+
+---
+
+（全文完）
+############ PART 3 · Opus R025 原文（含 LM/HS/ACC，原样） ############
+R025 1/4 Opus
+
+Opus:
+TO: Hesper → GPT-6 (Chair)　Track A · Arithmetic Certificate　Date: 2026-10-20　WEB OFF
+
+---
+
+## ANSWER BLOCK
+
+- **Part I**：SPC、EQ、EQ′、GLC、DU、FU、MZ 七项完整陈述与证明，供非作者审阅。
+  - MZ 只证"从 1 开始的连续速度"（及其倍数）；更宽的"任意连续块"读法 **DISPROVED**，反例 (2,3)。
+  - 按主席裁决，撤回"所有测度型证书不可能"的说法，改为精确的推论 MZ-c。
+- **Part II 新结果**：
+  - **引理 LM**：对任意实数速度，剖面的局部极大值（< 1/2 时）都落在 t = j/(v+v′) 上。
+  - **定理 HS**：候选集 C(V) 与每一个门槛下的每一个安全分量都相交，正长度区间与孤立点一律适用。
+  - 由此得到**算术骨架证书 ACC**：随门槛变化不需要任何更新，加入新速度时只需添加新的等差数列。
+- **仍缺**：非空性假设 NE。
+- **必答：CONDITIONAL。**
+
+---
+
+# Part I · 七项完整陈述（供非作者审阅）
+
+**通用记号**：
+- ‖z‖ 为 z 到最近整数的距离；m_V(t) = min_{v∈V} ‖vt‖；S_δ(V) = {t > 0 : m_V(t) ≥ δ}；k = |V|。
+- **可公度条件 (H-com)**：存在 g > 0，使 V ⊂ gℤ。取最大的 g，记为 g_V；P_V = 1/g_V；N_v = v/g_V ∈ ℤ；σ = Σ N_v。
+
+## I-1 SPC（安全剖面证书）
+**陈述**：在 (H-com) 下：
+- (S1) m_V 以 P_V 为周期，m_V(−t) = m_V(t)，在 [0, P_V/2] 上分段线性，每段斜率为 ±v。
+- (S2) **断点的算术形式**：每个断点都属于 ⋃_v (1/(2v))ℤ ∪ ⋃_{v≠v′} (1/(v+v′))ℤ ∪ ⋃_{v≠v′} (1/|v−v′|)ℤ。
+- (S3) **规模**：断点表 B_V（含两端点）满足 |B_V| ≤ k(σ + 1)。
+- (S4) **操作**：
+  - O1 ARGMAX：κ(V) = max m_V，t\* = 达到 κ(V) 的最小正断点；
+  - O2 ADD(u)（要求 u/g_V ∈ ℚ）；
+  - O3 THRESHOLD(δ)：对任意 δ 输出 S_δ(V) 的分量；
+  - O4 GAP。
+
+  它们都是有限的精确有理运算。
+- (S5) **复杂度 UC**：设 P′ = q′P_V，N_u = uP′。ADD 需要 O(q′|B_V| + N_u) 次运算。
+
+**证明**：
+- **(S1)**：每个 vP_V ∈ ℤ，所以 ‖vt‖ 以 P_V 为周期；又 ‖−z‖ = ‖z‖；分段线性函数取有限最小值仍分段线性。
+- **(S2)**：在不含自身断点的区间上，‖vt‖ = ±(vt − i)，i ∈ ℤ。自身断点为 j/(2v)；两条线的交点为 t = (i ∓ i′)/(v ∓ v′)。
+- **(S3)**：
+  - 自身断点：在 [0, P_V/2] 上共有 Σ(N_v + 1) = σ + k 个。
+  - 交点：对一对 v ≠ v′，合并两者的断点后至多有 N_v + N_{v′} 段；每段上两条线的斜率绝对值不同，至多相交一次。对所有对求和，得 (k−1)σ。
+  - 合计 ≤ σ + k + (k−1)σ = k(σ + 1)。
+- **(S4)**：
+  - O1：连续分段线性函数在紧区间上的最大值在断点处取得。
+  - O2：m_{V∪u} = min(m_V, ‖u·‖)，其断点只能是两者的断点或交点。P′ = 1/g_{V∪u} 是 P_V 的整数倍。
+  - O3：在每段上解一次线性不等式。
+- **(S5)**：
+  - B_V 在 [0, P′/2] 上展开后至多有 q′|B_V| + 1 个点；
+  - u 的断点有 N_u + 1 个；
+  - 合并后的段数不超过两者之和，每段至多一个交点。∎
+
+**局限**：要求可公度；规模是伪多项式的。不可公度的实数速度不适用（不假设有限周期）。
+
+## I-2 EQ（SPC ⇔ 全门槛区间证书）
+**陈述**：
+- (i) 由 SPC 可以对每个 δ ∈ (0, ½] 算出 S_δ(V) 的全部极大分量（包括退化成点的分量）。
+- (ii) m_V(t) = sup{δ : t ∈ S_δ(V)}，所以全部 {S_δ(V)}_δ 唯一确定 m_V。
+
+**证明**：
+- (i) 即 O3。
+- (ii)：若 t ∈ S_δ，则 m_V(t) ≥ δ；而 t ∈ S_{m_V(t)}。∎
+
+## I-3 EQ′（单门槛区间证书不能降低门槛）
+**陈述**：存在 V ≠ V′，使 S_{1/5}(V) = S_{1/5}(V′)，但 S_{1/6}(V) ≠ S_{1/6}(V′)。
+
+**证明**：取 V = (1, 2, 3, 4)，V′ = (1, 3, 4, 7)。
+- 由 TF，S_{1/5}(V) = {1/5, 2/5, 3/5, 4/5} + ℤ。
+- 由 R023 TF′ 的手证，S_{1/5}(V′) 是同一个集合。
+- 在 1/6 下，两者的密度分别为 5/36 与 8/63（本席精确计算，Hesper 已复核）。
+- 若要手证"两集合不同"，只需一个点，取 t = 19/42（Qwen R024 给出的 V′ 区间 [19/42, 11/24] 的左端点）。
+  - 对 V′：19/42；57/42 → 15/42；76/42 → 8/42；133/42 = 3 + 7/42 → 7/42 = 1/6。都 ≥ 1/6，所以 t ∈ S_{1/6}(V′)。
+  - 对 V：2·19/42 = 38/42 → 4/42 < 1/6，所以 t ∉ S_{1/6}(V)。
+
+  因此两集合不同。∎
+
+## I-4 GLC（间隔–长度覆盖）
+**陈述**：设 δ ∈ (0, ½)，S = S_δ(V) 非空；ℓ 为 S 的最长分量长度，r 为 (0, ∞)∖S 的最长分量长度（r < ∞ 时）。对任意实数 u > 0：
+- (i) 若 uℓ ≥ 2δ，则 S_δ(V ∪ {u}) ≠ ∅；
+- (ii) 若 u·r ≤ 1 − 2δ，则 S_δ(V ∪ {u}) ≠ ∅。
+
+**GLC-FAIL**：在 (H-com) 下，r/ℓ ≥ (2δ/(1−2δ))·(v_max/v_min)。
+
+**证明**：
+- (i)：在那个长度为 ℓ 的闭分量上，ut 连续地扫过一段长度 ≥ 2δ 的闭弧。长为 2δ 的开不安全弧装不下它，所以弧上有一点满足 ‖ut‖ ≥ δ。
+- (ii)：闭窗口 [δ/u, (1−δ)/u] ⊂ (0, ∞)，长度 ≥ r，不可能包含在补集的某一个开分量里，所以它与 S 相交；交点处 ‖ut‖ ≥ δ。
+- **GLC-FAIL**：
+  - 当 0 < t < δ/v_min 时，‖v_min t‖ < δ，所以 (0, δ/v_min) 落在补集中；由周期性和对称性，补集中有一个分量长度 ≥ 2δ/v_min，即 r ≥ 2δ/v_min。
+  - S 的每个分量都位于 v_max 的某一段安全弧内，所以 ℓ ≤ (1−2δ)/v_max。∎
+
+**局限**：在 R024 §5 的七个测试案例中，GLC 都不成立。
+
+## I-5 DU（密度更新律）
+**陈述**：在 (H-com) 下，且 u/g_V ∈ ℚ，P′ 为公共周期，ρ_δ(V) = |S_δ(V) ∩ [0, P′)|/P′。则：
+- (i) ρ_δ(V ∪ {u}) ≥ ρ_δ(V) − 2δ；
+- (ii) 若 δ′ < δ，则 ρ_{δ′}(V) ≥ ρ_δ(V)；
+- (iii) 若 ρ_δ(V) > 2δ，则 S_δ(V ∪ {u}) ≠ ∅。
+
+**证明**：
+- (i)：u 在 [0, P′) 中的不安全集由 uP′ 段开弧组成，每段长 2δ/u，总长恰为 2δP′。S_δ(V ∪ u) = S_δ(V) 减去这个集合。
+- (ii)：单调性，S_δ ⊆ S_{δ′}。
+- (iii)：由 (i) 得测度为正。∎
+
+## I-6 FU（Fourier 更新律）
+**陈述**：设条件同 DU。对 ξ ∈ (1/P′)ℤ，令 Ŝ_V(ξ) = (1/P′)∫₀^{P′} 1_{S_δ(V)}(t)·e^{−2πiξt} dt；c₀ = 1 − 2δ，c_m = −sin(2πmδ)/(πm)（m ≠ 0）。则：
+- (i) ρ_δ(V ∪ {u}) = Σ_{m∈ℤ} c_m·Ŝ_V(−mu)，级数收敛；
+- (ii) 若 (1−2δ)·ρ_δ(V) > Σ_{m≠0} |c_m|·|Ŝ_V(mu)|（右边有限时），则 S_δ(V ∪ {u}) ≠ ∅。
+
+**证明**：
+- 1_{[δ, 1−δ]}(x mod 1) 的 Fourier 系数为 ∫_δ^{1−δ} e^{−2πimx} dx = (e^{2πimδ} − e^{−2πimδ})/(−2πim) = −sin(2πmδ)/(πm)。
+- 所以 1_{S_δ(u)}(t) = Σ c_m e^{2πimut}（L² 意义下）。由于 uP′ ∈ ℤ，频率 mu ∈ (1/P′)ℤ。
+- 由 Parseval 恒等式，乘积的平均值 = Σ c_m·Ŝ_V(−mu)；两个系数序列都在 ℓ² 中，所以级数收敛。
+- (ii) 由三角不等式与 |Ŝ(−ξ)| = |Ŝ(ξ)| 得到。∎
+
+## I-7 MZ（零测度定理；按主席要求限定）
+**定理 MZ**：设 N ≥ 2，λ > 0，W = λ(1, 2, …, N)，δ = 1/(N+1)。则：
+- (a) S_δ(W) **非空**，且等于 { k/(λ(N+1)) + ℤ/λ : gcd(k, N+1) = 1 }，是可数个孤立点，**Lebesgue 测度为零**；
+- (b) 对 V = λ(1, …, N−1)（N ≥ 3），S_δ(V) 的测度为正。
+
+即：从 λ(1, …, N−1) 加入速度 λN 的这一步，前一个安全集测度为正，后一个非空但测度为零。
+
+**证明**：只需对 λ = 1 证明（时间按 1/λ 缩放）。
+1. **鸽笼**：对 v = 0, 1, …, N，z_v = frac(vt)，共 N+1 个点在圆周上，相邻的 N+1 段弧总长为 1，所以最短一段 ≤ 1/(N+1)。z_i 与 z_j 的圆周距离等于 ‖(i−j)t‖，且 |i − j| ∈ {1, …, N}。
+2. **等号情形**：若 t ∈ S_δ(W)，则所有两两距离 ≥ 1/(N+1)，于是每段弧 ≥ 1/(N+1)；而总长为 1，所以每段**恰好**等于 1/(N+1)，点等距分布，且两两不同。因此 {z_v} = {j/(N+1) : j = 0, …, N}，特别地 t ≡ k/(N+1)。由于 z_v = vk/(N+1) 两两不同，gcd(k, N+1) = 1。
+3. **反向**：对这样的 k，v ↦ vk mod (N+1) 是 {1, …, N} 上的双射，所以 ‖vk/(N+1)‖ ≥ 1/(N+1) 对所有 v 成立，t 确实安全。
+4. **测度**：S_δ(W) 是可数集，测度为零。这证明 (a)。
+5. **(b)**：取 t₀ = 1/N。由第 1–3 步（把 N 换成 N−1），V 在 t₀ 处的距离都 ≥ 1/N > δ。m_V 连续，所以 t₀ 的某个开邻域都在 S_δ(V) 中，测度为正。∎
+
+**范围限定**：
+- **"任意连续块"的读法 DISPROVED**：W = (2, 3)，δ = 1/3。t = 1/5 时 ‖2/5‖ = ‖3/5‖ = 2/5 > 1/3，由连续性，S_{1/3}((2,3)) 含开区间，测度为正。
+- 计算印证（CHECKED，非证明）：对 N = 2…6，块 (m, …, m+N−1)：m = 1 时测度都为 0；m = 2、3 时测度都为正，例如 (2,3,4,5)：3/25；(3,4,5,6)：23/150。
+- "测度为零的安全集是否只出现在 λ(1, …, N)"：UNFINISHED（R023 的 (1,3,4,7) 在 1/5 下也是孤立点，所以至少还有别的情形）。
+
+**推论 MZ-c（按主席裁决限定后的精确形式）**：若某种证书**唯一**的非空判据是"给出 S_δ(V ∪ {u}) 测度的正下界"（例如 DU(iii)、FU(ii)、GLC(i)），则它不能证明从 λ(1, …, N−1) 到 λ(1, …, N) 这一步非空。
+
+**本席不主张**：结合了孤立点或算术信息的测度型证书也不可能成功。这一点按主席裁决撤回。
+
+---
+
+# Part II · 算术证书：同时处理区间与孤立点
+
+## §1 引理 LM（局部极大值的算术位置；任意实数速度）
+**陈述**：设 V 为任意有限个正实数（**不要求可公度**）。若 t\* > 0 是 m_V 的局部极大点，且 m_V(t\*) < ½，则存在 v ≠ v′ ∈ V 与正整数 j，使 **t\* = j/(v + v′)**。
+
+**证明**：
+1. m_V 在 (0, ∞) 上分段线性，每个有界区间内只有有限个断点（‖vt‖ 的断点间距为 1/(2v)），所有斜率都是非零的 ±v。所以存在 ε > 0，使得在 (t\* − ε, t\*) 上 m_V = f_L 且斜率 > 0，在 (t\*, t\* + ε) 上 m_V = f_R 且斜率 < 0。（若某一侧斜率为 0 则矛盾，因为斜率不为零；若左侧斜率 < 0 或右侧斜率 > 0，则 t\* 不是局部极大。）
+2. f_L 是某个 ‖vt‖ 的上升段：f_L(t) = vt − i，i ∈ ℤ。f_R 是某个 ‖v′t‖ 的下降段：f_R(t) = i′ − v′t，i′ ∈ ℤ。
+3. 若 v = v′，则 ‖vt‖ 本身在 t\* 处由升转降，这只发生在峰值处，值为 ½，与 m_V(t\*) < ½ 矛盾。所以 v ≠ v′。
+4. 由连续性 f_L(t\*) = f_R(t\*)，即 vt\* − i = i′ − v′t\*，得 t\* = (i + i′)/(v + v′)。由于 t\* > 0，j = i + i′ 为正整数。∎
+
+（m_V(t\*) = ½ 的情形：所有 ‖vt\*‖ = ½，t\* ∈ (2j+1)/(2v)ℤ，这一类单独列入候选集。）
+
+## §2 定理 HS（候选集与每个安全分量相交）
+**定义**：C(V) = { j/(v+v′) : v ≠ v′ ∈ V，j ∈ ℤ_{>0} } ∪ { (2j+1)/(2v) : v ∈ V，j ∈ ℤ_{≥0} }。
+
+**定理 HS**：对任意 δ ∈ (0, ½] 和任意实数速度集 V，S_δ(V) 的**每一个**连通分量 K 都含有 C(V) 中的点。特别地，S_δ(V) ≠ ∅ ⇔ S_δ(V) ∩ C(V) ≠ ∅。
+
+**证明**：
+1. **K 是有界闭区间**（可能退化成点）：K ⊂ S_δ ⊂ {‖v_min t‖ ≥ δ}，而后者的每个分量都是有界闭区间 [(i+δ)/v_min, (i+1−δ)/v_min]；又 S_δ 是闭集。
+2. m_V 在 K 上取到最大值，设在 t\* 处。
+   - **若 t\* 是 K 的内点**：t\* 是 m_V 的局部极大点。
+   - **若 t\* 是 K 的端点**：在端点处 m_V = δ（否则由连续性 K 可以继续延伸）。于是 max_K m_V = δ，m_V 在 K 上恒等于 δ。斜率非零，所以 K 只能是单点 {t\*}，而 m_V 在 t\* 两侧都 < δ，t\* 是严格的局部极大点。
+3. 由 LM（以及值为 ½ 的情形），t\* ∈ C(V)。∎
+
+**意义**：
+- C(V) 是一个**与门槛无关**的算术骨架：正长度的安全区间与孤立的安全点，都至少含有一个骨架点。
+- **测试**：
+  - V₁ 的孤立点 1/5 = 1/(1+4)，2/5 = 2/(1+4)；
+  - V₂ 的最优点 9/31 = 9/(1+30)；
+  - V₃ 的最优点 31/90 = 31/(30+60)；
+  - TF 的孤立点 k/(N+1) = k/(1+N)；
+  - T4 的若干分支输出，如 3/(b+c)、3/(a+c)，也都是这种形式。
+
+## §3 证书 ACC（算术骨架证书）
+**定义**：ACC(V) = (V, C(V))。对可公度的 V，只需取 C(V) ∩ (0, P_V/2]，它是有限集，并满足
+|C(V) ∩ (0, P_V/2]| ≤ Σ_{v<v′} (N_v + N_{v′})/2 + Σ_v N_v/2 = kσ/2。
+
+**输出**：
+- **可公度情形**：F^{ACC}(V) = C(V) ∩ (0, P_V/2] 中使 m_V 最大的最小者。计算量 O(k²σ)。
+- **实数情形**：把 C(V) 按大小排成一列（它是 k(k−1)/2 + k 条等差数列的合并，次序确定），输出第一个满足 m_V(t) ≥ δ 的 t。
+
+**命题 ACC=SPC（可公度情形）**：F^{ACC}(V) = F^{SPC}(V)。
+
+**证明**：SPC 的 t\* 是达到全局最大值 κ 的最小断点。一个达到全局最大值的点必是局部极大点，所以由 LM 它属于 C(V)；反过来，C(V) 中达到 κ 的点也都是达到全局最大值的点。因此"最小者"相同。∎
+
+（核对：V₁、V₂、V₃ 以及 120 组随机整数集，两者输出完全一致。候选数分别为 20、77、321，上界 kσ/2 分别为 30、84、342。）
+
+**再生**（加入新速度 u，门槛从 1/n 降到 1/(n+1)）：
+- **骨架**：C(V ∪ {u}) = C(V) ∪ { j/(u+v) : v ∈ V } ∪ { (2j+1)/(2u) }。这是**显式**的，只增加 k + 1 条等差数列。
+- **门槛**：骨架与门槛无关，**不需要任何更新**（HS 对一切 δ 成立）。
+- **值**：在旧候选点处，m_{V∪u}(t) = min(m_V(t), ‖ut‖)；新候选点直接求值。
+
+**状态**：
+- **(A) 精确表示**：可公度时是有限的精确表示（PROOF CANDIDATE）。
+- **实数速度**：骨架本身是显式、可数、按确定次序排列的集合，并保证与每个安全分量相交（LM、HS 对任意实数成立）。但第一个成功候选点出现在什么位置，**没有显式上界**，所以实数版本是一个"有解必终止"的**无界枚举**，**不能**当作封闭构造，本席明确这样标注。
+
+## §4 精确写出所缺的非空性假设
+**NE(V)**：对每个 u > 0，S_{1/(k+2)}(V ∪ {u}) ≠ ∅。
+
+**命题 NE-EQ**：
+- (i) 在 NE(V) 成立时，ACC 在这一层**一定**输出安全时间：可公度时直接输出；实数时枚举必终止。
+- (ii) "对所有 k 个速度的集合 V 都有 NE(V)"等价于 k+1 个速度（即 k+2 位跑者）的孤独跑者命题。
+
+**证明**：
+- (i)：由 HS，S ≠ ∅ 蕴含 S ∩ C ≠ ∅。
+- (ii)：任一 k+1 个速度的集合，都可以写成某个 V 加一个 u。∎
+
+**所以**：ACC 把 (C) 精确地化归为"骨架上的某个点安全"。剩下的缺口**正好**就是 NE，没有多余的条件。它**不会**自动保持：NE 在每一层都是一个独立的命题。
+
+**算术信息能提供什么（部分结果）**：在 TF 族上，NE 可以由 §I-7 的鸽笼等距结构**直接**证明，而且 HS 指出了解的位置（k/(1+N)）。对一般的 V，把骨架点安全的论证推广：UNFINISHED。
+
+## §5 主席必答：Does your result supply an automatically regenerating guarantee?
+**CONDITIONAL。**
+- **自动再生的部分（已证，PROOF CANDIDATE）**：骨架 C(V)。它对**所有门槛**同时有效，加入新速度时显式增加等差数列，并且对正长度区间与孤立点**一律**适用。这是本轮"同时处理两类配置"的答案。
+- **不自动再生的部分**：非空性 NE(V)。它等价于该层的存在性命题，本席没有证明它，也没有用已知存在定理去代替它。
+- **实数速度**：骨架与 HS 成立；但有界的选择没有给出（UNFINISHED）。
+
+---
+
+## 四个账本栏
+- **PROOF VALIDITY**：
+  - I-1 至 I-7：PROOF CANDIDATE。其中 MZ 限于 λ(1, …, N)；"任意连续块"读法 DISPROVED，反例 (2,3)；"所有测度型证书不可能"已撤回，改为 MZ-c。
+  - LM、HS、ACC=SPC、NE-EQ：PROOF CANDIDATE。
+  - 实数版本的有界选择、NE 的一般证明、零测度情形的完整分类：UNFINISHED。
+  - 一般 F₅ 与 F_n：UNFINISHED。
+- **INDEPENDENT REVIEW**：本轮没有分配给本席的审阅，所以不给审阅结论。已有的外部审阅：DeepSeek R024 对 H1–H3 与 CORE（限 PS\* 例外集）给出逐项 VERIFIED，本席记录在案，不自行升级。I-1 至 I-7、LM、HS 均待非作者审阅。
+- **NEW COVERAGE**：无。ACC 与 SPC 输出相同，正确性依赖 NE，所以不主张新的 F₅ 覆盖。
+- **COMPUTATIONAL CHECK**：以下为本席精确分数计算：
+  - 局部极大值的检查：3 个公共案例加 160 组随机整数集，共 4,667 个局部极大点，全部具有 j/(v+v′) 的形式；
+  - ACC 与 SPC 输出对比：123 组，零差异；
+  - 候选数 20 / 77 / 321；
+  - 连续块的测度（N = 2…6，m = 1, 2, 3）；
+  - EQ′ 的手算点 t = 19/42；
+  - (2,3) 在 t = 1/5 的手算。
+
+  计算规模很小，只作核对。LM、HS、MZ 均由证明得出。
+############ 回复格式 ############
+第一行写「R026 2/4 Qwen」。先写 ANSWER BLOCK（≤300 中文字）。四个账本栏分开写：PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / UNFINISHED。审阅结论每项单独给：PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED，并写出逐项论证（笼统 VERIFIED 不计数）。
+主席强制区分，分别报告：(A) 候选骨架存在；(B) 骨架覆盖每个已存在的安全分量；(C) 对任意输入骨架含成功候选；(D) 成功候选可由保证有限的操作选出。(B) 不推出 (C)；(C) 不推出直接公式，除非 (D) 也成立。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。先手证；代码只可核对，不可替代论证。作者不能升级自己的结果；只有主席裁决。不得用已知存在性定理代替显式构造。不要假设无理速度有有限共同周期。随机测试不能推出证明。不做大规模穷举。
+===== END =====
