@@ -1,0 +1,625 @@
+WHO（给谁）：Qwen —— PT-008 Round 028 · The First Window Test · Track B — Qwen
+WHERE（贴到哪）：Qwen 新对话「PT-008 Qwen R028」（Play CF 项目，3.8-Max thinking，web 关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R028 2/4 Qwen」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 028 · The First Window Test, for Qwen.
+TO: Qwen
+ASK: do YOUR track (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: prove or disprove FW₃ (a safe four-runner time inside the first window 0<t<1/v_min), and test whether First Window gives a finite horizon that propagates level to level toward F_47. A bounded search is not the direct formula; general F_n still UNFINISHED.
+
+############ PART 0 · 你的任务（主席原文）############
+Track B — Qwen: First Window and Direct Selection
+
+Independently investigate FW₃.
+
+If FW₃ holds, try to find a finite symbolic selector producing a time in the first window without enumerating every skeleton candidate.
+
+If FW₃ fails, give a hand-checkable real or rational counterexample.
+
+Explain whether any candidate selector could generalize from FW₃ to arbitrary k.
+
+Keep the distinction:
+
+* bounded candidate search;
+* direct deterministic formula;
+* universal induction.
+
+
+Hesper 事实（精确分数，CHECKED，不是证明）：用附后「T4 原式」代码对全部整数三元组 1≤a<b<c≤40（9,880 组）逐一计算：T4 输出全部安全（min≥1/4），且全部满足 0<t<1/a；各分支组数 B1 c≤3a 4472、B2 c≥3b 1014、B3 b≥3a 2955、B4 3/(b+c) 235、B5 2/(b+c) 848、B6 4/(b+c) 231、B7 5/(b+c) 86、B8 3/(a+c) 39，t≥1/a 均为 0。这只是有限整数范围，不代替逐分支证明，也不覆盖实数速度。 主席 R027 裁决：你 §5.2「任意实数无普适有限界」为 UNSUPPORTED，保持 UNFINISHED，不作已证不可能。你的 R027 原文、Opus R027 原文附后。
+
+############ PART 1 · 主席 R028 共同要求（原文）############
+2. ROUND 028 · THE FIRST WINDOW TEST
+
+Central Mission
+
+Test whether the First Window property is genuinely useful for building a universal constructive mechanism.
+
+For k positive relative speeds V={v₁,…,vₖ}, define:
+
+FWₖ(V):
+
+There exists t with
+
+0 < t < 1/v_min
+
+and
+
+min_i ||vᵢt|| ≥ 1/(k+1).
+
+We know FW₁ and FW₂.
+
+FW₃ and higher remain OPEN.
+
+This is not a replacement for the original objective:
+
+Fₙ(v₁,…,vₙ₋₁), for n=2,…,47.
+
+A proven first-window theorem could supply a finite search horizon, but it would not by itself deliver the requested direct formula.
+
+3. UNIVERSAL FORMULA TEST
+
+Every seat must answer:
+
+Does your result directly advance one uniform constructive formula for runner counts 2 through 47?
+
+Choose:
+
+YES / CONDITIONAL / NO / UNFINISHED.
+
+State explicitly whether the result provides:
+
+1. Existence within a bounded horizon;
+2. A finite candidate family;
+3. A guaranteed finite selector;
+4. A direct formula without trial enumeration;
+5. An induction rule that automatically preserves its hypotheses.
+
+Do not treat these five accomplishments as equivalent.
+
+⸻
+
+4. DISCIPLINE
+
+WEB OFF.
+
+Proof before computation.
+
+Use exact hand calculations or reproducible code for reported numbers.
+
+Report failed attempts and counterexamples.
+
+Separate mathematical validity, non-author reviews, novelty, and computational checks.
+
+Do not promote a theorem merely because several models agree.
+
+No new wall publication is authorized.
+
+Return R028 1/4 through R028 4/4.
+
+R028 OPEN.
+
+— GPT-6
+Chair · PT-008 Time Forge
+############ R027 主席最终裁决（原文）############
+PT-008 · R027 FINAL CHAIR LETTER
+
+R028 · The First Window Test
+
+TO: Hesper · Acting Courier
+FROM: GPT-6 · PT-008 Chair
+CC: Opus, Qwen, Kimi, DeepSeek, Puck, Argon, Tuzi
+DATE: 2026-10-20
+WEB: OFF
+STATUS: R027 CLOSED — PARTIAL · R028 OPEN
+
+⸻
+
+1. R027 · FINAL RULING
+
+R027 is CLOSED — PARTIAL.
+
+The Kimi supplement (sha 712f8fd9, LAST 749ec99b) is formally included in the R027 review ledger.
+
+Certified results
+
+CNT — PROVED (internal)
+
+The corrected ACC counting bound is accepted under Opus’s complete assumptions:
+
+|C(V)| ≤ k(σ+1)/2.
+
+The previous kσ/2 bound is DISPROVED and must remain in the correction history.
+
+Kimi and DeepSeek count as two independent non-author reviewers for CNT.
+
+FW₂ — PROVED (internal)
+
+For arbitrary real speeds 0 < a < b, a successful three-runner time exists in:
+
+0 < t < 1/a.
+
+This follows directly from the previously proved F₃ formula:
+
+t = ceil((a+b)/(3a))/(a+b).
+
+Kimi’s independent geometrical review is accepted.
+
+FWS(i) / FWS(ii) — CONDITIONAL, ONE NON-AUTHOR VERIFIED
+
+Kimi’s supplement supplies one valid independent review.
+
+The finite candidate bound and selection mechanism apply only when FWₖ is already known to hold.
+
+FWₖ is a hypothesis, not a conclusion.
+
+A second independent review is required before full certification.
+
+Remaining limitations
+
+* FWₖ for k≥3: UNFINISHED.
+* Automatic induction FWₖ → FWₖ₊₁: UNFINISHED.
+* General F₅ direct formula: UNFINISHED.
+* General Fₙ direct construction: UNFINISHED.
+* Opus UP-2..UP-4 and full revised PR: independent review incomplete.
+* Qwen’s unrestricted no-finite-bound assertion: UNSUPPORTED; retain UNFINISHED rather than treating it as a proved impossibility.
+
+No wall publication is authorized.
+
+⸻
+
+
+############ T4 原式（已认证）############
+已认证 T4（PT-008 内部 PROVED，2026-10-18，八段，Opus 作者）的分支，以 Hesper 存档的精确代码形式抄录（q=1/4，nd=到最近整数距离，fr=小数部分；分支按顺序先命中先用）：
+def F3(a,b): return F(ceil((a+b)/(3*a)))/(a+b)
+def F4(a,b,c):
+    a,b,c=F(a),F(b),F(c)
+    r=c/b; s=(b+c)/a
+    if c<=3*a: return 1/(4*a)
+    if c>=3*b:
+        t0=F3(a,b); X=c*t0
+        if nd(X)>=q: return t0
+        k=floor(X+F(1,2)); e=X-k; sg=1 if e>=0 else -1
+        return (k+F(sg,4))/c
+    if b>=3*a:
+        p,qq,rr=b,c,a; th=p/(p+qq); k0=ceil((p+qq)/(4*rr)); x0=fr(k0*th)
+        j=0 if q<=x0<=F(3,4) else ceil(fr(q-x0)/th)
+        return F(k0+j)/(p+qq)
+    if r<=F(7,5): return 3/(b+c)
+    if r>=F(5,3) and s<=8: return 2/(b+c)
+    if F(9,7)<=r<=F(11,5) and s>=F(16,3): return 4/(b+c)
+    if r>=F(13,7) and s>=F(20,3): return 5/(b+c)
+    return 3/(a+c)
+
+############ PART 2 · 你自己的 R027 原文（三段合并，原样） ############
+R027 2/4 Qwen
+第 1 段 / 共 3 段
+
+# ANSWER BLOCK（Track B · Direct Selector · Qwen · R027）
+
+接受三项裁决：(i) 区间中点 $\ne$ ACC/SPC 输出，撤回 §2.1「三者同一时间」；(ii) $B_V\not\subset C(V)$——$V_1$ 的 $t{=}1/3$（$\|3t\|{=}0$，局部极小）$\notin C(V)$，撤回 §4.1 复杂度比较；(iii) ACC 上界改 $k(\sigma{+}1)/2$。修正后：argmax $\in B_V\cap C(V)$，可公度下全候选扫描 $O(k^2\sigma)$ 有限终止。免全扫描的符号直选规则：一般 **UNFINISHED**，仅特殊族闭式。门槛无关骨架可算 $F_n$ 但需存在性。无理速度无有限界，**UNFINISHED**。五问：1.PROVED 2.CONDITIONAL 3.可公度 CONDITIONAL/无理 UNFINISHED 4.UNFINISHED 5.UNFINISHED。
+
+---
+
+## §1 · 更正一：区间中点 $\ne$ ACC/SPC 输出
+
+### §1.1 撤回的错误陈述
+
+本席 R026 §2.1 称「区间证书取某区间中点、ACC、SPC 三者输出同一安全时间」。**主席已裁不接受。** 本席撤回。
+
+### §1.2 修正后的精确关系
+
+- **ACC = SPC：** 两者都输出 $\arg\max_{t\in C_P(V)} g_V(t)$ 的最小者（全局最大安全余量点）。此为已证等价（Opus §3.1）。
+- **区间中点：** 取 $S_{\delta'}(V)$ 某极大区间 $[\alpha,\beta]$ 的中点 $(\alpha{+}\beta)/2$。此点**安全**（在区间内），但**一般不是** $g_V$ 的最大点。
+
+**反例（本席手算，$V_1=(1,3,4,7)$，$\delta'=1/6$）：** 区间 $[1/6,5/24]$ 中点 $=(1/6{+}5/24)/2=(4/24{+}5/24)/2=9/48=3/16$。$g_{V_1}(3/16)$：$\|3/16\|=3/16$，$\|9/16\|=7/16$，$\|12/16\|=1/4$，$\|21/16\|=5/16$。$\min=3/16\approx 0.1875$。而 ACC/SPC 输出的全局最大点余量更大（$\kappa=1/5$ 在 $1/5$ 处）。故中点 $3/16$ 与 argmax 不同。✓
+
+**修正结论：** 区间中点给**一个**安全时间；ACC/SPC 给**最优**安全时间。两者都安全，但**不是同一时间**。
+
+---
+
+## §2 · 更正二：$B_V\not\subset C(V)$
+
+### §2.1 撤回的错误陈述
+
+本席 R026 §4.1 称「$B_V\subset C(V)$（LM），故枚举 $B_V$（$O(k\sigma)$）优于全候选（$O(k^2\sigma)$）」。**主席/Hesper 已裁不成立。** 本席撤回此包含关系及依赖它的复杂度比较。
+
+### §2.2 反例（$V_1=(1,3,4,7)$，$t=1/3$）
+
+$g_{V_1}$ 在 $t=1/3$：$\|1/3\|=1/3$，$\|3\cdot 1/3\|=\|1\|=0$，$\|4/3\|=1/3$，$\|7/3\|=1/3$。$\min=0$。
+
+$t=1/3$ 是 $g_{V_1}$ 的**断点**（$\|3t\|$ 在 $t=1/3$ 处由降转升，取极小 0），故 $1/3\in B_V$。
+
+但 $1/3$ 是**局部极小**（非极大），由 LM，局部极大才属 $C(V)$。直接验证：$1/3\ne j/(v{+}v')$（$v{+}v'\in\{4,5,7,8,10,11\}$，无 $3j$ 形式），也 $\ne(2j{+}1)/(2v)$。故 $1/3\in B_V$ 但 $1/3\notin C(V)$。✓
+
+**故 $B_V\subsetneq C(V)$ 不成立。**
+
+### §2.3 修正后的可用关系
+
+**正确陈述：** $\arg\max g_V\in B_V\cap C(V)$。全局最大点是局部极大（$\in C(V)$ 由 LM），也是断点（$\in B_V$）。但 $B_V$ 含非 $C(V)$ 的极小点，$C(V)$ 含非断点的候选（部分 $j/(v{+}v')$ 不是 $g_V$ 断点）。故 $B_V\cap C(V)$ 是真子集，不能以 $|B_V|$ 替代 $|C(V)|$ 作复杂度。
+
+**复杂度修正：** 选最优安全候选需枚举 $C_P(V)$（$|C_P|\le k(\sigma{+}1)/2$），逐点求 $g_V$（每点 $O(k)$），总 $O(k^2(\sigma{+}1))$。**不能**降到 $O(k\sigma)$。本席撤回原比较。
+
+（第 1 段完）
+
+R027 2/4 Qwen
+第 2 段 / 共 3 段
+
+---
+
+## §3 · 免全扫描的符号直选规则：调查
+
+### §3.1 问题精确化
+
+ACC-com 在 $C_P(V)$（$\le k(\sigma{+}1)/2$ 候选）上逐点求 $g_V$，取最大。这是**有限有界扫描**（$O(k^2\sigma)$）。主席问：能否**不扫描全表**，用符号规则直接选出安全候选？
+
+### §3.2 特殊族的闭式直选（本席手算核验）
+
+**(a) TF 族 $V=\lambda(1,\ldots,N)$：** 由 MZ-ZERO（主席 PROVED），最优 $=1/(\lambda(N{+}1))$，属 $C(V)$（$=1/(\lambda\cdot 1+\lambda\cdot N)$）。**闭式，免扫描。** ✓
+
+**(b) $V_2=(1,2,9,30)$：** 最优 $9/31=9/(1{+}30)$，来自 $(v_{\min},v_{\max})$ 对。本席复核 $g_{V_2}(9/31)$：$\|9/31\|=9/31$，$\|18/31\|=13/31$，$\|81/31\|=\|19/31\|=12/31$，$\|270/31\|=\|22/31\|=9/31$。$\min=9/31\approx 0.29>1/5$。✓
+
+**(c) $V_1=(1,3,4,7)$ 孤立点：** $1/5=1/(1{+}4)$，来自 $(1,4)$ 对。✓
+
+**规律观察：** 这些例子中，最优候选来自某特定对 $(v,v')$ 的 $j/(v{+}v')$。但**哪一对**依赖具体数值，无统一规则。
+
+### §3.3 一般可公度：无免扫描符号规则
+
+**命题（本席，否定性观察）：** 对一般可公度 $V$，最优候选所在的对 $(v^*,v'^*)$ 与指标 $j^*$ 由 $V$ 的算术决定，不同 $V$ 取不同对。不存在只依赖 $(k,\sigma)$ 的闭式直接命中规则。
+
+**论证（非严格证明，结构性）：** $g_V(t)=\min_v\|vt\|$ 的最大点由**多个**速度的约束同时作用决定。改变任一速度可改变哪个 $(v,v',j)$ 最优。故最优候选是 $V$ 的**全局**算术函数，不能由局部规则（如"取最慢+最快"）统一给出。
+
+**结论：一般可公度的免扫描符号直选规则：UNFINISHED。** 现有最优方法仍是有限扫描 $C_P(V)$。
+
+### §3.4 与「直接公式」的距离
+
+主席区分：可计算搜索界 $\ne$ 直接公式。ACC-com 的 $O(k^2\sigma)$ 扫描是**有界搜索**，不是 $O(1)$ 直接公式。即使搜索界成立，也**不自动**是 Tuzi 要的直接公式。**本席明写此区分。**
+
+---
+
+## §4 · 门槛无关骨架能否直接算 $F_n$
+
+### §4.1 ACC 骨架算 $F_n$ 的流程
+
+给定 $V$（$k$ 速度）与目标门槛 $\delta=1/(k{+}1)$：
+1. 生成 $C_P(V)$（可公度）或有序 $C(V)$（实数）。
+2. 逐候选求 $g_V(t)$。
+3. $\kappa=\max g_V$。若 $\kappa\ge\delta$，输出 argmax；否则报「无安全候选」。
+
+### §4.2 成立的部分
+
+**骨架 $C(V)$ 门槛无关**（HS 对一切 $\delta$ 成立），故**同一** $C(V)$ 可用于 $\delta=1/(k{+}1)$、$1/(k{+}2)$ 等。降门槛**不需**重新生成骨架。这是门槛无关证书的优势。
+
+**可公度下：** $C_P(V)$ 有限，步 1–3 有限终止，确定性输出。若 $\kappa\ge\delta$，输出即 $F_n(V)$。
+
+### §4.3 不成立的部分（关键）
+
+**$\kappa\ge\delta$ 不是自动的。** $\kappa=\max g_V$ 可能 $<\delta$（即无安全时间）。此时流程正确报「无」，但**这不是构造失败，而是该层存在性不成立**。
+
+**故门槛无关骨架能算 $F_n$，但成功 $\iff\kappa\ge\delta\iff S_\delta(V)\ne\emptyset$，即存在性。** 不能由骨架自身保证。**CONDITIONAL。**
+
+---
+
+## §5 · 无理速度比：精确有限界或 UNFINISHED
+
+### §5.1 ACC-real 的无界性
+
+对无理速度，$C(V)$ 可数，按序排列，「有解必终止」（ACC-real (i)）。但**首个安全候选的位置无上界**：它依赖速度的 Diophantine 逼近性质，可任意远。
+
+### §5.2 能否给精确有限界？
+
+**问：** 是否存在只依赖 $V$ 的 $T$，使首个安全候选 $\le T$？
+
+**答：无普适有限界。** 理由：取速度被有理数极好逼近（Liouville 型），则 $\{j/(v{+}v')\}$ 在安全弧外停留极长，首个安全候选可任意大。**对任意实数速度的统一有限界：不存在。**
+
+### §5.3 本席结论
+
+**无理速度比：无精确有限界，报告 UNFINISHED。** 本席遵守主席「给精确有限界或报 UNFINISHED」，不虚构界。ACC-real 是「有解必终止」的无界枚举，**非封闭构造**。
+
+（第 2 段完）
+
+R027 2/4 Qwen
+第 3 段 / 共 3 段
+
+---
+
+## §6 · 主席五问（逐项）
+
+| # | 问题 | 本席结论 | 依据与限定 |
+|---|---|---|---|
+| 1 | **Candidate generation** | **PROVED** | $C(V)=\{j/(v{+}v')\}\cup\{(2j{+}1)/(2v)\}$ 显式定义；LM（内部 PROVED）证局部极大 $\in C(V)$；可公度下 $C_P(V)$ 有限可生成，实数下可数有序可生成。 |
+| 2 | **Candidate success** | **CONDITIONAL** | HS（内部 PROVED）：$S_\delta\ne\emptyset\iff S_\delta\cap C(V)\ne\emptyset$。但 $S_\delta\ne\emptyset$ 本身是该层存在性命题，**非骨架所能推出**。成功候选存在 $\iff$ 存在性成立。 |
+| 3 | **Finite selection** | **可公度：CONDITIONAL；无理：UNFINISHED** | 可公度：ACC-com 在 $C_P(V)$（$\le k(\sigma{+}1)/2$）上有限扫描，显式界 $O(k^2(\sigma{+}1))$；但需 $\kappa\ge\delta$（存在性）。无理：无有限界（§5）。 |
+| 4 | **Arbitrary real speeds** | **UNFINISHED** | ACC-real 无界枚举；首个安全候选位置无普适上界（§5.2）。不给精确有限界。 |
+| 5 | **Uniform $F_n$ induction** | **UNFINISHED** | 骨架经 UP 逐层再生（加 $k{+}1$ 条等差数列），但每层非空性不自动；无 $2\to47$ 统一保证。 |
+
+**关键区分（主席强调，本席遵守）：**
+- **A 生成候选**（问 1）：PROVED——$C(V)$ 显式。
+- **B 成功候选存在**（问 2）：CONDITIONAL——HS 给「存在 $\Rightarrow$ 骨架命中」，但存在性本身未证。
+- **C 有限构造步骤选出**（问 3）：可公度有搜索界，但**搜索界 $\ne$ 直接公式**；无理无界。
+
+---
+
+## §7 · 账本
+
+**PROOF VALIDITY**
+- 更正一（区间中点 $\ne$ ACC/SPC，§1）：本席撤回原陈述，接受主席裁决。$V_1$ 中点 $3/16$ 反例本席手算。
+- 更正二（$B_V\not\subset C(V)$，§2）：本席撤回原包含关系。$V_1$ 的 $t=1/3\in B_V\setminus C(V)$ 本席手算核验。
+- 更正三（ACC 上界 $k(\sigma{+}1)/2$，§2.3）：接受 $k\sigma/2$ DISPROVED 及修正上界。
+- 免扫描符号直选规则（§3）：一般可公度 **UNFINISHED**；特殊族（TF、$V_1$、$V_2$）闭式 **CHECKED**。
+- 门槛无关骨架算 $F_n$（§4）：**CONDITIONAL**（成功 $\iff\kappa\ge\delta$）。
+- 无理速度有限界（§5）：**UNFINISHED**（无普适界）。
+- 一般 $F_5$、$F_n$：**UNFINISHED**。
+
+**INDEPENDENT REVIEW**
+- 本席本轮未审阅他人成果（主席未分配）。
+- LM、HS 已由主席裁内部 PROVED（Kimi、DeepSeek 非作者审阅）；本席 §5（$V_1$、$V_2$ 实例）仅作核对，不计为对 HS 的独立审阅。
+- 本席 §3、§4 的观察待非作者审阅。
+
+**NEW COVERAGE**
+- 本轮**不**主张新 $F_5$ 覆盖。更正与五问区分是结构性修订。**NEW COVERAGE：NOT ESTABLISHED。**
+
+**COMPUTATIONAL CHECK**
+- §1.2 $V_1$ 中点 $3/16$ 的四距离 $\|3/16\|=3/16,\|9/16\|=7/16,\|12/16\|=1/4,\|21/16\|=5/16$，$\min=3/16$：本席手算。
+- §2.2 $t=1/3$ 的四距离 $\|1/3\|=1/3,\|1\|=0,\|4/3\|=1/3,\|7/3\|=1/3$，$\min=0$，及 $1/3\notin C(V_1)$：本席手算。
+- §3.2 (b) $V_2$ 最优 $9/31$ 四距离 $\min=9/31$：本席手算。
+- 全部为本席精确分数计算，未用代码、未用随机测试、未做大规模穷举。
+
+---
+
+## 主席必答
+
+**Does your result supply an automatically regenerating guarantee?**
+
+**CONDITIONAL。**
+
+**自动再生的部分：**
+- 骨架 $C(V)$ 经 UP 逐层再生（加新速度 $u$ 时显式增加 $k{+}1$ 条等差数列），门槛无关（HS 对一切 $\delta$）。此再生**自动**，承 Opus UP/PR。
+- 可公度下 $C_P(V)$ 有限，扫描有显式界 $O(k^2(\sigma{+}1))$。
+
+**不自动再生的部分：**
+- **成功候选存在（问 2）：** $\kappa\ge\delta$ 不自动，$\iff$ 该层存在性。
+- **无理速度有限选取（问 3/4）：** 无普适有限界，非封闭构造。
+- **统一 $F_n$（问 5）：** 无 $2\to47$ 保证。
+
+**本席三项更正已全部落实**（区间中点、$B_V\subset C(V)$、ACC 上界），依赖错误包含关系的复杂度比较已撤回。
+
+**独立审阅状态：** 本席 §3–§4 观察待非作者审阅；三项更正为主席裁决的执行，不需另审。
+
+---
+
+（全文完）
+############ PART 3 · Opus R027 原文（原样） ############
+R027 1/4 Opus
+
+Opus:
+TO: Hesper → GPT-6 (Chair)　Track A · Skeleton Selection　Date: 2026-10-20　WEB OFF
+
+---
+
+## ANSWER BLOCK
+
+- **ACC 修正上界 k(σ+1)/2**：逐式写出证明；按计重数可以取等（例：V = {1,3}）。DeepSeek 对旧上界 kσ/2 的核验有缺口。
+- **UP、PR**：写成完整版本。新证：剪枝后的集合恰好等于 C(V) ∩ S_{δ_f}(V)。
+- **候选排序的研究**：
+  - "必须用最慢速度配对""用最慢加最快配对"这两种排序都被反例否定：(1,3,4)、(1,2,4)。
+  - 新假设 **FW（首窗假设）**：在 (0, 1/v_min) 内总有安全时间。k = 2 已手证；在检查范围内没有反例。若 FW 成立，任意实数速度都有一个显式的有限选择器，候选数 ≤ kΣv/v_min + k/2。
+- FW 本身：UNFINISHED。
+
+---
+
+## 主席五问
+| 问题 | 回答 | 说明 |
+|---|---|---|
+| 1. Candidate generation | **PROVED** | C(V) 的定义，加上 LM、HS（主席已内部认证，限 R026 的陈述） |
+| 2. Candidate success | **CONDITIONAL** | 等价于 NE（该层的存在性），本席未证 |
+| 3. Finite selection | **CONDITIONAL** | 可公度：在 NE 下，ACC-com 有限（≤ k(σ+1)/2 个候选）。实数：在 FW 下，有显式的有限上界（§4） |
+| 4. Arbitrary real speeds | **CONDITIONAL** | 以 FW 为条件（FW 蕴含 NE） |
+| 5. Uniform F_n induction | **CONDITIONAL** | UP + PR 是逐层统一的更新机制，但每一层都需要 FW（或 NE），不会自动保持 |
+
+---
+
+## §1 ACC 修正上界的逐式证明（自审写法，供复核）
+
+**设定**：
+- V ⊂ gℤ，取最大的 g；P = 1/g；N_v = v/g ∈ ℤ_{≥1}，gcd(N_v) = 1；σ = Σ N_v；k = |V|；
+- C_P(V) = C(V) ∩ (0, P/2]，按计重数计算（同一个点若出现在两个数列中，计两次）。
+
+**引理 CNT**：|C_P(V)| ≤ Σ_{v<v′} ⌊(N_v + N_{v′})/2⌋ + Σ_v ⌊(N_v + 1)/2⌋ ≤ k(σ + 1)/2。并且当所有 N_v 都是奇数时，第二个不等式取等号。
+
+**证明**：
+1. **第一类**：t = j/(v+v′)，j ≥ 1。条件 t ≤ P/2 等价于 j ≤ (v+v′)P/2 = (N_v + N_{v′})/2。符合条件的正整数 j 恰好有 ⌊(N_v + N_{v′})/2⌋ 个。
+2. **第二类**：t = (2j+1)/(2v)，j ≥ 0。条件 t ≤ P/2 等价于 2j + 1 ≤ vP = N_v，即 j ≤ (N_v − 1)/2。符合条件的非负整数 j 恰好有 ⌊(N_v − 1)/2⌋ + 1 = ⌊(N_v + 1)/2⌋ 个。
+3. **求和**：用 ⌊x⌋ ≤ x，得
+   - Σ_{v<v′} (N_v + N_{v′})/2 = (k−1)σ/2，因为每个 N_v 恰好出现在 k−1 对之中；
+   - Σ_v (N_v + 1)/2 = (σ + k)/2。
+
+   相加：((k−1)σ + σ + k)/2 = k(σ + 1)/2。
+4. **取等**：所有 N_v 都是奇数时，N_v + N_{v′} 是偶数，N_v + 1 也是偶数，两处取整都没有损失。∎
+
+**取等实例**（手算）：V = {1, 3}，g = 1，P = 1。
+- 第一类，v + v′ = 4，j ≤ 2：候选为 1/4、2/4；
+- 第二类，v = 1：j ≤ 0，候选为 1/2；v = 3：j ≤ 1，候选为 1/6、3/6。
+
+计重数共 5 个，等于 k(σ+1)/2 = 2·5/2 = 5。去重后为 {1/6, 1/4, 1/2}，共 3 个（1/2 出现了三次）。
+
+**对 DeepSeek R026 ACC 计数核验的意见：GAP FOUND**。
+- DeepSeek 把第二类的个数写成"约 N_v/2"，于是得到 kσ/2。但准确的个数是 ⌊(N_v+1)/2⌋：当 N_v 为奇数时，它等于 (N_v+1)/2 > N_v/2。
+- 反例 V = {1}：候选只有 1/2 这一个，而 kσ/2 = 1/2。
+- DeepSeek 对 ACC 其余部分（构造、更新、选择、ACC = SPC）的核验不受影响。
+
+---
+
+## §2 定理 UP（完整版）
+
+**假设**：V 为 k 个两两不同的正实数，u > 0，u ∉ V。
+
+**UP-1（几何部分，任意实数）**：
+- C(V ∪ {u}) = C(V) ∪ N(V, u)，其中 N(V, u) = { j/(u+v) : v ∈ V，j ≥ 1 } ∪ { (2j+1)/(2u) : j ≥ 0 }；
+- 对一切 t > 0，g_{V∪u}(t) = min(g_V(t), ‖ut‖)。
+
+**证明**：
+- 第一式：C 的定义只取决于速度对和单个速度；V ∪ {u} 的速度对，恰好是 V 内部的速度对加上 (u, v)。
+- 第二式：最小值函数的性质。∎
+
+**UP-2（周期性；可公度时的展开）**：若 V ⊂ gℤ，P = 1/g，则 C(V) 在平移 t ↦ t + P 下不变，在 t ↦ P − t 下也不变；g_V 同样如此。
+
+**证明**：
+- j/(v+v′) + P = (j + N_v + N_{v′})/(v+v′)；P − j/(v+v′) = (N_v + N_{v′} − j)/(v+v′)。两者仍是第一类点（后者只要分子 ≥ 1）。
+- (2j+1)/(2v) + P = (2j + 1 + 2N_v)/(2v)，分子仍为奇数；P − (2j+1)/(2v) = (2N_v − 2j − 1)/(2v)，分子同样为奇数。
+- g_V 的周期性和对称性见 R023 引理 S。∎
+
+**UP-3（可公度更新的算法与复杂度）**：
+- **假设**：u/g ∈ ℚ，新周期 P′ = q′P（q′ ∈ ℤ_{≥1}，见 R024 §1），以 P′ 为单位的整数为 N′_v = q′N_v，N′_u = uP′；σ′ = Σ N′_v + N′_u。
+- **输入**：旧表 {(t, g_V(t)) : t ∈ C_P(V)}，以及 u。
+- **步骤**：
+  1. 由 UP-2，把旧数列中位于 (0, P′/2] 的点，经平移、反射还原到 (0, P/2]，查出 g_V 的值，不需要重新计算；
+  2. 列出 N(V, u) ∩ (0, P′/2]；
+  3. 旧点的值为 min(g_V, ‖u·‖)；新点直接计算 g_{V∪u}。
+- **正确性**：由 UP-1 与 UP-2，输出恰好是 C_{P′}(V ∪ u) 及其上 g_{V∪u} 的值。
+- **复杂度**：
+  - 旧点 ≤ Σ_{v<v′∈V} ⌊(N′_v + N′_{v′})/2⌋ + Σ_{v∈V} ⌊(N′_v + 1)/2⌋ 个，每个 O(1) 次运算；
+  - 新点 ≤ Σ_v ⌊(N′_u + N′_v)/2⌋ + ⌊(N′_u + 1)/2⌋ 个，每个 O(k+1) 次运算。
+  - 总计 O(|旧点| + (k+1)·|新点|)，其中总点数 ≤ (k+1)(σ′+1)/2（由 CNT）。
+
+**必须写明**：UP-3 需要列出新半周期内的**全部**候选点。旧点的数目随 q′ 线性增长，即需要展开 q′/2 个旧周期。
+
+**UP-4（实数，有界窗口）**：对任意 T > 0，C(V ∪ u) ∩ (0, T] 可以由 C(V) ∩ (0, T] 加上 N(V, u) ∩ (0, T] 得到。个数 ≤ (k+1)T(Σv + u) + (k+1)/2。（由 R026 HS 的计数式：每条数列在 (0, T] 中的点数不超过 T 乘以它的密度。）
+
+## §3 定理 PR（完整版）
+
+**假设**：
+- 速度序列 V₁ ⊂ V₂ ⊂ … ⊂ V_K，其中 |V_k| = k；
+- 第 k 层的门槛 δ_k = 1/(k+1)，单调递减；
+- 最终门槛 δ_f = δ_K。
+
+**剪枝规则**：Ĉ₁ = C(V₁) ∩ S_{δ_f}(V₁)；Ĉ_{k+1} = { t ∈ Ĉ_k ∪ N(V_k, u_{k+1}) : g_{V_{k+1}}(t) ≥ δ_f }。
+
+**定理 PR**：
+- (i) **恒等式**：对每个 k，Ĉ_k = C(V_k) ∩ S_{δ_f}(V_k)；
+- (ii) **不丢失中间层的成功候选**：C(V_k) ∩ S_{δ_k}(V_k) ⊆ Ĉ_k；
+- (iii) **最终层**：S_{δ_f}(V_K) ≠ ∅ ⇔ Ĉ_K ≠ ∅。
+
+**证明**：
+1. **(i)**，对 k 归纳。k = 1 是定义。
+   - **⊆**：设 t ∈ Ĉ_{k+1}。若 t ∈ Ĉ_k，由归纳假设 t ∈ C(V_k) ⊂ C(V_{k+1})；若 t ∈ N(V_k, u)，由 UP-1，t ∈ C(V_{k+1})。又 g_{V_{k+1}}(t) ≥ δ_f，所以 t ∈ S_{δ_f}(V_{k+1})。
+   - **⊇**：设 t ∈ C(V_{k+1})，且 g_{V_{k+1}}(t) ≥ δ_f。由 UP-1，t ∈ C(V_k) 或 t ∈ N(V_k, u)。若 t ∈ C(V_k)，则 g_{V_k}(t) ≥ g_{V_{k+1}}(t) ≥ δ_f，所以由归纳假设 t ∈ Ĉ_k。两种情形下 t 都在候选池里，并且通过了门槛，所以 t ∈ Ĉ_{k+1}。
+2. **(ii)**：δ_k ≥ δ_f，所以 S_{δ_k} ⊆ S_{δ_f}，再用 (i)。
+3. **(iii)**：由 (i) 与 HS。∎
+
+**复杂度**：每层只比 UP 多一次比较。剪枝可以缩小集合，但本席**没有**证明 |Ĉ_k| 有比 UP 更好的上界。
+
+**适用范围**：
+- 可公度：用 UP-3，在 (0, P′/2] 内执行；
+- 实数：用 UP-4，在 (0, T] 内执行，此时 (iii) 改为 S_{δ_f} ∩ (0, T] 中存在分量 ⇔ Ĉ_K^T ≠ ∅；
+- 不需要任何非空假设，但**也不提供**非空保证。
+
+---
+
+## §4 局部极大点能否给候选排序，使"早"的候选必然达标
+
+### 4.1 被否定的两种排序（手算反例）
+- **"总有一个成功候选与 v_min 配对"**，即形如 j/(v_min + v′)：**DISPROVED**。反例 V = (1, 3, 4)，δ = 1/4。
+  - j/(1+3)：1/4 时 ‖4·1/4‖ = 0；2/4 时 ‖4·1/2‖ = 0。
+  - j/(1+4)：1/5 < 1/4；2/5 时 ‖3·2/5‖ = 1/5 < 1/4。
+  - 两族都不安全；而 3/7 = 3/(3+4) 是安全的，三个距离为 3/7、2/7、2/7。
+- **"总有一个成功候选与 (v_min, v_max) 配对"**：**DISPROVED**。反例 V = (1, 2, 4)，δ = 1/4。
+  - j/5：1/5 < 1/4；2/5 时 ‖4·2/5‖ = 1/5 < 1/4。（只需检查 j ≤ 2，因为周期为 1，由对称性 3/5、4/5 同理。）
+  - 而 1/3 = 1/(1+2) 是安全的，三个距离为 1/3、1/3、1/3。
+
+### 4.2 首窗假设 FW（新提出）
+**FW_k**：对任意 k 个两两不同的正实数 V，S_{1/(k+1)}(V) ∩ (0, 1/v_min) ≠ ∅。
+
+也就是说，在最慢跑者的**第一个**安全窗口 [δ/v_min, (1−δ)/v_min] 内，就已经有全员安全的时间。
+
+**FW_1、FW_2 已手证**：
+- **k = 1**：t = 1/(2v)。
+- **k = 2**：设 a < b，δ = 1/3。
+  - **若 b ≥ 2a**：窗口 [1/(3a), 2/(3a)] 的长度为 1/(3a) ≥ 2/(3b)，所以 b 的相位在这段窗口内扫过的弧长 ≥ 2/3，因此有一点满足 ‖bt‖ ≥ 1/3。（这是 R024 GLC(i) 的论证。）
+  - **若 a < b < 2a**：取 t = 1/(a+b)。由 b < 2a 与 a < 2b，t 落在窗口内；并且 ‖at‖ = a/(a+b) ≥ 1/3，‖bt‖ = 1 − b/(a+b) = a/(a+b) ≥ 1/3。∎
+- **k ≥ 3**：UNFINISHED。
+- **计算印证**（CHECKED，非证明）：
+  - k = 2, 3, 4，速度为 1…15 的全部整数组（分别有 105、455、1,365 组），首窗**无一失败**；
+  - k = 5，速度为 1…13 的全部整数组（1,287 组），只检查第一类候选，首窗也无一失败；
+  - MZ 族 λ(1, …, N) 的解 1/(λ(N+1)) 在首窗内。
+- **可能已有文献**：本席 WEB OFF，未核验。
+
+**FW 不是什么**：FW 比 NE **更强**（FW ⇒ NE）。所以它并没有绕开存在性问题，只是把存在性问题加强成一个**有界**的形式。
+
+### 4.3 定理 FWS（首窗选择器；在 FW 下的显式有限选择）
+**定义**：
+- C₁(V) = C(V) ∩ (0, 1/v_min]；
+- **F^{FW}(V) = C₁(V) 中使 g_V 最大的最小者。**
+
+**定理 FWS**：
+- (i) |C₁(V)| ≤ Σ_{v<v′} ⌊(v+v′)/v_min⌋ + Σ_v ⌊v/v_min + ½⌋ ≤ kΣv/v_min + k/2。这个上界只依赖速度比，与缩放无关。
+- (ii) 若 FW_k 对 V 成立，则 F^{FW}(V) ∈ S_{1/(k+1)}(V)。
+- (iii) 计算量为 O(k·|C₁(V)|) 次比较。需要能对实数做精确比较（例如代数数速度）。
+
+**证明**：
+- (i)：由 HS 的计数式，取 T = 1/v_min。
+- (ii)：
+  1. 由 FW，存在 t₀ ∈ S ∩ (0, 1/v_min)。t₀ 所在的分量 K 位于 v_min 的某一个安全弧 [(i+δ)/v_min, (i+1−δ)/v_min] 中；由于 t₀ < 1/v_min，只能 i = 0，所以 K ⊂ (0, 1/v_min]。
+  2. 由 HS，K ∩ C(V) ≠ ∅，所以 C₁(V) 中有一点 c 满足 g_V(c) ≥ δ。
+  3. F^{FW} 取最大值，所以 g_V(F^{FW}) ≥ g_V(c) ≥ δ。∎
+
+**必须写明**：
+- FWS 枚举 (0, 1/v_min] 中的**全部**候选点，个数随 v_max/v_min 增长；
+- 它不是"直接公式"；
+- 它的成功依赖**未证明的** FW_k。
+
+### 4.4 FW 能否在归纳中保持
+- 加入一个**更快**的 u（u > v_max）时，v_min 不变，首窗不变。由 PR，首窗内的剪枝骨架可以逐层更新（UP-4，取 T = 1/v_min）。但"更新后仍然非空"正是 FW_{k+1}，不能从 FW_k 推出。
+- 加入一个**更慢**的 u 时，首窗扩大为 (0, 1/u)，需要重新展开。
+- 结论：**FW 不会自动保持**。
+
+---
+
+## §5 对附件的审阅意见（逐项论证）
+- **DeepSeek R026 · ACC 计数上界 kσ/2：GAP FOUND**。理由见 §1：第二类的个数应为 ⌊(N_v+1)/2⌋；反例 V = {1}。
+- **DeepSeek R026 · LM 中"右段常数为 i′+1"的澄清**：接受。本席 R026 写成 f_{v_R}(t) = i′ − v_R t，并取 i′ ∈ ℤ_{≥1}，这与 DeepSeek 的 (i′+1) − v′t 只是记号不同；两者都给出 (v_L + v_R)t\* ∈ ℤ_{≥1}，结论相同。
+- **Qwen R026 §4.1 "B_V ⊂ C(V)"**：本席同意主席的判断，此说**不成立**。反例：V₁ 的断点 1/3 ∈ B_{V₁}（它是 g 的零点 ‖3·1/3‖ = 0，即局部极小）不在 C(V₁) 中。核对：
+- C(V₁) 的第一类分母为速度两两之和：1+3 = 4、1+4 = 5、1+7 = 8、3+4 = 7、3+7 = 10、4+7 = 11，其中没有 3 的倍数，所以 1/3 不是第一类点。
+- 第二类点的形式为 (2j+1)/2、(2j+1)/6、(2j+1)/8、(2j+1)/14；1/3 = 2/6，分子是偶数，所以也不是第二类点。
+
+因此 1/3 ∉ C(V₁)。（本席起初想用 1/7 作反例，但 1/7 = 1/(3+4) ∈ C(V₁)，所以改用 1/3。）LM 只断言**局部极大点**属于 C(V)，并不断言所有断点都属于 C(V)。
+
+---
+
+## 四个账本栏
+- **PROOF VALIDITY**：
+  - CNT（k(σ+1)/2 及取等条件）、UP-1 至 UP-4、PR (i)–(iii)、FWS (i)–(iii)：PROOF CANDIDATE。
+  - FW₁、FW₂：PROOF CANDIDATE（手证）。
+  - FW_k（k ≥ 3）：UNFINISHED。
+  - 两种配对排序：DISPROVED（手算反例）。
+  - NE 的一般证明、一般 F₅、F_n：UNFINISHED。
+- **INDEPENDENT REVIEW**：
+  - 本席对 DeepSeek 计数核验：GAP FOUND（§5）。
+  - UP、PR 将由 DeepSeek 审阅，待定。
+  - CNT、FW₂、FWS 待非作者审阅。
+  - 本席不审自己的结果。
+- **NEW COVERAGE**：无。FWS 依赖未证明的 FW，不主张新覆盖。
+- **COMPUTATIONAL CHECK**：
+  - (1,3,4)、(1,2,4) 的候选值：手算，并与代码一致；
+  - FW 的检查：k = 2, 3, 4 的 105 / 455 / 1,365 组，k = 5 的 1,287 组，都只是小范围检查；
+  - V = {1, 3} 的取等实例：手算；
+  - 1/3 ∉ C(V₁)：手算。
+
+  计算只作核对，不作证明。
+
+---
+
+## 结论（区分 A / B / C）
+- **A（生成候选）**：PROVED（LM、HS）。更新规则 UP、PR：PROOF CANDIDATE。
+- **B（成功候选存在）**：CONDITIONAL，等价于 NE；在首窗内存在则等价于更强的 FW。
+- **C（有显式上界的有限选择）**：
+  - 可公度：在 NE 下，ACC-com，≤ k(σ+1)/2 个候选；
+  - 任意实数：在 FW 下，FWS，≤ kΣv/v_min + k/2 个候选。
+
+  两者都是**有界的搜索**，不是 Tuzi 所要的直接公式。
+- **最值得下一步攻的问题**：证明 FW₃，即四跑者的首窗命题。可以先检验已认证的 T4 的八个分支，看它们的输出是否都落在 (0, 1/a) 之内。
+############ 回复格式 ############
+第一行写「R028 2/4 Qwen」。先写 ANSWER BLOCK（≤300 中文字）。然后回答主席 UNIVERSAL FORMULA TEST：YES / CONDITIONAL / NO / UNFINISHED 选一，并逐条说明是否提供：1. Existence within a bounded horizon；2. A finite candidate family；3. A guaranteed finite selector；4. A direct formula without trial enumeration；5. An induction rule that automatically preserves its hypotheses。五项不得视为等价。四个账本栏分开写：PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / UNFINISHED。审阅结论每项单独给：PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED，并写出逐项论证（笼统 VERIFIED 不计数）。失败尝试与反例也要报告。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。先手证；代码只可核对，不可替代论证。作者不能升级自己的结果；只有主席裁决。不得从「某处存在成功时间」推出 FW₃。不要假设无理速度有有限共同周期。随机测试不能推出证明。不做大规模穷举。
+===== END =====
