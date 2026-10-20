@@ -1,0 +1,33 @@
+R027 3/4 Kimi supplement
+
+**ANSWER BLOCK**  
+非重复：主包只审 \(k(\sigma+1)/2\) 候选计数；本件新审 FW_2/FWS。FW_2 手证通过：\(b\ge2a\) 时闭窗相位弧长 \(\ge2/3\)，不能被长 \(2/3\) 的开不安全弧吞没；\(a<b<2a\) 取 \(t=1/(a+b)\)。FWS(i) 计数、(ii) “若 FW 则 \(F^{FW}\) 安全”均验证；无偷带，成功显式依赖 FW_k。\(k=2\) 得证；\(k\ge3\) 不升级。主席必答：**CONDITIONAL**。
+
+**逐项审阅**  
+- **FW_2 手证：PROOF VERIFIED。** 设 \(a<b,\delta=1/3\)。若 \(b\ge2a\)，首窗 \([1/(3a),2/(3a)]\) 长 \(1/(3a)\ge2/(3b)\)；\(bt\) 扫过闭相位弧长 \(\ge2/3\)，而 \(\|bt\|<1/3\) 的开弧长恰 \(2/3\)，闭弧不能含于开弧，故端点或内部有点安全。若 \(a<b<2a\)，\(t=1/(a+b)\) 满足 \(1/(3a)<t<2/(3a)\)，且 \(\|at\|=a/(a+b)>1/3\)，\(\|bt\|=1-b/(a+b)=a/(a+b)>1/3\)。  
+- **FWS(i)：PROOF VERIFIED。** \(C_1=C(V)\cap(0,1/v_{\min}]\)。由 HS 计数取 \(T=1/v_{\min}\)：配对项 \(j/(v+v')\le T\iff j\le T(v+v')\)；半峰项 \((2j+1)/(2v)\le T\iff 2j+1\le2Tv\)。故计数式与上界 \(k\Sigma v/v_{\min}+k/2\) 成立，只依赖速度比。  
+- **FWS(ii)：PROOF VERIFIED（在 FW 假设下）。** FW 给 \(t_0\in S\cap(0,1/v_{\min})\)；其分量 \(K\) 落在 \(v_{\min}\) 的首条安全弧 \(i=0\)，故 \(K\subset(0,1/v_{\min}]\)。HS 给 \(c\in K\cap C(V)\subset C_1\)，且 \(g_V(c)\ge\delta\)；\(F^{FW}\) 取 \(C_1\) 中最大最小者，故 \(g_V(F^{FW})\ge\delta\)。  
+- **偷带检验：无。** FWS 明写“若 FW_k 成立”。因 FW\(\Rightarrow\)NE 且更强，\(k\ge3\) 时不能把 FW_k 当已知；把小范围枚举当证明会构成 GAP FOUND，但 Opus 已标 UNFINISHED，故本席不升级为反驳。  
+- **与 Qwen §5.2 的关系：不冲突。** FW_2 正好证明 \(k=2\) 时首个成功不必任意远，必在 \((0,1/v_{\min})\)；\(k\ge3\) 的 FW 未证，Qwen“任意实数无普适有限界”的保留仍成立。
+
+**自算核验**：\(V=\{1,2\},k=2,\delta=1/3\)。  
+\(C_1=\{1/4,1/3,1/2,2/3,3/4,1\}\)，计数 6；公式给配对 \(\lfloor3\rfloor=3\)，半峰 \(\lfloor1.5\rfloor+\lfloor2.5\rfloor=1+2\)，合计 6；上界 \(2\cdot3+1=7\)。\(F^{FW}=1/3\)，距离 \((1/3,2/3)\)，最小 \(1/3\)，安全。
+
+**PROOF VALIDITY**  
+- FW_2：**PROVED**（本席复核手证）。  
+- FWS(i)(ii)：**PROOF CANDIDATE**（作者状态；本席审阅见下）。  
+- FW_k \((k\ge3)\)：**UNFINISHED**。  
+- FW 在归纳中自动保持：**UNFINISHED**。
+
+**INDEPENDENT REVIEW**  
+- FW_2：**PROOF VERIFIED**，论证见上。  
+- FWS(i)：**PROOF VERIFIED**，计数推导成立。  
+- FWS(ii)：**PROOF VERIFIED**，但范围严格限于“FW_k 已成立”的输入。  
+- “\(k\ge3\) 普遍有限成功”：**UNFINISHED**；若主张 FW_k 已知，则 **GAP FOUND**。  
+- Opus 枚举印证：本席未重算且非证明，**UNFINISHED**。
+
+**NEW COVERAGE**  
+- **UNFINISHED**。本席只确认 \(k=2\) 首窗有限选择；不主张 \(k\ge3\) 覆盖。
+
+**COMPUTATIONAL CHECK**  
+- 仅手算 \(V=\{1,2\}\)：\(|C_1|=6\)、上界 7、\(F^{FW}=1/3\)。未用代码，未做大规模穷举。
