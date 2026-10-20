@@ -1,0 +1,62 @@
+WHO（给谁）：Kimi —— PT-008 Round 027 · Track C 补充件（审 Opus R027 新选择断言）
+WHERE（贴到哪）：Kimi 同一对话「PT-008 Kimi R027」（思考模式开，联网关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R027 3/4 Kimi supplement」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 027 · Track C supplement, for Kimi.
+主席 R027 Track C 原文：Choose one precise new selection claim from Opus or Qwen. Review the actual theorem, not a paraphrase. Find a rigorous counterexample if it asserts universal finite success without adequate hypotheses.
+你先前已按备选审了 k(σ+1)/2 上界（已归档）。现 Opus R027 选择断言到了，原文 §4.2–§4.4 附后（原样）。请审：
+(1) FW_2 手证（k=2，δ=1/3，两种情形）：PROOF VERIFIED / GAP FOUND / DISPROVED；
+(2) 定理 FWS (i) 计数上界、(ii) "FW_k ⇒ F^FW(V) 安全"、(iii)：逐项结论；
+(3) FWS 是否在 FW 之外偷带了"普遍有限成功"的假设；若有，给严格反例。
+注意：FW_k（k≥3）作者自报 UNFINISHED；不要把小范围检查当证明。Qwen R027 §5.2 称"任意实数无普适有限界，首个安全候选可任意远"（启发式，无证明）——若你认为与 FW_2 冲突，请写明。
+回复格式：第一行「R027 3/4 Kimi supplement」；ANSWER BLOCK ≤300 字；逐项审阅结论 + 论证；四账本 PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED. WEB OFF。作者不能升级自己的结果；只有主席裁决。回复宜 ≤1500 字。
+############ Opus R027 §4.2–§4.4（原文，原样）############
+### 4.2 首窗假设 FW（新提出）
+**FW_k**：对任意 k 个两两不同的正实数 V，S_{1/(k+1)}(V) ∩ (0, 1/v_min) ≠ ∅。
+
+也就是说，在最慢跑者的**第一个**安全窗口 [δ/v_min, (1−δ)/v_min] 内，就已经有全员安全的时间。
+
+**FW_1、FW_2 已手证**：
+- **k = 1**：t = 1/(2v)。
+- **k = 2**：设 a < b，δ = 1/3。
+  - **若 b ≥ 2a**：窗口 [1/(3a), 2/(3a)] 的长度为 1/(3a) ≥ 2/(3b)，所以 b 的相位在这段窗口内扫过的弧长 ≥ 2/3，因此有一点满足 ‖bt‖ ≥ 1/3。（这是 R024 GLC(i) 的论证。）
+  - **若 a < b < 2a**：取 t = 1/(a+b)。由 b < 2a 与 a < 2b，t 落在窗口内；并且 ‖at‖ = a/(a+b) ≥ 1/3，‖bt‖ = 1 − b/(a+b) = a/(a+b) ≥ 1/3。∎
+- **k ≥ 3**：UNFINISHED。
+- **计算印证**（CHECKED，非证明）：
+  - k = 2, 3, 4，速度为 1…15 的全部整数组（分别有 105、455、1,365 组），首窗**无一失败**；
+  - k = 5，速度为 1…13 的全部整数组（1,287 组），只检查第一类候选，首窗也无一失败；
+  - MZ 族 λ(1, …, N) 的解 1/(λ(N+1)) 在首窗内。
+- **可能已有文献**：本席 WEB OFF，未核验。
+
+**FW 不是什么**：FW 比 NE **更强**（FW ⇒ NE）。所以它并没有绕开存在性问题，只是把存在性问题加强成一个**有界**的形式。
+
+### 4.3 定理 FWS（首窗选择器；在 FW 下的显式有限选择）
+**定义**：
+- C₁(V) = C(V) ∩ (0, 1/v_min]；
+- **F^{FW}(V) = C₁(V) 中使 g_V 最大的最小者。**
+
+**定理 FWS**：
+- (i) |C₁(V)| ≤ Σ_{v<v′} ⌊(v+v′)/v_min⌋ + Σ_v ⌊v/v_min + ½⌋ ≤ kΣv/v_min + k/2。这个上界只依赖速度比，与缩放无关。
+- (ii) 若 FW_k 对 V 成立，则 F^{FW}(V) ∈ S_{1/(k+1)}(V)。
+- (iii) 计算量为 O(k·|C₁(V)|) 次比较。需要能对实数做精确比较（例如代数数速度）。
+
+**证明**：
+- (i)：由 HS 的计数式，取 T = 1/v_min。
+- (ii)：
+  1. 由 FW，存在 t₀ ∈ S ∩ (0, 1/v_min)。t₀ 所在的分量 K 位于 v_min 的某一个安全弧 [(i+δ)/v_min, (i+1−δ)/v_min] 中；由于 t₀ < 1/v_min，只能 i = 0，所以 K ⊂ (0, 1/v_min]。
+  2. 由 HS，K ∩ C(V) ≠ ∅，所以 C₁(V) 中有一点 c 满足 g_V(c) ≥ δ。
+  3. F^{FW} 取最大值，所以 g_V(F^{FW}) ≥ g_V(c) ≥ δ。∎
+
+**必须写明**：
+- FWS 枚举 (0, 1/v_min] 中的**全部**候选点，个数随 v_max/v_min 增长；
+- 它不是"直接公式"；
+- 它的成功依赖**未证明的** FW_k。
+
+### 4.4 FW 能否在归纳中保持
+- 加入一个**更快**的 u（u > v_max）时，v_min 不变，首窗不变。由 PR，首窗内的剪枝骨架可以逐层更新（UP-4，取 T = 1/v_min）。但"更新后仍然非空"正是 FW_{k+1}，不能从 FW_k 推出。
+- 加入一个**更慢**的 u 时，首窗扩大为 (0, 1/u)，需要重新展开。
+- 结论：**FW 不会自动保持**。
+
+---
+===== END =====
