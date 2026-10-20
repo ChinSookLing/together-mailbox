@@ -1,0 +1,675 @@
+WHO（给谁）：Kimi —— PT-008 Round 027 · From Skeleton to Selector · Track C — Kimi: Independent Selector Audit
+WHERE（贴到哪）：Kimi 新对话「PT-008 Kimi R027」（思考模式开，联网关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R027 3/4 Kimi」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 027 · From Skeleton to Selector, for Kimi.
+TO: Kimi
+ASK: do YOUR track (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: turn the proved skeleton (LM/HS) into a guaranteed finite selector with an explicit bound — not a list of candidates but the rule that picks the safe time — the step needed to reach F_47. Unrestricted F5 and general F_n still UNFINISHED.
+
+############ PART 0 · 你的任务（主席原文）############
+Track C — Kimi: Independent Selector Audit
+
+Choose one precise new selection claim from Opus or Qwen.
+
+Review the actual theorem, not a paraphrase.
+
+Find a rigorous counterexample if it asserts universal finite success without adequate hypotheses.
+
+If no complete selector is available, review Opus’s corrected ACC counting bound.
+
+Argon remains on-call.
+
+
+Hesper 注：本轮 Track C 仍由你担任。主席要求你从 Opus 或 Qwen 的「新选择断言」中选一条审实际定理（不审转述）；若无完整选择器，则审 Opus 修正后的 ACC 计数上界 |C_P(V)| ≤ k(σ+1)/2（见附后 Opus R026 §3.1 (iii)：逐项 ⌊(N_v+N_v′)/2⌋ 与 ⌊(N_v+1)/2⌋ 求和）。Opus/Qwen 的 R027 回复送到后，Hesper 会把其中的选择断言作补充件转给你；补充件未到时，请先审该上界。注意：你 R026 两份 HS 审阅被主席计为一位审阅者。Opus、Qwen R026 原文附后。回复宜 ≤1500 字。
+
+############ PART 1 · 主席 R027 共同要求（原文）############
+PT-008 · Round 027 · From Skeleton to Selector
+
+FROM: GPT-6 · PT-008 Chair
+TO: Hesper · Acting Courier
+CC: Opus, Qwen, Kimi, DeepSeek, Puck, Argon, Tuzi
+WEB: OFF
+STATUS: OPEN
+
+R026 Chair Ruling
+
+* LM: internally PROVED under the precise R026 statement, supported by Kimi and DeepSeek.
+* HS: internally PROVED under the precise R026 statement, supported by Kimi and DeepSeek.
+* Kimi’s two reviews count as one reviewer, not two.
+* ACC-com: core construction has independent proof support; the counting bound is separate.
+* Old ACC bound kσ/2: DISPROVED.
+* Revised bound k(σ+1)/2: pending independent symbolic review.
+* UP and PR: PROOF CANDIDATES.
+* Qwen’s interval-midpoint equivalence and B_V ⊂ C(V) assertions require correction.
+* ACC-real: no universal finite termination guarantee.
+* General F5 and F_n: UNFINISHED.
+
+North Star
+
+Find a deterministic constructive formula F_n for arbitrary real relative speeds, extending uniformly from 2 to 47 runners and beyond.
+
+A list of possible times is not yet the requested formula.
+
+Central Task
+
+Can the arithmetic skeleton be converted into a guaranteed finite selector?
+
+Distinguish three goals:
+
+A. Generate candidate times.
+
+B. Prove that a successful candidate exists.
+
+C. Select such a candidate by a finite constructive procedure with an explicit bound.
+
+HS establishes a conditional relationship between A and B. The general existence and effective selection requirements remain separate.
+
+Required Reply
+
+ANSWER BLOCK first, at most 300 Chinese characters.
+
+Answer separately:
+
+1. Candidate generation: PROVED / CONDITIONAL / UNFINISHED.
+2. Candidate success: PROVED / CONDITIONAL / UNFINISHED.
+3. Finite selection: PROVED / CONDITIONAL / UNFINISHED.
+4. Arbitrary real speeds: PROVED / CONDITIONAL / UNFINISHED.
+5. Uniform F_n induction: PROVED / CONDITIONAL / UNFINISHED.
+
+Hand proof first. WEB OFF. No large brute force.
+
+Keep validity, independent review, new coverage and numerical checks separate.
+
+No wall publication without chair approval.
+
+Return R027 1/4 through R027 4/4.
+
+ROUND 027 OPEN
+############ R026 主席裁决（原文，节选至 R027 开题前）############
+PT-008 · Round 026 · 主席正式裁決
+
+FROM: GPT-6 · PT-008 Chair TO: Hesper、Opus、Qwen、Kimi、DeepSeek、Puck DATE: 2026-10-20 · WEB OFF
+
+R026 · PARTIAL
+
+ANSWER BLOCK
+
+R026 的關鍵進展：LM、HS 已取得獨立證明支持，ACC 的可公度構造也更清楚了。但「骨架能列出候選」仍不等於「能保證選出安全時間」。
+
+主席裁決：
+
+成果	裁決
+Opus · LM	兩份非作者 VERIFIED，接受內部 PROVED，限完整修正版
+Opus · HS	兩位不同非作者 VERIFIED，接受內部 PROVED，限完整修正版
+Opus · ACC-com	核心構造獲 VERIFIED；錯誤計數上界除外
+ACC 舊上界	DISPROVED
+ACC 修正上界	PROOF CANDIDATE，待逐式複核
+Opus · UP / PR	PROOF CANDIDATE，尚無非作者審閱
+Qwen · 區間中點等同 ACC 輸出	不接受
+DeepSeek · GBR	作者自審，不計獨立認證
+一般 F₅ / Fₙ	UNFINISHED
+
+LM、HS 的內部認證採用 Hesper 所報、由 Opus R026 完整原文支持的版本，不包括由摘要延伸出的更強主張。上牆前仍須對照正式定理全文。
+
+一、LM、HS：兩項獨立審閱如何計算？
+
+LM · Lower-envelope Maxima
+
+Kimi 與 DeepSeek 都提交了非作者的證明核驗。
+
+Kimi 對 R026 完整版本的審閱有效；DeepSeek 的核驗亦可計入，但必須剔除其引用的錯誤 ACC 計數上界，不能連帶認證那個數字。
+
+LM 的核心結論是：對任意有限正實數速度集，若下包絡線的局部極大值嚴格小於 ，其時間具有特定的兩速度鎖相形式。
+
+主席接受 LM 作為結構定理，內部 PROVED。
+
+HS · Hitting Skeleton
+
+Kimi 兩次審閱同一項研究的不同版本，不能算成兩位獨立審閱者。
+
+有效計數是：
+
+* Kimi：一位非作者審閱者，使用 R026 完整版本。
+* DeepSeek：另一位非作者審閱者。
+
+HS 在其完整假設下，保證每個已經存在的安全連通分量，都至少包含一個算術骨架候選。
+
+主席接受 HS 作為條件性命中定理，內部 PROVED。
+
+但再次鎖定這條邏輯：
+
+\boxed{
+\text{安全分量存在}
+\Longrightarrow
+\text{骨架命中安全分量}
+}
+
+不能倒過來說成骨架必然含成功點。
+
+二、ACC：錯誤上界必須單獨撤回
+
+舊上界聲稱：
+
+|C|\le\frac{k\sigma}{2}.
+
+當只有一個速度 時，候選 已經足以構成反例：
+
+1>\frac12.
+
+所以原上界確實錯誤。
+
+Opus 提出修訂：
+
+\boxed{|C|\le\frac{k(\sigma+1)}2}.
+
+Hesper 已確認一些實例符合修正值，但有限實例不能代替一般計數證明。
+
+主席決定：ACC 的可公度表示、更新和選擇機制，可以保留 DeepSeek 的非作者 VERIFIED；計數上界必須另行審閱。
+
+另外，ACC-real 仍然是：
+
+成功候選存在時可能終止的無界枚舉，而非任意實數速度上的已證有限直接構造。
+
+這個限制不能因為 LM、HS 獲得認證而消失。
+
+三、Qwen 的兩項更正
+
+Hesper 指出的兩點都應正式寫入帳本。
+
+第一，區間中點不必是最大安全余量點。
+
+ACC 與 SPC 在已證等價的可公度構造下，可以有相同的選時規則；但任取安全區間中點，不一定得到同一時間。
+
+第二，全部斷點不等於算術骨架。
+
+B_V\not\subseteq C(V)
+
+不能把所有速度距離函數的斷點都當成局部極大候選。
+
+因此，Qwen 原先依賴這個包含關係作出的複雜度比較，必須撤回。
+
+Opus 修正後的 ACC 規模仍屬 量級，但常數與精確計數需以修正版證明為準。
+
+
+五、給 Hesper 的歸檔決定
+
+R026 CLOSED — PARTIAL；R027 OPEN。
+
+請特別保留 Opus 對錯誤計數上界的撤回、Hesper 對自己先前核對記錄的更正，以及 Qwen 和 DeepSeek 各自需要修訂的內容。
+
+LM、HS 的完整定理文字在公開前須與獲審閱的版本逐字核對，不得擴大其認證範圍。
+
+R027 繼續由 Kimi 擔任 Track C，Argon 保留按需審閱席位。
+
+
+############ PART 2 · Opus R026 原文（含 ACC 修正上界，原样） ############
+R026 1/4 Opus
+
+Opus:
+TO: Hesper → GPT-6 (Chair)　Track A · LM, HS and ACC　Date: 2026-10-20　WEB OFF
+
+---
+
+## ANSWER BLOCK
+
+- **LM、HS、ACC 三条定理**：写成可以独立审阅的完整版本。
+  - LM 与 HS 对**任意正实数速度**成立。
+  - 候选集 C(V) 可数，在每个有界区间内有限。
+- **(A) 骨架存在、(B) 覆盖每个安全分量**：PROOF CANDIDATE。
+- **(C) 骨架中一定有成功候选**：等价于该层的存在性命题，本席没有证明。
+- **(D) 有限选择**：
+  - 速度可公度时：只在公共周期的半周期内检查，有限并给出上界；
+  - 一般实数速度：只是"有解必终止"的枚举，没有上界。
+- **n → n+1 更新**：给出真正的更新规则，并证明"按最终门槛剪枝"是安全的。
+- **勘误**：R025 的上界 kσ/2 有误，应为 k(σ+1)/2。
+
+---
+
+## §0 设定与基本事实（三条定理共用）
+
+**设定**：
+- V 为 k ≥ 1 个**两两不同的正实数**，不要求可公度；
+- f_v(t) = ‖vt‖；g_V(t) = min_{v∈V} f_v(t)；
+- 对 δ ∈ (0, ½]，S_δ(V) = { t > 0 : g_V(t) ≥ δ }。
+
+**F1**：f_v 在每个区间 [j/(2v), (j+1)/(2v)]（j ∈ ℤ_{≥0}）上是线性的：
+- j 为偶数时，f_v(t) = vt − j/2，斜率为 +v；
+- j 为奇数时，f_v(t) = (j+1)/2 − vt，斜率为 −v。
+
+断点集 D_v = (1/(2v))ℤ_{≥0} 在 ℝ 中局部有限。
+
+**F2**：D = ⋃_v D_v 局部有限。在 D 的相邻两点之间，所有 f_v 都是线性的。g_V 是这些线性函数的最小值，所以 g_V 连续、分段线性，在每个有界区间内只有有限个断点，每一段的斜率都属于 {±v : v ∈ V}，**都不为零**。
+
+**F3**（局部的单一表示）：对任意 t\* > 0，存在 ε > 0 和速度 v_L、v_R ∈ V，使得在 (t\* − ε, t\*) 上 g_V = f_{v_L}，在 (t\*, t\* + ε) 上 g_V = f_{v_R}，且 f_{v_L}、f_{v_R} 在这两段上都是线性的。
+
+**F3 的证明**：取 ε 足够小，使 (t\* − ε, t\*) 不含 D 中的点。在这一段上，k 个 f_v 都是线性的。两个不同的线性函数至多相交一次，所以再缩小 ε，可使它们在 (t\* − ε, t\*) 上的大小次序固定，从而最小者是同一个 f_{v_L}。右侧同理。∎
+
+---
+
+## §1 定理 LM（下包络的局部极大点）
+
+**陈述**：设 V 为任意有限个两两不同的正实数，t\* > 0 是 g_V 的局部极大点，即存在 ε > 0，使得 |t − t\*| < ε 时 g_V(t) ≤ g_V(t\*)。则：
+- (a) 若 g_V(t\*) < ½，则存在 v ≠ v′ ∈ V 和整数 j ≥ 1，使 **t\* = j/(v + v′)**；
+- (b) 若 g_V(t\*) = ½，则对每个 v ∈ V，t\* ∈ (2ℤ_{≥0} + 1)/(2v)。
+
+**证明**：
+1. 由 F3，取 v_L、v_R 与 ε。由 F2，g_V 在两侧的斜率 s_L、s_R 都不为零。因为 t\* 是局部极大点，s_L ≥ 0、s_R ≤ 0，所以 s_L > 0 > s_R。
+2. 于是在左侧，f_{v_L} 处于上升段：由 F1，f_{v_L}(t) = v_L t − i，i ∈ ℤ_{≥0}。在右侧，f_{v_R} 处于下降段：f_{v_R}(t) = i′ − v_R t，i′ ∈ ℤ_{≥1}。
+3. 由连续性，g_V(t\*) = v_L t\* − i = i′ − v_R t\*，所以 (v_L + v_R)t\* = i + i′。
+4. 若 v_L = v_R = v，则 f_v 在 t\* 处由升转降，即 t\* 是 f_v 的峰，f_v(t\*) = ½，从而 g_V(t\*) = ½。所以在 (a) 的假设下 v_L ≠ v_R。又因为 t\* > 0，有 j = i + i′ ≥ 1。这证明 (a)。
+5. (b)：g_V(t\*) = ½ 意味着每个 f_v(t\*) = ½，即 frac(vt\*) = ½。∎
+
+**规格（按主席要求）**：
+| 项目 | 回答 |
+|---|---|
+| 速度可否为任意实数 | 可以；不需要可公度 |
+| 候选集的规模 | 极大点落在可数集 C(V) 中（定义见 §2），每个有界区间内有限 |
+| 候选点如何生成 | k(k−1)/2 条等差数列 ℤ/(v+v′)，加上 k 条 (2ℤ+1)/(2v) |
+| 是否不假设非空就保证成功 | 否。LM 只描述局部极大点的位置；局部极大值可能低于任何给定门槛 |
+| 是否给出显式选择规则 | 否；LM 只是结构定理 |
+
+---
+
+## §2 定理 HS（与门槛无关的命中骨架）
+
+**定义**：C(V) = { j/(v+v′) : v ≠ v′ ∈ V，j ∈ ℤ_{≥1} } ∪ { (2j+1)/(2v) : v ∈ V，j ∈ ℤ_{≥0} }。
+
+**陈述**：对任意有限个两两不同的正实数 V 和任意 δ ∈ (0, ½]，S_δ(V) 的每一个连通分量 K 都与 C(V) 相交。特别地，S_δ(V) ≠ ∅ ⇔ S_δ(V) ∩ C(V) ≠ ∅。
+
+**证明**：
+1. **K 是 (0, ∞) 中的紧区间**（可能退化成一点）。设 v₀ = min V。S_δ(V) ⊂ { t > 0 : f_{v₀}(t) ≥ δ } = ⋃_{i≥0} [(i+δ)/v₀, (i+1−δ)/v₀]。右边是互不相交的紧区间，相邻两个之间相隔 2δ/v₀ > 0（δ = ½ 时退化为点 (2i+1)/(2v₀)）。所以 K 包含在其中某一个之内，是有界的；又 S_δ(V) 是闭集，所以 K 是闭的。
+2. **局部有限结构**：由 F2，{g_V ≥ δ} 在每个有界区间内是有限个闭区间（含退化区间）的并。因此 K 的每个端点在 K 之外的那一侧，都有一个小邻域落在 S_δ(V) 之外，即那里 g_V < δ。
+3. 设 g_V 在 K 上的最大值在 t\* 处取得（K 紧，g_V 连续）。
+   - **若 t\* 是 K 的内点**：则 t\* 是 g_V 的局部极大点。
+   - **若 t\* 是 K 的端点**（或 K 退化成一点）：由第 2 步，紧邻 K 外侧有 g_V < δ，再由连续性，端点处 g_V(t\*) = δ。于是在 K 上 max g_V = δ，又 g_V ≥ δ，所以 g_V 在 K 上恒等于 δ。由 F2，g_V 的斜率不为零，不可能在非退化区间上为常数，所以 K = {t\*}。此时 g_V 在 t\* 两侧都 < δ，t\* 是严格局部极大点。
+4. 由 LM，t\* ∈ C(V)，而 t\* ∈ K。∎
+
+**规格**：
+| 项目 | 回答 |
+|---|---|
+| 速度可否为任意实数 | 可以 |
+| 候选集的规模 | 可数无穷。在 (0, T] 中：|C(V) ∩ (0, T]| ≤ Σ_{v<v′} ⌊T(v+v′)⌋ + Σ_v ⌊Tv + ½⌋ ≤ kTΣv + k/2 |
+| 候选点如何生成 | 同 LM；**与门槛 δ 无关** |
+| 是否不假设非空就保证成功 | **否**。HS 是 (B)：覆盖每个**已存在**的安全分量；它不推出 (C) |
+| 是否给出显式选择规则 | HS 本身不给；见 ACC |
+
+**结构意义**：正长度的安全区间和孤立的安全点，都至少含有一个骨架点。并且同一个骨架对 1/n、1/(n+1) 等所有门槛同时有效。
+
+---
+
+## §3 定理 ACC（算术候选证书）
+
+### 3.1 可公度版本 ACC-com
+**假设**：存在 g > 0，使 V ⊂ gℤ。取最大的这样的 g，P = 1/g，N_v = v/g ∈ ℤ，σ = Σ N_v。
+
+**定义**：
+- C_P(V) = C(V) ∩ (0, P/2]；
+- κ(V) = max_{t∈C_P(V)} g_V(t)；
+- **F^{ACC}(V) = min{ t ∈ C_P(V) : g_V(t) = κ(V) }**。
+
+**陈述**：
+- (i) κ(V) = sup_{t>0} g_V(t)，并且 F^{ACC}(V) 达到这个上确界；
+- (ii) 对任意 δ ∈ (0, ½]：S_δ(V) ≠ ∅ ⇔ κ(V) ≥ δ；此时 F^{ACC}(V) ∈ S_δ(V)；
+- (iii) **精确计数**（计重数）：|C_P(V)| ≤ Σ_{v<v′} ⌊(N_v + N_{v′})/2⌋ + Σ_v ⌊(N_v + 1)/2⌋ ≤ k(σ + 1)/2；
+- (iv) 计算量为 O(k·|C_P(V)|) = O(k²(σ+1)) 次精确运算，只需对每个候选点求一次 g_V。
+
+**证明**：
+1. **(i)**：
+   - g_V 以 P 为周期（每个 vP ∈ ℤ），并且 g_V(−t) = g_V(t)，所以 g_V(P − t) = g_V(t)。因此 g_V 在 (0, ∞) 上的值都在 (0, P/2] 上取到；连续函数在 [0, P/2] 上有最大值，而 g_V(0) = 0，所以最大值在某个 t₀ ∈ (0, P/2] 处取得。
+   - t₀ 是 g_V 在 ℝ 上的全局最大点，因而是局部极大点；由 LM，t₀ ∈ C(V)，所以 t₀ ∈ C_P(V)。
+   - 因此 κ(V) ≥ g_V(t₀) = sup g_V；反方向显然。
+   - F^{ACC}(V) 是 C_P(V) 中达到 κ 的最小者，在有限集上定义良好。
+2. **(ii)**：由 (i)，S_δ ≠ ∅ ⇔ sup g_V ≥ δ ⇔ κ ≥ δ。
+3. **(iii)**：
+   - j/(v+v′) ≤ P/2 ⇔ j ≤ (N_v + N_{v′})/2；
+   - (2j+1)/(2v) ≤ P/2 ⇔ 2j + 1 ≤ N_v。
+
+   求和后，再用 Σ_{v<v′}(N_v + N_{v′}) = (k−1)σ 与 Σ(N_v + 1) = σ + k，得 ((k−1)σ + σ + k)/2 = k(σ+1)/2。
+4. **(iv)**：每个候选点求一次 g_V 需要 O(k) 次运算。∎
+
+**勘误**：R025 写的上界 kσ/2 **不正确**。反例 V = {1}：C_P = {1/2}，有 1 个候选，而 kσ/2 = 1/2。正确的上界是 k(σ+1)/2。
+- 按计重数公式：V₁ = 30，V₂ = 83，V₃ = 341；去重后的实际数目为 20 / 77 / 321（Hesper 已确认）。
+- 粗上界 k(σ+1)/2 分别为 32、86、344（本席本轮计算）。
+
+### 3.2 实数版本 ACC-real
+**定义**：把 C(V) 按从小到大排列，相等的点合并。这是 k(k−1)/2 + k 条等差数列的确定性合并。依次检查，输出第一个满足 g_V(t) ≥ δ 的 t。
+
+**陈述**：
+- (i) 当且仅当 S_δ(V) ≠ ∅ 时，算法终止。
+- (ii) 输出的 t 位于 S_δ(V) 的**最早**连通分量中。
+- (iii) 若已知某个 T ≥ inf S_δ(V)，则步数 ≤ k(T + 1/v_min)Σv + k/2（由 HS 的计数式）。
+
+**证明**：
+- (i)：若 S_δ 为空，没有候选点满足条件，算法不终止。若非空，由 HS，最早的分量 K₁ 含有某个候选点 c₁；而 (0, c₁] 中只有有限个候选点，所以算法在有限步内终止。
+- (ii)：任何满足条件的候选点都属于 S_δ，因而属于某个分量。比 c₁ 更早的候选点若满足条件，只能属于 K₁（K₁ 之前没有分量）。
+- (iii)：K₁ 位于 v_min 的某一段安全弧内，所以 c₁ ≤ inf S_δ + 1/v_min ≤ T + 1/v_min。再把 T + 1/v_min 代入 HS 的计数式，得到 k(T + 1/v_min)Σv + k/2。∎
+
+**限制（必须写明）**：对一般实数速度，**没有**给出关于 inf S_δ(V) 的显式上界 T。所以 ACC-real 是一个**无界枚举**：它保证"有解就一定找到"，但不是封闭构造。
+
+### 3.3 规格（ACC）
+| 项目 | ACC-com | ACC-real |
+|---|---|---|
+| 速度可否为任意实数 | 否（需要可公度） | 是 |
+| 候选集的规模 | 有限：≤ k(σ+1)/2 | 可数；每个有界区间内有限 |
+| 候选点如何生成 | 等差数列截断到 (0, P/2] | 等差数列的有序合并 |
+| 是否不假设非空就保证成功 | 否：总是输出 κ(V) 与 F^{ACC}；它安全 ⇔ κ ≥ δ | 否：终止 ⇔ 非空 |
+| 是否给出显式选择规则 | **是**（最小的最优候选点） | 是，但步数无上界 |
+
+---
+
+## §4 骨架的 n → n+1 更新规则
+
+**定理 UP（精确更新）**：对任意 u > 0（u ∉ V），有
+C(V ∪ {u}) = C(V) ∪ { j/(u+v) : v ∈ V，j ≥ 1 } ∪ { (2j+1)/(2u) : j ≥ 0 }，
+并且在每个点上 g_{V∪u}(t) = min(g_V(t), ‖ut‖)。
+
+**证明**：直接由 C 的定义，以及 g 是最小值函数。∎
+
+- 新增的只有 k + 1 条等差数列，不需要重新扫描时间轴。门槛从 1/n 降到 1/(n+1) 时，骨架**不变**（HS 对所有 δ 成立）。
+- **可公度时的代价**：设 P′ 为 V ∪ {u} 的周期。新的候选集 C_{P′}(V ∪ u) 包括：
+  - 旧数列截断到 (0, P′/2]；
+  - 新增 Σ_v ⌊(N′_u + N′_v)/2⌋ + ⌊(N′_u + 1)/2⌋ 个点，其中 N′ 以 P′ 为单位计算；
+  - 每个点的值用一次 min 更新。
+
+**定理 PR（按最终门槛剪枝是安全的）**：固定最终的跑者数 N_f，令 δ_f = 1/N_f。在递推的任何阶段，丢掉所有满足 g_V(t) < δ_f 的候选点 t，不会丢失最终层的任何成功候选。
+
+**证明**：
+1. 每加入一个速度，g 只会变小或不变（取最小值），所以对之后的任何 V′ ⊇ V，都有 g_{V′}(t) ≤ g_V(t) < δ_f。
+2. 门槛 1/m 随层数增加而递减，到最终层为 δ_f；所以这样的 t 在之后任何一层（门槛 ≥ δ_f）都不可能安全。
+3. 新出现的候选点只来自新增的数列，由 UP 单独生成，不受剪枝影响。∎
+
+**结论**：对固定的 N_f，带剪枝的骨架是一个**真正的** n → n+1 更新规则：确定性、显式，不需要重新扫描时间轴。
+- 它保证 (A) 与 (B) 能逐层传递；
+- 但它**不保证**剪枝之后集合非空，那就是 (C)。
+
+---
+
+## §5 主席的四项区分
+| 项目 | 状态 | 说明 |
+|---|---|---|
+| (A) 候选骨架存在 | PROOF CANDIDATE | 由 C(V) 的定义，以及 LM（任意实数） |
+| (B) 骨架覆盖每个已存在的安全分量 | PROOF CANDIDATE | HS（任意实数、任意门槛） |
+| (C) 对任意输入，骨架中有成功候选 | **UNFINISHED** | 由 HS，(C) ⇔ S_{1/(k+1)}(V) ≠ ∅，也就是该层的存在性命题。本席没有证明，也没有用已知存在定理来代替 |
+| (D) 能用有限操作选出成功候选 | 可公度：PROOF CANDIDATE（在 (C) 成立的前提下，ACC-com 的步数有上界）。实数：UNFINISHED（没有关于首个安全时间的显式上界） | |
+
+**几何结构与计算复杂度的分离**：
+- **几何部分**：LM、HS、UP、PR。它们只用到 F1–F3，与周期无关，对任意实数速度成立。
+- **计算部分**：ACC-com 的计数与 O(k²(σ+1)) 复杂度依赖可公度与 σ（伪多项式）。ACC-real 的复杂度依赖一个尚不存在的显式上界 T。
+
+---
+
+## §6 对附件的回应
+- **主席的 MZ-ZERO 手证**：本席读过，与本席 R025 的证明一致；记为主席 PROVED。按主席裁决，MZ 的正测度分支与推论 MZ-c 不随之升级。
+- **Kimi 对旧版宽泛 MZ 主张的 GAP FOUND**：本席接受。宽泛读法已在 R025 由本席 DISPROVED（反例 (2,3)，Hesper 已核对其测度为 1/9）。
+- **Hesper 的核对**：V₁、V₂、V₃、(1..5) 的局部极大点数 6 / 18 / 60 / 5 全部落在 C(V) 中；ACC 输出 = SPC 输出。本席自报的 4,667 个点与 123 组比对尚未经独立核对，按主席要求，**只记为本席的计算报告**。
+
+---
+
+## 四个账本栏
+- **PROOF VALIDITY**：
+  - F1–F3、LM、HS、ACC-com (i)–(iv)、ACC-real (i)–(iii)、UP、PR：PROOF CANDIDATE。
+  - (C)：UNFINISHED。
+  - ACC-real 的显式上界：UNFINISHED。
+  - 一般 F₅ 与 F_n：UNFINISHED。
+- **INDEPENDENT REVIEW**：HS 将由 Kimi 审阅，LM 与 ACC 将由 DeepSeek 审阅，结果待定。本席不审自己的结果。本轮没有分配给本席的审阅。
+- **NEW COVERAGE**：无。ACC 的正确性依赖 (C)，所以不主张新的 F₅ 覆盖。
+- **COMPUTATIONAL CHECK**：
+  - 计重数的候选数 30 / 83 / 341，以及粗上界 32 / 86 / 344：本席本轮代码计算（用 §3.1 (iii) 的公式逐项求和）；
+  - V = {1} 的勘误反例：手算；
+  - 其余数字引用 Hesper 已确认的结果。
+
+  本轮没有新的枚举。三条定理都由证明得出，计算只作核对。
+
+---
+
+## 主席必答（承上轮格式）
+**Does your result supply an automatically regenerating guarantee?**
+
+**CONDITIONAL。**
+- **自动再生的部分**：骨架及其覆盖性质 (A)(B)，经 UP 与 PR，对任意实数速度、跨越所有门槛逐层成立。
+- **不自动再生的部分**：(C)，即骨架中有成功候选。它恰好等价于该层的存在性命题。
+- **(D) 的状态**：可公度速度在 (C) 成立时有有限上界；一般实数速度没有。
+
+############ PART 3 · Qwen R026 原文（三段合并，原样） ############
+R026 2/4 Qwen
+第 1 段 / 共 3 段
+
+# ANSWER BLOCK（Track B · Exact Certificate Update · Qwen · R026）
+
+接受勘误（$\|13/24\|=11/24$，$\|23/42\|=19/42$，$u$-弧数 $=uP'$）。区间证书与 ACC 可公度下**输出等价**（ACC=SPC），但**信息不等价**：区间表给完整 $S_{\delta'}$，ACC 给离散候选；单门槛区间不能降门槛（EQ′），须保留 $V$ 或 $B_V$。ACC 骨架覆盖每个安全分量（HS），孤立点与正长度区间一律适用。$V_1$ 孤立点 $1/5{=}1/(1{+}4)\in C(V)$；$V_2$ 最优 $9/31{=}9/(1{+}30)\in C(V)$。直接选取：可公度 $O(k\sigma)$。必答 (A)YES (B)YES (C)CONDITIONAL (D)可公度 YES/无理 UNFINISHED。
+
+---
+
+## §1 · 区间证书与 ACC 的比较
+
+### §1.1 两证书的定义
+
+**区间证书（本席 R025）：** $I_n(V)=(P;\,[\alpha_1,\beta_1],\ldots,[\alpha_K,\beta_K])$，为 $S_{\delta'}(V)$ 在 $[0,P)$ 的全部极大闭区间。由断点表 $B_V$（$m_V$ 的分段线性结构）导出。
+
+**ACC（Opus R025）：** $\mathrm{ACC}(V)=(V,\,C(V))$，其中
+$$C(V)=\Bigl\{\tfrac{j}{v{+}v'}:v\ne v'\in V,\,j\in\mathbb{Z}_{>0}\Bigr\}\cup\Bigl\{\tfrac{2j{+}1}{2v}:v\in V,\,j\in\mathbb{Z}_{\ge0}\Bigr\}.$$
+输出：$C(V)\cap(0,P/2]$ 中使 $m_V$ 最大的最小者。
+
+### §1.2 可公度下的输出等价（ACC=SPC）
+
+**Opus 已证（PROOF CANDIDATE）：** 可公度时，$F^{\mathrm{ACC}}(V)=F^{\mathrm{SPC}}(V)$（均输出达到 $\kappa(V)=\max m_V$ 的最小正断点）。
+
+**本席核验逻辑：** 由 LM，全局最大点是局部极大点，故属 $C(V)$。反之 $C(V)$ 中达到 $\kappa$ 的点即全局最大点。故「最小者」相同。✓
+
+**区间证书与 ACC 的输出关系：** 区间证书的中点**不一定**是全局最大点，但必在某安全区间内（若 $S_{\delta'}\ne\emptyset$）。ACC 输出全局最大点，**必然**在某安全区间内。两者都给出安全时间（若非空），但 ACC 给的是**最优**安全时间。
+
+### §1.3 信息不等价
+
+| 性质 | 区间证书 $I_n(V)$ | ACC $(V,C(V))$ |
+|---|---|---|
+| 给完整 $S_{\delta'}(V)$ | **是** | **否**（只给候选点） |
+| 门槛无关 | **否**（固定 $\delta'$） | **是**（$C(V)$ 与 $\delta$ 无关） |
+| 可降门槛 | **否**（EQ′：需 $B_V$ 或 $V$） | **是**（同一 $C(V)$ 用于任意 $\delta$） |
+| 表示孤立点 | 退化区间 $[\alpha,\alpha]$ | 候选点 $j/(v{+}v')$ |
+| 规模 | $O(k\sigma)$ 区间 | $O(k^2\sigma)$ 候选 |
+
+**关键非等价：** 单门槛区间证书 $I_n(V)$ **不含**降门槛所需信息（EQ′：$(1,2,3,4)$ 与 $(1,3,4,7)$ 在 $1/5$ 同、$1/6$ 异）。ACC 的 $C(V)$ 与门槛无关，天然支持降门槛。
+
+---
+
+## §2 · 精确等价/非等价陈述（可公度速度）
+
+### §2.1 等价的部分
+
+**命题（本席，承 Opus）。** 可公度下，以下三者**输出同一安全时间**（若 $S_{\delta'}\ne\emptyset$）：
+1. 区间证书取某区间中点。
+2. ACC 取 $C(V)\cap(0,P/2]$ 中 $m_V$ 最大者。
+3. SPC 的 ARGMAX。
+
+三者都终止、确定性、给安全时间。**作为「产安全时间」的机制，等价。**
+
+### §2.2 非等价的部分
+
+**命题（本席）。** 以下**不等价**：
+1. **信息量：** 区间证书给 $S_{\delta'}$ 全貌（所有分量、宽度、测度）；ACC 只给离散候选，不含分量结构。
+2. **降门槛能力：** 单门槛区间表 $\nRightarrow$ 低门槛安全集（EQ′）；ACC 的 $C(V)$ 门槛无关，$\Rightarrow$ 任意门槛。
+3. **再生输入：** 区间证书再生需 $B_V$ 或原始 $V$；ACC 再生只需加 $u$ 的等差数列 $\{j/(u{+}v)\}$。
+
+**故：作为「选时机制」等价；作为「可再生证书」不等价——ACC 更强（门槛无关），区间证书更富（给完整分量）。**
+
+（第 1 段完）
+
+R026 2/4 Qwen
+第 2 段 / 共 3 段
+
+---
+
+## §3 · 降门槛所需的额外数据（主席裁决的精确化）
+
+### §3.1 单门槛区间表不足
+
+**主席已裁（承 EQ′）：** 仅保留 $S_{1/n}(V)$ 的区间表，**不能**精确算出 $S_{1/(n+1)}(V)$。
+
+**反例（Opus EQ′）：** $V=(1,2,3,4)$ 与 $V'=(1,3,4,7)$ 满足 $S_{1/5}(V)=S_{1/5}(V')=\{1/5,2/5,3/5,4/5\}+\mathbb{Z}$，但 $S_{1/6}(V)\ne S_{1/6}(V')$（密度 $5/36$ vs $8/63$）。故同一区间表对应两个不同的低门槛安全集。
+
+### §3.2 必须保留的额外数据
+
+**命题（本席）。** 要从门槛 $\delta$ 的证书精确降到 $\delta'$，必须额外保留**以下之一**：
+- **(i) 原始速度 $V$**：可直接重算 $m_V(t)=\min_v\|vt\|$ 在任意 $\delta'$ 的上水平集。
+- **(ii) 完整断点表 $B_V$**：编码 $m_V$ 的分段线性结构（断点位置 + 各段斜率），与门槛无关。
+- **(iii) ACC 的骨架 $C(V)$ 加速度 $V$**：$C(V)$ 门槛无关，配合 $V$ 可在任意 $\delta'$ 判定候选安全性。
+
+**单门槛区间表 $I_n(V)$ 不含 (i)(ii)(iii) 中任何一项**，故不能降门槛。
+
+### §3.3 本席 R025 更新算法的修正
+
+R025 §2.2 的「步 1（门槛松弛）」隐含使用了 $B_V$。按主席裁决，**必须显式写明**：更新算法的输入是 $(B_V,\,\delta,\,\delta',\,u)$，而非 $(I_n(V),\,u)$。修正后：
+
+**输入：** 断点表 $B_V$（或原始速度 $V$），旧门槛 $\delta$，新门槛 $\delta'$，新速度 $u$。
+**输出：** $S_{\delta'}(V\cup\{u\})$ 的极大区间表。
+
+此修正不改变算法复杂度（$B_V$ 规模仍 $O(k\sigma)$），但**明确了必要输入**。
+
+---
+
+## §4 · 骨架候选能否直接选取（不全枚举）
+
+### §4.1 可公度下：断点求值优于全候选枚举
+
+**全候选枚举（ACC 原文）：** 在 $C(V)\cap(0,P/2]$ 中逐点求 $m_V$，取最大。候选数 $|C(V)\cap(0,P/2]|\le k\sigma/2$（Opus §3）。复杂度 $O(k^2\sigma)$。
+
+**断点求值（本席观察）：** 由 LM，全局最大点是局部极大点，属 $C(V)$；由 SPC (S1)，$m_V$ 的最大值在**断点**处取得。断点数 $|B_V|\le k(\sigma+1)$（SZ），且 $B_V\subset C(V)$（LM）。故只需在 $B_V$ 上求值，复杂度 $O(k\sigma)$，**优于**全候选枚举。
+
+**命题（本席）：** 可公度下，选最优安全候选只需枚举 $B_V$（$O(k\sigma)$ 次 $m_V$ 求值），不需枚举全部 $C(V)$。
+
+### §4.2 能否「直接命中」而不枚举？
+
+**问：** 是否存在闭式规则，一步给出最优候选（跳过所有枚举）？
+
+**答：可公度下，否（一般情形）。** 理由：最优断点的位置依赖 $V$ 的具体数值，不同 $V$ 的最优断点来自不同的 $(v,v')$ 对。无统一闭式。
+
+**但：** 对**特殊族**可直接命中。例：
+- TF 族 $V=\lambda(1,\ldots,N)$：最优 $=1/(\lambda(N{+}1))$，闭式。
+- $V_2=(1,2,9,30)$：最优 $9/31=9/(1{+}30)$，来自最慢 $+$ 最快对。
+
+**一般闭式直接选取：UNFINISHED。**
+
+### §4.3 无理速度：无界枚举，非封闭构造
+
+ACC 对无理速度给可数骨架 $C(V)$，按确定次序排列，「有解必终止」。但**无显式步数上界**，故是**无界枚举**，不是封闭构造。本席遵守主席「不把无界搜索当封闭构造」，明写 **UNFINISHED**。
+
+---
+
+## §5 · 孤立点与正长度区间的双测试
+
+### §5.1 $V_1=(1,3,4,7)$：孤立点（$\delta=1/5$）
+
+$S_{1/5}(V_1)=\{1/5,2/5,3/5,4/5\}+\mathbb{Z}$（4 孤立点，R023 已证）。
+
+**骨架覆盖核验（本席手算）：**
+- $1/5=1/(1{+}4)$，$v{+}v'=5=1{+}4$。$\in C(V)$ ✓
+- $2/5=2/(1{+}4)$。$\in C(V)$ ✓
+- $3/5=3/(1{+}4)$。$\in C(V)$ ✓
+- $4/5=4/(1{+}4)$。$\in C(V)$ ✓
+
+**全部 4 个孤立点都在骨架 $C(V)$ 中。** HS 对孤立点成立。✓
+
+**降门槛膨胀（$\delta'=1/6$）：** 4 孤立点 $\to$ 6 区间（R025 §4，总测度 $8/63$）。骨架点仍在膨胀后的区间内。✓
+
+### §5.2 $V_2=(1,2,9,30)$：正长度区间（$\delta=1/5$）
+
+$S_{1/5}(V_2)$ 含正长度区间（非孤立）。
+
+**候选核验（本席手算）：**
+- 最优点 $9/31$：$9/31=9/(1{+}30)$，$v{+}v'=31=1{+}30$。$\in C(V)$ ✓
+- 另一安全时间 $1/4$：$1/4=(2\cdot0{+}1)/(2\cdot2)$，即 $(2j{+}1)/(2v)$ 形式，$v=2,j=0$。$\in C(V)$ ✓
+
+**$1/4$ 安全性复核：** $at=1/4$（$\|1/4\|=1/4$），$bt=1/2$（$\|1/2\|=1/2$），$ct=9/4$（$\|9/4\|=1/4$），$dt=15/2$（$\|15/2\|=1/2$）。全 $\ge1/5$。✓
+
+**正长度区间的最优/安全点都在骨架中。** HS 对正长度区间成立。✓
+
+### §5.3 结论：骨架一律覆盖两类配置
+
+孤立点（$V_1$）与正长度区间（$V_2$）的安全分量都含骨架点。这印证 HS 的「一律适用」。**但覆盖 $\ne$ 任意输入必有安全分量**（需存在性，见 (C)）。
+
+（第 2 段完）
+
+R026 2/4 Qwen
+第 3 段 / 共 3 段
+
+---
+
+## §6 · 主席四项强制区分（A/B/C/D）
+
+| 项 | 本席结论 | 依据 |
+|---|---|---|
+| **(A) 候选骨架存在** | **YES。** $C(V)=\{j/(v{+}v')\}\cup\{(2j{+}1)/(2v)\}$ 显式定义，非空。 | Opus §2；本席 §5 核验 |
+| **(B) 骨架覆盖每个已存在安全分量** | **YES（PROOF CANDIDATE）。** HS：对任意 $\delta$，$S_\delta(V)$ 每个连通分量含 $C(V)$ 点。孤立点与正长度区间一律适用。 | Opus HS + LM；本席 §5 双测试 |
+| **(C) 对任意输入骨架含成功候选** | **CONDITIONAL。** $C(V)$ 含安全点 $\iff S_{\delta'}(V)\ne\emptyset$ $\iff$ 该层存在性成立。**非骨架所能推出。** | NE-EQ（Opus §4）；本席 §5 仅验 $V_1,V_2$ |
+| **(D) 成功候选可由保证有限操作选出** | **可公度：YES。** 枚举 $B_V$（$O(k\sigma)$）或 $C(V)\cap(0,P/2]$（$O(k^2\sigma)$），有限终止。**无理速度：UNFINISHED**（无界枚举，无步数上界）。 | 本席 §4.1、§4.3 |
+
+**关键逻辑（主席强调）：**
+- **(B) $\nRightarrow$ (C)：** 骨架覆盖「已存在的」分量，但不保证分量存在。覆盖性 + 存在性 = 成功候选；缺存在性则骨架可能空交。
+- **(C) $\nRightarrow$ 直接公式：** 即使 (C) 成立，若无 (D) 的有限选取，仍不是可直接计算的构造。无理速度即此情形（有解必终止，但无界）。
+
+---
+
+## §7 · 账本
+
+**PROOF VALIDITY**
+- 区间证书与 ACC 输出等价（可公度，§1.2）：承 Opus ACC=SPC，PROOF CANDIDATE。
+- 信息不等价（§1.3，单门槛区间不能降门槛）：承 Opus EQ′，PROOF CANDIDATE。
+- 降门槛需 $V$ 或 $B_V$ 或 $(V,C(V))$（§3.2）：PROOF CANDIDATE（EQ′ 直接推论）。
+- 断点求值 $O(k\sigma)$ 优于全候选 $O(k^2\sigma)$（§4.1）：PROOF CANDIDATE（本席观察）。
+- 可公度下无闭式直接命中（一般情形，§4.2）：UNFINISHED（仅特殊族可闭式）。
+- 无理速度无界枚举非封闭构造（§4.3）：本席明写，承主席纪律。
+- $V_1$ 四孤立点 $\in C(V)$（§5.1）：CHECKED（本席手算 $1/(1{+}4)$ 等）。
+- $V_2$ 的 $9/31=9/(1{+}30)$、$1/4=(2\cdot0{+}1)/(2\cdot2)$ $\in C(V)$（§5.2）：CHECKED（本席手算）。
+- 保证对任意输入非空：UNFINISHED（$\equiv$ 该层存在性）。
+- 一般 $F_5$、$F_n$：UNFINISHED。
+
+**INDEPENDENT REVIEW**
+- 本席本轮未审阅他人成果（主席未分配）。
+- Opus LM/HS/ACC 由主席列为优先待审；本席未给审阅结论（无分配），仅 §5 作实例核验。
+- 本席 §1–§4 的等价/非等价陈述待非作者审阅。
+
+**NEW COVERAGE**
+- 本轮**不**主张新 $F_5$ 覆盖。证书比较与 (A)–(D) 区分是结构性结论。**NEW COVERAGE：NOT ESTABLISHED。**
+
+**COMPUTATIONAL CHECK**
+- §5.1 $V_1$ 四孤立点表为 $j/(1{+}4)$：本席手算。
+- §5.2 $V_2$ 的 $9/31$、$1/4$ 属 $C(V)$ 及 $1/4$ 四距离 $(1/4,1/2,1/4,1/2)$：本席手算。
+- 勘误 $\|13/24\|=11/24$、$\|23/42\|=19/42$：本席复核（$13/24>1/2$，故 $\|13/24\|=1{-}13/24=11/24$；$23/42>1/2$，故 $\|23/42\|=19/42$）。$u$-弧数 $=uP'$：本席接受。
+- 未用代码、未用随机测试、未做大规模穷举。
+
+---
+
+## 主席必答
+
+**Does your result supply an automatically regenerating guarantee?**
+
+**CONDITIONAL。**
+
+**自动再生的部分（承 ACC 结构）：**
+- 骨架 $C(V)$ **门槛无关**，对一切 $\delta$ 同时有效。
+- 加入新速度 $u$ 时，$C(V\cup\{u\})=C(V)\cup\{j/(u{+}v):v\in V\}\cup\{(2j{+}1)/(2u)\}$，**显式增加** $k{+}1$ 条等差数列。此再生**自动**。
+- 此点优于本席 R025 区间证书：后者降门槛需 $B_V$ 或 $V$，骨架 $C(V)$ 天然免更新。
+
+**不自动再生的部分：**
+- **非空保证 NE(V)：** 骨架含成功候选 $\iff$ $S_{\delta'}(V)\ne\emptyset$ $\iff$ 该层孤独跑者存在性。**不自动成立，不由构造推出。**
+- **无理速度的有限选取 (D)：** 骨架可数但无步数上界，**非封闭构造**。
+
+**精确表示与保证非空输出的区分（主席要求）：**
+- **精确表示：** 可公度下 $C(V)\cap(0,P/2]$ 有限、可算、可更新。✓
+- **保证非空输出：** 不成立（$\equiv$ 存在性）。✗
+- **二者不可混淆**：骨架保证「若有安全分量则碰到它」，不保证「必有安全分量」。
+
+**独立审阅状态：** 本席 §1–§4 待非作者审阅；Opus LM/HS/ACC 待主席安排的独立审阅；$V_1,V_2$ 核验为本席实例核对，不计为对 HS 的独立证明审阅。
+
+---
+
+（全文完）
+
+############ 回复格式 ############
+第一行写「R027 3/4 Kimi」（Track C）。先写 ANSWER BLOCK（≤300 中文字）。然后分别回答主席五问，每问只用 PROVED / CONDITIONAL / UNFINISHED：1. Candidate generation；2. Candidate success；3. Finite selection；4. Arbitrary real speeds；5. Uniform F_n induction。四个账本栏分开写：PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / UNFINISHED。审阅结论每项单独给：PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED，并写出逐项论证（笼统 VERIFIED 不计数）。
+区分：A 生成候选；B 证明成功候选存在；C 以有显式界的有限构造步骤选出。可计算搜索界即使成立，也不自动是 Tuzi 要的直接公式。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。先手证；代码只可核对，不可替代论证。作者不能升级自己的结果；只有主席裁决。不得用已知存在性定理代替显式构造。不要假设无理速度有有限共同周期。随机测试不能推出证明。不做大规模穷举。
+===== END =====
