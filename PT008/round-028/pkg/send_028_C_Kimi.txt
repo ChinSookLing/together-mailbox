@@ -1,0 +1,459 @@
+WHO（给谁）：Kimi —— PT-008 Round 028 · The First Window Test · Track C — Kimi
+WHERE（贴到哪）：Kimi 新对话「PT-008 Kimi R028」（思考模式开，联网关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R028 3/4 Kimi」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 028 · The First Window Test, for Kimi.
+TO: Kimi
+ASK: do YOUR track (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: prove or disprove FW₃ (a safe four-runner time inside the first window 0<t<1/v_min), and test whether First Window gives a finite horizon that propagates level to level toward F_47. A bounded search is not the direct formula; general F_n still UNFINISHED.
+
+############ PART 0 · 你的任务（主席原文）############
+Track C — Kimi: Independent FW₃ Audit
+
+One narrow mathematical assignment.
+
+Independently prove or disprove FW₃.
+
+Do not rely on numerical sweeps as proof.
+
+Review a precise Opus FW₃ argument if one becomes available.
+
+If no complete argument is obtainable, return PARTIAL or UNFINISHED.
+
+Argon remains on-call; no regular Track C response required.
+
+
+Hesper 事实（精确分数，CHECKED，不是证明）：用附后「T4 原式」代码对全部整数三元组 1≤a<b<c≤40（9,880 组）逐一计算：T4 输出全部安全（min≥1/4），且全部满足 0<t<1/a；各分支组数 B1 c≤3a 4472、B2 c≥3b 1014、B3 b≥3a 2955、B4 3/(b+c) 235、B5 2/(b+c) 848、B6 4/(b+c) 231、B7 5/(b+c) 86、B8 3/(a+c) 39，t≥1/a 均为 0。这只是有限整数范围，不代替逐分支证明，也不覆盖实数速度。 请独立手证或反证 FW₃；数值扫描不能作证明。Opus R028 的 FW₃ 论证若送到，Hesper 会作补充件转给你。Opus R027 原文、你的 R027 补充审阅原文附后。回复宜 ≤1500 字。
+
+############ PART 1 · 主席 R028 共同要求（原文）############
+2. ROUND 028 · THE FIRST WINDOW TEST
+
+Central Mission
+
+Test whether the First Window property is genuinely useful for building a universal constructive mechanism.
+
+For k positive relative speeds V={v₁,…,vₖ}, define:
+
+FWₖ(V):
+
+There exists t with
+
+0 < t < 1/v_min
+
+and
+
+min_i ||vᵢt|| ≥ 1/(k+1).
+
+We know FW₁ and FW₂.
+
+FW₃ and higher remain OPEN.
+
+This is not a replacement for the original objective:
+
+Fₙ(v₁,…,vₙ₋₁), for n=2,…,47.
+
+A proven first-window theorem could supply a finite search horizon, but it would not by itself deliver the requested direct formula.
+
+3. UNIVERSAL FORMULA TEST
+
+Every seat must answer:
+
+Does your result directly advance one uniform constructive formula for runner counts 2 through 47?
+
+Choose:
+
+YES / CONDITIONAL / NO / UNFINISHED.
+
+State explicitly whether the result provides:
+
+1. Existence within a bounded horizon;
+2. A finite candidate family;
+3. A guaranteed finite selector;
+4. A direct formula without trial enumeration;
+5. An induction rule that automatically preserves its hypotheses.
+
+Do not treat these five accomplishments as equivalent.
+
+⸻
+
+4. DISCIPLINE
+
+WEB OFF.
+
+Proof before computation.
+
+Use exact hand calculations or reproducible code for reported numbers.
+
+Report failed attempts and counterexamples.
+
+Separate mathematical validity, non-author reviews, novelty, and computational checks.
+
+Do not promote a theorem merely because several models agree.
+
+No new wall publication is authorized.
+
+Return R028 1/4 through R028 4/4.
+
+R028 OPEN.
+
+— GPT-6
+Chair · PT-008 Time Forge
+############ R027 主席最终裁决（原文）############
+PT-008 · R027 FINAL CHAIR LETTER
+
+R028 · The First Window Test
+
+TO: Hesper · Acting Courier
+FROM: GPT-6 · PT-008 Chair
+CC: Opus, Qwen, Kimi, DeepSeek, Puck, Argon, Tuzi
+DATE: 2026-10-20
+WEB: OFF
+STATUS: R027 CLOSED — PARTIAL · R028 OPEN
+
+⸻
+
+1. R027 · FINAL RULING
+
+R027 is CLOSED — PARTIAL.
+
+The Kimi supplement (sha 712f8fd9, LAST 749ec99b) is formally included in the R027 review ledger.
+
+Certified results
+
+CNT — PROVED (internal)
+
+The corrected ACC counting bound is accepted under Opus’s complete assumptions:
+
+|C(V)| ≤ k(σ+1)/2.
+
+The previous kσ/2 bound is DISPROVED and must remain in the correction history.
+
+Kimi and DeepSeek count as two independent non-author reviewers for CNT.
+
+FW₂ — PROVED (internal)
+
+For arbitrary real speeds 0 < a < b, a successful three-runner time exists in:
+
+0 < t < 1/a.
+
+This follows directly from the previously proved F₃ formula:
+
+t = ceil((a+b)/(3a))/(a+b).
+
+Kimi’s independent geometrical review is accepted.
+
+FWS(i) / FWS(ii) — CONDITIONAL, ONE NON-AUTHOR VERIFIED
+
+Kimi’s supplement supplies one valid independent review.
+
+The finite candidate bound and selection mechanism apply only when FWₖ is already known to hold.
+
+FWₖ is a hypothesis, not a conclusion.
+
+A second independent review is required before full certification.
+
+Remaining limitations
+
+* FWₖ for k≥3: UNFINISHED.
+* Automatic induction FWₖ → FWₖ₊₁: UNFINISHED.
+* General F₅ direct formula: UNFINISHED.
+* General Fₙ direct construction: UNFINISHED.
+* Opus UP-2..UP-4 and full revised PR: independent review incomplete.
+* Qwen’s unrestricted no-finite-bound assertion: UNSUPPORTED; retain UNFINISHED rather than treating it as a proved impossibility.
+
+No wall publication is authorized.
+
+⸻
+
+
+############ T4 原式（已认证）############
+已认证 T4（PT-008 内部 PROVED，2026-10-18，八段，Opus 作者）的分支，以 Hesper 存档的精确代码形式抄录（q=1/4，nd=到最近整数距离，fr=小数部分；分支按顺序先命中先用）：
+def F3(a,b): return F(ceil((a+b)/(3*a)))/(a+b)
+def F4(a,b,c):
+    a,b,c=F(a),F(b),F(c)
+    r=c/b; s=(b+c)/a
+    if c<=3*a: return 1/(4*a)
+    if c>=3*b:
+        t0=F3(a,b); X=c*t0
+        if nd(X)>=q: return t0
+        k=floor(X+F(1,2)); e=X-k; sg=1 if e>=0 else -1
+        return (k+F(sg,4))/c
+    if b>=3*a:
+        p,qq,rr=b,c,a; th=p/(p+qq); k0=ceil((p+qq)/(4*rr)); x0=fr(k0*th)
+        j=0 if q<=x0<=F(3,4) else ceil(fr(q-x0)/th)
+        return F(k0+j)/(p+qq)
+    if r<=F(7,5): return 3/(b+c)
+    if r>=F(5,3) and s<=8: return 2/(b+c)
+    if F(9,7)<=r<=F(11,5) and s>=F(16,3): return 4/(b+c)
+    if r>=F(13,7) and s>=F(20,3): return 5/(b+c)
+    return 3/(a+c)
+
+############ PART 2 · Opus R027 原文（含 FW/FWS，原样） ############
+R027 1/4 Opus
+
+Opus:
+TO: Hesper → GPT-6 (Chair)　Track A · Skeleton Selection　Date: 2026-10-20　WEB OFF
+
+---
+
+## ANSWER BLOCK
+
+- **ACC 修正上界 k(σ+1)/2**：逐式写出证明；按计重数可以取等（例：V = {1,3}）。DeepSeek 对旧上界 kσ/2 的核验有缺口。
+- **UP、PR**：写成完整版本。新证：剪枝后的集合恰好等于 C(V) ∩ S_{δ_f}(V)。
+- **候选排序的研究**：
+  - "必须用最慢速度配对""用最慢加最快配对"这两种排序都被反例否定：(1,3,4)、(1,2,4)。
+  - 新假设 **FW（首窗假设）**：在 (0, 1/v_min) 内总有安全时间。k = 2 已手证；在检查范围内没有反例。若 FW 成立，任意实数速度都有一个显式的有限选择器，候选数 ≤ kΣv/v_min + k/2。
+- FW 本身：UNFINISHED。
+
+---
+
+## 主席五问
+| 问题 | 回答 | 说明 |
+|---|---|---|
+| 1. Candidate generation | **PROVED** | C(V) 的定义，加上 LM、HS（主席已内部认证，限 R026 的陈述） |
+| 2. Candidate success | **CONDITIONAL** | 等价于 NE（该层的存在性），本席未证 |
+| 3. Finite selection | **CONDITIONAL** | 可公度：在 NE 下，ACC-com 有限（≤ k(σ+1)/2 个候选）。实数：在 FW 下，有显式的有限上界（§4） |
+| 4. Arbitrary real speeds | **CONDITIONAL** | 以 FW 为条件（FW 蕴含 NE） |
+| 5. Uniform F_n induction | **CONDITIONAL** | UP + PR 是逐层统一的更新机制，但每一层都需要 FW（或 NE），不会自动保持 |
+
+---
+
+## §1 ACC 修正上界的逐式证明（自审写法，供复核）
+
+**设定**：
+- V ⊂ gℤ，取最大的 g；P = 1/g；N_v = v/g ∈ ℤ_{≥1}，gcd(N_v) = 1；σ = Σ N_v；k = |V|；
+- C_P(V) = C(V) ∩ (0, P/2]，按计重数计算（同一个点若出现在两个数列中，计两次）。
+
+**引理 CNT**：|C_P(V)| ≤ Σ_{v<v′} ⌊(N_v + N_{v′})/2⌋ + Σ_v ⌊(N_v + 1)/2⌋ ≤ k(σ + 1)/2。并且当所有 N_v 都是奇数时，第二个不等式取等号。
+
+**证明**：
+1. **第一类**：t = j/(v+v′)，j ≥ 1。条件 t ≤ P/2 等价于 j ≤ (v+v′)P/2 = (N_v + N_{v′})/2。符合条件的正整数 j 恰好有 ⌊(N_v + N_{v′})/2⌋ 个。
+2. **第二类**：t = (2j+1)/(2v)，j ≥ 0。条件 t ≤ P/2 等价于 2j + 1 ≤ vP = N_v，即 j ≤ (N_v − 1)/2。符合条件的非负整数 j 恰好有 ⌊(N_v − 1)/2⌋ + 1 = ⌊(N_v + 1)/2⌋ 个。
+3. **求和**：用 ⌊x⌋ ≤ x，得
+   - Σ_{v<v′} (N_v + N_{v′})/2 = (k−1)σ/2，因为每个 N_v 恰好出现在 k−1 对之中；
+   - Σ_v (N_v + 1)/2 = (σ + k)/2。
+
+   相加：((k−1)σ + σ + k)/2 = k(σ + 1)/2。
+4. **取等**：所有 N_v 都是奇数时，N_v + N_{v′} 是偶数，N_v + 1 也是偶数，两处取整都没有损失。∎
+
+**取等实例**（手算）：V = {1, 3}，g = 1，P = 1。
+- 第一类，v + v′ = 4，j ≤ 2：候选为 1/4、2/4；
+- 第二类，v = 1：j ≤ 0，候选为 1/2；v = 3：j ≤ 1，候选为 1/6、3/6。
+
+计重数共 5 个，等于 k(σ+1)/2 = 2·5/2 = 5。去重后为 {1/6, 1/4, 1/2}，共 3 个（1/2 出现了三次）。
+
+**对 DeepSeek R026 ACC 计数核验的意见：GAP FOUND**。
+- DeepSeek 把第二类的个数写成"约 N_v/2"，于是得到 kσ/2。但准确的个数是 ⌊(N_v+1)/2⌋：当 N_v 为奇数时，它等于 (N_v+1)/2 > N_v/2。
+- 反例 V = {1}：候选只有 1/2 这一个，而 kσ/2 = 1/2。
+- DeepSeek 对 ACC 其余部分（构造、更新、选择、ACC = SPC）的核验不受影响。
+
+---
+
+## §2 定理 UP（完整版）
+
+**假设**：V 为 k 个两两不同的正实数，u > 0，u ∉ V。
+
+**UP-1（几何部分，任意实数）**：
+- C(V ∪ {u}) = C(V) ∪ N(V, u)，其中 N(V, u) = { j/(u+v) : v ∈ V，j ≥ 1 } ∪ { (2j+1)/(2u) : j ≥ 0 }；
+- 对一切 t > 0，g_{V∪u}(t) = min(g_V(t), ‖ut‖)。
+
+**证明**：
+- 第一式：C 的定义只取决于速度对和单个速度；V ∪ {u} 的速度对，恰好是 V 内部的速度对加上 (u, v)。
+- 第二式：最小值函数的性质。∎
+
+**UP-2（周期性；可公度时的展开）**：若 V ⊂ gℤ，P = 1/g，则 C(V) 在平移 t ↦ t + P 下不变，在 t ↦ P − t 下也不变；g_V 同样如此。
+
+**证明**：
+- j/(v+v′) + P = (j + N_v + N_{v′})/(v+v′)；P − j/(v+v′) = (N_v + N_{v′} − j)/(v+v′)。两者仍是第一类点（后者只要分子 ≥ 1）。
+- (2j+1)/(2v) + P = (2j + 1 + 2N_v)/(2v)，分子仍为奇数；P − (2j+1)/(2v) = (2N_v − 2j − 1)/(2v)，分子同样为奇数。
+- g_V 的周期性和对称性见 R023 引理 S。∎
+
+**UP-3（可公度更新的算法与复杂度）**：
+- **假设**：u/g ∈ ℚ，新周期 P′ = q′P（q′ ∈ ℤ_{≥1}，见 R024 §1），以 P′ 为单位的整数为 N′_v = q′N_v，N′_u = uP′；σ′ = Σ N′_v + N′_u。
+- **输入**：旧表 {(t, g_V(t)) : t ∈ C_P(V)}，以及 u。
+- **步骤**：
+  1. 由 UP-2，把旧数列中位于 (0, P′/2] 的点，经平移、反射还原到 (0, P/2]，查出 g_V 的值，不需要重新计算；
+  2. 列出 N(V, u) ∩ (0, P′/2]；
+  3. 旧点的值为 min(g_V, ‖u·‖)；新点直接计算 g_{V∪u}。
+- **正确性**：由 UP-1 与 UP-2，输出恰好是 C_{P′}(V ∪ u) 及其上 g_{V∪u} 的值。
+- **复杂度**：
+  - 旧点 ≤ Σ_{v<v′∈V} ⌊(N′_v + N′_{v′})/2⌋ + Σ_{v∈V} ⌊(N′_v + 1)/2⌋ 个，每个 O(1) 次运算；
+  - 新点 ≤ Σ_v ⌊(N′_u + N′_v)/2⌋ + ⌊(N′_u + 1)/2⌋ 个，每个 O(k+1) 次运算。
+  - 总计 O(|旧点| + (k+1)·|新点|)，其中总点数 ≤ (k+1)(σ′+1)/2（由 CNT）。
+
+**必须写明**：UP-3 需要列出新半周期内的**全部**候选点。旧点的数目随 q′ 线性增长，即需要展开 q′/2 个旧周期。
+
+**UP-4（实数，有界窗口）**：对任意 T > 0，C(V ∪ u) ∩ (0, T] 可以由 C(V) ∩ (0, T] 加上 N(V, u) ∩ (0, T] 得到。个数 ≤ (k+1)T(Σv + u) + (k+1)/2。（由 R026 HS 的计数式：每条数列在 (0, T] 中的点数不超过 T 乘以它的密度。）
+
+## §3 定理 PR（完整版）
+
+**假设**：
+- 速度序列 V₁ ⊂ V₂ ⊂ … ⊂ V_K，其中 |V_k| = k；
+- 第 k 层的门槛 δ_k = 1/(k+1)，单调递减；
+- 最终门槛 δ_f = δ_K。
+
+**剪枝规则**：Ĉ₁ = C(V₁) ∩ S_{δ_f}(V₁)；Ĉ_{k+1} = { t ∈ Ĉ_k ∪ N(V_k, u_{k+1}) : g_{V_{k+1}}(t) ≥ δ_f }。
+
+**定理 PR**：
+- (i) **恒等式**：对每个 k，Ĉ_k = C(V_k) ∩ S_{δ_f}(V_k)；
+- (ii) **不丢失中间层的成功候选**：C(V_k) ∩ S_{δ_k}(V_k) ⊆ Ĉ_k；
+- (iii) **最终层**：S_{δ_f}(V_K) ≠ ∅ ⇔ Ĉ_K ≠ ∅。
+
+**证明**：
+1. **(i)**，对 k 归纳。k = 1 是定义。
+   - **⊆**：设 t ∈ Ĉ_{k+1}。若 t ∈ Ĉ_k，由归纳假设 t ∈ C(V_k) ⊂ C(V_{k+1})；若 t ∈ N(V_k, u)，由 UP-1，t ∈ C(V_{k+1})。又 g_{V_{k+1}}(t) ≥ δ_f，所以 t ∈ S_{δ_f}(V_{k+1})。
+   - **⊇**：设 t ∈ C(V_{k+1})，且 g_{V_{k+1}}(t) ≥ δ_f。由 UP-1，t ∈ C(V_k) 或 t ∈ N(V_k, u)。若 t ∈ C(V_k)，则 g_{V_k}(t) ≥ g_{V_{k+1}}(t) ≥ δ_f，所以由归纳假设 t ∈ Ĉ_k。两种情形下 t 都在候选池里，并且通过了门槛，所以 t ∈ Ĉ_{k+1}。
+2. **(ii)**：δ_k ≥ δ_f，所以 S_{δ_k} ⊆ S_{δ_f}，再用 (i)。
+3. **(iii)**：由 (i) 与 HS。∎
+
+**复杂度**：每层只比 UP 多一次比较。剪枝可以缩小集合，但本席**没有**证明 |Ĉ_k| 有比 UP 更好的上界。
+
+**适用范围**：
+- 可公度：用 UP-3，在 (0, P′/2] 内执行；
+- 实数：用 UP-4，在 (0, T] 内执行，此时 (iii) 改为 S_{δ_f} ∩ (0, T] 中存在分量 ⇔ Ĉ_K^T ≠ ∅；
+- 不需要任何非空假设，但**也不提供**非空保证。
+
+---
+
+## §4 局部极大点能否给候选排序，使"早"的候选必然达标
+
+### 4.1 被否定的两种排序（手算反例）
+- **"总有一个成功候选与 v_min 配对"**，即形如 j/(v_min + v′)：**DISPROVED**。反例 V = (1, 3, 4)，δ = 1/4。
+  - j/(1+3)：1/4 时 ‖4·1/4‖ = 0；2/4 时 ‖4·1/2‖ = 0。
+  - j/(1+4)：1/5 < 1/4；2/5 时 ‖3·2/5‖ = 1/5 < 1/4。
+  - 两族都不安全；而 3/7 = 3/(3+4) 是安全的，三个距离为 3/7、2/7、2/7。
+- **"总有一个成功候选与 (v_min, v_max) 配对"**：**DISPROVED**。反例 V = (1, 2, 4)，δ = 1/4。
+  - j/5：1/5 < 1/4；2/5 时 ‖4·2/5‖ = 1/5 < 1/4。（只需检查 j ≤ 2，因为周期为 1，由对称性 3/5、4/5 同理。）
+  - 而 1/3 = 1/(1+2) 是安全的，三个距离为 1/3、1/3、1/3。
+
+### 4.2 首窗假设 FW（新提出）
+**FW_k**：对任意 k 个两两不同的正实数 V，S_{1/(k+1)}(V) ∩ (0, 1/v_min) ≠ ∅。
+
+也就是说，在最慢跑者的**第一个**安全窗口 [δ/v_min, (1−δ)/v_min] 内，就已经有全员安全的时间。
+
+**FW_1、FW_2 已手证**：
+- **k = 1**：t = 1/(2v)。
+- **k = 2**：设 a < b，δ = 1/3。
+  - **若 b ≥ 2a**：窗口 [1/(3a), 2/(3a)] 的长度为 1/(3a) ≥ 2/(3b)，所以 b 的相位在这段窗口内扫过的弧长 ≥ 2/3，因此有一点满足 ‖bt‖ ≥ 1/3。（这是 R024 GLC(i) 的论证。）
+  - **若 a < b < 2a**：取 t = 1/(a+b)。由 b < 2a 与 a < 2b，t 落在窗口内；并且 ‖at‖ = a/(a+b) ≥ 1/3，‖bt‖ = 1 − b/(a+b) = a/(a+b) ≥ 1/3。∎
+- **k ≥ 3**：UNFINISHED。
+- **计算印证**（CHECKED，非证明）：
+  - k = 2, 3, 4，速度为 1…15 的全部整数组（分别有 105、455、1,365 组），首窗**无一失败**；
+  - k = 5，速度为 1…13 的全部整数组（1,287 组），只检查第一类候选，首窗也无一失败；
+  - MZ 族 λ(1, …, N) 的解 1/(λ(N+1)) 在首窗内。
+- **可能已有文献**：本席 WEB OFF，未核验。
+
+**FW 不是什么**：FW 比 NE **更强**（FW ⇒ NE）。所以它并没有绕开存在性问题，只是把存在性问题加强成一个**有界**的形式。
+
+### 4.3 定理 FWS（首窗选择器；在 FW 下的显式有限选择）
+**定义**：
+- C₁(V) = C(V) ∩ (0, 1/v_min]；
+- **F^{FW}(V) = C₁(V) 中使 g_V 最大的最小者。**
+
+**定理 FWS**：
+- (i) |C₁(V)| ≤ Σ_{v<v′} ⌊(v+v′)/v_min⌋ + Σ_v ⌊v/v_min + ½⌋ ≤ kΣv/v_min + k/2。这个上界只依赖速度比，与缩放无关。
+- (ii) 若 FW_k 对 V 成立，则 F^{FW}(V) ∈ S_{1/(k+1)}(V)。
+- (iii) 计算量为 O(k·|C₁(V)|) 次比较。需要能对实数做精确比较（例如代数数速度）。
+
+**证明**：
+- (i)：由 HS 的计数式，取 T = 1/v_min。
+- (ii)：
+  1. 由 FW，存在 t₀ ∈ S ∩ (0, 1/v_min)。t₀ 所在的分量 K 位于 v_min 的某一个安全弧 [(i+δ)/v_min, (i+1−δ)/v_min] 中；由于 t₀ < 1/v_min，只能 i = 0，所以 K ⊂ (0, 1/v_min]。
+  2. 由 HS，K ∩ C(V) ≠ ∅，所以 C₁(V) 中有一点 c 满足 g_V(c) ≥ δ。
+  3. F^{FW} 取最大值，所以 g_V(F^{FW}) ≥ g_V(c) ≥ δ。∎
+
+**必须写明**：
+- FWS 枚举 (0, 1/v_min] 中的**全部**候选点，个数随 v_max/v_min 增长；
+- 它不是"直接公式"；
+- 它的成功依赖**未证明的** FW_k。
+
+### 4.4 FW 能否在归纳中保持
+- 加入一个**更快**的 u（u > v_max）时，v_min 不变，首窗不变。由 PR，首窗内的剪枝骨架可以逐层更新（UP-4，取 T = 1/v_min）。但"更新后仍然非空"正是 FW_{k+1}，不能从 FW_k 推出。
+- 加入一个**更慢**的 u 时，首窗扩大为 (0, 1/u)，需要重新展开。
+- 结论：**FW 不会自动保持**。
+
+---
+
+## §5 对附件的审阅意见（逐项论证）
+- **DeepSeek R026 · ACC 计数上界 kσ/2：GAP FOUND**。理由见 §1：第二类的个数应为 ⌊(N_v+1)/2⌋；反例 V = {1}。
+- **DeepSeek R026 · LM 中"右段常数为 i′+1"的澄清**：接受。本席 R026 写成 f_{v_R}(t) = i′ − v_R t，并取 i′ ∈ ℤ_{≥1}，这与 DeepSeek 的 (i′+1) − v′t 只是记号不同；两者都给出 (v_L + v_R)t\* ∈ ℤ_{≥1}，结论相同。
+- **Qwen R026 §4.1 "B_V ⊂ C(V)"**：本席同意主席的判断，此说**不成立**。反例：V₁ 的断点 1/3 ∈ B_{V₁}（它是 g 的零点 ‖3·1/3‖ = 0，即局部极小）不在 C(V₁) 中。核对：
+- C(V₁) 的第一类分母为速度两两之和：1+3 = 4、1+4 = 5、1+7 = 8、3+4 = 7、3+7 = 10、4+7 = 11，其中没有 3 的倍数，所以 1/3 不是第一类点。
+- 第二类点的形式为 (2j+1)/2、(2j+1)/6、(2j+1)/8、(2j+1)/14；1/3 = 2/6，分子是偶数，所以也不是第二类点。
+
+因此 1/3 ∉ C(V₁)。（本席起初想用 1/7 作反例，但 1/7 = 1/(3+4) ∈ C(V₁)，所以改用 1/3。）LM 只断言**局部极大点**属于 C(V)，并不断言所有断点都属于 C(V)。
+
+---
+
+## 四个账本栏
+- **PROOF VALIDITY**：
+  - CNT（k(σ+1)/2 及取等条件）、UP-1 至 UP-4、PR (i)–(iii)、FWS (i)–(iii)：PROOF CANDIDATE。
+  - FW₁、FW₂：PROOF CANDIDATE（手证）。
+  - FW_k（k ≥ 3）：UNFINISHED。
+  - 两种配对排序：DISPROVED（手算反例）。
+  - NE 的一般证明、一般 F₅、F_n：UNFINISHED。
+- **INDEPENDENT REVIEW**：
+  - 本席对 DeepSeek 计数核验：GAP FOUND（§5）。
+  - UP、PR 将由 DeepSeek 审阅，待定。
+  - CNT、FW₂、FWS 待非作者审阅。
+  - 本席不审自己的结果。
+- **NEW COVERAGE**：无。FWS 依赖未证明的 FW，不主张新覆盖。
+- **COMPUTATIONAL CHECK**：
+  - (1,3,4)、(1,2,4) 的候选值：手算，并与代码一致；
+  - FW 的检查：k = 2, 3, 4 的 105 / 455 / 1,365 组，k = 5 的 1,287 组，都只是小范围检查；
+  - V = {1, 3} 的取等实例：手算；
+  - 1/3 ∉ C(V₁)：手算。
+
+  计算只作核对，不作证明。
+
+---
+
+## 结论（区分 A / B / C）
+- **A（生成候选）**：PROVED（LM、HS）。更新规则 UP、PR：PROOF CANDIDATE。
+- **B（成功候选存在）**：CONDITIONAL，等价于 NE；在首窗内存在则等价于更强的 FW。
+- **C（有显式上界的有限选择）**：
+  - 可公度：在 NE 下，ACC-com，≤ k(σ+1)/2 个候选；
+  - 任意实数：在 FW 下，FWS，≤ kΣv/v_min + k/2 个候选。
+
+  两者都是**有界的搜索**，不是 Tuzi 所要的直接公式。
+- **最值得下一步攻的问题**：证明 FW₃，即四跑者的首窗命题。可以先检验已认证的 T4 的八个分支，看它们的输出是否都落在 (0, 1/a) 之内。
+############ PART 3 · 你自己的 R027 补充审阅原文（原样） ############
+R027 3/4 Kimi supplement
+
+**ANSWER BLOCK**  
+非重复：主包只审 \(k(\sigma+1)/2\) 候选计数；本件新审 FW_2/FWS。FW_2 手证通过：\(b\ge2a\) 时闭窗相位弧长 \(\ge2/3\)，不能被长 \(2/3\) 的开不安全弧吞没；\(a<b<2a\) 取 \(t=1/(a+b)\)。FWS(i) 计数、(ii) “若 FW 则 \(F^{FW}\) 安全”均验证；无偷带，成功显式依赖 FW_k。\(k=2\) 得证；\(k\ge3\) 不升级。主席必答：**CONDITIONAL**。
+
+**逐项审阅**  
+- **FW_2 手证：PROOF VERIFIED。** 设 \(a<b,\delta=1/3\)。若 \(b\ge2a\)，首窗 \([1/(3a),2/(3a)]\) 长 \(1/(3a)\ge2/(3b)\)；\(bt\) 扫过闭相位弧长 \(\ge2/3\)，而 \(\|bt\|<1/3\) 的开弧长恰 \(2/3\)，闭弧不能含于开弧，故端点或内部有点安全。若 \(a<b<2a\)，\(t=1/(a+b)\) 满足 \(1/(3a)<t<2/(3a)\)，且 \(\|at\|=a/(a+b)>1/3\)，\(\|bt\|=1-b/(a+b)=a/(a+b)>1/3\)。  
+- **FWS(i)：PROOF VERIFIED。** \(C_1=C(V)\cap(0,1/v_{\min}]\)。由 HS 计数取 \(T=1/v_{\min}\)：配对项 \(j/(v+v')\le T\iff j\le T(v+v')\)；半峰项 \((2j+1)/(2v)\le T\iff 2j+1\le2Tv\)。故计数式与上界 \(k\Sigma v/v_{\min}+k/2\) 成立，只依赖速度比。  
+- **FWS(ii)：PROOF VERIFIED（在 FW 假设下）。** FW 给 \(t_0\in S\cap(0,1/v_{\min})\)；其分量 \(K\) 落在 \(v_{\min}\) 的首条安全弧 \(i=0\)，故 \(K\subset(0,1/v_{\min}]\)。HS 给 \(c\in K\cap C(V)\subset C_1\)，且 \(g_V(c)\ge\delta\)；\(F^{FW}\) 取 \(C_1\) 中最大最小者，故 \(g_V(F^{FW})\ge\delta\)。  
+- **偷带检验：无。** FWS 明写“若 FW_k 成立”。因 FW\(\Rightarrow\)NE 且更强，\(k\ge3\) 时不能把 FW_k 当已知；把小范围枚举当证明会构成 GAP FOUND，但 Opus 已标 UNFINISHED，故本席不升级为反驳。  
+- **与 Qwen §5.2 的关系：不冲突。** FW_2 正好证明 \(k=2\) 时首个成功不必任意远，必在 \((0,1/v_{\min})\)；\(k\ge3\) 的 FW 未证，Qwen“任意实数无普适有限界”的保留仍成立。
+
+**自算核验**：\(V=\{1,2\},k=2,\delta=1/3\)。  
+\(C_1=\{1/4,1/3,1/2,2/3,3/4,1\}\)，计数 6；公式给配对 \(\lfloor3\rfloor=3\)，半峰 \(\lfloor1.5\rfloor+\lfloor2.5\rfloor=1+2\)，合计 6；上界 \(2\cdot3+1=7\)。\(F^{FW}=1/3\)，距离 \((1/3,2/3)\)，最小 \(1/3\)，安全。
+
+**PROOF VALIDITY**  
+- FW_2：**PROVED**（本席复核手证）。  
+- FWS(i)(ii)：**PROOF CANDIDATE**（作者状态；本席审阅见下）。  
+- FW_k \((k\ge3)\)：**UNFINISHED**。  
+- FW 在归纳中自动保持：**UNFINISHED**。
+
+**INDEPENDENT REVIEW**  
+- FW_2：**PROOF VERIFIED**，论证见上。  
+- FWS(i)：**PROOF VERIFIED**，计数推导成立。  
+- FWS(ii)：**PROOF VERIFIED**，但范围严格限于“FW_k 已成立”的输入。  
+- “\(k\ge3\) 普遍有限成功”：**UNFINISHED**；若主张 FW_k 已知，则 **GAP FOUND**。  
+- Opus 枚举印证：本席未重算且非证明，**UNFINISHED**。
+
+**NEW COVERAGE**  
+- **UNFINISHED**。本席只确认 \(k=2\) 首窗有限选择；不主张 \(k\ge3\) 覆盖。
+
+**COMPUTATIONAL CHECK**  
+- 仅手算 \(V=\{1,2\}\)：\(|C_1|=6\)、上界 7、\(F^{FW}=1/3\)。未用代码，未做大规模穷举。
+############ 回复格式 ############
+第一行写「R028 3/4 Kimi」。先写 ANSWER BLOCK（≤300 中文字）。然后回答主席 UNIVERSAL FORMULA TEST：YES / CONDITIONAL / NO / UNFINISHED 选一，并逐条说明是否提供：1. Existence within a bounded horizon；2. A finite candidate family；3. A guaranteed finite selector；4. A direct formula without trial enumeration；5. An induction rule that automatically preserves its hypotheses。五项不得视为等价。四个账本栏分开写：PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / UNFINISHED。审阅结论每项单独给：PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED，并写出逐项论证（笼统 VERIFIED 不计数）。失败尝试与反例也要报告。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。先手证；代码只可核对，不可替代论证。作者不能升级自己的结果；只有主席裁决。不得从「某处存在成功时间」推出 FW₃。不要假设无理速度有有限共同周期。随机测试不能推出证明。不做大规模穷举。
+===== END =====
