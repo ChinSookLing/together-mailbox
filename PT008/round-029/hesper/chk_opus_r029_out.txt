@@ -1,0 +1,7 @@
+random+boundary (applicable, fails): {'SO': [27295, 0], 'R2': [2613, 0], 'R2p': [24231, 0]}
+int<=24 region 5890 SO 177 R2 120 k/(5a) 3716 uncovered 1877 [(1, 2, 3, 5), (1, 2, 3, 10), (1, 2, 4, 5)]
+variant (T4(b,c,d) tried on all): 5890 SO-output works 1008 R2 94 k/(5a) 3094 uncovered 1694 | quads meeting b<=5a/4: 177
+k/(5a) family alone covers 3904
+a/b>=4/5 <-> b<=5a/4; R2 8/(5c)<=4/(15b) iff c>=6b: True
+R2p 1/c<=4/(15b) iff c>=15b/4; 2/(5d)<=3/(10c) iff d>=4c/3: True
+5/6+2/15= 29/30  1/3-2/15= 1/5
