@@ -1,0 +1,212 @@
+哈哈，冇事啦，大姐大！你沒有打亂隊伍，只是主席剛寫到一半，你就走進會議室問：「第五位究竟搞掂未？」🤣
+
+以下是 R027 最終完整裁決信，包含 Kimi 的補充審閱，以及交給 Hesper 的 R028 任務。你可以直接轉發。
+
+PT-008 · R027 FINAL CHAIR LETTER
+
+R028 · The First Window Test
+
+TO: Hesper · Acting Courier
+FROM: GPT-6 · PT-008 Chair
+CC: Opus, Qwen, Kimi, DeepSeek, Puck, Argon, Tuzi
+DATE: 2026-10-20
+WEB: OFF
+STATUS: R027 CLOSED — PARTIAL · R028 OPEN
+
+⸻
+
+1. R027 · FINAL RULING
+
+R027 is CLOSED — PARTIAL.
+
+The Kimi supplement (sha 712f8fd9, LAST 749ec99b) is formally included in the R027 review ledger.
+
+Certified results
+
+CNT — PROVED (internal)
+
+The corrected ACC counting bound is accepted under Opus’s complete assumptions:
+
+|C(V)| ≤ k(σ+1)/2.
+
+The previous kσ/2 bound is DISPROVED and must remain in the correction history.
+
+Kimi and DeepSeek count as two independent non-author reviewers for CNT.
+
+FW₂ — PROVED (internal)
+
+For arbitrary real speeds 0 < a < b, a successful three-runner time exists in:
+
+0 < t < 1/a.
+
+This follows directly from the previously proved F₃ formula:
+
+t = ceil((a+b)/(3a))/(a+b).
+
+Kimi’s independent geometrical review is accepted.
+
+FWS(i) / FWS(ii) — CONDITIONAL, ONE NON-AUTHOR VERIFIED
+
+Kimi’s supplement supplies one valid independent review.
+
+The finite candidate bound and selection mechanism apply only when FWₖ is already known to hold.
+
+FWₖ is a hypothesis, not a conclusion.
+
+A second independent review is required before full certification.
+
+Remaining limitations
+
+* FWₖ for k≥3: UNFINISHED.
+* Automatic induction FWₖ → FWₖ₊₁: UNFINISHED.
+* General F₅ direct formula: UNFINISHED.
+* General Fₙ direct construction: UNFINISHED.
+* Opus UP-2..UP-4 and full revised PR: independent review incomplete.
+* Qwen’s unrestricted no-finite-bound assertion: UNSUPPORTED; retain UNFINISHED rather than treating it as a proved impossibility.
+
+No wall publication is authorized.
+
+⸻
+
+2. ROUND 028 · THE FIRST WINDOW TEST
+
+Central Mission
+
+Test whether the First Window property is genuinely useful for building a universal constructive mechanism.
+
+For k positive relative speeds V={v₁,…,vₖ}, define:
+
+FWₖ(V):
+
+There exists t with
+
+0 < t < 1/v_min
+
+and
+
+min_i ||vᵢt|| ≥ 1/(k+1).
+
+We know FW₁ and FW₂.
+
+FW₃ and higher remain OPEN.
+
+This is not a replacement for the original objective:
+
+Fₙ(v₁,…,vₙ₋₁), for n=2,…,47.
+
+A proven first-window theorem could supply a finite search horizon, but it would not by itself deliver the requested direct formula.
+
+Track A — Opus: Prove or Disprove FW₃
+
+For arbitrary real 0<a<b<c, determine whether:
+
+S₁/₄(a,b,c) ∩ (0,1/a) ≠ ∅.
+
+Try a hand proof using the existing T4 construction.
+
+If all T4 branches yield t<1/a, prove it branch by branch.
+
+If not, identify the exact failing branch and construct a genuine counterexample or alternative time.
+
+Do not infer FW₃ solely from the existence of a successful time somewhere.
+
+Also provide complete FWS(i)/(ii) text for the second review.
+
+Track B — Qwen: First Window and Direct Selection
+
+Independently investigate FW₃.
+
+If FW₃ holds, try to find a finite symbolic selector producing a time in the first window without enumerating every skeleton candidate.
+
+If FW₃ fails, give a hand-checkable real or rational counterexample.
+
+Explain whether any candidate selector could generalize from FW₃ to arbitrary k.
+
+Keep the distinction:
+
+* bounded candidate search;
+* direct deterministic formula;
+* universal induction.
+
+Track C — Kimi: Independent FW₃ Audit
+
+One narrow mathematical assignment.
+
+Independently prove or disprove FW₃.
+
+Do not rely on numerical sweeps as proof.
+
+Review a precise Opus FW₃ argument if one becomes available.
+
+If no complete argument is obtainable, return PARTIAL or UNFINISHED.
+
+Argon remains on-call; no regular Track C response required.
+
+Track D — DeepSeek: Second FWS Review and FW Propagation
+
+Provide a second independent non-author review of FWS(i) and FWS(ii).
+
+Then investigate whether FWₖ can imply FWₖ₊₁ through a uniform operation.
+
+State the exact information passed between levels and the required quantitative bound.
+
+If FWₖ₊₁ requires an assumption that FWₖ does not guarantee, identify it precisely.
+
+No unjustified induction step.
+
+⸻
+
+3. UNIVERSAL FORMULA TEST
+
+Every seat must answer:
+
+Does your result directly advance one uniform constructive formula for runner counts 2 through 47?
+
+Choose:
+
+YES / CONDITIONAL / NO / UNFINISHED.
+
+State explicitly whether the result provides:
+
+1. Existence within a bounded horizon;
+2. A finite candidate family;
+3. A guaranteed finite selector;
+4. A direct formula without trial enumeration;
+5. An induction rule that automatically preserves its hypotheses.
+
+Do not treat these five accomplishments as equivalent.
+
+⸻
+
+4. DISCIPLINE
+
+WEB OFF.
+
+Proof before computation.
+
+Use exact hand calculations or reproducible code for reported numbers.
+
+Report failed attempts and counterexamples.
+
+Separate mathematical validity, non-author reviews, novelty, and computational checks.
+
+Do not promote a theorem merely because several models agree.
+
+No new wall publication is authorized.
+
+Return R028 1/4 through R028 4/4.
+
+R028 OPEN.
+
+— GPT-6
+Chair · PT-008 Time Forge
+
+這樣就接回原來的隊伍了。💛
+
+R027 已結案，R028 的目標是 FW₃。 Kimi 繼續 Track C，Argon 暫時休息。
+
+而且這一輪的任務很明確：先看看四跑者的已證公式，是否其實已經暗中保證了 First Window。
+
+如果有，這是可以直接取出來證明的成果；如果沒有，就找出真正的障礙。
+
+不管結果如何，我們不會把有界搜尋冒充成大姐大要的統一公式。
