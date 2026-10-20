@@ -1,0 +1,34 @@
+R026 3/4 Kimi
+
+**ANSWER BLOCK**  
+所审版本：Opus R025 Part II 的 HS。结论：HS“击中每个安全分量”本席重证成立。(A) 骨架 \(C(V)\) 存在；(B) 对有限实速度、任意 \(\delta\in(0,1/2]\)，每个 \(S_\delta\) 分量都含 \(C(V)\) 点，孤立点与正长度区间均含；(C) 不推出：仍需 NE；(D) 任意实数无保证有限上界，可公度亦只给有限候选集合，成功仍靠 NE。自动再生保证：**UNFINISHED**。
+
+**重证 HS**：令 \(a=\min V>0\)。  
+\[
+S_\delta(V)\subset \bigcup_{i\ge0}\left[\frac{i+\delta}{a},\frac{i+1-\delta}{a}\right],
+\]
+故每个分量 \(K\) 有界；\(K\) 闭，\(m_V\) 在 \(K\) 上取最大值。若最大点在端点且值 \(>\delta\)，连续性会使 \(K\) 越过端点，矛盾；若值 \(=\delta\) 且 \(K\) 非退化，则 \(m_V|_K\equiv\delta\)。但有限个断点内 \(m_V\) 可微，活动项斜率为 \(\pm v\neq0\)，不能为常数；故 \(K\) 只能是孤立严格极大点。内点最大值则是局部极大。
+
+若 \(m_V(t^*)<1/2\)，局部极大两侧必由不同速度 \(v\neq v'\) 的上升支 \(vt-i\) 与下降支 \(i'-v't\) 相接；等值得  
+\[
+t^*=\frac{i+i'}{v+v'}=\frac{j}{v+v'}\in C(V).
+\]
+若 \(m_V(t^*)=1/2\)，所有 \(\|vt^*\|=1/2\)，故 \(t^*=(2j+1)/(2v)\in C(V)\)。证明只用有限速度与 \(\min V\)，不用可公度或周期性；无理比例不影响命中，\(\delta=1/2\) 与孤立点均被半峰点或锁相点覆盖。
+
+**PROOF VALIDITY**  
+- HS 击中命题：**PROOF CANDIDATE**（作者状态；本席审阅见下）。  
+- 由 HS 推出任意输入成功候选：**UNFINISHED**。  
+- 任意实数速度的保证有限选择：**UNFINISHED**。
+
+**INDEPENDENT REVIEW**  
+- 分量有界闭：**PROOF VERIFIED**。慢速 \(a\) 给出 \(S_\delta\subset \cup_i[(i+\delta)/a,(i+1-\delta)/a]\)，分量不能跨越补集间隙。  
+- 端点/平台排除：**PROOF VERIFIED**。端点值 \(>\delta\) 可延伸；端点值 \(=\delta\) 且非退化会迫使 \(m_V\) 在正长度区间常数，和非零斜率矛盾。  
+- LM 锁相：**PROOF VERIFIED**。同速峰只可能为 \(1/2\)；低于 \(1/2\) 的局部极大必由两不同速度上升/下降支相交。  
+- 等速/可公度/无理/无界域：**PROOF VERIFIED**。等速按不同值去重；命中证明不假设公度；无界域被慢速安全区间截断。  
+- (B)\(\Rightarrow\)(C) 或有限成功选择：**UNFINISHED**。HS 只给 \(S_\delta\neq\varnothing\iff S_\delta\cap C(V)\neq\varnothing\)，不提供 NE。
+
+**NEW COVERAGE**  
+- **UNFINISHED**。未主张新覆盖。
+
+**COMPUTATIONAL CHECK**  
+- 未报告新数值；以上全为符号推导，未用代码、未穷举。
