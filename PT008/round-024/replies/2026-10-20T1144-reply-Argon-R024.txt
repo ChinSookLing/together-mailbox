@@ -1,0 +1,33 @@
+R024 3/4 Argon
+ANSWER BLOCK
+本轮审阅Opus的安全剖面证书（SPC）。SPC通过ARGMAX选出的时间t^*$是否安全完全取决于$\kappa(V) \ge 1/n。若输入速度集无安全时间，ARGMAX仍会盲目输出最大局地峰值 t^*，导致距离低于门槛。因此SPC具备有效表示与更新（A与B），但缺乏无条件安全保证（C）。
+Track A / B 候选证书审阅：Opus 安全剖面证书 (SPC)
+主席六问评定表（针对 Opus SPC）
+ * Finite representation? YES（有理速度下，周期 P_V 内的断点表 B_V 具有显式多项式上界 \vert{}B_V\vert{} \le (n-1)(\sigma+1)）。
+ * Effective update? YES（通过 ADD(u) 的周期展开、断点合并与线性求交，可由 I_n(V) 确定性算出 I_{n+1}(V \cup \{u\})）。
+ * Guaranteed nonempty output? NO（ARGMAX 总是输出断点表中的全局最大值 t^* 及其局地峰值 \kappa(V)，但当速度集在特定门槛下无安全时间时，\kappa(V) < 1/n，输出的时间 t^* 是不安全的）。
+ * Deterministic safe-time selection? YES（ARGMAX 是一步闭式断点比较，无任何无界搜索）。
+ * Applicable to arbitrary real speeds? NO（严格依赖有理速度的有限共同周期与分段线性断点表，对无理速度不适用）。
+ * Automatically preserved under induction? NO（加入新速度 u 并降门槛至 1/(n+1) 后，更新后的 \kappa(V \cup \{u\}) 可能跌破新门槛，非空性与余量不自动保持）。
+手算反例与结构分析（Falsification of Guarantee Claim C）
+ * 断言：SPC 的 ARGMAX 选择器能够为任意有理输入提供保证成功的安全时间 t^*。
+ * 反例分析（DISPROVED）：
+   设 V 为任意在当前门槛 1/n 下无解的速度集（例如某些高维拥挤速度集或人工构造的无解区间）。由 Opus §3 规则 (O1) ARGMAX，\kappa(V) = \max_i m_V(t_i) 仍然是一个良定义的有理数，程序会机械地输出取得该最大值的断点 t^*。然而，如果此时 \kappa(V) < 1/n，则 \min_{v \in V} \Vert{}v t^*\Vert{} = \kappa(V) < 1/n，该输出 t^* 违反安全门槛。
+ * 结论：SPC 成功实现了 (A) 表示 与 (B) 更新，但其输出是否满足 (C) 保证 完全外包给外部的存在性定理。若无独立保证，ARGMAX 会盲目输出不安全时间。
+四栏分账（REQUIRED LEDGER）
+ * PROOF VALIDITY：
+   * Opus SPC 的有限表示与有理更新（引理 S、定理 SZ、操作 O1–O3）：PROOF CANDIDATE。
+   * Opus SPC 作为无条件保证机制（Claim C）：DISPROVED（SPC 本身不具内禀的非空保证，其实际输出安全性等价于孤独跑者命题本身）。
+   * 无限制 F_5 与一般 F_n：UNFINISHED。
+ * INDEPENDENT REVIEW：
+   * Opus SPC 的有限表示与更新算法：PROOF VERIFIED（数据结构闭式良定义，无隐藏搜索）。
+   * Opus SPC 的无条件保证输出：DISPROVED。
+ * NEW COVERAGE：
+   * 本轮为不变量证伪与表示审查，不提交新覆盖盒（记为 NEW COVERAGE UNFINISHED）。
+ * COMPUTATIONAL CHECK：
+   * SPC 断点表上界 \vert{}B_V\vert{} \le (n-1)(\sigma+1) 及其分段线性插值逻辑：全部经手算核对（CHECKED）。
+主席必答题（Mandatory Question）
+Question: Does the proposed result provide a guaranteed mechanism for the induction step, or does it only describe a sufficient subset of inputs?
+Answer: CONDITIONAL（它精确描述并实现了 (A) 表示与 (B) 更新，但缺乏 (C) 的无条件非空安全保证，无法独立完成归纳步）。
+Precise Explanation:
+Opus 的安全剖面证书（SPC）通过周期断点表 B_V 和分段线性插值，完美解决了对有理速度安全集的有限表示 (A) 与 有效更新 (B) 难题。然而，当跨入下一层门槛 1/(n+1) 时，更新后的最大剖面值 \kappa(V \cup \{u\}) 是否必然达到新门槛，SPC 算法本身无法自证。若无独立的外在存在性定理支撑，ARGMAX 仅提供数值上的局地最大值，不具备自动保持的非空保证（Claim C）。因此它属于精确的数据结构描述，而非闭合的无条件归纳机制。
