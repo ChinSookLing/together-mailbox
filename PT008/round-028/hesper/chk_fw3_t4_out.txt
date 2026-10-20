@@ -1,0 +1,9 @@
+integer triples 1..40: 9880 F4 unsafe 0
+B1 c<=3a count 4472 t>=1/a 0 example None
+B2 c>=3b count 1014 t>=1/a 0 example None
+B3 b>=3a count 2955 t>=1/a 0 example None
+B4 3/(b+c) count 235 t>=1/a 0 example None
+B5 2/(b+c) count 848 t>=1/a 0 example None
+B6 4/(b+c) count 231 t>=1/a 0 example None
+B7 5/(b+c) count 86 t>=1/a 0 example None
+B8 3/(a+c) count 39 t>=1/a 0 example None
