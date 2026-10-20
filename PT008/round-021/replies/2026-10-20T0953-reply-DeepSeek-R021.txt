@@ -1,0 +1,75 @@
+R021 4/4 DeepSeek
+
+ANSWER BLOCK：归纳引理（条件性）：若旧 F_n 在 t_0 给出一段方向为 \sigma、长度为 h 的单侧安全窗口（旧速度在新阈值 1/(n+1) 下安全），且新增速度 w 沿同方向到最近安全边界的修正量 \Delta\le h，则输出 t=t_0+\sigma\Delta 使 n+1 人安全；若 w 在 t_0 已安全则取 t_0。该条件不自动保持；可公度周期链是自动特例（除相位步长为 0）。Q-ERC1 新证明已补集合投影、q=7 下界、小 g 三缺口，非严格版 PROOF VERIFIED；Q-GATE 仅闭合簇门，PROOF VERIFIED（簇门）。一般 F_n：UNFINISHED。
+
+---
+
+Track D · 条件归纳引理
+
+输入数据：旧总人数 n，旧非参考速度集 U=\{u_i\}，旧最大速度 M=\max_i u_i，旧成功时间 t_0>0 满足 \|u_i t_0\|\ge1/n。新增速度 w>0。方向 \sigma\in\{+1,-1\}。
+
+假设 (W)：存在 h>0，使对所有 u\in U 与所有 t\in[t_0,t_0+\sigma h]（\sigma=+1 右窗口；\sigma=-1 左窗口），有
+
+\|u t\|\ge\frac1{n+1}.
+
+
+若 \|w t_0\|\ge1/(n+1)，令 \Delta=0；否则令 \Delta>0 为沿方向 \sigma 从 t_0 到 w 的最近安全边界 \|w t\|=1/(n+1) 的最小距离。假设
+
+\Delta\le h.
+
+输出时间：
+
+t=t_0+\sigma\Delta.
+
+证明：由 (W)，旧速度在 t 处仍满足新阈值 1/(n+1)。由 \Delta 定义，新速度满足 \|w t\|=1/(n+1)（或 \Delta=0 时已安全）。t>0 因 t_0>0 且窗口在正时间侧。∎
+
+假设是否自动保持：否。一般 F_n 只给点，不给窗口长度 h 或方向兼容性。可公度周期链是自动特例：若 U\cup\{w\} 的旧部分可公度，周期 P>0 使 uP\in\mathbb Z 对所有旧 u 成立，则旧相位在平移下不变，窗口可取任意长；只要 \operatorname{frac}(wP)\ne0，有限步平移可装入 w。例外是 \operatorname{frac}(wP)=0 且当前 w 不安全。
+
+与 L2 的关系：L2 用统一 h=1/(n(n+1)M) 和条件 w\ge nM 保证 \Delta\le h。本引理只要求实际窗口 h 与实际修正量 \Delta 满足 \Delta\le h，是 L2 的几何弱化；但窗口信息不是 F_n 自动携带的。
+
+---
+
+审阅 Q-ERC1（重写版）
+
+结论：\theta=p/q（最简，q\ge3），w=r/q'（最简），整数格安全集 G_1\ne\varnothing\iff q'\ge2；q'=1 时为空。非严格阈值 1/5。
+
+Opus 三缺口逐项核对：
+
+1. 集合投影：Qwen 不再投影 p^{-1}A_q。情形 B 中 q'|q，取 j\in A_q，令 k\equiv p^{-1}j\pmod q。因 q'|q，k\bmod q'=p^{-1}j\bmod q'；p 在模 q' 可逆。当 j 跑遍长度 \ge q' 的连续区间 A_q，j\bmod q' 跑遍所有剩余类，乘以单位 r p^{-1} 仍跑遍所有，故命中 A_{q'}。缺口已补。
+2. q=7 的下界：|A_7|=\lfloor28/5\rfloor-\lceil7/5\rceil+1=5-2+1=4，而 3q/5=4.2，原不等式确实不成立。Qwen 改用 F1：|A_q|\ge q/2（q\ge3）。|A_7|=4\ge3.5，成立。缺口已补。
+3. 小 g 鸽笼：Qwen 不再用“2+1\ge g”式论证。情形 B 分两种：若 |A_q|\ge q'，直接构造；若 |A_q|<q'，因 q'|q 且 q'<q 得 q'\le q/2\le|A_q|，矛盾，故只能 q'=q。q'=q 时两子集 p^{-1}A_q,r^{-1}A_q\subset\mathbb Z/q 各含 \ge q/2 个元素；若 >q/2 必交；若 =q/2，由 F2 仅 q=6，手算 A_6=\{2,3,4\}，p=1，r\equiv1,5\pmod6，交集均非空。小 g 缺口已补。
+
+边界：q'=1 显然空；q'=q=6 已单查；q'=2 时 A_2=\{1\}，w=1/2 情形非空。非严格等号 =1/5 被允许。
+
+审阅结论：PROOF VERIFIED（非严格版）。 严格版（>1/5）已有反例 \theta=1/5,w=7/5，DISPROVED。
+
+---
+
+审阅 Q-GATE
+
+结论：对任意实数 0<a<b<c<d，令 t_0=F_4(b,c,d)，\tau^*=S t_0，M=\max(1-\theta,w)，Q_0=\lceil20M\rceil。取 \tau^* 的最后一个分母 \le Q_0 的连分数渐近分数 p/q。则 q\le Q_0，且
+
+\|\tau\theta\|,\ \|\tau(1-\theta)\|,\ \|\tau w\|\ge1/5,\qquad \tau=p/q.
+
+
+即 Q-GATE 在 m\le Q_0 内确定性选出一个簇安全格。
+
+证明核验：连分数标准误差 |τ^*-p/q|<1/(q q_{\rm next})<1/Q_0（分母 \le Q_0 时误差 0）。对 u\in\{\theta,1-\theta,w\}，|τu-τ^*u|\le u|τ-τ^*|<M/Q_0\le1/20。T4 给 \|τ^*u\|\ge1/4，故 \|τu\|>1/5。三项同时成立。步数由渐近分数分母 Fibonacci 增长，O(\log Q_0) 有界。
+
+边界：Q_0=\lceil20M\rceil\ge20M，故 1/Q_0\le1/(20M)；M>1/2 因 \theta<1/2<1-\theta。\tau^* 有理且分母 \le Q_0 时取自身，误差 0。端点不取等，安全严格大于 1/5。
+
+限制：Q-GATE 只闭合簇门（b,c,d），不处理最慢者 a。对无理形状，无精确周期平移装入 a，故完整四人选择器未闭合。
+
+审阅结论：PROOF VERIFIED（簇门，条件性/部分选择器）。
+
+---
+
+四账本
+
+· PROOF VALIDITY：条件归纳引理 PROOF CANDIDATE；Q-ERC1 重写非严格版 PROOF VERIFIED；Q-ERC1 严格版 DISPROVED；Q-GATE 簇门 PROOF VERIFIED。一般 F_n：UNFINISHED。
+· INDEPENDENT REVIEW：本回复为 DeepSeek 独立非作者审阅；未参考其他审阅人本轮意见。
+· NEW COVERAGE：归纳引理不自动覆盖；可公度特例测度零；Q-GATE 对无理簇门有增量但符号差集 UNFINISHED。
+· COMPUTATIONAL CHECK：|A_7|=4、A_6=\{2,3,4\} 为本回复手算；其余为符号核对，未用随机测试作证明。
+
+必答题：Does your result directly advance a uniform, guaranteed construction from 2 to 47 runners?
+CONDITIONAL. 条件归纳引理给出 n\to n+1 的精确几何条件（单侧窗口长度与新增速度修正量匹配），并在可公度周期链上自动满足；但一般实数速度的窗口信息不由 F_n 自动携带，故不构成无条件 2 到 47 的统一构造。
