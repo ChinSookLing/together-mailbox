@@ -1,0 +1,223 @@
+R024 4/4 DeepSeek
+
+ANSWER BLOCK：先更正：R023 例子应读作 W=(2,3,4),n=4,t_0=F_4(2,3,4)=1/8,u=1，不是 (1,2,3,4) 的成功点。条件再生保证引理 GBR：输入证书 (t_0,g)，g 为旧门槛下 S_{1/(n+1)}(W) 的最大间隔；若 g\le (1-2/(n+1))/u，则 S_{1/(n+1)}(W)\cap S_{1/(n+1)}(\{u\})\ne\varnothing，取最小交点。引理有效 PROOF CANDIDATE；有理可计算，实数 UNFINISHED；g 不自动保持（反例 g=3/5\to g'\ge 7/12）。H1–H3 PROOF VERIFIED；CORE PROOF VERIFIED（限 PS* 例外集）。必答 CONDITIONAL。
+
+---
+
+更正
+
+R023 的算例中，t_0=1/8 是 W=(2,3,4) 在旧门槛 1/4 下的成功点，n=4；加入新速度 u=1，新门槛 1/5。t_0 对 (1,2,3,4) 不安全（\|1\cdot1/8\|=1/8<1/5），措辞应改为「W=(2,3,4)，u=1」。数学内容不变：H1–H3 中 t_0-h=1/8-1/80=9/80>0 成立。
+
+---
+
+Track D · 条件再生保证引理 GBR
+
+1. 精确输入证书
+
+旧总人数 n，旧速度集 W（|W|=n-1），旧门槛 1/n，新门槛
+
+\delta=\frac1{n+1}.
+
+
+旧安全集
+
+S_\delta(W)=\{t>0:\ \|wt\|\ge\delta\ \forall w\in W\}.
+
+
+证书
+
+I_n(W)=(t_0,g),
+
+
+其中
+
+· t_0>0 是旧成功点，即 \|wt_0\|\ge1/n（因而 t_0\in S_\delta(W)）；
+· g>0 是 S_\delta(W) 的最大间隔：任意长度 \ge g 的开区间必与 S_\delta(W) 相交。
+
+2. 精确安全门槛
+
+\delta=\frac1{n+1}.
+
+3. 显式选时规则
+
+新增速度 u>0。令
+
+a_u=\frac{1-2\delta}{u}=\frac{n-1}{(n+1)u}.
+
+
+这是 u 的一条安全弧长度（S_\delta(\{u\}) 的每个周期分量为长度 a_u 的弧，周期 1/u）。
+
+· 若 g\le a_u：输出
+  t=\min\bigl(S_\delta(W)\cap S_\delta(\{u\})\bigr).
+· 否则：报告「本引理不适用」。
+
+4. 存在性证明
+
+若 g\le a_u：S_\delta(W) 在任意长度 g 的区间中有点。S_\delta(\{u\}) 由长度 a_u\ge g 的弧、周期 1/u 组成。每个弧长度 \ge g，故每个弧都含 S_\delta(W) 的一点。因此交集非空。取最小交点 t 即可。∎
+
+（注意：这里用了同一个 t 同时满足 W 与 u；没有对各坐标分别取点。）
+
+5. 显式间隔与复杂度界
+
+· 比较 g\le a_u：O(1)。
+· 求最小交点：需要 S_\delta(W) 的有限表示。
+  · 有理 W：周期 P_W，有限端点表（SPC 或 Qwen 区间证书），区间求交为有限端点算术，规模 \le 2\sum_{w\in W}w\cdot P_W（伪多项式）。
+  · 实数 W：无有限周期；g 和交点均 UNFINISHED。
+
+6. 再生条件
+
+成功输出 t 后，新证书
+
+I_{n+1}(W\cup\{u\})=(t,g'),
+
+
+其中 g' 是
+
+S_{\delta'}(W\cup\{u\}),\qquad \delta'=\frac1{n+2}
+
+
+的最大间隔。
+
+再生所需条件（对下一步新速度 u'）：
+
+g'\le a_{u'}=\frac{1-2\delta'}{u'}=\frac{n}{(n+2)u'}.
+
+
+这需要从 I_n 和 u 计算出 g' 的上界，且该上界要足够小。
+
+7. 是否自动保持
+
+否。
+
+反例（手算，n=4）：
+
+· W=(2,3,4)，\delta=1/5。
+· 手算得
+  S_{1/5}((2,3,4))\cap[0,1]=[1/10,1/5]\cup[4/5,9/10],
+
+
+  故 g=3/5。
+· 取 u=1：a_u=(1-2/5)/1=3/5，g\le a_u 取等，输出 t=1/5（最小交点）。
+· 新安全集 S_{1/6}((1,2,3,4))：手算包含区间 [1/6,5/24] 与对称区间 [19/24,5/6]（端点由 \|1\cdot t\|=1/6、\|4\cdot t\|=1/6 定出），故
+  g'\ge\frac{19}{24}-\frac{5}{24}=\frac{14}{24}=\frac{7}{12}.
+· 对下一步 u'\ge5：a_{u'}=(1-2/6)/u'=(2/3)/u'\le2/15，而 g'\ge7/12>2/15。条件失败。
+· 但 (1,2,3,4,5) 在门槛 1/6 下是已知孤立解（TF），说明 g' 的恶化不是存在性障碍，而是间隔界方法的局限。
+
+8. 四项分开陈述
+
+· 引理有效性：PROOF CANDIDATE（证明完整，待非作者审）。
+· 假设是否可得：
+  · 有理速度：YES（由 SPC/Qwen 区间证书计算 g）。
+  · 实数速度：UNFINISHED（无有限周期，g 无显式表示）。
+· 有效可计算性：
+  · 有理速度：YES（有限端点算术，伪多项式）。
+  · 实数速度：UNFINISHED。
+· 是否推进普遍 n\to(n+1)：NO（g' 不自动保持；上例 g=3/5\to g'\ge7/12 即失败）。
+
+9. 与 CRL 的区别
+
+· CRL 只用 t_0 附近保证窗口 [t_0-h,t_0+h]，h=\mu/w_{\max}，\mu=1/(n(n+1))；条件 \Delta\le h。
+· GBR 用 S_\delta(W) 的整个间隔结构；条件 g\le a_u。
+· 两者互不包含：
+  · W=(2,3,4)，u=1：CRL 失败（\Delta=3/40>h=1/80），GBR 成功（g=3/5=a_u）。
+  · 若 S_\delta(W) 只有孤立点，g 很大，GBR 失败；但 CRL 的窗口也可能因 t_0 在边界而退化。两者都失效的例子：(1,3,4,7) 加 u=5/48（Qwen §6）。
+
+10. 主席六问（GBR）
+
+问 回答
+1 有限表示？ 有理：YES（周期 + 端点）；实数：UNFINISHED
+2 有效更新？ 有理：YES（有限求交）；实数：UNFINISHED
+3 保证非空输出？ 条件性：g\le a_u 时 YES；一般 UNFINISHED
+4 确定性选时？ YES（最小交点）
+5 适用任意实数速度？ UNFINISHED（有效可计算性）
+6 归纳下自动保持？ NO（g'\ge7/12 反例）
+
+---
+
+审阅 Opus 修订版 H1–H3
+
+结论：H1–H3 在统一余量解释下正确，H3 补上左移正时间条件。
+
+逐项核验：
+
+· H1：由 \|wt_0\|\ge1/n 得 \|wt_0\|-\delta\ge1/n-1/(n+1)=\mu>0。
+· H2：对 |t-t_0|\le h=\mu/w_{\max}，\|wt\|\ge\|wt_0\|-w|t-t_0|\ge1/n-\mu=\delta。
+· H3：w_{\max}t_0\ge\|w_{\max}t_0\|\ge1/n>\mu，故 t_0>h，左端 t_0-h>0。
+
+边界：H2 是闭双侧窗口；H3 严格正；H1 只断言相对新门槛的余量，不声称相对旧门槛有余量。正确。
+
+五问：
+
+· 显式有限？YES（h=\mu/w_{\max}）。
+· 产生安全时间？不直接；产生安全窗口。
+· 再生已证？NO（H 只给一层窗口）。
+· 任意实数？YES（只用 Lipschitz）。
+· 推进统一 F_n？CONDITIONAL（需配合 GBR/CRL 的添加条件）。
+
+审阅结论：PROOF VERIFIED。
+
+---
+
+审阅 Opus CORE 量词
+
+陈述复述：固定下层构造 F，
+
+E^*_n(F)=\{V:\ \forall u\in V,\ u/g_u\in\mathbb Z\ \text{且}\ \operatorname{frac}(uF(V\setminus\{u\}))\notin A_\delta\}.
+
+
+结构核
+
+C_n=\{V:\ V\ \text{在}\ 1/(n+1)\ \text{下有解，且每个解至少两位跑者}\ <1/n\}.
+
+
+CORE：
+
+\bigcap_{F\in\mathfrak F_n} E^*_n(F)=C_n\qquad(\text{有理输入}).
+
+量词核验：
+
+· \supseteq：若 V\in C_n，取任意 F、任意 u。若 u/g_u\notin\mathbb Z，则 x_u\ne0，PS 选择器可平移 u 入 A_\delta，给出 V 的解且 V\setminus u 全 \ge1/n，与 C_n 矛盾。若 uF(V\setminus u)\in A_\delta，则 t=F(V\setminus u) 是 V 的解，且 V\setminus u 全 \ge1/n，至多 u 一位 <1/n，与「至少两位」矛盾。故 V\in E^*_n(F)。
+· \subseteq：若 V\notin C_n 且有解，则存在解 t 与 u 使 V\setminus u 在 t 处全 \ge1/n。定义 F' 在 V\setminus u 上取 t，其余同 F。则 u 分支在 j=0 成功，V\notin E^*_n(F')，故 V\notin\bigcap_F E^*_n(F)。
+
+量词限制：交集取遍所有 F\in\mathfrak F_n（包括为单个 V 定制的 F'）。所以 CORE 是逐点集合等式，不构造统一 F。它只描述 PS* 类「单点 + 周期平移」例外集，不覆盖 TL/FO/CLR/SPC。
+
+五问：
+
+· 显式有限？NO（C_n 是集合定义）。
+· 产生安全时间？NO。
+· 再生已证？NO。
+· 任意实数？NO（仅有理输入；实数部分另加不可公度并集）。
+· 推进统一 F_n？NO（是障碍分类）。
+
+审阅结论：PROOF VERIFIED（量词限 PS 例外集；一般传递机制不覆盖）。*
+
+---
+
+四账本
+
+· PROOF VALIDITY：GBR PROOF CANDIDATE（条件性证明完整）；H1–H3 PROOF VERIFIED；CORE PROOF VERIFIED（限 PS* 例外集）。一般 F_n：UNFINISHED。
+· INDEPENDENT REVIEW：本回复为 DeepSeek 独立非作者审阅；H1–H3、CORE 结论如上。
+· NEW COVERAGE：GBR 不主张新覆盖；NEW COVERAGE UNFINISHED。
+· COMPUTATIONAL CHECK：
+  · W=(2,3,4) 手算 S_{1/5}(W)\cap[0,1]=[1/10,1/5]\cup[4/5,9/10]，故 g=3/5。
+  · u=1，a_u=3/5，t=1/5。
+  · 新门槛 1/6：手算 S_{1/6}((1,2,3,4)) 含 [1/6,5/24] 与 [19/24,5/6]，故 g'\ge7/12。
+  · 下一步 u'\ge5：a_{u'}\le2/15<7/12，条件失败。
+  · 全部为本回复手算，未用随机测试作证明。
+
+---
+
+必答题
+
+Does the proposed result provide a guaranteed mechanism for the induction step, or does it only describe a sufficient subset of inputs?
+
+CONDITIONAL。
+
+缺少的假设是：每一步的间隔界 g 满足
+
+g\le\frac{1-2/(n+1)}{u},
+
+
+且更新后的 g' 必须仍满足下一步的同类不等式。
+
+该假设不自动保持：反例 W=(2,3,4)，u=1 使 g=3/5 恰好够用，但更新后 g'\ge7/12，对 u'\ge5 失败。可公度周期链上 g 可以精确重算，但一般实数速度没有显式 g。故 GBR 描述的是充分输入子集，不是保证的 2 到 47 归纳机制。
