@@ -1,0 +1,10 @@
+A: [Fraction(19, 85), Fraction(7, 17), Fraction(5, 17), Fraction(5, 17)] True region True
+A t=21/85 b: 3/17
+golden t= 0.3 [0.3, 0.5, 0.4270509831248423, 0.14589803375031546]
+golden t= 0.24 [0.24, 0.2, 0.058359213500126184, 0.11671842700025237]
+golden t= 0.52 [0.48, 0.4, 0.2068883707497266, 0.4137767414994532]
+Bundle tests 20000 fails 0
+WL (c<4a, d>=2ac/(4a-c)) tests 20000 fails 0 None
+P1 t=2/(a+d) (c<4a, 5c/2-a<=d<=9a) tests 20000 fails 0 None
+c<=2a, 4a<d<4c via WL or P1 tests 20000 fails 0 None
+36/11 check 9  3/55 check 3/55
