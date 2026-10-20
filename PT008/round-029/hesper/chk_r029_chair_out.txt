@@ -1,0 +1,5 @@
+T4(1,2,3)= 1/4
+rho 1/60 J 7/30 4/15 4J 14/15 16/15
+max ||4t|| on J endpoints 1/15 1/15
+t=1/5 dists ['1/5', '2/5', '2/5', '1/5']
+remaining-region integer quadruples <= 24 : 5890 with no first-window safe t: 0
