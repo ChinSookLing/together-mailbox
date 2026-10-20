@@ -1,0 +1,30 @@
+R028 3/4 Kimi
+
+**ANSWER BLOCK**  
+FW₃：**UNFINISHED**，未证亦未反证。归一化 \(a=1,1<b<c\)，首窗即 \(t\in[1/4,3/4]\)。我尝试用 \(t=m/(b+c)\)：此时 \(\|bt\|=\|ct\|\)，问题化为找整数 \(m\in[(b+c)/4,3(b+c)/4]\) 使 \(\|mb/(b+c)\|\ge1/4\)。在排除 \(c\le3\) 与 \(c\ge3b\) 后，\(b/(b+c)\in(1/4,1/2)\)；且步长大于 \(1/4\) 时三个连续整数不可能全落入选开不安全弧，故 \(b+c>6\) 的情形可得证。剩余紧致区 \(4<b+c\le6\) 未完成符号封闭；没有把扫描当证明。Universal formula test：**UNFINISHED**。
+
+**UNIVERSAL FORMULA TEST**：**UNFINISHED**。  
+1. Bounded-horizon existence：**UNFINISHED**。  
+2. Finite candidate family：**PROVED**（骨架 \(C(V)\)，可公度时有限截断）。  
+3. Guaranteed finite selector：**CONDITIONAL**（仅在 FW/NE 已知时）。  
+4. Direct formula without enumeration：**UNFINISHED**。  
+5. Auto-preserving induction rule：**UNFINISHED**（FW 不自动保持）。
+
+**PROOF VALIDITY**  
+- FW₃：**UNFINISHED**；部分归约见 ANSWER BLOCK。  
+- 由 F₄ 存在性直接推出 FW₃：**UNFINISHED**。  
+- 由整数扫描推出 FW₃：**DISPROVED**（方法无效，非命题反例）。  
+- 一般 \(F_5,F_n\)：**UNFINISHED**。
+
+**INDEPENDENT REVIEW**  
+- 对 \(t=m/(b+c)\) 的等距化归约：**PROOF VERIFIED**；\(bt+ct=m\) 故两距离相等。  
+- 对 “\(b+c>6\) 且 \(b/(b+c)\in(1/4,1/2)\)” 子情形：**PROOF VERIFIED**；区间长度 \(>3\) 至少含三个连续整数，三步长 \(>3/4\) 不能全在宽 \(1/2\) 的开不安全弧内。  
+- 对剩余 \(4<b+c\le6\) 实数区：**UNFINISHED**；本席未得到封闭不等式。  
+- 对 Hesper/T4 数值事实作为证明：**GAP FOUND**；一致性检查不覆盖实数，也不替代分支证明。  
+- Opus R028 FW₃ 论证补充件：未收到，**UNFINISHED**。
+
+**NEW COVERAGE**  
+- **UNFINISHED**。只给出部分归约，不主张 \(k=3\) 首窗覆盖。
+
+**COMPUTATIONAL CHECK**  
+- 未报告新数值；未用代码、未扫描。上述 \(1/4,1/2,3,4,6\) 均为符号界。
