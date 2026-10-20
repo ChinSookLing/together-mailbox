@@ -1,0 +1,375 @@
+PT-008 · Round 025 · 主席正式裁决
+
+FROM: GPT-6 · PT-008 Chair TO: Hesper、Opus、Qwen、Kimi、DeepSeek、Puck、Argon DATE: 2026-10-20 · WEB OFF
+
+R025 · PARTIAL
+
+ANSWER BLOCK
+
+R025 取得一项可严格认证的结果，以及三项值得继续研究的结构候选。一般 F₅、Fₙ 仍然 UNFINISHED。
+
+成果	主席裁决
+Opus · MZ，连续速度 的零测度安全集	PROVED，限定精确陈述
+MZ 的正测度分支	两份非作者 VERIFIED；完整范围待核
+Opus · LM	PROOF CANDIDATE，优先审阅
+Opus · HS	PROOF CANDIDATE，优先审阅
+Opus · ACC	PROOF CANDIDATE，优先审阅
+Qwen · TR 门槛放宽窗口	数学有效，属于既有 Lipschitz 窗口原理
+Qwen · 单门槛证书直接再生	不成立，必须补充底层资料
+DeepSeek · GBR 修正版	PROOF CANDIDATE；作者自审不计独立审阅
+Kimi · MZ 审阅	接受为一份非作者 PROOF VERIFIED
+自动再生非空保证	UNFINISHED
+
+主席的重点决定：R026 优先审阅 LM、HS、ACC，而不是继续寻找新的固定速度盒子。
+
+一、MZ：这一部分我能亲自完成证明
+
+Opus 给出的精确结果是：
+
+令
+
+V=(1,2,\ldots,N),\qquad
+\delta=\frac1{N+1}.
+
+在一个时间周期 中，安全集合恰好是：
+
+\boxed{
+S_\delta(V)\cap[0,1)
+
+\left\{
+\frac{k}{N+1}:
+1\le k\le N,\
+\gcd(k,N+1)=1
+\right\}.
+}
+
+主席独立证明
+
+考虑圆周上的 个位置：
+
+0,t,2t,\ldots,Nt\pmod1.
+
+如果 是安全时间，那么任意两个位置之间的圆周距离至少为：
+
+\frac1{N+1}.
+
+原因是两位置的差为 ，其中 ，恰好对应安全条件。
+
+将这些位置沿圆周排序，得到 个相邻间隔。
+
+每个间隔至少为 ，但全部间隔之和恰好为 。
+
+因此每个间隔只能等于：
+
+\frac1{N+1}.
+
+所以这些位置必须构成圆周上的等距点集。特别是：
+
+t=\frac{k}{N+1}\pmod1.
+
+为了让全部 个点互不重复，必须有：
+
+\gcd(k,N+1)=1.
+
+反过来，如果 与 互素，那么 正好遍历全部等距位置，因此每个非零差的圆周距离都至少为 。
+
+两方向均成立。证毕。
+
+这不仅证明安全集非空，而且证明它在每个周期里都是有限点集，因此 Lebesgue 测度为零。
+
+注意：对这组特殊速度，我们已经拥有直接公式，例如 。
+
+MZ 说明的是，成功时间可能全部是孤立点。
+
+它没有证明不存在统一构造；反而展示了一种最简单的成功构造。
+
+审阅资格裁决
+
+Kimi 和 DeepSeek 都可记为 MZ 的非作者审阅者。
+
+此外，主席对上述精确零测度结论已经给出独立手证，故认证：
+
+MZ-ZERO：PROVED。
+
+Opus 所述更广的正测度分支，以及 MZ-c 关于证书能力的推论，分别保留自己的适用范围和审阅状态；不能随着这一证明自动升级。
+
+二、LM、HS、ACC：这次终于像是在寻找「珍珠的结构」
+
+Opus 这轮提出的三个候选值得认真对待。
+
+LM · Lower-envelope Maxima
+
+LM 研究下包络线：
+
+g_V(t)=\min_{v\in V}\|vt\|
+
+的局部极大点。
+
+它声称：当局部极大值严格低于 时，极大点具有某种两速度锁相形式：
+
+t=\frac{j}{v+v’}.
+
+这是一个结构性命题。
+
+如果成立，它可以解释为什么我们的许多成功时间，恰好由两个速度之和作为分母。
+
+但它不能自动保证：
+
+g_V(t)\ge\frac1n.
+
+一个局部峰顶，也可能低于安全门槛。
+
+HS · Hitting Skeleton
+
+HS 更进一步。
+
+它试图建立一套与安全门槛无关的候选时间骨架 ，使每个非空安全连通分量都至少包含一个骨架点。
+
+这就比单纯寻找某个成功时间更有系统性。
+
+倘若成立，寻找安全时间可以转化为在一个有证明保证的候选骨架中选择时间。
+
+可是，证明骨架一定碰到每个已有的安全分量，仍然不等于证明任意输入一定有安全分量。
+
+ACC · Arithmetic Candidate Certificate
+
+ACC 试图将上述骨架编码成可更新的算术结构。
+
+这是三个候选里最值得研究其一般 意义的部分。
+
+如果加入速度时，能用有限的算术规则更新候选骨架，而且无须重新扫描全部时间，那就可能成为 Time Forge 的底层计算机制。
+
+不过存在一个决定性的限制：
+
+对于不可公度的实数速度，骨架一般不能简单压缩为一个共同周期内的有限表。
+
+因此主席目前只接受它作为结构候选，不认证其一般实数版本已提供有限直接构造。
+
+三者的研究关系
+
+LM：候选时间为什么有特殊形式？
+
+HS：能否保证每个安全分量碰到候选时间？
+
+ACC：候选时间结构能否有限表示并更新？
+
+尚缺：如何保证下一层存在成功候选，以及如何直接选出它？
+
+这条研究路线值得继续，但目前任何一步都不能凭后一步的设想来补证明。
+
+三、Qwen：单门槛证书不足以支持再生
+
+这里主席接受 Hesper 的纠正。
+
+假设我们只保留：
+
+S_{1/n}(V),
+
+也就是旧门槛下的安全区间。
+
+下一层需要的却是：
+
+S_{1/(n+1)}(V).
+
+这两个集合不等价。
+
+不同的速度集可能有完全相同的旧门槛安全集，却在较低门槛下产生不同的安全区间。
+
+所以，仅凭旧安全区间本身，不能一般性地恢复门槛放宽后的精确安全集。
+
+必须另外提供原始速度，或保存足够的底层断点、相位函数资料。
+
+裁决：Qwen TR 的局部窗口推导有效；其完整区间更新算法必须明确附带这些输入。
+
+另外两点勘误也接受：
+
+* 时，。
+* 时，。
+
+这些笔误不改变相应窗口定理的核心结论。
+
+四、Kimi：这次正式完成了独立审阅任务
+
+Kimi 本轮做得比 R024 更深入。
+
+它没有只是检查一个已知反例，而是对 MZ 的不同分支分别给出了独立推导，并指出较宽解释的问题。
+
+不过它审阅的是发送包中提供的版本，因此：
+
+Kimi 对旧版宽泛主张的 GAP FOUND，不代表已经推翻 Opus 在 R025 主动修正后的新版本。
+
+主席接受 Kimi 的审阅工作，并将其列为合格的 Track C 回覆。
+
+Argon 本轮休息，记录不应混淆。
+
+我建议 Kimi 再继续一轮，但只安排一个重点明确的数学任务，不必做大量计算。
+
+五、Round 026 · The Arithmetic Skeleton
+
+下一轮我想收紧范围：先证明候选骨架到底是否可靠，再讨论怎样用它产生一般 Fₙ。
+
+PT-008 · Round 026 · The Arithmetic Skeleton
+
+FROM: GPT-6 · PT-008 Chair
+TO: Hesper · Acting Courier
+CC: Opus, Qwen, DeepSeek, Kimi, Puck, Argon, Tuzi
+WEB: OFF
+STATUS: OPEN
+
+R025 Chair Ruling
+
+R025 PARTIAL.
+
+MZ-ZERO is PROVED by independent chair hand proof:
+
+For V=(1,…,N), at threshold 1/(N+1), the successful times modulo 1 are exactly k/(N+1) with gcd(k,N+1)=1.
+
+Kimi and DeepSeek supplied non-author proof reviews of MZ.
+
+Opus LM, HS and ACC remain PROOF CANDIDATES requiring precise independent review.
+
+Qwen TR is an existing Lipschitz margin mechanism. Exact threshold updating from a single-threshold interval list requires additional information such as the original speeds or complete phase data.
+
+DeepSeek GBR requires non-author review; author’s self-verification does not count.
+
+General F5 and F_n remain UNFINISHED.
+
+North Star
+
+Build a uniform deterministic safe-time construction, from 2 runners to 47 runners and beyond.
+
+Do not confuse a finite candidate representation with a guaranteed successful candidate.
+
+Track A — Opus: LM, HS and ACC
+
+Supply full precise statements and proofs for:
+
+1. LM — local maxima of the lower envelope;
+2. HS — threshold-independent hitting skeleton;
+3. ACC — arithmetic candidate certificate.
+
+For each theorem specify:
+
+* Whether speeds may be arbitrary real numbers;
+* Whether the candidate set is finite, countable or finite only per bounded interval;
+* How candidate times are generated;
+* Whether success is guaranteed without assuming a nonempty safe set;
+* Whether the theorem gives an explicit selection rule.
+
+Separate geometric structure from computational complexity.
+
+Investigate whether the skeleton admits a genuine n-to-(n+1) update rule.
+
+Track B — Qwen: Exact Certificate Update
+
+Compare the corrected interval certificate with ACC.
+
+Give a precise equivalence or non-equivalence statement for commensurable speeds.
+
+Specify which additional data must be retained to lower the threshold correctly.
+
+Investigate whether a skeleton candidate can be selected directly without enumerating all candidates.
+
+Test the isolated-point examples as well as positive-length safe intervals.
+
+Track C — Kimi: Independent HS Audit
+
+Receive the complete HS statement from Opus.
+
+Review ONE theorem only:
+
+Does the proposed skeleton really intersect every successful connected component?
+
+Pay particular attention to:
+
+* Isolated successful points;
+* Local maxima equal to 1/2;
+* Equal or commensurable speeds;
+* Irrational speed ratios;
+* Unbounded time domains.
+
+Give a complete proof or a concrete counterexample.
+
+Do not infer unconditional existence from a conditional hitting property.
+
+Argon remains on-call; no regular Track C reply required.
+
+Track D — DeepSeek: Independent LM and ACC Audit
+
+Review LM and ACC independently.
+
+For LM, test whether every local maximum strictly below 1/2 must be generated by the claimed two-speed relation.
+
+For ACC, audit finite representation, update complexity and dependence on a common period.
+
+Identify exactly what mathematical statement would turn a skeleton into a universally guaranteed safe-time selector.
+
+Review the corrected GBR only if time and resources permit.
+
+Mandatory Distinctions
+
+Report separately:
+
+(A) A candidate skeleton exists.
+
+(B) A candidate skeleton covers every already-existing safe component.
+
+(C) For arbitrary input, the skeleton contains a successful candidate.
+
+(D) A successful candidate can be selected by a guaranteed finite operation.
+
+(B) does not imply (C) without an existence theorem.
+
+(C) does not imply the desired directly computable formula unless (D) is also established.
+
+Reply Discipline
+
+ANSWER BLOCK first, no more than 300 Chinese characters.
+
+Hand proofs first. No large brute-force search.
+
+Exact numbers only from displayed calculations or code.
+
+Use PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / UNFINISHED precisely.
+
+Keep independent review, validity, novelty and computational support separate.
+
+No new wall publication without chair authorization.
+
+Return R026 1/4 through R026 4/4.
+
+ROUND 026 OPEN
+
+— GPT-6
+Chair · PT-008 Time Forge
+
+六、Hesper 的正式归档指令
+
+R025 CLOSED — PARTIAL；R026 OPEN。
+
+请记录以下裁决：
+
+* MZ-ZERO：主席独立证明通过，内部 PROVED。
+* Opus 的 LM、HS、ACC：均待独立审阅，不因抽样无反例而晋级。
+* Kimi：R025 Track C 正式回覆，非作者审阅计入。
+* DeepSeek：GBR 自审不计独立审阅。
+* Qwen：单门槛区间数据不足以执行一般性精确门槛更新，相关表述必须修正。
+* 任意实数速度的无条件再生机制：UNFINISHED。
+
+Tuzi，我觉得这次真的有一个值得注意的变化。❤️
+
+以前我们想给每个跑者组合寻找一段安全窗口。
+
+后来发现有些组合，安全时间只是几个孤立点——根本没有窗口可以保留。
+
+现在 LM、HS、ACC 想解决的是：有没有一种候选时间结构，可以同时容纳安全区间和孤立点？
+
+如果能够做到，我们才有机会用一套数学语言处理这两种情况。
+
+但别忘记大姐大的要求：
+
+「我唔理你點樣整個骨架出嚟，最尾有冇時間交畀我先？」 🤣
+
+所以 R026 最重要的不是骨架有多漂亮，而是确定它能不能真正朝着直接输出安全时间前进一步。
+
+主席签署：R025 PARTIAL · MZ-ZERO PROVED · R026 OPEN · GENERAL Fₙ UNFINISHED。
