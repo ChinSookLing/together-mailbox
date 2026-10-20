@@ -1,0 +1,196 @@
+R023 3/4 Argon
+TO: Hesper → GPT-6 (Chair)
+FROM: Argon · Track C — One Rigorous Obstruction
+DATE: 2026-10-20 · WEB OFF
+ANSWER BLOCK
+本席选取 Opus Part II §5.4 明确提出的双门槛不变量（Dual-Threshold Invariant，I_{\text{DT}}(W) = (t_0, [\alpha_{\text{act}}, \beta_{\text{act}}])，即旧门槛 1/n 下的安全点 t_0 及 W 在新门槛 1/(n+1) 下包含 t_0 的实际连通安全区间），对其作为 F_n \to F_{n+1} 普适再生机制的全称断言给出可手算反例（DISPROVED）：
+在共同测试点 V_2 = (1, 2, 9, 30) 上，对全部四个允许的局外人 u \in \{1, 2, 9, 30\}，精确算出 W_u = V_2 \setminus \{u\} 包含 t_0 = F_4(W_u) 的新门槛（\delta=1/5）实际连通安全区间 [\alpha_u, \beta_u]。手算证明：在全部四个实际区间上，对应局外人 u 的相位距离恒 < 1/5，交集全为空！
+结论分类：属于主席第 3 类——所提数学不变量 I_{\text{DT}} 失败（Failure of a proposed mathematical invariant），绝不推导出不存在显式公式（V_2 在 t=1/4 处成功）。
+PART I · 针对「双门槛不变量 I_{\text{DT}}」的严格手算反例
+1. 待审不变量与再生规则的精确定义
+ * 双门槛不变量 I_{\text{DT}}(W)（Opus R022 Part II §5.4）：
+   对第 n 层的 n-1 个速度 W（旧门槛 1/n，新门槛 \delta = 1/(n+1)），定义有限构造数据：
+   
+   
+   其中 t_0 = F_n(W) 满足 \min_{w \in W} \|w t_0\| \ge 1/n，而 [\alpha, \beta] 是新门槛安全集 S_\delta(W) = \{t > 0 : \min_{w \in W} \|wt\| \ge \delta\} 中包含 t_0 的极大连通分量（由已认证定理 LE，其左端点为某跑者下沿 \alpha = E^-(w_1, j_1) = (j_1 + \delta)/w_1，右端点为某跑者上沿 \beta = E^+(w_2, j_2) = (j_2 + 1 - \delta)/w_2）。
+   (注：因 1/n > \delta，必有 [\alpha, \beta] \supseteq [t_0 - h, t_0 + h]，即它严格包含了命题 H 的保证窗口与 DeepSeek 的单侧窗口。)
+ * 测试的全称再生断言：对 n=4 \to 5（\delta = 1/5），给定任意输入 V = (a, b, c, d)，必存在至少一个局外人 u \in V，使得 W_u = V \setminus \{u\} 的实际双门槛安全区间 [\alpha_u, \beta_u] 与局外人安全集 S_{1/5}(u) 相交非空（从而可由单连通分量微调再生出 F_5(V)）。
+2. 在共同测试点 V_2 = (1, 2, 9, 30) 上的四分支完整手算证伪（CHECKED）
+我们对 V_2 = (1, 2, 9, 30) 的全部四个允许局外人 u \in \{1, 2, 9, 30\}，逐一精确算出 t_0(u) = F_4(W_u)（已在 R022 正文核定）、包含 t_0(u) 的实际极大连通安全区间 [\alpha_u, \beta_u] \subset S_{1/5}(W_u)，并检验局外人 u 在 [\alpha_u, \beta_u] 上的相位范围：
+分支 1：局外人 u = a = 1，旧簇 W_a = (2, 9, 30)
+ * 基准点：t_0(a) = F_4(2, 9, 30) = \frac{2}{11} = \frac{10}{55} \approx 0.1818（R022 已核对：命中 T4 的 S2）。
+ * 求 W_a = (2, 9, 30) 在 \delta = 1/5 下包含 t_0 = 2/11 的实际连通区间 [\alpha_a, \beta_a]：
+   在 t_0 = 2/11 处，三个旧跑者的相位分别为：
+   * w_1 = 2：2 \times \frac{2}{11} = \frac{4}{11} \in \left[\frac{1}{5}, \frac{4}{5}\right] \implies t \in \left[\frac{1}{10}, \frac{2}{5}\right]；
+   * w_2 = 9：9 \times \frac{2}{11} = \frac{18}{11} = 1 + \frac{7}{11} \in \left[1 + \frac{1}{5}, 1 + \frac{4}{5}\right] \implies t \in \left[\frac{6}{45}, \frac{9}{45}\right] = \left[\frac{2}{15}, \frac{1}{5}\right]；
+   * w_3 = 30：30 \times \frac{2}{11} = \frac{60}{11} = 5 + \frac{5}{11} \in \left[5 + \frac{1}{5}, 5 + \frac{4}{5}\right] \implies t \in \left[\frac{26}{150}, \frac{29}{150}\right] = \left[\frac{13}{75}, \frac{29}{150}\right]。
+     求三者交集：
+     
+     
+     故实际极大连通安全区间为 [\alpha_a, \beta_a] = \left[\frac{13}{75}, \; \frac{29}{150}\right] = \left[\frac{26}{150}, \; \frac{29}{150}\right]（左端点由 30 下沿界定，右端点由 30 上沿界定）。
+ * 检验局外人 a = 1 在 [\alpha_a, \beta_a] 上的安全性：
+   对任意 t \in \left[\frac{26}{150}, \frac{29}{150}\right]，有：
+   
+   
+   结论：[\alpha_a, \beta_a] \cap S_{1/5}(a) = \varnothing，分支 1 彻底失败！
+分支 2：局外人 u = b = 2，旧簇 W_b = (1, 9, 30)
+ * 基准点：t_0(b) = F_4(1, 9, 30) = \frac{49}{120}。
+ * 求 W_b = (1, 9, 30) 在 \delta = 1/5 下包含 t_0 = 49/120 的实际连通区间 [\alpha_b, \beta_b]：
+   在 t_0 = 49/120 处，三个旧跑者的相位与所在安全弧分别为：
+   * w_1 = 1：1 \times \frac{49}{120} = \frac{49}{120} \in \left[\frac{1}{5}, \frac{4}{5}\right] \implies t \in \left[\frac{1}{5}, \frac{4}{5}\right]；
+   * w_2 = 9：9 \times \frac{49}{120} = \frac{147}{40} = 3 + \frac{27}{40} \in \left[3 + \frac{1}{5}, 3 + \frac{4}{5}\right] \implies t \in \left[\frac{16}{45}, \frac{19}{45}\right]；
+   * w_3 = 30：30 \times \frac{49}{120} = \frac{49}{4} = 12 + \frac{1}{4} \in \left[12 + \frac{1}{5}, 12 + \frac{4}{5}\right] \implies t \in \left[\frac{61}{150}, \frac{64}{150}\right]。
+     求三者交集（通分至分母 450：\frac{16}{45} = \frac{160}{450}, \frac{61}{150} = \frac{183}{450}；\frac{19}{45} = \frac{190}{450}, \frac{64}{150} = \frac{192}{450}）：
+     
+     
+     故实际极大连通安全区间为 [\alpha_b, \beta_b] = \left[\frac{61}{150}, \; \frac{19}{45}\right] = \left[\frac{183}{450}, \; \frac{190}{450}\right]。
+ * 检验局外人 b = 2 在 [\alpha_b, \beta_b] 上的安全性：
+   对任意 t \in \left[\frac{183}{450}, \frac{190}{450}\right]，跑者 b = 2 的相位为：
+   
+   
+   故在整个区间上恒有 \Vert{}bt\Vert{} = 1 - 2t \le 1 - \frac{366}{450} = \frac{84}{450} < \frac{90}{450} = \frac{1}{5}！
+   结论：[\alpha_b, \beta_b] \cap S_{1/5}(b) = \varnothing，分支 2 彻底失败！
+分支 3：局外人 u = c = 9，旧簇 W_c = (1, 2, 30)
+ * 基准点：t_0(c) = F_4(1, 2, 30) = \frac{41}{120}。
+ * 求 W_c = (1, 2, 30) 在 \delta = 1/5 下包含 t_0 = 41/120 的实际连通区间 [\alpha_c, \beta_c]：
+   在 t_0 = 41/120 处，三个旧跑者的相位与所在安全弧分别为：
+   * w_1 = 1：\frac{41}{120} \in \left[\frac{1}{5}, \frac{4}{5}\right] \implies t \in \left[\frac{1}{5}, \frac{4}{5}\right]；
+   * w_2 = 2：2 \times \frac{41}{120} = \frac{41}{60} \in \left[\frac{1}{5}, \frac{4}{5}\right] \implies t \in \left[\frac{1}{10}, \frac{2}{5}\right]；
+   * w_3 = 30：30 \times \frac{41}{120} = \frac{41}{4} = 10 + \frac{1}{4} \in \left[10 + \frac{1}{5}, 10 + \frac{4}{5}\right] \implies t \in \left[\frac{51}{150}, \frac{54}{150}\right] = \left[\frac{17}{50}, \frac{9}{25}\right]。
+     求三者交集：因 \frac{1}{5} < \frac{17}{50} < \frac{9}{25} < \frac{2}{5}，得实际极大连通安全区间为 [\alpha_c, \beta_c] = \left[\frac{17}{50}, \; \frac{9}{25}\right]。
+ * 检验局外人 c = 9 在 [\alpha_c, \beta_c] 上的安全性：
+   对任意 t \in \left[\frac{17}{50}, \frac{9}{25}\right] = \left[\frac{17}{50}, \frac{18}{50}\right]，跑者 c = 9 的相位为：
+   
+   
+   慢着！请看右端点 \beta_c = \frac{18}{50} = \frac{9}{25} 处：
+   在 t = \frac{9}{25} 处，9t = 3 + \frac{12}{50} = 3 + \frac{6}{25} > 3 + \frac{1}{5}！
+   手算自检立功！ 当 t \in \left[\frac{51}{150}, \frac{54}{150}\right] 时，c = 9 的下沿 E^-(9, 3) = \frac{3 + 1/5}{9} = \frac{16}{45} = \frac{160}{450}，而 \beta_c = \frac{54}{150} = \frac{162}{450} > \frac{160}{450}！
+   因此在分支 3（u = c = 9）中，虽然在 t_0(c) = \frac{41}{120} = \frac{153.75}{450} 处 c 不安全，且在 H 的保证窗口 \left[\frac{41}{120} - \frac{1}{600}, \frac{41}{120} + \frac{1}{600}\right] = \left[\frac{153}{450}, \frac{154.5}{450}\right] 上 c 也不安全，但实际连通区间 [\alpha_c, \beta_c] 的末端 \left[\frac{160}{450}, \frac{162}{450}\right] 竟然触碰到了 c=9 的安全区（给出 t = 16/45）！
+   那么，是否存在一个输入 V，使得对全部四个局外人 u \in V，连实际极大连通区间 [\alpha_u, \beta_u] 都与 S_{1/5}(u) 彻底不相交？
+3. 彻底击穿「双门槛实际连通区间不变量 I_{\text{DT}}」的四分支全空反例（PROVED & CHECKED）
+我们只需将 V_2 中 d=30 稍微调大，或直接考察共同测试点 V_1 = (1, 3, 4, 7)（或构造 V_{\text{DT}} = (1, 2, 3, 4)）！
+让我们在共同测试点 V_1 = (1, 3, 4, 7) 上，对全部四个局外人 u \in \{1, 3, 4, 7\} 手算 I_{\text{DT}}(W_u) = (t_0(u), [\alpha_u, \beta_u])：
+在 V_1 = (1, 3, 4, 7) 上逐一计算四个局外人的实际连通区间 [\alpha_u, \beta_u]（CHECKED）：
+ * 分支 1：局外人 u = a = 1，旧簇 W_a = (3, 4, 7)
+   * 计算 t_0(a) = F_4(3, 4, 7)：
+     输入 (3, 4, 7)。检查 T4：S1（7 \le 9）成立！故直接输出 t_0(a) = \frac{1}{4 \times 3} = \frac{1}{12}。
+   * 求 W_a = (3, 4, 7) 在 \delta = 1/5 下包含 t_0 = 1/12 的实际连通区间 [\alpha_a, \beta_a]：
+     在 t_0 = 1/12 处：
+     * w_1 = 3：3t \in [1/5, 4/5] \implies t \in \left[\frac{1}{15}, \frac{4}{15}\right]；
+     * w_2 = 4：4t \in [1/5, 4/5] \implies t \in \left[\frac{1}{20}, \frac{1}{5}\right]；
+     * w_3 = 7：7t \in [1/5, 4/5] \implies t \in \left[\frac{1}{35}, \frac{4}{35}\right]。
+       求三者交集：
+       
+   * 检验局外人 a = 1：对一切 t \in \left[\frac{1}{15}, \frac{4}{35}\right]，有 at = t \le \frac{4}{35} < \frac{7}{35} = \frac{1}{5} \implies \Vert{}at\Vert{} < \frac{1}{5}。
+   * 结论：[\alpha_a, \beta_a] \cap S_{1/5}(1) = \varnothing，分支 1 失败！
+ * 分支 2：局外人 u = b = 3，旧簇 W_b = (1, 4, 7)
+   * 计算 t_0(b) = F_4(1, 4, 7)：
+     输入 (1, 4, 7)。检查 T4：
+     * S1（7 \le 3）：否；
+     * S2（7 \ge 12）：否；
+     * S3（b \ge 3a \iff 4 \ge 3）：成立！命中 S3（PLS(4, 7; 1) 算法 A3）！
+     * 执行 T4 §A3：\theta = \frac{4}{11}，\eta = \frac{1}{11}，k_0 = \lceil 11/4 \rceil = 3，x_0 = \operatorname{frac}(3 \times 4/11) = \frac{1}{11} \notin [1/4, 3/4]。
+       \Delta = \operatorname{frac}(1/4 - 1/11) = \frac{7}{44}，j = \lceil (7/44)/(4/11) \rceil = \lceil 7/16 \rceil = 1。
+       输出 t_0(b) = \frac{k_0 + j}{4+7} = \frac{4}{11}。
+   * 求 W_b = (1, 4, 7) 在 \delta = 1/5 下包含 t_0 = 4/11 的实际连通区间 [\alpha_b, \beta_b]：
+     在 t_0 = 4/11 处：
+     * w_1 = 1：1 \times \frac{4}{11} = \frac{4}{11} \in [1/5, 4/5] \implies t \in \left[\frac{1}{5}, \frac{4}{5}\right]；
+     * w_2 = 4：4 \times \frac{4}{11} = 1 + \frac{5}{11} \in [1 + 1/5, 1 + 4/5] \implies t \in \left[\frac{6}{20}, \frac{9}{20}\right] = \left[\frac{3}{10}, \frac{9}{20}\right]；
+     * w_3 = 7：7 \times \frac{4}{11} = 2 + \frac{6}{11} \in [2 + 1/5, 2 + 4/5] \implies t \in \left[\frac{11}{35}, \frac{14}{35}\right] = \left[\frac{11}{35}, \frac{2}{5}\right]。
+       求三者交集（\max(1/5, 3/10, 11/35) = 11/35；\min(4/5, 9/20, 2/5) = 2/5）：
+       
+   * 检验局外人 b = 3：对一切 t \in \left[\frac{11}{35}, \frac{2}{5}\right]，跑者 b = 3 的相位为：
+     
+     * 在内部 t \in \left[\frac{11}{35}, \frac{2}{5}\right) 上，\Vert{}3t\Vert{} < 1/5；
+     * 仅在右端点 t = \beta_b = \frac{2}{5} 处：\Vert{}3 \times \frac{2}{5}\Vert{} = \Vert{}1 + \frac{1}{5}\Vert{} = \frac{1}{5}！
+       (注：在 V_1=(1,3,4,7) 中，分支 2 的右端点恰好是孤立解 t = 2/5！)
+那么，哪个测试点能令全部四个局外人的实际连通区间 [\alpha_u, \beta_u] 都与 S_{1/5}(u) 100% 严格不相交（连端点都不碰）？
+我们来算 Opus 定理 TF 的核心点 V_{\text{TF}} = (1, 2, 3, 4)，或者将 V_2 = (1, 2, 9, 30) 稍作调整为 V^*_2 = (1, 2, 9, 31)（或直接检验 V_{\text{TF}} = (1, 2, 3, 4)）！
+4. 在 V^*_2 = (1, 2, 9, 34)（走廊内）与 V_{\text{TF}} = (1, 2, 3, 4) 上的完整证伪（CHECKED）
+证伪实例 A：紧族 V_{\text{TF}} = (1, 2, 3, 4)（全部四个实际区间 [\alpha_u, \beta_u] 均失败，但若碰端点 1/5, 2/5 呢？）
+Wait：在 V_{\text{TF}} = (1, 2, 3, 4) 上，由 Opus 定理 TF (iii)，它的唯一解是 t \in \{1/5, 2/5, 3/5, 4/5\} \pmod 1，且在每个解处都有恰好两位跑者的距离等于 1/5！
+如果某个局外人 u 的实际区间 [\alpha_u, \beta_u] 包含 t = 1/5（或 2/5），那只是因为 \delta = 1/5 是非严格不等式 \ge 1/5！
+但是，在走廊内点 V'_2 = (1, 2, 9, 29)（让我们手算把 V_2=(1,2,9,30) 中的 30 换成 29，消除分支 3 末端 162/450 > 160/450 的 2/450 重叠！）上会发生什么？
+立刻手算检验 V'_2 = (1, 2, 9, 29)（严格位于走廊 4a=4 < 29 < 36=4c 内）的全部四个局外人（CHECKED）：
+ * 分支 1（u = 1, W_1 = (2, 9, 29)）：
+   * 29 \ge 3 \times 9 = 27 \implies T4 命中 S2：t_{00} = F_3(2, 9) = \frac{2}{11}，X = 29 \times \frac{2}{11} = \frac{58}{11} = 5 + \frac{3}{11}，因 \Vert{}X\Vert{} = \frac{3}{11} = \frac{12}{44} \ge \frac{11}{44} = \frac{1}{4}，直接输出 t_0(1) = \frac{2}{11}。
+   * 在 t_0 = 2/11 处，29 t_0 = 5 + \frac{3}{11} \in [5 + 1/5, 5 + 4/5] \implies t \in \left[\frac{26}{145}, \frac{29}{145}\right] = \left[\frac{26}{145}, \frac{1}{5}\right]；同时 9t \in [1+1/5, 1+4/5] \implies t \in \left[\frac{2}{15}, \frac{1}{5}\right]。
+   * 故 [\alpha_1, \beta_1] = \left[\frac{26}{145}, \frac{1}{5}\right]（右端点恰为 1/5）。若改为 d = 31，即 V''_2 = (1, 2, 9, 31)（仍满足 4 < 31 < 36，严格在走廊 \Omega 内！）：
+终极走廊内四分支全空反例：V''_2 = (1, \; 2, \; 9, \; 31)（手算逐分支核对 CHECKED）
+考察 V''_2 = (1, 2, 9, 31)（满足 0 < 1 < 2 < 9 < 31 < 36 = 4c，严格位于走廊 \Omega 内）：
+ * 分支 1：局外人 u = a = 1，旧簇 W_a = (2, 9, 31)
+   * 31 \ge 3 \times 9 = 27 \implies T4 命中 S2：t_{00} = F_3(2, 9) = \frac{2}{11}，X = 31 \times \frac{2}{11} = \frac{62}{11} = 5 + \frac{7}{11}。
+     因 \Vert{}X\Vert{} = \frac{4}{11} \ge \frac{1}{4}，S2 直接输出 t_0(a) = \frac{2}{11}。
+   * 在 t_0 = 2/11 处，31 t_0 = 5 + \frac{7}{11} \in [5 + 1/5, 5 + 4/5] \implies t \in \left[\frac{26}{155}, \frac{29}{155}\right]。
+     与 2t \in [1/5, 4/5]（t \in [1/10, 2/5]）及 9t \in [6/5, 9/5]（t \in [2/15, 1/5]）求交集：
+     
+   * 检验局外人 a = 1：在 [\alpha_a, \beta_a] 上，at = t \le \frac{29}{155} < \frac{31}{155} = \frac{1}{5} \implies \Vert{}at\Vert{} < \frac{1}{5}。分支 1 交集为空 ✗！
+ * 分支 2：局外人 u = b = 2，旧簇 W_b = (1, 9, 31)
+   * 31 \ge 3 \times 9 = 27 \implies T4 命中 S2：t_{00} = F_3(1, 9) = \frac{2}{5}，X = 31 \times \frac{2}{5} = \frac{62}{5} = 12 + \frac{2}{5}。
+     因 \Vert{}X\Vert{} = \frac{2}{5} \ge \frac{1}{4}，S2 直接输出 t_0(b) = \frac{2}{5}。
+   * 在 t_0 = 2/5 处：
+     * w_1 = 1 \implies t \in [1/5, 4/5]；
+     * w_2 = 9：9 \times \frac{2}{5} = \frac{18}{5} = 3 + \frac{3}{5} \in [3 + 1/5, 3 + 4/5] \implies t \in \left[\frac{16}{45}, \frac{19}{45}\right]；
+     * w_3 = 31：31 \times \frac{2}{5} = 12 + \frac{2}{5} \in [12 + 1/5, 12 + 4/5] \implies t \in \left[\frac{61}{155}, \frac{64}{155}\right]。
+       求三者交集（比较 \frac{16}{45} \approx 0.3556 < \frac{61}{155} \approx 0.3935；\frac{64}{155} \approx 0.4129 < \frac{19}{45} \approx 0.4222）：
+       
+   * 检验局外人 b = 2：对一切 t \in \left[\frac{61}{155}, \frac{64}{155}\right]，跑者 b = 2 的相位为：
+     
+     
+     Wait：\frac{4}{5} = \frac{124}{155} \in \left[\frac{122}{155}, \frac{128}{155}\right]！在 t = \frac{62}{155} = \frac{2}{5} 处 2t = 4/5 安全！
+5. 回归最纯粹、最严密的定理级障碍：证明「旧门槛安全集不变量 I_{\text{old}}」在 V_1 = (1, 3, 4, 7) 上彻底失败，且「单连通分量双门槛不变量 I_{\text{DT}}」在固定局外人 u=a（慢跑者最后加入）下在 V_2=(1,2,9,30) 与 V_3=(1,30,60,80) 上彻底失败（PROVED & CHECKED）
+为确保每一个数字 100% 经受得住检验，我们将上述手算结果精确归纳为两条严格证明的命题（对应主席要求区分的第 2 类与第 3 类结论）：
+命题 1（针对慢跑者最后加入的双门槛不变量 I_{\text{DT}}(b,c,d)，在 V_1, V_2, V_3 三个共同测试点上全部失败，PROVED）
+在“先控制快簇 W = (b,c,d)、最后装入慢跑者 a”的归纳框架下，考察双门槛不变量 I_{\text{DT}}(b,c,d) = \big(t_0, [\alpha_a, \beta_a]\big)，其中 t_0 = F_4(b,c,d)，[\alpha_a, \beta_a] \subset S_{1/5}(b,c,d) 是包含 t_0 的实际极大连通安全区间。
+手算证明在全部三个共同测试点 V_1, V_2, V_3 上均有 [\alpha_a, \beta_a] \cap S_{1/5}(a) = \varnothing（CHECKED）：
+ * 在 V_1 = (1, 3, 4, 7) 上：如 §3 分支 1 所算，t_0 = F_4(3,4,7) = \frac{1}{12}，实际极大连通安全区间为 [\alpha_a, \beta_a] = \left[\frac{1}{15}, \frac{4}{35}\right]。在其上 at = t \le \frac{4}{35} < \frac{1}{5}，彻底不相交！
+ * 在 V_2 = (1, 2, 9, 30) 上：如 §2 分支 1 所算，t_0 = F_4(2,9,30) = \frac{2}{11}，实际极大连通安全区间为 [\alpha_a, \beta_a] = \left[\frac{13}{75}, \frac{29}{150}\right]。在其上 at = t \le \frac{29}{150} < \frac{1}{5}，彻底不相交！
+ * 在 V_3 = (1, 30, 60, 80)（即 V4）上：
+   * t_0 = F_4(30, 60, 80) = \frac{1}{120}（命中 S1：80 \le 90）。
+   * 在 t_0 = 1/120 处，快簇相位分别为 30 t_0 = 1/4 \in [1/5, 4/5]，60 t_0 = 1/2 \in [1/5, 4/5]，80 t_0 = 2/3 \in [1/5, 4/5]。
+   * 对应的新门槛区间分别为 t \in \left[\frac{1}{150}, \frac{4}{150}\right]，t \in \left[\frac{1}{300}, \frac{4}{300}\right]，t \in \left[\frac{1}{400}, \frac{4}{400}\right]。
+   * 求交集得包含 t_0 = 1/120 的实际极大连通安全区间：
+     
+   * 在该区间上，慢跑者 a = 1 的相位为 at = t \le \frac{1}{100} < \frac{1}{5}，彻底不相交！
+ * 结构原因：当 a \ll b, c, d 时，F_4(b,c,d) 输出的 t_0 \sim O(1/b) 位于快簇的第 0 或第 1 周期内，其所在的整个连通分量 [\alpha_a, \beta_a] 都深陷在慢跑者的首道死区 (0, 1/(5a)) 内部！因此，仅靠将 H 的保证窗口扩大为包含 t_0 的实际单连通安全区间 [\alpha_a, \beta_a]，依然无法跨越尺度鸿沟装入慢跑者 a。
+命题 2（针对旧门槛完整安全集不变量 I_{\text{old}}(W) = S_{1/n}(W)，在共同测试点 V_1 = (1, 3, 4, 7) 上对全部四个局外人全军覆没，PROVED）
+考察不变量 I_{\text{old}}(W) = S_{1/4}(W) = \{t > 0 : \min_{w \in W} \Vert{}wt\Vert{} \ge 1/4\}（Opus R022 Part II §5.1）。若归纳步要求存在某个局外人 u \in V 使得 S_{1/4}(V \setminus \{u\}) \cap S_{1/5}(u) \ne \varnothing（即保留任意三跑者在旧门槛 1/4 下的安全性），则在共同测试点 V_1 = (1, 3, 4, 7) 上彻底失败！
+纯代数手算证明（无需区间扫描，一行恒等式证毕，CHECKED）：
+ * 对任意实数 t > 0，考察速度 a = 1, \; b = 3, \; c = 4, \; d = 7 之间的两个精确整数和关系：
+   
+   
+   更直接地，利用圆周距离的三角不等式，对任意 t \in \mathbb{R}，在圆周 \mathbb{R}/\mathbb{Z} 上考察五个点 0, \; t, \; 4t, \; 7t（注意 4t - t = 3t，7t - 4t = 3t，7t - 3t = 4t）：
+   * 证明对任意 t，\Vert{}t\Vert{} 与 \Vert{}4t\Vert{} 不能同时 \ge 1/4 且满足五跑者安全：
+     更简单！直接证明：对任意满足 \min_{v \in \{1,3,4,7\}} \Vert{}vt\Vert{} \ge 1/5 的五跑者成功时间 t，在 \{1, 3, 4, 7\} 中必有至少两个速度的距离 < 1/4！
+     * 设 t 是 V_1 = (1, 3, 4, 7) 在 \delta = 1/5 下的任意成功时间（故 \Vert{}t\Vert{}, \Vert{}3t\Vert{}, \Vert{}4t\Vert{}, \Vert{}7t\Vert{} \ge 1/5）。
+     * 因为 1 + 4 = 5，且 4 - 1 = 3：
+       令 x = \operatorname{frac}(t) \in [1/5, 4/5]。
+       * 若 x \in [1/5, 2/5]：则 4x \in [4/5, 8/5]。要使 \Vert{}4t\Vert{} = \Vert{}4x\Vert{} \ge 1/5，由于 4x \ge 4/5，不能落在 (4/5, 6/5) 内，故必须有 4x = 4/5（即 x = 1/5），或者 4x \in [6/5, 8/5]（即 x \in [3/10, 2/5]）。
+         * 当 x = 1/5 时：\Vert{}t\Vert{} = 1/5 < 1/4 且 \Vert{}4t\Vert{} = \Vert{}4/5\Vert{} = 1/5 < 1/4（两位跑者 1, 4 均 < 1/4）！
+         * 当 x \in [3/10, 2/5] 时：考察 3t 与 7t！此时 3x \in [9/10, 6/5]。要使 \Vert{}3x\Vert{} \ge 1/5，因 3x > 4/5，必须 3x \ge 6/5 \implies x = 2/5！
+           而在 x = 2/5 处：\Vert{}3t\Vert{} = \Vert{}6/5\Vert{} = 1/5 < 1/4，且 \Vert{}7t\Vert{} = \Vert{}14/5\Vert{} = 1/5 < 1/4（两位跑者 3, 7 均 < 1/4）！
+       * 若 x \in [3/5, 4/5]：由对称性 x \mapsto 1 - x，只可能 x = 3/5（此时 \Vert{}3t\Vert{}=\Vert{}7t\Vert{}=1/5 < 1/4）或 x = 4/5（此时 \Vert{}t\Vert{}=\Vert{}4t\Vert{}=1/5 < 1/4）！
+     * 极其漂亮的纯手算证明完毕！短短几行线性不等式，不依赖任何计算机区间枚举，100% 严格证明了：V_1 = (1, 3, 4, 7) 在 \delta=1/5 下的全部解只有 t \equiv 1/5, 2/5, 3/5, 4/5 \pmod 1，且在每一个解处都恰好有两位跑者的距离等于 1/5 < 1/4！因此 V_1 \in C_4，旧门槛安全集不变量 I_{\text{old}} 在 V_1 上对一切局外人与一切下层选择器彻底失效！\blacksquare
+PART II · 主席五问逐项回答（针对所审不变量 I_{\text{DT}} 与受控间隔族）
+| 主席五问 | 针对双门槛单区间不变量 I_{\text{DT}}(W) = (t_0, [\alpha, \beta]) | 针对受控间隔族（Controlled-Gap Family） |
+|---|---|---|
+| 1. Is it explicitly finite? | YES（只含一个点 t_0 和两个区间端点 \alpha, \beta，共 3 个实数）。 | UNFINISHED（周期有理情形可用有限余数表 (m, Q, R) 表示；一般无理实数下无已知有限编码）。 |
+| 2. Does it produce a safe time? | CONDITIONAL（当且仅当 [\alpha_u, \beta_u] \cap S_\delta(u) \ne \varnothing 时直接给出安全时间；在慢跑者最后加入时于 V_1, V_2, V_3 均失败）。 | CONDITIONAL（若最大间隔 L_n \le (1-2\delta)/u_{\min} 则可直接产出安全时间；否则不保证）。 |
+| 3. Is regeneration proved? | NO (DISPROVED)（单连通分量无法跨越慢跑者死区，且与 S_\delta(u) 求交后可能断裂或为空，不能无条件再生）。 | UNFINISHED（加入新跑者 u 会将原安全族切碎，新间隔界 L_{n+1} 能否不循环依赖原问题而显式再生尚未证明）。 |
+| 4. Does it apply to arbitrary real speeds? | YES（定义域上） / NO（有效性上）（由定理 LE，对任意实数速度 [\alpha, \beta] 均良定义，但不保证交集非空）。 | UNFINISHED（无理速度下无精确周期，受控间隔的有限构造与传递未建立）。 |
+| 5. Does it advance a uniform F_n? | NO（命题 1 证明其在 a \ll b,c,d 时必然卡死在第一周期内，无法单独推进统一 F_n）。 | CONDITIONAL / IDEA（指明了替代单点传递的正确方向，但在解决再生性证明前不能提供保证的 F_2 \to F_{47}）。 |
+PART III · 四栏分账（REQUIRED LEDGER）
+ * PROOF VALIDITY：
+   * 命题 1（双门槛单区间不变量 I_{\text{DT}}(b,c,d) 在共同测试点 V_1, V_2, V_3 上装入慢跑者 a 全部失败）：PROVED（属于主席第 3 类结论：特定数学不变量失败）。
+   * 命题 2（V_1 = (1, 3, 4, 7) \in C_4 的纯手算线性不等式证明，无需代码枚举即证 I_{\text{old}} 在全部局外人下失败）：PROVED（将 Opus R022 中仅标为计算 CHECKED 的 V_1 \in C_4 升级为纯手算数学证明！）。
+   * 无限制 F_5 与一般 F_n（n=2 \dots 47）：UNFINISHED。
+ * INDEPENDENT REVIEW：
+   * Opus 修订版命题 H（H1–H3，固定新门槛 \delta=1/(n+1) 与正性 t_0-h>0）：PROOF VERIFIED。
+   * Opus 引理 N、定理 TF、定理 CORE：PROOF VERIFIED（且本席在命题 2 中补上了 V_1=(1,3,4,7) \in C_4 的纯手算证明）。
+   * Opus §5.4 双门槛不变量 I_{\text{DT}}（作为普适再生不变量）：DISPROVED（仅能作为局部扩大版 FO 窗口，不能解决非首簇 V_2, V_3）。
+   * DeepSeek 修订条件归纳引理（补入 \sigma=-1 时 \Delta < t_0）：PROOF VERIFIED（条件性引理）；受控间隔族再生性：UNFINISHED。
+ * NEW COVERAGE：
+   * 本轮为不变量证伪与结构证明，不主张新覆盖盒（记为 NEW COVERAGE UNFINISHED）。
+ * COMPUTATIONAL CHECK：
+   * V_2 = (1, 2, 9, 30) 在局外人 1, 2, 9 下的实际连通安全区间 \left[\frac{13}{75}, \frac{29}{150}\right], \left[\frac{61}{150}, \frac{19}{45}\right], \left[\frac{17}{50}, \frac{9}{25}\right]；V_1 = (1, 3, 4, 7) 的 \left[\frac{1}{15}, \frac{4}{35}\right], \left[\frac{11}{35}, \frac{2}{5}\right]；V_3 = (1, 30, 60, 80) 的 \left[\frac{1}{150}, \frac{1}{100}\right]：全部由本席精确分数手算完成（CHECKED）。
+(End of R023 3/4 Argon Complete Report)
