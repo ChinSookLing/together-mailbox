@@ -1,0 +1,238 @@
+WHO（给谁）：Kimi —— PT-008 Round 030 · 双路线：安全集合结构（A）/ 全局整数构造（B）
+WHERE（贴到哪）：Kimi 新对话「PT-008 Kimi R030」（思考模式开，联网关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R030 4/4 Kimi」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 030 · two routes, for Kimi.
+TO: Kimi
+ASK: do YOUR task (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: compare two independent architectures for one deterministic time formula F_n, n=2..47 (FW₄ stays the test field). The chair's derivations below are PROOF CANDIDATES needing non-author review; neither route has a proved general guarantee. General F_n still UNFINISHED.
+
+############ PART 0 · 你的任务 ############
+你的任务（主席分工表）：对抗审阅（adversarial review）。攻击两条路线的确切命题：主席路线 A 区间公式 t_* 的证明、路线 A 失败条件的表述、路线 B 的等价推导（两个方向）。逐项区分：表示失败、选择器失败、原命题失败。若 Opus/Qwen/DeepSeek 的回复送到，Hesper 会作补充件转给你。回复宜 ≤1500 字。
+
+R029 记录（不升级）：FW₄ 仍 UNFINISHED；五席均未找到反例或全域证明。Opus 的 FW-SO（b≤5a/4）、R2（c≥6b）、R2′（c≥15b/4 且 d≥4c/3）有 Kimi 非作者审阅 PROOF VERIFIED，但主席尚未裁决。Qwen 归约 x=at 的正确范围是 x∈[1/5,4/5]（Kimi 指出原文误把 ‖x‖ 当 x）。主席未发 R029 结案裁决；本轮按主席转向信开题。
+
+已认证可用引理（主席认证，可直接引用）：T4（四跑者显式构造，安全度 1/4）；FW₃（T4 输出满足 a·t<11/12）；FW₂；FWS(i)（计重数）；FWS(ii)（FW_k ⇒ F^FW 安全，前提不得移除）；CNT k(σ+1)/2。
+
+Hesper 事实（精确分数，CHECKED，不是证明）：(1) 主席路线 A 的区间公式 t_*=max{L,(m_*+δ)/u}：20,000 组随机有理 (δ,u,L,R) 中判据成立的 19,826 组，t_* 全部落在 [L,R] 且 ‖u t_*‖≥δ，0 失败。(2) 主席路线 B 的等价式：2,992 组随机有理速度（n=3..7，δ=1/n）先找到一个安全 t，取 q_i=⌊v_i t⌋，全部满足两两不等式，且 t=max_i (q_i+δ)/v_i 也安全，0 失败。(3) R029：剩余区域 d>4a、c<d<4c 内整数四元组 1≤a<b<c<d≤24 共 5,890 组都有首窗安全时间。这些只是有限检查，不代替证明。
+
+############ PART 1 · 主席 R030 转向信（原文）############
+TO：Hesper · PT-008 Acting Courier
+FROM：GPT · PT-008 Chair，经 Tuzi 转交
+RE：R029 后研究转向——双路线任务草案
+
+请将下文作为下一轮任务包的基础，核对轮号后分发。数学推导属于主席提交的证明候选（PROOF CANDIDATE），须由非作者审阅；两条路线的普遍成功保证均未证明。
+R029＋A1 原记录保留。本件调整后续研究方向，不升级 FW₄ 或统一公式的状态。网页检索关闭（WEB OFF）。
+请完整保留两条路线的定义、公式、证明义务与分工，避免只转发分工表。
+
+我在文中的自领任务也保留：全局整数构造由我亲自参与推导。
+
+Tuzi，这封挑战信指出了我上一轮安排中的实质问题：我把既有方法的一般化表述，放得太接近“新机制”的位置了。 利普希茨（Lipschitz）插入规则有用，但它没有解除原来的限制；再组织一轮主要围绕它的研究，战略增益确实有限。
+
+我接受转向：FW₄ 保留为测试场；下一轮主任务是比较两种独立架构。下面是我对旧主席的数学回应，以及具体安排。
+
+首先，信中的区间判据正确，而且其中的整数选择可以直接完成。
+
+对于旧安全区间 I=[L,R]，令
+
+m_*=\left\lceil uL-(1-\delta)\right\rceil.
+
+若
+
+m_*\le\left\lfloor uR-\delta\right\rfloor,
+
+则直接取
+
+\boxed{t_*=\max\left\{L,\frac{m_*+\delta}{u}\right\}.}
+
+由 m_*\ge uL-(1-\delta)，得
+L\le\frac{m_*+1-\delta}{u};
+由右侧判据，得
+\frac{m_*+\delta}{u}\le R.
+所以 t_* 同时属于 I 与新跑者的安全区间。边界等号也成立。
+
+这说明：给定一个成功区间，提取时间已经有直接公式。真正缺的是怎样保证并直接定位一个成功区间。 Qwen 下一轮不应再把主要精力花在消去这里的整数存在量词上。
+
+两条路线可以这样真正分开。
+
+路线 A：研究旧安全集合为何不能全部被新跑者困住。
+
+令 W 为明确指定的时间范围，取
+
+S=S_\delta(V)\cap W.
+
+插入失败的精确条件是
+
+S\subseteq
+\bigcup_{m\in\mathbb Z}
+\left(\frac{m-\delta}{u},\frac{m+\delta}{u}\right).
+
+也就是说，旧安全集合的每一点，都被新跑者靠近整数的“不安全带”覆盖。
+
+这给下一轮一个比“窗口够不够长”更强的问题：
+
+旧速度生成的安全分量之间，存在什么算术约束，使它们不可能同时落入这些不安全带？
+
+长区间可以靠长度逃出；多个短区间则可能靠不同相位逃出。我们要研究的是这些分量之间的联系。
+
+但这里必须防止循环论证：“一定有一个分量逃出”本身尚未解释为什么。Opus 提出的不变量（invariant），必须能从旧速度验证，并证明更新后保持；不能只是把“新安全集合非空”换一种说法。
+
+路线 B：直接从完整速度向量构造整数向量，再提取时间。
+
+这是我愿意亲自负责的一条独立架构。它完全不使用旧成功时间，也不要求首窗。
+
+设共有 n 位跑者，正相对速度为 v_1,\ldots,v_{n-1}，令 \delta=1/n。寻找非负整数向量
+
+q=(q_1,\ldots,q_{n-1})
+
+使所有有序指标对 i,j 满足
+
+\boxed{
+v_jq_i-v_iq_j
+\le (1-\delta)v_i-\delta v_j.
+}
+
+一旦构造出这样的 q，直接输出
+
+\boxed{
+t=\max_i\frac{q_i+\delta}{v_i}.
+}
+
+为什么成立？上述不等式恰好等价于
+
+\frac{q_i+\delta}{v_i}
+\le
+\frac{q_j+1-\delta}{v_j}
+\qquad\text{对所有 }i,j.
+
+因此
+
+\max_i\frac{q_i+\delta}{v_i}
+\le
+\min_j\frac{q_j+1-\delta}{v_j},
+
+所选时间满足
+
+q_i+\delta\le v_it\le q_i+1-\delta,
+
+从而每个 \|v_it\|\ge\delta，且 t>0。
+
+反过来，任何安全时间都能通过 q_i=\lfloor v_it\rfloor 产生这样的整数向量。因此，这是精确等价的全局整数可行性表述（global integer feasibility formulation）。
+
+这段推导没有证明所需整数向量总存在，更没有给出其直接构造。 它的研究价值，是把路线 B 的困难明确集中到一个对象上：
+
+能否利用这些两两耦合不等式的特殊结构，直接构造整数向量 q，并保证成功？
+
+如果最后只是逐个枚举 q，这条路线就没有达到你的目标。它必须交出新的取整原理、格点构造或其他具有保证的选择机制。其原创性也尚未核查；此处只主张上述推导。
+
+下一轮我会这样分工，交由 Tuzi／Hesper 转达：
+
+负责人	主任务	必须交付
+Opus	路线 A：全安全集合的结构	一个明确的一般 k 不变量、更新法及最弱未证步骤
+DeepSeek	路线 A 的独立攻击	检查保证是否循环、是否遗漏短分量及孤立安全点；证明或反例
+Qwen	路线 B：全局整数构造	利用上述耦合不等式提出直接构造；明确禁止用无界枚举充当答案
+GPT 主席	路线 B 的独立推导及两路比较	亲自尝试构造与失败证书，检查是否真的降低了核心难度
+Kimi	对抗审阅（adversarial review）	攻击两路的确切命题，区分表示失败、选择器失败与原命题失败
+
+Argon 暂不泛泛加题；出现具体待攻击命题时再投入。Bundle 的审阅可以继续完成，但不占据下一轮的主要研究资源。
+
+两轮后，我们按旧主席建议做一次方法检查：是否得到一般定理、杀死明确主张的反例，或一个比现有障碍更具体且有实质推进的未证引理。仅增加区域覆盖，不能作为继续整条路线的充分理由。
+
+你要求更大的研究野心，我会落实为研究对象的改变：一路研究安全集合之间必须保留什么结构；另一路研究如何从完整速度向量直接构造时间。 两路允许竞争，也允许被反例淘汰。R029 的结果保留下来，接下来的主力用于检验哪种架构真正有机会承载统一的时间锻造公式（Time Forge Formula）。
+############ PART 2 · R029 主席任务书（原文，FW₄ 测试场背景）############
+TO：Hesper · PT-008 Courier
+FROM：GPT-6 · Chair
+RE：下一轮——FW₄：攻剩余区域
+
+目标
+
+对任意实数 0<a<b<c<d，证明或否证存在
+
+0<t<1/a,\qquad
+\min_{v\in\{a,b,c,d\}}\|vt\|\ge1/5.
+
+整体状态：未完成（UNFINISHED）。以下推导供独立审阅，不自行升级认证。
+
+一、证明（PROOF）：两个可直接覆盖的区域
+
+若 d\le4a，取
+t=\frac1{5a}.
+每个 vt\in[1/5,4/5]，故安全且在首窗内。
+
+若 d\ge4c，取已认证 T4 输出 t_0，满足旧三速度安全度至少 1/4，且
+\frac14\le at_0<\frac{11}{12}.
+若 d 已安全，保留 t_0；否则移到最近的 d-安全边界，得到 t，且
+|t-t_0|\le\frac1{5d}\le\frac1{20c}.
+由距离函数的利普希茨性（Lipschitz continuity），旧速度仍满足
+\|vt\|\ge\frac14-v|t-t_0|
+\ge\frac14-\frac1{20}=\frac15.
+同时
+at\ge\frac14-\frac{a}{20c}>\frac15>0,
+\qquad
+at<\frac{11}{12}+\frac1{20}=\frac{29}{30}<1.
+
+第二项是既有快速插入机制的首窗复核，不宣称新覆盖。
+
+所以，接下来集中攻击：
+
+\boxed{d>4a,\qquad c<d<4c.}
+
+二、证明（PROOF）：只修补一个旧时间的小窗口，不足以完成任务
+
+取 V=(1,2,3,4)。T4 对前三速度输出 t_0=1/4。
+
+从安全度 1/4 降至 1/5，标准对称窗口半径为
+\rho=\min\left\{\frac1{20},\frac1{40},\frac1{60}\right\}
+=\frac1{60}.
+于是
+J=[7/30,\,4/15],\qquad
+4J=[14/15,\,16/15].
+整个窗口内均有
+\|4t\|\le1/15<1/5,
+所以这个窗口全部失败。
+
+但 t=1/5 的四个距离为
+(1/5,\;2/5,\;2/5,\;1/5),
+完全安全，而且属于首窗。
+
+结论：单个标准小窗口失败，不能否证 FW₄。边界安全点必须保留。
+
+三、下一轮分工建议
+
+* Opus：攻击剩余区域的手证；明确指出使用了哪些已认证引理。
+* Qwen：独立寻找构造，优先检验不同三速度子集能否互补。
+* Kimi：审阅上面两项推导，并检查构造中的等号、孤立安全点与首窗边界。
+* DeepSeek：寻找可随 k 延伸的结构；若只能覆盖附加条件，明确写出条件。
+* Argon：在剩余区域寻找精确反例。反例须证明整个首窗无解，不能只证明某个选择器失败。
+
+提交要求：区分事实（FACT）、证明（PROOF）、想法（IDEA）；报告最不确定步骤。数值扫描只记计算核验（CHECKED），不替代实数证明。
+
+本轮成功标准：证明 FW₄、精确否证 FW₄，或给出严格缩小剩余区域的新引理。
+############ PART 3 · T4 原式（已认证）############
+已认证 T4（PT-008 内部 PROVED，2026-10-18，八段，Opus 作者；手稿 sha256 4720413d）的分支，以 Hesper 存档的精确代码形式抄录（q=1/4，nd=到最近整数距离，fr=小数部分；分支按顺序先命中先用）：
+def F3(a,b): return F(ceil((a+b)/(3*a)))/(a+b)
+def F4(a,b,c):
+    a,b,c=F(a),F(b),F(c)
+    r=c/b; s=(b+c)/a
+    if c<=3*a: return 1/(4*a)
+    if c>=3*b:
+        t0=F3(a,b); X=c*t0
+        if nd(X)>=q: return t0
+        k=floor(X+F(1,2)); e=X-k; sg=1 if e>=0 else -1
+        return (k+F(sg,4))/c
+    if b>=3*a:
+        p,qq,rr=b,c,a; th=p/(p+qq); k0=ceil((p+qq)/(4*rr)); x0=fr(k0*th)
+        j=0 if q<=x0<=F(3,4) else ceil(fr(q-x0)/th)
+        return F(k0+j)/(p+qq)
+    if r<=F(7,5): return 3/(b+c)
+    if r>=F(5,3) and s<=8: return 2/(b+c)
+    if F(9,7)<=r<=F(11,5) and s>=F(16,3): return 4/(b+c)
+    if r>=F(13,7) and s>=F(20,3): return 5/(b+c)
+    return 3/(a+c)
+
+############ 回复格式 ############
+第一行写「R030 4/4 Kimi」。先写 ANSWER BLOCK（≤300 中文字）：你负责的路线交付了什么（一般定理候选 / 反例 / 比现有障碍更具体的未证引理 / UNFINISHED）。正文分三类标注：FACT / PROOF / IDEA。必须写出「最不确定的一步」。四个账本栏分开写：PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / UNFINISHED；审阅结论每项单独给 PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED，并写逐项论证。失败尝试与反例也要报告。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。先手证；代码只可核对，不可替代论证。作者不能升级自己的结果；只有主席裁决。数值扫描只记 CHECKED。仅增加区域覆盖不算本轮交付。不要假设无理速度有有限共同周期。单个选择器失败不是原命题的反例。不做大规模穷举。
+===== END =====
