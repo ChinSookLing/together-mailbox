@@ -1,0 +1,46 @@
+--- .github/workflows/k11-gate.yml	2026-10-20 13:30:49.795567093 +0000
++++ ../verify/.github/workflows/k11-gate.yml	2026-10-20 13:31:37.051810268 +0000
+@@ -20,6 +20,7 @@
+           - k11-p431a
+           - k11-p443a
+           - k11-p463a
++          - k11-p461a
+           - install
+           - wifi
+ permissions:
+@@ -28,7 +29,7 @@
+   group: k11-gate
+   cancel-in-progress: false
+ env:
+-  PIN: 013bc6b79419deb47c0c3c7ae527f62df05d15eabd8b5d6696073b5f081b5336
++  PIN: de7417ce290551b6d8baf09021bec04ad83c591abf22c26f0d3764cb8d2ecb8f
+ jobs:
+   install:
+     if: inputs.gate == 'install' && github.ref == 'refs/heads/main'
+--- dispatcher/SHA256SUMS	2026-10-20 13:30:50.298092735 +0000
++++ ../verify/dispatcher/SHA256SUMS	2026-10-20 13:31:37.555203562 +0000
+@@ -1,6 +1,6 @@
+ 3e9334a8cb8705bd4a05708cce4b077add0c477ca29b693d5b457667696ccef9  ./README.txt
+ b627656478a57d95a500343e876c2b49c71a9761fd335928a1e273e6ad00ddec  ./gates/checkpoint.sh
+-54f31accf6bf461bc1120559aad424af8e7562a72b322e5d616d2eb4916c683e  ./gates/entry.sh
++4855c55562ad095b694bf0d31bffb7687a93f1b1df083e43f348c3bba90e1d50  ./gates/entry.sh
+ 6f17244491c5123d99235d498188a7d5d15bb67ac18b14b3c3f25885aced13cc  ./gates/lib.sh
+ a3fe2234a1d55c3153d0a8e844eb9754df0da6894d2e941aa19d817df922ab87  ./gates/publish.sh
+ d8e6de69dde5886b6526ec0fe8ceb9a867e8c4d58fc2f78f0e23e15b707cb0ba  ./gates/resume.sh
+@@ -9,6 +9,7 @@
+ f2a09bc6c256aaebcec7cc5705291a3cc1fd9351c39bbc8779ce11884fe2bca9  ./jobs/k11-p397a.sh
+ a30fecaecd3917b4fccc307d6ea29035d89fd20cfd52e91af3220dcef3de9d9c  ./jobs/k11-p431a.sh
+ 56378da185e87b3181448a5789dabfb468549a329c6b0a4b3a2fd7d093e6eabb  ./jobs/k11-p443a.sh
++decdb49094a00bf3af1a0058bdc6b18d3adef221971a5cbe794db0111e9a7dfe  ./jobs/k11-p461a.sh
+ 0e5e898ad53c4dae60a2c34d047b29015ca5b6686f9d904c03164d2a8e4cb183  ./jobs/k11-p463a.sh
+ 90632d553b33cfbbc4abe87276393294a450145a6a84fec8b8407db649c1faae  ./jobs/kit/kcascade_run.py
+ 602b6f9943e6775eedd054fe919099c38651b9ea22a0f0d45d230ad7f4f6a4ae  ./jobs/kit/setup_k15.sh
+--- dispatcher/gates/entry.sh	2026-10-20 13:30:50.817031248 +0000
++++ ../verify/dispatcher/gates/entry.sh	2026-10-20 13:31:39.167007636 +0000
+@@ -14,5 +14,6 @@
+   k11-p431a)  start_job k11-p431a; bash "${D}/gates/status.sh" ;;
+   k11-p443a)  start_job k11-p443a; bash "${D}/gates/status.sh" ;;
+   k11-p463a)  start_job k11-p463a; bash "${D}/gates/status.sh" ;;
++  k11-p461a)  start_job k11-p461a; bash "${D}/gates/status.sh" ;;
+   *) note "not on menu: $GATE"; exit 2 ;;
+ esac
