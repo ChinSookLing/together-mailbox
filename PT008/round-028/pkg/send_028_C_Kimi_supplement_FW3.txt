@@ -1,0 +1,77 @@
+WHO（给谁）：Kimi —— PT-008 Round 028 · Track C 补充件（审 Opus R028 FW₃ 逐分支证明）
+WHERE（贴到哪）：Kimi 同一对话「PT-008 Kimi R028」（思考模式开，联网关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R028 3/4 Kimi supplement」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 028 · supplement, for Kimi. WEB OFF. Courier promotes nothing.
+主席 R028 Track C：Review a precise Opus FW₃ argument if one becomes available. 现 Opus FW₃ 逐分支证明到了（Part I），另附 FW-FO（II-1）。请逐分支审 0<t<1/a 的上界（尤其 B2b 的调整步与 B3 的 j 上界），再审 FW-FO。若你已独立证出 FW₃，请说明两种证明是否一致。Hesper 事实（CHECKED，非证明）：80,000 组随机有理三元组各分支 a·t 均在 Opus 声称的界内，T4 全部安全。
+以下为 Opus R028 原文节选（原样，Opus R028 全文 sha256 e42dfbd3）。
+## Part I · FW₃ 的逐分支证明
+
+**陈述（FW₃）**：对任意实数 0 < a < b < c，令 t = T4(a, b, c)（主席认证的八段构造，按附件给出的"T4 原式"顺序取第一个命中的分支）。则 0 < t < 1/a，且由 T4 的认证，‖at‖、‖bt‖、‖ct‖ ≥ 1/4。因此 S_{1/4}(a, b, c) ∩ (0, 1/a) ≠ ∅。
+
+**先记录各分支的前提**：分支按顺序判定，所以到达某一分支时，前面各分支的条件都不成立。
+- 到达 B2 之后：c > 3a；
+- 到达 B3 之后：c > 3a，c < 3b；
+- 到达 B4–B8 之后：c > 3a，c < 3b，b < 3a。
+
+**B1**（c ≤ 3a）：t = 1/(4a)，所以 a·t = 1/4 < 1。✓
+
+**B2**（c ≥ 3b，并且 c > 3a）：
+1. **t₀ = F3(a, b)**：设 m = ⌈(a+b)/(3a)⌉，t₀ = m/(a+b)。由 m < (a+b)/(3a) + 1，得 a·t₀ < 1/3 + a/(a+b) < 1/3 + 1/2 = 5/6（因为 b > a，所以 a/(a+b) < 1/2）。若 T4 直接输出 t₀，即 B2a，则 a·t < 5/6。✓
+2. **调整后的输出**（B2b，此时 nd(X) < 1/4，X = c·t₀）：令 k = ⌊X + ½⌋，e = X − k，则 |e| = nd(X) < 1/4。输出 t = (k + sg/4)/c，其中 sg = 1（e ≥ 0）或 −1（e < 0）。
+   - e ≥ 0 时，t − t₀ = (1/4 − e)/c ∈ (0, 1/(4c)]；
+   - e < 0 时，t − t₀ = −(1/4 + e)/c ∈ (−1/(4c), 0)。
+
+   总之 t ≤ t₀ + 1/(4c)。又 c ≥ 3b > 3a，所以 a/(4c) < 1/12。于是 a·t < 5/6 + 1/12 = 11/12。✓
+
+**B3**（b ≥ 3a，并且 3a < c < 3b）：θ = b/(b+c)，k₀ = ⌈(b+c)/(4a)⌉，x₀ = frac(k₀θ)；若 x₀ ∈ [1/4, 3/4] 则 j = 0，否则 j = ⌈Δ/θ⌉，Δ = frac(1/4 − x₀)。输出 t = (k₀ + j)/(b+c)。
+1. **Δ < 1/2**：若 x₀ ∈ [0, 1/4)，Δ = 1/4 − x₀ ∈ (0, 1/4]；若 x₀ ∈ (3/4, 1)，Δ = 5/4 − x₀ ∈ (1/4, 1/2)。
+2. 因此 j < Δ/θ + 1 < (b+c)/(2b) + 1；又 k₀ < (b+c)/(4a) + 1。
+3. t < 1/(4a) + 1/(2b) + 2/(b+c)。由 b ≥ 3a，得 1/(2b) ≤ 1/(6a)；由 b ≥ 3a、c > 3a，得 b + c > 6a，所以 2/(b+c) < 1/(3a)。
+4. 合计 a·t < 1/4 + 1/6 + 1/3 = 3/4。✓
+
+**B4**（c/b ≤ 7/5）：t = 3/(b+c)。由 c > 3a 与 b > a，b + c > 4a，所以 a·t < 3/4。✓
+
+**B5**（c/b ≥ 5/3，s ≤ 8）：t = 2/(b+c)，b + c > 4a，所以 a·t < 1/2。✓
+
+**B6**（9/7 ≤ c/b ≤ 11/5，s ≥ 16/3）：t = 4/(b+c)，a·t = 4/s ≤ 4·3/16 = 3/4。✓
+
+**B7**（c/b ≥ 13/7，s ≥ 20/3）：t = 5/(b+c)，a·t = 5/s ≤ 5·3/20 = 3/4。✓
+
+**B8**（其余情形）：t = 3/(a+c)。由 c > 3a，a + c > 4a，所以 a·t < 3/4。✓
+
+**正性**：每个分支的输出显然都 > 0（B2b 的输出 > 0 由 T4 的认证保证，因为它是一个安全时间）。∎
+
+**推论**：对 k = 3，首窗时间可以直接用 T4 给出（**直接公式，不需要枚举**），并且 a·t < 11/12。
+
+**失败的尝试（如实报告）**：本席起初只用 t₀ 的上界 5/6 处理 B2，后来发现调整步可能使 t 增大至多 1/(4c)，必须再用 c > 3a 才能得到 11/12。最终证明已包含这一步。
+
+**计算印证**（CHECKED，非证明）：
+- 60,000 个随机有理三元组（分子 ≤ 10⁴，分母 ≤ 300），T4 输出全部安全，各分支 a·t 的最大观测值都在上述界内（例如 B2b 为 0.7002，B6 为 0.74992）；
+- Hesper 对 1 ≤ a < b < c ≤ 40 的 9,880 组整数三元组的全分支核对，与本证明一致（Hesper 计算）。
+
+---
+
+
+### II-1 引理 FW-FO（快局外人保持首窗）
+**陈述**：设 V 为 k 个正实数，t₀ ∈ (0, 1/v_min)，并且 V 在 t₀ 处全部 ≥ 1/(k+1)（旧层成功，且在首窗内）。设新速度 u ≥ (k+1)·v_max。令 t 为 FO（R022 第 7 项，取 n = k+1）的输出。则：
+- t 对 V ∪ {u} 在 1/(k+2) 下安全；
+- 0 < t < 1/v_min；
+- v_min(V ∪ {u}) = v_min(V)。
+
+所以 FW_{k+1}(V ∪ {u}) 成立，并且见证时间由公式直接给出。
+
+**证明**：
+1. 安全性与 t > 0：由 FO 与 H3（已有非作者审阅）。
+2. 记 μ = 1/((k+1)(k+2))，δ′ = 1/(k+2)。FO 的平移量满足 |t − t₀| ≤ μ/v_max。
+3. 假设 t ≥ 1/v_min。由于 t₀ < 1/v_min，有 1/v_min ≤ t < 1/v_min + μ/v_max，于是 ‖v_min t‖ ≤ v_min(t − 1/v_min) < μ·v_min/v_max ≤ μ < δ′，与安全性矛盾。所以 t < 1/v_min。
+4. u > v_max，所以最慢的速度不变。∎
+
+**推论**：FW₃（T4）配合 FW-FO，给出所有满足 d ≥ 4c 的 (a, b, c, d) 的首窗解。这正是已认证的 LN 区域，所以**不是新覆盖**。
+
+
+回复格式：第一行「R028 3/4 Kimi supplement」。ANSWER BLOCK ≤300 字；每项审阅结论单独给 PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED，并写逐项论证（笼统 VERIFIED 不计数）；四账本栏 PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+数值扫描不能作证明。作者不能升级自己的结果；只有主席裁决。
+===== END =====
