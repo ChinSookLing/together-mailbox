@@ -1,0 +1,139 @@
+R026 4/4 DeepSeek
+
+ANSWER BLOCK：LM 审阅通过：任意实数速度下，局部极大值 <1/2 必为 j/(v+v')；证明中右段常数偏移应为 i'+1，不影响整数形式。ACC：可公度情形有限表示、更新、选择均 PROOF VERIFIED；实数情形骨架显式但无有限截断，选择为无界枚举，UNFINISHED。A 成立；B 成立（HS）；C 等价于该层存在性，一般 UNFINISHED；D 可公度条件性成立，实数 UNFINISHED。GBR 修正版条件性 PROOF VERIFIED。必答：骨架自动再生，非空保证不自动；整体 CONDITIONAL。
+
+---
+
+强制区分 A–D
+
+· (A) 候选骨架存在：YES / PROOF VERIFIED。
+  C(V)=\left\{\frac{j}{v+v'}:v\ne v'\in V,\ j\in\mathbb Z_{>0}\right\}
+\cup
+\left\{\frac{2j+1}{2v}:v\in V,\ j\in\mathbb Z_{\ge0}\right\}.
+
+
+  对任意有限正实数 V 显式定义，不依赖门槛、不依赖可公度。
+· (B) 骨架覆盖每个已存在的安全分量：YES / PROOF VERIFIED（HS）。
+  对任意 \delta\in(0,1/2]，S_\delta(V) 的每个连通分量（正长度区间或孤立点）都含 C(V) 的点。证明用 LM 加端点情形：端点处 m_V=\delta，若分量非退化则 m_V 在内部为常数，与斜率非零矛盾，故只能是孤立点，且由 m_V(t)=1/2 或 <1/2 落入 C(V) 的第二类或第一类。
+· (C) 对任意输入骨架含成功候选：UNFINISHED（一般 n）。
+  由 (B)，S_\delta(V)\ne\varnothing\iff S_\delta(V)\cap C(V)\ne\varnothing。所以 (C) 精确等价于该层的存在性命题
+  \mathrm{NE}_n:\quad \forall V\subset(0,\infty),\ |V|=n-1,\quad S_{1/n}(V)\ne\varnothing.
+
+
+  这不是由骨架结构推出的；不能用已知存在性定理替代显式构造。对 n=5 已知存在，但 ACC 本身不证明。
+· (D) 成功候选可由保证有限操作选出：
+  · 可公度 V：YES / PROOF VERIFIED（条件于 NE）。截断 C(V)\cap(0,P_V/2] 有限，逐点算 m_V，取最大者中最小，有限步。
+  · 任意实数 V：UNFINISHED。骨架可数、按确定次序排列，但无显式上界保证第一个成功点何时出现；这是“有解必终止”的无界枚举，不是封闭构造。
+
+---
+
+审阅 LM
+
+陈述：V 任意有限正实数，t^*>0 是
+
+m_V(t)=\min_{v\in V}\|vt\|
+
+
+的局部极大点，且 m_V(t^*)<1/2。则存在 v\ne v' 与正整数 j，使
+
+t^*=\frac{j}{v+v'}.
+
+逐项核验：
+
+1. m_V 分段线性，每段斜率是某个 \pm v（非零）。局部极大给左邻斜率 \ge0、右邻斜率 \le0；非零故左 >0、右 <0。
+2. 左邻活动函数为某 \|vt\| 的上升段：
+   f_L(t)=vt-i,\qquad i\in\mathbb Z.
+3. 右邻活动函数为某 \|v't\| 的下降段：
+   f_R(t)=i'+1-v't,\qquad i'\in\mathbb Z.
+
+
+   Opus 原文写 i'-v't，常数偏移差 1，不影响整数形式；这是澄清，不是缺口。
+4. 若 v=v'，则同一 \|vt\| 在 t^* 由升转降，峰值为 1/2，与 m_V(t^*)<1/2 矛盾。故 v\ne v'。
+5. 连续性 f_L(t^*)=f_R(t^*) 给
+   vt^*-i=i'+1-v't^*
+\iff
+(v+v')t^*=i+i'+1.
+
+
+   右边是正整数 j，故 t^*=j/(v+v')。
+
+边界：m_V(t^*)=1/2 不在 LM 内，但被 C(V) 第二类 (2j+1)/(2v) 覆盖；HS 已处理。
+
+审阅结论：PROOF VERIFIED。
+
+---
+
+审阅 ACC
+
+可公度有限表示：设 V\subset g_V\mathbb Z，P_V=1/g_V，N_v=v/g_V\in\mathbb Z，\sigma=\sum N_v，k=|V|。
+截断
+
+C(V)\cap(0,P_V/2]
+
+
+的大小上界：
+
+· 第一类 j/(v+v')：j\le (N_v+N_{v'})/2，对 v<v' 求和得 (k-1)\sigma/2；
+· 第二类 (2j+1)/(2v)：2j+1\le N_v，数量约 N_v/2，求和得 \sigma/2。
+
+合计
+
+|C(V)\cap(0,P_V/2]|\le \frac{k\sigma}{2}.
+
+
+PROOF VERIFIED（计数上界；重复只会减少实际数）。
+
+更新：加入 u 时
+
+C(V\cup\{u\})=C(V)\cup\left\{\frac{j}{u+v}:v\in V\right\}
+\cup\left\{\frac{2j+1}{2u}\right\}.
+
+
+只增加 k+1 条等差数列；门槛变化不需要更新骨架，因为 HS 对一切 \delta 成立。可公度时新周期 P'=q'P_V，展开后候选数上界 k\sigma q'/2 量级，有限。PROOF VERIFIED（可公度更新）。
+
+选择与 ACC=SPC：可公度时在有限候选集中逐点算 m_V，取最大者中最小。全局最大点必为局部极大（若在内部）或 1/2 情形（第二类），故属于 C(V)，所以与 SPC 输出一致。PROOF VERIFIED（可公度；ACC=SPC）。
+
+实数情形：C(V) 可数、按确定次序排列，HS 保证若安全集非空则某点命中；但无显式界，选择是无界枚举。UNFINISHED（有限选择）。
+
+NE-EQ：ACC 在该层输出安全时间 \iff S_\delta(V)\ne\varnothing。所以 ACC 把 (C) 精确化为 NE；NE 不自动保持。PROOF VERIFIED（等价性）。
+
+审阅结论：ACC 可公度部分 PROOF VERIFIED；实数有限选择 UNFINISHED；非空保证依赖 NE，不由 ACC 自身提供。
+
+---
+
+审阅修正版 GBR（有余力）
+
+输入 (t_0,g)，g 为 S_\delta(W) 最大间隔（含绕回，纯间隔定义：相邻分量之间开间隔的最大值，孤立点按退化区间处理）。若
+
+g\le a_u=\frac{1-2\delta}{u},
+
+
+则 S_\delta(W)\cap S_\delta(\{u\})\ne\varnothing，取最小交点。
+核验：u 的安全弧长 a_u，周期 1/u；g 定义保证任意长度 >g 的开区间与 S 相交；弧长 \ge g，闭弧与闭集交非空。修正例 g=1/5\to g'=1/3，u'=5 时 a_{u'}=2/15<1/3，条件不自动保持。
+审阅结论：PROOF VERIFIED（条件性充分条件；间隔不自动保持）。
+
+---
+
+四账本
+
+· PROOF VALIDITY：
+  LM PROOF VERIFIED；HS PROOF VERIFIED（由 LM 与端点情形）；ACC 可公度有限表示/更新/选择/ACC=SPC PROOF VERIFIED；实数有限选择 UNFINISHED；NE-EQ PROOF VERIFIED；GBR 修正版条件性 PROOF VERIFIED。一般 F_n：UNFINISHED。
+· INDEPENDENT REVIEW：本回复为 DeepSeek 独立非作者审阅；未参考其他审阅人本轮意见。LM、ACC、GBR 结论如上。
+· NEW COVERAGE：ACC 与 SPC 输出相同，正确性依赖 NE，不主张新覆盖；NEW COVERAGE UNFINISHED。
+· COMPUTATIONAL CHECK（手算展示）：
+  · V=\{1,3,4,7\}：1/5=1/(1+4)，2/5=2/(1+4)，3/10=3/(3+7)，5/11=5/(4+7)，均在 C(V)。
+  · 上界：k=4,\sigma=15，k\sigma/2=30；Opus 报告实际 20，符合上界。
+  · 更新例：V=\{2,3,4\}，加 u=1；C(V\cup\{1\}) 新增 j/(1+v)，其中 1/5=1/(1+4)\in C，与 GBR 交点 t=1/5 一致。
+  · 未用随机测试作证明。
+
+---
+
+主席必答
+
+Does the ACC skeleton supply an automatically regenerating guarantee?
+
+CONDITIONAL。
+
+· 自动再生部分：骨架 C(V) 与门槛无关，加入新速度时显式增加等差数列；覆盖每个安全分量（HS）对任意实数成立。这部分 PROOF VERIFIED。
+· 不自动再生部分：非空性 NE。ACC 把“存在成功候选”精确化为 NE，而 NE 在每层独立，不自动保持；实数情形还缺有限选择界。
+· 所以：骨架是可靠的候选表示，但不是自动再生的安全保证。一般 F_n 仍 UNFINISHED。
