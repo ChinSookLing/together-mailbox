@@ -1,0 +1,818 @@
+WHO（给谁）：DeepSeek —— PT-008 Round 025 · Zero-Measure, Nonempty · Track D — DeepSeek: Nonemptiness Guarantee
+WHERE（贴到哪）：DeepSeek 新对话「PT-008 DeepSeek R025」（深度思考开，联网关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R025 4/4 DeepSeek」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 025 · Zero-Measure, Nonempty, for DeepSeek.
+TO: DeepSeek
+ASK: do YOUR track (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: one finite constructive certificate covering BOTH positive-length safe intervals AND isolated / zero-measure successes, with an effective threshold change 1/n→1/(n+1) and addition of a new speed — the step needed to reach F_47. Unrestricted F5 and general F_n still UNFINISHED.
+
+############ PART 0 · 你的任务（主席原文）############
+Track D — DeepSeek: Nonemptiness Guarantee
+
+Compare three proposed certificates:
+
+* Local safety window;
+* Controlled-gap safety family;
+* Complete arithmetic interval certificate.
+
+Identify what each certifies and whether its guarantee survives insertion of a new speed.
+
+Review MZ and the corrected GBR proof independently.
+
+Seek one nontrivial conditional regeneration theorem whose hypotheses can themselves be propagated.
+
+Do not substitute a known existence theorem for an explicit construction.
+
+
+Hesper 事实（精确分数）：你 R024 GBR 例子数字有误，主席已接受更正：S_{1/5}(2,3,4)∩[0,1]=[1/10,1/5]∪{2/5}∪{3/5}∪[4/5,9/10]，最大间隔 g=1/5（非 3/5）；S_{1/6}(1,2,3,4)∩[0,1]=[1/6,5/24]∪[7/18,5/12]∪[7/12,11/18]∪[19/24,5/6]，g′=1/3（非 ≥7/12）；t=1/5 正确，「不自动保持」结论仍成立（u′≥5 时 2/15<1/3）。另：「任意长度 ≥g 的开区间必与 S 相交」在 g=最大间隔时不成立，请用闭弧精确定义。你自己、Opus、Qwen R024 原文附后。
+
+############ PART 1 · 主席 R025 共同要求（原文）############
+PT-008 · Round 025 · Zero-Measure, Nonempty
+
+FROM: GPT-6 · PT-008 Chair
+TO: Hesper · Acting Courier
+CC: Opus, Qwen, DeepSeek, Kimi, Argon, Puck, Tuzi
+WEB: OFF
+STATUS: OPEN
+
+R024 Chair Ruling
+
+R024 PARTIAL.
+
+* SPC and interval representations: valid structural direction for commensurable speeds; full formal claims require review.
+* MZ: PROOF CANDIDATE. A nonempty safe set may have zero measure; its full general theorem requires independent proof.
+* GBR: conditional sufficient mechanism; correct the reported gap calculations.
+* Kimi’s truncated-family counterexample: CHECKED, previously known in R023, no new coverage.
+* Argon’s purported disproof of unconditional SPC: NOT ACCEPTED, because SPC did not assert that guarantee.
+* General F5 and F_n: UNFINISHED.
+
+Central Task
+
+Find a finite constructive certificate that handles BOTH:
+
+1. Safe intervals of positive length.
+2. Isolated successful times and other zero-measure configurations.
+
+The certificate must support an effective threshold change and the addition of a new speed.
+
+Distinguish exact representation from a guarantee of nonempty output.
+
+North Star
+
+A deterministic F_n applicable to arbitrary real relative speeds and runner counts, with a uniform mechanism extending from n=2 to n=47.
+
+All four tracks must answer:
+
+Does your result supply an automatically regenerating guarantee?
+
+YES / CONDITIONAL / NO / UNFINISHED.
+
+Provide exact definitions, assumptions, proofs, limitations and independent-review status.
+
+WEB OFF. Hand proof first. No large brute-force searches.
+
+No wall installation is authorized.
+
+Return R025 1/4 through R025 4/4, with Kimi clearly labeled Track C.
+
+ROUND 025 OPEN
+############ R024 主席裁决（原文，节选至 R025 开题前）############
+PT-008 · Round 024 · 主席裁决
+
+FROM: GPT-6 · PT-008 Chair TO: Hesper、Opus、Qwen、DeepSeek、Argon、Kimi、Puck STATUS: R024 PARTIAL · WEB OFF
+
+ANSWER BLOCK
+
+R024 的两份 Track C 回覆均接受归档，但 Kimi 是补充独立检查，不替换 Argon。
+
+项目	主席裁决
+Kimi · 截断安全点族反例	CHECKED；正确但非新发现
+Argon · SPC 无条件保证 DISPROVED	不接受；攻击了原作者没有声称的结论
+Opus · SPC 表示及更新	PROOF CANDIDATE；部分获独立审阅
+Opus · MZ 测度零障碍	有效研究方向，须限定结论
+Qwen · 区间更新	条件性结果，端点勘误接受
+DeepSeek · GBR	PROOF CANDIDATE；修正数值后继续审阅
+任意实数速度的保证再生	UNFINISHED
+一般 F₅ 与 Fₙ	UNFINISHED
+
+Kimi 的这次表现比 Argon 更符合 Track C 的要求：明确选择目标、给出精确反例、解释适用范围，并承认一般问题未解决。
+
+但这只比较本次两份报告，不能据此判断 Kimi 在所有数学任务上更强。
+
+一、Kimi 的反例：正确，但要精确描述
+
+原速度组：
+
+V=(1,3,4,7).
+
+考虑截断点集：
+
+T=\left\{\frac15,\frac25,\frac35,\frac45\right\}.
+
+加入：
+
+u=\frac5{48}
+
+后，新跑者在这些时间的距离依次为：
+
+\frac1{48},\quad\frac1{24},
+\quad\frac1{16},\quad\frac1{12}.
+
+它们全部小于新门槛 。
+
+所以，这个截断的四点证书不能保证加入新跑者后的非空性。
+
+但取：
+
+t=\frac95,
+
+旧跑者距离为：
+
+\frac15,\quad\frac25,\quad\frac15,\quad\frac25,
+
+新跑者距离为：
+
+\left\|\frac5{48}\cdot\frac95\right\|
+=\frac3{16}>\frac16.
+
+因此五个相对速度全部安全。
+
+Kimi 击败的是截断证书，不是完整安全时间族。
+
+这与 R023 已经纠正过的问题一致，故记为：
+
+PROOF VALIDITY：CHECKED；NEW MATHEMATICAL COVERAGE：NONE ESTABLISHED。
+
+同时，Kimi 这次确实提供了 Argon 没有提供的可核验例子。
+
+二、MZ：接受障碍方向，不接受过度结论
+
+Opus 的 MZ 报告提出：某些速度组的安全时间集合非空，但 Lebesgue 测度为零。
+
+这个现象对于我们的归纳目标很重要。
+
+例如 Hesper 核验的：
+
+V=(1,2,3,4,5),\qquad \delta=\frac16.
+
+时间：
+
+t=\frac16,\quad t=\frac56
+
+都成功，但报告称整个安全集合测度为零。
+
+我接受这两个时间的直接核验，也接受 MZ 作为值得审阅的结构性障碍；一般 MZ 定理仍须提交完整证明供非作者审查。
+
+即使 MZ 成立，它也只能说明：
+
+仅凭安全集具有正测度，不能作为普遍归纳的必要条件。
+
+它不能证明所有测度型或分布型证书都不可能工作。一个证书仍可结合测度、孤立点和算术信息。
+
+主席裁决：MZ PROOF CANDIDATE；“所有测度型证书不可能成功”不予认证。
+
+三、DeepSeek GBR：修正例子，保留条件性定理
+
+DeepSeek 提出的 GBR 使用旧安全集合的最大间隔 ，试图保证新跑者的安全弧与旧集合相交。
+
+这种方法与 CRL 的局部窗口机制不同，值得保留。
+
+但 Hesper 指出两项关键数字错误：
+
+数量	原报告	更正
+的最大间隔		
+的最大间隔	至少	
+
+主席接受更正。
+
+在使用共同周期或明确限定的时间区间，并精确定义最大间隔的前提下，GBR 的充分条件可以继续接受审阅。
+
+但间隔界在更新后不会自动保持，这仍是尚未解决的问题。
+
+四、SPC：数学对象可以更新，不等于保证安全时间存在
+
+Opus、Qwen 和 DeepSeek 这一轮实际上达成了相当明确的共识。
+
+对于可公度速度，我们可以构造有限安全区间证书，进行交集、阈值调整、断点更新等运算。
+
+甚至可以考虑所有门槛下的完整函数：
+
+g_V(t)=\min_{v\in V}\|vt\|.
+
+但机器能够计算下一层的安全集合，并不等于它能证明该集合一定非空。
+
+这是两项完全不同的任务：
+
+计算更新： 给我集合，我算新的交集。
+
+归纳保证： 不管下一位跑者速度是什么，我都能证明新的交集至少有一个成功时间。
+
+后一项仍然是 Time Forge 缺失的数学结构。
+
+Opus 的 EQ、EQ′、GLC、DU、FU 以及 SPC 复杂度结论，都应在完整证明审阅后再决定认证范围。
+
+
+六、给 Hesper 的正式归档决定
+
+R024 CLOSED — PARTIAL；R025 OPEN。
+
+本轮 Track C 请保存两份独立记录：
+
+* Argon 3/4： 原署名有效；其 SPC 无条件保证的反驳不计为有效 DISPROVED。
+* Kimi · Track C Supplement： 正式接受为补充检查，数学反例 CHECKED，但属 R023 已知勘误，不新增证明或覆盖。
+
+Kimi 不应被记录成 R024 原始四席中取代 Argon 的作者，也不应因一次合格答复自动晋升成全面证明审阅者。
+
+不过，R025 我正式邀请 Kimi 接 Track C。请交给它一项完整、窄范围、可严格核验的任务，再观察实际质量。
+
+
+############ PART 2 · 你自己的 R024 原文（原样） ############
+R024 4/4 DeepSeek
+
+ANSWER BLOCK：先更正：R023 例子应读作 W=(2,3,4),n=4,t_0=F_4(2,3,4)=1/8,u=1，不是 (1,2,3,4) 的成功点。条件再生保证引理 GBR：输入证书 (t_0,g)，g 为旧门槛下 S_{1/(n+1)}(W) 的最大间隔；若 g\le (1-2/(n+1))/u，则 S_{1/(n+1)}(W)\cap S_{1/(n+1)}(\{u\})\ne\varnothing，取最小交点。引理有效 PROOF CANDIDATE；有理可计算，实数 UNFINISHED；g 不自动保持（反例 g=3/5\to g'\ge 7/12）。H1–H3 PROOF VERIFIED；CORE PROOF VERIFIED（限 PS* 例外集）。必答 CONDITIONAL。
+
+---
+
+更正
+
+R023 的算例中，t_0=1/8 是 W=(2,3,4) 在旧门槛 1/4 下的成功点，n=4；加入新速度 u=1，新门槛 1/5。t_0 对 (1,2,3,4) 不安全（\|1\cdot1/8\|=1/8<1/5），措辞应改为「W=(2,3,4)，u=1」。数学内容不变：H1–H3 中 t_0-h=1/8-1/80=9/80>0 成立。
+
+---
+
+Track D · 条件再生保证引理 GBR
+
+1. 精确输入证书
+
+旧总人数 n，旧速度集 W（|W|=n-1），旧门槛 1/n，新门槛
+
+\delta=\frac1{n+1}.
+
+
+旧安全集
+
+S_\delta(W)=\{t>0:\ \|wt\|\ge\delta\ \forall w\in W\}.
+
+
+证书
+
+I_n(W)=(t_0,g),
+
+
+其中
+
+· t_0>0 是旧成功点，即 \|wt_0\|\ge1/n（因而 t_0\in S_\delta(W)）；
+· g>0 是 S_\delta(W) 的最大间隔：任意长度 \ge g 的开区间必与 S_\delta(W) 相交。
+
+2. 精确安全门槛
+
+\delta=\frac1{n+1}.
+
+3. 显式选时规则
+
+新增速度 u>0。令
+
+a_u=\frac{1-2\delta}{u}=\frac{n-1}{(n+1)u}.
+
+
+这是 u 的一条安全弧长度（S_\delta(\{u\}) 的每个周期分量为长度 a_u 的弧，周期 1/u）。
+
+· 若 g\le a_u：输出
+  t=\min\bigl(S_\delta(W)\cap S_\delta(\{u\})\bigr).
+· 否则：报告「本引理不适用」。
+
+4. 存在性证明
+
+若 g\le a_u：S_\delta(W) 在任意长度 g 的区间中有点。S_\delta(\{u\}) 由长度 a_u\ge g 的弧、周期 1/u 组成。每个弧长度 \ge g，故每个弧都含 S_\delta(W) 的一点。因此交集非空。取最小交点 t 即可。∎
+
+（注意：这里用了同一个 t 同时满足 W 与 u；没有对各坐标分别取点。）
+
+5. 显式间隔与复杂度界
+
+· 比较 g\le a_u：O(1)。
+· 求最小交点：需要 S_\delta(W) 的有限表示。
+  · 有理 W：周期 P_W，有限端点表（SPC 或 Qwen 区间证书），区间求交为有限端点算术，规模 \le 2\sum_{w\in W}w\cdot P_W（伪多项式）。
+  · 实数 W：无有限周期；g 和交点均 UNFINISHED。
+
+6. 再生条件
+
+成功输出 t 后，新证书
+
+I_{n+1}(W\cup\{u\})=(t,g'),
+
+
+其中 g' 是
+
+S_{\delta'}(W\cup\{u\}),\qquad \delta'=\frac1{n+2}
+
+
+的最大间隔。
+
+再生所需条件（对下一步新速度 u'）：
+
+g'\le a_{u'}=\frac{1-2\delta'}{u'}=\frac{n}{(n+2)u'}.
+
+
+这需要从 I_n 和 u 计算出 g' 的上界，且该上界要足够小。
+
+7. 是否自动保持
+
+否。
+
+反例（手算，n=4）：
+
+· W=(2,3,4)，\delta=1/5。
+· 手算得
+  S_{1/5}((2,3,4))\cap[0,1]=[1/10,1/5]\cup[4/5,9/10],
+
+
+  故 g=3/5。
+· 取 u=1：a_u=(1-2/5)/1=3/5，g\le a_u 取等，输出 t=1/5（最小交点）。
+· 新安全集 S_{1/6}((1,2,3,4))：手算包含区间 [1/6,5/24] 与对称区间 [19/24,5/6]（端点由 \|1\cdot t\|=1/6、\|4\cdot t\|=1/6 定出），故
+  g'\ge\frac{19}{24}-\frac{5}{24}=\frac{14}{24}=\frac{7}{12}.
+· 对下一步 u'\ge5：a_{u'}=(1-2/6)/u'=(2/3)/u'\le2/15，而 g'\ge7/12>2/15。条件失败。
+· 但 (1,2,3,4,5) 在门槛 1/6 下是已知孤立解（TF），说明 g' 的恶化不是存在性障碍，而是间隔界方法的局限。
+
+8. 四项分开陈述
+
+· 引理有效性：PROOF CANDIDATE（证明完整，待非作者审）。
+· 假设是否可得：
+  · 有理速度：YES（由 SPC/Qwen 区间证书计算 g）。
+  · 实数速度：UNFINISHED（无有限周期，g 无显式表示）。
+· 有效可计算性：
+  · 有理速度：YES（有限端点算术，伪多项式）。
+  · 实数速度：UNFINISHED。
+· 是否推进普遍 n\to(n+1)：NO（g' 不自动保持；上例 g=3/5\to g'\ge7/12 即失败）。
+
+9. 与 CRL 的区别
+
+· CRL 只用 t_0 附近保证窗口 [t_0-h,t_0+h]，h=\mu/w_{\max}，\mu=1/(n(n+1))；条件 \Delta\le h。
+· GBR 用 S_\delta(W) 的整个间隔结构；条件 g\le a_u。
+· 两者互不包含：
+  · W=(2,3,4)，u=1：CRL 失败（\Delta=3/40>h=1/80），GBR 成功（g=3/5=a_u）。
+  · 若 S_\delta(W) 只有孤立点，g 很大，GBR 失败；但 CRL 的窗口也可能因 t_0 在边界而退化。两者都失效的例子：(1,3,4,7) 加 u=5/48（Qwen §6）。
+
+10. 主席六问（GBR）
+
+问 回答
+1 有限表示？ 有理：YES（周期 + 端点）；实数：UNFINISHED
+2 有效更新？ 有理：YES（有限求交）；实数：UNFINISHED
+3 保证非空输出？ 条件性：g\le a_u 时 YES；一般 UNFINISHED
+4 确定性选时？ YES（最小交点）
+5 适用任意实数速度？ UNFINISHED（有效可计算性）
+6 归纳下自动保持？ NO（g'\ge7/12 反例）
+
+---
+
+审阅 Opus 修订版 H1–H3
+
+结论：H1–H3 在统一余量解释下正确，H3 补上左移正时间条件。
+
+逐项核验：
+
+· H1：由 \|wt_0\|\ge1/n 得 \|wt_0\|-\delta\ge1/n-1/(n+1)=\mu>0。
+· H2：对 |t-t_0|\le h=\mu/w_{\max}，\|wt\|\ge\|wt_0\|-w|t-t_0|\ge1/n-\mu=\delta。
+· H3：w_{\max}t_0\ge\|w_{\max}t_0\|\ge1/n>\mu，故 t_0>h，左端 t_0-h>0。
+
+边界：H2 是闭双侧窗口；H3 严格正；H1 只断言相对新门槛的余量，不声称相对旧门槛有余量。正确。
+
+五问：
+
+· 显式有限？YES（h=\mu/w_{\max}）。
+· 产生安全时间？不直接；产生安全窗口。
+· 再生已证？NO（H 只给一层窗口）。
+· 任意实数？YES（只用 Lipschitz）。
+· 推进统一 F_n？CONDITIONAL（需配合 GBR/CRL 的添加条件）。
+
+审阅结论：PROOF VERIFIED。
+
+---
+
+审阅 Opus CORE 量词
+
+陈述复述：固定下层构造 F，
+
+E^*_n(F)=\{V:\ \forall u\in V,\ u/g_u\in\mathbb Z\ \text{且}\ \operatorname{frac}(uF(V\setminus\{u\}))\notin A_\delta\}.
+
+
+结构核
+
+C_n=\{V:\ V\ \text{在}\ 1/(n+1)\ \text{下有解，且每个解至少两位跑者}\ <1/n\}.
+
+
+CORE：
+
+\bigcap_{F\in\mathfrak F_n} E^*_n(F)=C_n\qquad(\text{有理输入}).
+
+量词核验：
+
+· \supseteq：若 V\in C_n，取任意 F、任意 u。若 u/g_u\notin\mathbb Z，则 x_u\ne0，PS 选择器可平移 u 入 A_\delta，给出 V 的解且 V\setminus u 全 \ge1/n，与 C_n 矛盾。若 uF(V\setminus u)\in A_\delta，则 t=F(V\setminus u) 是 V 的解，且 V\setminus u 全 \ge1/n，至多 u 一位 <1/n，与「至少两位」矛盾。故 V\in E^*_n(F)。
+· \subseteq：若 V\notin C_n 且有解，则存在解 t 与 u 使 V\setminus u 在 t 处全 \ge1/n。定义 F' 在 V\setminus u 上取 t，其余同 F。则 u 分支在 j=0 成功，V\notin E^*_n(F')，故 V\notin\bigcap_F E^*_n(F)。
+
+量词限制：交集取遍所有 F\in\mathfrak F_n（包括为单个 V 定制的 F'）。所以 CORE 是逐点集合等式，不构造统一 F。它只描述 PS* 类「单点 + 周期平移」例外集，不覆盖 TL/FO/CLR/SPC。
+
+五问：
+
+· 显式有限？NO（C_n 是集合定义）。
+· 产生安全时间？NO。
+· 再生已证？NO。
+· 任意实数？NO（仅有理输入；实数部分另加不可公度并集）。
+· 推进统一 F_n？NO（是障碍分类）。
+
+审阅结论：PROOF VERIFIED（量词限 PS 例外集；一般传递机制不覆盖）。*
+
+---
+
+四账本
+
+· PROOF VALIDITY：GBR PROOF CANDIDATE（条件性证明完整）；H1–H3 PROOF VERIFIED；CORE PROOF VERIFIED（限 PS* 例外集）。一般 F_n：UNFINISHED。
+· INDEPENDENT REVIEW：本回复为 DeepSeek 独立非作者审阅；H1–H3、CORE 结论如上。
+· NEW COVERAGE：GBR 不主张新覆盖；NEW COVERAGE UNFINISHED。
+· COMPUTATIONAL CHECK：
+  · W=(2,3,4) 手算 S_{1/5}(W)\cap[0,1]=[1/10,1/5]\cup[4/5,9/10]，故 g=3/5。
+  · u=1，a_u=3/5，t=1/5。
+  · 新门槛 1/6：手算 S_{1/6}((1,2,3,4)) 含 [1/6,5/24] 与 [19/24,5/6]，故 g'\ge7/12。
+  · 下一步 u'\ge5：a_{u'}\le2/15<7/12，条件失败。
+  · 全部为本回复手算，未用随机测试作证明。
+
+---
+
+必答题
+
+Does the proposed result provide a guaranteed mechanism for the induction step, or does it only describe a sufficient subset of inputs?
+
+CONDITIONAL。
+
+缺少的假设是：每一步的间隔界 g 满足
+
+g\le\frac{1-2/(n+1)}{u},
+
+
+且更新后的 g' 必须仍满足下一步的同类不等式。
+
+该假设不自动保持：反例 W=(2,3,4)，u=1 使 g=3/5 恰好够用，但更新后 g'\ge7/12，对 u'\ge5 失败。可公度周期链上 g 可以精确重算，但一般实数速度没有显式 g。故 GBR 描述的是充分输入子集，不是保证的 2 到 47 归纳机制。
+
+############ PART 3 · Opus R024 原文（含 MZ，原样） ############
+R024 1/4 Opus
+
+Opus:
+TO: Hesper → GPT-6 (Chair)　Track A · A Guaranteed Certificate?　Date: 2026-10-20　WEB OFF
+
+---
+
+## ANSWER BLOCK
+
+- **SPC 已形式化**：给出可公度条件、断点上界 k(σ+1)、更新复杂度；对 V₁ 列出全部断点，可供手核。
+- **(A) 表示、(B) 更新**：成立（PROOF CANDIDATE）。**(C) 保证**：没有一种证书能单独给出。
+- **反例**：
+  - **零测度定理 MZ**：对每个 n，从 (1,…,n) 加入 n+1 后，新安全集非空但测度为零。所以凡是靠测度/分布给出保证的证书（密度、Fourier、间隔覆盖），在这一步**必然**无法证明非空。
+  - **GLC 覆盖证书**：连初始层都不满足。
+  - **单门槛区间证书**：(1,2,3,4) 与 (1,3,4,7) 在 1/5 下安全集完全相同，在 1/6 下却不同，所以它不能更新到下一层。
+- **结论**：(C) 需要算术结构，不能只靠分布信息。实数速度：UNFINISHED。
+
+---
+
+# Part I · SPC 的正式化（仅限可公度速度）
+
+## §1 共同周期要求
+- **可公度条件 (H-com)**：存在 g > 0，使 V ⊂ gℤ。有理速度是特例；g 也可以是无理数，例如 V = √2·(1, 3, 4)。取最大的这样的 g，记为 g_V，令 P_V = 1/g_V，N_v = v/g_V ∈ ℤ，σ = Σ_{v∈V} N_v，k = |V|。
+- **更新时的条件**：新速度 u 必须满足 u/g_V ∈ ℚ。写 u/g_V = p/q（最简分数），则 g_{V∪u} = g_V·gcd(N_V, p)/q，其中 gcd(N_V, p) 指 p 与全部 N_v 的最大公约数。新周期 P′ = q′·P_V，其中 **q′ = g_V/g_{V∪u} = q/gcd(N_V, p) ∈ ℤ**。
+  - 例：V 为整数组，u = 1/q，则 q′ = q，周期放大 q 倍。
+- **若 u/g_V ∉ ℚ**：V ∪ {u} 没有有限的公共周期，SPC 不适用。主席要求不假设无理比值有有限周期，本席遵守。
+
+## §2 表示 (A)
+I(V) = (P_V, B_V)。B_V 是 m_V(t) = min_v ‖vt‖ 在 [0, P_V/2] 上的有序断点表。（周期性与对称性见 R023 引理 S。）
+
+**断点的算术形式（新证）**：在每一个断点处，有
+t ∈ ⋃_v (1/(2v))ℤ ∪ ⋃_{v≠v′} (1/(v+v′))ℤ ∪ ⋃_{v≠v′} (1/|v−v′|)ℤ。
+
+**证明**：
+- 在不含自身断点的区间上，‖vt‖ = |vt − i|，其中 i ∈ ℤ。
+- 自身断点为 j/(2v)。
+- 两条线 ±(vt − i) = ±(v′t − i′) 的交点为 t = (i ∓ i′)/(v ∓ v′)。∎
+
+所以**所有断点都是分母有界的有理数**（以 g_V 为单位）：精确运算的数值规模有界。
+
+**定理 SZ（重述，用 k = |V|）**：|B_V| ≤ k(σ + 1)。（证明同 R023 §2。R023 写成 (n−1)(σ+1)，其中 n−1 = k。）
+
+**手核数据**：V₁ = (1, 3, 4, 7)，σ = 15，上界 4·16 = 64。实际 B_{V₁} 共 14 个断点 (t, m)：
+(0, 0), (1/8, 1/8), (1/7, 0), (1/6, 1/6), (1/5, 1/5), (1/4, 0), (3/11, 1/11), (2/7, 0), (3/10, 1/10), (1/3, 0), (2/5, 1/5), (3/7, 0), (5/11, 2/11), (1/2, 0)。
+
+**抽查**：
+- t = 3/11：‖3/11‖ = 3/11，‖9/11‖ = 2/11，‖12/11‖ = 1/11，‖21/11‖ = 1/11，最小值 1/11 ✓（这是 4t − 1 与 2 − 7t 的交点）。
+- t = 1/8：距离为 1/8, 3/8, 1/2, 1/8，最小值 1/8 ✓。
+
+（V₂、V₃ 的断点数 48 与 152 用同一个程序得到；Hesper 可以用这张 V₁ 的表核对程序是否正确。）
+
+## §3 更新 (B) 与复杂度
+**ADD(u)**（R023 O2）：
+1. 把 B_V 展开到 [0, P′/2]；
+2. 并入 ‖u·‖ 的断点；
+3. 逐段解线性方程，求出交点；
+4. 取最小值，删去共线点。
+
+**复杂度定理 UC**：
+- 展开后的点数 ≤ q′|B_V| + 1；
+- u 的断点数 = N_u + 1，其中 N_u = uP′；
+- 合并后的段数 ≤ q′|B_V| + N_u + 1，每段至多一个交点。
+
+所以 ADD 需要 **O(q′|B_V| + uP′)** 次有界规模的有理运算；ARGMAX（O1）为 O(|B|)。∎
+
+**伪多项式**：代价随 σ 与 q′ 增长，而不是随速度的位长增长。
+
+## §4 与 Qwen 区间证书的关系（回应主席"未证明等价"）
+**命题 EQ**：
+- (i) 由 SPC 可以对**每一个** δ 算出 S_δ(V) 的极大区间表（R023 O3）。
+- (ii) 反过来，m_V 由它的全部上水平集 {S_δ}_{δ∈[0,½]} 唯一确定，因为 m_V(t) = sup{δ : t ∈ S_δ}。
+- 所以 **SPC ⇔ "所有门槛下的区间证书"**。
+
+**命题 EQ′（单门槛区间证书严格更弱，反例）**：
+- (1, 2, 3, 4) 与 (1, 3, 4, 7) 在门槛 1/5 下的安全集**完全相同**，都是 {1/5, 2/5, 3/5, 4/5} + ℤ。前者由 TF，后者由 R023 TF′ 手证。
+- 但在门槛 1/6 下，两者的密度分别为 **5/36** 与 **8/63**（本席精确计算），所以安全集不同。
+- 因此，**只知道 S_{1/5}，就不能确定 S_{1/6}**：单门槛区间证书在降低门槛后不能更新，除非另外保留速度本身。∎
+
+---
+
+# Part II · 加强证书能否推出下一层非空 (C)
+
+记号：V 有 k 个速度。下一层加入 u，门槛为 δ′ = 1/(k+2)。
+
+## §5 覆盖证书 GLC（间隔–长度）
+**引理 GLC（充分条件，证明）**：设 S = S_{δ′}(V)，ℓ 为 S 的最长分量长度，r 为 S 的补集中最长分量（间隔）的长度。对任意**实数** u > 0：
+- (i) 若 u ≥ 2δ′/ℓ，则 S_{δ′}(V ∪ {u}) ≠ ∅；
+- (ii) 若 u ≤ (1−2δ′)/r，则同样非空。
+
+因此，若 **r/ℓ ≤ (1−2δ′)/(2δ′) = k/2**，则对一切 u > 0，下一层都非空。
+
+**证明**：
+- (i)：沿着那个长度为 ℓ 的分量走，u 的相位扫过一段长度 uℓ ≥ 2δ′ 的闭弧，不可能整个落在长为 2δ′ 的开不安全弧里。
+- (ii)：u 的第一个安全窗口是 [δ′/u, (1−δ′)/u]，长度 (1−2δ′)/u ≥ r。闭窗口长度 ≥ r，不可能整个落在一个间隔内，所以必含 S 中的点。
+- (i) 与 (ii) 在 r/ℓ ≤ k/2 时覆盖全部 u > 0。∎
+
+**选择算法**：
+- 情形 (i)：在最长分量内做 FO 式平移；
+- 情形 (ii)：取第一个窗口与 S 的交集的左端点。
+
+两者都是有限的确定性操作。
+
+**命题 GLC-FAIL（GLC 几乎从不成立，证明）**：r/ℓ ≥ (2/k)·(v_max/v_min)。所以 GLC 要求 v_max/v_min ≤ k²/4。
+
+**证明**：
+- 对 |t| < δ′/v_min，最慢的速度不安全，所以 t ∉ S，故 r ≥ 2δ′/v_min。
+- S 的每个分量都位于 v_max 的某个安全弧内，所以 ℓ ≤ (1−2δ′)/v_max。
+- 相除，并用 2δ′/(1−2δ′) = 2/k。∎
+
+**计算**（本席精确计算；δ′ = 1/(k+2)）：
+
+| V | k | ℓ | r | r/ℓ | GLC 要求 ≤ k/2 |
+|---|---|---|---|---|---|
+| (1) | 1 | 1/3 | 2/3 | 2 | 1/2 ✗ |
+| (1,2) | 2 | 1/8 | 1/2 | 4 | 1 ✗ |
+| (1,2,3) | 3 | 1/15 | 2/5 | 6 | 3/2 ✗ |
+| (1,2,3,4) | 4 | 1/24 | 1/3 | 8 | 2 ✗ |
+| V₁ = (1,3,4,7) | 4 | 1/24 | 1/3 | 8 | 2 ✗ |
+| V₂ = (1,2,9,30) | 4 | 1/45 | 31/90 | 31/2 | 2 ✗ |
+| V₃ = (1,30,60,80) | 4 | 11/1440 | 31/90 | 496/11 | 2 ✗ |
+
+**结论**：GLC 是一个有效的充分条件，但在所有测试案例中**连第一层都不满足**，所以**不能作为再生不变量**。（只用"内部间隔"的改进版本，要处理每个周期都会重复出现的大间隔，本席未完成：IDEA。）
+
+## §6 大时间尺度分布证书（回答主席的附加问题）
+
+### §6.1 密度证书 D
+**定义**：ρ_δ(V) = |S_δ(V) ∩ [0, P)|/P，其中 P 为公共周期。
+
+**更新律 DU（证明）**：
+- (i) 门槛固定、u 可公度时，ρ_δ(V ∪ {u}) ≥ ρ_δ(V) − 2δ；
+- (ii) 若 δ′ < δ，则 ρ_{δ′}(V) ≥ ρ_δ(V)；
+- (iii) 若 ρ_δ(V) > 2δ，则 S_δ(V ∪ {u}) ≠ ∅。
+
+**证明**：在公共周期上，u 的不安全集测度恰好是 2δ·P，从 S_δ(V) 中至多去掉这么多。(ii) 由单调性。(iii) 由 (i)。∎
+
+**能保证到哪里**：从 ρ = 1（没有速度）出发，加入 k 个速度后 ρ ≥ 1 − 2kδ，只在 δ < 1/(2k) 时为正。这仅仅是平凡界，到不了 1/(k+1)。
+
+**测试**（δ′ = 1/6，k = 4，要求 ρ > 1/3）：
+- (1,2,3,4)：5/36；
+- V₁：8/63；
+- V₂：7/30；
+- V₃：157/720。
+
+**全部 < 1/3**，所以密度证书对这四个案例都给不出下一层的保证。
+
+### §6.2 Fourier 分布证书 FD（附加问题所要求的"精确定量参数 + 更新律"）
+**定义**：Ŝ_V(ξ) = (1/P)∫₀^P 1_{S_δ(V)}(t)·e^{−2πiξt} dt，ξ ∈ (1/P)ℤ。参数就是全部 Fourier 系数，其中 Ŝ(0) = ρ。
+
+**更新律 FU（证明）**：u 的安全集指示函数为
+1_{S_δ(u)}(t) = Σ_{m∈ℤ} c_m e^{2πimut}，其中 c₀ = 1 − 2δ，c_m = −sin(2πmδ)/(πm)（m ≠ 0）。
+
+两个指示函数相乘，对应系数的卷积：
+**Ŝ_{V∪u}(ξ) = Σ_m c_m·Ŝ_V(ξ − mu)**。
+
+**判据**：若 (1−2δ)ρ > Σ_{m≠0} |c_m|·|Ŝ_V(mu)|，则下一层非空。
+
+**证明**：取 ξ = 0，得 ρ_{V∪u} = (1−2δ)ρ + Σ_{m≠0} c_m Ŝ_V(−mu)，再用三角不等式。∎
+
+**限制**：参数有无穷多个，截断以后判据不再精确。
+
+### §6.3 零测度定理 MZ（对一切测度型证书的反例，一般 n）
+**定理 MZ**：设 n ≥ 2，V = (1, …, n)，u = n+1，δ′ = 1/(n+2)。则：
+- S_{δ′}(V) 的测度为正；
+- S_{δ′}(V ∪ {u}) **非空**，但**测度为零**。
+
+**证明**：
+- V ∪ {u} = (1, …, n+1)。由 TF（取 n+1），它在 1/(n+2) 下的安全集是孤立点 {k/(n+2) : gcd(k, n+2) = 1}：非空、可数，所以测度为零。
+- S_{δ′}(V) 测度为正：在 t = 1/(n+1) 处，V 的最小距离为 1/(n+1) > δ′（TF 用于 n），由连续性，附近整个开区间都安全。∎
+
+**推论**：
+- 任何证书，若它对"下一层非空"的证明是给出测度（或密度、Fourier 均值）的正下界，那么在 MZ 这一步**必然**失败，因为真实测度为 0。
+- GLC 的 (i) 适用时，交集包含正长度的弧段，因而测度为正。所以在 MZ 这一步，(i) **不可能**适用，只能依赖 (ii)。至于 (ii) 在 MZ 这一步是否成立，本席未作一般判定；对 n = 4，§5 表中 (1,2,3,4) 的 r/ℓ = 8 > 2，不满足 GLC。
+- 所以，**能够在每一层都给出 (C) 的证书，必须带有算术信息**（例如 TF 里的等距结构或鸽笼结构），不能只有分布信息。
+
+**n = 4 的实例**（本席精确计算）：
+- (1,2,3,4) 在 1/6 下：ρ = 5/36 > 0；
+- 加入 5 之后：S_{1/6}(1,…,5) ∩ [0, ½] = {1/6}，单点，测度 0；
+- t = 1/6 处五个距离为 1/6, 1/3, 1/2, 1/3, 1/6 ✓。
+
+## §7 实数速度（主席要求不假设有限周期）
+- **(A)**：在有限窗口 [0, T] 上，剖面仍有有限个断点。上界为 k(σ_T + 1)，其中 σ_T = 2TΣv（证明同 SZ）。但若要用 ARGMAX 得出安全时间，需要一个**显式的 T**，保证窗口内已有安全时间：UNFINISHED。
+- **分布证书**：据本席所知（标准的 Kronecker–Weyl 定理；WEB OFF，未在本回复中证明），对任意实数速度，S_δ(V) 的渐近密度存在，并等于轨道闭包子环面上相应集合的 Haar 测度。
+  - 要计算它，必须知道速度之间全部的整数线性关系。对于任意实数输入，这些关系并不是有限地给出的。
+  - 即使算出来，MZ 已经说明测度型证书不能给出 (C)。
+  - 状态：IDEA / UNFINISHED。
+
+---
+
+# Part III · 六项问答表（主席格式）
+| 证书 | 1 有限表示 | 2 有效更新 | 3 保证非空 | 4 确定性选择 | 5 任意实数 | 6 归纳中自动保持 |
+|---|---|---|---|---|---|---|
+| SPC（全门槛剖面） | YES（可公度；§2） | YES（u 与 V 可公度；§3） | CONDITIONAL：输出 κ(V)；非空 ⇔ 该层的存在性定理 | YES（O1） | NO（需要公共周期）；有限窗口版 UNFINISHED | 数据：YES；保证：UNFINISHED |
+| 单门槛区间证书 | YES | NO：不能降低门槛（EQ′ 反例） | NO | YES（取区间端点） | NO | NO |
+| GLC（ℓ, r） | YES | YES（经 SPC） | CONDITIONAL：r/ℓ ≤ k/2 时 YES（§5 证明） | YES | 引理中 u 可为任意实数；V 需要 SPC | NO：连初始层都不满足（GLC-FAIL，表） |
+| 密度 D | YES | YES（DU 下界） | CONDITIONAL：ρ > 2δ 时 YES | YES（经 SPC） | UNFINISHED | NO（只到平凡界；MZ） |
+| Fourier FD | NO（无穷多参数；截断后不精确） | YES（FU 精确卷积） | CONDITIONAL（§6.2 判据） | YES（经 SPC） | UNFINISHED | NO（MZ） |
+| 窗口 H / CRL | YES | YES | CONDITIONAL：位移 ≤ 窗口 | YES | YES（局部论证） | NO（R023 主席裁定，本席同意） |
+
+---
+
+## 四个账本栏
+- **PROOF VALIDITY**：
+  - 断点的算术形式、SZ（k(σ+1)）、UC、EQ、EQ′、GLC、GLC-FAIL、DU、FU、MZ：PROOF CANDIDATE。
+  - (C) 的一般保证、实数速度的有限证书、内部间隔版 GLC：UNFINISHED / IDEA。
+  - 无限制 F₅ 与一般 F_n：UNFINISHED。
+- **INDEPENDENT REVIEW**：本轮无分配给本席的审阅。以上全部待非作者审阅；本席不审自己的结果。另：Argon R023 对本席 R022 §5.4 双门槛不变量 I_DT 的否定，本席接受。I_DT 原本只是 IDEA，现撤回。
+- **NEW COVERAGE**：本轮不主张任何新的 F₅ 覆盖。所有结果都是关于证书能力与界限的结构性结论。
+- **COMPUTATIONAL CHECK**：以下为本席精确分数计算（Python Fraction）：
+  - B_{V₁} 的 14 个断点（已列出，含两处手算抽查）；
+  - §5 表；
+  - §6.1 的四个密度；
+  - EQ′ 的 5/36 与 8/63；
+  - MZ 的 n = 4 实例。
+
+  每项只涉及单个小速度组，没有做大规模枚举。所有结论来自证明，计算只作核对。
+
+---
+
+## 对主席中心问题的回答
+- **(A) 表示**：可公度速度：成立（SPC，§1–§2）。
+- **(B) 更新**：u 与 V 可公度时成立，复杂度见 UC。
+- **(C) 保证**：**没有**由本轮任何证书推出。并且 MZ 证明：任何**只靠测度/分布**的证书，都**不可能**在每一层给出 (C)，因为对每个 n，都有真实非空、测度为零的一步。
+- **所以**，缺少的不变量必须携带算术信息（等距、鸽笼、格结构等）。这样的不变量是否存在并能逐层再生：**UNFINISHED**。
+
+############ PART 4 · Qwen R024 原文（原样） ############
+R024 2/4 Qwen
+
+**ANSWER BLOCK（≤300字）**
+
+提出区间再生证书 $I_n(V)$，给出精确端点公式与更新算法。核心发现：旧门槛 $\delta=1/n$ 的孤立安全点在新门槛 $\delta'=1/(n+1)$ 下**膨胀为正宽度区间**（$V_1$ 手算：最宽 $1/24$），这是再生的结构基础。给出交集非空的**充要条件**（整数存在性判据）与**充分条件**（$\max$ 区间宽 $>1/u$）。但保证对**任意** $u$ 非空等价于该层孤独跑者命题，UNFINISHED。六问：有限表示 YES（有理），有效更新 YES，保证非空 CONDITIONAL，确定性选时 YES（取中点），任意实数 UNFINISHED，归纳自动保持 NO。
+
+---
+
+## §1 · 精确端点公式（加入新速度 $u$）
+
+**PROVED.** 设旧证书 $I_n(V) = (P;\, [\alpha_1,\beta_1],\ldots,[\alpha_K,\beta_K])$ 为 $S_{\delta'}(V)$ 在 $[0,P)$ 中的全部极大闭安全区间，$\delta' = 1/(n+1)$。
+
+加入新速度 $u$ 后，新周期 $P' = 1/\gcd(V \cup \{u\})$。新速度 $u$ 的安全集在 $[0, P')$ 中为：
+$$S_{\delta'}(\{u\}) = \bigcup_{k=0}^{uP'-1} \left[\frac{k+\delta'}{u},\;\frac{k+1-\delta'}{u}\right]$$
+
+**更新公式：** 对每对 $(i, k)$，交集为
+$$\left[\max\!\left(\alpha_i,\,\frac{k+\delta'}{u}\right),\;\min\!\left(\beta_i,\,\frac{k+1-\delta'}{u}\right)\right]$$
+当且仅当左端 $\le$ 右端时非空。合并所有非空交集为新的极大区间组，得 $I_{n+1}(V \cup \{u\})$。
+
+**复杂度：** $K \times (uP')$ 次端点比较，有限步终止。∎
+
+---
+
+## §2 · 保留全部极大区间 vs 单一区间
+
+**PROVED（充分条件）.** 若仅保留一个区间 $[\alpha, \beta]$（宽 $w = \beta - \alpha$），则 $u$ 的安全弧宽 $(1-2\delta')/u$，不安全弧宽 $2\delta'/u$，周期 $1/u$。
+
+**命题：** 若 $w > 1/u$，则 $[\alpha, \beta] \cap S_{\delta'}(\{u\}) \neq \emptyset$。
+
+**证明：** $u$ 的安全集在每个周期 $[k/u, (k+1)/u]$ 中含宽 $(1-2\delta')/u > 0$ 的安全弧。区间 $[\alpha,\beta]$ 宽 $> 1/u$，故必完整包含至少一个周期 $[k/u,(k+1)/u]$ 的某段，该段中含安全点。∎
+
+**保留全部 $K$ 个区间的优势：** 即使每个区间宽 $\le 1/u$，只要**某一个**区间恰好落在 $u$ 的安全弧内，交集仍非空。全部保留使判据从"$w_{\max} > 1/u$"放宽为"∃$i$: 整数存在性条件成立"（§5）。
+
+---
+
+## §3 · 孤立点测试：$V_1 = (1,3,4,7)$（手算）
+
+**旧门槛 $\delta = 1/5$：** 安全集 $= \{1/5, 2/5, 3/5, 4/5\} + \mathbb{Z}$（四个孤立点，已由 R023 证明）。
+
+**新门槛 $\delta' = 1/6$：** 孤立点膨胀为区间。逐一手算：
+
+**$t = 1/5$ 附近：** 左端由速度 1、7 卡住（$\|t\| = \|7t\| = 1/6$ 于 $t = 1/6$）；右端由速度 4 卡住（$\|4t\| = 1/6$ 于 $t = 5/24$）。
+
+验证 $t = 1/6$：$\|1/6\| = 1/6$✓，$\|3/6\| = 1/2$✓，$\|4/6\| = 1/3$✓，$\|7/6\| = 1/6$✓。
+验证 $t = 5/24$：$\|5/24\| = 5/24$✓，$\|15/24\| = 5/8$✓，$\|20/24\| = 1/6$✓，$\|35/24\| = 11/24$✓。
+
+**区间 $[1/6,\, 5/24]$，宽 $1/24$。** ✓
+
+**$t = 2/5$ 附近：** 左端由速度 3 卡住（$3t = 7/6$，$t = 7/18$）；右端由速度 7 卡住（$7t = 17/6$，$t = 17/42$）。
+
+验证 $t = 7/18$：$\|7/18\| = 7/18$✓，$\|21/18\| = 1/6$✓，$\|28/18\| = 5/9$✓，$\|49/18\| = 5/18$✓。
+验证 $t = 17/42$：$\|17/42\| = 17/42$✓，$\|51/42\| = 3/14$✓，$\|68/42\| = 13/21$✓，$\|119/42\| = 1/6$✓。
+
+**区间 $[7/18,\, 17/42]$，宽 $17/42 - 7/18 = (51-49)/126 = 2/126 = 1/63$。** ✓
+
+继续求交发现 $[7/18, 11/24]$ 被速度 7 切为两段：$[7/18, 17/42]$ 和 $[19/42, 11/24]$（宽 $1/168$）。类似地 $[13/24, 11/18]$ 切为 $[13/24, 19/42]$（宽 $1/168$）和 $[25/42, 11/18]$（宽 $1/63$）。
+
+**完整 $S_{1/6}(V_1)$ 在 $[0,1)$：** 6 个区间，宽度分别为 $1/24,\; 1/63,\; 1/168,\; 1/168,\; 1/63,\; 1/24$。总测度 $= 8/63$。
+
+**关键结构：** 旧门槛的孤立点在新门槛下获得正宽度，这是再生可能的根本原因。
+
+---
+
+## §4 · 宽分离速度测试
+
+取 $V = (1, N)$，$N$ 大，$\delta = 1/3$（3 跑者）。安全集：$\|t\| \ge 1/3$ 且 $\|Nt\| \ge 1/3$。
+
+在 $[1/3, 2/3]$ 中，$\|Nt\| \ge 1/3$ 给出 $N$ 个宽 $1/(3N)$ 的子区间。最大宽度 $= 1/(3N)$。
+
+充分条件 $w > 1/u$ 变为 $u > 3N$。对 $u \le 3N$，需逐区间检查整数存在性条件。
+
+**结论：** 速度尺度分离越大，安全区间越窄，保证非空所需的新速度 $u$ 越大。但**精确判据**（§5）对任何 $u$ 都可在 $O(K)$ 步内判定。
+
+---
+
+## §5 · 交集非空的精确充要条件
+
+**PROVED（作为判据）.** $S_{\delta'}(V \cup \{u\}) \neq \emptyset$ 当且仅当：
+
+$$\exists\, i \in \{1,\ldots,K\},\;\exists\, k \in \mathbb{Z} : \quad \frac{k + \delta'}{u} \le \beta_i \;\;\text{且}\;\; \alpha_i \le \frac{k+1-\delta'}{u}$$
+
+等价形式：$\exists\, i : \lceil u\alpha_i - 1 + \delta' \rceil \le \lfloor u\beta_i - \delta' \rfloor$。
+
+**证明：** 交集非空 $\iff$ 某旧区间与某 $u$-安全弧重叠 $\iff$ 上述不等式成立。∎
+
+**充分条件（推论）：** $\max_i(\beta_i - \alpha_i) > 1/u$。
+
+**使交集非空的"精确附加条件"：** 上述整数存在性条件。**它不对任意 $u$ 自动成立。** 对所有 $u > 0$ 成立 $\iff$ 该层孤独跑者命题为真。
+
+---
+
+## §6 · 主席六问
+
+| 问题 | 回答 |
+|---|---|
+| 1. 有限表示？ | **YES**（有理速度：周期 $P$ + $\le 2P\sum v_i$ 个端点） |
+| 2. 有效更新？ | **YES**（$O(K \cdot uP')$ 端点比较，有限终止） |
+| 3. 保证非空输出？ | **CONDITIONAL**：非空 $\iff$ §5 判据成立；对任意 $u$ 保证非空等价于该层孤独跑者命题，**不能由 (A)(B) 推出** |
+| 4. 确定性选时？ | **YES**（非空时取任一区间中点） |
+| 5. 适用任意实数速度？ | **UNFINISHED**（无理速度无有限周期，本证书不适用） |
+| 6. 归纳自动保持？ | **NO**（非空性不自动保持；间隔下界不自动传递） |
+
+---
+
+## 四个账本栏
+
+**PROOF VALIDITY**
+- §1 端点公式与更新算法：PROOF CANDIDATE
+- §2 充分条件 $w > 1/u$：PROOF CANDIDATE
+- §3 $V_1$ 在 $\delta' = 1/6$ 的 6 区间手算：CHECKED（本席逐步分数运算）
+- §5 充要条件：PROOF CANDIDATE
+- 保证对任意 $u$ 非空：UNFINISHED（≡ 孤独跑者）
+- 一般 $F_5$、$F_n$：UNFINISHED
+
+**INDEPENDENT REVIEW**
+- 本轮未分配审阅任务。UNFINISHED。
+
+**NEW COVERAGE**
+- 未主张新覆盖。实例级计算（$V_1$ 膨胀）为已有结构的验证。
+
+**COMPUTATIONAL CHECK**
+- §3 全部端点（$1/6, 5/24, 7/18, 17/42, 19/42, 11/24, 13/24, 25/42, 11/18, 19/24, 5/6$）均为本席手算精确分数。
+- 宽度：$1/24, 1/63, 1/168, 1/168, 1/63, 1/24$；总和 $8/63$。
+- 未用代码，未做穷举。
+
+---
+
+**主席必答题：Does the proposed result provide a guaranteed mechanism for the induction step?**
+
+**CONDITIONAL.** 给出了精确的充要判据（§5）和有限确定性算法（§1），但判据的成立依赖输入 $u$ 与旧区间结构的对齐。对所有 $u$ 保证非空等价于该层孤独跑者命题，不能由构造自身推出。缺失的不变量可能是安全集测度的下界（而非仅最大间隔），但其更新律未证。
+
+############ 回复格式 ############
+第一行写「R025 4/4 DeepSeek」。先写 ANSWER BLOCK（≤300 中文字）。四个账本栏分开写：PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / IDEA / UNFINISHED / PARTIAL。审阅结论每项单独给：PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED，并写出逐项论证（笼统 VERIFIED 不计数）。
+主席必答：Does your result supply an automatically regenerating guarantee? YES / CONDITIONAL / NO / UNFINISHED。给出精确定义、假设、证明、局限与独立审阅状态。区分「精确表示」与「保证非空输出」。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。先手证；代码只可核对，不可替代论证。作者不能升级自己的结果；只有主席裁决。不得用已知存在性定理代替显式构造。不要假设无理速度有有限共同周期。随机测试不能推出证明。不做大规模穷举。
+===== END =====
