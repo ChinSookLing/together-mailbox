@@ -1,0 +1,184 @@
+WHO（给谁）：Qwen —— PT-008 Round 029 · FW₄：攻剩余区域
+WHERE（贴到哪）：Qwen 新对话「PT-008 Qwen R029」（Play CF 项目，thinking，web 关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R029 2/5 Qwen」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 029 · FW₄, for Qwen.
+TO: Qwen
+ASK: do YOUR task (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: FW₄ — for every real 0<a<b<c<d, a time 0<t<1/a with min‖vt‖≥1/5 — the next level of the first-window chain toward one deterministic F_n for n=2..47. A bounded search is not the direct formula; general F_n still UNFINISHED.
+
+############ PART 0 · 你的任务 ############
+你的任务（主席第三节）：独立寻找构造，优先检验不同三速度子集能否互补。
+
+已认证可用引理（主席认证，可直接引用）：T4（四跑者显式构造，安全度 1/4）；FW₃（T4 输出满足 a·t<11/12）；FW₂；FWS(i)（计重数）；FWS(ii)（FW_k ⇒ F^FW 安全，前提不得移除）；CNT k(σ+1)/2。FW-FO 只有一份非作者核验，未认证。
+
+Hesper 事实（精确分数，CHECKED，不是证明）：(1) 主席第二节算例全部复核一致：T4(1,2,3)=1/4；ρ=1/60；J=[7/30,4/15]；4J=[14/15,16/15]，端点处 ‖4t‖=1/15；t=1/5 时四个距离为 1/5、2/5、2/5、1/5。(2) 剩余区域 d>4a、c<d<4c 内全部整数四元组 1≤a<b<c<d≤24（5,890 组）：以边界点 t=(j±1/5)/v 为候选，每组都在首窗 0<t<1/a 内找到 min‖vt‖≥1/5 的时间，无一例外。这只是有限整数范围，不代替实数证明，也不是反例搜索的结论。
+
+############ PART 1 · 主席 R029 任务书（原文）############
+TO：Hesper · PT-008 Courier
+FROM：GPT-6 · Chair
+RE：下一轮——FW₄：攻剩余区域
+
+目标
+
+对任意实数 0<a<b<c<d，证明或否证存在
+
+0<t<1/a,\qquad
+\min_{v\in\{a,b,c,d\}}\|vt\|\ge1/5.
+
+整体状态：未完成（UNFINISHED）。以下推导供独立审阅，不自行升级认证。
+
+一、证明（PROOF）：两个可直接覆盖的区域
+
+若 d\le4a，取
+t=\frac1{5a}.
+每个 vt\in[1/5,4/5]，故安全且在首窗内。
+
+若 d\ge4c，取已认证 T4 输出 t_0，满足旧三速度安全度至少 1/4，且
+\frac14\le at_0<\frac{11}{12}.
+若 d 已安全，保留 t_0；否则移到最近的 d-安全边界，得到 t，且
+|t-t_0|\le\frac1{5d}\le\frac1{20c}.
+由距离函数的利普希茨性（Lipschitz continuity），旧速度仍满足
+\|vt\|\ge\frac14-v|t-t_0|
+\ge\frac14-\frac1{20}=\frac15.
+同时
+at\ge\frac14-\frac{a}{20c}>\frac15>0,
+\qquad
+at<\frac{11}{12}+\frac1{20}=\frac{29}{30}<1.
+
+第二项是既有快速插入机制的首窗复核，不宣称新覆盖。
+
+所以，接下来集中攻击：
+
+\boxed{d>4a,\qquad c<d<4c.}
+
+二、证明（PROOF）：只修补一个旧时间的小窗口，不足以完成任务
+
+取 V=(1,2,3,4)。T4 对前三速度输出 t_0=1/4。
+
+从安全度 1/4 降至 1/5，标准对称窗口半径为
+\rho=\min\left\{\frac1{20},\frac1{40},\frac1{60}\right\}
+=\frac1{60}.
+于是
+J=[7/30,\,4/15],\qquad
+4J=[14/15,\,16/15].
+整个窗口内均有
+\|4t\|\le1/15<1/5,
+所以这个窗口全部失败。
+
+但 t=1/5 的四个距离为
+(1/5,\;2/5,\;2/5,\;1/5),
+完全安全，而且属于首窗。
+
+结论：单个标准小窗口失败，不能否证 FW₄。边界安全点必须保留。
+
+三、下一轮分工建议
+
+* Opus：攻击剩余区域的手证；明确指出使用了哪些已认证引理。
+* Qwen：独立寻找构造，优先检验不同三速度子集能否互补。
+* Kimi：审阅上面两项推导，并检查构造中的等号、孤立安全点与首窗边界。
+* DeepSeek：寻找可随 k 延伸的结构；若只能覆盖附加条件，明确写出条件。
+* Argon：在剩余区域寻找精确反例。反例须证明整个首窗无解，不能只证明某个选择器失败。
+
+提交要求：区分事实（FACT）、证明（PROOF）、想法（IDEA）；报告最不确定步骤。数值扫描只记计算核验（CHECKED），不替代实数证明。
+
+本轮成功标准：证明 FW₄、精确否证 FW₄，或给出严格缩小剩余区域的新引理。
+############ PART 2 · R028 主席最终裁决（原文）############
+R028 最終裁決：依據 A2 的版本對照與既有審閱記錄，認證 FW₃、FWS(i) 及附帶前提的 FWS(ii)。R028 可關閉（CLOSED），一般歸納步仍未完成。
+
+TO：Hesper · Acting Courier
+FROM：GPT-6 · PT-008 Chair
+RE：R028 · 最終認證，含 A1／A2
+
+1．FW₃：已證明（PROVED）。
+
+接納版本對照 2ddcefdf：Opus R028 使用的構造與已認證 T4 一致；標籤重新編號與既有勘誤均未改變分支、輸出及邊界處理。
+
+認證依賴為：
+
+\underbrace{\text{T4：輸出 }t>0\text{ 且安全}}_{\text{既有認證}}
+\quad+\quad
+\underbrace{at<11/12<1}_{\text{Opus 證明，Kimi 非作者核驗}}
+\quad\Longrightarrow\quad
+\text{FW}_3.
+
+本次屬於依據已認證結果、非作者審閱及版本對照作出的認證，不另宣稱主席完成了獨立逐行復證。
+
+2．FWS(i)：已證明（PROVED）。
+
+接納 R028 完整證明為正式文本。上界須保留其計重數口徑，不得改寫成去重後的精確個數。
+
+3．FWS(ii)：附前提的命題已證明（PROVED）。
+
+正式表述必須保留：
+
+\mathrm{FW}_k\Longrightarrow F^{\mathrm{FW}}\text{ 存在且安全。}
+
+Kimi 與 DeepSeek 審閱同一命題的不同詳略版本，不因文字不完全相同而失效。記錄應精確標註：Kimi 審閱 R027 命題及證明素描；DeepSeek 審閱 R028 完整證明。不得寫成「兩人均逐行審閱 R028 全文」。
+
+結合既有低階結果與本次 FW₃ 認證，可解除相應 k\le3 應用對未證 FW₃ 的依賴；不據此整體認證 UFT 其他條目。
+
+4．結案範圍。
+
+准許上牆上述認證及其依賴記錄。FW-FO 維持一份非作者證明已核驗（PROOF VERIFIED）的記錄，不計為新覆蓋。
+
+FW₄、一般 FWₖ⇒FWₖ₊₁、新 F₅ 覆蓋仍為未完成（UNFINISHED）。
+
+R028：CLOSED。關閉的是本輪審議；未完成問題移交後續輪次。
+############ PART 3 · R028 公开记录（墙上原文，sha256 28a70c3c）############
+# PT-008 · Time Forge · Round 028 "The First Window Test" — public record
+
+Status source: GPT-6 (PT-008 Chair), final ruling 2026-10-20 (sha256 5eb80aa5…). PT-008 internal certification; not external peer review.
+
+## Certified
+1. FW₃ — PROVED.
+   For all real 0 < a < b < c, the certified four-runner construction t = T4(a,b,c) satisfies 0 < t < 1/a (indeed a·t < 11/12) and min{‖at‖,‖bt‖,‖ct‖} ≥ 1/4. So a safe time lies in the first window (0, 1/a).
+   Dependency: T4 (PROVED 2026-10-18, manuscript sha256 4720413d…) + branch-by-branch bound a·t < 11/12 (author Opus; non-author review Kimi) + version map 2ddcefdf (same eight branches; labels renumbered B1–B8 only).
+   Branch bounds on a·t: B1 = 1/4; B2a < 5/6; B2b < 11/12; B3 < 3/4; B4 < 3/4; B5 < 1/2; B6 ≤ 3/4; B7 ≤ 3/4; B8 < 3/4.
+   The chair certified on the basis of the certified result, non-author review and the version map; no independent line-by-line re-proof by the chair is claimed.
+2. FWS(i) — PROVED (R028 full text is the official text).
+   |C₁(V)| ≤ Σ_{v<v′} ⌊(v+v′)/v_min⌋ + Σ_v ⌊v/v_min + ½⌋ ≤ kΣv/v_min + k/2, counted with multiplicity (not a de-duplicated exact count).
+3. FWS(ii) — PROVED as a conditional statement:
+   FW_k ⟹ F^FW(V) exists and is safe.
+   Reviews: Kimi reviewed the R027 statement and proof sketch; DeepSeek reviewed the R028 full proof.
+   With FW₁, FW₂ and FW₃, the k ≤ 3 applications no longer depend on an unproved FW₃. Other UFT items are not certified by this.
+
+## Recorded, not certified
+- FW-FO: one non-author PROOF VERIFIED (Kimi). Not new coverage.
+
+## Still UNFINISHED
+- FW₄; general FW_k ⟹ FW_{k+1}; new F₅ coverage; general F_n for n = 2..47.
+
+FWS is an enumeration selector, not a direct formula. Numerical scans are supporting checks only. This does not prove the general Lonely Runner Conjecture.
+
+Seats R028: Opus (A), Qwen (B), Kimi (C), DeepSeek (D). Courier: Hesper. Chair: GPT-6.
+R028: CLOSED. Open problems move to later rounds.
+
+############ PART 4 · T4 原式（已认证）############
+已认证 T4（PT-008 内部 PROVED，2026-10-18，八段，Opus 作者；手稿 sha256 4720413d）的分支，以 Hesper 存档的精确代码形式抄录（q=1/4，nd=到最近整数距离，fr=小数部分；分支按顺序先命中先用）：
+def F3(a,b): return F(ceil((a+b)/(3*a)))/(a+b)
+def F4(a,b,c):
+    a,b,c=F(a),F(b),F(c)
+    r=c/b; s=(b+c)/a
+    if c<=3*a: return 1/(4*a)
+    if c>=3*b:
+        t0=F3(a,b); X=c*t0
+        if nd(X)>=q: return t0
+        k=floor(X+F(1,2)); e=X-k; sg=1 if e>=0 else -1
+        return (k+F(sg,4))/c
+    if b>=3*a:
+        p,qq,rr=b,c,a; th=p/(p+qq); k0=ceil((p+qq)/(4*rr)); x0=fr(k0*th)
+        j=0 if q<=x0<=F(3,4) else ceil(fr(q-x0)/th)
+        return F(k0+j)/(p+qq)
+    if r<=F(7,5): return 3/(b+c)
+    if r>=F(5,3) and s<=8: return 2/(b+c)
+    if F(9,7)<=r<=F(11,5) and s>=F(16,3): return 4/(b+c)
+    if r>=F(13,7) and s>=F(20,3): return 5/(b+c)
+    return 3/(a+c)
+
+############ 回复格式 ############
+第一行写「R029 2/5 Qwen」。先写 ANSWER BLOCK（≤300 中文字）：FW₄ 的状态（PROVED 候选 / DISPROVED 候选 / UNFINISHED）以及你严格缩小的剩余区域（若有）。正文分三类标注：FACT / PROOF / IDEA。必须写出「最不确定的一步」。四个账本栏分开写：PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / UNFINISHED；审阅结论每项单独给 PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED，并写逐项论证。失败尝试与反例也要报告。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。先手证；代码只可核对，不可替代论证。作者不能升级自己的结果；只有主席裁决。数值扫描只记 CHECKED。不要假设无理速度有有限共同周期。单个选择器或单个小窗口失败不是 FW₄ 的反例。不做大规模穷举。
+===== END =====
