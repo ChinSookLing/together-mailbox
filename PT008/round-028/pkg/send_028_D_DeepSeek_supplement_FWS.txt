@@ -1,0 +1,47 @@
+WHO（给谁）：DeepSeek —— PT-008 Round 028 · Track D 补充件（Opus R028 FWS 完整文本，供第二次审阅）
+WHERE（贴到哪）：DeepSeek 同一对话「PT-008 DeepSeek R028」（深度思考开，联网关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R028 4/4 DeepSeek supplement」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 028 · supplement, for DeepSeek. WEB OFF. Courier promotes nothing.
+主席 R028 Track D 要求你对 FWS(i)/(ii) 做第二份非作者审阅。Opus 按主席要求交了完整 FWS 文本（Part III），以此为准，请逐步审 (i) 计数、(ii) 选择、(iii) 计算量；FWS 对 k≤3「无条件」一句依赖 FW₃，而 FW₃ 尚未经主席认证——请把这点分开评。若你已交回复，请作补充审阅回复。
+以下为 Opus R028 原文节选（原样，Opus R028 全文 sha256 e42dfbd3）。
+## Part III · FWS 完整文本（供 DeepSeek 第二次审阅）
+
+**设定**：V 为 k 个两两不同的正实数；v_min = min V；δ = 1/(k+1)；C(V) 为 R026 的算术骨架。
+
+**定义**：C₁(V) = C(V) ∩ (0, 1/v_min]；**F^{FW}(V) = min{ t ∈ C₁(V) : g_V(t) = max_{C₁(V)} g_V }**。
+
+**FWS(i)（计数）**：|C₁(V)| ≤ Σ_{v<v′} ⌊(v+v′)/v_min⌋ + Σ_v ⌊v/v_min + ½⌋ ≤ kΣv/v_min + k/2（计重数）。
+
+**证明**：
+1. 第一类：j/(v+v′) ≤ 1/v_min ⇔ j ≤ (v+v′)/v_min。满足条件的正整数 j 有 ⌊(v+v′)/v_min⌋ 个。
+2. 第二类：(2j+1)/(2v) ≤ 1/v_min ⇔ j ≤ v/v_min − ½。满足条件的非负整数 j 的个数为 max(0, ⌊v/v_min − ½⌋ + 1) ≤ ⌊v/v_min + ½⌋。
+3. 求和并用 ⌊x⌋ ≤ x：
+   - 第一类之和 ≤ Σ_{v<v′}(v+v′)/v_min = (k−1)Σv/v_min；
+   - 第二类之和 ≤ Σv/v_min + k/2。
+   - 相加得 kΣv/v_min + k/2。∎
+
+（这个上界只依赖速度比，在缩放下不变。Kimi 的手算实例：V = {1, 2}，计数为 6，上界为 7。）
+
+**FWS(ii)（选择）**：若 FW_k(V) 成立，即 S_δ(V) ∩ (0, 1/v_min) ≠ ∅，则 F^{FW}(V) ∈ S_δ(V)。
+
+**证明**：
+1. 取 t₀ ∈ S_δ(V) ∩ (0, 1/v_min)，K 为 S_δ(V) 中含 t₀ 的连通分量。
+2. 由于 S_δ(V) ⊂ ⋃_{i≥0} [(i+δ)/v_min, (i+1−δ)/v_min]，而右边各区间互不相交且是闭区间，K 只能落在其中一个之内。因为 t₀ < 1/v_min，这个区间只能是 i = 0 的那一个，所以 K ⊂ [δ/v_min, (1−δ)/v_min] ⊂ (0, 1/v_min]。
+3. 由 HS（主席内部认证），K ∩ C(V) ≠ ∅。取 c ∈ K ∩ C(V)，则 c ∈ C₁(V)，且 g_V(c) ≥ δ。
+4. F^{FW} 在 C₁(V) 上取最大值，所以 g_V(F^{FW}) ≥ g_V(c) ≥ δ。∎
+
+**FWS(iii)（计算量）**：需要 O(k·|C₁(V)|) 次比较。实数速度需要能精确判断 ‖vt‖ ≥ δ（例如有理或代数数速度）。
+
+**FWS 的适用范围**：
+- **k ≤ 3**：FW 已证（FW₁、FW₂，以及本轮的 FW₃），所以 FWS **无条件**成立。
+- **k ≥ 4**：以 FW_k 为条件。
+
+---
+
+
+回复格式：第一行「R028 4/4 DeepSeek supplement」。ANSWER BLOCK ≤300 字；每项审阅结论单独给 PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED，并写逐项论证（笼统 VERIFIED 不计数）；四账本栏 PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+数值扫描不能作证明。作者不能升级自己的结果；只有主席裁决。
+===== END =====
