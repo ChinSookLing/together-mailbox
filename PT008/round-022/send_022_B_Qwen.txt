@@ -1,0 +1,1002 @@
+WHO（给谁）：Qwen —— PT-008 Round 022 · The Exceptional Set · Track B — Qwen: Corrected Cluster Transfer
+WHERE（贴到哪）：Qwen 新对话「PT-008 Qwen R022」（Play CF 项目，3.8-Max thinking，web 关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R022 2/4 Qwen」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 022 · The Exceptional Set, for Qwen.
+TO: Qwen
+ASK: do YOUR track (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: is the exceptional set E*_n a real obstruction or an artifact of current selection rules; what minimal invariant must pass from F_n to F_(n+1). Unrestricted F5 and general F_n still UNFINISHED.
+
+############ PART 0 · 你的任务（主席原文）############
+Track B — Qwen: Corrected Cluster Transfer
+
+Preserve the verified Q-GATE cluster result.
+
+Do not claim that periodic translation automatically inserts the outsider.
+
+Examine the family (1,N,2N+1,3N) and determine exactly why a fixed-outsider translation degenerates.
+
+Seek a rule for choosing or changing the outsider before selecting the final time.
+
+Submit the complete revised non-strict Q-ERC1 statement and address Opus’s remaining objections.
+
+
+Hesper 注：主席已认证 Q-GATE 仅限三跑者簇安全（b,c,d），不含 a；「Q-GATE + 周期平移装入 a」为 GAP FOUND。Argon 族 (1,N,2N+1,3N)：L=s，frac(L/s)=0，固定局外人 a 时相位锁死（Hesper 复算 N=2,5,10,20）。Argon 答案块里的 (1,12,24,32) 反例不成立（L=9，frac(L/s)=1/4），不得采用。另：你 R022 写的递推 F_n(V)=F_{n-1}(V∖u)+n·P_u，PS 实为 +j·P_u，请更正。Opus、Argon、DeepSeek 的 R022 原文附后。
+
+############ PART 1 · 主席 R022 共同要求（原文）############
+PT-008 · Round 022 · The Exceptional Set
+
+FROM: GPT-6 · PT-008 Chair
+TO: Hesper · Acting Courier
+CC: Opus, Qwen, DeepSeek, Argon, Puck, Tuzi
+DATE: 2026-10-20
+WEB: OFF
+STATUS: OPEN
+
+Central Mission
+
+The original goal remains a deterministic uniform construction:
+
+F_n(v_1,…,v_{n-1})
+
+for arbitrary positive real relative speeds, ideally extending from 2 to 47 runners.
+
+Unrestricted F5 and general F_n remain UNFINISHED.
+
+R021 exposed a possible exceptional set E*_n left by the existing outsider and phase-transfer methods.
+
+Determine whether E*_n is a genuine structural obstruction to those methods, or an artifact of the current selection rules.
+
+Priority 1 — Exact Definitions
+
+Opus must provide the complete theorem statements for:
+
+PS_n, PS*, LS-1, LS-R, APS, H, FO, TL and OB.
+
+For each, distinguish:
+
+* Proven sufficient hypotheses;
+* Exceptional inputs;
+* Conditional algorithms;
+* Exact output formula;
+* Any reliance on a previously known existence theorem.
+
+Do not treat a missing theorem statement as certified merely because a reviewer has approved an earlier version.
+
+Mandatory Question
+
+Does the proposed result provide a guaranteed mechanism for the induction step, or does it only describe a sufficient subset of inputs?
+
+Answer explicitly:
+
+YES / CONDITIONAL / NO.
+
+If CONDITIONAL, name the missing hypothesis and state whether that hypothesis is automatically preserved.
+
+Discipline
+
+WEB OFF.
+
+Mathematical proof before numerical testing.
+
+No large brute-force enumeration.
+
+Exact numbers only from shown hand or code calculations.
+
+Separate PROOF VALIDITY, INDEPENDENT REVIEW, NEW COVERAGE and COMPUTATIONAL CHECK.
+
+Do not promote candidate lemmas based only on review counts.
+
+No wall publication without chair authorization.
+
+Return R022 1/4 through R022 4/4.
+
+ROUND 022 OPEN
+############ R021 主席裁决（原文，节选至 R022 开题前）############
+PT-008 · Round 021 · 主席裁决
+
+FROM: GPT-6 · PT-008 Chair TO: Hesper、Opus、Qwen、Argon、DeepSeek、Puck DATE: 2026-10-20 · WEB OFF
+
+R021 · PARTIAL
+
+ANSWER BLOCK
+
+四席回答全部为 CONDITIONAL。一般 F₅ 与统一 均未闭合。
+
+本轮的关键进展，是把归纳障碍从笼统的「第五位无法加入」，缩小到三个具体问题：局外人的选择、周期平移的退化，以及归纳时需要保留多少安全信息。
+
+成果	主席裁决
+Qwen · Q-GATE（三跑者簇门）	PROVED，仅限完整原假设下的簇安全性
+Q-GATE + 周期平移装入	GAP FOUND，不能认证
+Q-ERC1 非严格版本	一份非作者 VERIFIED；争议尚未完全消除
+Q-ERC1 严格版本	DISPROVED，维持
+Opus · PSₙ / PS* / LS / APS	已收到完整原文的报告；主席审阅待办
+Opus · H / FO / TL / OB	PROOF CANDIDATE
+DeepSeek · 条件归纳引理	PROOF CANDIDATE，需修正负向窗口条件
+一般	UNFINISHED
+
+本轮没有发现可无条件应用于任意速度的 规则。
+
+但研究方向更清楚了：成功时间点本身，可能不是足以支持归纳的全部信息。
+
+一、Q-GATE：簇安全，不等于全员安全
+
+Qwen 的 Q-GATE 已获得 Argon、DeepSeek 两份非作者证明核验。
+
+主席接受其限定结论：按报告原假设，它能从输入数据为 构造安全相位。
+
+然而，我们真正需要的是：
+
+\min\{\|at\|,\|bt\|,\|ct\|,\|dt\|\}\ge\frac15.
+
+Q-GATE 保证后三项，却没有自动保证第一项。
+
+这一区别不能省略。
+
+Argon 提出的速度族：
+
+(1,N,2N+1,3N)
+
+指出某种周期平移可能无法改变最慢跑者的相位。这可以击破对应的固定局外人平移规则。
+
+但 Hesper 也特别提醒，换一个局外人就可能救回该例。
+
+例如 ，得到：
+
+(1,10,21,30).
+
+Hesper 给出的另一成功时间是：
+
+t=\frac7{31}.
+
+我独立手算：
+
+\|t\|=\frac7{31},\|10t\|=\left\|\frac{70}{31}\right\|=\frac8{31},\|21t\|=\left\|\frac{147}{31}\right\|=\frac8{31},\|30t\|=\left\|\frac{210}{31}\right\|=\frac7{31}.
+
+全部大于 。
+
+因此：
+
+固定一个局外人的规则失败，不代表所有局外人选择都失败。
+
+这是这一轮必须保留的逻辑边界。
+
+二、主席对 Opus 新归纳路线的判断
+
+Opus 这轮提出了几项可能有助于推广到一般 的结构。其中最值得优先审阅的，不是另一个具体时间公式，而是：
+
+归纳时到底必须保存什么？
+
+如果已知 安全，定义余量：
+
+\eta=\min_i\left(\|u_it_0\|-\frac1n\right).
+
+设最大相对速度为 。
+
+利用圆周距离函数的 Lipschitz 性：
+
+\|u_i(t_0+h)\|
+\geq \|u_it_0\|-u_i|h|.
+
+因此当 时，
+
+|h|\leq\frac{\eta}{M}
+
+保证所有旧跑者仍满足原来的 门槛。
+
+这是一个直接的局部窗口证明。
+
+但这里有个关键点：
+
+\boxed{\text{成功时间点}\not\Rightarrow\text{严格正余量}}
+
+一个成功时间可能正好处于安全边缘，甚至是孤立安全点。
+
+所以 Opus 的命题 H 如果声称「点、严格正余量、双侧窗口完全等价」，必须补充条件。
+
+另外，新增跑者后门槛降低，旧跑者即使原来恰好达到 ，在新的 门槛下也会获得正余量。
+
+这两种余量不能混为一谈。
+
+主席对 H 的裁决是：保留 PROOF CANDIDATE，要求明确采用哪个门槛、哪一种窗口。
+
+至于 FO，报告指出其快速新跑者情形与已有的 L2/LN 结构相同。因此即使证明成立，也不应重复计作新的覆盖突破。
+
+TL、OB 与 PSₙ 是否能真正提供归纳所需的信息，仍需要完整原文审查。尤其 OB 所称的整数关系阻碍，只能按精确限定的传递机制解释，不能推导成一般构造不可能。
+
+三、DeepSeek：负向窗口必须有时间边界
+
+DeepSeek 的条件归纳引理方向正确：若有一个安全窗口，并且加入新跑者所需的调整量不超过窗口长度，就能完成对应的构造。
+
+不过 Hesper 指出的条件缺失必须补上。
+
+如果选择向左移动：
+
+t=t_0-\Delta,
+
+就必须保证：
+
+t>0.
+
+特别是使用整个左窗口 时，需要说明 ，或者明确选择的实际位移仍使时间为正。
+
+裁决：修订后再进行非作者独立审阅。
+
+这不是小小的排版问题。定理给出的时间必须处于定义域中。
+
+
+五、给 Hesper 的归档裁决
+
+R021 CLOSED — PARTIAL；R022 OPEN。
+
+请特别记录这几项修正：
+
+* Q-GATE 的认证范围仅为三跑者安全簇，不包括局外人。
+* Q-GATE 周期平移装入 的规则存在已报告反例。
+* Argon 原答案块中的 反例计算不成立，不得采用。
+* 族 的局部反例，不得误记为整个 的反例。
+* DeepSeek 的负向窗口引理需要补充正时间条件。
+* Q-ERC1 非严格版仍等待争议解决。
+* Opus 新提交的 H、FO、TL、OB、PSₙ 等需按完整陈述进行独立核验。
+
+
+############ PART 2 · 你自己的 R021 原文（原样） ############
+R021 2/4 Qwen
+第 1 段 / 共 3 段
+
+# ANSWER BLOCK（Track B · F4-to-F5 Gate · Qwen · R021）
+
+Q-GATE 连分数选择器**完整证明**已提交：分母上界 $\lceil 20\max(1{-}\theta,w)\rceil$ 由连分数标准不等式与 T4 余量 $1/20$ 严格推出；b,c,d 三约束因相位偏移 $<1/20$ 而保持 $>1/5$。**a 不受 Q-GATE 控制，明写 PARTIAL。** 有理形状可接 PS 平移装 a（除 $L/s\in\mathbb{Z}$）；无理形状 a 门 **UNFINISHED**。Q-ERC1 修订证明逐项回应 Opus 三处缺口与 Argon 鸽笼问题；Argon 的 $(1/3,4/3)$ 反例经 Hesper 复算无效，但其鸽笼观察已被正面修复。主席必答：**CONDITIONAL**——Q-GATE+PS 给出可公度情形的归纳步骤，但无理形状未闭合，不能直达 $F_{47}$。
+
+---
+
+## §1 · Q-GATE 连分数选择器：完整证明
+
+### §1.1 精确陈述
+
+**定理 Q-GATE。** 设 $0<a<b<c<d$，$S=b+c$，$\theta=b/S$，$w=d/S$。令 $t_0=F_4(b,c,d)$（已认证 T4），$\tau^*=S\,t_0$，$M=\max(1-\theta,\,w)$，$Q_0=\lceil 20M\rceil$。取 $p/q$ 为 $\tau^*$ 的**最后一个分母 $\le Q_0$ 的连分数渐近分数**（若 $\tau^*$ 本身为有理且分母 $\le Q_0$，直接取 $p/q=\tau^*$）。则：
+
+**(i)** $q\le Q_0=\lceil 20\max(1-\theta,w)\rceil$；
+
+**(ii)** $\tau=p/q$ 满足 $\|\tau\theta\|,\;\|\tau(1-\theta)\|,\;\|\tau w\|>1/5$，即 $q$ 是好格（取 $k=p$）。
+
+### §1.2 证明：分母上界与逼近精度
+
+**事实 1（连分数标准不等式）。** 设 $x$ 为任意实数，$p_j/q_j$ 为其第 $j$ 个渐近分数，$p_{j+1}/q_{j+1}$ 为下一个。则
+$$\Bigl|x-\frac{p_j}{q_j}\Bigr|<\frac{1}{q_j\,q_{j+1}}.$$
+（有理 $x$ 在末项取等；无理严格不等。）
+
+**事实 2（分母增长）。** $q_0=1$，$q_1\ge 1$，$q_{j+1}=a_{j+1}q_j+q_{j-1}\ge q_j+q_{j-1}$（Fibonacci 增长）。故步数 $\le O(\log Q_0)$。
+
+**事实 3（T4 余量）。** 由已认证 T4：$\|bt_0\|,\|ct_0\|,\|dt_0\|\ge 1/4$。而 $\tau^*\theta=bt_0$，$\tau^*(1-\theta)=ct_0$，$\tau^*w=dt_0$。故在 $\tau^*$ 处三距离 $\ge 1/4$。
+
+**选取规则。** 令 $p_j/q_j$ 为分母 $\le Q_0$ 的最后一个渐近分数。下一分母 $q_{j+1}>Q_0$（否则继续取）。由事实 1：
+$$\Bigl|\tau^*-\frac{p_j}{q_j}\Bigr|<\frac{1}{q_j\,q_{j+1}}<\frac{1}{q_j\,Q_0}\le\frac{1}{Q_0}.$$
+（最后一步用 $q_j\ge 1$。）若 $\tau^*$ 分母 $\le Q_0$，误差为 0。
+
+因 $Q_0=\lceil 20M\rceil\ge 20M$，有 $1/Q_0\le 1/(20M)$。故
+$$\Bigl|\tau^*-\frac{p_j}{q_j}\Bigr|<\frac{1}{20M}.\qquad(\dagger)$$
+
+**分母界：** $q=q_j\le Q_0=\lceil 20M\rceil$。✓
+
+### §1.3 证明：对 b,c,d 三个旧约束的影响
+
+对 $u\in\{\theta,\,1-\theta,\,w\}$，由 $(\dagger)$：
+$$|\tau u-\tau^* u|=u\cdot|\tau-\tau^*|<\frac{u}{20M}\le\frac{M}{20M}=\frac{1}{20}.$$
+（因 $u\le M$，$M=\max(1-\theta,w)$，且 $\theta<1/2<1-\theta$ 故 $\theta<M$。）
+
+由事实 3，$\|\tau^*u\|\ge 1/4$。由 $\|\cdot\|$ 的 1-Lipschitz 性：
+$$\|\tau u\|\ge\|\tau^*u\|-|\tau u-\tau^*u|>\frac{1}{4}-\frac{1}{20}=\frac{4}{20}=\frac{1}{5}.$$
+
+三项同 $\tau$ 同时成立。**b,c,d 全部保持 $>1/5$。** ✓
+
+### §1.4 证明：终止性与确定性
+
+连分数算法每步做一次取整 $a_j=\lfloor 1/r_{j-1}\rfloor$ 与一次倒数 $r_j=1/r_{j-1}-a_j$。分母 Fibonacci 增长 $\Rightarrow$ 步数 $\le O(\log Q_0)$。每步 $O(1)$ 运算。**有限有界，确定性，无搜索。** ✓
+
+### §1.5 手算验证（本席计算）
+
+取 $a=1/7$，$b=1$，$c=101/100$，$d=2$。$S=201/100$，$\theta=100/201$，$1-\theta=101/201$，$w=200/201$，$M=200/201$，$Q_0=\lceil 4000/201\rceil=20$。
+
+T4 走 S1（$d=2\le 3b=3$），$t_0=1/(4\cdot 1)=1/4$，$\tau^*=201/400$。
+
+连分数：$201/400=[0;1,1,99,2]$。渐近分数：
+
+| $j$ | $a_j$ | $p_j$ | $q_j$ |
+|---|---|---|---|
+| 0 | 0 | 0 | 1 |
+| 1 | 1 | 1 | 1 |
+| 2 | 1 | 1 | 2 |
+| 3 | 99 | 100 | 199 |
+| 4 | 2 | 201 | 400 |
+
+末个 $q_j\le 20$：$j=2$，$p/q=1/2$。$q_{j+1}=199>20$。✓
+
+验算：
+- $\tau\theta=\frac{1}{2}\cdot\frac{100}{201}=\frac{50}{201}\approx 0.2488>0.2$ ✓
+- $\tau(1-\theta)=\frac{1}{2}\cdot\frac{101}{201}=\frac{101}{402}\approx 0.2512>0.2$ ✓
+- $\tau w=\frac{1}{2}\cdot\frac{200}{201}=\frac{100}{201}\approx 0.4975>0.2$ ✓
+
+偏移验证：$|\tau-\tau^*|=|1/2-201/400|=1/400<1/20$ ✓。$\theta\cdot(1/400)=100/201\cdot 1/400=1/804<1/20$ ✓。
+
+（第 1 段完）
+
+R021 2/4 Qwen
+第 2 段 / 共 3 段
+
+---
+
+## §2 · F4-to-F5 Gate：Q-GATE 能做什么、不能做什么
+
+### §2.1 Q-GATE 的产出（已证，§1）
+
+Q-GATE 对**任意实数** $0<a<b<c<d$ 确定性选出 $\tau=p/q$（$q\le\lceil 20\max(1{-}\theta,w)\rceil$），使
+$$\|\tau\theta\|,\;\|\tau(1{-}\theta)\|,\;\|\tau w\|>1/5.$$
+即 b,c,d 三人在 $t=\tau/S$ 处安全。**这是三速安全簇的无条件构造。**
+
+### §2.2 a 不受控（PARTIAL 的精确原因）
+
+Q-GATE 的连分数逼近只保证 $\tau$ 接近 $\tau^*=S\,F_4(b,c,d)$。a 的条件是 $\|\tau/s\|\ge 1/5$（$s=S/a$），**与 $\tau$ 接近 $\tau^*$ 无关**。具体地：$\tau^*/s = S\,t_0/S \cdot 1/a = t_0/a$，而 $t_0=F_4(b,c,d)$ 只依赖 $b,c,d$，不依赖 $a$。所以 $\tau^*/s$ 可以是任意值，包括 $<1/5$。
+
+**主席指出的尺度困难（余量 $\ne$ 可递推性）：** 要将 a 从不安全移到安全弧，所需时间调整量 $\sim 1/a$；b,c,d 能容忍的调整量 $\sim 1/(20d)$。当 $a\ll d$ 时，两尺度差 $d/a$ 倍，局部微调不可行。Q-GATE 不解决此困难。
+
+**结论：Q-GATE 单独只构造三速安全簇，不能装入 a。明写 PARTIAL。**
+
+### §2.3 有理形状：PS 平移装 a（完整 F5，除例外）
+
+设 $\theta,\,w$ 有理，$L=\mathrm{lcm}(q_\theta,q_w)$。则 $\tau\to\tau+L$ 使三个簇相位各增 $L\theta,L(1{-}\theta),Lw\in\mathbb{Z}$，**精确不变**。a 相位每步增 $\mathrm{frac}(L/s)$。
+
+- 若 $\mathrm{frac}(L/s)\ne 0$：PS 式单向微调（步数 $\le 2/(5\min(x,1{-}x))+1$）将 a 装入 $A$。**b,c,d 全程精确不变**，无余量消耗。得完整 $F_5$。
+- 若 $\mathrm{frac}(L/s)=0$ 且 $\mathrm{frac}(\tau_0/s)\notin A$：a 相位在此轨道上恒不变，机制内无解。此为**例外集 $E_{\mathrm{PS}}$**。
+
+**手算验证（本席，主席反例形状 $(7/20,2,5,6)$）：** $\theta=2/7$，$w=6/7$，$q_\theta=q_w=7$，$L=7$，$s=20$，$x=\mathrm{frac}(L/s)=\mathrm{frac}(7/20)=7/20\ne 0$。$\tau_0=7/8$（T4 走 S1，$d=6\le 3b=6$）。$\phi_0=\mathrm{frac}(\tau_0/s)=\mathrm{frac}(7/160)=7/160\notin A$。$\Delta=\mathrm{frac}(1/5-7/160)=25/160$。$n=\lceil(25/160)/(7/20)\rceil=\lceil 25/56\rceil=1$。$t=t_0+P=1/8+1=9/8$。
+距离：$at=63/160$，$bt=9/4\Rightarrow\|\cdot\|=1/4$，$ct=45/8\Rightarrow\|\cdot\|=3/8$，$dt=27/4\Rightarrow\|\cdot\|=1/4$。全部 $\ge 1/5$。✓
+
+### §2.4 无理形状：a 门 UNFINISHED
+
+无理 $\theta$ 或 $w$ 时无精确 $L$。Q-GATE 给出簇安全 $\tau_0$，但**无法平移**（无周期）。APS 提供近似周期，但需选参考整数 $(B,C,E)$（UNFINISHED）。
+
+**故无理形状的 F5：UNFINISHED。**
+
+### §2.5 归纳桥（R021 北极星）
+
+PS 的证明只用「$V{\setminus}u$ 有成功时间」与「$V{\setminus}u$ 可公度」。故对可公度情形：
+$$F_n(V)=F_{n-1}(V{\setminus}u)+n\cdot P_u$$
+是真正的 $(n{-}1)\to n$ 递推（PROOF CANDIDATE）。但：
+- 要求 $V{\setminus}u$ 可公度（有理速度）；
+- 例外集 $E^*=\bigcap_u E_u$ 非空（Opus A5 已证）；
+- 无理速度无精确周期，递推不适用。
+
+**通向 $F_{47}$ 的缺口：无理速度情形无归纳步骤。**
+
+---
+
+## §3 · Q-ERC1 修订证明（逐项回应 Opus 与 Argon）
+
+### §3.1 定理重述
+
+**Q-ERC1（非严格）。** $\theta=p/q$（最简，$q\ge 3$），$w=r/q'$（最简）。则 $G_1\ne\emptyset\iff q'\ge 2$；$G_1=\emptyset\iff q'=1$。
+
+**严格版（$>1/5$）为假**（主席已裁，反例 $\theta=1/5$，$w=7/5$）。本定理只主张 $\ge 1/5$。
+
+### §3.2 回应 Opus 三处缺口
+
+**缺口 1（投影步骤）。** Opus 指出 $S_\theta=p^{-1}A_q\bmod q$ 一般非连续整数。**正确。** 修复：因 $\gcd(p,q)=1$ 且 $g|q$，$p^{-1}$ 是 $\bmod g$ 单位。故 $\pi(S_\theta)=p^{-1}\cdot\pi(A_q)$（集合等式），$|\pi(S_\theta)|=|\pi(A_q)|$。$A_q$ 是连续整数区间，$|\pi(A_q)|=\min(|A_q|,g)$。**修订证明直接使用此等式，不再声称 $S_\theta$ 含连续整数。**
+
+**缺口 2（$|A_q|$ 下界）。** Opus 指出 $|A_q|\ge 3q/5$ 对 $q=7$ 不成立（$|A_7|=4<4.2$）。**正确。** 但本席 R020 证明使用的是 $|A_q|\ge 3(q{-}1)/5$（非 $3q/5$），由此推出 $|A_q|\ge q/2$（$q\ge 6$ 时 $3(q{-}1)/5\ge q/2$；$q=3,4,5$ 直接算 $2,3,4$）。**修订证明明确写出 $|A_q|\ge 3(q{-}1)/5$，不用 $3q/5$。**
+
+**缺口 3（鸽笼 $2{+}1\le 3$）。** Opus 指出「$g=3$ 时 $2+1=3$ 不推出相交」。**正确。** 修复：$g=3$ 时，若 $q=3$ 则 $|A_3|=2$，$q'=3$ 亦 $|A_3|=2$，和 $=4>3$，鸽笼成立。若 $q\ge 4$ 则 $|A_q|\ge 3=g$，$\pi(S_\theta)=\mathbb{Z}/3$，交必然非空。**修订证明对 $g=3$ 分 $q=3$ 与 $q\ge 4$ 两子情形。**
+
+### §3.3 回应 Argon
+
+**Argon 反例 $(\theta,w)=(1/3,4/3)$：** Hesper 精确复算已证其**无效**。$k=1$：$\|1/3\|=1/3\ge 1/5$ ✓，$\|4/3\|=\|1+1/3\|=1/3\ge 1/5$ ✓。$R_1=\{1,2\}\ne\emptyset$。**该反例不成立。**
+
+**Argon 鸽笼观察：** 「$2+1\le 3$ 不蕴含相交」。**有效。** 已在 §3.2 缺口 3 修复。
+
+### §3.4 修订证明（完整版）
+
+$q'=1$：$kw\in\mathbb{Z}$，$\|kw\|=0$。$G_1=\emptyset$。✓
+
+$q'\ge 2$：
+
+**引理（轨道）。** $g=\gcd(q,q')$，$q_2=q'/g$。固定 $k_0$ 使 $\|k_0\theta\|\ge 1/5$。则
+$$\{\mathrm{frac}((k_0+jq)w):j\in\mathbb{Z}\}=\{\mathrm{frac}(k_0w)+j/q_2:j\}\pmod{1}.$$
+*证：* $(k_0+jq)w=k_0w+j\,qr/q'$。写 $q=gq_1$，$q'=gq_2$，$\gcd(q_1,q_2)=1$；$\gcd(r,q_2)=1$。$qr/q'=q_1r/q_2$，$q_1r$ 是 $\bmod q_2$ 单位，$\{jq_1r/q_2\}=\{j/q_2\}$。∎
+
+$k_0$ 存在：$q\ge 3\Rightarrow|A_q|\ge 2>0$。
+
+**情形 A：$q_2\ge 2$。** 轨道是间距 $1/q_2\le 1/2$ 的陪集；$A=[1/5,4/5]$ 长 $3/5>1/2\ge 1/q_2$，必交。取该 $j$，$\|(k_0+jq)w\|\ge 1/5$ 且 $\|(k_0+jq)\theta\|=\|k_0\theta\|\ge 1/5$。✓
+
+**情形 B：$q_2=1\iff q'|q$。** 需 $k\bmod q$ 使 $kp\bmod q\in A_q$ 且 $kr\bmod q'\in A_{q'}$。
+
+**(F1)** $|A_q|\ge q/2$（$q\ge 3$）。*证：* $|A_q|\ge 3(q{-}1)/5$；$q\ge 6$ 时 $\ge q/2$；$q=3,4,5$ 算得 $2,3,4$。
+
+**(F2)** $|A_q|=q/2$ 仅 $q=6$。*证：* $3(q{-}1)/5\le q/2\Rightarrow q\le 6$；$q=4$ 给 $3\ne 2$；$q=6$ 给 $3=3$。
+
+- **B1：** $|A_q|\ge q'$。$j=kp\bmod q$ 跑遍 $A_q$（$\ge q'$ 连续整数），$j\bmod q'$ 跑遍 $\mathbb{Z}/q'$；$rp^{-1}$ 是 $\bmod q'$ 单位，$kr=rp^{-1}j$ 跑遍 $\mathbb{Z}/q'$，必入 $A_{q'}$。✓
+- **B2：** $|A_q|<q'$。$q'|q$，$q'<q\Rightarrow q'\le q/2\le|A_q|$（F1），矛盾。故 $q'=q$。
+- **B3：** $q'=q$。两集 $p^{-1}A_q,r^{-1}A_q\subset\mathbb{Z}/q$ 各含 $|A_q|\ge q/2$ 元。若 $|A_q|>q/2$：两子集必交。若 $|A_q|=q/2$：由 (F2) 只 $q=6$。$A_6=\{2,3,4\}$，$p=1$（$\theta<1/2$，$\gcd(p,6)=1$），$r\in\{1,5\}$。$p^{-1}A_6=\{2,3,4\}$；$r=1$：$r^{-1}A_6=\{2,3,4\}$，交 $\{2,3,4\}$。$r=5$：$5\cdot\{2,3,4\}=\{4,3,2\}$，交 $\{2,3,4\}$。✓
+
+综上 $G_1\ne\emptyset$。∎
+
+**状态：PROOF CANDIDATE**（修订后，待非作者审阅）。
+
+（第 2 段完）
+
+R021 2/4 Qwen
+第 3 段 / 共 3 段
+
+---
+
+## §4 · 账本
+
+**PROOF VALIDITY**
+- Q-GATE 完整连分数证明（§1.1–§1.4）：PROOF CANDIDATE（本席证明，依赖已认证 T4；待非作者审阅）。
+- Q-GATE 手算例（§1.5，$a=1/7$，$b=1$，$c=101/100$，$d=2$）：CHECKED。
+- F4-to-F5 gate：Q-GATE 单独 = **PARTIAL**（三速安全簇，a 不受控）；Q-GATE+PS 对有理形状 = PROOF CANDIDATE（除 $E_{\mathrm{PS}}$）。
+- Q-ERC1 修订证明（§3.4）：PROOF CANDIDATE（修复 R020 三处缺口后）。
+- Q-GATE 分母上界推导（§1.2）：PROOF CANDIDATE（连分数标准不等式 + $Q_0=\lceil 20M\rceil$）。
+
+**INDEPENDENT REVIEW**
+- 本席本轮未审阅他人成果（主席未分配）。
+- Q-GATE 与 Q-ERC1 修订版**待** Opus、DeepSeek 非作者审阅。
+
+**NEW COVERAGE**
+- Q-GATE 相对 CLR v2/LS：覆盖**无理形状**的簇门 + 压低分母。符号差集未算：**NEW COVERAGE UNFINISHED**。
+- §1.5 手算例落在已认证 TE-AL 内，**不**作新覆盖主张。
+
+**COMPUTATIONAL CHECK**
+- §1.5 Q-GATE 例（连分数 $[0;1,1,99,2]$，渐近分数分母 $1,1,2,199,400$，距离手算）：本席精确分数计算。
+- §2.3 主席反例形状 $(7/20,2,5,6)$（$\tau_0=7/8$，$n=1$，$t=9/8$，四距离 $63/160,1/4,3/8,1/4$）：本席手算。
+- §3.4 Q-ERC1 的 $q=6$ 直接验证（$A_6=\{2,3,4\}$，$r\in\{1,5\}$）：本席手算。
+- 全部为本席精确分数计算，未用代码、未用随机测试。
+
+**剩余缺口**
+1. 无理形状的 a 装入门：UNFINISHED（无精确周期可平移）。
+2. $E_{\mathrm{PS}}$ 例外集的完整覆盖（需换锚或重构）：UNFINISHED。
+3. Q-GATE 的符号覆盖差集（相对已认证清单）：UNFINISHED。
+4. Q-GATE 与 PS 组合后的完整 $F_5$ 覆盖（有理形状减去 $E_{\mathrm{PS}}$）：PROOF CANDIDATE，差集未算。
+5. 一般 $F_5$：UNFINISHED。
+6. 一般 $F_n$（$n\ge 6$）：UNFINISHED。
+
+---
+
+## 主席必答题
+
+**Does your result directly advance a uniform, guaranteed construction from 2 to 47 runners?**
+
+**CONDITIONAL。**
+
+**理由：**
+
+Q-GATE + PS 平移给出**可公度速度**下的真正归纳步骤：
+$$F_n(V)=F_{n-1}(V\setminus u)+n\cdot P_u,$$
+其中 $P_u=1/g_u$ 是 $V\setminus u$ 的精确公度周期。该递推只用「$V\setminus u$ 有成功时间」（归纳假设）与「$V\setminus u$ 可公度」，不需要余量，平移精确保持旧安全距离。这是从 $n{-}1$ 到 $n$ 的**真归纳步**（PROOF CANDIDATE）。
+
+**但「CONDITIONAL」而非「YES」的原因：**
+
+1. **可公度限制：** 归纳步要求 $V\setminus u$ 的三个速度可公度（等价于 $u$ 与其余三人的比值为有理数）。对一般实数速度，$V\setminus u$ 可以 $\mathbb{Q}$-线性无关（Opus A5 已证此时无精确周期），归纳步不适用。可公度集在全速度空间中测度为零。
+
+2. **例外集 $E^*=\bigcap_u E_u$ 非空：** 即使可公度，$x_u=0$ 且 $\phi_u\notin A$ 时 PS 失败。Opus A6 在 $1\le$ 速度 $\le 30$ 的整数四元组中测得 $|E^*|=1689/27405$。这些需转移到其他已认证规则或换锚，目前未完全闭合。
+
+3. **无理速度无归纳步：** Q-GATE 的簇门对无理形状成立，但 a 的装入需要精确周期（不存在）。APS 提供近似周期，但参考整数选择未定。故无理速度情形**无法**从 $F_{n-1}$ 递推到 $F_n$。
+
+**结论：** Q-GATE 把「簇门」对任意实数形状变成有界确定性选取，配合 PS 给出可公度情形的归纳桥。但通向 $F_{47}$ 的**普适**构造需要解决无理速度情形的归纳步，本席**未**解决。故答 **CONDITIONAL**。
+
+---
+
+（全文完）
+
+############ PART 3 · Opus R021 原文（原样） ############
+R021 1/4 Opus
+
+Opus:
+TO: Hesper → GPT-6 (Chair)　Track A · Induction Transfer　Date: 2026-10-20　WEB OFF
+
+---
+
+## ANSWER BLOCK
+
+- **Part I**：PS、PS\*、LS、APS 的完整定理陈述与证明，供主席认证。PS 写成一般层级 F_n → F_{n+1} 的形式。
+- **Part II（归纳传递 (Induction Transfer)）**：
+  - 第 1、2 类信息（成功时间点、正余量）在相邻两层之间**等价**；第 3 类（单侧安全区间 (one-sided safe interval)）由前两类自动得到。
+  - 这三类信息**只在新加入的跑者足够快时**才足以完成一步归纳：u ≥ n·w_max，这是定理 FO；在 n = 4 时它正好就是已认证的 LN。
+  - 慢跑者必须靠第 4 类信息（可选相位族 (selectable phase alternatives)），即定理 TL。
+  - 新的符号障碍 OB：只要新跑者与其余速度之间存在 ℓ¹ 长度 ≤ 2n 的整数关系，任何近似周期的传递都不可能有保证。
+- **必答题：CONDITIONAL。**
+
+---
+
+# Part I · 完整陈述（供主席认证）
+
+**通用记号**：
+- ‖z‖ 为 z 到最近整数的距离；frac(z) = z − ⌊z⌋。
+- n 位跑者对应 n−1 个非零速度，门槛为 1/n。F_n(W) 指对 n−1 个速度 W 已认证的构造，满足：输出 > 0，且对每个 w ∈ W，‖w·F_n(W)‖ ≥ 1/n。
+- F₄ 即已认证的 T4（八段闭式；对任意 0 < u₁ < u₂ < u₃ 成立；齐次性 F₄(gU) = g⁻¹F₄(U)）。
+- 对一般的 n，δ = 1/(n+1)，A_δ = [δ, 1−δ]，μ = 1/n − 1/(n+1) = 1/(n(n+1))。n = 4 时 δ = 1/5，A = [1/5, 4/5]，μ = 1/20。
+
+## §1 定理 PS_n（周期平移 (period shift)；一般层级）
+
+**假设**：
+- (H1) n ≥ 3（因此 δ ≤ 1/4）。
+- (H2) V 是 n 个两两不同的正实数，u ∈ V 为"局外人"，W = V∖{u}。
+- (H3) W 可公度：存在 g > 0，使 W ⊂ gℤ。令 P = 1/g，于是对所有 w ∈ W，wP ∈ ℤ。
+- (H4) 已有 t₀ = F_n(W)。
+
+**令** x = frac(uP)，y = 1 − x，φ₀ = frac(u t₀)。
+
+**选择器**（闭式，至多一次取上整）：
+- (S0) φ₀ ∈ A_δ：j = 0。
+- (S1) φ₀ ∉ A_δ 且 0 < x ≤ ½：j = ⌈frac(δ − φ₀)/x⌉。
+- (S2) φ₀ ∉ A_δ 且 ½ < x < 1：j = ⌈frac(φ₀ − (1−δ))/y⌉。
+- (E) φ₀ ∉ A_δ 且 x = 0：**本局外人不适用**。
+
+**输出**：t = t₀ + jP。
+
+**结论**：在 (S0)–(S2) 下，t > 0，且对所有 v ∈ V，‖vt‖ ≥ δ = 1/(n+1)。
+
+**证明**：
+1. **W 中各速度**：wP ∈ ℤ，所以 w(t₀ + jP) ≡ wt₀ (mod 1)，故 ‖wt‖ = ‖wt₀‖ ≥ 1/n > δ。
+2. **u**：ut = ut₀ + j·uP，所以 frac(ut) = frac(φ₀ + jx)。
+   - (S0)：直接成立。
+   - (S1)：φ₀ ∉ A_δ，所以 Δ = frac(δ − φ₀) ∈ (0, 2δ)。（φ₀ ∈ [0, δ) 时 Δ = δ − φ₀ ∈ (0, δ]；φ₀ ∈ (1−δ, 1) 时 Δ = 1 + δ − φ₀ ∈ (δ, 2δ)。）由上整的定义，jx ∈ [Δ, Δ + x)。又 φ₀ + Δ ≡ δ (mod 1)，所以 frac(ut) ∈ [δ, δ + x)。由于 x ≤ ½ ≤ 1 − 2δ（这里用到 δ ≤ 1/4），有 [δ, δ + x) ⊂ A_δ。
+   - (S2)：每走一步 P，u 的相位按模 1 减少 y，且 0 < y < ½。令 Δ′ = frac(φ₀ − (1−δ)) ∈ (0, 2δ)，则 jy ∈ [Δ′, Δ′ + y)，所以 frac(ut) ∈ (1−δ−y, 1−δ]。由于 y < ½ ≤ 1 − 2δ，这个区间 ⊂ A_δ。
+3. **正性**：j ≥ 0，P > 0，所以 t ≥ t₀ > 0。∎
+
+**步数界**：j < 2δ/e + 1，其中 e = min(x, 1−x) = ‖uP‖。这个界与 s 无关。
+
+**F₅ 实例（即 R019 的 PS）**：n = 4，u = a，W = {b, c, d} = g{B, C, E}，δ = 1/5，t₀ = F₄(b, c, d)。
+
+**例外集**：E_PS(u) = {uP ∈ ℤ 且 frac(u·F_n(W)) ∉ A_δ}。
+
+**作用范围**：(H3) 对一般实数速度是一个限制。若 W 中有两个速度之比为无理数，就不存在 P（R020 §A5 的障碍）。
+
+## §2 选择器 PS\*_n（局外人轮换）
+
+**假设**：V 是 n 个两两不同的正**有理数**，n ≥ 4。
+
+**规则**：
+- 把 V 按升序排好，依次取 u = v₁, v₂, …, v_n，对每个 u 套用 PS_n。其中 g_u 取 V∖{u} 的有理最大公约数（即使 V∖{u} ⊂ gℤ 的最大 g），P_u = 1/g_u。
+- 输出第一个不落入 (E) 的分支所给的 t。
+- 若 n 个分支都落入 (E)，报告 V ∈ E\*。
+
+**结论**：输出满足 §1 的结论。证明见 §1；PS_n 的证明没有用到 u 在 V 中的位置。
+
+**例外集（精确）**：E\* = ⋂_{u∈V} E_PS(u)。在有理输入下 (H3) 总是成立，所以 E\* 恰好是这样的 V：对每个 u，都有 g_u | u（作为有理数，即 u/g_u ∈ ℤ），并且 frac(u·F_n(V∖u)) ∉ A_δ。
+
+**计算成本**：若 F_n 本身也用 PS\* 递归求得，最坏情况下调用树有 n·(n−1)·…·5 个叶子，每个叶子是一次 F₄。这个数有限，但随 n 呈阶乘增长。若改为固定局外人（例如总取最慢者），调用链只有 n − 4 层。
+
+## §3 推论 LS（相位格选择 (lattice selection)）
+
+**假设**：0 < a < b < c < d，并且 (b, c, d) = g(B, C, E)，其中 g > 0，B < C < E 为正整数。令 S = b + c，s = S/a，θ₀ = B/(B+C)，w₀ = E/(B+C)，这正是实际形状，偏差为 0。
+
+**令**：
+- τ\* = (B + C)·F₄(B, C, E)，写成最简分数 p\*/m；
+- Q = m(B + C)；
+- ρ\* = p\* mod Q。
+
+**LS-1（单余数）**：取 R = {ρ\*}。则
+- (P2) 成立：Q/m = B+C，Qθ₀/m = B，Qw₀/m = E，都是整数；
+- ρ\* ≠ 0，ρ\* ∈ R；
+- 余量 μ_b, μ_c, μ_d ≥ 1/20；
+- G = Q。
+
+所以当 **s ≥ 5(B+C)/3** 时，已认证的 CLR v2 输出成功的时间 t。
+
+**LS-R（完整余数表）**：取 R = {ρ ∈ {1, …, Q−1}：在 τ = ρ/m 处，三个距离都 **> 1/5**}。这一步是有限查表，共 Q − 1 项，Q 由公式给出，不是无界搜索。
+- 由 LS-1，ρ\* ∈ R，所以 R ≠ ∅；
+- 三个最小值 μ 都 > 0；
+- 令 G 为 R 的最大循环间隔。
+
+当 **s ≥ 5G/(3m)** 时，CLR v2 成功。由于 G ≤ Q，LS-R 的适用范围包含 LS-1。
+
+**证明**：
+1. 在 τ\* 处：τ\*θ₀ = B·F₄(B,C,E)，τ\*(1−θ₀) = C·F₄(B,C,E)，τ\*w₀ = E·F₄(B,C,E)。由 T4，三个距离都 ≥ 1/4 = 1/5 + 1/20。
+2. 对 k ≡ ρ\* (mod Q)：k/m = τ\* + i(B+C)，i ∈ ℤ，三个相位分别增加 iB、iC、iE，都是整数，所以相位不变（CLR v2 引理 1）。
+3. **ρ\* ≠ 0**（采纳 Qwen 的补充）：若 ρ\* = 0，则 τ\* = i(B+C)，于是 τ\*θ₀ = iB ∈ ℤ，距离为 0，与 ≥ 1/4 矛盾。
+4. 偏差为 0，所以 CLR v2 的条件 (ii)、(iii) 自动成立，只剩条件 (i)。∎
+
+**作用范围**：LS 与 PS 的支撑集相同（簇可公度）。LS 只在 PS 不适用（E_PS）或 PS 不方便的地方才增加内容。按主席的四分类，LS 是"安全集非空性已证的选择器"，并且带有 s 的下界。
+
+## §4 定理 APS（近似周期平移 (approximate period shift)；n = 4）
+
+**假设**：0 < a < b < c < d，给定整数 0 < B < C < E。令
+- P = B/b；
+- r_c = cP − C，r_d = dP − E；
+- x = frac(aP)，e = min(x, 1−x) > 0；
+- t₀ = F₄(b, c, d)（用真实速度）。
+
+用 §1 的选择器（δ = 1/5，u = a）算出 j。
+
+**判据**：若 j·|r_c| ≤ ‖ct₀‖ − 1/5 且 j·|r_d| ≤ ‖dt₀‖ − 1/5，则 t = t₀ + jP 成功。
+
+**保证版**：若 (2/(5e) + 1)·max(|r_c|, |r_d|) ≤ 1/20，则判据自动成立。
+
+**证明**：
+- b：bP = B，相位不变。
+- c：c(t₀ + jP) = ct₀ + jC + j·r_c，由 Lipschitz 性，‖ct‖ ≥ ‖ct₀‖ − j|r_c| ≥ 1/5。d 同理。
+- a：同 §1，只用到 x。
+- 保证版：j < 2/(5e) + 1，且由 T4，‖ct₀‖, ‖dt₀‖ ≥ 1/4。∎
+
+**未解决的部分**：参考整数 (B, C, E) 的确定性选择规则：UNFINISHED。三位审阅人一致指出这一点，本席接受。APS 的一般 n 版本见 §8（TL）。
+
+---
+
+# Part II · 归纳传递 F_n → F_{n+1}
+
+## §5 框架
+要构造 F_{n+1}(V)，其中 V 有 n 个速度。选一个"新跑者" u ∈ V，令 W = V∖{u}，已有 t₀ = F_n(W)。
+
+问题是：关于旧构造，需要保留什么信息，什么可以改变，才能把 u 加进来？
+
+## §6 四类信息之间的关系（证明）
+- **(1) 成功时间点**：t₀，满足对所有 w ∈ W，‖wt₀‖ ≥ 1/n。
+- **(2) 正余量**：对新门槛 δ = 1/(n+1)，‖wt₀‖ ≥ δ + μ_w，且 μ_w > 0。
+- **(3) 单侧安全区间**：存在 [t₀, t₀ + ℓ]（或双侧），W 在其上处处 ≥ δ。
+- **(4) 可选相位族**：一个集合 T，T 中每一点都对 W 安全。
+
+**命题 H（层级关系）**：
+- (1) 在第 n 层成立 ⇔ (2) 在第 n+1 层成立，且 μ = 1/(n(n+1))。这只是同一个不等式的两种写法。
+- (2) ⇒ (3)：取半宽 h = μ/w_max。由 Lipschitz 性，|‖w(t₀+τ)‖ − ‖wt₀‖| ≤ w|τ| ≤ μ。
+- **所以 (1)、(2)、(3) 携带的信息相同。真正新的信息只有 (4)。**
+- 并且 (1)、(2) 会**自动再生**：F_{n+1} 的输出本身就是第 n+2 层的 (1)/(2)，余量为 1/((n+1)(n+2))。而 (4) **不会**自动再生。
+
+## §7 定理 FO（快局外人 (fast outsider)）：(1)–(3) 何时足够
+
+**假设**：
+- n ≥ 2；
+- W 为 n−1 个正实数，t₀ = F_n(W)；
+- u > 0，且 **u ≥ n·w_max**，其中 w_max = max W。
+
+**选择器**：令 φ = frac(ut₀)，δ = 1/(n+1)。
+- 若 φ ∈ A_δ：t = t₀。
+- 若 φ < δ：t = t₀ + (δ − φ)/u。
+- 若 φ > 1 − δ：t = t₀ − (φ − (1−δ))/u。
+
+**结论**：t > 0，且对 V = W ∪ {u}，所有距离 ≥ δ。
+
+**证明**：
+1. 平移量 |t − t₀| ≤ δ/u ≤ δ/(n·w_max) = 1/(n(n+1)·w_max) = μ/w_max = h。
+2. **u**：相位被精确移到 δ 或 1−δ。
+3. **W**：‖wt‖ ≥ ‖wt₀‖ − w·h ≥ 1/n − μ = δ。
+4. **正性**：由 ‖w_max t₀‖ ≥ 1/n 得 w_max·t₀ ≥ 1/n，所以 t₀ ≥ 1/(n·w_max) > μ/w_max = h，从而 t ≥ t₀ − h > 0。∎
+
+**最优性（在"只用 (1)–(3)"的意义下）**：
+- 若 φ = 0，把 u 移进安全弧至少要平移 δ/u。
+- 只靠 Lipschitz 性保证 W 的安全，最多允许平移 μ/w_max。
+- 所以最坏情形需要 u ≥ (δ/μ)·w_max = n·w_max。FO 的门槛不能再降低。
+
+**与已认证构造的关系**：n = 4 时，FO 的条件是 d ≥ 4c，这正是已认证的 **LN**。所以本席**不主张新覆盖**。FO 的贡献是：它给出 LN 的一般 n 形式，是一个**真正统一的 n → n+1 步骤**，但条件是新跑者足够快。
+
+**(1)–(3) 不足的显式例子**（手算）：V = (1, 2, 3, 4)，u = 1，W = (2, 3, 4)。
+- t₀ = F₄(2, 3, 4) = 1/8（T4 的 S1：4 ≤ 3·2）。
+- h = (1/20)/4 = 1/80，区间 [1/8 − 1/80, 1/8 + 1/80] = [9/80, 11/80]。
+- u 在这个区间上的相位 ∈ [9/80, 11/80]，都 < 1/5。
+
+所以 (1)–(3) 所保证的区间里**没有任何一点**可用。（此组由已认证的 TN 处理。）
+
+## §8 定理 TL（格传递 (lattice transfer)）：(4) 何时足够
+
+**假设**：
+- n ≥ 3；
+- W、u、t₀ 同 §5，且 ‖wt₀‖ ≥ δ + μ_w，μ_w ≥ 0；
+- P > 0，带符号残差 r_w = wP − round(wP)；
+- x = frac(uP)，e = ‖uP‖ > 0。
+
+取可选族 T = {t₀ + jP : j ≥ 0}，用 §1 的选择器算出 j。
+
+**结论**：若对所有 w，j·|r_w| ≤ μ_w，则 t = t₀ + jP 成功。
+
+**保证版**：若 (2δ/e + 1)·max_w |r_w| ≤ min_w μ_w，则判据自动成立。
+
+**证明**：同 §1 与 §4。W 的相位偏移为 j·r_w，由 Lipschitz 性控制；u 的相位只用到 x。∎
+
+**特例**：
+- r_w ≡ 0（精确周期）：即 PS_n，μ_w 可以为 0。
+- n = 4，P = B/b：即 APS。
+
+## §9 定理 OB（短整数关系障碍 (short-relation obstruction)）
+**陈述**：若存在整数 c_w，使 u = Σ_{w∈W} c_w·w，且 K = Σ|c_w| ≤ 2δ/μ = 2n，则对**每一个** P > 0，§8 的保证版都不成立（这里 μ_w ≡ μ = 1/(n(n+1))，即层级余量）。
+
+**证明**：
+1. ‖·‖ 满足次可加性，且 ‖cz‖ ≤ |c|·‖z‖，所以 e = ‖uP‖ = ‖Σ c_w·wP‖ ≤ Σ|c_w|·‖wP‖ ≤ K·max|r_w|。
+2. 若 e > 0，则 (2δ/e + 1)·max|r_w| > (2δ/e)·(e/K) = 2δ/K ≥ μ。
+3. 若 e = 0，选择器本身不适用。∎
+
+**精确版**（非保证版，用于判断）：在给定 φ₀ 下，需要 j ≥ Δ/e，所以 j·max|r_w| ≥ Δ/K。于是必要条件为 **K ≥ Δ(φ₀)/min_w μ_w**。
+
+**含义**：
+- K 有限且 r = 0 的情形，正是 E_PS（x = 0）。PS 的例外集是 OB 的边界情形。
+- 整数速度（有理输入化整后正是这种情形）中，每个 u 都有有限的 K，而且通常很小。例：(1, 2, 3, 4) 的四个局外人：1 = 3 − 2，2 = 3 − 1，3 = 1 + 2，4 = 1 + 3，K 都是 2 ≤ 8。所以对 (1, 2, 3, 4)，**任何局外人、任何 P** 的保证型格传递都不可能；又因为没有快局外人（4 < 4·3），FO 也不适用。
+- **计算印证**（R020 范围：1 ≤ 速度 ≤ 30 的整数四元组，共 27,405 组，本席本轮重算）：
+  - 18,090 组对**每一个** u 都有 x_u = 0，即平移机制完全失效；
+  - PS\* 的 25,716 个成功中，22,719 个是 j = 0（只是碰巧有一个候选点 F₄(V∖u) 直接可用），只有 2,997 个真正用到了平移；
+  - 1,689 个例外全部落在那 18,090 组之内（18,090 − 16,401 = 1,689）。
+
+## §10 保留什么，改变什么
+| 项目 | PS_n | TL / APS | FO | CLR v2 + LS |
+|---|---|---|---|---|
+| W 的相位 | 精确保留 | 在余量内漂移 | 在余量内漂移 | 在余量内（按余数表） |
+| 时间点 | 可移动 jP（大幅） | 可移动 jP | 只移动 ≤ μ/w_max | 重新选取 τ = k/m |
+| 局外人 | 任意（PS\* 轮换） | 任意 | 必须是最快的 | 必须是最慢的（a） |
+| 需要从速度重新计算的 | 周期 P | 近似周期 P 与残差 | 无 | m, Q, R |
+| 由 F_n 传入的 | 只有 t₀ | t₀ 与余量 | t₀ 与余量 | 参考点 τ\* |
+
+**对偶观察**：
+- FO 给的是"**W 有短安全区间，u 很快**"：u 的相位在区间内扫过整个圆。
+- CLR v2 / PS 给的是"**u 有长安全窗口** [δ/u, (1−δ)/u]（u 慢），W 有足够密的可选点"：要求 W 的可选点在这个窗口里的最大间隔 ≤ (1−2δ)/u。
+- 两者分别对应 u 是最快者和最慢者。**中间的 u**，以及每个 u 都被短整数关系锁住的整数情形，**两条路都走不通**。
+
+## §11 结论：哪一类信息足以完成归纳步
+1. **(1) 成功时间点**：不足（§7 的例子）。
+2. **(2) 正余量**：与 (1) 等价（命题 H）。只在 u ≥ n·w_max 时足够（FO），而且这个门槛在只用 (2) 的前提下是最优的。
+3. **(3) 单侧安全区间**：长度 ℓ 的区间在 ℓ·u ≥ 2δ 时足够（u 的相位扫过一段闭弧，长度 ≥ 2δ，不可能整个落在长为 2δ 的开不安全弧里）。但 F_n 只能提供 ℓ = 2μ/w_max，这就退化回 FO。
+4. **(4) 可选相位族**：足够的充分条件是 TL 判据，或者在 u 的安全窗口内间隔 ≤ (1−2δ)/u。
+   - F_n 加上**由速度算出**的精确周期，正好提供格 t₀ + Pℤ，也就是 PS。
+   - 但 OB 表明：当存在 K ≤ 2n 的短整数关系时，单点加周期这一类可选族**必然不够**。
+
+**所以，没有任何一类信息能对所有输入完成归纳步。**
+
+一个统一的归纳要求 F_n 输出的不是一个点，而是一个**带间隔界的安全族**：对 W 安全的时间集，在任意长度为 L_n(W) 的窗口中至少有一点，且 L_n 有显式上界。这样，任何满足 u·L_n(W) ≤ 1 − 2δ 的慢跑者都能加入。
+
+本席**无法证明**这样的 L_n 存在并且可以递归再生。对整数 W，W 的安全集以 1 为周期；所需的间隔条件本质上就是 W ∪ {u} 的原问题，存在循环论证的危险。——**UNFINISHED**（IDEA：寻找能自动再生的"间隔界"不变量）。
+
+## §12 递推实例（F₆ 由 F₅ 由 F₄；本席精确计算）
+V = (1/2, 1, 30, 60, 80)，n = 5，δ = 1/6。
+- **第 5 层**：F₅(1, 30, 60, 80) = PS(V4) = 5/24（R019 §1.4）。
+- **第 6 层**：u = 1/2，W = (1, 30, 60, 80)，g = 1，P = 1，x = 1/2。
+  - φ₀ = frac(5/48) = 5/48 < 1/6；
+  - Δ = 1/6 − 5/48 = 3/48 = 1/16；
+  - j = ⌈(1/16)/(1/2)⌉ = 1；
+  - t = 5/24 + 1 = **29/24**。
+- **距离**：
+  - (1/2)(29/24) = 29/48，距离 19/48；
+  - 1·29/24，距离 5/24；
+  - 30·29/24 = 36.25，距离 1/4；
+  - 60·29/24 = 72.5，距离 1/2；
+  - 80·29/24 = 96 + 2/3，距离 1/3。
+
+  全部 ≥ 1/6。✓ W 的四个距离与第 5 层完全相同，这正是 PS_n "精确保留"的含义。
+
+---
+
+# Part III · 对三位审阅人所提条件的回应
+1. **Qwen（LS 只给单余数）**：接受。§3 已拆成 LS-1（s ≥ 5(B+C)/3）与 LS-R（完整余数表，有限显式查表）。ρ\* ≠ 0 的证明已按 Qwen 的意见补入。
+2. **Argon 的例外族 (1, 10N, 20N+1, 30N)**：本席确认，当局外人取 a 时它落入 E_PS（t₀ = 1/(40N)，x = 0）。但它**不在** E\* 中：本席对 N = 1…8 逐一计算，PS\* 都在换用其他局外人后成功，CLR v2 + LS-R 也都成功。
+   N = 1 手算：V = (1, 10, 21, 30)，局外人取 b = 10，W = (1, 21, 30)，g = 1，x = 0，但 j = 0 已经可用：t = F₄(1, 21, 30) = 13/51。距离：13/51；130/51 → 23/51；273/51 → 18/51；390/51 → 18/51。全部 ≥ 1/5。✓
+3. **Argon 所称的 Q-ERC1(ii) 反例 θ = 1/3，w = 4/3**：**不成立**。k = 1 时三个距离分别为 ‖1/3‖ = ‖2/3‖ = ‖4/3‖ = 1/3 ≥ 1/5，所以 R₁ ≠ ∅（本席计算）。这只是纠正一个数值；Q-ERC1 的修订证明，本席本轮不审。
+4. **DeepSeek（CLR v2 的 s 下界仍在）**：接受。见 §3 与 §10。
+
+---
+
+## 四个账本栏
+- **PROOF VALIDITY**：
+  - PS_n（一般层级）、PS\*_n、LS-1/LS-R、APS：完整陈述已提交，状态 PROOF CANDIDATE，等待主席认证；本席不自行升级。
+  - 新结果：命题 H、定理 FO、定理 TL、定理 OB：PROOF CANDIDATE。
+  - "带间隔界的安全族"不变量：IDEA / UNFINISHED。
+  - 无限制 F₅ 与一般 F_n：UNFINISHED。
+- **INDEPENDENT REVIEW**：FO、TL、OB、PS_n 的一般层级形式均待非作者审阅。PS/LS/APS 的 R020 审阅结论（Qwen、Argon、DeepSeek）均为 PROOF VERIFIED，本席已在 Part III 逐条回应其限定条件。
+- **NEW COVERAGE**：
+  - FO 在 n = 4 时与已认证的 LN 相同：**无新覆盖**。
+  - PS_n 在 n ≥ 5 时的覆盖依赖下层 F_n 的认证：NEW COVERAGE UNFINISHED。
+  - 本轮不主张新的 F₅ 覆盖。
+- **COMPUTATIONAL CHECK**：以下数字均为本席精确分数计算：
+  - §9 的 27,405 / 18,090 / 25,716 / 22,719 / 2,997 / 16,401 / 1,689（R020 的同一枚举范围，本轮重算）；
+  - §7、§12、Part III 的手算；
+  - FO₄ 的查错：2,998 个随机有理点（d ≥ 4c），零失败（仅为查错，不是证明）。
+
+---
+
+## 主席必答题
+**Does your result directly advance a uniform, guaranteed construction from 2 to 47 runners?**
+
+**CONDITIONAL。** 理由如下：
+- **前进的部分**：
+  - PS_n 与 FO 都是**统一的 n → n+1 规则**，对每个 n 用同一个公式，不是孤立的 F₅ 盒子。
+  - 对有理速度，从 F₄（T4）出发，可以一路递推到 F₄₇，每一层都是闭式（§12 演示了到 F₆）。前提是每一层的输入都不落入例外集 E\*_n。
+  - FO 对"最快者 ≥ n 倍次快者"的速度，在任意 n 都无条件成立。
+- **不足的部分**：
+  - E\*_n 没有兜底规则。
+  - OB 证明：在存在短整数关系的整数情形中，"单点 + 周期/近似周期"这一类传递信息**不可能**保证完成归纳。而在本席检查的整数范围内，这种情形占大多数（§9）。
+  - 无理速度只有 FO 与 APS 的局部区域。
+- **所以**：现有机制本身不能构成一个保证的、从 2 到 47 的统一构造。所缺的是一个能逐层再生的"间隔界"型传递信息（§11）。
+
+############ PART 4 · Argon R021 原文（原样） ############
+R021 3/4 Argon
+TO: Hesper → GPT-6 (Chair)
+FROM: Argon · Track C — One Counterexample Mission
+DATE: 2026-10-20 · WEB OFF
+ANSWER BLOCK
+本席按指令测试 Qwen 的 F_4 \to F_5 转移规则 Q-GATE（§4 连分数簇门）+ §6（慢跑者 a 装入门）：
+ * §4 簇门 Q-GATE：PROOF VERIFIED。对任意实数 0 < b < c < d，利用 \tau^* = S F_4(b,c,d) 的最后一个分母 \le Q_0 = \lceil 20\max(1-\theta, w) \rceil 的连分数渐近分数 p/q，严格保证快簇三跑者距离 > 1/5 且 q \le Q_0。
+ * §6 慢跑者装入门（有理周期平移 \tau = \tau_0 + nL）：GAP FOUND。给出两类精确反例：
+   * 反例 1（a \ll b,c,d 且有理相位共振）：在 V = (1, 12, 24, 32)（即 V4 形状，s=36）上，Q-GATE 输出 \tau_0 = 3/4，但后续周期平移步长 \operatorname{frac}(L/s) = \operatorname{frac}(36/36) = 0，且初始慢相位 \Vert{}a t_0\Vert{} = 1/48 < 1/5，装入彻底锁死！
+   * 反例 2（无理速度比）：在 V = (1, 30, 60, 30+30\sqrt{2}) 上，Q-GATE 虽输出 \tau_0 = 3/4（使快簇安全），但因 w = (1+\sqrt{2})/3 \notin \mathbb{Q} 无有限周期 L，无法平移装入 a（此时 \Vert{}a t_0\Vert{} = 1/120 < 1/5）。
+     (注：这两例仅证 Q-GATE+§6 单路转移在共振与无理簇下不闭合，绝不意味着所有 F_5 构造不可能。)
+PART I · Q-GATE + §6 (F_4 \to F_5 转移规则) 的逐项审阅与反例测试
+1. §4 簇门 Q-GATE 的独立审阅（PROOF VERIFIED）
+ * 原文陈述核对：给定实数 0 < a < b < c < d，令 S = b+c, \; \theta = b/S, \; w = d/S, \; t_0 = F_4(b,c,d), \; \tau^* = S t_0, \; M = \max(1-\theta, w) > 1/2, \; Q_0 = \lceil 20M \rceil。取 p/q 为 \tau^* 的连分数展开中最后一个分母 \le Q_0 的渐近分数（若 \tau^* \in \mathbb{Q} 且其最简分母 \le Q_0，则直接取 p/q = \tau^*）。
+ * 连分数逼近证明复核（手算验证 CHECKED）：
+   * 若 \tau^* 本身是有理数且最简分母 q \le Q_0，则 \vert{}\tau^* - p/q\vert{} = 0 < 1/Q_0。
+   * 否则，在 \tau^* 的标准连分数渐近分数序列 \{p_k/q_k\} 中，因 q_0 = 1 \le Q_0，必存在最大的下标 j \ge 0 使得 q_j \le Q_0 < q_{j+1}。由连分数基本逼近不等式，对任意实数（无论有理或无理），只要 p_j/q_j \ne \tau^*，恒有：
+     
+   * 对任意快簇坐标 u \in \{\theta, 1-\theta, w\}，有 0 < u \le M。由 \Vert{}\cdot\Vert{} 的 1-Lipschitz 性质及 T4 保证的 \Vert{}\tau^* u\Vert{} \ge 1/4，得：
+     
+     
+     结论：Q-GATE 的簇门部分完全严密，连分数截断在 O(\log Q_0) 步内确定性终止，且对有理与无理簇形状均保证快簇三跑者严格安全（余量 >0）。
+2. §6 慢跑者装入门的对抗性测试与精确反例（GAP FOUND）
+Q-GATE 选出 \tau_0 = p/q 后，时间 t = \tau_0 / S 仅保证 b, c, d 安全，此时最慢跑者 a 的相位为 \tau_0 / s。当 a \ll b, c, d（即 s = (b+c)/a \gg 1）时，\tau_0 / s \ll 1/5，必须通过 Qwen §6 的周期平移 \tau = \tau_0 + nL（其中 L = \operatorname{lcm}(q_\theta, q_w)）将 a 推入安全弧 A = [1/5, 4/5]。下面在主席指定的三类高危情形下测试该转移机制：
+情形 A & B：a \ll b,c,d 下的有理相位共振反例（Symbolic & Numerical Counterexample 1）
+ * 构造原理：在有理簇 \theta = p_\theta/q_\theta, \; w = p_w/q_w 下，§6 保持 \tau_0 处快簇相位精确不变的最小整数平移周期为 L = \operatorname{lcm}(q_\theta, q_w)。每平移一步 \tau \mapsto \tau + L，慢跑者 a 的相位增量为 x = \operatorname{frac}(L/s)。
+   当 a \ll b,c,d 且尺度 s = (b+c)/a 恰好是 L 的约数（或 L/s \in \mathbb{Z}，即慢跑者与快簇周期发生有理相位共振）时，x = \operatorname{frac}(L/s) = 0！此时无论平移多少步 n \in \mathbb{Z}，慢跑者相位恒锁死在初始值 \operatorname{frac}(\tau_0 / s) 上！
+ * 显式反例 1（严格位于走廊 \Omega = \{4a < d < 4c\} 内且 a \ll b,c,d）：
+   取严格递增速度四元组（与 V4 同属 (1, 2, 8/3) 簇形状）：
+   
+ * 手算核对（CHECKED）：
+   * 参数计算：S = b+c = 36，s = S/a = 36 \gg 1（a \ll b,c,d），且 4a = 4 < d = 32 < 96 = 4c（严格在走廊 \Omega 内）。
+     簇形状为 \theta = \frac{12}{36} = \frac{1}{3}（q_\theta = 3），w = \frac{32}{36} = \frac{8}{9}（q_w = 9）。
+   * 执行 §4 Q-GATE：
+     * M = \max(1-\theta, w) = \max(2/3, 8/9) = 8/9 \implies Q_0 = \lceil 20 \times 8/9 \rceil = \lceil 160/9 \rceil = 18。
+     * 调用已认证 T4 计算 t_0 = F_4(12, 24, 32)：因为 d = 32 \le 3b = 36，命中 T4 第一分支 S1，输出 t_0 = \frac{1}{4b} = \frac{1}{48}。
+     * \tau^* = S t_0 = 36 \times \frac{1}{48} = \frac{3}{4}。因最简分母 q = 4 \le Q_0 = 18，Q-GATE 直接输出 \tau_0 = \frac{3}{4}，m = 4。
+     * 核对此时快簇距离：\Vert{}\tau_0 \theta\Vert{} = \Vert{}1/4\Vert{} = 1/4 \ge 1/5，\Vert{}\tau_0(1-\theta)\Vert{} = \Vert{}1/2\Vert{} = 1/2 \ge 1/5，\Vert{}\tau_0 w\Vert{} = \Vert{}2/3\Vert{} = 1/3 \ge 1/5（快簇全安全 ✓）。
+   * 执行 §6 慢跑者 a 装入门（触发共振失败）：
+     * 在基相位 \tau_0 = 3/4 处，慢跑者 a 的初始距离为：
+       
+     * 按照 §6 规则，取整数周期 L = \operatorname{lcm}(q_\theta, q_w) = \operatorname{lcm}(3, 9) = 9？
+       慢着！这里还揪出了 Qwen §6 的第二个隐蔽周期错误！
+       在 §6 中，Qwen 写的是：「有精确周期 L = \operatorname{lcm}(q, q')，\tau \to \tau + L 保持簇相位不变」。
+       我们来手算检验：当 \tau \to \tau + L = \tau + 9 时，b 的相位增加 9\theta = 9 \times (1/3) = 3 \in \mathbb{Z}，d 的相位增加 9w = 9 \times (8/9) = 8 \in \mathbb{Z}，完全不变！
+       那在 L = 9 下，慢跑者 a 在 V_{\text{res}} = (1, 12, 24, 32)（s = 36）处的步长是多少？
+       
+       
+       若 s = 9（即取 V'_{\text{res}} = (4, 12, 24, 32) \sim (1, 3, 6, 8)，或取 s = 9 的倍数使得 L/s \in \mathbb{Z}？不，L/s \in \mathbb{Z} 要求 s \mid L！）：
+       要让 a \ll b,c,d（即 s \gg 1）同时满足 \operatorname{frac}(L/s) = 0（即 s \mid L），只需取 L 很大的有理形状，使 s = L！
+   * 构造 s = L \gg 1（既满足 a \ll b,c,d 又满足 \operatorname{frac}(L/s) = 0）的精确共振反例（CHECKED）：
+     对任意大的整数 N \ge 5（例如取 N = 10），取严格递增速度四元组：
+     
+     * 尺度与走廊检查：S = b+c = 3N+1，s = S/a = 3N+1 \gg 1（当 N=10 时，V = (1, 10, 21, 30)，s = 31，4a = 4 < d = 30 < 84 = 4c，严格位于走廊 \Omega 内且 a \ll b,c,d）。
+     * 簇形状与周期 L：
+       
+       
+       因为 \gcd(N, 3N+1) = 1 且 \gcd(3N, 3N+1) = 1，两者的最简分母均为 q = q' = 3N+1！
+       因此，§6 的最小整数平移周期恰好为：
+       
+     * 执行 Q-GATE：
+       因为 d = 3N = 3b，T4 命中第一分支 S1（d \le 3b），给出 t_0 = F_4(b,c,d) = \frac{1}{4b} = \frac{1}{4N}。
+       从而 \tau^* = S t_0 = \frac{3N+1}{4N} = \frac{3}{4} + \frac{1}{4N}。
+       同时 M = \max(1-\theta, w) = \frac{3N}{3N+1} < 1 \implies Q_0 = \lceil 20M \rceil = 20。
+       当 N = 10（即 V = (1, 10, 21, 30)，s = L = 31）时：
+       * \tau^* = \frac{31}{40} = [0; 1, 3, 2, 4]，其渐近分数依次为 \frac{0}{1}, \frac{1}{1}, \frac{3}{4}, \frac{7}{9}, \frac{31}{40}。
+       * 最后一个分母 \le Q_0 = 20 的渐近分数是 \tau_0 = \frac{7}{9}（分母 q_3 = 9 \le 20 < 40）。
+       * 检查 \tau_0 = 7/9 处的快簇安全性（Q-GATE 保证）：
+         \Vert{}\tau_0 \theta\Vert{} = \Vert{}70/279\Vert{} = 70/279 \approx 0.2509 > 1/5；
+         \Vert{}\tau_0 (1-\theta)\Vert{} = \Vert{}147/279\Vert{} = 132/279 \approx 0.4731 > 1/5；
+         \Vert{}\tau_0 w\Vert{} = \Vert{}210/279\Vert{} = 69/279 \approx 0.2473 > 1/5 ✓。
+     * 慢跑者 a 在 §6 平移下彻底锁死失败：
+       * 在基相位 \tau_0 = 7/9 处，慢跑者 a=1 的初始相位为：
+         
+       * 周期平移步长为：
+         
+       * 对任意平移步数 n \in \mathbb{Z}，平移后的慢跑者相位恒为 \operatorname{frac}(\varphi_0 + n x) = \frac{7}{279} < \frac{1}{5}！
+       * 结论：在 V = (1, 10, 21, 30)（以及对一切 N \ge 2 的无限族 (1, N, 2N+1, 3N)）上，Q-GATE + §6 转移规则因 L = s 有理周期共振而彻底失效！
+       * 范围界定（不夸大反例）：这只证明了“固定以 L = \operatorname{lcm}(q_\theta, q_w) 为步长平移”无法装入 a；实际上 V = (1, 10, 21, 30) 本身并非无解——例如直接用已认证的 CLR v2（取参考形状 (1/3, 1), m=4, Q=12, R=\{3,9\}）或取 t = 9/31（此时 at = 9/31 \in A, bt = 90/31 \equiv 28/31 不行，取 t = 7/31：at = 7/31 \in A, bt = 70/31 \equiv 8/31 \in A, ct = 147/31 \equiv 23/31 \in A, dt = 210/31 \equiv 24/31 \in A，四距离分别为 7/31, 8/31, 8/31, 7/31 > 1/5！）即可轻松解决！之所以 t = 7/31（即 \tau = 7，m=1）能成功，是因为在 \tau_0 之外只需走 \Delta \tau = 1（允许快簇相位在安全弧内部微移），而不必死守相位的精确周期 L = 31！
+情形 C：无理速度比且 a \ll b,c,d 的反例（Irrational Ratio Counterexample 2）
+ * 显式反例 2：取含无理速度比的严格递增四元组：
+   
+ * 手算核对（CHECKED）：
+   * 因 1.414 < \sqrt{2} < 1.415，有 d = 30(1+\sqrt{2}) \approx 72.426 \in (60, 90)，故 0 < a < b < c < d \le 3b，且 s = (b+c)/a = 90 \gg 1。
+   * 执行 §4 Q-GATE：
+     * 因 d \le 3b = 90，T4 第一分支 S1 输出 t_0 = \frac{1}{4b} = \frac{1}{120}。
+     * 于是 \tau^* = S t_0 = 90 \times \frac{1}{120} = \frac{3}{4}（有理数！分母 q = 4 \le Q_0 = \lceil 20 w \rceil = 17）。
+     * Q-GATE 选出 \tau_0 = \frac{3}{4}，快簇三跑者距离分别为 \Vert{}30/120\Vert{} = 1/4, \; \Vert{}60/120\Vert{} = 1/2, \; \Vert{}(1+\sqrt{2})/4\Vert{} = \frac{\sqrt{2}-1}{4} + \frac{1}{2}？准确计算：\frac{1+\sqrt{2}}{4} \approx \frac{2.4142}{4} \approx 0.60355 \in [1/5, 4/5]，距离为 1 - 0.60355 \approx 0.3964 > 1/4 \ge 1/5 ✓。
+   * 慢跑者 a 装入失败：
+     * 在 \tau_0 = 3/4 处，慢跑者 a=1 的距离为 \Vert{}a t_0\Vert{} = \Vert{}1/120\Vert{} = 1/120 < 1/5，不安全！
+     * 由于 \theta = 1/3 \in \mathbb{Q} 而 w = \frac{1+\sqrt{2}}{3} \notin \mathbb{Q}，不存在任何非零平移量 L > 0 能同时使 L\theta \in \mathbb{Z} 且 Lw \in \mathbb{Z}。因此 §6 的精确周期平移在此无定义（Qwen 在 §6 中亦承认无理形状下 a 门 UNFINISHED）。
+PART II · 四栏分账（REQUIRED LEDGER）
+ * PROOF VALIDITY：
+   * 有理共振无限反例族 V_{\text{res}}(N) = (1, N, 2N+1, 3N)（证 L = s 时 Q-GATE+§6 锁死，但 t = 7/31 等整数锁实则可解）：PROVED。
+   * 无理簇反例 V_{\text{irr}} = (1, 30, 60, 30+30\sqrt{2})（证 Q-GATE 簇安全但 a 距离 1/120 < 1/5 且无平移周期 L）：PROVED。
+   * 无限制 F_5 与一般 F_n：UNFINISHED。
+ * INDEPENDENT REVIEW：
+   * Qwen 定理 Q-NONEMPTY / Q-DIV / Q-FAMILY（§1）：PROOF VERIFIED（仅限快簇三跑者安全性，不含 a）。
+   * Qwen 定理 Q-GATE（§4 连分数簇门选择器）：PROOF VERIFIED（对任意实数簇在 q \le \lceil 20\max(1-\theta,w)\rceil 内保证快簇安全，步数 O(\log Q_0) 有界）。
+   * Qwen §6 慢跑者装入门（作为 F_4 \to F_5 完整转移规则）：GAP FOUND / UNFINISHED（在 s \mid L 的有理共振族上因 \operatorname{frac}(L/s)=0 失效；在无理形状上无定义）。
+ * NEW COVERAGE：
+   * 本轮为针对性反例与审阅任务，不提交新覆盖盒（记为 NEW COVERAGE UNFINISHED）。
+ * COMPUTATIONAL CHECK：
+   * V = (1, 10, 21, 30) 的连分数 \frac{31}{40} = [0; 1, 3, 2, 4] 渐近分数 \tau_0 = 7/9、初始距离 7/279 < 1/5、以及替代解 t = 7/31 的四项距离 (7/31, 8/31, 8/31, 7/31)：全部由本席精确手算核对（CHECKED）。
+PART III · 主席必答题（Mandatory Final Question）
+Question: Does your result directly advance a uniform, guaranteed construction from 2 to 47 runners?
+Answer: CONDITIONAL（作為負向篩選器與結構修正，直接推進了統一遞推橋樑的設計，但本身尚未給出 2 \to 47 的無條件正向公式）。
+Precise Explanation:
+ * 为什么精确诊断出 F_4 \to F_5 失败原因对 F_2 \to F_{47} 至关重要：
+   要建立从 n 到 n+1（直达 n=47）的统一递推 F_{n+1}(V) = \mathcal{T}\big(F_n(V \setminus \{a\}), a\big)，本轮对 Q-GATE + §6 的反例 V_{\text{res}}(N) = (1, N, 2N+1, 3N) 揭示了一个普遍规律：仅传递单一时间点 t_0 = F_n(V \setminus \{a\}) 并要求平移步长 L 保持快簇相位“精确不变（\Delta \phi_{\text{cluster}} \equiv 0 \pmod 1）”是过度严苛的死胡同——在无理速度下精确周期 L = \infty，在有理速度下高分母导致 L 过大或发生 s \mid L 共振。
+ * 通向 n=47 真正需要传递的数据结构：
+   从 F_n 传给 F_{n+1} 的不能是一个要求零相位漂移的孤立点 t_0，而必须利用 F_n 提供的正安全余量 \mu_n = \frac{1}{n} - \frac{1}{n+1} = \frac{1}{n(n+1)}，去构造准周期平移集（\varepsilon-Almost-Periods） \{P > 0 : \forall u \in V_{\text{fast}}, \; \Vert{}u P\Vert{} \le \mu_n / K\}（正如在 V=(1,10,21,30) 中放弃精确周期 L=31、改用近似周期 \Delta \tau \approx 3 直接在 t=7/31 命中解）。只有将“精确周期平移 PS”升级为基于余量 \mu_n 的“有界准周期跳步”，递推桥梁才能摆脱有理可公度假设，真正贯通 n = 2 \dots 47。
+(End of R021 3/4 Argon Complete Report)
+
+############ PART 5 · DeepSeek R021 原文（原样） ############
+R021 4/4 DeepSeek
+
+ANSWER BLOCK：归纳引理（条件性）：若旧 F_n 在 t_0 给出一段方向为 \sigma、长度为 h 的单侧安全窗口（旧速度在新阈值 1/(n+1) 下安全），且新增速度 w 沿同方向到最近安全边界的修正量 \Delta\le h，则输出 t=t_0+\sigma\Delta 使 n+1 人安全；若 w 在 t_0 已安全则取 t_0。该条件不自动保持；可公度周期链是自动特例（除相位步长为 0）。Q-ERC1 新证明已补集合投影、q=7 下界、小 g 三缺口，非严格版 PROOF VERIFIED；Q-GATE 仅闭合簇门，PROOF VERIFIED（簇门）。一般 F_n：UNFINISHED。
+
+---
+
+Track D · 条件归纳引理
+
+输入数据：旧总人数 n，旧非参考速度集 U=\{u_i\}，旧最大速度 M=\max_i u_i，旧成功时间 t_0>0 满足 \|u_i t_0\|\ge1/n。新增速度 w>0。方向 \sigma\in\{+1,-1\}。
+
+假设 (W)：存在 h>0，使对所有 u\in U 与所有 t\in[t_0,t_0+\sigma h]（\sigma=+1 右窗口；\sigma=-1 左窗口），有
+
+\|u t\|\ge\frac1{n+1}.
+
+
+若 \|w t_0\|\ge1/(n+1)，令 \Delta=0；否则令 \Delta>0 为沿方向 \sigma 从 t_0 到 w 的最近安全边界 \|w t\|=1/(n+1) 的最小距离。假设
+
+\Delta\le h.
+
+输出时间：
+
+t=t_0+\sigma\Delta.
+
+证明：由 (W)，旧速度在 t 处仍满足新阈值 1/(n+1)。由 \Delta 定义，新速度满足 \|w t\|=1/(n+1)（或 \Delta=0 时已安全）。t>0 因 t_0>0 且窗口在正时间侧。∎
+
+假设是否自动保持：否。一般 F_n 只给点，不给窗口长度 h 或方向兼容性。可公度周期链是自动特例：若 U\cup\{w\} 的旧部分可公度，周期 P>0 使 uP\in\mathbb Z 对所有旧 u 成立，则旧相位在平移下不变，窗口可取任意长；只要 \operatorname{frac}(wP)\ne0，有限步平移可装入 w。例外是 \operatorname{frac}(wP)=0 且当前 w 不安全。
+
+与 L2 的关系：L2 用统一 h=1/(n(n+1)M) 和条件 w\ge nM 保证 \Delta\le h。本引理只要求实际窗口 h 与实际修正量 \Delta 满足 \Delta\le h，是 L2 的几何弱化；但窗口信息不是 F_n 自动携带的。
+
+---
+
+审阅 Q-ERC1（重写版）
+
+结论：\theta=p/q（最简，q\ge3），w=r/q'（最简），整数格安全集 G_1\ne\varnothing\iff q'\ge2；q'=1 时为空。非严格阈值 1/5。
+
+Opus 三缺口逐项核对：
+
+1. 集合投影：Qwen 不再投影 p^{-1}A_q。情形 B 中 q'|q，取 j\in A_q，令 k\equiv p^{-1}j\pmod q。因 q'|q，k\bmod q'=p^{-1}j\bmod q'；p 在模 q' 可逆。当 j 跑遍长度 \ge q' 的连续区间 A_q，j\bmod q' 跑遍所有剩余类，乘以单位 r p^{-1} 仍跑遍所有，故命中 A_{q'}。缺口已补。
+2. q=7 的下界：|A_7|=\lfloor28/5\rfloor-\lceil7/5\rceil+1=5-2+1=4，而 3q/5=4.2，原不等式确实不成立。Qwen 改用 F1：|A_q|\ge q/2（q\ge3）。|A_7|=4\ge3.5，成立。缺口已补。
+3. 小 g 鸽笼：Qwen 不再用“2+1\ge g”式论证。情形 B 分两种：若 |A_q|\ge q'，直接构造；若 |A_q|<q'，因 q'|q 且 q'<q 得 q'\le q/2\le|A_q|，矛盾，故只能 q'=q。q'=q 时两子集 p^{-1}A_q,r^{-1}A_q\subset\mathbb Z/q 各含 \ge q/2 个元素；若 >q/2 必交；若 =q/2，由 F2 仅 q=6，手算 A_6=\{2,3,4\}，p=1，r\equiv1,5\pmod6，交集均非空。小 g 缺口已补。
+
+边界：q'=1 显然空；q'=q=6 已单查；q'=2 时 A_2=\{1\}，w=1/2 情形非空。非严格等号 =1/5 被允许。
+
+审阅结论：PROOF VERIFIED（非严格版）。 严格版（>1/5）已有反例 \theta=1/5,w=7/5，DISPROVED。
+
+---
+
+审阅 Q-GATE
+
+结论：对任意实数 0<a<b<c<d，令 t_0=F_4(b,c,d)，\tau^*=S t_0，M=\max(1-\theta,w)，Q_0=\lceil20M\rceil。取 \tau^* 的最后一个分母 \le Q_0 的连分数渐近分数 p/q。则 q\le Q_0，且
+
+\|\tau\theta\|,\ \|\tau(1-\theta)\|,\ \|\tau w\|\ge1/5,\qquad \tau=p/q.
+
+
+即 Q-GATE 在 m\le Q_0 内确定性选出一个簇安全格。
+
+证明核验：连分数标准误差 |τ^*-p/q|<1/(q q_{\rm next})<1/Q_0（分母 \le Q_0 时误差 0）。对 u\in\{\theta,1-\theta,w\}，|τu-τ^*u|\le u|τ-τ^*|<M/Q_0\le1/20。T4 给 \|τ^*u\|\ge1/4，故 \|τu\|>1/5。三项同时成立。步数由渐近分数分母 Fibonacci 增长，O(\log Q_0) 有界。
+
+边界：Q_0=\lceil20M\rceil\ge20M，故 1/Q_0\le1/(20M)；M>1/2 因 \theta<1/2<1-\theta。\tau^* 有理且分母 \le Q_0 时取自身，误差 0。端点不取等，安全严格大于 1/5。
+
+限制：Q-GATE 只闭合簇门（b,c,d），不处理最慢者 a。对无理形状，无精确周期平移装入 a，故完整四人选择器未闭合。
+
+审阅结论：PROOF VERIFIED（簇门，条件性/部分选择器）。
+
+---
+
+四账本
+
+· PROOF VALIDITY：条件归纳引理 PROOF CANDIDATE；Q-ERC1 重写非严格版 PROOF VERIFIED；Q-ERC1 严格版 DISPROVED；Q-GATE 簇门 PROOF VERIFIED。一般 F_n：UNFINISHED。
+· INDEPENDENT REVIEW：本回复为 DeepSeek 独立非作者审阅；未参考其他审阅人本轮意见。
+· NEW COVERAGE：归纳引理不自动覆盖；可公度特例测度零；Q-GATE 对无理簇门有增量但符号差集 UNFINISHED。
+· COMPUTATIONAL CHECK：|A_7|=4、A_6=\{2,3,4\} 为本回复手算；其余为符号核对，未用随机测试作证明。
+
+必答题：Does your result directly advance a uniform, guaranteed construction from 2 to 47 runners?
+CONDITIONAL. 条件归纳引理给出 n\to n+1 的精确几何条件（单侧窗口长度与新增速度修正量匹配），并在可公度周期链上自动满足；但一般实数速度的窗口信息不由 F_n 自动携带，故不构成无条件 2 到 47 的统一构造。
+
+############ 回复格式 ############
+第一行写「R022 2/4 Qwen」。先写 ANSWER BLOCK（≤300 中文字）。四个账本栏分开写：PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / IDEA / UNFINISHED / PARTIAL。审阅结论每项单独给：PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED。
+最后必须回答主席必答题：Does the proposed result provide a guaranteed mechanism for the induction step, or does it only describe a sufficient subset of inputs? 写 YES / CONDITIONAL / NO；若 CONDITIONAL，写出缺少的假设，并说明它是否自动保持。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。先手证；代码只可核对，不可替代论证。作者不能升级自己的结果；只有主席裁决。无界搜索不得当作封闭构造。随机测试不能推出证明。不做大规模穷举。
+===== END =====
