@@ -1,0 +1,35 @@
+R027 3/4 Kimi
+
+**ANSWER BLOCK**  
+审 Opus R026 §3.1(iii) 修正计数界：\(C_P=C(V)\cap(0,P/2]\)。配对项 \(j/(v+v')\le P/2\iff j\le (N_v+N_{v'})/2\)；半峰项 \((2j+1)/(2v)\le P/2\iff 2j+1\le N_v\)。故  
+\[
+|C_P|\le \sum_{v<v'}\left\lfloor\frac{N_v+N_{v'}}2\right\rfloor+\sum_v\left\lfloor\frac{N_v+1}2\right\rfloor
+\le \frac{(k-1)\sigma+\sigma+k}{2}=\frac{k(\sigma+1)}2 .
+\]
+**PROOF VERIFIED**。但它只给候选数上界，不给成功候选；存在性仍 **UNFINISHED**。
+
+1. Candidate generation: **PROVED**  
+2. Candidate success: **CONDITIONAL**  
+3. Finite selection: **CONDITIONAL**  
+4. Arbitrary real speeds: **UNFINISHED**  
+5. Uniform \(F_n\) induction: **UNFINISHED**
+
+**PROOF VALIDITY**  
+- ACC 修正计数上界（作者状态）：**PROOF CANDIDATE**；本席审阅见下。  
+- 由计数上界推出非空/成功：**UNFINISHED**。  
+- 任意实数速度的有限终止选择：**UNFINISHED**。  
+- Qwen/Opus R027 新选择断言补充件：未收到，**UNFINISHED**。
+
+**INDEPENDENT REVIEW**  
+- 对配对项计数：**PROOF VERIFIED**。由 \(P/2=1/(2g)\)，\(j/(v+v')\le P/2\iff j\le (N_v+N_{v'})/2\)；正整数 \(j\) 个数为 \(\lfloor (N_v+N_{v'})/2\rfloor\)（去重只可能减少集合基数）。  
+- 对半峰项计数：**PROOF VERIFIED**。奇数 \(2j+1\le N_v\) 的个数为 \(\lfloor (N_v+1)/2\rfloor\)。  
+- 对聚合常数：**PROOF VERIFIED**。\(\sum_{v<v'}(N_v+N_{v'})=(k-1)\sigma\)，\(\sum_v(N_v+1)=\sigma+k\)，相加除以 2 得 \(k(\sigma+1)/2\)。  
+- 对“计数界 ⇒ 成功候选”：**UNFINISHED**。该界只限制需检查点数；是否有点满足 \(g_V(t)\ge\delta\) 仍是 NE/存在性问题。  
+- 对“有界枚举 ⇒ 直接公式”：**UNFINISHED**。显式搜索界不是闭式选择规则。
+
+**NEW COVERAGE**  
+- **UNFINISHED**。未主张新覆盖。
+
+**COMPUTATIONAL CHECK**  
+- 手核 \(V=\{1\}\)：\(k=1,\sigma=1\)，\(C_P=\{1/2\}\)，计数 1；公式给 \(\lfloor(1+1)/2\rfloor=1\)，上界 \(1(1+1)/2=1\)。旧界 \(k\sigma/2=1/2\) 确实失败。  
+- 手核 \(V=(1,2)\)：\(N=(1,2),\sigma=3\)；配对 \(\lfloor3/2\rfloor=1\)，半峰 \(\lfloor2/2\rfloor+\lfloor3/2\rfloor=1+1=1\)，总计 3，即 \(\{1/4,1/3,1/2\}\)；上界 \(2(3+1)/2=4\)。未用代码。
