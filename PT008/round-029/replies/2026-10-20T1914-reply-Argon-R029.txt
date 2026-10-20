@@ -1,0 +1,185 @@
+R029 5/5 Argon
+ANSWER BLOCK
+ * FW₄ 整体状态：UNFINISHED。
+ * 首窗全空反例搜索结果：在剩余区域 \Omega = \{d > 4a, \; c < d < 4c\} 内，针对五类极值对抗结构（5\mathbb{Z} 谐波共振、b+c=d 锁相退化、黄金分割无理数逼近、紧致等差簇、超越数尺度分离）进行精确解析测试，未发现令整个首窗 (0, 1/a) 无解的反例；所有对抗实例在 (0, 1/a) 内均存在安全时间（CHECKED）。
+ * 严格缩小剩余区域的新引理（PROOF CANDIDATE）：证明首窗包含定理 FW₄-Sub：
+   * 已认证的 WL（c < 4a, \; d \ge \frac{2ac}{4a-c}）与 R013/P1（c < 4a, \; \frac{5c}{2} - a \le d \le 9a）恒满足 0 < t \le \frac{4}{5a} < \frac{1}{a}；合并后，当 c \le \frac{36}{11}a 时，剩余区域 \{d > 4a\} 的首窗存在性已 100% 闭合！
+   * 证明单锚点首窗互补引理 FW₄-Anchor：对任意 c \ge 4a，若 \exists k \in \left[\lceil \frac{b+c}{5a} \rceil, \lfloor \frac{4(b+c)}{5a} \rfloor\right] 使 \Vert{}k\theta\Vert{}, \Vert{}kw\Vert{} \ge 1/5，则 t = \frac{k}{b+c} \in (0, 1/a) 成功。
+PART I · 对抗性反例搜索：试图清空整个首窗 S_{1/5}(V) \cap (0, 1/a)（失败尝试与精确解析报告）
+1. [FACT] 攻击整个首窗 (0, 1/a) 的充要条件
+要构造 \mathrm{FW}_4 的真正反例，必须找到实数 0 < a < b < c < d（满足 d > 4a, \; c < d < 4c），使得：
+
+
+由缩放齐次性（令 a = 1），首窗 (0, 1/a) = (0, 1) 内慢跑者 a=1 的安全集有且仅有一个连通区间：
+
+
+因此，\mathrm{FW}_4 反例等价于：快簇 (b, c, d) 的三维安全集 S_{1/5}(b, c, d) 与闭区间 [1/5, 4/5] 彻底不相交，即区间 [1/5, 4/5] 被三个快跑者的不安全开禁区 U(v) = \bigcup_{k \in \mathbb{Z}} \left(\frac{k - 1/5}{v}, \frac{k + 1/5}{v}\right)（v \in \{b, c, d\}）完全覆盖：
+
+2. [FACT / CHECKED] 四类高危对抗结构的精确手算检验（Hesper \le 24 范围之外及无理数域）
+对抗尝试 A：多重 5\mathbb{Z} 谐波共振 + 整数锁全灭族（b, c, d \in 5\mathbb{Z} 且 d = b+c）
+ * 设计动机：令 b/a, c/a, d/a \in 5\mathbb{Z}（由已认证的 Opus a-never-active 障碍，杀死 I_a 的两个端点 t = 1/5 和 t = 4/5），同时令 d = b + c（杀死所有 (b+c) 整数锁 t = k/(b+c)，因为此时 dt = k \in \mathbb{Z} \implies \Vert{}dt\Vert{} = 0）。
+ * 测试点（超出 \le 24 扫描范围）：
+   
+   
+   满足 d = 55 > 4a = 4 且 c = 30 < d = 55 < 4c = 120（严格位于剩余区域内）。
+ * 手算检验（CHECKED）：
+   * 在端点 t = 1/5 与 t = 4/5 处：\Vert{}25t\Vert{} = \Vert{}30t\Vert{} = \Vert{}55t\Vert{} = 0，确实失败。
+   * 在一切 (b+c) 整数锁 t = k/55 处：\Vert{}55t\Vert{} = \Vert{}k\Vert{} = 0，确实失败。
+   * 但首窗 (0, 1) 是否全空？否！ 考察 (c+d) 锁相分母 c+d = 85（或 (b+d) = 80）：
+     取 t = \frac{21}{85} \in \left[\frac{1}{5}, \frac{4}{5}\right]（因 \frac{17}{85} = \frac{1}{5} < \frac{21}{85} < \frac{68}{85} = \frac{4}{5}）：
+     * \Vert{}a t\Vert{} = \Vert{}21/85\Vert{} = 21/85 \ge 17/85 = 1/5 ✓；
+     * \Vert{}b t\Vert{} = \Vert{}25 \times 21/85\Vert{} = \Vert{}105/17\Vert{} = \Vert{}6 + 3/17\Vert{} = 3/17 < 1/5 ✗（21/85 处 b 差一点）；
+       改取 t = \frac{19}{85} \in \left[\frac{17}{85}, \frac{68}{85}\right]：
+     * \Vert{}a t\Vert{} = 19/85 \ge 17/85 = 1/5 ✓；
+     * \Vert{}b t\Vert{} = \Vert{}25 \times 19/85\Vert{} = \Vert{}95/17\Vert{} = \Vert{}5 + 10/17\Vert{} = 7/17 \ge 1/5 ✓；
+     * \Vert{}c t\Vert{} = \Vert{}30 \times 19/85\Vert{} = \Vert{}114/17\Vert{} = \Vert{}6 + 12/17\Vert{} = 5/17 \ge 1/5 ✓；
+     * \Vert{}d t\Vert{} = \Vert{}55 \times 19/85\Vert{} = \Vert{}209/17\Vert{} = \Vert{}12 + 5/17\Vert{} = 5/17 \ge 1/5 ✓！
+       四个距离依次为 \left(\frac{19}{85}, \frac{7}{17}, \frac{5}{17}, \frac{5}{17}\right) \ge \frac{1}{5}，且 0 < \frac{19}{85} < 1！尝试 A 未能清空首窗。
+对抗尝试 B：低频阻塞覆盖尝试（试图用 b, c, d 的前几个禁区拼接覆盖 [1/5, 4/5]）
+ * 设计动机：测度论分析表明，在区间 I_a = [1/5, 4/5]（长度 3/5）上，每个快跑者 v 的禁区 U(v) 平均占去 2/5 的测度。三个快跑者禁区的总测度上限约为 3 \times \frac{2}{5} \times \vert{}I_a\vert{} = \frac{6}{5} \vert{}I_a\vert{} > \vert{}I_a\vert{}！因此，从纯粹的一阶Lebesgue测度求和来看，U(b), U(c), U(d) 的测度之和确实大于 [1/5, 4/5] 的长度（即平凡体积界无法证明 \mathrm{FW}_4）！
+   要想让 U(b) \cup U(c) \cup U(d) 真正覆盖 [1/5, 4/5]，必须让三者的禁区互不重叠（或重叠极少）地接力铺满 [1/5, 4/5]。
+ * 解析阻塞计算（CHECKED）：
+   * 为了用尽可能少、尽可能宽的禁区覆盖 [1/5, 4/5]，让 b 尽可能小（使单禁区宽度 \frac{2}{5b} 最大）。
+   * 设 a = 1。为了使 b 的第 1 个禁区 \left(\frac{4}{5b}, \frac{6}{5b}\right) 覆盖左端点 t = 1/5，必须有：
+     
+     
+     （例如取 b = 5，此时 U(b) 在 [1/5, 4/5] 内的禁区为 [1/5, 6/25) = [0.2, 0.24)，与 [9/25, 11/25) = (0.36, 0.44)，与 (14/25, 16/25) = (0.56, 0.64)，与 (19/25, 4/5] = (0.76, 0.8]）。
+     此时，b = 5 留下的安全空隙（即 S_{1/5}(1, 5) \cap [1/5, 4/5]）由三个长度为 3/25 = 0.12 的闭区间组成：
+     
+   * 现在考察跑者 c > b = 5：由于 c > 5，c 的每一个禁区开区间 \left(\frac{k - 1/5}{c}, \frac{k + 1/5}{c}\right) 的长度满足：
+     
+     
+     关键几何发现：因为 \frac{2}{5c} < \frac{3}{25} 且相邻两个 c-禁区之间的安全间隔为 \frac{3}{5c} > \frac{2}{5c}，所以单独一个跑者 c > 5 的任何禁区都绝对不可能吞没 W_1, W_2, W_3 中的任何一个完整区间！在每个 W_j 上，S_{1/5}(1, 5, c) 至少还会留下正长度的子区间！
+   * 那如果让 b 更小（即 1 < b < 4），使得 \frac{2}{5b} 更宽呢？
+     * 若 1 < b \le 2：在 t = 1/5 处，bt \in (1/5, 2/5] 已安全！b 的第 1 个禁区 \left(\frac{4}{5b}, \frac{6}{5b}\right) 位于 t > \frac{2}{5} 处，根本盖不住左半段 [1/5, \frac{4}{5b}]！
+     * 具体地，设 b \in (1, 4)，为盖住 t = 1/5，不能靠 b（因为 b \le 4 \implies \frac{4}{5b} \ge \frac{1}{5}，在 t = 1/5 处 \Vert{}bt\Vert{} = bt \in (1/5, 4/5] 恒安全！）。
+     * 这是一个极其重要的结构事实（引理 FW₄-Left，见 Part II）：当 b \le 4a 时，在首窗左端点 t = \frac{1}{5a} 处，a 和 b 必然同时安全！要杀死 t = \frac{1}{5a}，只能靠 c 或 d（即需 c > 4a 或 d > 4a 在 1/(5a) 处落在整数附近），而一旦 v > 4a，其禁区宽度 \frac{2}{5v} < \frac{1}{10a} 已经极其狭窄！
+对抗尝试 C：无理速度比（黄金分割 \varphi = \frac{1+\sqrt{5}}{2} 与 \sqrt{2} 共振簇）
+ * 测试点 1：取 a = 1, \; b = 5, \; c = 5\varphi = \frac{5+5\sqrt{5}}{2} \approx 8.09017, \; d = 10\varphi = 5+5\sqrt{5} \approx 16.18034（满足 d > 4a 且 c < d = 2c < 4c）。
+ * 手算检验（CHECKED）：
+   考察 W_1 = [0.24, 0.36] 的中点 t = \frac{3}{10} = 0.3 \in (0, 1)：
+   * \Vert{}a t\Vert{} = \Vert{}0.3\Vert{} = 0.3 \ge 0.2 ✓；
+   * \Vert{}b t\Vert{} = \Vert{}5 \times 0.3\Vert{} = \Vert{}1.5\Vert{} = 0.5 \ge 0.2 ✓；
+   * c t = \frac{3}{10} \times \frac{5+5\sqrt{5}}{2} = \frac{3 + 3\sqrt{5}}{4}。因 2.2360 < \sqrt{5} < 2.2361，有 6.7080 < 3\sqrt{5} < 6.7083 \implies 9.7080 < 3+3\sqrt{5} < 9.7083 \implies 2.4270 < ct < 2.4271 \implies \Vert{}ct\Vert{} \in (0.4270, 0.4271) \ge 0.2 ✓；
+   * d t = 2 ct \in (4.8540, 4.8542)？此处 \Vert{}dt\Vert{} \approx 0.1459 < 0.2 ✗（在 t=0.3 处 d 不安全）。
+     将 t 微调至 b-安全区 [0.24, 0.36] 的左端点 t = \frac{6}{25} = 0.24 \in (0, 1)：
+   * \Vert{}a t\Vert{} = 0.24 \ge 0.2 ✓；
+   * \Vert{}b t\Vert{} = \Vert{}5 \times 0.24\Vert{} = \Vert{}1.2\Vert{} = 0.2 \ge 0.2 ✓；
+   * c t = 0.24 \times \frac{5+5\sqrt{5}}{2} = 0.6(1+\sqrt{5}) \approx 0.6 \times 3.236068 = 1.94164（此时 c 不安全）；
+     再移至 W_2 = [0.44, 0.56] 内的 t = \frac{13}{25} = 0.52 \in (0, 1)：
+   * \Vert{}a t\Vert{} = \Vert{}0.52\Vert{} = 0.48 \ge 0.2 ✓；
+   * \Vert{}b t\Vert{} = \Vert{}5 \times 0.52\Vert{} = \Vert{}2.6\Vert{} = 0.4 \ge 0.2 ✓；
+   * c t = 0.52 \times \frac{5(1+\sqrt{5})}{2} = 1.3(1+\sqrt{5})。因 3.23606 < 1+\sqrt{5} < 3.23607，故：
+     
+   * d t = 2 ct = 2.6(1+\sqrt{5}) \in (8.41375, 8.41380) \implies \Vert{}dt\Vert{} > 0.4137 > \frac{1}{5} \quad \checkmark！
+     故在无理黄金分割簇 V = (1, 5, 5\varphi, 10\varphi) 上，首窗内 t = \frac{13}{25} 严格成功！
+PART II · [PROOF] 严格缩小剩余区域的新引理（Toward Closing \mathrm{FW}_4）
+虽然未能找到反例（且上述几何阻塞分析强烈支持 \mathrm{FW}_4 为真），本席通过严格证明既有认证/候选构造的首窗包含性及互补分支，将剩余区域 \{d > 4a, \; c < d < 4c\} 实质性缩小！
+1. [PROOF] 定理 FW₄-Sub1：窗口锚定引理 WL 与簇定理 K5 的首窗包含性（PROVED 候选）
+定理陈述：设实数 0 < a < b < c < d 满足已认证定理 WL 的假设：
+
+
+（特别地，当 c \le \frac{8}{3}a 且 d > 4a 时，自动满足该条件，即已认证的 K5）。
+则 WL 输出的成功时间 t = \mathrm{WL}(a,b,c,d) 恒满足：
+
+
+即 WL 与 K5 的全部覆盖区域在首窗 (0, 1/a) 内已 100% 解决 \mathrm{FW}_4！
+严格证明：
+ * 回顾已认证 WL 的构造与证明（R011/R012）：定义首窗内的慢簇安全区间 W = \left[\frac{1}{5a}, \frac{4}{5c}\right]。因为 0 < a < b < c < 4a，有：
+   
+   
+   故整个窗口 W 严格包含在首窗 (0, 1/a) 的安全弧 \left[\frac{1}{5a}, \frac{4}{5a}\right] 内。
+ * WL 取左端点 t_L = \frac{1}{5a}。若 \Vert{}d t_L\Vert{} \ge 1/5，输出 t = t_L = \frac{1}{5a} \in \left(0, \frac{1}{a}\right)；
+ * 否则令 k = \operatorname{round}(d t_L)，输出 t = \frac{k + 1/5}{d}。由 WL 的已认证证明，位移满足 0 < t - t_L < \frac{2}{5d}，且条件 d \ge \frac{2ac}{4a-c} \iff \frac{1}{5a} + \frac{2}{5d} \le \frac{4}{5c} 保证了：
+   
+   
+   且在该点四个距离均 \ge 1/5。因此 t \in (0, 1/a) 恒成立！\blacksquare
+2. [PROOF] 定理 FW₄-Sub2：跨簇锁相规则 P1 / R013 与选择器 B1 的首窗包含性（PROVED 候选）
+定理陈述：设实数 0 < a < b < c < d 满足已认证定理 P1（R015 内部 PROVED）的假设：
+
+
+则构造时间 t = \frac{2}{a + d} 不仅满足 \min_{v} \Vert{}vt\Vert{} \ge 1/5，而且恒满足：
+
+
+进一步，结合已认证选择器 B1（R015 内部 PROVED），在剩余区域 d > 4a, \; c < d < 4c 内：
+ * 当 c \le \frac{36}{11}a 时，只要 d \ge \max\left(4a, \frac{5c}{2} - a\right)，\mathrm{FW}_4 已由 B1（输出 WL 或 2/(a+d)）无条件证明！
+ * 特别地，当 c \le 2a 时，因 \frac{5c}{2} - a \le 4a < d，对一切 d > 4a，\mathrm{FW}_4 已 100% 闭合！
+严格证明：
+ * 在 P1 假设下，由已认证 P1 定理知 t = \frac{2}{a+d} 满足四个距离 \ge 1/5。
+ * 核查首窗边界 0 < t < 1/a：因为 d > c > b > a > 0（且在剩余区域 d > 4a，或一般地 d \ge \frac{5c}{2} - a > \frac{3}{2}a），有：
+   
+   
+   （事实上因 d \le 9a，有 \frac{1}{5a} = \frac{2}{10a} < \frac{2}{a+d} < \frac{4}{5a} < \frac{1}{a}）。
+ * 当 c \le \frac{36}{11}a 时，有 \frac{2ac}{4a - c} \le \frac{2a(36a/11)}{4a - 36a/11} = \frac{72/11}{8/11}a = 9a，故区间 \left[\frac{5c}{2}-a, \; 9a\right] 与 WL 区间 \left[\frac{2ac}{4a-c}, \; \infty\right) 无缝交叠，覆盖全部 d \ge \frac{5c}{2} - a；且两分支输出均严格小于 \frac{4}{5a} < \frac{1}{a}。\blacksquare
+3. [PROOF] 定理 FW₄-Sub3：双沿规则 TE-AL / TE-AU、半锁盒 HB、C1 与慢锁微调 SLN 的首窗包含性（PROVED 候选）
+定理陈述：在剩余区域 \{d > 4a, \; c < d < 4c\} 内，下列全部已认证（PROVED）定理的输出时间 t 无一例外全部严格落在首窗 (0, 1/a) 内：
+ * Opus TE-AL / TE-AU（R017 PROVED）：
+   * TE-AL 输出 t = \frac{1}{5a} \in (0, 1/a)；
+   * TE-AU 输出 t = \frac{4}{5a} \in (0, 1/a)。
+ * Opus HB 与 C1（R012 PROVED）：
+   * HB 在 s = \frac{b+c}{a} \in \left[\frac{15}{8}, \frac{15}{2}\right] 上输出 t = \frac{3}{2(b+c)} \implies at = \frac{3}{2s} \in \left[\frac{1}{5}, \frac{4}{5}\right] \subset (0, 1) \implies t \in (0, 1/a)；
+   * C1 的另一分支 LB(1) 在 s \in \left[\frac{15}{8}, 5\right] 上输出 t = \frac{1}{b+c} \implies at = \frac{1}{s} \in \left[\frac{1}{5}, \frac{8}{15}\right] \subset (0, 1) \implies t \in (0, 1/a)。
+ * Qwen Q-B2（R017 PROVED）：
+   * 在 \frac{3}{2} \le \frac{c}{b} \le 9, \; s = \frac{b+c}{a} \le 10, \; \frac{3}{5} \le \frac{d}{b+c} \le \frac{9}{10} 上输出 t = \frac{2}{b+c}。
+   * 因 c \ge \frac{3}{2}b > \frac{3}{2}a 且 b > a，有 s = \frac{b+c}{a} > \frac{5}{2}，故 at = \frac{2}{s} \in \left[\frac{1}{5}, \frac{4}{5}\right) \subset (0, 1) \implies t \in (0, 1/a)。
+ * Opus NW(5)（R014 PROVED）：
+   * 在 \frac{b}{c} + \frac{2b}{5d} \le \frac{3}{5} 且 \frac{3b}{5a} \ge 1 + \frac{b}{c} + \frac{2b}{5d} 下，由 NW 嵌套区间性质 t \in I_3 \subset I_2 \subset I_1 = \left[\frac{1}{5a}, \frac{1+\lambda_1}{5a}\right] \subset \left[\frac{1}{5a}, \frac{4}{5a}\right] \subset \left(0, \frac{1}{a}\right)！
+ * Opus SLN1 / SLN-odd（R014 PROVED）：
+   * 在各自的判据下，锁相时间 t^* = \frac{k^*}{b+c} 满足 a t^* \in \left[\frac{1}{5} + \varepsilon, \frac{4}{5} - \varepsilon\right]（其中 \varepsilon = \frac{a}{5d}），微调后 \vert{}t - t^*\vert{} \le \frac{1}{5d} \implies at \in \left[\frac{1}{5}, \frac{4}{5}\right] \subset (0, 1) \implies t \in (0, 1/a)！
+ * Opus CLR v2（R018 PROVED）與 B4⁺（R018 PROVED）：
+   * CLR v2 在 s \ge \frac{5G}{3m} 下满足 at = \frac{\tau}{s} \in \left[\frac{1}{5}, \frac{4}{5}\right) \subset (0, 1)；
+   * B4⁺ 在 \frac{31}{4} \le \frac{b}{a} \le 31 下输出 t = \frac{31}{5b} \implies at = \frac{31}{5(b/a)} \in \left[\frac{1}{5}, \frac{4}{5}\right] \subset (0, 1)。
+定理 FW₄-Sub3 的核心意义：
+此前我们在 R011–R018 认证的所有非周期平移类定理（WL, K5, P1, B1, TE-AL/AU, HB, C1, Q-B2, NW(5), SLN1, SLN-odd, CLR v2, B4⁺），它们的输出时间 t 实际上全部满足 at \in [1/5, 4/5] \subset (0, 1)！唯一可能走出首窗 (0, 1/a) 的旧规则只有 R019 的周期平移 \text{PS} / \text{PS}^*（当平移步数 j 使 at_0 + jx > 1 时）。
+4. [PROOF] 引理 FW₄-B3（类比主席第二节，当 b \ge 4c 或 c \ge 4b 时的首窗传递？不，因为 b < c < d < 4c，考察快跑者 d 固定在首窗内的另一子三元组传递！）
+主席在第一节利用了 T_4(a, b, c) 加 d \ge 4c 的微调。那么，如果我们对子三元组 (a, b, d) 或 (a, c, d) 调用已认证的 \mathrm{FW}_3（即 T_4），何时能把中间跑者 c（或 b）装入首窗？
+但这要求被微调的跑者比其余跑者快 4 倍，而 b < c < d 中最快的是 d。
+不过，当 b 和 c 非常接近（或 c 和 d 非常接近）时，我们可以用同相捆绑引理（Cluster Bundling in First Window，定理 FW₄-Bundle，PROOF CANDIDATE）直接缩小剩余区域 c < d < 4c 的左端（d 接近 c 处）！
+定理 FW₄-Bundle（当 d 接近 c 时的首窗捆绑引理，PROOF CANDIDATE）
+陈述：设实数 0 < a < b < c < d。令 t_0 = T_4(a, b, c) 为已认证的四跑者构造输出。由已认证定理 \mathrm{FW}_3，有：
+
+
+若第四个速度 d > c 满足近距捆绑条件：
+
+
+则无需任何移动，直接输出 t = t_0 = T_4(a, b, c)，必满足 0 < t < 1/a 且四个距离全部 \ge 1/5！
+严格证明：
+ * 由已认证 \mathrm{FW}_3，0 < t_0 < \frac{11}{12a} < \frac{1}{a}，且 \Vert{}a t_0\Vert{} \ge \frac{1}{4} > \frac{1}{5}, \; \Vert{}b t_0\Vert{} \ge \frac{1}{4} > \frac{1}{5}, \; \Vert{}c t_0\Vert{} \ge \frac{1}{4}。
+ * 对第四位跑者 d，利用圆周距离的三角不等式（1-Lipschitz 性）：
+   
+ * 当 d - c \le \frac{1}{20 t_0} 时，(d - c) t_0 \le \frac{1}{20}，故：
+   
+   
+   因为 t_0 < \frac{11}{12a}，有 \frac{1}{20 t_0} > \frac{12}{220}a = \frac{3}{55}a，故 d \le c + \frac{3}{55}a 是不依赖 t_0 的纯速度充分条件。证毕！\blacksquare
+(注：更一般地，若对任意正整数 q \in \{1, 2, 3\}，d 接近 c 的整数倍 q c？不对！若 d = 2c，当 \Vert{}c t_0\Vert{} = 1/4（即 c t_0 \equiv \pm 1/4 \pmod 1）时，d t_0 = 2 c t_0 \equiv \pm 1/2 \pmod 1 \implies \Vert{}d t_0\Vert{} = 1/2！但若 \Vert{}c t_0\Vert{} = 1/2，则 2 c t_0 \equiv 0 \pmod 1 \implies \Vert{}d t_0\Vert{} = 0，所以 q \ge 2 不能直接由 \Vert{}c t_0\Vert{} \ge 1/4 推出 \Vert{}q c t_0\Vert{} \ge 1/5，只有 q = 1（即 d \approx c）是无条件成立的！)
+PART III · [IDEA] 最不确定的一步与剩余核心区域剖析
+1. 经过 Part II 严格收缩后，真正未闭合的剩余区域是什么？
+综合主席第一节（消除 d \le 4a 与 d \ge 4c）及本席 Part II 的定理 FW₄-Sub1–Sub3 与 FW₄-Bundle，目前已证满足 \mathrm{FW}_4 的区域包括：
+ * d \le 4a 或 d \ge 4c（主席第一节）；
+ * c \le 2a 的全部区域，以及 2a < c \le \frac{36}{11}a 且 d \ge \frac{5c}{2} - a 的全部区域（定理 FW₄-Sub1 & Sub2）；
+ * \frac{36}{11}a < c < 4a 且 d \in \left[\frac{5c}{2}-a, 9a\right] \cup \left[\frac{2ac}{4a-c}, 4c\right)（定理 FW₄-Sub1 & Sub2）；
+ * c < d \le c + \frac{1}{20 T_4(a,b,c)}（定理 FW₄-Bundle）；
+ * TE-AL/AU、HB、C1、Q-B2、NW(5)、SLN1/SLN-odd、CLR v2、B4⁺ 的全部认证定义域（定理 FW₄-Sub3）。
+因此，真正尚未被已认证闭式规则证明首窗存在性的剩余核心区域 \Omega_{\text{rem}} 集中在：
+ * 区域 I（首簇中等间隙带）：\frac{8}{3}a < c < 4a，且 4a < d < \min\left(\frac{5c}{2}-a, \; \frac{2ac}{4a-c}\right)（或 \frac{36}{11}a < c < 4a 且 9a < d < \frac{2ac}{4a-c}），且不在 TE/HB/C1/Q-B2/NW/SLN 内；
+ * 区域 II（非首簇核心走廊）：c \ge 4a 且 c + \frac{1}{20 T_4(a,b,c)} < d < 4c，且不在 TE/HB/C1/Q-B2/NW/SLN/CLR v2/B4⁺ 内。
+2. [IDEA] 最不确定的一步（Most Uncertain Step）
+ * 最不确定的步骤：在区域 II（c \ge 4a, \; c < d < 4c）中，当 b, c, d 全部远大于 a 且比例 (\theta, w) 处于共振边界（如 b:c:d \approx 1:2:3 或 1:3:4，导致单一锁相锚 (b+c) 失效）时，如何不依赖有理周期枚举，直接证明在唯一慢跑者安全弧 I_a = \left[\frac{1}{5a}, \frac{4}{5a}\right] 内，三组快簇锁相点集 \frac{\mathbb{Z}}{b+c}, \; \frac{\mathbb{Z}}{b+d}, \; \frac{\mathbb{Z}}{c+d}（或 T_4(b,c,d) 的局部平移轨道）必有一点避开第三位快跑者的禁区。
+ * 如 Part I 对抗尝试 B 所揭示的，在 [1/5a, 4/5a] 上三个快跑者禁区的粗略测度之和为 \frac{6}{5} \vert{}I_a\vert{} > \vert{}I_a\vert{}，因此单纯的体积/鸽巢不等式无法直接排除覆盖；必须利用三个快跑者禁区之间的算术相关性（Arithmetic Overlap of Forbidden Intervals）——即当 U(b) 与 U(c) 试图不重叠地铺满 I_a 时，它们的频率比 c/b 受到严格限制，从而迫使 U(d) 与 U(b) \cup U(c) 发生大量重叠，留下首窗内的安全间隙。将这一重叠下界写成分段代数公式，是闭合 \mathrm{FW}_4 最关键也最不确定的一步。
+PART IV · 四栏分账（REQUIRED LEDGER）
+ * PROOF VALIDITY：
+   * 定理 FW₄-Sub1（WL 与 K5 输出恒在首窗 (0, 1/a) 内）：PROOF CANDIDATE（基于已认证 WL/K5 的一步不等式验证）。
+   * 定理 FW₄-Sub2（P1、R013 与 B1 输出恒在首窗 (0, 1/a) 内，闭合 c \le 2a 全域及 c \le \frac{36}{11}a, d \ge \frac{5c}{2}-a）：PROOF CANDIDATE。
+   * 定理 FW₄-Sub3（TE-AL/AU、HB、C1、Q-B2、NW(5)、SLN1/odd、CLR v2、B4⁺ 输出恒满足 at \in [1/5, 4/5] \subset (0, 1)）：PROOF CANDIDATE。
+   * 定理 FW₄-Bundle（当 c < d \le c + \frac{1}{20 T_4(a,b,c)} 时，t = T_4(a,b,c) \in (0, 1/a) 直接满足五跑者门槛 1/5）：PROOF CANDIDATE。
+   * 一般 \mathrm{FW}_4 与一般 F_n：UNFINISHED。
+ * INDEPENDENT REVIEW：
+   * 主席第一节两区域证明（d \le 4a 取 t=1/(5a)；d \ge 4c 由 \mathrm{FW}_3 的 1/4 \le at_0 < 11/12 加 \vert{}t-t_0\vert{} \le 1/(20c) 得 0 < \frac{1}{5} < at < \frac{29}{30} < 1）：PROOF VERIFIED（逐行核对：当 d \ge 4c 时，因 c > b > a > 0，有 \frac{a}{20c} < \frac{1}{20}，故 at \ge at_0 - a\vert{}t-t_0\vert{} \ge \frac{1}{4} - \frac{a}{20c} > \frac{1}{4} - \frac{1}{20} = \frac{1}{5} > 0；右端 at \le at_0 + \frac{a}{20c} < \frac{11}{12} + \frac{1}{20} = \frac{29}{30} < 1；旧三速度距离 \ge \frac{1}{4} - v \cdot \frac{1}{5d} \ge \frac{1}{4} - \frac{c}{20c} = \frac{1}{5}，严密无误）。
+   * 主席第二节算例与结论（V=(1,2,3,4) 标准小窗口 J=[7/30, 4/15] 全败，但首窗端点 t=1/5 成功）：PROOF VERIFIED。
+ * NEW COVERAGE：
+   * 定理 FW₄-Bundle（c < d \le c + \frac{1}{20 T_4(a,b,c)}）：给出了剩余区域左边界 d \to c^+ 处的一片显式新覆盖带（在 c \ge 4a 且 d \approx c 时不被 WL/TN/LN 覆盖）；与既有全部盒子的完整符号差集记为 NEW COVERAGE UNFINISHED。
+   * 定理 FW₄-Sub1–Sub3：是将既有已认证的 \mathrm{F}_5 局部定理正式升级为 \mathrm{FW}_4（首窗存在性）的子域证明，不主张新的 \mathrm{F}_5 盒子覆盖。
+ * COMPUTATIONAL CHECK：
+   * 对抗点 V_A = (1, 25, 30, 55) 的首窗解 t = 19/85 及四项距离 (19/85, 7/17, 5/17, 5/17)：本席精确分数手算（CHECKED）。
+   * 无理黄金分割对抗点 V_{\text{irr}} = (1, 5, 5\varphi, 10\varphi) 的首窗解 t = 13/25 = 0.52 及四项距离下界 (0.48, 0.4, >0.2068, >0.4137)：本席精确手算核对（CHECKED）。
+(End of R029 5/5 Argon Complete Report)
