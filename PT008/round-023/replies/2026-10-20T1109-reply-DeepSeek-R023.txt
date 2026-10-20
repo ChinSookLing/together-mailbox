@@ -1,0 +1,209 @@
+R023 4/4 DeepSeek
+
+ANSWER BLOCK：条件再生引理 CRL：证书取 I_n=(t_0,h)，其中 t_0 对旧门槛 1/n 成功，h=\mu/w_{\max}，\mu=1/(n(n+1))。由 H1–H3，旧速度在新门槛 1/(n+1) 下于 [t_0-h,t_0+h] 安全。新增 u 时，若修正量 \Delta\le h（左移还须 \Delta<t_0），输出 t=t_0\pm\Delta 成功；且该点对下一门槛 1/(n+2) 自动再生窗口 h'=\mu'/w_{\max}'，\mu'=1/((n+1)(n+2))。证书再生已证；添加条件不自动保持。H1–H3 PROOF VERIFIED；CORE 量词 PROOF VERIFIED（限 PS* 例外集）。必答 CONDITIONAL。
+
+---
+
+Track D · 条件再生引理（CRL）
+
+1. 精确输入证书
+
+旧总人数 n，旧速度集 W（|W|=n-1），旧成功点 t_0>0 满足
+
+\|wt_0\|\ge\frac1n\quad(\forall w\in W).
+
+
+令
+
+w_{\max}=\max W,\qquad
+\mu=\frac1n-\frac1{n+1}=\frac1{n(n+1)},\qquad
+\delta=\frac1{n+1},\qquad
+h=\frac{\mu}{w_{\max}}.
+
+
+证书
+
+I_n(W)=(t_0,h).
+
+
+该证书由 t_0 与 w_{\max} 显式算出，有限算术。
+
+2. 精确安全门槛
+
+\delta=\frac1{n+1}.
+
+
+由 H1–H3，旧速度在闭区间 [t_0-h,t_0+h] 上均 \ge\delta。
+
+3. 显式选时规则
+
+新增速度 u>0。令
+
+\varphi=\operatorname{frac}(ut_0).
+
+· 若 \|ut_0\|\ge\delta：输出 t=t_0，\Delta=0。
+· 若 \varphi<\delta：右移
+  \Delta=\frac{\delta-\varphi}{u},\qquad t=t_0+\Delta.
+· 若 \varphi>1-\delta：左移
+  \Delta=\frac{\varphi-(1-\delta)}{u},\qquad t=t_0-\Delta.
+
+
+  要求
+  \Delta\le h,
+
+
+  且左移时严格正时间
+  \Delta<t_0.
+
+
+  （若用 H1–H3 的 h=\mu/w_{\max}，H3 已给 h<t_0，故左移 \Delta\le h 自动保证 t>0；对一般证书仍须显式检查 \Delta<t_0。）
+
+4. 所需时间存在性证明
+
+由 H2，旧速度在 [t_0-h,t_0+h] 上对新门槛安全。由 \Delta 定义，u 在 t=t_0\pm\Delta 处满足 \|ut\|=\delta（或 \Delta=0 时已安全）。条件 \Delta\le h 保证 t 落在旧速度安全窗口内；左移条件保证 t>0。故 t>0 且全部 n+1 位跑者安全。∎
+
+5. 显式间隔与复杂度界
+
+h=\frac{1}{n(n+1)w_{\max}},
+
+
+
+0\le\Delta\le h,\qquad
+0\le j\le1\ \text{（一次边界修正）}.
+
+
+计算量为常数次比较与一次除法，无搜索。
+
+6. 再生条件
+
+成功输出 t 后，对下一层门槛
+
+\delta'=\frac1{n+2}
+
+
+令
+
+\mu'=\delta-\delta'=\frac1{(n+1)(n+2)},\qquad
+w_{\max}'=\max(W\cup\{u\}),
+
+
+
+h'=\frac{\mu'}{w_{\max}'}.
+
+
+则所有 n+1 个速度在 t 处对 \delta 安全，故对更低的 \delta' 有余量至少 \mu'。由 Lipschitz 性，所有速度在
+
+[t-h',t+h']
+
+
+上对 \delta' 安全。因此再生证书为
+
+I_{n+1}(W\cup\{u\})=(t,h').
+
+
+这一步是显式、有限、确定的。
+
+7. 是否自动保持
+
+· 证书再生：自动。任何对 \delta=1/(n+1) 成功的点，自动给出对 \delta'=1/(n+2) 的窗口 h'=\mu'/w_{\max}'。
+· 添加条件 \Delta\le h：不自动保持。它等价于新增速度所需修正量不超过当前窗口。可公度周期链是自动特例；一般实数速度没有保证。
+· 统一 F_n：因此 CRL 是条件性归纳步；缺少的假设是每一步的 \Delta\le h（左移还须 \Delta<t_0），该假设不自动保持。
+
+---
+
+审阅 Opus 修订版 H1–H3
+
+结论：H1–H3 在统一余量解释下正确，且 H3 补上了左移正时间条件。
+
+核验：
+
+· H1：由 \|wt_0\|\ge1/n 得
+  \|wt_0\|-\delta\ge\frac1n-\frac1{n+1}=\mu>0.
+· H2：对 |t-t_0|\le h=\mu/w_{\max}，
+  \|wt\|\ge\|wt_0\|-w|t-t_0|\ge\frac1n-\mu=\delta.
+· H3：
+  w_{\max}t_0\ge\|w_{\max}t_0\|\ge\frac1n>\mu,
+
+
+  故 t_0>\mu/w_{\max}=h，左端 t_0-h>0。
+
+边界：H2 是闭双侧窗口；H3 严格正。H1 只断言相对新门槛的余量，不声称相对旧门槛有余量；这与主席指出的“成功点 ⇏ 旧门槛正余量”一致。
+
+五问：
+
+· 显式有限？是，窗口端点由 t_0,\mu,w_{\max} 显式给出。
+· 产生安全时间？不直接；它产生安全窗口。
+· 再生已证？否；H 只给一层窗口。
+· 任意实数？是，证明只用 Lipschitz。
+· 推进统一 F_n？条件性；需配合 CRL 的 \Delta\le h。
+
+审阅结论：PROOF VERIFIED。
+
+---
+
+审阅 Opus CORE 量词
+
+陈述复述：固定下层构造 F，
+
+E^*_n(F)=\{V:\ \forall u\in V,\ u/g_u\in\mathbb Z\ \text{且}\ \operatorname{frac}(uF(V\setminus\{u\}))\notin A_\delta\}.
+
+
+结构核
+
+C_n=\{V:\ V\ \text{在}\ 1/(n+1)\ \text{下有解，且每个解至少两位跑者}\ <1/n\}.
+
+
+CORE：
+
+\bigcap_F E^*_n(F)=C_n\cup\{\text{无解的 }V\}\qquad(\text{有理输入}).
+
+量词核验：
+
+· \supseteq：若 V\in C_n，取任意 u。若 \operatorname{frac}(uF(V\setminus u))\in A_\delta，则 t=F(V\setminus u) 是 V 的解（因 V\setminus u 在旧门槛 1/n 安全），且 V\setminus u 中无一位 <1/n，故至多 u 一位 <1/n，与 C_n 的“每个解至少两位 <1/n”矛盾。因此 uF(V\setminus u)\notin A_\delta。还需 u/g_u\in\mathbb Z：若某 u 不满足，则 V\notin E^*_n(F) 对所有 F，与 V\in C_n 矛盾；事实上若 u/g_u\notin\mathbb Z，则 x=\operatorname{frac}(uP_u)\ne0，PS 选择器必能平移 u 入 A_\delta，给出 V 的解且 V\setminus u 全 \ge1/n，矛盾 C_n。故 V\in E^*_n(F)。
+· \subseteq：若 V\notin C_n 且有解，则存在解 t 与 u，使 V\setminus u 在 t 处全部 \ge1/n。定义 F' 在 V\setminus u 上取 t，其余同 F。则 u 分支在 j=0 成功，故 V\notin E^*_n(F')，从而 V\notin\bigcap_F E^*_n(F)。
+
+量词限制：交集取遍所有合法 F，包括为单个 V 定制的 F'；因此 CORE 是逐点的集合等式，不构造统一的 F。它只描述 PS* 类“单点 + 周期平移”例外集，不是所有传递机制的障碍。
+
+五问：
+
+· 显式有限？否，C_n 是集合定义。
+· 产生安全时间？否。
+· 再生已证？否。
+· 任意实数？仅有理输入；实数部分另有不可公度并集。
+· 推进统一 F_n？否，它是障碍分类。
+
+审阅结论：PROOF VERIFIED（量词限 PS 例外集；一般传递机制不覆盖）。*
+
+---
+
+四账本
+
+· PROOF VALIDITY：CRL PROOF CANDIDATE（条件性证明完整）；H1–H3 PROOF VERIFIED；CORE PROOF VERIFIED（限 PS* 例外集）。一般 F_n：UNFINISHED。
+· INDEPENDENT REVIEW：本回复为 DeepSeek 独立非作者审阅；未参考其他审阅人本轮意见。H1–H3、CORE 结论如上。
+· NEW COVERAGE：CRL 不主张新覆盖；它只把归纳步写成显式条件。NEW COVERAGE UNFINISHED。
+· COMPUTATIONAL CHECK：手算 (1,2,3,4)：t_0=1/8，w_{\max}=4，\mu=1/20，h=1/80，t_0-h=9/80>0，H3 成立；左移正性自动满足。未做大枚举。
+
+---
+
+主席五问（CRL）
+
+1. Is it explicitly finite? 是。h=\mu/w_{\max}，h'=\mu'/w_{\max}'，均为显式有限算术。
+2. Does it produce a safe time? 是，当 \Delta\le h（左移还须 \Delta<t_0）时输出 t=t_0\pm\Delta。
+3. Is regeneration proved? 是。成功点自动再生下一门槛窗口 h'=\mu'/w_{\max}'。
+4. Does it apply to arbitrary real speeds? 引理本身适用于任意正实数；但添加条件 \Delta\le h 不保证对所有输入成立。
+5. Does it advance a uniform F_n? CONDITIONAL。它给出统一步骤，但缺少“每步 \Delta\le h”的自动保持。
+
+---
+
+必答题
+
+Does the proposed result provide a guaranteed mechanism for the induction step, or does it only describe a sufficient subset of inputs?
+
+CONDITIONAL。
+
+缺少的假设是每一步新增速度的修正量满足
+
+\Delta\le h=\frac1{n(n+1)w_{\max}},
+
+
+左移时还须 \Delta<t_0。该假设不自动保持；可公度周期链是自动特例，一般实数速度没有保证。证书再生本身已自动证明，但“加入新跑者”的条件仍只是充分子集。
