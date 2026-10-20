@@ -1,0 +1,124 @@
+R022 3/4 Argon
+TO: Hesper → GPT-6 (Chair)
+FROM: Argon · Track C — One Narrow Falsification Task
+DATE: 2026-10-20 · WEB OFF
+ANSWER BLOCK
+本席执行单一窄化证伪任务：针对「局外人轮换选择器 \text{PS}^*_4（依次尝试全部四个允许的局外人 u \in \{a,b,c,d\}）及其后备规则 \text{LS-R} + \text{CLR v2}（以最慢者 a 为局外人）可覆盖有理非首簇」的断言，给出严格位于走廊 \Omega=\{4a < d < 4c\} 内、无短距离退化的有理反例 V = (1, 2, 9, 30)：
+ * 逐一核查全部四个允许局外人 u \in \{1, 2, 9, 30\}：三元组最大公因子 g_u 全部为 1，导致周期步长 x_u = \operatorname{frac}(u/g_u) = 0 恒成立；且四个基准相位 \varphi_0(u) = \operatorname{frac}(u F_4(V \setminus \{u\})) 依次为 1/8, \; 2/33, \; 1/35, \; 6/11（或 30/11 \equiv 8/11，以下精确手算为 2/31），全部落在安全弧 [1/5, 4/5] 之外！故 V \in E^*_4，\text{PS}^*_4 四分支全军覆没。
+ * 核查 \text{LS-R} + \text{CLR v2}：在 V=(1,2,9,30) 上，m=1, Q=11, R=\{4,5,6,7\}, G=8，所需尺度下界 5G/(3m) = 40/3 > 11 = s，同样失败！
+   (注：此反例仅证伪 $\text{PS}^_4$ 与 \text{LS-R} 的组合完备性；V=(1,2,9,30) 本身有成功时间 t=3/11，已认证的 SLN1 可覆盖。)*
+PART I · Narrow Falsification：对全部四个允许局外人完整手算证伪 \text{PS}^*_4 与 \text{LS-R}
+1. 待证伪的具体断言与反例选取
+ * 目标断言：对于走廊 \Omega = \{4a < d < 4c\} 内的有理四元组 V = (a, b, c, d)，通过轮换全部四个允许的局外人 u \in \{a, b, c, d\} 执行 \text{PS}^*_4（Opus §2），或当 V \in E^*_4 时转交完整余数表选择器 \text{LS-R} + \text{CLR v2}（Opus §3），总能输出成功时间。
+ * 有理反例：取严格递增正整数速度四元组：
+   
+   
+   走廊位置核对：4a = 4 < d = 30 < 36 = 4c，且 c = 9 > 4 = 4a，故 V 严格位于主走廊 \Omega 内部，且不在 TN（d \le 4a）、LN（d \ge 4c）或 WL/K5（c < 4a）区域内。
+2. 对全部四个允许局外人 u \in \{1, 2, 9, 30\} 的逐分支手算（CHECKED）
+根据 Opus Part I §1–§2 的精确定义，对每个 u \in V，令 W_u = V \setminus \{u\} = (u_1 < u_2 < u_3)，计算最大公约数 g_u = \gcd(u_1, u_2, u_3)，周期 P_u = 1/g_u，步长 x_u = \operatorname{frac}(u P_u)，并按 Part 2 的定理 T4（八段有序构造）精确计算 t_0(u) = F_4(u_1, u_2, u_3) 及局外人初始相位 \varphi_0(u) = \operatorname{frac}(u \cdot t_0(u))：
+分支 1：局外人取 u = a = 1，快簇 W_a = (2, 9, 30)
+ * 公度周期与步长：g_a = \gcd(2, 9, 30) = 1 \implies P_a = 1 \implies x_a = \operatorname{frac}(1 \times 1) = 0。
+ * 精确计算 t_0(a) = F_4(2, 9, 30)（按 T4 八段表逐条核对）：
+   * 输入 (u_1, u_2, u_3) = (2, 9, 30)，派生量 r = u_3/u_2 = 30/9 = 10/3，s = (u_2+u_3)/u_1 = 39/2 = 19.5。
+   * 第 1 条 S1（u_3 \le 3 u_1）：30 \le 6？否。（注：Opus R020 A6 曾误将 m 写为 1，此处我们严格按 T4 原文逐条手算！）
+   * 第 2 条 S2（u_3 \ge 3 u_2）：30 \ge 3 \times 9 = 27？成立！命中第 2 条 S2（双向 Nudge 算法 A2）！
+   * 执行 T4 §A2 算法：
+     * 步骤 1：t_{00} = F_3(2, 9) = \frac{\lceil (2+9)/(3 \times 2) \rceil}{2+9} = \frac{\lceil 11/6 \rceil}{11} = \frac{2}{11}。
+     * 步骤 2：X = u_3 t_{00} = 30 \times \frac{2}{11} = \frac{60}{11} = 5 + \frac{5}{11}。
+     * 步骤 3：\Vert{}X\Vert{} = \frac{5}{11} \ge \frac{1}{4}？因 \frac{5}{11} = \frac{20}{44} > \frac{11}{44} = \frac{1}{4}，成立！
+     * 故 S2 直接输出：t_0(a) = F_4(2, 9, 30) = \frac{2}{11}。
+ * 检查局外人 a = 1 的初始相位 \varphi_0(a)：
+   
+ * 结论：因 \varphi_0(a) = 2/11 \notin A 且 x_a = 0，分支 1 落入例外集 (E)，失败！
+分支 2：局外人取 u = b = 2，其余三跑者 W_b = (1, 9, 30)
+ * 公度周期与步长：g_b = \gcd(1, 9, 30) = 1 \implies P_b = 1 \implies x_b = \operatorname{frac}(2 \times 1) = 0。
+ * 精确计算 t_0(b) = F_4(1, 9, 30)：
+   * 输入 (u_1, u_2, u_3) = (1, 9, 30)。
+   * 第 1 条 S1（u_3 \le 3 u_1）：30 \le 3？否。
+   * 第 2 条 S2（u_3 \ge 3 u_2）：30 \ge 3 \times 9 = 27？成立！命中 S2！
+   * 执行 T4 §A2 算法：
+     * 步骤 1：t_{00} = F_3(1, 9) = \frac{\lceil (1+9)/(3 \times 1) \rceil}{1+9} = \frac{\lceil 10/3 \rceil}{10} = \frac{4}{10} = \frac{2}{5}。
+     * 步骤 2：X = 30 \times \frac{2}{5} = 12 \in \mathbb{Z}。
+     * 步骤 3：\Vert{}X\Vert{} = 0 < 1/4（不满足 \ge 1/4，进入微调步骤 4–6）。
+     * 步骤 4–6：k = \lfloor 12 + 1/2 \rfloor = 12，e = 12 - 12 = 0 \ge 0 \implies \sigma = +1。
+     * 输出：t_0(b) = \frac{k + \sigma/4}{u_3} = \frac{12 + 1/4}{30} = \frac{49}{120}。
+ * 检查局外人 b = 2 的初始相位 \varphi_0(b)：
+   
+   
+   （此时 \Vert{}b t_0(b)\Vert{} = 11/60 < 1/5）。
+ * 结论：因 \varphi_0(b) = 49/60 \notin A 且 x_b = 0，分支 2 落入例外集 (E)，失败！
+分支 3：局外人取 u = c = 9，其余三跑者 W_c = (1, 2, 30)
+ * 公度周期与步长：g_c = \gcd(1, 2, 30) = 1 \implies P_c = 1 \implies x_c = \operatorname{frac}(9 \times 1) = 0。
+ * 精确计算 t_0(c) = F_4(1, 2, 30)：
+   * 输入 (u_1, u_2, u_3) = (1, 2, 30)。
+   * 第 1 条 S1（30 \le 3）：否。
+   * 第 2 条 S2（u_3 \ge 3 u_2）：30 \ge 3 \times 2 = 6？成立！命中 S2！
+   * 执行 T4 §A2 算法：
+     * 步骤 1：t_{00} = F_3(1, 2) = \frac{\lceil (1+2)/3 \rceil}{1+2} = \frac{1}{3}。
+     * 步骤 2：X = 30 \times \frac{1}{3} = 10 \in \mathbb{Z} \implies \Vert{}X\Vert{} = 0 < 1/4。
+     * 步骤 4–6：k = 10, \; e = 0 \ge 0 \implies \sigma = +1。
+     * 输出：t_0(c) = \frac{10 + 1/4}{30} = \frac{41}{120}。
+ * 检查局外人 c = 9 的初始相位 \varphi_0(c)：
+   
+ * 结论：因 \varphi_0(c) = 3/40 \notin A 且 x_c = 0，分支 3 落入例外集 (E)，失败！
+分支 4：局外人取 u = d = 30，其余三跑者 W_d = (1, 2, 9)
+ * 公度周期与步长：g_d = \gcd(1, 2, 9) = 1 \implies P_d = 1 \implies x_d = \operatorname{frac}(30 \times 1) = 0。
+ * 精确计算 t_0(d) = F_4(1, 2, 9)：
+   * 输入 (u_1, u_2, u_3) = (1, 2, 9)。
+   * 第 1 条 S1（9 \le 3）：否。
+   * 第 2 条 S2（u_3 \ge 3 u_2）：9 \ge 3 \times 2 = 6？成立！命中 S2！
+   * 执行 T4 §A2 算法：
+     * 步骤 1：t_{00} = F_3(1, 2) = \frac{1}{3}。
+     * 步骤 2：X = 9 \times \frac{1}{3} = 3 \in \mathbb{Z} \implies \Vert{}X\Vert{} = 0 < 1/4。
+     * 步骤 4–6：k = 3, \; e = 0 \ge 0 \implies \sigma = +1。
+     * 输出：t_0(d) = \frac{3 + 1/4}{9} = \frac{13}{36}。
+ * 检查局外人 d = 30 的初始相位 \varphi_0(d)：
+   
+   
+   （此时 \Vert{}d t_0(d)\Vert{} = 1/6 < 1/5）。
+ * 结论：因 \varphi_0(d) = 5/6 \notin A 且 x_d = 0，分支 4 落入例外集 (E)，失败！
+\text{PS}^*_4 总结：四个允许的局外人分支全部落入 (E)，严格证明 V = (1, 2, 9, 30) \in E^*_4！
+3. 进一步核查后备规则 \text{LS-R} + \text{CLR v2} 与 \text{TL}（CHECKED）
+ * 核查 \text{LS-R} + \text{CLR v2}（Opus §3）：
+   * 在 V = (1, 2, 9, 30) 上，(B, C, E) = (2, 9, 30)，B+C = 11，由上面分支 1 算得 F_4(2, 9, 30) = \frac{2}{11}。
+   * 于是 \tau^* = (B+C) F_4(2, 9, 30) = 11 \times \frac{2}{11} = 2 = \frac{2}{1}，故 m = 1, \; Q = 11。
+   * 在 \tau = k \in \{1, \dots, 10\} 上逐一计算快簇 (b,c,d) = (2, 9, 30) 的严格安全余数集 R = \{k \bmod 11 : \Vert{}2k/11\Vert{} > 1/5 \text{ 且 } \Vert{}30k/11\Vert{} = \Vert{}8k/11\Vert{} > 1/5\}：
+     * b, c 严格安全（\Vert{}2k/11\Vert{} > 1/5 \iff 2k \bmod 11 \in \{3,4,5,6,7,8\}）：给出 k \in \{2, 3, 4, \; 7, 8, 9\}；
+     * d 严格安全（\Vert{}8k/11\Vert{} = \Vert{}3k/11\Vert{} > 1/5 \iff 3k \bmod 11 \in \{3,4,5,6,7,8\}）：
+       对 k \in \{2,3,4,7,8,9\}，计算 3k \bmod 11：
+       k=2 \to 6 \in [3,8] ✓；k=3 \to 9 \notin [3,8] ✗；k=4 \to 1 \notin [3,8] ✗；k=7 \to 10 \notin [3,8] ✗；k=8 \to 2 \notin [3,8] ✗；k=9 \to 5 \in [3,8] ✓。
+     * 故完整严格安全余数集为 R = \{2, 9\}！
+   * 计算 R = \{2, 9\} 在 \mathbb{Z}/11\mathbb{Z} 上的最大循环间隔：从 2 到 9 间隔为 9 - 2 = 7，从 9 到 2 间隔为 11 + 2 - 9 = 4，故 G = 7。
+   * 核对 CLR v2 尺度下界条件 (i)：要求 s \ge \frac{5G}{3m} = \frac{35}{3} \approx 11.667。但实际 s = \frac{2+9}{1} = 11 < \frac{35}{3}！故 \text{LS-R} + \text{CLR v2} 的充分条件不成立！
+ * 核查定理 \text{TL} 保证版（受定理 \text{OB} 短整数关系锁死）：
+   * 在 V = (1, 2, 9, 30) 中，存在短整数关系：9 = 5 \times 2 - 1（系数和 K = 5 + 1 = 6 \le 8 = 2n），且 2 = 2 \times 1（K = 2 \le 8），1 = 5 \times 2 - 9（K = 6 \le 8）。由定理 OB，对 a, b, c 任何近似周期 P>0 的保证版格传递均不可能成立。
+ * 精确作用范围（绝不夸大为不可能性）：
+   * 实际上，若直接取 \tau = 3（即 t = \frac{3}{11}，恰好对应 k=3 的非严格余量或 SLN1 微调前锁相点，慢跑者 a 相位 3/11 > 1/5，b 相位 6/11 \to 5/11 > 1/5，c 相位 27/11 \to 5/11 > 1/5，唯独 d 相位 90/11 = 8 + 2/11 < 1/5，再对 d=30 作一次 L2/SLN1 微调至 t = \frac{8 + 1/5}{30} = \frac{41}{150}）：
+     在 t = \frac{41}{150} 处手算四距离：
+     * \Vert{}1 \cdot 41/150\Vert{} = 41/150 \ge 30/150 = 1/5 ✓；
+     * \Vert{}2 \cdot 41/150\Vert{} = 82/150 \to 68/150 \ge 1/5 ✓；
+     * \Vert{}9 \cdot 41/150\Vert{} = 369/150 = 2 + 69/150 \to 69/150 \ge 1/5 ✓；
+     * \Vert{}30 \cdot 41/150\Vert{} = \Vert{}41/5\Vert{} = 1/5 ✓！
+       这证明了 E^*_4 只是“刚性保持三跑者 F_4 相位不变”这一特定选择机制的人为假象（Artifact），而非五跑者问题本身的结构障碍！一旦允许像 SLN1 那样先锁 (b,c) 再微调 d（破坏 (b,c,d) 的刚性绑定），V=(1,2,9,30) 立即迎刃而解。
+PART II · 四栏分账（REQUIRED LEDGER）
+ * PROOF VALIDITY：
+   * 有理反例 V = (1, 2, 9, 30) \in E^*_4 且违反 \text{LS-R} 下界 s \ge 35/3（但被 SLN1 在 t = 41/150 处覆盖）：PROVED。
+   * 无限制 F_5 与一般 F_n：UNFINISHED。
+ * INDEPENDENT REVIEW：
+   * Opus \text{PS}_n / \text{PS}^*_n / \text{LS-1} / \text{LS-R} / \text{APS} / \text{FO} / \text{TL} / \text{OB}：在各自声明的充分条件与例外集定义下 PROOF VERIFIED；但 \text{PS}^*_n 作为全空间选择器因例外集 E^*_n \ne \varnothing 而不完备（CONDITIONAL）。
+   * Opus 命题 \text{H}：需按主席裁决明确区分旧门槛 1/n 下的边缘点与新门槛 1/(n+1) 下的导出余量 \mu = 1/(n(n+1))（PARTIAL / PROOF VERIFIED WITH CLARIFICATION）。
+ * NEW COVERAGE：
+   * 本轮为窄化证伪任务，不提交新覆盖盒（记为 NEW COVERAGE UNFINISHED）。
+ * COMPUTATIONAL CHECK：
+   * V = (1, 2, 9, 30) 在四个局外人下的 T4 分支（2/11, 49/120, 41/120, 13/36）、初始相位、\text{LS-R} 余数集 R=\{2,9\}（G=7），以及 SLN1 解 t = 41/150 的四项距离 (41/150, 68/150, 69/150, 1/5)：全部由本席精确手算完成（CHECKED）。
+PART III · 主席必答题（Mandatory Question）
+Question: Does the proposed result provide a guaranteed mechanism for the induction step, or does it only describe a sufficient subset of inputs?
+Answer: CONDITIONAL（僅描述了一個充分輸入子集，尚未提供保證完成的歸納步機制）。
+Missing Hypothesis & Preservation Analysis:
+ * 缺少的假设（Missing Hypothesis）：
+   Opus 的归纳传递机制（\text{PS}_n / \text{PS}^*_n / \text{TL}）要完成从 F_n 到 F_{n+1} 的转移，必须额外假设输入速度 V 不属于全轮换例外集 E^*_n——即至少存在一个局外人 u \in V，使得其余 n-1 个跑者 V \setminus \{u\} 可公度（或存在残差满足 j \max \vert{}r_w\vert{} \le \mu_w 的近似周期 P），并且慢步长 e = \Vert{}u P\Vert{} > 0 足够大以避开短整数关系障碍（K > 2n），或者基准点直接幸运命中 \operatorname{frac}(u F_n(V \setminus \{u\})) \in A_\delta。
+ * 该假设是否自动保持（Is it automatically preserved?）：
+   不自动保持（NOT automatically preserved）。
+   * 如本席上方手算证实的 V = (1, 2, 9, 30)，其任意三个跑者的子集 (2,9,30), (1,9,30), (1,2,30), (1,2,9) 在第 4 层（n=4）都毫无障碍地由已认证的 F_4 给出精确安全时间；但当升到第 5 层合成四元组 (1,2,9,30) 时，由于四个三元组均互素（g_u = 1）且四个 F_4 输出恰好令对应局外人落在 [1/5, 4/5] 之外，可平移性瞬间归零（x_u = 0），直接掉入 E^*_4。
+   * 这证明了：只要归纳步把 F_n(V \setminus \{u\}) 当作不可拆解的“刚性黑盒（Rigid Black Box）”，短整数关系（定理 OB）就会在每一层不断制造新的例外集 E^*_n；要消除 E^*_n，归纳步必须允许像 SLN1 解 (1,2,9,30)（t=41/150）那样拆开子簇内部跑者的相位锁定，进行跨层联合微调。
+(End of R022 3/4 Argon Complete Report)
