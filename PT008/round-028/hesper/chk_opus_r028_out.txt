@@ -1,0 +1,15 @@
+random rational triples 79999 unsafe 0 bound violations 0
+B1 c<=3a 18320 max a*t 0.25 claimed 1/4
+B2a 14919 max a*t 0.6665404279492521 claimed 5/6
+B2b 15811 max a*t 0.6987900195443785 claimed 11/12
+B3 b>=3a 19676 max a*t 0.5542159469902884 claimed 3/4
+B4 3/(b+c) 1281 max a*t 0.5799660789247972 claimed 3/4
+B5 2/(b+c) 6880 max a*t 0.4976428508697108 claimed 1/2
+B6 4/(b+c) 1596 max a*t 0.7497644544297083 claimed 3/4
+B7 5/(b+c) 1201 max a*t 0.6247743794323152 claimed 3/4
+B8 3/(a+c) 315 max a*t 0.7498717173905607 claimed 3/4
+t0 3/16 B1 c<=3a
+PS t 27/16 ['5/16', '1/4', '3/8', '1/4']
+t=1/3 ['1/3', '4/9', '1/3', '1/3']
+C1 counted 32 distinct 23 F^FW 1/3 g 1/3
+FWS(i) bound 106/3
