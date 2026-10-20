@@ -1,0 +1,24 @@
+R025 3/4 Kimi
+
+**ANSWER BLOCK**  
+审 Opus MZ：取 \(V=(1,\dots,n)\)、\(u=n+1\)、\(\delta'=1/(n+2)\)。我独立重证：\(t_0=1/(n+1)\) 使 \(V\) 最小距离 \(1/(n+1)>\delta'\)，Lipschitz 半径 \(h=1/[n(n+1)(n+2)]\)，故 \(S_{\delta'}(V)\) 有正长度。扩充后 \(z_j=jt\ (j=0,\dots,n+1)\) 两两距 \(\ge\delta'\)；\(n+2\) 个弧段和为 1，故全等距，\(t\equiv k/(n+2)\)，\(\gcd(k,n+2)=1\)。非空 \((k=1)\) 且可数零测。MZ 本体验证通过；过度推论为 GAP FOUND。再生保证：**NO**。
+
+**定义与假设**：仅审 MZ 族：整数等距速度 \(1,\dots,n+1\)，门槛 \(1/(n+2)\)，圆上 Lebesgue 测度。  
+**主席必答：Does your result supply an automatically regenerating guarantee?** **NO**。MZ 给出的是“非空但零测”的障碍，不是再生机制；任意实数速度与一般 \(F_n\) 仍 **UNFINISHED**。
+
+**PROOF VALIDITY**  
+- MZ 核心命题 \(n\ge2\)：**PROVED**（本席独立重证；不依赖 \(u=5/48\)）。  
+- “正测度证书在所有步必然失败”的强读法：**UNFINISHED**。  
+- Qwen 精确再生断言：本轮未选，**UNFINISHED**。
+
+**INDEPENDENT REVIEW**  
+- 对 MZ 正测度半支：**PROOF VERIFIED**。逐项：\(v=1\) 在 \(t_0=1/(n+1)\) 距 \(1/(n+1)\)；余量 \(\mu=1/(n+1)-1/(n+2)=1/((n+1)(n+2))\)；最陡斜率 \(n\)，故半宽 \(h=\mu/n=1/[n(n+1)(n+2)]>0\)，\((t_0-h,t_0+h)\subset S_{\delta'}(V)\)。  
+- 对 MZ 零测半支：**PROOF VERIFIED**。逐项：扩充后有 \(m=n+2\) 点 \(z_j=jt\)。任意两点距为 \(\|(i-j)t\|\)，且 \(|i-j|\in\{1,\dots,n+1\}\)，故 \(m\) 点两两距 \(\ge1/m\)。\(m\) 个圆周弧段和为 1，每段 \(\ge1/m\)，只能全等距。于是 \(t\equiv k/m\)；若 \(\gcd(k,m)=g>1\)，取 \(j=m/g\) 得 \(jk\equiv0\pmod m\)，重点距离 0，矛盾。故 \(\gcd(k,m)=1\)。\(k=1\) 合法，安全集非空；又安全集 \(\subset (1/m)\mathbb Z\)，可数，测度 0。  
+- 对“凡测度/分布证书皆不可能”的宽推论：**GAP FOUND**。MZ 只否证“把正测度当作非空的必要保证”的证书；不排除“算术结构 + 测度信息”的混合证书。  
+- 对任意实数速度推广：**UNFINISHED**。本证明使用整数等距族 \(1,\dots,n+1\)，未覆盖任意实 \(V\)。
+
+**NEW COVERAGE**  
+- **UNFINISHED**。本席只完成独立审计与 n=4 手核，不主张新盒子。
+
+**COMPUTATIONAL CHECK**  
+全部为本席手算，未用代码。n=4：\(h=1/(4\cdot5\cdot6)=1/120\)，\(t_0=1/5\)，旧四距离 \(1/5,2/5,2/5,1/5>1/6\)。扩充为 \((1,2,3,4,5)\) 后，\(S_{1/6}=\{k/6:\gcd(k,6)=1\}+\mathbb Z=\{1/6,5/6\}+\mathbb Z\)。核验 \(t=1/6\)：五距离 \(1/6,1/3,1/2,1/3,1/6\)，全 \(\ge1/6\)。
