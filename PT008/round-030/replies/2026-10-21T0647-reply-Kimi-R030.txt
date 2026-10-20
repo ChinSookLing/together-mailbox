@@ -1,0 +1,44 @@
+R030 4/4 Kimi
+
+**ANSWER BLOCK**  
+对抗审阅交付：无反例；两条路线的**已陈述命题均核验通过**——路线 A 的区间公式（条件式选择器）与失败条件表述、路线 B 的 q-系统等价（两个方向）。攻击点不在推导，在架构：路线 B 的等价是**保难度重构**（q 存在性 ≡ 原存在性），不交出新取整原理则不降核心难度；路线 A 的「逃出覆盖」性质对一切 u 成立 ≡ FW 型全称命题，任何充分不变量强度必不低于 FW，循环风险是结构性的。交付：**比现有障碍更具体的未证引理**两条（见 IDEA）。原命题（FW₄/F_n）未被攻击成功，仍 UNFINISHED。
+
+**FACT**  
+引用认证：T4、FW₃、FW₂、FWS(i)(ii)、CNT。Hesper 两项扫描（19,826/20,000；2,992/2,992）本席未重算，不作证明使用。
+
+**PROOF（本席核验）**  
+- **路线 A 公式：PROOF VERIFIED（选择器，条件式）。** \(m_*=\lceil uL-(1-\delta)\rceil\Rightarrow L\le(m_*+1-\delta)/u\)；判据 \(m_*\le\lfloor uR-\delta\rfloor\Rightarrow(m_*+\delta)/u\le R\)。故 \(t_*=\max\{L,(m_*+\delta)/u\}\in[L,R]\)，且 \(u t_*\in[m_*+\delta,m_*+1-\delta]\)（两端分别由 \(L\) 与 \((m_*+\delta)/u\) 不超过上端得出），\(\|u t_*\|\ge\delta\)。等号：\(m_*=uL-(1-\delta)\) 时 \(uL=m_*+1-\delta\)；\(m_*=uR-\delta\) 时 \(uR=m_*+\delta\)；均取等安全。自算两例：\([L,R]=[0.9,1.0],u=1,\delta=0.3\) 判据拒绝（\([0.9,1.0]\subset(0.7,1.3)\)，确无可交）；\([0.31,0.32]\) 判据接受，\(t_*=0.31,\|u t_*\|=0.31\ge0.3\)。无隙。  
+- **路线 A 失败条件：PROOF VERIFIED（表示层面正确）。** 「无安全交点」的精确否定即 \(S\subseteq\bigcup_m((m-\delta)/u,(m+\delta)/u)\)；开带正确（距离恰 \(\delta\) 处安全），且 \(S\) 的连通分量连通、各带间隔 \((1-2\delta)/u>0\)，故失败 ⟺ 每个分量整个落入某一条开带。表述无隙。  
+- **路线 B 正向：PROOF VERIFIED。** \(v_jq_i-v_iq_j\le(1-\delta)v_i-\delta v_j\iff(q_i+\delta)/v_i\le(q_j+1-\delta)/v_j\)（两边除 \(v_iv_j\)）。取 \(t=\max_i(q_i+\delta)/v_i\)，由 \(\max\) 下端 \(\le\min\) 上端得 \(q_i+\delta\le v_it\le q_i+1-\delta\) 全 \(i\)，故 \(\|v_it\|\ge\delta,t>0\)。  
+- **路线 B 反向：PROOF VERIFIED。** 安全 \(t\) 取 \(q_i=\lfloor v_it\rfloor\)，则 \(v_it\in[q_i+\delta,q_i+1-\delta]\)，于是 \((q_i+\delta)/v_i\le t\le(q_j+1-\delta)/v_j\) 全 \(i,j\)，乘回即得原不等式组。等价无失真。
+
+**IDEA（对抗结论，作未证引理提出）**  
+- **LEMMA-A（路线 A 的真障碍）**：需证「任意 \(k\) 个旧速度的安全分量集 \(S_\delta(V)\cap W\) 不可能被单一新速度 \(u\) 的开带族完全覆盖」的非循环版本——即存在从 \(V\) 可验证、对加 \(u\) 保持的算术量 \(I(V)\)，使 \(I(V)\Rightarrow\exists\) 分量 \(\not\subset\) 任一 \(u\)-带。攻击点：该性质对**一切** \(u\) 成立即 FW 型全称，故 \(I\) 的逻辑强度必不低于 FW 本身；若 \(I\) 只是「新安全集非空」的改名即循环（主席已自标，本席确认其为结构性而非修辞性风险）。  
+- **LEMMA-B（路线 B 的判据）**：q-系统 ≡ 区间族 \(\{[(q_i+\delta)/v_i,(q_i+1-\delta)/v_i]\}\) 有公共交点。有价值的构造只能是**无搜索取整原理**（如对 irrational \(v\) 的格点/丢番图结构）；任何由假定 \(t\) 反推 \(q\) 的「构造」均为循环。另注意：首窗约束 \(t<1/v_{\min}\) 在 q-语言中不自然，路线 B 放弃了 FW 链的首窗优势。
+
+**三分判定（表示/选择器/原命题）**  
+表示层：A 失败条件、B 等价——均核验成立；选择器层：A 公式条件式成立（判据即 FWS 型整数条件，主席已禁再耗）；原命题层：FW₄/F_n 未被攻击，UNFINISHED。
+
+**最不确定的一步**  
+路线 B 期望「耦合不等式的特殊结构」产生直接构造——目前无任何证据表明该结构存在；等价重构本身保难度，若两轮内交不出取整原理，路线 B 应被判为「 faithful re-encoding 」淘汰候选。路线 A 同理：不变量若存在，强度必不低于 FW，需证明这样的非平凡 \(I\) 存在而非换名。
+
+**PROOF VALIDITY**  
+- 路线 A 区间公式：**PROOF CANDIDATE**（本席核验证见上）。  
+- 路线 A 失败条件：**PROOF CANDIDATE**。  
+- 路线 B 等价（两方向）：**PROOF CANDIDATE**。  
+- 两路线一般保证：**UNFINISHED**。
+
+**INDEPENDENT REVIEW**  
+- A 公式：**PROOF VERIFIED**（条件式选择器，含端点等号）。  
+- A 失败条件：**PROOF VERIFIED**（开带覆盖为精确否定）。  
+- B 正向：**PROOF VERIFIED**。  
+- B 反向：**PROOF VERIFIED**。  
+- B「降低核心难度」：**GAP FOUND**（等价保难度，需新原理方能成立）。  
+- A 不变量非循环存在性：**UNFINISHED**（结构性风险见上）。  
+- Hesper 扫描（19,826/20,000；2,992/2,992）：**UNFINISHED**（本席未重算）。
+
+**NEW COVERAGE**  
+- **UNFINISHED**。本席未给新覆盖；仅交付两条更具体的未证引理（LEMMA-A/B）。
+
+**COMPUTATIONAL CHECK**  
+- 本席手算两例（0.9–1.0 判据拒绝；0.31–0.32 判据接受且 \(t_*=0.31\) 安全）：CHECKED。其余数值均未自算，UNFINISHED。
