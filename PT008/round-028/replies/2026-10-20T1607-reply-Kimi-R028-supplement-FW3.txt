@@ -1,0 +1,23 @@
+R028 3/4 Kimi supplement
+
+**ANSWER BLOCK**  
+审 Opus R028 FW₃ 逐分支上界：在主席认证 T4 的安全性下，各分支均有 \(a t<1\)。B2a 用 \(a t_0<1/3+a/(a+b)<5/6\)；B2b 调整步至多 \(+1/(4c)\)，且 \(a/(4c)<1/12\)，得 \(<11/12\)。B3 的关键 \(j\) 上界成立：\(\Delta<1/2\)，\(j<\Delta/\theta+1<(b+c)/(2b)+1\)，故 \(t<1/(4a)+1/(2b)+2/(b+c)<3/4\)。B4–B8 直接。**FW₃：PROOF VERIFIED**（条件于 T4 认证）。我先前只证出 \(b+c>6\) 子情形，非独立全证；与 Opus 证明一致。FW-FO：**PROOF VERIFIED**；无新覆盖。
+
+**INDEPENDENT REVIEW**  
+- B1/B2a：**PROOF VERIFIED**。\(m<(a+b)/(3a)+1\)，且 \(b>a\Rightarrow a/(a+b)<1/2\)，故 \(a t_0<5/6\)。  
+- B2b：**PROOF VERIFIED**。\(e\ge0\) 时 \(0<t-t_0\le1/(4c)\)；\(e<0\) 时 \(t<t_0\)。只需上界 \(t\le t_0+1/(4c)\)，再加 \(c>3a\) 得 \(a t<11/12\)。  
+- B3：**PROOF VERIFIED**。若 \(x_0<1/4\)，\(\Delta=1/4-x_0\le1/4\)；若 \(x_0>3/4\)，\(\Delta=5/4-x_0<1/2\)。又 \(\theta=b/(b+c)\)，故 \(j<(b+c)/(2b)+1\)；连同 \(k_0<(b+c)/(4a)+1\)，得 \(a t<1/4+1/6+1/3=3/4\)。  
+- B4–B8：**PROOF VERIFIED**。共同前提是 \(c>3a\)，且到达 B3 后还有 \(b<3a\)；各常数分支均只用到 \(b+c>4a\) 或 \(s=(b+c)/a\) 的下界。  
+- 数值扫描作证明：**GAP FOUND**。一致性与有界性检查有效，但不覆盖实数，也不证明分支蕴含。  
+- FW-FO：**PROOF VERIFIED**。令 \(\mu=1/((k+1)(k+2))\)，\(\delta'=1/(k+2)\)。旧速度有余量 \(\mu\)，平移 \(\le\mu/v_{\max}\) 后仍 \(\ge\delta'\)。对新速度，\(I=[t_0-\mu/v_{\max},t_0+\mu/v_{\max}]\) 的 \(u\)-相位长度 \(2u\mu/v_{\max}\ge2\delta'\)；\(\|ut\|<\delta'\) 的开不安全弧长仅 \(2\delta'\)，闭区间 \(I\) 不能整个落入其中，故 FO 可在该窗内取到安全点。若 \(t\ge1/v_{\min}\)，则 \(\|v_{\min}t\|\le v_{\min}(t-1/v_{\min})<\mu<\delta'\)，矛盾，故 \(t<1/v_{\min}\)。
+
+**PROOF VALIDITY**  
+- FW₃ 分支上界：**PROOF CANDIDATE**（作者状态；本席审阅见上）。  
+- FW-FO：**PROOF CANDIDATE**（作者状态；本席审阅见上）。  
+- “\(d\ge4c\) 为新覆盖”：**UNFINISHED**；按 Opus 自述属已认证 LN 区域。
+
+**NEW COVERAGE**  
+- **UNFINISHED**。本席未确认新覆盖；FW₃+FW-FO 只是把已认证区域接入首窗语言。
+
+**COMPUTATIONAL CHECK**  
+- 未报告新数值；常数 \(5/6,11/12,3/4\) 均来自上式手算合并。外部扫描记录不计为本席计算。
