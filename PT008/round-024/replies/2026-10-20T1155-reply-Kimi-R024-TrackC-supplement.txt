@@ -1,0 +1,39 @@
+R024 3/4 Kimi
+
+**ANSWER BLOCK**  
+选 Track B/Qwen 的 \(V_1\) 截断点证书：只记 \(\{1/5,2/5,3/5,4/5\}\) 即可保证加入 \(u=5/48\)、门槛降至 \(1/6\) 后仍非空。**DISPROVED**：四点新距离为 \(1/48,1/24,1/16,1/12\)，全 \(<1/6\)，截断证书判空；但完整周期证书取 \(t=9/5\)，五距离 \(1/5,2/5,1/5,2/5,3/16\) 全 \(\ge1/6\)。原因是旧 \(V_1\) 周期 \(1\)，新 \(u=5/48\) 非整数，\(t\) 与 \(t+1\) 对新跑者不等价。一般非空仍 **UNFINISHED**。
+
+**选定保证**：Qwen §5.1 型“有限截断安全点族可作再生/非空证书”。  
+**反例计算**：\(u=5/48\)。对 \(r=1,2,3,4\)，\(t=r/5\) 时新跑者距离  
+\[
+\|(5/48)(r/5)\|=r/48\in\{1/48,1/24,1/16,1/12\}<1/6 .
+\]
+但完整证书不空：\(t=9/5\)，旧速度距离  
+\[
+\|9/5\|=1/5,\ \|27/5\|=2/5,\ \|36/5\|=1/5,\ \|63/5\|=2/5,
+\]
+新速度  
+\[
+\|(5/48)(9/5)\|=\|9/48\|=3/16>1/6
+\]
+因 \(3/16-1/6=1/48>0\)。故失败的是“截断即完整”，不是该实例真实安全集为空。相关局外人选择仅固定 \(u=5/48\)；需检查的平移为 \(r/5+\mathbb Z\)，其中 \(4/5+1=9/5\) 已救回。已核对 \(r=1,2,3,4\)。
+
+**主席六问**  
+1) 截断点证书：Finite YES；Update CONDITIONAL；Nonempty NO；Deterministic selection CONDITIONAL；Arbitrary real NO；Auto-induction NO。  
+2) 完整周期/区间证书：Finite YES（有理，伪多项式界）；Update CONDITIONAL（数据相交可算）；Nonempty UNFINISHED；Deterministic selection CONDITIONAL；Arbitrary real UNFINISHED；Auto-induction UNFINISHED。
+
+**PROOF VALIDITY**  
+- 截断点证书作再生/非空保证：**DISPROVED**，见上四点与 \(t=9/5\)。  
+- 完整证书的数据更新：**PROOF CANDIDATE**，不交推出非空。  
+- 一般 \(F_5,F_n\)：**UNFINISHED**。
+
+**INDEPENDENT REVIEW**  
+- 对“截断证书足以判定再生”：**DISPROVED**；逐项论证如上。  
+- 对“本例证明完整安全集为空”：**GAP FOUND**；只证明截断丢周期，不证明 \(S_{1/6}(V_1\cup\{5/48\})=\varnothing\)，且 \(t=9/5\) 反证其为非空。  
+- 对任意实数速度有限共同周期：**UNFINISHED**。
+
+**NEW COVERAGE**  
+- 无新盒子；仅给出手算反例：**CHECKED**。不升级为定理。
+
+**COMPUTATIONAL CHECK**  
+- 本回复数值全为手算：\(r/48\ (r=1..4)\)，\(3/16-1/6=1/48\)，以及 \(t=9/5\) 的五个距离。未做大范围穷举。
