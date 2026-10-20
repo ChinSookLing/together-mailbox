@@ -1,0 +1,194 @@
+R028 4/4 DeepSeek
+
+ANSWER BLOCK：FWS(i) 第二份非作者审阅：PROOF VERIFIED；计数上界 k\Sigma v/v_{\min}+k/2 逐项成立。FWS(ii)：PROOF VERIFIED，但严格限于“FW_k 已成立”的输入；不是从存在性偷带。FW_k\RightarrowFW_{k+1} 不能自动成立：FW_k 只给一个首窗安全点 t_0 与余量 \mu=1/((k+1)(k+2))，加入新速度 u 需额外 \Delta\le\mu/M（M=\max V）或充分条件 u\ge M k(k+1)/2。FW_k（k\ge3）仍 UNFINISHED。UNIVERSAL FORMULA TEST：CONDITIONAL。
+
+---
+
+UNIVERSAL FORMULA TEST
+
+选择：CONDITIONAL。
+
+逐条，五项不等价：
+
+1. Existence within a bounded horizon：CONDITIONAL。
+   FW_1、FW_2 已证；FW_k（k\ge3）UNFINISHED。本审阅不提供新的有界存在性。
+2. A finite candidate family：PROVED。
+   C_1(V)=C(V)\cap(0,1/v_{\min}] 对任意有限正实数速度有限，计数上界
+   |C_1(V)|\le \sum_{v<v'}\left\lfloor\frac{v+v'}{v_{\min}}\right\rfloor+\sum_v\left\lfloor\frac{v}{v_{\min}}+\frac12\right\rfloor
+\le \frac{k\Sigma v}{v_{\min}}+\frac{k}{2}.
+
+
+   该界只依赖速度比，与整体缩放无关。
+3. A guaranteed finite selector：CONDITIONAL。
+   若 FW_k 成立，则 F^{FW}(V) 在有限候选 C_1(V) 上取最大 g_V 的最小者，必安全；否则不保证。FW_k 是假设，不是结论。
+4. A direct formula without trial enumeration：NO。
+   FWS 枚举 C_1(V) 的全部候选，候选数随 v_{\max}/v_{\min} 增长；不是闭式直接公式。
+5. An induction rule that automatically preserves its hypotheses：NO。
+   FW_k 不自动推出 FW_{k+1}；需要额外定量条件（见下）。
+
+---
+
+审阅 FWS(i)
+
+陈述：C_1(V)=C(V)\cap(0,1/v_{\min}]，则
+
+|C_1(V)|\le \sum_{v<v'}\left\lfloor\frac{v+v'}{v_{\min}}\right\rfloor+\sum_v\left\lfloor\frac{v}{v_{\min}}+\frac12\right\rfloor
+\le \frac{k\Sigma v}{v_{\min}}+\frac{k}{2}.
+
+逐项核验：
+
+· 第一类 j/(v+v')\le1/v_{\min}\iff j\le(v+v')/v_{\min}。正整数 j 的个数为 \lfloor(v+v')/v_{\min}\rfloor。
+· 第二类 (2j+1)/(2v)\le1/v_{\min}\iff 2j+1\le2v/v_{\min}。非负整数 j 的个数为 \lfloor v/v_{\min}+1/2\rfloor。
+· 求和：
+  \sum_{v<v'}\frac{v+v'}{v_{\min}}
+=\frac{(k-1)\Sigma v}{v_{\min}},
+
+
+  \sum_v\left(\frac{v}{v_{\min}}+\frac12\right)
+=\frac{\Sigma v}{v_{\min}}+\frac{k}{2}.
+
+
+  合计 \le k\Sigma v/v_{\min}+k/2。有限；只依赖速度比。
+
+审阅结论：PROOF VERIFIED。
+
+手算核对：V=\{1,2\}，v_{\min}=1。C_1=\{1/4,1/3,1/2,2/3,3/4,1\}，计数 6。精确公式：第一类 \lfloor3\rfloor=3；第二类 \lfloor1.5\rfloor+\lfloor2.5\rfloor=1+2=3；总 6。上界 2\cdot3/1+1=7。符合。
+
+---
+
+审阅 FWS(ii)
+
+陈述：若 FW_k 对 V 成立，则
+
+F^{FW}(V)=\min\{t\in C_1(V):g_V(t)=\max_{C_1(V)}g_V\}
+
+
+满足 g_V(F^{FW})\ge1/(k+1)。
+
+逐项核验：
+
+1. FW_k 给 t_0\in(0,1/v_{\min}) 且 g_V(t_0)\ge\delta=1/(k+1)。
+2. t_0 所在的安全分量 K 含于 \{t:\|v_{\min}t\|\ge\delta\} 的首个安全弧
+   [\delta/v_{\min},(1-\delta)/v_{\min}]
+
+
+   因为下一个安全弧起点 (1+\delta)/v_{\min}>1/v_{\min}。所以 K\subset(0,1/v_{\min}]。
+3. 由 HS，K\cap C(V)\ne\varnothing。取 c\in K\cap C(V)，则 c\in C_1(V) 且 g_V(c)\ge\delta。
+4. F^{FW} 在 C_1(V) 上最大化 g_V，故 g_V(F^{FW})\ge g_V(c)\ge\delta。
+
+审阅结论：PROOF VERIFIED（条件于 FW_k）。
+
+范围限定：FWS(ii) 的成功显式依赖 FW_k。FW_k 比“存在成功时间”更强；不能把已知存在性当作 FW_k。k\ge3 的 FW_k 仍 UNFINISHED。
+
+---
+
+FW_k\RightarrowFW_{k+1} 研究
+
+精确信息传递：FW_k 给：
+
+· 旧速度集 V，|V|=k，v_{\min}=\min V，M=\max V；
+· 一个首窗安全点 t_0\in(0,1/v_{\min})，且 g_V(t_0)\ge1/(k+1)。
+
+加入新速度 u，新门槛
+
+\delta'=\frac1{k+2}.
+
+
+旧门槛与新门槛的余量
+
+\mu=\frac1{k+1}-\frac1{k+2}=\frac1{(k+1)(k+2)}.
+
+
+所以旧 V 在 t_0 处对新门槛 \delta' 至少有余量 \mu。
+
+若 u 在 t_0 已安全：即 \|ut_0\|\ge\delta'，则 t_0 同时满足旧 V 与 u。首窗检查：
+
+· 若 u\ge v_{\min}，新首窗仍 (0,1/v_{\min})，t_0 在内；
+· 若 u<v_{\min}，新首窗为 (0,1/u)，且 t_0<1/v_{\min}<1/u。
+
+故 FW_{k+1} 成立。
+
+若 u 在 t_0 不安全：需要把时间移到 u 的安全边界。设所需最小位移为 \Delta。由 Lipschitz，旧 V 在位移 \Delta\le\mu/M 内仍满足新门槛。因此充分条件是
+
+\Delta\le\frac{\mu}{M}.
+
+
+FW_k 不保证这个条件。
+
+充分粗条件：若 u 在 t_0 附近相位扫过长度 \ge1-2\delta' 的弧，则必命中 u 的安全弧。半径 \mu/M 对应相位扫过 2u\mu/M。故
+
+\frac{2u\mu}{M}\ge1-2\delta'
+
+
+是充分条件。代入 \mu=1/((k+1)(k+2))、1-2\delta'=1-2/(k+2)=k/(k+2)，得
+
+u\ge \frac{Mk(k+1)}{2}.
+
+
+这是充分条件，不是必要条件。
+
+FW_{k+1} 需要的额外假设（FW_k 不保证）：
+
+· 新速度 u 在旧首窗安全点 t_0 的 \mu/M 邻域内有安全相位；或
+· u\ge Mk(k+1)/2；或
+· 旧 V 在首窗内有更长的安全窗口，使允许位移大于 \mu/M。
+
+因此 FW_k\RightarrowFW_{k+1}：UNFINISHED；不自动保持。
+
+---
+
+失败尝试 / 反例报告
+
+尝试：只用 FW_k 的单个 t_0 加 Lipschitz 直接推 FW_{k+1}。
+
+失败例子（CHECKED，手算）：k=2，V=(1,2)，FW_2 取 t_0=1/3：
+
+\|1/3\|=1/3,\qquad \|2/3\|=1/3.
+
+
+加入 u=3。新门槛 \delta'=1/4，余量
+
+\mu=1/3-1/4=1/12,\qquad M=2,\qquad \mu/M=1/24.
+
+
+在 t_0=1/3 处，ut_0=1，距离 0，不安全。最近的安全边界为 t=1/4（3/4 距离 1/4）或 t=5/12（5/4 距离 1/4）。位移
+
+|1/3-1/4|=1/12>1/24.
+
+
+所以仅靠 t_0 的 Lipschitz 窗口不够。
+
+但这不是 FW_3 反例：同一 V\cup\{3\} 在 t=1/4 处
+
+\|1/4\|=1/4,\quad \|2/4\|=1/2,\quad \|3/4\|=1/4,
+
+
+首窗 (0,1) 内安全，FW_3 对该例成立。该例子只否定“单个 t_0 直接推”的证明尝试，不否定 FW_{k+1} 本身。
+
+---
+
+四账本
+
+· PROOF VALIDITY：
+  FWS(i)：PROOF VERIFIED。
+  FWS(ii)：PROOF VERIFIED（条件于 FW_k）。
+  FW_k\RightarrowFW_{k+1}：UNFINISHED（需额外 \Delta\le\mu/M 或 u\ge Mk(k+1)/2）。
+  FW_k（k\ge3）：UNFINISHED。
+  失败尝试：CHECKED（非 FW_3 反例）。
+  一般 F_n：UNFINISHED。
+· INDEPENDENT REVIEW：本回复为 DeepSeek 第二份非作者审阅；未照抄 Kimi。FWS(i) 与 FWS(ii) 结论如上；FWS(ii) 严格限于 FW_k 假设。
+· NEW COVERAGE：无。FW 不自动保持；不主张 k\ge3 新覆盖；NEW COVERAGE UNFINISHED。
+· COMPUTATIONAL CHECK（手算展示）：
+  V=\{1,2\}：C_1=\{1/4,1/3,1/2,2/3,3/4,1\}，计数 6，上界 7，F^{FW}=1/3，距离 (1/3,2/3) 安全。
+  V=\{1,2\},u=3：t_0=1/3，\mu/M=1/24，最近安全边界距离 1/12>1/24；但 t=1/4 安全。
+  未用随机测试作证明。
+
+---
+
+必答
+
+Does your result directly advance one uniform constructive formula for runner counts 2 through 47?
+
+CONDITIONAL。
+
+它确认 FWS 是一个条件性有限选择器：在 FW_k 成立时，FWS(i)(ii) 给出有限候选族与安全选择；但它不证明 FW_k（k\ge3），不提供自动归纳，也不是无枚举的直接公式。一般 F_n 仍 UNFINISHED。
