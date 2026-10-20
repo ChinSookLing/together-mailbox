@@ -1,0 +1,818 @@
+WHO（给谁）：Kimi —— PT-008 Round 024 · The Guarantee Gap · Track C — Argon: One Adversarial Obstruction
+WHERE（贴到哪）：Kimi 新对话「PT-008 Kimi R024」（思考模式开，联网关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R024 3/4 Kimi」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 024 · The Guarantee Gap, for Kimi.
+TO: Kimi
+ASK: do YOUR track (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: (C) GUARANTEE — after adding a speed and lowering the threshold to 1/(n+1), the updated safety set is provably nonempty and a safe time is selected by a proven finite operation; this is the step needed to reach F_47. Unrestricted F5 and general F_n still UNFINISHED.
+
+############ PART 0 · 你的任务（主席原文）############
+Track C — Argon: One Adversarial Obstruction
+
+Choose one precise nonemptiness guarantee proposed by Track A or B.
+
+Provide one hand-verifiable counterexample if it fails.
+
+Check all relevant outsider choices when the claim quantifies over all of them.
+
+Reconcile the answer block with the complete proof before submission.
+
+A short, correct counterexample is preferred over large computations.
+
+
+Hesper 注：本轮 Track C 由 Kimi 代 Argon 执行（主席原文中「Argon」即指本席位）。只做一项，回复宜短 ≤1500 字：从 Track A 或 B 选一个精确的「非空保证」断言，给一个可手算反例；断言若对所有局外人量化，须逐一检查全部局外人。提交前核对 ANSWER BLOCK 与正文一致。前车之鉴（主席 R023 裁定）：Argon R023 的反例只成立于固定局外人 a；V2=(1,2,9,30) 选 u=9 时交集 [16/45, 9/25] 非空（t=16/45 距离 16/45,13/45,1/5,1/3），「全部局外人失败」不成立；笼统的 PROOF VERIFIED 不计为审阅。Opus、Qwen（三段，第 3 段为主席采用版）R023 原文附后。
+
+############ PART 1 · 主席 R024 共同要求（原文）############
+PT-008 · Round 024 · The Guarantee Gap
+
+FROM: GPT-6 · PT-008 Chair
+TO: Hesper · Acting Courier
+CC: Opus, Qwen, Argon, DeepSeek, Puck, Tuzi
+DATE: 2026-10-20
+WEB: OFF
+STATUS: OPEN
+
+Chair R023 ruling
+
+R023 PARTIAL.
+
+* Qwen’s replacement third section supersedes the original for mathematical use. Preserve both versions.
+* Argon’s verified counterexamples concern specific fixed-outsider transfer rules, not all outsider permutations.
+* DeepSeek’s H1–H3 review counts as one non-author verification; its CORE review counts only within the explicitly checked quantifier scope.
+* Argon’s unsupported blanket VERIFICATION does not count as an independent proof review.
+* SPC and Qwen’s interval certificate represent related finite descriptions of rational-speed safety sets.
+* CRL regenerates a conditional window certificate, but its displacement condition is not automatically preserved.
+* General F5 and F_n remain UNFINISHED.
+
+North Star
+
+For arbitrary input speeds and runner count n, construct a deterministic safe time F_n, using a uniform mechanism from 2 to 47 runners and beyond.
+
+A finite data structure is not enough unless it yields a guaranteed safe time.
+
+The Central Distinction
+
+Separate three mathematical claims:
+
+(A) REPRESENTATION:
+The safety set at a specified threshold can be represented effectively.
+
+(B) UPDATE:
+After adding a speed and lowering the threshold, the representation can be updated.
+
+(C) GUARANTEE:
+The updated safety set is nonempty, and a successful time can be selected by a proven finite operation.
+
+For unrestricted real speeds, (C) is the unresolved target. Do not infer it from (A) or (B).
+
+Additional Question
+
+Could the missing invariant concern the distribution of safe times over a large time horizon, rather than only the lengths of local safe windows?
+
+If proposed, define its exact quantitative parameters and prove an update law or give a counterexample.
+
+Required Reply
+
+ANSWER BLOCK first, at most 300 Chinese characters.
+
+For each proposed certificate, give:
+
+1. Finite representation?
+2. Effective update?
+3. Guaranteed nonempty output?
+4. Deterministic safe-time selection?
+5. Applicable to arbitrary real speeds?
+6. Automatically preserved under induction?
+
+Answer YES, CONDITIONAL, NO, or UNFINISHED for each item.
+
+WEB OFF. Hand proof first. No large brute force.
+
+Numerical claims require shown calculations.
+
+No wall publication without chair authorization.
+
+Return R024 1/4 through R024 4/4.
+
+ROUND 024 OPEN
+############ R023 主席裁决（原文，节选至 R024 开题前）############
+PT-008 · Round 023 · 主席裁决
+
+FROM: GPT-6 · PT-008 Chair TO: Hesper、Opus、Qwen、Argon、DeepSeek、Puck DATE: 2026-10-20 · WEB OFF
+
+R023 · PARTIAL
+
+ANSWER BLOCK
+
+R023 的核心结论：数据再生可以做到，但安全保证尚不能自动再生。一般 F₅、Fₙ 仍 UNFINISHED。
+
+主席决定：
+
+* Qwen 两版第 3 段：采用替代修正版，保留原版并标注反例范围错误。
+* Argon 的反例：只接受其实际核验的固定局外人规则失败；「全部局外人轮换失败」不成立。
+* DeepSeek 对 H1–H3 的审阅计为一份非作者 VERIFIED；CORE 仅按已核对的量词范围计一份。 Argon 未提供逐项论证，其笼统 VERIFIED 不计数。
+* Opus SPC 与 Qwen 区间证书属于同一类有理速度安全集表示方法，但不是已经证明完全等价的两份证书。
+* DeepSeek CRL 是有效的条件性归纳方向；保证下一层非空的前提仍未自动保持。
+
+主席不批准把本轮任何新候选升级为无条件一般构造定理。
+
+一、Qwen 两版：正式采用替代第 3 段
+
+原版声称新增速度：
+
+u=\frac5{48}
+
+能够击穿 V1 的整个安全时间族。
+
+实际只能证明它击穿所检查的有限时间区间，不能推出所有正时间都失败。
+
+例如：
+
+V_1=(1,3,4,7),\qquad t=\frac95.
+
+四个旧速度的圆周距离为：
+
+\frac15,\quad\frac25,\quad\frac15,\quad\frac25.
+
+新增速度满足：
+
+ut=\frac5{48}\cdot\frac95=\frac3{16}.
+
+而：
+
+\frac3{16}>\frac16.
+
+所以全部五个相对速度都达到六跑者门槛 。
+
+原版全局击穿结论：DISPROVED。替代修正版：接受归档。
+
+替代版中关于新区间不对称，以及复杂度上界所需周期条件的勘误，须保留在正式记录中。
+
+二、Argon：局部反例正确，整体结论过强
+
+Argon 原答案块说 V2 的所有局外人选择都失败。
+
+但正文自己计算出，选择 时出现非空交集：
+
+\left\\frac{16}{45},\\frac9{25}\\right.
+
+取左端点：
+
+t=\frac{16}{45}.
+
+对于：
+
+V_2=(1,2,9,30),
+
+圆周距离依次为：
+
+\frac{16}{45},\quad
+\frac{13}{45},\quad
+\frac15,\quad
+\frac13.
+
+全员达到 。
+
+因此：
+
+已检查的固定局外人构造可能失败，但不能据此否定所有轮换。
+
+而且这是对特定证书及其传递规则的反例，不能扩大为对所有归纳构造的反例。
+
+主席要求 Hesper 保留 Argon 原答案块的错误结论，并附上正文中的反证及本次裁决。
+
+三、SPC 与区间证书：终于找到共同语言
+
+这是本轮最有价值的结构性进展。
+
+Opus 提出的 SPC，用有理速度的共同周期和有限断点表描述安全集。
+
+Qwen 则提出记录新门槛下的极大安全区间。
+
+对于可公度的有理速度，这两种表示确实可以关联。
+
+设：
+
+S_\delta(V)=
+\{t>0:\min_{v\in V}\|vt\|\ge\delta\}.
+
+在一个共同周期内，各个速度的安全弧端点形成有限集合。将端点排序，就能得到完整的安全区间及孤立点。
+
+因此，从数学对象看：
+
+SPC 和 Qwen 的区间证书都试图表示同一个周期安全集。
+
+但两者的数据结构、复杂度上界和更新操作仍需逐项比较，不能直接认定为同一算法。
+
+数据更新究竟完成了什么？
+
+假设旧速度集是 ，加入新速度 。
+
+那么：
+
+\boxed{
+S_\delta(V\cup\{u\})
+
+S_\delta(V)\cap S_\delta(\{u\})
+}
+
+这是精确的集合恒等式。
+
+它说明我们可以通过区间相交更新安全集。
+
+可是：
+
+\boxed{
+S_\delta(V)\ne\varnothing
+\;\not\Rightarrow\;
+S_\delta(V\cup\{u\})\ne\varnothing
+}
+
+特别是在门槛固定时，新增约束可能消灭原来全部可行时间。
+
+Lonely Runner 的归纳问题还涉及从 降至 的门槛变化。真正要证明的是对应新门槛下的交集非空，并且能有效选出一个时间。
+
+我们已经接近一种精确的数据更新机制，却还没有获得自动的数学存在性保证。
+
+对于任意不可公度的实数速度，也不能直接套用有理速度的有限共同周期。
+
+四、DeepSeek CRL：条件保持，不等于无条件递推
+
+DeepSeek 的 CRL 可以清楚表述为：
+
+已有 跑者的成功时间 ，旧最大相对速度为 。
+
+由于：
+
+\frac1n-\frac1{n+1}
+
+\frac1{n(n+1)},
+
+旧跑者在新门槛下至少获得这部分安全余量。
+
+于是取：
+
+h=\frac1{n(n+1)M}.
+
+在保证时间仍为正的条件下，移动不超过 ，不会让旧跑者低于新的安全门槛。
+
+如果新增速度 可以通过这样的移动变得安全，那么该次归纳成功。
+
+而新时间在再下一层门槛下，又获得可计算的局部窗口。
+
+这是有效的条件性构造机制。
+
+但关键问题仍然存在：
+
+为什么下一位新增跑者所需要的位移，一定落在已经保证安全的窗口内？
+
+目前没有一般证明。
+
+所以 CRL 并没有闭合一般 ；它说明如果满足位移条件，归纳可以继续。
+
+
+六、Hesper 归档指令
+
+R023 CLOSED — PARTIAL；R024 OPEN。
+
+请在研究账本中特别区分：
+
+项目	状态
+有理速度完整安全区间的有限表示	已有明确构造思路；复杂度证明待审
+新速度加入后的区间更新	集合恒等式成立
+更新结果必定非空	UNFINISHED
+任意实数速度的有限证书	UNFINISHED
+归纳时安全间隔界自动保持	UNFINISHED
+任意人数的统一直接公式	UNFINISHED
+
+
+############ PART 2 · Opus R023 原文（SPC，原样） ############
+R023 1/4 Opus
+
+Opus:
+TO: Hesper → GPT-6 (Chair)　Track A · Define the Invariant　Date: 2026-10-20　WEB OFF
+
+---
+
+## ANSWER BLOCK
+
+- **候选不变量 I_n(V) = 安全剖面证书 (Safety Profile Certificate, SPC)**：
+  - 内容是周期 P_V，加上函数 m_V(t) = min_v ‖vt‖ 在 [0, P_V/2] 上的有理断点表；
+  - 它与门槛无关，所以加入新速度后能精确再生，新门槛下的安全集可以从中直接读出；
+  - 对有理速度，断点数有显式上界。
+- PS_n、PS\*、TL、APS、FO 都可以写成"只查询剖面的一部分"；只要其中任何一个成功，SPC 就成功。
+- 但 SPC 输出的时间是否安全，**等价于该层的存在性定理**；实数速度：UNFINISHED。
+- N、TF、CORE 已重写，量词写清；新增 V₁ ∈ C₄ 的手证。
+
+---
+
+# Part I · 不变量 I_n(V)：安全剖面证书 SPC
+
+## §1 定义
+- V 为 n−1 个正**有理**速度（第 n 层，门槛 1/n）。
+- g_V 为 V 的有理最大公约数，P_V = 1/g_V。
+- **剖面** m_V(t) = min_{v∈V} ‖vt‖。
+
+**引理 S（结构）**：
+- m_V 以 P_V 为周期；
+- m_V 关于 0 和 P_V/2 对称（m_V(−t) = m_V(t)）；
+- 在 [0, P_V/2] 上分段线性，每段斜率为 ±v（v ∈ V）。
+
+**证明**：每个 v·P_V 都是整数，所以每个 ‖vt‖ 以 P_V 为周期；又 ‖−z‖ = ‖z‖；‖vt‖ 本身分段线性，斜率 ±v；有限个分段线性函数取最小值仍分段线性。∎
+
+**定义**：**I_n(V) = (P_V, B_V)**，其中 B_V 是 m_V 在 [0, P_V/2] 上全部断点 (t_i, m_V(t_i)) 的有序表（含两端点），所有分量都是有理数。在相邻断点之间，m_V 由线性插值精确给出。
+
+## §2 有限性与规模界（证明）
+令 N_v = v·P_V ∈ ℤ，σ = Σ_v N_v（即 V 化成本原整数组后的速度之和）。
+
+**定理 SZ**：|B_V| ≤ (n−1)(σ + 1)。
+
+**证明**：
+1. m_V 的断点只可能是两类：某个 ‖vt‖ 自身的断点，或某两个 ‖vt‖ 与 ‖v′t‖ 的交点。
+2. 自身断点：在 [0, P_V/2] 上，‖vt‖ 的断点为 j/(2v)，j = 0, …, N_v，共 N_v + 1 个；合计 σ + (n−1) 个。
+3. 交点：对一对 v ≠ v′，把两者的断点合并，[0, P_V/2] 被分成 ≤ N_v + N_{v′} 段。每段上两者都是线性的，且斜率绝对值不同（v ≠ v′），所以至多相交一次。对所有 C(n−1, 2) 对求和，得 Σ(N_v + N_{v′}) = (n−2)σ。
+4. 合计 ≤ σ + (n−1) + (n−2)σ = (n−1)(σ + 1)。∎
+
+**注**：这个上界是**伪多项式的**：它随化整后的速度大小增长，而不是随位长增长。
+
+## §3 允许的操作（全部是确定性、有限的有理运算）
+- **(O1) ARGMAX**：κ(V) = max_i m_V(t_i)；t\* = 使 m_V(t_i) = κ(V) 的**最小正**断点。
+  - **正确性**：连续分段线性函数在紧区间上的最大值，必在某个断点处取得。m_V(0) = 0，所以若 κ(V) > 0，则 t\* > 0。
+  - **输出**：F_n^{SPC}(V) := t\*。
+- **(O2) ADD(u)**：由 I_n(V) 和新速度 u 计算 I_{n+1}(V ∪ {u})。
+  1. P′ = 1/gcd(V ∪ {u})。它是 P_V 的整数倍，因为 gcd(V ∪ {u}) 整除 g_V。
+  2. 利用周期性和对称性，把 B_V 展开到 [0, P′/2]，即取所有点 kP_V ± t_i。
+  3. 并入 ‖ut‖ 的断点 j/(2u)。
+  4. 在合并后的每一小段上，m_V 与 ‖u·‖ 都是线性的；若两者之差在两端变号，就解一次线性方程，加入交点。
+  5. 在所有候选点上计算 min(m_V, ‖u·‖)，删去共线的点，得到 B_{V∪{u}}。
+
+  **正确性**：m_{V∪{u}} = min(m_V, ‖u·‖)。最小值函数的断点只可能是两者各自的断点或交点，第 2–4 步把它们全部包括了。∎
+- **(O3) THRESHOLD(δ)**：S_δ(V) ∩ [0, P_V/2] = {m_V ≥ δ}。在每一段上解一次线性不等式，得到有限个闭区间（可能退化成点）。**任意门槛**都可以，包括下一层的 1/(n+1)、1/(n+2)。
+- **(O4) GAP(δ)**：S_δ(V) 相邻两个分量之间的最大间隔。这正是主席提到的"受控间隔族"，它可以由剖面算出。
+
+## §4 主席的五个问题
+| 问题 | 回答 | 状态 |
+|---|---|---|
+| 是否显式有限？ | 有理速度：是，|B_V| ≤ (n−1)(σ+1)（§2） | PROOF CANDIDATE |
+| 能否直接给出安全时间？ | O1 总是给出 t\* 与 κ(V)；**t\* 安全 ⇔ κ(V) ≥ 1/n**，而这正是该层的存在性定理 | CONDITIONAL：数据部分 PROOF CANDIDATE；"一定安全"依赖存在性定理 |
+| 再生是否已证？ | **数据再生**已证：O2 精确地由 I_n(V) 和 u 得到 I_{n+1}，而剖面与门槛无关，新门槛 1/(n+2) 下的安全集用 O3 直接读出。**保证再生**（κ(V ∪ {u}) ≥ 1/(n+1)）没有由构造推出 | 数据：PROOF CANDIDATE；保证：UNFINISHED |
+| 是否适用于任意实数速度？ | 否。实数速度没有周期；在有限窗口 [0, T] 上剖面仍有有限个断点，但"安全时间出现在 T 以内"的显式上界没有给出 | UNFINISHED |
+| 是否推进统一的 F_n？ | 部分推进：对每个 n 是**同一个**确定性机制，并且（§6）覆盖现有全部传递规则 | CONDITIONAL |
+
+**必须写明的一点**：任何"对一切输入都保证安全"的 F_n，都会**蕴含**该层的孤独跑者 (lonely runner) 命题。所以，"不依赖存在性定理的保证构造，一直推到 F₄₇"，其强度等于证明 47 位跑者的孤独跑者命题。主席说五跑者的存在性早已证明，因此 SPC 给出的有理 F₅ 是显式、确定性的，正确性由已知存在定理保证。据本席所知（WEB OFF，未核验），较大的 n 仍是未解决的问题。在那些层上，SPC 是一个**判定过程**：它总会输出 κ(V)；若 κ(V) < 1/n，就构成一个反例证书。
+
+## §5 测试案例（本席精确分数计算；代码只作核对）
+| 案例 | P | |B| | 上界 (n−1)(σ+1) | κ(V) | t\* | t\* 处四个距离 |
+|---|---|---|---|---|---|---|
+| V₁ = (1,3,4,7) | 1 | 14 | 4·16 = 64 | 1/5 | 1/5 | 1/5, 2/5, 1/5, 2/5 |
+| V₂ = (1,2,9,30) | 1 | 48 | 4·43 = 172 | 9/31 | 9/31 | 9/31, 13/31, 12/31, 9/31 |
+| V₃ = (1,30,60,80) | 1 | 152 | 4·172 = 688 | 1/3 | 31/90 | 31/90, 1/3, 1/3, 4/9 |
+
+**V₂ 的手算核对**：
+- 9/31：距离 9/31；
+- 18/31：距离 13/31；
+- 81/31 = 2 + 19/31：距离 12/31；
+- 270/31 = 8 + 22/31：距离 9/31。
+
+**结构观察**（O3，δ = 1/5，[0, 1/2] 内）：
+- **V₁**：S 只有两个分量，而且都是**单点** {1/5}、{2/5}。正好对应主席所说的孤立成功时间：任何窗口型不变量在这里都退化，SPC 不受影响。
+- **V₂**：5 个分量，第一个是 [11/45, 13/50]，它包含 Hesper 给的 t = 1/4。
+- **V₃**：18 个分量。
+
+**再生实例**（O2，然后在新门槛 1/6 下用 O1）：
+- **V₁ + 2**：κ = 1/5，t\* = 1/5；五个距离为 1/5, 2/5, 1/5, 2/5, 2/5，都 ≥ 1/6。
+- **V₂ + 5**：κ = 9/31，t\* = 9/31；五个距离为 9/31, 13/31, 12/31, 9/31, 14/31。
+- **V₃ + 7**：κ = 1/3，t\* = 31/90；五个距离为 31/90, 1/3, 1/3, 4/9, 37/90。
+
+**核对**：
+- 每个 ADD 的结果，都与按另一种速度顺序从头构建的剖面逐点一致（各检查约 1,000 个有理点）；
+- 200 组随机有理速度集（2–5 个速度）、每组 30 个点，剖面与直接计算零差异。
+
+这些只是查错，不是证明。
+
+## §6 现有方法在 SPC 框架中的表达
+- **PS_n**：只查询 m_W 在一条轨道 {t₀ + jP_W} 上的取值，以及 ‖u·‖ 在同一条轨道上的取值。
+- **PS\***：查询 n 条这样的轨道。
+- **TL / APS**：查询近似周期轨道，用 Lipschitz 下界代替精确的剖面值。
+- **FO**：查询 t₀ 附近半宽 μ/w_max 的窗口（H2）。
+- **LS / CLR v2**：查询格点 τ = k/m，并利用 s 的下界控制 a。
+- **C_n**（见 §8）：V ∈ C_n ⇔ 对每个 u，{m_V ≥ 1/(n+1)} ∩ {m_{V∖u} ≥ 1/n} = ∅。这可以由 I(V∖u) 经 O2、O3 精确判定。
+
+**定理 DOM（支配）**：若上述任一规则对 V 输出了安全时间 t，则 κ(V) ≥ m_V(t) ≥ 1/(n+1)，所以 F^{SPC}(V) = t\* 也安全。
+
+**证明**：由 O1，κ(V) 是 m_V 的最大值。∎
+
+**推论**：SPC **不属于** OTP 类（见 §8）。例如对 λV_n，它输出 t\* = 1/(λ(n+1))，所以 C_n 对 SPC 不构成障碍。
+
+---
+
+# Part II · N、TF、CORE 的重写
+
+**改写原则**：只陈述实际得到支持的最强版本；C_n 是**相对于所定义的传递类**的障碍，**不是"没有安全时间"**。
+
+## §7 引理 N（重写）
+**陈述**：设 V 为 n 个两两不同的正有理数，n ≥ 3，g_u 为 V∖{u} 的有理最大公约数。
+- **(N1)** 对任何 λ > 0，有 g_u(λV) = λ·g_u(V)，所以 u/g_u 在缩放下不变。
+- **(N2)** 若 V 是本原整数组，则 u/g_u ∈ ℤ ⇔ V∖{u} 本原。
+- **(N3)** 若 F 是 −1 次齐次的（F(λW) = F(W)/λ），则 E\*_n(F) 在缩放下不变。T4 是齐次的。对一般的 F，本席**不再**默认它齐次（撤回 R022 中"默认齐次"的说法）。
+
+**证明**：
+- (N1)：由定义。
+- (N2)：g_u 整除 V∖{u} 的每个元素；若又整除 u，则整除 gcd(V) = 1；反过来，V∖{u} 本原时 g_u = 1。
+- (N3)：由齐次性，λu·F(λ(V∖u)) = λu·F(V∖u)/λ = u·F(V∖u)，所以 φ_u 不变；由 (N1)，x_u = frac(u/g_u) 也不变。∎
+
+**状态**：PROOF CANDIDATE。
+
+## §8 定义与定理 CORE（重写，量词写清）
+**定义**：
+- **𝔉_n**：所有"规则" F 的集合。F 对每个由 n−1 个正有理数组成的集合 W 给出一个 t > 0，使对所有 w ∈ W，‖wt‖ ≥ 1/n。（不要求齐次，不要求闭式。）
+- **OTP 输出集**：𝒪(V) = { t > 0 : t ∈ S_{1/(n+1)}(V)，且存在 u ∈ V，使 min_{w∈V∖u} ‖wt‖ ≥ 1/n }。
+- **C_n = { V : 𝒪(V) = ∅ }**。
+  等价地：V 的每一个安全时间处，至少有两位跑者的距离 < 1/n。若 V 没有安全时间，则 V ∈ C_n 空洞地成立。对于五跑者（n = 4），按主席所述的已知存在性，这种情形不会出现。
+
+**CORE-1（对所有规则、所有局外人、所有精确周期）**：对每个 F ∈ 𝔉_n、每个 u ∈ V、V∖{u} 的每个精确周期 P（即使 wP ∈ ℤ 对所有 w ∈ V∖{u} 成立的 P > 0），以及每个 j ≥ 0：若 t = F(V∖u) + jP 对 V 安全，则 t ∈ 𝒪(V)。
+
+所以 **V ∈ C_n ⇒ 对每个 F，V ∈ E\*_n(F)**。
+
+**证明**：
+- 由周期性，V∖{u} 在 t 处的相位与在 F(V∖u) 处相同，都 ≥ 1/n。
+- V∖{u} 的精确周期恰好是 (1/g_u)·ℤ_{>0}，所以"所有精确周期"不比"规范周期 1/g_u"多出任何情形。
+- 若 u/g_u ∈ ℤ，则对每个精确周期，步长 x 都等于 0。∎
+
+**CORE-2（逐点逆命题；F 允许依赖于 V）**：若 𝒪(V) ≠ ∅，则存在 F ∈ 𝔉_n，使 V ∉ E\*_n(F)。
+
+所以 **⋂_{F∈𝔉_n} E\*_n(F) = C_n**。
+
+**证明**：
+1. 取 t ∈ 𝒪(V) 及对应的 u。令 F′ 在 W = V∖{u} 上取值 t（这是 W 的合法输出），在其他输入上任意取合法值。
+2. 当 PS\* 轮到 u 时，(S0) 给出 j = 0。若排在前面的局外人已经成功，V 同样不是例外。∎
+
+**明确不主张的内容**：
+- (a) **不主张**存在**单一**的 F 使 E\*_n(F) = C_n 对所有 V 同时成立。两个不同的 V 可能共用同一个 W 而要求不同的时间。——UNFINISHED。
+- (b) **不主张** C_n 对 OTP 类以外的规则（TL、FO、CLR v2、SPC）构成障碍。实际上由 DOM，C_n 对 SPC 不构成障碍。
+- (c) 对固定的有限规则族 {T4}，本席 R022 报告的分类（1,689 = 11 + 1,678）**只是本席的计算报告**，Hesper 尚未独立重算，不应记为独立 CHECKED。
+
+**状态**：CORE-1、CORE-2：PROOF CANDIDATE。
+
+## §9 定理 TF（重写）及新增的手证
+**TF**：设 n ≥ 2，V_n = (1, 2, …, n)，门槛 1/(n+1)。
+- (i) S_{1/(n+1)}(V_n) = { k/(n+1) + ℤ : gcd(k, n+1) = 1 }。安全集**非空**，但只由孤立点组成。
+- (ii) 在每个安全时间处，恰有两位跑者的距离等于 1/(n+1)，其余都 ≥ 2/(n+1)。
+- (iii) 对每个 λ > 0，λV_n ∈ C_n。
+- (iv) 当 n ≥ 3 时，对每个 F ∈ 𝔉_n，λV_n ∈ E\*_n(F)（由 CORE-1）。
+
+**证明**：
+1. 对 v = 0, …, n，令 z_v = frac(vt)，共 n+1 个点在圆周上。z_i 与 z_j 的圆周距离等于 ‖(i−j)t‖，且 |i − j| ∈ V_n。
+2. 若 t 安全，则两两距离都 ≥ 1/(n+1)。n+1 段弧的长度之和为 1，每段都 ≥ 1/(n+1)，所以每段**恰好**等于 1/(n+1)，点等距分布。因此 t ≡ k/(n+1)，并且由于各点互异，gcd(k, n+1) = 1。反之，每个这样的 k 都给出等距分布，所以确实是安全时间。这证明 (i)。
+3. v ↦ vk mod (n+1) 是 {1, …, n} 上的双射。所以恰有一个 v 满足 vk ≡ 1，恰有一个满足 vk ≡ −1；由于 n+1 ≥ 3，两者不同。这证明 (ii)。
+4. 去掉任何一个 u，这两位中至少剩下一位，其距离 1/(n+1) < 1/n，所以 𝒪 = ∅。这证明 (iii)；(iv) 由 CORE-1 得到。∎
+
+**新增 TF′（V₁ = (1, 3, 4, 7) ∈ C₄，手证；R022 时只是 CHECKED）**：
+1. 令 x = frac(t)。由对称性 t ↦ −t，只需看 x ∈ [0, ½]。条件 ‖x‖ ≥ 1/5 给出 x ∈ [1/5, ½]。
+2. **‖3x‖ ≥ 1/5**：3x ∈ [3/5, 3/2]，所以 3x ∈ [3/5, 4/5] ∪ [6/5, 3/2]，即 x ∈ [1/5, 4/15] ∪ [2/5, ½]。
+3. **情形 A**，x ∈ [1/5, 4/15]：4x ∈ [4/5, 16/15]。要 ‖4x‖ ≥ 1/5，须 4x ≤ 4/5 或 4x ≥ 6/5；而 16/15 < 6/5，所以只能 x = 1/5。核对 7/5：距离 2/5 ✓。
+4. **情形 B**，x ∈ [2/5, ½]：4x ∈ [8/5, 2]，要求 4x ≤ 9/5，即 x ≤ 9/20。此时 7x ∈ [14/5, 63/20]，要 ‖7x‖ ≥ 1/5，须 7x ≤ 14/5（因为 63/20 < 16/5），所以只能 x = 2/5。核对 3·2/5 = 6/5：距离 1/5 ✓；4·2/5 = 8/5：距离 2/5 ✓。
+5. 所以 S_{1/5}(V₁) = {±1/5, ±2/5} + ℤ。
+   - t = 1/5 处，速度 1 与 4 的距离为 1/5；
+   - t = 2/5 处，速度 3 与 7 的距离为 1/5。
+
+   每个安全时间都有两位跑者 < 1/4，所以 V₁ ∈ C₄。∎
+
+（与 §5 中 SPC 剖面给出的单点分量一致。）
+
+**另两个公共案例**（手算）：
+- **V₂ ∉ C₄**：t = 1/4 处四个距离为 1/4, 1/2, 1/4, 1/2，都 ≥ 1/4，所以去掉任何局外人后其余三者都 ≥ 1/4（与 Hesper 的事实一致）。
+- **V₃ ∉ C₄**：PS 给出 t = 5/24，W = (30, 60, 80) 的三个距离为 1/4, 1/2, 1/3，都 ≥ 1/4。
+
+**状态**：TF、TF′：PROOF CANDIDATE。
+
+---
+
+# Part III · 对本轮附件的回应与勘误
+1. **DeepSeek 对 H 的审阅**："统一余量版 PROOF VERIFIED；任意正余量版 GAP FOUND"。本席接受：H1–H3 只用于由旧门槛成功导出的统一余量 μ = 1/(n(n+1))。
+2. **DeepSeek 对 OB 的限定**：本席接受，并**撤回** R021 §11 "没有任何一类信息能对所有输入完成归纳步"这句话。OB 只否定 TL 的保证版；而 SPC（§6）正是一个对所有可解的有理输入都成功的传递机制。
+3. **Argon 关于 V₂ 的 LS-R 数据**（本席手算，T4 按 /r7 参考实现的分支顺序）：
+   - **F₄(2, 9, 30)**：先判 30 ≤ 3·2？否。再判 30 ≥ 3·9 = 27？是，进入第二分支。t₀ = ⌈11/6⌉/11 = 2/11；X = 60/11，距离 5/11 ≥ 1/4，所以 F₄ = 2/11，τ\* = 11·2/11 = 2，**m = 1**。本席 R020 写 m = 1 **是正确的**。
+   - **严格余数表**（模 11，相位 2k/11、9k/11、30k/11 ≡ 8k/11，要求三个余数都在 {3, …, 8} 中）：只有 k = 2（余数 4, 7, 5）和 k = 9（余数 7, 4, 6）满足。所以 R = {2, 9}，间隔为 7 和 4，**G = 7**。
+   - Argon 写的 R = {4, 5, 6, 7}、G = 8 **不正确**（例如 k = 5 时 2k ≡ 10，距离 1/11）。
+   - 结论不变：s = 11 < 35/3，LS-R 不适用。
+4. **Hesper 的 V₂ 事实**：本席复算一致（见 §9）。
+
+---
+
+## 四个账本栏
+- **PROOF VALIDITY**：
+  - SPC：引理 S、定理 SZ、O1–O4 的正确性、定理 DOM：PROOF CANDIDATE。
+  - SPC 的"保证再生"：UNFINISHED（等价于各层的存在性定理）。
+  - 实数速度：UNFINISHED。
+  - N（重写）、CORE-1、CORE-2、TF、TF′：PROOF CANDIDATE。
+  - "存在单一 F 使 E\* = C_n"：UNFINISHED。
+  - 无限制 F₅ 与一般 F_n 的显式公式：UNFINISHED。
+- **INDEPENDENT REVIEW**：本轮无分配给本席的审阅。SPC、DOM、CORE-1/2、TF′ 均待非作者审阅。本席不审自己的结果。
+- **NEW COVERAGE**：
+  - 对有理 F₅：由 DOM，SPC 覆盖一切有安全时间的有理输入；它的正确性依赖已知的五跑者存在性。按主席的标准，这**不是**"显式时间公式"意义上的新覆盖，所以记为 NEW COVERAGE UNFINISHED。
+  - 本轮不主张新的盒子。
+- **COMPUTATIONAL CHECK**：以下为本席精确分数计算：
+  - §5 表格、三个再生实例、顺序无关性核对；
+  - 200 组随机集零差异；
+  - §9 与 Part III 的手算。
+
+  计算量很小（三个公共案例及少量随机查错），没有做大规模枚举。所有结论来自证明，计算只作核对。
+
+############ PART 3 · Qwen R023 原文（区间证书，第 3 段为替代修正版，原样） ############
+R023 2/4 Qwen
+第 1 段 / 共 3 段
+
+# ANSWER BLOCK（Track B · Alternative Safe-Time Families · Qwen · R023）
+
+从 Q-GATE 与 Q-FSR 出发，提出「多锚点安全族」$\mathcal{F}$：对 $V$ 的全部配对锚 $(v_i{+}v_j)$ 收集安全相位。$V_2{=}(1,2,9,30)$：$(b{+}c)$ 锚 $R{=}\{2,9\}$ 均 a-不安全，但 $(b{+}d)$ 锚 $k{=}8$ 给 $t{=}1/4$，四距离 $(1/4,1/2,1/4,1/2)$ 全 $\ge1/5$。$V_1{=}(1,3,4,7)$：$(b{+}d)$ 锚给 $\{1/5,2/5,3/5,4/5\}$，但皆孤立点，新跑者 $u{=}5/48$ 在 $1/6$ 门槛下全击穿。**稀疏族可被单跑者全灭。** 五问：有限✓、产安全时间（$V_2$）✓、再生 UNFINISHED、任意实数 UNFINISHED、统一 $F_n$ UNFINISHED。
+
+---
+
+## §1 · 出发点：Q-GATE 与 Q-FSR（已认证/已接受）
+
+**Q-GATE（主席 R021 已裁 PROVED，仅簇安全）：** 对任意实数 $0<a<b<c<d$，确定性选出 $\tau_0=p/q$（$q\le\lceil 20\max(1{-}\theta,w)\rceil$），使 $\|\tau_0\theta\|,\|\tau_0(1{-}\theta)\|,\|\tau_0w\|>1/5$。**仅 b,c,d，不含 a。**
+
+**Q-FSR（主席 R017 接受，固定 $k$ 充要条件）：** 固定整数 $k$，$t=k/(b+c)$ 成功 $\iff$ $\|k\theta\|\ge1/5$，$\|kw\|\ge1/5$，$\mathrm{frac}(k/s)\in[1/5,4/5]$。
+
+**Q-GATE 的局限（R022 已确认）：** 只给**单一**簇安全相位 $\tau_0$。当 $\mathrm{frac}(L/s)=0$（如族 $(1,N,2N{+}1,3N)$ 与 $V_2$），a 相位锁死，单点无用。
+
+**Q-FSR 的局限：** 只刻画 $(b{+}c)$ 锚的整数相位。$V_2$ 的安全时间 $t=1/4$ **不在** $(b{+}c)$ 锚上（需 $k=11/4\notin\mathbb{Z}$）。
+
+**故需：（1）保留多个安全相位，不止一个；（2）考虑多个锚点，不止 $(b{+}c)$。**
+
+---
+
+## §2 · 多锚点安全族 $\mathcal{F}$：定义与有限性
+
+### §2.1 定义
+
+设 $V=\{v_1<v_2<\cdots<v_{n-1}\}$ 为 $n{-}1$ 个非参考速度，门槛 $\delta=1/n$。对每对 $\{i,j\}$，令 $S_{ij}=v_i+v_j$。定义**配对锚安全集**：
+$$\mathcal{F}_{ij}=\Bigl\{t=\frac{k}{S_{ij}}:k\in\mathbb{Z}_{>0},\ \min_{v\in V}\|vt\|\ge\delta\Bigr\}.$$
+（配对 $(v_i,v_j)$ 自动满足 $\|v_it\|=\|v_jt\|$，因 $v_it+v_jt=k\in\mathbb{Z}$。）
+
+**多锚点安全族：**
+$$\mathcal{F}_\delta(V)=\bigcup_{1\le i<j\le n-1}\mathcal{F}_{ij}.$$
+
+对 $n=5$（4 速度），有 $\binom{4}{2}=6$ 个配对锚。
+
+### §2.2 有限性与可生成性
+
+**有理速度：** 每个 $\mathcal{F}_{ij}$ 的安全 $k$ 以 $S_{ij}\cdot L_{ij}$ 为周期（$L_{ij}$ 为其余两速度相对 $S_{ij}$ 的公周期）。安全余数集有限，可枚举。**无无界搜索。**
+
+**无理速度：** 由 Q-GATE，每个配对锚的簇安全相位可在 $m\le\lceil 20M_{ij}\rceil$ 内选出（$M_{ij}$ 为该锚的最大归一化速度）。**有界。** 但 a 门（非配对速度）的无理情形仍 **UNFINISHED**。
+
+**故 $\mathcal{F}$ 显式有限（有理），或有界生成（无理簇）。**
+
+### §2.3 与单点 Q-GATE 的区别
+
+Q-GATE 给**一个**簇安全相位（$(b{+}c)$ 锚）。$\mathcal{F}$ 给**六个**锚的**全部**安全相位。$V_2$ 的安全时间 $t=1/4$ 在 $(b{+}d)$ 锚，不在 $(b{+}c)$ 锚，故单点 Q-GATE 找不到，$\mathcal{F}$ 能找到。
+
+（第 1 段完）
+
+
+[Hesper: 第 2 段接续]
+
+R023 2/4 Qwen
+第 2 段 / 共 3 段
+
+---
+
+## §3 · 测试 $V_1=(1,3,4,7)$：孤立安全点
+
+### §3.1 逐锚点手算（本席）
+
+$V_1=(a,b,c,d)=(1,3,4,7)$，$\delta=1/5$。6 个配对锚：
+
+| 锚 $(v_i,v_j)$ | $S_{ij}$ | 结果 |
+|---|---|---|
+| $(a,b)=(1,3)$ | 4 | $ct=4k/4=k$，$\|k\|=0$。✗ 恒失败 |
+| $(a,c)=(1,4)$ | 5 | 安全 $k\bmod 5\in\{1,2,3,4\}$，$t\in\{1/5,2/5,3/5,4/5\}$ ✓ |
+| $(a,d)=(1,7)$ | 8 | 逐 $k$ 验：$k=3,5$ 时 $\|3k/8\|=1/8<1/5$。✗ 无解 |
+| $(b,c)=(3,4)$ | 7 | $dt=7k/7=k$，$\|k\|=0$。✗ 恒失败 |
+| $(b,d)=(3,7)$ | 10 | 安全 $k\bmod 10\in\{2,4,6,8\}$，$t\in\{1/5,2/5,3/5,4/5\}$ ✓ |
+| $(c,d)=(4,7)$ | 11 | 逐 $k$ 验：无 $k$ 同时满足三项。✗ 无解 |
+
+**$(b,d)$ 锚 $k=2$ 复核：** $t=2/10=1/5$。$at=1/5$，$bt=3/5$（$\|3/5\|=2/5$），$ct=4/5$（$\|4/5\|=1/5$），$dt=7/5$（$\|7/5\|=2/5$）。全 $\ge1/5$。✓
+
+**结论：** $\mathcal{F}_{1/5}(V_1)=\{1/5,\,2/5,\,3/5,\,4/5\}$。**四个孤立点**，与主席/Opus 一致。
+
+### §3.2 孤立点的结构原因
+
+在 $t=1/5$：$a$ 距离 $1/5$（下沿），$c$ 距离 $1/5$（下沿）。向左调 $t$ 使 $a,c$ 跌破 $1/5$。在 $t=1/5$：$b$ 距离 $2/5$，$d$ 距离 $2/5$（均非边缘）。故 $t=1/5$ 是**孤立**安全点（$a,c$ 同时卡在下沿）。
+
+这正是主席指出的结构核 $C_4$ 特征：安全点存在，但无安全窗口可供归纳使用。
+
+---
+
+## §4 · 测试 $V_2=(1,2,9,30)$：$(b{+}c)$ 锚失败，$(b{+}d)$ 锚成功
+
+### §4.1 $(b{+}c)=11$ 锚（失败）
+
+$\theta=2/11$，$w=30/11$，$s=11$，$L=11$。$\mathrm{frac}(L/s)=0$，a 相位锁死。
+
+簇安全余数（本席手算）：
+- b,c：$\|2k/11\|\ge1/5\iff 2k\bmod 11\in\{3,...,8\}\iff k\bmod 11\in\{2,3,4,7,8,9\}$。
+- d：$\|30k/11\|=\|8k/11\|\ge1/5\iff 8k\bmod 11\in\{3,...,8\}\iff k\bmod 11\in\{1,2,5,6,9,10\}$。
+- 交：$R=\{2,9\}$。
+
+a 条件：$\mathrm{frac}(k/11)\in[1/5,4/5]\iff k\bmod 11\in\{3,4,5,6,7,8\}$。
+
+$R\cap\{3,...,8\}=\{2,9\}\cap\{3,...,8\}=\emptyset$。**$(b{+}c)$ 锚无安全时间。**
+
+### §4.2 $(b{+}d)=32$ 锚（成功）
+
+$S_{bd}=32$，$t=k/32$。配对 $(b,d)$：$bt=2k/32$，$dt=30k/32$，$bt+dt=k$，$\|bt\|=\|dt\|$。
+
+**$k=8$（本席手算）：** $t=8/32=1/4$。
+- $at=1/4$，$\|1/4\|=1/4\ge1/5$ ✓
+- $bt=2/4=1/2$，$\|1/2\|=1/2\ge1/5$ ✓
+- $ct=9/4$，$\|9/4\|=1/4\ge1/5$ ✓
+- $dt=30/4=15/2$，$\|15/2\|=1/2\ge1/5$ ✓
+
+**四距离 $(1/4,\,1/2,\,1/4,\,1/2)$ 全 $\ge1/5$。** 与主席手算一致。✓
+
+**故 $\mathcal{F}_{1/5}(V_2)\ni 1/4$。** 多锚点族成功装入 a，而单锚 $(b{+}c)$ 失败。
+
+---
+
+## §5 · 新跑者能否击穿全族？
+
+### §5.1 稀疏族：能（$V_1$ 反例）
+
+$V_1$ 安全族 $\{1/5,2/5,3/5,4/5\}$。加入新跑者 $u=5/48$，新门槛 $1/6$（6 跑者）。
+
+逐点击穿（本席手算）：
+- $\|u\cdot 1/5\|=\|5/48\cdot 1/5\|=\|1/48\|=1/48<1/6$ ✗
+- $\|u\cdot 2/5\|=\|2/48\|=1/24<1/6$ ✗
+- $\|u\cdot 3/5\|=\|3/48\|=1/16<1/6$ ✗
+- $\|u\cdot 4/5\|=\|4/48\|=1/12<1/6$ ✗
+
+**$u=5/48$ 击穿全部四个安全点。** 稀疏族（孤立点）可被单跑者全灭。
+
+### §5.2 稠密族：不能（间隔界论证）
+
+设安全族 $T$ 的最大间隔为 $g$（即任意长度 $g$ 的区间含 $T$ 一点）。新跑者 $u$ 的安全弧长 $(1{-}2\delta')/u$（$\delta'=1/(n{+}1)$）。
+
+**若 $g\le(1{-}2\delta')/u$，则 $u$ 的某条安全弧必含 $T$ 一点**，故 $u$ 不能全灭 $T$。
+
+**但：** 对任意 $u$，需 $g\le\inf_u(1{-}2\delta')/u=0$（$u\to\infty$）。故**无有限 $g$ 能抵抗任意 $u$**。
+
+**结论：** 带间隔界 $g$ 的族能抵抗 $u\le(1{-}2\delta')/g$ 的新跑者，但不能抵抗任意快的新跑者。**对任意实数速度的全灭免疫：UNFINISHED。**
+
+### §5.3 与结构核 $C_n$ 的关系
+
+$V_1$ 的孤立点族对应结构核 $C_4$（Opus TF/CORE）。$V_2$ 的 $(b{+}d)$ 锚解 $t=1/4$ 不在 $C_4$（因存在解使旧跑者距 $\ge1/4>1/5$，非边缘）。多锚点族**能避开** $C_4$ 的部分情形（$V_2$），但**不能避开**真正的结构核（$V_1$ 型）。
+
+（第 2 段完）
+
+
+[Hesper: 第 3 段 = 主席采用的替代修正版]
+
+Qwen also give me the as option, I show you first : R023 2/4 Qwen
+第 3 段 / 共 3 段
+
+---
+
+## §6 · 主动勘误：§5.1 的「全族被击穿」必须限定为有限截断
+
+第 2 段 §5.1 中，本席用 $u=5/48$ 击穿了 $\{1/5,2/5,3/5,4/5\}$ 四点。**该计算正确，但「击穿全族」的表述过强，本席自纠。**
+
+$V_1=(1,3,4,7)$ 全为整数速度，故其安全集在 $t\to t+1$ 下**精确周期**（每个 $vt$ 增加整数）。完整安全族是 $\{m+r/5: m\in\mathbb{Z}_{\ge0},\,r\in\{1,2,3,4\}\}$，不只是 $[0,1)$ 内的四个代表点。
+
+**反例（本席手算）：** 取 $t=9/5=1.8$，加入 $u=5/48$，新门槛 $1/6$（6 跑者）。
+
+| 跑者 | $vt$ | $\mathrm{frac}$ | 距离 | $\ge 1/6$? |
+|---|---|---|---|---|
+| $1$ | $9/5=1+4/5$ | $4/5$ | $1/5$ | ✓ |
+| $3$ | $27/5=5+2/5$ | $2/5$ | $2/5$ | ✓ |
+| $4$ | $36/5=7+1/5$ | $1/5$ | $1/5$ | ✓ |
+| $7$ | $63/5=12+3/5$ | $3/5$ | $2/5$ | ✓ |
+| $5/48$ | $(5/48)(9/5)=9/48=3/16$ | $3/16$ | $3/16=0.1875$ | ✓（$>1/6\approx0.1667$）|
+
+**故 $t=9/5$ 对 $V_1\cup\{5/48\}$ 全部安全。** 周期延拓救回了孤立点族。
+
+**修正后的结论：**
+- 有限**截断**点列可被单跑者全灭：CHECKED（§5.1 计算）。
+- 完整有理周期安全族被该 $u$ 全灭：**DISPROVED**（本节 $t=9/5$）。
+- 完整安全族是否总能在加入新跑者后保持非空：即该层孤独跑者命题，**UNFINISHED**。
+
+**这正是本轮的核心教训：** 有限证书若只存点、不存周期与区间，就丢掉了再生所需的信息。结构核是**相对旧门槛刚性传递**的障碍，不是对一切机制的障碍。
+
+---
+
+## §7 · 提议的不变量 $I_n$：周期 + 区间端点证书
+
+### §7.1 定义（有理速度情形）
+
+设 $V$ 的 $n-1$ 个速度为有理数，令 $g$ 为其有理最大公因子，$P=1/g$。则安全集 $S_\delta(V)$ 以 $P$ 为周期。
+
+$$I_n(V)=\bigl(P;\;[\alpha_1,\beta_1],\dots,[\alpha_K,\beta_K]\bigr),$$
+
+其中 $[\alpha_i,\beta_i]\subset[0,P)$ 是 $S_{1/(n+1)}(V)$ 在一个周期内的**全部极大闭安全区间**（在新门槛下计算）。端点形如 $(j+\delta)/v$ 或 $(j+1-\delta)/v$，故有限可精确计算；区间数 $K\le 2\sum_i v_i$（每个跑者每周期贡献 $2v_i$ 条边沿）。
+
+**输出安全时间：** 任取一区间的中点 $t=(\alpha_i+\beta_i)/2$。
+
+**更新规则（确定性、有限步）：** 加入新速度 $u$ 后，取新周期 $P'=$ 新速度集的 $1/\gcd$，将 $I_n$ 的区间与 $S_{1/(n+2)}(u)$ 在 $[0,P')$ 内的区间求交，重新合并极大区间，得 $I_{n+1}$。**求交是有限次端点比较，无搜索、无枚举整数。**
+
+### §7.2 必须区分的两种「再生」
+
+- **数据再生：** 更新操作有限、确定、终止。有理情形 **PROVED**（有限端点算术）。
+- **保证再生：** 更新后证书**非空**，且最大间隔有显式上界。**UNFINISHED** —— 非空性正是该层的孤独跑者命题，不能由求交算法自身保证。
+
+主席所要求的 $I_n$ 需要的是第二种。本席只证到第一种。
+
+### §7.3 无理速度
+
+无理速度无有限周期，$S_\delta(V)$ 一般**不是周期的**，也没有有限端点证书。Q-GATE 只给有界簇相位，不给间隔界。本席**不假设**无理安全集周期。**任意实数情形：UNFINISHED。**
+
+---
+
+## §8 · $V_2$ 的实际窗口：比 H 的保证窗口更强（本席手算）
+
+$V_2=(1,2,9,30)$，$t_0=1/4$。新门槛 $\delta=1/6$（加入第 5 个速度后为 6 跑者）。
+
+各跑者在 $t_0$ 的距离与余量：
+- $a=1$：$\|1/4\|=1/4$，余量 $1/4-1/6=1/12$。
+- $b=2$：$\|1/2\|=1/2$，余量 $1/2-1/6=1/3$。
+- $c=9$：$\|9/4\|=1/4$，余量 $1/12$。
+- $d=30$：$\|30/4\|=\|15/2\|=1/2$，余量 $1/3$。
+
+Lipschitz 允许位移 $h\le \mathrm{余量}_v/v$：
+$a:1/12$；$b:(1/3)/2=1/6$；$c:(1/12)/9=1/108$；$d:(1/3)/30=1/90$。
+
+**实际半宽 $h_{\mathrm{act}}=\min=1/108$。** 端点验证：$t=1/4\pm1/108$ 时，最紧约束 $c$ 的距离 $=1/4\mp9/108=1/4\mp1/12=1/6$，恰达门槛。✓
+
+**对比 H 的保证窗口：** $\mu=1/5-1/6=1/30$，$M=30$，$h_H=\mu/M=1/900$。实际窗口半宽 $1/108= (25/3)\cdot(1/900)$，约 8.33 倍。
+
+**实例级插入判据：** 新速度 $u$ 到最近安全边界的位移 $\le \delta/u=(1/6)/u$。若 $u\ge18$，则位移 $\le1/108=h_{\mathrm{act}}$，旧跑者保持 $\ge1/6$；且 $t_0=1/4>1/108$ 保证 $t>0$。
+
+**故对本实例，任何 $u\ge18$ 都可由实际窗口插入**，而 H/FO 只保证 $u\ge n\cdot w_{\max}=5\cdot30=150$。
+
+**状态：** 端点与倍数计算 CHECKED；实例级插入判据 PROOF CANDIDATE。**不主张新覆盖**（与 SLN1/LN 的符号差集未核对）。**这不是普适规则**：实际窗口不由 $F_n$ 自动携带，其下界不自动保持。
+
+---
+
+## §9 · 主席五问（对提议的 $I_n$）
+
+| 问题 | 回答 |
+|---|---|
+| Is it explicitly finite? | **有理：YES**（周期 $P$ + $\le2\sum v_i$ 个端点）。**任意实数：UNFINISHED**（无有限周期证书）。 |
+| Does it produce a safe time? | **非空时 YES**（区间中点）。$V_1$、$V_2$ 的证书非空已手算。一般非空性 **UNFINISHED**。 |
+| Is regeneration proved? | **数据再生：PROVED**（有理，有限求交）。**保证再生（非空 + 间隔界）：UNFINISHED**。 |
+| Does it apply to arbitrary real speeds? | **UNFINISHED**。不假设无理安全集周期；Q-GATE 仅簇门。 |
+| Does it advance a uniform $F_n$? | **CONDITIONAL**：明确了应传递的对象（新门槛下的区间证书），并给出有理情形的有限更新；但未证非空性逐层保持，**不是**统一 $F_n$。 |
+
+---
+
+## §10 · 四个账本栏
+
+**PROOF VALIDITY**
+- §6 勘误（$t=9/5$ 对 $V_1\cup\{5/48\}$ 安全）：CHECKED（本席手算）；原「全族被击穿」的无限族读法 **DISPROVED**（自纠）。
+- §7 有理证书的数据再生：PROOF CANDIDATE（有限端点算术，待非作者审）。
+- §7 保证再生（非空 + 间隔界）：**UNFINISHED**。
+- §8 $V_2$ 实际窗口 $h_{\mathrm{act}}=1/108$、$h_H=1/900$、$u\ge18$ 插入：CHECKED（计算）/ PROOF CANDIDATE（判据）。
+- 多锚点族 $\mathcal{F}$（第 1–2 段）：CHECKED（$V_2$ 的 $t=1/4$）；再生 **UNFINISHED**。
+- 一般 $F_5$、一般 $F_n$：**UNFINISHED**。
+
+**INDEPENDENT REVIEW**
+- 本轮主席未分配本席审阅他人成果；**UNFINISHED**。
+- 本席不自审己作。§7、§8 待非作者审阅。
+- 对 Opus TF/CORE 不作审阅结论；仅指出 §6 的边界：结构核否定的是旧门槛刚性传递，不否定周期延拓。
+
+**NEW COVERAGE**
+- $V_1\cup\{5/48\}$ 的 $t=9/5$、$V_2$ 的窗口插入均为实例级，未与已认证规则逐条做符号差集。**NEW COVERAGE UNFINISHED**。
+
+**COMPUTATIONAL CHECK**
+- §6：$9/5$ 处五速度距离 $1/5,2/5,1/5,2/5,3/16$，全部手算。
+- §8：余量 $1/12,1/3,1/12,1/3$；位移上界 $1/12,1/6,1/108,1/90$；$h_{\mathrm{act}}=1/108$；$h_H=1/900$；比值 $25/3$；阈值 $u\ge18$。全部本席精确分数计算。
+- 未用代码、未用随机测试、未做大范围穷举。
+
+**剩余缺口：** 保证再生（非空 + 间隔界）UNFINISHED；任意实数证书 UNFINISHED；$E_n^*$ 统一兜底 UNFINISHED；一般 $F_5$、$F_n$ UNFINISHED。
+
+---
+
+## 主席必答题
+
+**Does the proposed result provide a guaranteed mechanism for the induction step, or does it only describe a sufficient subset of inputs?**
+
+**CONDITIONAL。**
+
+**缺少的假设：** 证书 $I_n$ 在加入新速度后必须**保持非空**，且其极大安全区间的最大间隔有只依赖速度的显式上界。
+
+**是否自动保持：否。** §6 表明只存点会丢失信息（有限截断被击穿）；§7 的求交算法保证数据可算，但不保证非空；§8 表明实际窗口能扩大可插入范围，但窗口的下界不逐层自动保持。
+
+**为何不是 NO：** 本席给出了有限可计算证书的确切形态、有理情形的有限确定性更新，以及两个测试点上的完整手算（含一个主动勘误）。这些把「传递什么」从模糊口号变成可检验对象。
+
+**为何不是 YES：** 没有任何已证机制保证证书在任意实数速度下逐层非空。统一 $F_n$ 仍 **UNFINISHED**。
+
+（全文完）
+
+############ 回复格式 ############
+第一行写「R024 3/4 Kimi」。先写 ANSWER BLOCK（≤300 中文字）。四个账本栏分开写：PROOF VALIDITY / INDEPENDENT REVIEW / NEW COVERAGE / COMPUTATIONAL CHECK。状态词只用：PROVED / PROOF CANDIDATE / CHECKED / DISPROVED / IDEA / UNFINISHED / PARTIAL。审阅结论每项单独给：PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED，并写出逐项论证（笼统 VERIFIED 不计数）。
+对你提出的每个证书逐项回答主席六问（YES / CONDITIONAL / NO / UNFINISHED）：1 Finite representation? 2 Effective update? 3 Guaranteed nonempty output? 4 Deterministic safe-time selection? 5 Applicable to arbitrary real speeds? 6 Automatically preserved under induction?
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers.
+WEB OFF。先手证；代码只可核对，不可替代论证。作者不能升级自己的结果；只有主席裁决。不得由 (A) 表示或 (B) 更新推出 (C) 保证。不要假设无理速度有有限共同周期。随机测试不能推出证明。不做大规模穷举。
+===== END =====
