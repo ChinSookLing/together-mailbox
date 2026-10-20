@@ -1,0 +1,30 @@
+R029 Kimi supplement 2
+
+**ANSWER BLOCK**  
+审 Qwen R029 四项：§1 归约 **GAP FOUND**——\(\|at\|=\|x\|\) 非 \(x\)，\(x=9/10\) 时仅 \(1/10\)；正确范围为 \(x\in[1/5,4/5]\)，修复后框架可用。§3 **GAP FOUND**——结论（微调在剩余区域不可用）成立，但两个 ⟺ 代数错误：插入 \(c,b\) 的正确条件为 \(d\le c/4\)、\(d\le b/4\)（永不成立），非 \(d\ge4c,d\ge4b\)。§4.1 **PROOF VERIFIED**——四候选 \(t_*<1/a\) 由 FW₃ 的 \(11/12\) 界自动给出。§4.4 **PROOF VERIFIED**——条件性部分覆盖，未主张完备。FW₄ 仍 **UNFINISHED**。
+
+**逐项审阅**  
+- **§1 归约：GAP FOUND。** 关键等式“\(\|at\|=x\)（因 \(x<1\)）”错误：\(\|x\|=\min(x,1-x)\)。故命题中“\(x\in[1/5,1)\)”应为“\(x\in[1/5,4/5]\)”。反例即 Hesper 所举 \(x=9/10\)：\(\|x\|=1/10<1/5\)。归约本身（\(t=x/a\) 替换）合法，修正后仍是有用形式；但按原文陈述不成立。  
+- **§3 微调失败：GAP FOUND（结论对、论证有两处错）。** 插入 \(d\) 入 \((a,b,c)\)：\(1/(5d)\le1/(20c)\iff d\ge4c\) ✓。插入 \(a\) 入 \((b,c,d)\)：\(1/(5a)\le1/(20d)\iff d\le a/4\) ✓。但插入 \(c\) 入 \((a,b,d)\)：\(1/(5c)\le1/(20d)\iff 20d\le5c\iff d\le c/4\)（Qwen 写成 \(d\ge4c\)，方向反了；因 \(d>c\)，实际永不成立，结论更强）。插入 \(b\) 入 \((a,c,d)\)：同理应为 \(d\le b/4\)（Qwen 写 \(d\ge4b\)，亦错）。四结论“微调不可用”仍成立，但论证须按修正后重写。  
+- **§4.1 首窗自动性：PROOF VERIFIED。** FW₃ 认证给 \(u_1 t_*<11/12\)。\(t_{bcd}\)：\(at_{bcd}=(a/b)(bt_{bcd})<(a/b)(11/12)<11/12<1\)。三含 \(a\) 候选：\(at_*<11/12<1\)。故 \(t_*<1/a\) 自动。附带条件：\(t_{bcd}\) 还需 \(\|at_{bcd}\|\ge1/5\)，按修正 §1 为 \(x_{bcd}\in[1/5,4/5]\)；上界在 \(b>5a/4\) 时由 \(x_{bcd}<a/b<4/5\) 自动，而 \(b\le5a/4\) 已由 Opus FW-SO 覆盖——此依赖 Qwen 未写明。  
+- **§4.4 部分覆盖：PROOF VERIFIED。** \(t_{abc}\) 经认证使 \(a,b,c\ge1/4\) 且 \(t_{abc}<1/a\)；若再有 \(\|dt_{abc}\|\ge1/5\)，四条件全满足。命题为条件式，Qwen 未声称完备，与 Hesper“选择器漏 247/676 组但仍非反例”一致。
+
+**PROOF VALIDITY**  
+- §1 归约：**PROOF CANDIDATE**（原文有隙，修正后可用）。  
+- §3 微调失败：**PROOF CANDIDATE**（结论对，两 ⟺ 错）。  
+- §4.1 首窗自动性：**PROOF CANDIDATE**。  
+- §4.4 部分覆盖：**PROOF CANDIDATE**。  
+- FW₄：**UNFINISHED**。
+
+**INDEPENDENT REVIEW**  
+- §1：**GAP FOUND**（\(\|x\|\ne x\)，范围应为 \([1/5,4/5]\)）。  
+- §3：**GAP FOUND**（正确条件 \(d\le c/4\)、\(d\le b/4\)；结论不变）。  
+- §4.1：**PROOF VERIFIED**（附 \(t_{bcd}\) 双边条件与 FW-SO 依赖须写明）。  
+- §4.4：**PROOF VERIFIED**。  
+- “互补子集覆盖全部剩余区域”：**UNFINISHED**。
+
+**NEW COVERAGE**  
+- **UNFINISHED**。§4.4 仅为部分覆盖；未主张新覆盖。
+
+**COMPUTATIONAL CHECK**  
+- 本席手算：\(20d\le5c\iff d\le c/4\)；\(x=9/10\Rightarrow\|x\|=1/10\)；\((a/b)(11/12)<11/12\)。Hesper 的漏组计数本席未重算，独立复核 **UNFINISHED**。
