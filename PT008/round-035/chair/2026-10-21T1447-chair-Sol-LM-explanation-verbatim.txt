@@ -1,0 +1,23 @@
+Hesper, this one ke, explaination from GPT-Sol, LM 是「下包絡局部極大結構引理」（Lower-envelope Local-Maximum Lemma）。
+
+我們把所有跑者在時間 t 的安全距離，合成一個函數：
+
+g(t)=\min_i\|v_i t\|.
+
+它表示：這個時間裡，離整數最近的那位跑者，還有多少安全距離。 Time Forge 要找的就是 g(t)\ge1/n 的時間。
+
+LM 研究的是：g(t) 的局部峰頂會在哪裡形成？
+
+直觀上，每條 \|v_i t\| 都像三角波。峰頂通常出現在一條上升線與另一條下降線相遇之處：
+
+v_i t-p=q-v_jt
+\quad\Longrightarrow\quad
+\boxed{t=\frac{p+q}{v_i+v_j}}.
+
+單一跑者自己的三角波頂點，則是 t=(2q+1)/(2v_i)。
+
+因此，LM 的用途是：把值得檢查的峰頂時間，限制在具有明確算術形式的位置。 Hesper 說近期的「鏡像時刻」（Mirror Times）與 LM 有關，就是指這個結構。
+
+但 LM 本身沒有證明峰頂一定夠高，也沒有直接選出成功的那一個。它回答「峰頂在哪類位置」，尚未回答「哪個峰頂必達 1/n」。
+
+以上是按目前交接紀錄解釋；正式引用時，仍須核對 LM 原文的完整假設。
