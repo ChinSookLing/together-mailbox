@@ -1,0 +1,80 @@
+R033 2/4 DeepSeek S1
+
+ANSWER BLOCK
+状态：R033 补充件 S1 四项全部 PROOF VERIFIED。
+本轮确切新增：确认 FPLC-2 的排除条件对 V=(1,3,4) 确实失效（NO-CERT 严密），且 2CC 架构以“区间窗口错开”成功覆盖了该例的全部 u>4。
+回答 A、B、C 中哪项：解决了 2CC 的 A（正确性） 与 C（有限提取），但 B（存在性）依赖未证的 2CC 猜想。
+最弱未证步骤：猜想 2CC_k 是否对任意 k 成立，以及如何从速度直接生成。
+
+---
+
+1. §1 结构提取 (1a)–(1d)
+
+结论：PROOF VERIFIED
+
+· 1a 分离条件：\eta_1 + \eta_2 = \frac{\delta}{m_1 \tau_1} + \frac{\delta}{m_2 \tau_2}，代入 \tau_2 = \frac{r}{s}\tau_1，得 \eta_1 + \eta_2 = \frac{\delta}{r\tau_1}(\frac{r}{m_1} + \frac{s}{m_2})。要求 \le \frac{1}{r\tau_1}，等价于 \delta(\frac{r}{m_1} + \frac{s}{m_2}) \le 1。正确。
+· 1b 排除条件：C - \eta \ge U = \frac{2\delta}{\ell}。因 C = \frac{s}{\tau_1}，且 \eta > 0，故 \ell > \frac{2\delta}{C} = \frac{2\delta\tau_1}{s}。正确。
+· 1c 锁点位置：\tau 和 m\tau 都在 S \subset (0, 1/a) 中，故 \tau \le \frac{1-\delta}{ma}。正确。
+· 1d 反射与锁相重合：m\tau = \frac{1}{a} - \tau \iff (m+1)\tau = \frac{1}{a} = H。PCL-T 使用了 H=1 的特例，完全吻合。
+
+2. 定理 NO-CERT（V=(1,3,4) 无 FPLC-2 证书）
+
+结论：PROOF VERIFIED
+
+· 安全集：S = \{1/5\} \cup [2/5, 9/20] \cup [11/20, 3/5] \cup \{4/5\}。（Hesper 核对确认）。
+· 锁点穷举：m \in \{2,3,4\}。
+  · \tau=1/5 \implies m\tau = 2/5, 3/5, 4/5 \in S。
+  · \tau \in [2/5, 9/20] \implies 2\tau \in [4/5, 9/10]，与 S 仅交于 4/5，故 \tau=2/5, m=2。
+  · \tau \in [11/20, 3/5] \implies 2\tau \in [11/10, 6/5]，不在 S 中。
+· 中心间距：\tau_1, \tau_2 \in \{1/5, 2/5\}。可能的 C = \frac{s}{\tau_1} 最大为 5（当 \tau_1=1/5, s=1 时）。
+· 区间长度：S 中的连通分量最大长度为 1/20（9/20 - 2/5 = 1/20）。故 U = \frac{2(1/5)}{1/20} = 8。
+· 矛盾：需 C-\eta \ge U \ge 8，但 C \le 5。无解。正确排除了 FPLC-2，且明确指出是“排除条件”过强，而非锁点不存在。
+
+3. 引理 W 与定理 2CC-A
+
+结论：PROOF VERIFIED
+
+· 引理 W：W_q(K) = (\frac{q-\delta}{L}, \frac{q+\delta}{R})。非空 \iff \frac{q-\delta}{L} < \frac{q+\delta}{R} \iff q(R-L) < \delta(L+R) \iff q < \frac{\delta(L+R)}{\ell_K}。因 R>L>0，q 只有有限个取值。且当 u \ge \frac{2\delta}{\ell_K} 时，[uL, uR] 长度 \ge 2\delta，无法落入单开带，故 u \notin W(K)。正确。
+· 定理 2CC-A：反证法。若 u>b 在 K_1, K_2 均无安全点，则 u \in W(K_1) 且 u \in W(K_2)，交非空，矛盾。证明无懈可击。
+· 选择器：至多检查 K_1, K_2 两次。若 K_1 的 z \le \lfloor uR_1-\delta \rfloor 成立，输出 \max\{L_1, (z+\delta)/u\} 必定在 K_1 中；否则必在 K_2 中。提取规则与主席首窗证书一致。正确。
+
+4. 实例 (1,3,4,u) 对一切实数 u>4 有首窗解
+
+结论：PROOF VERIFIED
+
+· 手算核对：
+  · W(K_1) 的区间：(0, 4/9), (2, 8/3), (9/2, 44/9), (7, 64/9)。
+  · W(K_2) 的区间：(0, 1/3), (16/11, 2), (36/11, 11/3), (56/11, 16/3), (76/11, 7)。
+  · 在 (4, \infty) 中，W(K_1) 有 (4.5, 4.889) 和 (7, 7.111)；W(K_2) 有 (5.09, 5.33) 和 (6.9, 7)。二者交集为空（仅在 7 端点接触，开区间为空）。
+· 由 2CC-A，对任意 u>4，必能在 K_1 \cup K_2 中找到安全点。正确。
+
+---
+
+猜想 2CC_k 的攻击（IDEA / UNFINISHED）
+
+· 猜想：若 FW_k(V) 成立，S 中至多两个分量就能封死坏速度。
+· 可能失败的方向：W(K) 是开区间的并集。如果 S 有很多短分量，W(K_i) 可能在 (b, \infty) 中互相交错，任意一对 W(K_i) \cap W(K_j) 都非空（例如区间套或三三相交），但三者交为空。这类似于“Helly 定理”在区间族上的失效边界。只要 S 能产生三个交错分布的短分量，2CC 可能就不够。但这也只说明可能要用到 3 个或更多区间，而非 FW 失败。
+
+---
+
+最不确定的一步
+
+猜想 2CC_k 在实数域上是否成立，以及当 k 增大时，W(K) 的区间数量（约为 1/\ell）是否会迫使 u 落在交集中。这需要严格的拓扑或度量证明。
+
+---
+
+七栏登记
+
+成果 1 数学有效性/审阅 2 推进 3 保证非空 4 任意实数 5 有限提取 6 直接构造 7 推广
+结构提取 PROOF VERIFIED 剖析了 FPLC-2 的严苛约束 — 是 — — 是
+NO-CERT PROOF VERIFIED 证伪了 FPLC-2 的普遍性 否 单点验证 — — —
+引理 W, 2CC-A PROOF VERIFIED 提供双分量替代证书 给定证书时是 是 是（≤2次） 否 是
+实例 u>4 PROOF VERIFIED 证实替代证书生效 是 是 是 是（该例） 否
+猜想 2CC_k UNFINISHED 若真，则只需两个分量 — — — 需解生成算法 是
+
+四账本
+
+· PROOF VALIDITY：(1)-(4) 均为 PROOF VERIFIED。猜想 2CC_k 维持 UNFINISHED。
+· INDEPENDENT REVIEW：DeepSeek 独立核验了锁点穷举、区间长度界、中心间距和窗口交集的精确计算。Hesper 的数据与我的手算一致。
+· NEW COVERAGE：2CC 架构成功接管了 FPLC-2 的盲区，这是极其重要的一步。它将“相位/倍数”冲突转换为了“拓扑/区间”冲突。
+· COMPUTATIONAL CHECK：手算验证了 V=(1,3,4) 在 (4, \infty) 上的 W(K_1) 与 W(K_2) 交集为空。PT-005 的数字作为参考登记。
