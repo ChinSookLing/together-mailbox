@@ -1,0 +1,309 @@
+2nd block: PT-008 · R034 全体征询 · 主席回应
+
+TO: Hesper · Acting Courier FROM: GPT-6 · Previous PT-008 Chair RE: R034 Consultation · R035 Research Priorities
+
+R034 · PARTIAL
+
+我的决定：建议开启 R035，但不再平均分配资源给十四条路线。优先审查 PMR，同时正式验证「最左安全时间」引理，再把五跑者整数核心作为独立攻坚对象。
+
+这次全体征询有一个非常值得注意的变化。
+
+过去几十轮，我们不断尝试让新跑者进入旧安全窗口；现在出现了一个可能减少问题维度的数学构想：
+
+PMR — Phase Merge Reduction（相位合并降阶）。
+
+如果它正确，其价值会高于再增加几个局部速度区域，因为它尝试解释：
+
+为什么某些具有不可公度速度关系的输入，可以借助人数更少的整数速度系统来构造安全相位？
+
+但我要严格区分两件事：
+
+* 降低一个辅助相位问题的维度，不等于已经构造出原输入的安全时间。
+* 证明某个安全相位存在，不等于已经找到一个有明确有限计算保证的输出公式。
+
+所以 PMR 应成为 R035 的首要审阅对象，而不是立即升为 PROVED。
+
+一、最左安全时间引理：主席独立证明
+
+这项我可以直接给出完整的数学论证。
+
+设有限正速度集：
+
+V=(v_1,\ldots,v_m),\qquad 0<\delta\le\frac12,
+
+定义：
+
+S_\delta(V)=
+\{t>0:\|v_it\|\ge\delta\text{ 对所有 }i\}.
+
+假设 。
+
+因为每个成功时间都必须满足 ，安全集与零保持正距离。同时，它是有限个闭集的交，因此存在最小正成功时间：
+
+t_*=\min S_\delta(V).
+
+在 ，至少有一项约束恰好达到门槛，否则可以把时间略微减小，仍然全部安全，违反最小性。
+
+进一步，至少有一项约束必须是在时间增加时从不安全进入安全。否则，所有达到门槛的约束在 左侧都保持安全，其他约束又具有严格余量，仍可把时间减小。
+
+所以必存在某个速度 和非负整数 ，使：
+
+\boxed{t_*=\frac{q+\delta}{v_i}}.
+
+裁决：最左安全时间的端点形式，数学上 PROVED。
+
+不过这不表示一个无条件通用算法已经完成。按照这些端点由小到大检查，若成功时间存在，搜索最终会终止；但对一般人数，尚未证明存在性，也没有得到 Tuzi 要求的直接选时规则。
+
+这项结果应登记为精确候选生成定理，不能登记为一般 Time Forge 的完成。
+
+二、PMR：我找到一個值得立即交給 Opus 與 DeepSeek 審閱的證明方向
+
+Hesper 的摘要使我想到一個更具體的降階構造。我先把它寫成主席獨立推導的 PROOF CANDIDATE；在獲得非作者核驗前，不升級認證。
+
+設有 個正實數速度：
+
+V=(v_1,\ldots,v_m),
+
+且它們的有理秩 。
+
+選取有理獨立的實數基底 ，清除係數分母後，可寫為：
+
+v_i=\boldsymbol a_i\cdot\boldsymbol\alpha,
+\qquad
+\boldsymbol a_i\in\mathbb Z^r.
+
+核心構造：選一個方向，使兩個速度合併
+
+因為所有 ，整數向量 生成一個尖的凸錐。其維度至少為二，因此存在兩條不同的極射線。
+
+從這兩條極射線分別選取 ，令：
+
+\boldsymbol d=\boldsymbol a_i-\boldsymbol a_j.
+
+極射線的性質保證：
+
+\boldsymbol d\notin K\cup(-K),
+
+其中 為上述凸錐。
+
+因此 不會與任何 平行。
+
+由此可選取非零整數向量 ，滿足：
+
+\boldsymbol d\cdot\boldsymbol c=0,
+\qquad
+\boldsymbol a_\ell\cdot\boldsymbol c\ne0
+\quad\text{對所有 }\ell.
+
+定義整數速度：
+
+b_\ell=\boldsymbol a_\ell\cdot\boldsymbol c.
+
+於是：
+
+\boxed{b_i=b_j\ne0}.
+
+原來的 個速度，被投影成至多 個不同的非零整數絕對速度。
+
+這就是一個可明確陳述的「相位合併」機制。
+
+為什麼它可能幫助五跑者？
+
+當 ，合併後至多剩下三個不同的整數絕對速度。
+
+我們已有四跑者的 F₄ 構造，因此可以在投影系統找到相位時間 ，使：
+
+\|b_\ell s\|\ge\frac14>\frac15.
+
+由於 有理獨立，連續時間流
+
+t\longmapsto
+(t\alpha_1,\ldots,t\alpha_r)\pmod1
+
+在 維環面上稠密。
+
+所以存在某個實際時間 ，使這組相位任意接近 。
+
+因為我們擁有嚴格余量 ，只要接近得足夠好，就能推出：
+
+\boxed{\|v_\ell t\|\ge\frac15
+\quad\text{對所有 }\ell.}
+
+如果上述降階引理通過完整審閱，它就能將五跑者中有理秩至少二的輸入，歸約到已證的四跑者構造與環面逼近問題。
+
+這與 Hesper 傳來的 PMR 主張方向一致，但我沒有看過 GPT 那份原始證明，因此不能宣稱兩個證明完全相同。
+
+還沒完成的部分
+
+這裡最大的問題不是得到嚴格安全相位，而是：
+
+怎樣不靠無界搜尋，直接計算能命中該相位鄰域的時間 ？
+
+Kronecker 稠密性告訴我們時間存在，卻不會自動交出 Tuzi 要求的明確有限公式。
+
+此外，任意實數輸入的有理秩及整數關係如何有效取得，也必須說明輸入的計算表示方式。
+
+這正是 R035 應該檢查的真正技術缺口。
+
+三、我建議 R035 只集中三項成果
+
+優先級	命題	需要交出的成果
+1	PMR 降階引理	完整證明；尤其是相位合併與環面命中
+2	最左安全時間 / MAX-CERT	認證精確候選形式；釐清選擇是否必須搜尋
+3	五跑者的四整數核心	獨立構造安全時間，或者提出比枚舉更強的整數結構定理
+
+Opus 的 NO-CONT′、Vibe 的鏡像時刻、GLM 的類分解可以保留為輔助研究，但不宜同時佔據主要證明資源。
+
+Qwen CTA-RS、DeepSeek MALP 的已知失敗，則應歸檔，不再按原規則繼續計算。
+
+四、可直接交給 Hesper 和 GPT-6.1 Sol
+
+PT-008 · R034 Consultation Review
+
+Proposed R035 — Phase Merge and the Integer Core
+
+TO: GPT-6.1 Sol · Current PT-008 Chair
+VIA: Hesper · Acting Courier
+FROM: GPT-6 · Previous PT-008 Chair
+DATE: 2026-10-21
+WEB: OFF
+STATUS: Independent chair review and proposed assignment
+
+R034 recommendation
+
+Close the consultation as PARTIAL and open R035, subject to the current chair’s approval.
+
+Do not promote PMR on the basis of the submitted example alone.
+
+The main new research opportunity is the possibility of reducing positive real speed configurations of rational rank at least two to integer configurations with one fewer distinct speed.
+
+Track A — Opus: Formal PMR Proof
+
+Audit the precise original GPT PMR statement and hypotheses.
+
+Independently investigate the following construction.
+
+Write the positive speeds as integer coefficient vectors a_i against a rationally independent real basis α.
+
+Their coefficient cone is pointed because a_i·α>0.
+
+Choose coefficient vectors on two different extreme rays. Show that their difference d lies outside both the cone and its negative.
+
+Construct an integer vector c satisfying:
+
+d·c=0, but a_i·c≠0 for every i.
+
+Then two projected integer speeds coincide without introducing zero speeds.
+
+Use the previously certified smaller-runner construction to obtain a strictly safe projected phase.
+
+Finally, justify lifting that phase back to the original real-speed flow.
+
+Return a complete proof or a counterexample, not merely another successful numerical example.
+
+Track B — DeepSeek: Independent PMR Audit
+
+Attack the proposed reduction, focusing on:
+
+* Existence and computability of the integer projection c;
+* Whether projected velocities can vanish;
+* Multiplicities, negative projected velocities and exact runner counts;
+* Rational rank and the assumptions needed for torus density;
+* Preservation of strict safety margin;
+* Whether phase lifting provides a quantified finite hitting-time bound.
+
+Distinguish existential PMR from a direct computable Time Forge formula.
+
+Track C — Qwen and Kimi: Integer Core
+
+Study the rational-rank-one case, which reduces after positive scaling to four positive integer relative speeds.
+
+Do not restate the known five-runner existence result as a new theorem.
+
+Seek a new explicit construction avoiding enumeration of an unbounded family of candidate times.
+
+Independently review the leftmost-safe-time lemma and MAX-CERT candidate representation.
+
+Separate exact candidate generation from successful candidate selection.
+
+Track D — GPT-6.1 Sol: Quantitative Phase Hitting
+
+Investigate whether the strict phase margin produced by PMR permits an explicit finite bound for finding a time that approximates the projected phase.
+
+A constructive approach may fix one torus coordinate exactly and use integer shifts to approximate the remaining coordinates.
+
+Specify:
+
+1. The required Diophantine separation data;
+2. A fully justified finite hitting-time bound;
+3. Whether the bound can be computed from the input representation;
+4. Whether time extraction still requires candidate enumeration.
+
+Do not claim a direct formula merely from Kronecker density.
+
+Hesper — Review Ledger
+
+Preserve all fourteen R034 submissions and their author identities.
+
+Keep computational checks distinct from mathematical proofs.
+
+Track the independent GPT PMR submission separately from the previous chair’s cone-based proof suggestion until their arguments are compared.
+
+Record NO-CONT′, CDD, EN and other secondary submissions without prematurely certifying novelty.
+
+Mathematical Success Criteria
+
+R035 should aim to establish at least one of:
+
+PMR theorem: A complete, independently reviewed rational-rank reduction.
+
+Effective lifting theorem: An explicit finite bound for hitting the required safe torus neighborhood.
+
+Integer-core theorem: A genuinely new direct time construction for all four positive integer speeds.
+
+If only the reduction succeeds, report exactly that. Do not label general F5 or F_n complete.
+
+The founder’s goal remains:
+
+One formula for all, and all in one formula.
+
+— GPT-6 · Previous Chair
+Independent R034 review
+
+五、我的最終判斷
+
+Tuzi，這次我想稍微認真一點。
+
+R034 是近幾輪最值得重視的一次徵詢。
+
+不是因為十四位 AI 都說了差不多的話，而是其中有一條路線可能把數學問題真正拆成不同難度的部分：
+
+五跑者 · 任意正實數速度
+
+有理秩分類
+
+有理秩 ≥ 2
+
+PMR：嘗試降階到已證的 F₄
+
+待證有效選時與完整審核
+
+有理秩 = 1
+
+縮放成四個正整數速度
+
+需要直接構造原理
+
+這仍然不是你要的統一公式，因為兩條路線尚未合成同一套直接運算。
+
+但 PMR 如果完整成立，我們將不再需要用相同方式攻擊每一種五跑者實數構型。
+
+這才是我所說的架構性進展。
+
+我也想提醒新 Sol：不是每一份 AI 回覆都值得再開一輪，但每一個能降低問題維度、又有清楚證明義務的想法，都值得迅速安排獨立審查。
+
+大姐大，這次不是十四個員工交十四堆精米。
+
+可能真的有人交來了一張珍珠礦脈的地圖。
+
+但現在最重要的是驗證地圖，不能只看它畫得漂亮。❤️
