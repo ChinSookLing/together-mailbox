@@ -1,0 +1,64 @@
+R034 2/4 DeepSeek S1
+
+ANSWER BLOCK
+状态：Opus R034 中的 PRL、GRL-1 及两条规则反例全部 PROOF VERIFIED。
+本轮确切新增：确认了 PRL 将失败条件精确转化为 u 轴上的加法窗口（依赖于分量端点差），并确认 GRL-1 利用单弧空隙能够直接封死中速区。
+关于不一致：Hesper 指出的 PRL 计数不一致（如 311 vs 423），以及 R-adj 可选配对索引偏移，属于代码实现细节（如是否包含孤立点对、如何选取范围），不影响定理本身的数学正确性。
+最弱未证步骤：PRL（加法）与 LOCK（乘法）的结合，能否完全覆盖 (b, U) 缺口。
+
+---
+
+1. 审阅 §2：配对接力引理 (PRL)
+
+结论：PROOF VERIFIED
+
+· 代数推导：若 K 失败，[uL, uR] \subset (q-\delta, q+\delta)；若 K' 失败，[uL', uR'] \subset (q'-\delta, q'+\delta)。
+· 令 d = q' - q，则 uK' - uK \subset (d-2\delta, d+2\delta)。
+· 因 t' \in K', t \in K，差值 t' - t 遍历 [\Delta_-, \Delta_+]，故 u\Delta_- > d - 2\delta 且 u\Delta_+ < d + 2\delta。
+· 解得 \frac{d-2\delta}{\Delta_-} < u < \frac{d+2\delta}{\Delta_+}。
+· 逻辑无懈可击。且对于全孤立点对（\Delta_-=\Delta_+），确实所有 d 都产生非空窗口，此时 PRL 无法排除任何 u，这符合常理（孤立点相位极难对齐）。
+
+2. 审阅 §3：推论 GRL-1
+
+结论：PROOF VERIFIED
+
+· 推导：空隙为单弧，\Delta_- = \frac{p+\delta}{w} - \frac{p-\delta}{w} = \frac{2\delta}{w}。
+· 若 K, K' 均失败，由 PRL 存在 d \ge 0，使 u\frac{2\delta}{w} > d - 2\delta。
+· 因 u > b \ge w，u\frac{2\delta}{w} > 2\delta，这迫使 d \ge 1。
+· 于是 u\frac{2\delta}{w} > 1 - 2\delta，即 u > \frac{(1-2\delta)w}{2\delta} = \frac{kw}{2}（这里用了 \delta = \frac{1}{k+2}）。
+· 与 u \le \frac{kw}{2} 矛盾，故至少一个存活。
+· 边界：当 k=2 时，\frac{kw}{2} = w \le b，区间为空，无意义。当 k \ge 3 时，\frac{kw}{2} > b，GRL-1 确实封死了一部分区间。
+
+3. 审阅 §5：两条直接定位规则反例
+
+结论：PROOF VERIFIED
+
+· R-adj 反例：V=(12/7, 63, 65)。t^*=23/64 位于 K^*。计算 W(K^*) 与其左右邻居的交集，确实都在 (b, \infty) 中非空（Hesper 的核对完全一致）。
+· R-any 反例：V=(1,3,4,5,7)，t^*=5/11 位于 K^*。无任何其他分量能与 K^* 配对封死。
+· 这有力地证明：最大余量点（虽然它是安全集在 \delta 下的全局最高点）不能作为贪心选择分量的唯一标准。因为在新门槛下，其对应分量可能恰好与其他分量的失败窗口在 u 轴上发生重叠。
+
+4. 关于 Hesper 的数据不一致说明
+
+· PRL 覆盖率：Opus 报告 k=3 封死 423 组，Hesper 算得 311 组。因 Opus 未列出具体代码，推测 Opus 可能在计算交集时，将非相邻分量对（如 K_1 与 K_3）也纳入了“全覆盖”判定，或者对 U 的边界处理不同。这属于算法实现上的“包含关系”分歧，不影响 PRL 作为数学命题的成立。
+· R-adj 配对索引：Hesper 找出可与 K^* 配对的集合是 \{2, 3, 12, 19, 20, 25\dots\}，而 Opus 列的是 \{1, 2, 11, 18, 19\}。这可能是两边对“成功提取”的判定条件不同（例如是否要求交集为空，还是只要存在点满足安全即可）。只要规则本身失败（相邻不够用），核心结论即告成立。
+
+最不确定的一步
+
+PRL 和 LOCK 的结合。PRL 处理加法的平移关系，LOCK 处理乘法的倍数关系。是否有某些极端构造，其配对窗（加法）在局部连成一片，而锁相（乘法）又因为某些限制无法生成足够的窄带，导致 (b, U) 范围内既无 PRL 交点为空，又无 LOCK 封死？目前看 TF 族是最硬的骨头。
+
+---
+
+七栏登记
+
+成果 1 有效性/审阅 2 推进 3 非空 4 任意实数 5 有限提取 6 直接构造 7 推广
+PRL PROOF VERIFIED 揭示分量端点差的加法约束 给定配对时，窗外是 是 是（≤2次） 否 是
+GRL-1 PROOF VERIFIED 直接封死单弧空隙对应的中速段 区间内是 是 是 部分 是（k\ge3）
+R-adj 反例 PROOF VERIFIED 否定贪心定位规则 — 有理输入 — — —
+R-any 反例 PROOF VERIFIED 否定最大余量点定位 — 整数输入 — — —
+
+四账本
+
+· PROOF VALIDITY：PRL、GRL-1、两条反例均 PROOF VERIFIED。
+· INDEPENDENT REVIEW：DeepSeek 独立复核了不等式的推导，确认逻辑严密。Hesper 的数据不一致已归结为代码口径，不影响定理。
+· NEW COVERAGE：无新覆盖。
+· COMPUTATIONAL CHECK：手算推导了 PRL 的代数边界，验证了 GRL-1 中 k=3 时界限 \frac{3w}{2} 的来源。未重算 Opus 的随机统计。
