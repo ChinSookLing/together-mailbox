@@ -1,0 +1,84 @@
+R031 3/4 Qwen
+第 3 段 / 共 3 段
+
+---
+
+## §5 · PROOF：顺序窗口规则与整数性引理
+
+**规则 Q-B2（从输入直接产生，有限步）。** 设 $v_1<\cdots<v_{n-1}$，$\delta=1/n$。
+
+1. $q_1:=0$，$A_1=\delta/v_1$，$B_1=(1-\delta)/v_1$，$I_1=[A_1,B_1]$。
+2. 对 $i=2,\ldots,n-1$，在区间
+$$\mathcal{J}_i=\bigl[v_i\alpha_{i-1}-(1-\delta),\;\;v_i\beta_{i-1}-\delta\bigr]$$
+中取整数 $q_i$（$\alpha_{i-1},\beta_{i-1}$ 为 $I_{i-1}$ 端点）；令 $A_i=(q_i+\delta)/v_i$，$B_i=(q_i+1-\delta)/v_i$，$I_i=I_{i-1}\cap[A_i,B_i]$。
+3. 输出 $t=\max_i A_i$。
+
+**引理 Q-B2a（容许区间，PROOF）。** $q_i$ 使 $I_{i-1}\cap[A_i,B_i]\ne\emptyset$ $\iff$ $q_i\in\mathcal{J}_i$。
+*证：* 需 $A_i\le\beta$ 且 $B_i\ge\alpha$，即 $q_i\le v_i\beta-\delta$ 且 $q_i\ge v_i\alpha-(1-\delta)$。$\square$
+
+**引理 Q-B2b（整数性充分条件，PROOF）。** 若 $v_i w_{i-1}\ge 2\delta$（$w_{i-1}=\beta_{i-1}-\alpha_{i-1}$），则 $\mathcal{J}_i$ 含整数。
+*证：* $|\mathcal{J}_i|=v_iw_{i-1}+(1-2\delta)\ge 1$；长度 $\ge1$ 的闭区间必含整数。$\square$
+
+**引理 Q-B2c（宽度衰减，PROOF）。** 任何选择都有 $w_i\le\min\{w_{i-1},\,(1-2\delta)/v_i\}$。
+*证：* $I_i\subseteq[A_i,B_i]$，而 $B_i-A_i=(1-2\delta)/v_i$。$\square$
+
+**有限完成：** 仅 $n-2$ 步，每步一次取整与常数次比较。**但整数存在性未保证**——这是最弱未证步骤。
+
+---
+
+## §6 · CHECKED + DISPROVED：顺序最小整数规则的精确反例
+
+**输入：** $V=(1,2,3,41/10)$，$n=5$，$\delta=1/5$。逐步手算（每步取 $\mathcal{J}_i$ 的**最小**整数）：
+
+| 步 | $v_i$ | $\mathcal{J}_i$ | 可选整数 | $q_i$ | $I_i$ |
+|---|---|---|---|---|---|
+| 1 | 1 | — | — | 0 | $[1/5,\,4/5]$ |
+| 2 | 2 | $[-2/5,\,7/5]$ | $0,1$ | 0 | $[1/5,\,2/5]$ |
+| 3 | 3 | $[-1/5,\,1]$ | $0,1$ | 0 | $[1/5,\,4/15]$ |
+| 4 | $41/10$ | $[1/50,\,67/75]$ | **无** | — | — |
+
+**第 4 步精确核对：** 下端 $=\frac{41}{10}\cdot\frac15-\frac45=\frac{41-40}{50}=\frac1{50}>0$；上端 $=\frac{41}{10}\cdot\frac4{15}-\frac15=\frac{164-30}{150}=\frac{67}{75}<1$。故 $\mathcal{J}_4$ 不含整数。规则**DISPROVED**（作为保证构造）。
+
+**与 Q-B2b 一致：** $v_4w_3=\frac{41}{10}\cdot\frac1{15}=\frac{41}{150}\approx0.2733<2\delta=0.4$，充分条件失效。
+
+**这不是 FW₄ 反例（重要）：** $t=2/5$ 时四距离为
+$$\left(\tfrac25,\;\tfrac15,\;\tfrac15,\;\tfrac9{25}\right)$$
+（$d$ 项：$\frac{41}{10}\cdot\frac25=\frac{41}{25}=1+\frac{16}{25}$，距离 $\frac9{25}$），全 $\ge1/5$，且 $t<1$。对应 $q=(0,0,1,1)$。
+
+**失败定位：** 第 3 步若选 $q_3=1$（也在容许集内），则 $A_3=2/5,B_3=3/5$，$I_3'=[2/5,2/5]$（**零宽窗口**）；此时 $\mathcal{J}_4=[21/25,36/25]$ 含整数 $1$，规则恢复。**故失败源于贪心选择，而非可行性；零宽窗口必须保留。**
+
+---
+
+## §7 · IDEA：量化窗口不变量（未证）
+
+**残留引理 Q-B3：** 是否存在**可闭式计算**的 $q_i$ 选择，使 $w_i\ge 2\delta/v_{i+1}$ 对所有 $i$ 成立？
+
+由 Q-B2b、Q-B2c，这是保证顺序规则不中断的一条充分路径。但 $w_i$ 可塌缩为 0（§6 的 $q_3=1$ 分支即为零宽），故**无显然的保持证明**。本席未证，也未否证。**UNFINISHED。**
+
+**失败尝试汇总：** 独立取盒下界（忽略耦合）、顺序最小整数（§6）、R030 的 $\lfloor v_iT\rfloor$（循环）、Minkowski（非对称/无界）均不成立。
+
+---
+
+## §8 · 七栏登记
+
+| 成果 | 1 有效性/审阅 | 2 具体推进 | 3 保证非空 | 4 任意实数 | 5 有限提取 | 6 直接构造 | 7 随人数推广 |
+|---|---|---|---|---|---|---|---|
+| Q-B1 首窗盒 | PROOF CANDIDATE／UNFINISHED | 维度降至盒＋耦合 | UNFINISHED | 盒推导适用 | CHECKED | UNFINISHED | 是（形式） |
+| Q-B2a/b/c | PROOF CANDIDATE／UNFINISHED | 整数性充分条件 $v_iw\ge2\delta$ | CONDITIONAL | 是（不等式） | 条件性 | UNFINISHED | 是 |
+| Q-B2 顺序规则 | **DISPROVED**（作保证构造） | 精确反例定位贪心失效 | DISPROVED | — | — | DISPROVED | — |
+| Q-B3 量化窗口 | UNFINISHED／UNFINISHED | 把缺口写成单一引理 | UNFINISHED | UNFINISHED | UNFINISHED | UNFINISHED | UNFINISHED |
+
+---
+
+## §9 · 四账本与结论
+
+**PROOF VALIDITY：** Q-B1、Q-B2a/b/c 为 PROOF CANDIDATE；顺序最小整数规则 DISPROVED（§6 手算）；Q-B3 UNFINISHED。
+**INDEPENDENT REVIEW：** 本席未审他人；上述各项 UNFINISHED（待非作者）。
+**NEW COVERAGE：** NOT APPLICABLE（无覆盖主张）。
+**COMPUTATIONAL CHECK：** §6 全表为本席精确分数手算；Hesper 的 10,626／2,999 组为外部事实，不作证明。
+
+**最不确定的一步：** Q-B3——能否用闭式选择保持 $w_i\ge2\delta/v_{i+1}$；本席既未证也未否证。
+
+**如实报告（主席验收）：** 本轮**没有**新的有保证直接构造原理。结构性推进仅为：把整数架构的失败精确定位到「容许区间整数性」与「窗口宽度衰减」，并给出可手核的贪心失效例。**建议按主席指示暂停该具体整数架构，保留成果；不宣布统一公式不可能。** FW₄、一般 $F_n$：**UNFINISHED**。
+
+（全文完）
