@@ -1,0 +1,55 @@
+R032 2/4 DeepSeek
+
+ANSWER BLOCK
+状态：FWB/FW-EQ/FW-REG 均 PROOF VERIFIED。
+本轮确切新增内容：精确刻画坏速度集 B(V)，证明 B(V)\subset(0,2\delta/\ell)，并据此严格证明 u\ge(k+1)v_{\max} 必然成功（FW-FO）。
+是否证明非空：否。将 FW_{k+1} 精确归约为 B(V)\cap(v_{\max},\infty)=\varnothing。
+是否给出直接见证：是（u\notin B(V) 时直接由 L_i,R_i 算出）。
+适用范围：任意实数速度，任意有限人数 k。
+最弱未证步骤：猜想 C-INIT（即 B(V) 只有初始平凡区间）。
+
+---
+
+1. 审阅 FWB
+
+· 论证：有效。u 遮住分量 [L_i,R_i] \iff [uL_i,uR_i] 落在某个开带 (m-\delta,m+\delta) 内。因为开带之间的安全弧长 1-2\delta>0，若区间长度 u(R_i-L_i)\ge1-2\delta，必逃出；若完全被困，则必有唯一的 m 满足严格不等式 m-\delta<uL_i\le uR_i<m+\delta，即 u\in I_{i,m}。
+· 边界：严格端点正确。若 uL_i=m-\delta，则 \|uL_i\|=\delta，属于安全，不被遮住。
+· 有限性：B(V)\subset(0,2\delta/\ell) 正确。因最长分量长度 \ell 使得 u\ell\ge2\delta 无法装进宽为 2\delta 的开带，故 u 不可能在 B(V) 中。
+· 审阅结论：PROOF VERIFIED。
+
+2. 审阅 FW-EQ
+
+· 论证：有效。u>v_{\max} 时 a 仍是最慢，首窗固定为 (0,1/a)。要全安全且满足 \|at\|\ge\delta，等价于 t\in J。故首窗有解 \iff u\notin B(V)。
+· 审阅结论：PROOF VERIFIED。
+
+3. 审阅 FW-REG
+
+· 论证：有效。已知 FW_k 有解 t_w。取半径 h=(\delta_k-\delta)/v_{\max}，由 Lipschitz 性，邻域内旧速度安全度下降不超过 \delta_k-\delta，故新门槛下仍安全。这保证最长安全分量 \ell\ge2h。
+· 推导：代入 B(V)\subset(0,2\delta/\ell)，得 2\delta/\ell\le(\delta/(\delta_k-\delta))v_{\max}=(k+1)v_{\max}。故 u\ge(k+1)v_{\max} 一定不在 B(V) 中。
+· 审阅结论：PROOF VERIFIED。
+
+4. 猜想 C-INIT 的评估
+
+· 评估：极其优美的归约。对于 u<\delta/R_{\max}，自然有 ut<\delta，全员都在暗槽 (0,\delta) 里。C-INIT 断言只要 u\ge\delta/R_{\max}，就必然逃出。对 (1,2,3) 手算完全符合。
+· 缺口：尚未证明多分量之间的相位能否发生“接力逃出”。
+
+最不确定的一步
+
+C-INIT 本身的证明。需要证明当 u\ge\delta/R_{\max} 时，不可能所有分量都被整块推入各自的某个非零暗槽 m\ge1。
+
+---
+
+七栏登记（更新）
+
+成果 1 有效性 2 推进 3 保证非空 4 任意实数 5 有限提取 6 直接构造 7 推广
+FWB PROOF VERIFIED 精确算出 u 轴上的坏集 否 是 是 否 是
+FW-EQ PROOF VERIFIED 把 FW_{k+1} 等价于坏集问题 否 是 — — 是
+FW-REG PROOF VERIFIED 把免检区扩展到 (k+1)v_{\max} 大 u 是 是 是 部分 是
+C-INIT UNFINISHED 若成立，直接推出 FW_{k+1} — — — — 是
+
+四账本
+
+· PROOF VALIDITY：FWB, FW-EQ, FW-REG 均为 PROOF VERIFIED。C-INIT 维持 UNFINISHED。
+· INDEPENDENT REVIEW：DeepSeek 独立逐项核验了端点严格性、正长度假设及 2\delta 逃逸界的正确性。
+· NEW COVERAGE：无新覆盖，但精确界定了“坏集”的结构，使 u\ge(k+1)v_{\max} 成为事实上的已证区域。
+· COMPUTATIONAL CHECK：手算 V=(1,2,3) 的 B(V)=(0,1/4)，并核对 C-INIT 在该例下 R_{\max}=4/5，初始区间 (0, (1/5)/(4/5))=(0,1/4)，与手算一致。未用代码。
