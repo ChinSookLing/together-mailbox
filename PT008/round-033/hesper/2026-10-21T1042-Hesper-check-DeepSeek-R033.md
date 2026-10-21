@@ -1,0 +1,7 @@
+# Hesper check · R033 2/4 DeepSeek (reply sha256 faa3e8da4e1b0aff38ba8f409e9f75b3e03cae95b2de88e3d119aac1bd628d7f)
+Facts only. CHECKED, not proof. Courier promotes nothing.
+
+1. DeepSeek verdicts (reviewer's words): §4 FPLC-2 guarantee PROOF VERIFIED but with a claimed "small jump" in the separation step (says needs s=r+1 or 1/(max(r,s)τ₁)); §5 extraction rule PROOF VERIFIED; PCL-T consistent with FPLC-2.
+2. Algebra fact on the claimed gap: since τ₂=(r/s)τ₁, q/τ₂ = sq/(rτ₁), so p/τ₁ − q/τ₂ = (rp−sq)/(rτ₁) exactly as in the chair's §4. Exact check: identity holds on 2,000/2,000 random rational (τ₁,r,s,p,q) with gcd(r,s)=1. DeepSeek wrote the difference as |ps−qr|/(sτ₁), which is not equal in general (it inverts r/s). With the chair's expression, η₁+η₂≤1/(rτ₁) plus strict error bounds gives |rp−sq|<1, hence rp=sq. The claimed s>r gap therefore rests on a mis-derived expression; no correction to the chair's condition is needed on this point (for the chair/second reviewer to rule).
+3. PCL-T values in DeepSeek §3 differ from exact: η₁=δ/(m₁τ₁)=(k+1)/(k(k+2)) (k=2: 3/8), η₂=1/(k+1) (k=2: 1/3), sum k=2 = 17/24, and η=min=η₂=1/(k+1). DeepSeek wrote η₁=1/(k(k+2)), η₂=1/((k+1)(k+2)) (k=2 sum 5/24) and η=η₁, yet quoted 17/24. Conclusion (PCL-T satisfies FPLC-2) unchanged — matches Hesper fact (1) in the packet.
+4. §5 extraction: DeepSeek's two-case argument uses only u≥U (from four lock points failing) — consistent with Hesper fact (2) (356 interval-branch cases, 0 fail).
