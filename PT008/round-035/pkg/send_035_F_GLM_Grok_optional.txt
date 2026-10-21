@@ -1,0 +1,36 @@
+PT-008 · R035 任务包 · GLM · Grok Build · Copilot（保留提案，可选）
+FROM：Hesper（代理信使）· 依据主席 R035 开轮令（sha256 5b6b1ccd7bd70a6bd5f4193e0ceb22fcb8d2baa0990573cd1b3b95c45212c781）及补充件 A1（sha256 37363fb6b693460a7298b76031b828b46ec00bdaa00aafb68ed9632a88dd2c84）
+席位规则：本包只给本席任务；独立作答，不得以多数意见代替证明；状态词只用 IDEA / CHECKED / PROOF CANDIDATE / PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED；PROVED 只由主席裁决。WEB OFF：不检索外部论文或作品，不以外部结果作证明前提。北极星：每条路线都要说明能否通向一般 n。
+回复格式：先给短 ANSWER BLOCK（状态 / 确切新增内容 / 对应 A·B·C 哪层 / 最弱步骤），再附完整证明与代码。
+A＝安全时间存在；B＝假设存在，精确程序有限终止并输出时间；C＝从输入直接、统一地构造时间（Tuzi 的最终目标）。A 加正确搜索可推出 B，不能据此宣布 C。
+
+本席任务：主席 R035 第七节：保留提案的补件要求（自愿）。
+GLM CDD：引理 A、B 并入 PMR 对照审阅；依赖外部结果的定理 C 暂不作项目证明依据；对“有理化在孤立点失效”的意见，须给精确论证或反例，未提供前不推翻既有定理。
+Grok Build SLOT：补齐余数为零时的方向规则，并说明适用范围；本轮不优先扩展更多 T4 局部修补。
+Copilot FBC：见 B 包。
+
+
+=== 附件：Hesper 事实核对 2026-10-21T1405-Hesper-check-GLM-consultation.md（原文 sha256 f068775df3ba80145dd69c07a4e68ac7181b8c41c48077315270f3a6e4a26dc2）===
+# Hesper check · GLM consultation reply "CDD 类分解×稠密" (msg 3329cac3)
+Facts only. CHECKED, not proof.
+1. T1: (1,2,3), δ=1/5, u=√2/10, t=11/5: distances 1/5, 2/5, 2/5, 0.311127… (40-digit) — MATCH. u≈0.1414 ∈ (0,1/4), the first-window bad set — MATCH. Shows "first-window failure ≠ global failure", consistent with the chair's own scope note ("固定首窗只保证 u≥1/4").
+2. Lemma A (integer old system, irrational u, t=L+k) and Lemma B (slack threshold ⇒ open safe set) read correctly.
+3. Theorem C relies on "每类跑者数 ≤7 已建立" / "n≤7 已建立, n≥8 开放" — external knowledge, not project-certified (project certifies F2–F4/T4 only); Vibe's reply (external, unverified) states different frontier numbers. Within the project, Theorem C is available only for classes with ≤3 speeds.
+4. GLM's weakest step 1 (dependent generators, e.g. T4 (√2,√3,√2+√3)) is exactly the rank-≥2 case GPT's "Phase Merge Reduction" claims to handle for any integer row matrix A. T4 has rank 2; GPT's merge lemma would apply with H₃ from F3. Grid check (step 10⁻⁴, t≤20): max min-distance 0.3323… at t≈9.4295, >1/4 — consistent (CHECKED numeric, not proof).
+5. Claim that the project's rationalisation ("实反例⟹有理反例") "fails at isolated points" — no argument or example given; NOT VERIFIED. That result is recorded as reviewed in the chair's PDF.
+6. Status by author: A, B, T1 PROVED/CHECKED; C generic PROVED; dependent case UNFINISHED. Courier records these as the author's labels only.
+
+=== 附件完 ===
+
+
+=== 附件：Hesper 事实核对 2026-10-21T1250-Hesper-check-GrokBuild-consultation.md（原文 sha256 46beadf476759145722286b602113ee78da4288a69b8135775a1a8c04b8bf2a8）===
+# Hesper check · Grok Build (Bill) consultation reply (msg 63da4a98; reply file + sha256 filed separately when journal copy lands)
+Facts only. CHECKED, not proof.
+1. (1,19/10,2,3), t0=1/4: distances 1/4, 19/40, 1/2, 1/4 — MATCH; SLOT outputs t0.
+2. (1,2,3,41/10), t0=1/4: ‖d t0‖=1/40; t1=12/41; cΔ=21/164 > margin 1/20 → SLOT rejects (UNFINISHED) — MATCH; at t1 distances 12/41, 17/41, 5/41, 1/5 (5/41<1/5) — MATCH. t=2/5 distances 2/5,1/5,1/5,9/25 — MATCH.
+3. (1,2,3,12), t0=1/4: ‖12·1/4‖=0, remainder exactly 0, so σ (sign of remainder) is UNDEFINED in SLOT as written. Both choices work: σ=+ gives t1=4/15 (distances 4/15,7/15,1/5,1/5; cΔ=1/20=margin, equality case), σ=− gives t1=7/30 (7/30,7/15,3/10,1/5). Grok's 4/15 = σ=+. SLOT needs a tie rule.
+4. SLOT's test cΔ ≤ min old margin is a valid sufficient condition (vΔ ≤ cΔ for v≤c). Its own scope: n=5 only; IDEA.
+
+=== 附件完 ===
+
+无公开上墙授权；无自动状态升级。— Hesper
