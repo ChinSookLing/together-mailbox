@@ -1,0 +1,462 @@
+diff -ruN base/.github/workflows/office-gate.yml repo/.github/workflows/office-gate.yml
+--- base/.github/workflows/office-gate.yml	2026-10-21 12:56:53.756000000 +0000
++++ repo/.github/workflows/office-gate.yml	2026-10-21 22:56:38.676325130 +0000
+@@ -31,6 +31,7 @@
+           - p461
+           - p439
+           - p433
++          - p449
+           - collect
+           - update
+       collect_which:
+@@ -54,6 +55,7 @@
+           - p461
+           - p439
+           - p433
++          - p449
+           - all
+       tree_commit:
+         description: 40-hex mailbox commit of the new tree. Used only when gate is update.
+@@ -106,7 +108,7 @@
+           cd /tmp
+           sums="${HOME}/office-gate/dispatcher/SHA256SUMS"
+           got="$(sha256sum "$sums" | awk '{ print $1 }')"
+-          test "$got" = "bb8f9f00617d622ae32f0a8860c82a985c713fc0967f96e247f5f19a7430e0b6"
++          test "$got" = "b04b4d4387334d3271a58c4bb41ea42f877fb68fc5eaa1b9297da933f61f7819"
+           exec bash "${HOME}/office-gate/dispatcher/gates/entry.sh"
+       - name: publish results
+         if: always()
+@@ -135,7 +137,7 @@
+           READ_RECORD_COMMIT: ${{ inputs.read_record_commit }}
+           READ_RECORD_PATH: ${{ inputs.read_record_path }}
+           READ_RECORD_SHA256: ${{ inputs.read_record_sha256 }}
+-          EXPECTED_PIN: bb8f9f00617d622ae32f0a8860c82a985c713fc0967f96e247f5f19a7430e0b6
++          EXPECTED_PIN: b04b4d4387334d3271a58c4bb41ea42f877fb68fc5eaa1b9297da933f61f7819
+           GITHUB_TOKEN: ""
+           GH_TOKEN: ""
+           RESULT_TOKEN: ""
+diff -ruN base/SHA256SUMS repo/SHA256SUMS
+--- base/SHA256SUMS	2026-10-21 12:56:53.752000000 +0000
++++ repo/SHA256SUMS	2026-10-21 22:56:38.656159573 +0000
+@@ -1,41 +1,43 @@
+-cfe75f39112f9c41035653e53f3523ceed2c735d9f4e25c3276622308f0176ce  gates/collect.sh
+-f7dd39401b51897a307e7656011ae87e0509e54cb37fead2cc2e69fdaa011558  gates/dispatch.sh
++8d33cba610d0251d3e365c041c7c4dfd7bc405291b56f0571784fe03f233b0ef  gates/collect.sh
++af9b92b83b1d7a0c33138aa8a9ccbcaf5ef93962d7ebedacb08692c851dd3dad  gates/dispatch.sh
+ 62507950e6ca93e9bb28835b13ecd9d55cd0f7ebfb516a3509d77dadaaac1a51  gates/entry.sh
+ fd170eed44ec00e2a740645ef750957d6c1daaaa3d215587fe783de3828dc5ec  gates/km1_extract.py
+ 75cbd039f0cdb063bf71f8353d7b488a35d6ab4e0b418e3fc8ef6b103c5c8a87  gates/lib.sh
+ f641d96c9ebee16541bc57c8c12bff8e6e20ec22e09bae61699a1f0b3a5cf45a  gates/p191-run.sh
+-e73ececab71db328cf42738d5f10d8eaf214fab374ff0d67ea28bb37b5252a29  gates/p191.sh
++dd46b4866263268df6844a84b49ca418a05d5552a74b750624dd20cd5531e247  gates/p191.sh
+ 02a91ef2375ad8b4211b979f54028c5e748304f6719a5b8fbfb09ed57181359b  gates/p233-pack.sh
+ ea98546b18768402855f9b06e4cf4703212ecc205cbd66578d896ff35afc90ee  gates/p241ab-run.sh
+-a33aaf9ce6436bd9aa3c274836dbe703012f0257c3a314b2542737b1bea2e6f1  gates/p241ab.sh
++c241833222521dfc9f2cdbe2927a885ad6e4b988f3100512c5c92a0c05510f8f  gates/p241ab.sh
+ f3fa4695b9c4722de38b8fefe6039ac073c909f19ef795a8e37e2a3a4882a057  gates/p241c-lock.txt
+ b3f276ccef17fcff29474c3e2c96ed134f8d945f8df55be3bbe528b1c27179ea  gates/p241c-run.sh
+-a9c53ccf1d7a81b6012a7737b9c337603c61292dfc894fcd776a360c775b13a1  gates/p241c.sh
++1fd051fd7af3d451b9c617dcda7610b469192230bb4c72a568af842011d4b083  gates/p241c.sh
+ 59e80b81d0d3afef675c15ab88f1bbd4d4f9ca0c6a3b5767905e2209739aef88  gates/p307-run.sh
+-bc00873ed95d5d78b8ba20c6476f3ae4bff9eeb3904ed1df291fa2c2771f4c51  gates/p307.sh
++7ccd7c474fbd23ebb3fbc34131f5e92c15038bc0c955dcbf496826d816e3a6d6  gates/p307.sh
+ b13ec2d1af13b9ec35694d9c63b504cf41401f3aca48dbb3e6008c15b9fe0fd2  gates/p337-run.sh
+-073b5b6562e58abdcf1116202eb5d0ec71263450ab1744c609f7778c580b18b7  gates/p337.sh
++9eccce278b9585776188e6b28c2a03be3196df55b0b3f3fade614192ff14000c  gates/p337.sh
+ 4288bffb9fbe08639d23b02b8949c4c2bb204f47a075c23df942d4f60b6a58d6  gates/p383-run.sh
+-2fb6204b32180dbd5a5bb242d2015f9c219083cf4fcdb7473560288d5dd5347f  gates/p383.sh
++85b507382abfda33ad88583d981abba90121294e674f845913de09e81c6f942c  gates/p383.sh
+ 3e120112425b6c712f8c8aa09e4b6be0eb75214256940b7a823dc9be29857e6a  gates/p397-run.sh
+-941b73b05607391d6b2a4945b39e775e1212512c6a787002bf542e4b8a9ced96  gates/p397.sh
++231751ae51fa98ddc43aa5c5506bead72af6373f15e731bcd9accb5735952ba7  gates/p397.sh
+ 866db0d90f67ca5a264eb243b2bbd9c68a2d258ea7568231544d9134bb293a3a  gates/p409-run.sh
+-013f314d2da42c16a095d8c0bc6fafb7aecc9ca078b476a62e645fce2bb587b8  gates/p409.sh
++9f0b68644b6db2faf486559ea800951869dc2cc4402f8c30768fc76195e2e79b  gates/p409.sh
+ 608f2b2066da39c7c092db7aaecee2f61417ee76b27dfb09599487f11f0a78ee  gates/p431-run.sh
+-3dc4ded09124b3a8d3ff48535713ed50cb69d0af3ec8cfc45fb49ac3322c6dd2  gates/p431.sh
++8151eccdc38a5ea5a9a0e26ae5994115b292a971194ed7cda4bc8b9b44a67a23  gates/p431.sh
+ eff6b19c046f5a0707d5e0c110153f7d8e03fb0cfb64454a00b5179c6ef59ce8  gates/p433-run.sh
+-dd6c1bde63f0ce719d1b3e4313218886533daaf64c663f4879074aa23cb35c22  gates/p433.sh
++caf37735d4d6468e7a22aaff3a7a3bd51e60a22ccef2de233691a9f45201eb40  gates/p433.sh
+ 6654a2bca04bb90b6bded00b0d43553353b20d951f5df74660dacdf22f4f2562  gates/p439-run.sh
+-6c2ea5c9caf022076f898c60c68ce4be058d8f925b7882ecf5643d035e67b0df  gates/p439.sh
++62437a211cbf2c6a8e305557c773cd28348558c11a6432c0df306a5e996593ca  gates/p439.sh
+ 40fc831cc18588edd886fc02b3c2d3babacc9ea1f118a7ea19cda6294979a39d  gates/p443-run.sh
+-e00e2a44b91500dead0d5b1f2af76dd0f3cc581b3f782a502a9ef2f47ddd7a9a  gates/p443.sh
++415e37d8115d62cfd169a43cd283e2665dd1b78128b072c0d89c8df9ef628e94  gates/p443.sh
++27ee278a8e02e23f0cabbf3af7766c848ba0626ed2c2f4df3db47b4ac36e297d  gates/p449-run.sh
++cef725c582437f678d25487447142ea725de624b0547706d091f28ae67961d70  gates/p449.sh
+ f15a75191f12829e53f5abc1ebada32166240b340eeaad154c73351f5e88880a  gates/p461-run.sh
+-186f842c2f71a9d0cb961e24265abf289a73b1340e7faaaf52ab6ea04d2567d6  gates/p461.sh
++f4f0b680d5e5e7058494d554576ac6a3558390b7fffd70c74a76b8d0d643062f  gates/p461.sh
+ 3761f2d62c651eaa81436baa5420937c656330b35d5adbb8ae8660112c22d377  gates/p463-run.sh
+-b0b7075a758159b8d16f2ce683fc75144f56cfff27089f2c098e1c1e4bfc1bb2  gates/p463.sh
++f16c24bb8904708844f1e9a36f4ad0123c365e9dec3f8aa48e181905f9a11a4a  gates/p463.sh
+ 432a478f7515bd65569a9e34eb039b114a34a6ea4876e7b83dca8f9f8fe3bb42  gates/pins.sha256
+ 835dc37b26aee626773db01051d72542ad7e94d43985ef436811e7ceaa743a04  gates/publish-step.sh
+-74360d8c2294889cd8c897e6ed0374d0f11ef16ed001ce88b71fffd235a7e022  gates/publish.sh
+-40cb70b87980f3ad336a177830634b347686fa3b8c5dcce2b6787e9c84a904a4  gates/self-check.sh
+-931dc5b648a03d88f8e3c219635a336008dcbee3686d2e28f98b58d307ca5c53  gates/status.sh
+-1bdefc325ddce1d78793e85ab1813d9b9ac81800ee6a8ba27561ef45f42bf86e  gates/update.sh
++013f747aff8cbae5df41c720fd1d3ecf9b354d0fac99fd6ab3a2dc6f62e15270  gates/publish.sh
++0a4cca85d3d7259f5cdfcd49d4590f6ac0c19912b798f088944dd3616687ff64  gates/self-check.sh
++aaceddd5f496d9cb4490c80330b1ed84bb57b672cc6a57be389a0b7ebe828536  gates/status.sh
++4e85f6a716633c8034cf74fcf7000dc1b122b60ee48ffde9a21503480a8144bc  gates/update.sh
+diff -ruN base/gates/collect.sh repo/gates/collect.sh
+--- base/gates/collect.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/collect.sh	2026-10-21 22:56:23.155834208 +0000
+@@ -5,8 +5,8 @@
+ which="${COLLECT_WHICH:-none}"
+ case "$which" in
+   none) note "collect_which is none"; exit 0 ;;
+-  all) items="p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433" ;;
+-  p191|p241ab|p241c|p409|p383|p307|p337|p397|p431|p443|p463|p461|p439|p433) items="$which" ;;
++  all) items="p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449" ;;
++  p191|p241ab|p241c|p409|p383|p307|p337|p397|p431|p443|p463|p461|p439|p433|p449) items="$which" ;;
+   *) note "bad collect_which"; exit 2 ;;
+ esac
+ 
+@@ -59,7 +59,7 @@
+       copy_out "$HOME/lr16/out409/ir.jsonl" ir.jsonl
+       shrink_km1 "$HOME/lr16/out409/km1.json" km1
+       ;;
+-    p383|p307|p337|p397|p431|p443|p463|p461|p439|p433)
++    p383|p307|p337|p397|p431|p443|p463|p461|p439|p433|p449)
+       p="${item#p}"
+       copy_out "$HOME/kit/run${p}.time" "run${p}.time"
+       if [[ -f "$HOME/kit/run${p}.log" ]]; then
+diff -ruN base/gates/dispatch.sh repo/gates/dispatch.sh
+--- base/gates/dispatch.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/dispatch.sh	2026-10-21 22:56:23.160082897 +0000
+@@ -35,6 +35,7 @@
+     p461) bash gates/p461.sh || rc=$? ;;
+     p439) bash gates/p439.sh || rc=$? ;;
+     p433) bash gates/p433.sh || rc=$? ;;
++    p449) bash gates/p449.sh || rc=$? ;;
+     collect) bash gates/collect.sh || rc=$? ;;
+     update) note "update is a separate job. This menu does not swap the tree."; rc=2 ;;
+     *) note "unknown gate"; rc=2 ;;
+diff -ruN base/gates/p191.sh repo/gates/p191.sh
+--- base/gates/p191.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p191.sh	2026-10-21 22:56:22.968319030 +0000
+@@ -16,7 +16,7 @@
+   note "p191 unit is already running."
+   exit 0
+ fi
+-for unit in office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p241ab.sh repo/gates/p241ab.sh
+--- base/gates/p241ab.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p241ab.sh	2026-10-21 22:56:23.011663097 +0000
+@@ -12,7 +12,7 @@
+   note "p241ab unit is already running."
+   exit 0
+ fi
+-for unit in office-gate-p191 office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p241c.sh repo/gates/p241c.sh
+--- base/gates/p241c.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p241c.sh	2026-10-21 22:56:23.022521992 +0000
+@@ -17,7 +17,7 @@
+   note "p241c unit is already running."
+   exit 0
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p307.sh repo/gates/p307.sh
+--- base/gates/p307.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p307.sh	2026-10-21 22:56:23.031781920 +0000
+@@ -19,7 +19,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p337.sh repo/gates/p337.sh
+--- base/gates/p337.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p337.sh	2026-10-21 22:56:23.041579784 +0000
+@@ -19,7 +19,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p383.sh repo/gates/p383.sh
+--- base/gates/p383.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p383.sh	2026-10-21 22:56:23.051305216 +0000
+@@ -19,7 +19,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p397.sh repo/gates/p397.sh
+--- base/gates/p397.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p397.sh	2026-10-21 22:56:23.061595462 +0000
+@@ -21,7 +21,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p409.sh repo/gates/p409.sh
+--- base/gates/p409.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p409.sh	2026-10-21 22:56:23.070567301 +0000
+@@ -14,7 +14,7 @@
+   note "p409 unit is already running."
+   exit 0
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p431.sh repo/gates/p431.sh
+--- base/gates/p431.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p431.sh	2026-10-21 22:56:23.080218489 +0000
+@@ -21,7 +21,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p433.sh repo/gates/p433.sh
+--- base/gates/p433.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p433.sh	2026-10-21 22:56:23.090234377 +0000
+@@ -22,7 +22,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p439.sh repo/gates/p439.sh
+--- base/gates/p439.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p439.sh	2026-10-21 22:56:23.098982229 +0000
+@@ -21,7 +21,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p443.sh repo/gates/p443.sh
+--- base/gates/p443.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p443.sh	2026-10-21 22:56:23.109346365 +0000
+@@ -21,7 +21,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p449-run.sh repo/gates/p449-run.sh
+--- base/gates/p449-run.sh	1970-01-01 00:00:00.000000000 +0000
++++ repo/gates/p449-run.sh	2026-10-21 22:56:29.602594174 +0000
+@@ -0,0 +1,26 @@
++# Long run for menu p449. Same command as p307, prime 449, 8 workers.
++# Author: Hesper (copied from p433-run.sh, prime 433 -> 449), per Opus office queue 2026-10-21.
++# systemd starts this with /bin/bash. No nohup.
++# kcascade_run.py skips jobs it already finished.
++# If km1.json is absent it writes that file first, then the ir jobs.
++# tee -a so a restart does not truncate the log or the time file.
++set +x
++set -euo pipefail
++source "$(dirname "$0")/lib.sh"
++math_run_lock
++if pgrep -f '[k]cascade_run.py' >/dev/null 2>&1 || pgrep -f '[b]gk15' >/dev/null 2>&1; then
++  printf '%s\n' "refused" > "${HOME}/kit/math-lock.refused"
++  echo "refusing: another kcascade or bgk15 job is running" >&2
++  exit 2
++fi
++STATE="${HOME}/office-gate/state"
++if ! sha256sum -c "$STATE/p449-pc-kit.sha256"; then
++  printf '%s\n' "refused" > "${HOME}/kit/math-lock.refused"
++  exit 2
++fi
++math_run_ready
++cd "${HOME}/lr16/code"
++date '+%F %T %Z' | tee -a "${HOME}/kit/run449.time"
++python3 "${HOME}/kit/kcascade_run.py" ./bgk15 ./cascade_k15p 449 8 "${HOME}/lr16/out449" 2>&1 | tee -a "${HOME}/kit/run449.log"
++date '+%F %T %Z' | tee -a "${HOME}/kit/run449.time"
++date '+%F %T %Z' > "$STATE/p449.done"
+diff -ruN base/gates/p449.sh repo/gates/p449.sh
+--- base/gates/p449.sh	1970-01-01 00:00:00.000000000 +0000
++++ repo/gates/p449.sh	2026-10-21 22:56:29.595891207 +0000
+@@ -0,0 +1,35 @@
++# Menu p449. Same kit as p383. Prime 449 only. 8 workers.
++# Author: Hesper (copied from p433, prime 433 -> 449), per Opus office queue 2026-10-21 (p433 -> p449 -> p467 -> p479 -> p487).
++# On the (a) menu by Opus office queue 2026-10-21 (census line for 449 to be confirmed by Opus).
++# The command is still kcascade_run.py. One prime at a time.
++# Re-dispatch starts again when this unit is not active and p449.done is absent.
++# kcascade_run.py skips jobs it already finished.
++# Refuses if another kcascade or bgk15 job is running.
++set +x
++set -euo pipefail
++source "$(dirname "$0")/lib.sh"
++
++if [[ -f "$HOME/office-gate/state/p449.done" ]]; then
++  note "p449 already finished. Use collect."
++  exit 0
++fi
++math_menu_lock
++if unit_active office-gate-p449; then
++  note "p449 unit is already running."
++  exit 0
++fi
++if pgrep -f '[k]cascade_run.py' >/dev/null 2>&1 || pgrep -f '[b]gk15' >/dev/null 2>&1; then
++  note "refusing: another kcascade or bgk15 job is running"
++  exit 2
++fi
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++  if unit_active "$unit"; then
++    note "refusing: ${unit} is active"
++    exit 2
++  fi
++done
++install -d "$HOME/office-gate/state"
++check_hash "$HOME/kit/kcascade_run.py" scouting/LR16/opus/officepc/kcascade_run.py
++printf '%s  %s\n' "$(want_hash scouting/LR16/opus/officepc/kcascade_run.py)" "$HOME/kit/kcascade_run.py" \
++  > "$HOME/office-gate/state/p449-pc-kit.sha256"
++math_menu_detach office-gate-p449 "$ROOT/gates/p449-run.sh"
+diff -ruN base/gates/p461.sh repo/gates/p461.sh
+--- base/gates/p461.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p461.sh	2026-10-21 22:56:23.119016624 +0000
+@@ -21,7 +21,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/p463.sh repo/gates/p463.sh
+--- base/gates/p463.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/p463.sh	2026-10-21 22:56:23.127885006 +0000
+@@ -21,7 +21,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+diff -ruN base/gates/publish.sh repo/gates/publish.sh
+--- base/gates/publish.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/publish.sh	2026-10-21 22:56:23.164372091 +0000
+@@ -7,7 +7,7 @@
+ token="${RESULT_TOKEN:?}"
+ : "${GATE:?}" "${RUN_ID:?}"
+ case "$GATE" in
+-  status|p233-pack|p191|p241ab|p241c|p409|p383|p307|p337|p397|p431|p443|p463|p461|p439|p433|collect) ;;
++  status|p233-pack|p191|p241ab|p241c|p409|p383|p307|p337|p397|p431|p443|p463|p461|p439|p433|p449|collect) ;;
+   *) echo "refusing gate name" >&2; exit 2 ;;
+ esac
+ case "$RUN_ID" in
+diff -ruN base/gates/self-check.sh repo/gates/self-check.sh
+--- base/gates/self-check.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/self-check.sh	2026-10-21 22:56:23.174136978 +0000
+@@ -75,11 +75,11 @@
+ test "$out" = "REFUSED hash"
+ echo "p241c lock ok"
+ 
+-yml_opts="$(awk '/^          - /{print $2}' .github/workflows/office-gate.yml | head -18 | paste -sd ' ' -)"
++yml_opts="$(awk '/^          - /{print $2}' .github/workflows/office-gate.yml | head -19 | paste -sd ' ' -)"
+ case_opts="$(awk '/^    status\)/{f=1} f && /^    [a-z0-9-]+\)/{print $1}' gates/dispatch.sh | tr -d ')' | paste -sd ' ' -)"
+-test "$yml_opts" = "status p233-pack p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 collect update"
+-test "$case_opts" = "status p233-pack p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 collect update"
+-for name in p383 p307 p337 p397 p431 p443 p463 p461 p439 p433; do
++test "$yml_opts" = "status p233-pack p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449 collect update"
++test "$case_opts" = "status p233-pack p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449 collect update"
++for name in p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449; do
+   grep -q "    ${name})" gates/dispatch.sh
+   grep -q "          - ${name}" .github/workflows/office-gate.yml
+   grep -q "${name}" gates/publish.sh
+@@ -162,7 +162,7 @@
+ test "$rc" -eq 2
+ echo "update checks ok"
+ echo "menu matches"
+-for f in gates/p191.sh gates/p241ab.sh gates/p241c.sh gates/p409.sh gates/p383.sh gates/p307.sh gates/p337.sh gates/p397.sh gates/p431.sh gates/p443.sh gates/p463.sh gates/p461.sh gates/p439.sh gates/p433.sh; do
++for f in gates/p191.sh gates/p241ab.sh gates/p241c.sh gates/p409.sh gates/p383.sh gates/p307.sh gates/p337.sh gates/p397.sh gates/p431.sh gates/p443.sh gates/p463.sh gates/p461.sh gates/p439.sh gates/p433.sh gates/p449.sh; do
+   grep -q 'math_menu_lock' "$f"
+   grep -q 'math_menu_detach' "$f"
+   if grep -E -q '^detach office-gate-' "$f"; then
+@@ -170,11 +170,11 @@
+     exit 1
+   fi
+ done
+-for f in gates/p191-run.sh gates/p241ab-run.sh gates/p241c-run.sh gates/p409-run.sh gates/p383-run.sh gates/p307-run.sh gates/p337-run.sh gates/p397-run.sh gates/p431-run.sh gates/p443-run.sh gates/p463-run.sh gates/p461-run.sh gates/p439-run.sh gates/p433-run.sh; do
++for f in gates/p191-run.sh gates/p241ab-run.sh gates/p241c-run.sh gates/p409-run.sh gates/p383-run.sh gates/p307-run.sh gates/p337-run.sh gates/p397-run.sh gates/p431-run.sh gates/p443-run.sh gates/p463-run.sh gates/p461-run.sh gates/p439-run.sh gates/p433-run.sh gates/p449-run.sh; do
+   grep -q 'math_run_lock' "$f"
+   grep -q 'math_run_ready' "$f"
+ done
+-for f in gates/p383-run.sh gates/p307-run.sh gates/p337-run.sh gates/p397-run.sh gates/p431-run.sh gates/p443-run.sh gates/p463-run.sh gates/p461-run.sh gates/p439-run.sh gates/p433-run.sh; do
++for f in gates/p383-run.sh gates/p307-run.sh gates/p337-run.sh gates/p397-run.sh gates/p431-run.sh gates/p443-run.sh gates/p463-run.sh gates/p461-run.sh gates/p439-run.sh gates/p433-run.sh gates/p449-run.sh; do
+   sum_line="$(grep -n 'sha256sum -c' "$f" | head -1 | cut -d: -f1)"
+   ready_line="$(grep -n 'math_run_ready' "$f" | head -1 | cut -d: -f1)"
+   test "$sum_line" -lt "$ready_line"
+diff -ruN base/gates/status.sh repo/gates/status.sh
+--- base/gates/status.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/status.sh	2026-10-21 22:56:23.169017823 +0000
+@@ -13,7 +13,7 @@
+ else
+   echo no > "$STAGE/user_bus.txt"
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+   if [[ -S "${XDG_RUNTIME_DIR:-/nonexistent}/bus" ]]; then
+     systemctl --user is-active "${unit}.service" > "$STAGE/${unit}.active" 2>/dev/null || true
+   fi
+@@ -41,7 +41,7 @@
+ tail -n 40 "$HOME/kit/census14.log" > "$STAGE/census14.log.tail" || true
+ 
+ # Primes 383, 307, 337 and the (a) doors. Read only. Writes only in $STAGE.
+-for p in 383 307 337 397 431 443 463 461 439 433; do
++for p in 383 307 337 397 431 443 463 461 439 433 449; do
+   if [[ ! -d "$HOME/lr16/out${p}" && ! -f "$HOME/kit/run${p}.log" && ! -f "$HOME/kit/run${p}.time" ]]; then
+     continue
+   fi
+diff -ruN base/gates/update.sh repo/gates/update.sh
+--- base/gates/update.sh	2026-10-21 12:56:45.004000000 +0000
++++ repo/gates/update.sh	2026-10-21 22:56:23.151280736 +0000
+@@ -137,7 +137,7 @@
+   if [[ -S "/run/user/${uid}/bus" ]]; then
+     export XDG_RUNTIME_DIR="/run/user/${uid}"
+     export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+-    for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
++    for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449; do
+       state="$(systemctl --user is-active "${unit}.service" 2>/dev/null || true)"
+       if [[ "$state" == "active" || "$state" == "activating" ]]; then
+         refuse "refusing swap while ${unit} is ${state}"
