@@ -1,0 +1,35 @@
+R032 4/4 Kimi S1
+
+**ANSWER BLOCK**  
+状态：审 Opus R032 的 LOCK、PCL-T、PCL-2。结论：**LOCK PROOF VERIFIED；PCL-T PROOF VERIFIED；PCL-2（充分条件）PROOF VERIFIED**。三者的相位约束均真正来自安全集内部的乘法关系（τ 与 mτ 同在被遮集中迫使窄带），未发现暗中假定联合非空；孤立点、严格边界、量词（固定 4 点＋1 区间对全部 u）均闭合。最弱步：PCL-2 在骨架锁相对实现下的 30/455 未封死组（作者已如实报告，非 FW₄ 反例）；一般 V 的锁相对存在性 UNFINISHED。
+
+**逐项审阅**  
+- **LOCK：PROOF VERIFIED。** 第 1–2 步直接由坏速度定义。第 3 步：\(|m\theta|<m\delta\le1-\delta<1\)，而 \(|x|<1\) 时 \(\|x\|=\min(|x|,1-|x|)\)；若 \(|m\theta|\ge\delta\) 则 \(\|m\theta\|\ge\delta\)（\(|m\theta|>1/2\) 时 \(\|m\theta\|=1-|m\theta|>1-(1-\delta)=\delta\)，用到 \((m+1)\delta\le1\) 的等号情形），与 \(\|m\theta\|<\delta\) 矛盾，故 \(|m\theta|<\delta\)。严格性与等号全部正确。  
+- **PCL-T 第 1 步：PROOF VERIFIED。** \(\tau=1/(k+1)\)：\(\|v/(k+1)\|\ge1/(k+1)>\delta\)（\(v\le k\)）；\(k\tau\)：\(vk\equiv-v\pmod{k+1}\)。\(\tau'=1/(k+2)\) 与 \((k+1)\tau'\)：\(v(k+1)\equiv-v\pmod{k+2}\)，距离 \(\ge1/(k+2)=\delta\)（等号安全）。区间 \(I\)：\(\min_v\|v\tau\|=1/(k+1)\)（\(v=1\) 取到），故 \(I\) 上 \(\|vt\|\ge1/(k+1)-kh=1/(k+2)=\delta\)；\(\tau-h>\delta\) 因 \(1/((k+1)(k+2))>h\)。四点是锁相对：\((\tau,k\tau)\)、\((\tau',(k+1)\tau')\)，均含于 \(S\)。✓  
+- **PCL-T 第 2–3 步：PROOF VERIFIED。** LOCK 两次（\((k+1)\delta<1\)、\((k+2)\delta=1\) 等号已核）。整数约束：\(|(k+1)M-(k+2)M'|<\frac1{k+1}+\frac{k+1}{k(k+2)}\)。自算 \(k=2\)：\(1/3+3/8=17/24<1\)；\(\frac{k+1}{k(k+2)}=\frac1k\cdot\frac{k+1}{k+2}\) 两因子皆降 ⟹ 右端对 \(k\) 递减，故 \(k\ge2\) 恒 \(<1\)。非负整数绝对值 \(<1\) 必为 0；\(\gcd(k+1,k+2)=1\) ⟹ \(M=(k+2)s,M'=(k+1)s\)。✓  
+- **PCL-T 第 4 步：PROOF VERIFIED（且与 Kimi R032 的 PCL-LENGTH 引理一致）。** \(s\ge1\Rightarrow u>(k+1)(k+2)-1/(k+1)\)；自算 \((k+1)(k+2)-k(k+1)=2(k+1)>1/(k+1)\) ⟹ \(u>k(k+1)\)。又 \(\delta/h=\frac1{k+2}\cdot k(k+1)(k+2)=k(k+1)=2\delta/|I|\)，故 \(u|I|>2\delta\)，闭弧长超过开带宽 \(2\delta\)，连通紧致性逼出 \(\|ut\|\ge\delta\) 的点，矛盾。✓  
+- **PCL-T 第 5 步与推论：PROOF VERIFIED。** \(R_{\max}=1-\delta\)（\(t>1-\delta\) 时速度 1 已失败；\(1-\delta\) 处 \(\|v(1-\delta)\|=v\delta\ge\delta\)），\(\delta/R_{\max}=1/(k+1)\)；\(u<1/(k+1)\) 时 \(ut<\frac1{k+1}\cdot\frac{k+1}{k+2}=\delta\) 全部坏。推论中区间分支确会触发（\(s\ge1\) 情形四点可全坏而 \(I\) 安全），提取公式即主席区间公式（未经主席认证，但 Kimi 在 R030/R031 已独立 VERIFIED，可标注引用）。\(u<1/(k+1)\) 变最慢者情形：\(ut\in[\delta,\delta+u)\)，\(\delta+u<1-\delta\iff u<k/(k+2)\)，而 \(1/(k+1)<k/(k+2)\iff k^2>2\) 对 \(k\ge2\) 成立。✓ 量词：固定 4 点＋1 区间适用于全部 \(u\)，不需随 \(u\) 换分量。✓  
+- **PCL-2：PROOF VERIFIED（有效充分条件）。** 逻辑：坏 \(u>b\) ⟹ 由 LOCK 落窄带；且 \(u\ge2\delta/\ell\) 时被区间排除 ⟹ \(u<2\delta/\ell\)；故 \(B_\delta(V)\cap(b,\infty)\subseteq\Lambda\)，\(\Lambda=\varnothing\) 即得结论。无循环、无量词混乱。其局限（仅充分、骨架实现 30/455 未封死）作者已如实报告；该 30 组非 FW₄ 反例（Hesper 来源 (3) 确认其 \(B\cap(b,\infty)=\varnothing\)）。✓
+
+**七栏登记**  
+LOCK：1 PROOF CANDIDATE＋Kimi 非作者 VERIFIED；2 首次把"多点同时被遮"化为可计算的窄带冲突；3 否；4 是；5 否（本身不提取）；6 否；7 是。PCL-T：1 PROOF CANDIDATE＋Kimi VERIFIED；2 第一个对**一切 \(k\ge2\)** 证明 C-INIT 的无穷族，且给 FW\(_{k+1}(1,\dots,k,u)\) 全实数 \(u\) 的直接见证；3 是（该族）；4 \(u\) 任意实数、\(V\) 限 \(\lambda(1,\dots,k)\)；5 是（\(\le5\) 次检查）；6 是（4 定点＋1 区间公式）；7 是（一切 \(k\)）。PCL-2：1 PROOF CANDIDATE＋Kimi VERIFIED；2 一般充分判据（锁相对＋区间 ⇒ 较弱目标）；3 条件性；4 是；5 是；6 否（需搜锁相对）；7 是。
+
+**最不确定的一步**：一般 \(V\) 中两对锁相对的存在性（PCL-2 的关键），30 个未封死三元组（多为 \((1,n,n+1)\) 形）显示骨架两锁不够——需更多锁或允许 \(\tau,\tau'\) 间有理关系；此为核心 UNFINISHED，也是可证伪方向。
+
+**PROOF VALIDITY**  
+- LOCK：**PROOF CANDIDATE**（Kimi 非作者 VERIFIED）。  
+- PCL-T：**PROOF CANDIDATE**（同上）。  
+- PCL-2：**PROOF CANDIDATE**（同上，充分条件）。  
+- 一般 V 的 PCL：**UNFINISHED**。
+
+**INDEPENDENT REVIEW**  
+- LOCK：**PROOF VERIFIED**（等号情形已核）。  
+- PCL-T：**PROOF VERIFIED**（逐步核验：锁点在 \(S\)、LOCK 适用、\(17/24<1\) 及递减、\(u>k(k+1)\) 封死、\(R_{\max}=1-\delta\)、慢者情形 \(\delta+u<1-\delta\)）。  
+- PCL-2：**PROOF VERIFIED**；另记"骨架两锁总够用"：**DISPROVED**（30 组，作者自证，非 FW₄ 反例）。  
+- Opus 依赖的区间公式：未经主席认证，Kimi R030/R031 已 VERIFIED，可标注引用。
+
+**NEW COVERAGE**  
+- **UNFINISHED**（按本轮规则不作主交付）；PCL-T 的 \(\lambda(1,\dots,k,u)\) 首窗族与已认证规则的重叠未计算。
+
+**COMPUTATIONAL CHECK**  
+- 本席手算：\(17/24\)（\(k=2\) 上界）、\(\frac{k+1}{k(k+2)}\) 递减、\(2(k+1)>1/(k+1)\)、\(\delta/h=k(k+1)\)、\(k^2>2\)、\(\delta/R_{\max}=1/(k+1)\)：CHECKED。Opus 的 13,497/9,268/4,229、455/425/30 等计数本席未重算，独立复核 UNFINISHED。
