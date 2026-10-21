@@ -1,0 +1,38 @@
+R032 3/4 Qwen
+第 1 段 / 共 3 段
+
+# ANSWER BLOCK（PCL 攻击 · Qwen · R032）
+
+状态：PCL 仍 **IDEA**；C-INIT 未证未否。本轮新增：(1) **PROOF**——C-INIT 的易向 $(0,\delta/R_{\max})\subseteq B_\delta(V)$；(2) **PROOF**——单分量失败区间宽度公式与相位指标 $q_j$ 的有界性；(3) **CHECKED**——非整数有理例 $V=(1,2,5/2)$ 手算 $B=(0,5/18)=(0,\delta/R_{\max})$，支持 C-INIT；(4) 两分量版本量词澄清。**未证明非空**（那等价 FW），**未给直接见证公式**。示例 $k=3$；一般 $k$ **UNFINISHED**。最弱未证步：C-INIT 反向包含（排除共振陷阱）。
+
+---
+
+## §1 · PROOF：C-INIT 的易向包含
+
+**命题 1（本席）。** 设 $S_\delta(V)\cap(0,H)\ne\emptyset$，$R_{\max}=\max\bigl(S_\delta(V)\cap(0,H)\bigr)$。则
+$$(0,\,\delta/R_{\max})\ \subseteq\ B_\delta(V).$$
+
+**证明。** 取 $u\in(0,\delta/R_{\max})$ 与任意 $t\in S_\delta(V)\cap(0,H)$。由 $R_{\max}$ 定义，$t\le R_{\max}$，故
+$$0<ut<\frac{\delta}{R_{\max}}\cdot R_{\max}=\delta.$$
+于是 $\|ut\|=ut<\delta$（因 $ut\in(0,\delta)\subset(0,1/2)$）。这对**每个** $t$ 成立，故 $u\in B_\delta(V)$。$\square$
+
+**意义：** 这是 C-INIT 的「平凡坏集」部分，对任意实数 $V$ 成立，不依赖可公度。C-INIT 的实质内容在**反向**包含 $B_\delta(V)\subseteq(0,\delta/R_{\max})$，即「无共振陷阱」。
+
+---
+
+## §2 · PROOF：失败区间的宽度与相位有界性
+
+**命题 2（本席）。** 分量 $[L_j,R_j]$（$L_j\le R_j$）被 $u$ 以相位 $q_j\ge0$ 遮住，当且仅当
+$$u\in I_{j,q_j}:=\Bigl(\frac{q_j-\delta}{L_j},\ \frac{q_j+\delta}{R_j}\Bigr),\qquad\text{且 }I_{j,q_j}\ne\emptyset.$$
+其宽度为
+$$|I_{j,q_j}|=\frac{q_j(L_j-R_j)+\delta(L_j+R_j)}{L_jR_j}\quad(\text{当正}).$$
+
+**推论（相位有界）：** 若 $R_j>L_j$（正长度），$I_{j,q_j}\ne\emptyset$ 要求
+$$q_j<\frac{\delta(L_j+R_j)}{R_j-L_j}.$$
+故正长度分量只有**有限个**可能的相位指标 $q_j$。
+
+**证明。** $I_{j,q_j}\ne\emptyset\iff(q_j-\delta)/L_j<(q_j+\delta)/R_j\iff(q_j-\delta)R_j<(q_j+\delta)L_j\iff q_j(R_j-L_j)<\delta(L_j+R_j)$。若 $R_j>L_j$ 即得上界；右端有限，故 $q_j$ 有限。宽度由两端相减。$\square$
+
+**对孤立点（$R_j=L_j$）：** 上式化为 $0<\delta\cdot2L_j$ 恒真，故 $I_{j,q_j}$ 对**一切** $q_j\ge0$ 非空，宽 $2\delta/L_j$。孤立点产生无穷多失败区间——这是 FWB 有限性论证需处理之处（承 Opus 引理 C，未认证，标注）。
+
+（第 1 段完）
