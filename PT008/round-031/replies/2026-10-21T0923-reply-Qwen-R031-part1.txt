@@ -1,0 +1,37 @@
+R031 3/4 Qwen
+第 1 段 / 共 3 段
+
+# ANSWER BLOCK（路线 B · 全局选择规则 · Qwen · R031）
+
+短提案初筛结果：**未发现新的有保证构造原理。** 提出结构性观察 **Q-B1（首窗锚定盒）**：首窗 $t<1/v_1$ 内 $q_1=0$，$v_1$ 的两两约束给每个 $q_i$（$i\ge2$）一个宽 $(1{-}2\delta)(r_i{+}1)$ 的整数盒；$\delta=1/5$ 时盒宽 $>6/5>1$，盒必含整数。但盒间两两耦合约束的联合可行性未解决。结合 R030 命题 2（路线 B $\iff$ LRC），本席**如实报告：无新构造原理**，建议按主席指示暂停整数架构；不宣布统一公式不可能。
+
+---
+
+## §1 · 短提案初筛（主席格式）
+
+**提案 Q-B1（首窗锚定盒）。**
+
+- **确切命题：** 在首窗 $t<1/v_1$（$v_1=v_{\min}$）内，任何安全时间的整数编码满足 $q_1=0$；且 $v_1$ 与 $v_i$ 的两两约束等价于 $q_i$ 落在盒
+$$\mathcal{B}_i=\bigl[\delta r_i-(1-\delta),\;(1-\delta)r_i-\delta\bigr]\cap\mathbb{Z},\qquad r_i=\frac{v_i}{v_1}>1.$$
+- **新步骤：** 把路线 B 的 $(n{-}1)$ 维整数可行性降为「每盒选一整数 $+$ 盒间耦合约束」。
+- **最弱假设：** 盒间耦合约束（$i,j\ge2$）在盒内联合可满足。**此假设未证。**
+- **可否证方式：** 找一组速度使每个 $\mathcal{B}_i$ 非空，但无任何 $(q_2,\ldots,q_{n-1})\in\prod\mathcal{B}_i$ 满足全部 $i,j\ge2$ 耦合不等式。
+
+**初筛判定：** Q-B1 是**结构简化**，非完整构造（盒间耦合未解）。未通过「直接构造」初筛，但作为结构性观察保留。
+
+---
+
+## §2 · PROOF：首窗锚定盒的推导
+
+**命题（本席）。** 设 $0<v_1<\cdots<v_{n-1}$，$\delta=1/n$，$t<1/v_1$ 安全。则 $q_1=\lfloor v_1 t\rfloor=0$，且对 $i\ge2$，$(*)$ 中含 $v_1$ 的不等式等价于 $q_i\in\mathcal{B}_i$（上式）。
+
+**证明。**
+1. $t<1/v_1\Rightarrow v_1 t<1$，又 $v_1 t>0$，故 $q_1=\lfloor v_1 t\rfloor=0$。
+2. 取 $(*)$ 中 $(i,1)$（$i\ge2$）：$v_1 q_i - v_i q_1\le(1-\delta)v_i-\delta v_1$。代入 $q_1=0$：$v_1 q_i\le(1-\delta)v_i-\delta v_1$，即 $q_i\le(1-\delta)r_i-\delta$。
+3. 取 $(*)$ 中 $(1,i)$：$v_i q_1-v_1 q_i\le(1-\delta)v_1-\delta v_i$。代入 $q_1=0$：$-v_1 q_i\le(1-\delta)v_1-\delta v_i$，即 $q_i\ge\delta r_i-(1-\delta)$。
+4. 合并 2、3 得 $\mathcal{B}_i$。
+5. **盒宽：** $(1-\delta)r_i-\delta-[\delta r_i-(1-\delta)]=(1-2\delta)(r_i+1)$。$\delta=1/5$、$r_i>1$ 时 $>(3/5)\cdot2=6/5>1$。长度 $>1$ 的实区间必含整数，故 $\mathcal{B}_i\ne\emptyset$。$\square$
+
+**首窗自动：** 由 $q_i\le(1-\delta)r_i-\delta$，$(q_i+\delta)/v_i\le(1-\delta)/v_1<1/v_1$；又 $t\ge(q_1+\delta)/v_1=\delta/v_1>0$。故 $t\in(\delta/v_1,\,(1-\delta)/v_1)\subset(0,1/v_1)$。✓
+
+（第 1 段完）
