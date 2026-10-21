@@ -1,0 +1,29 @@
+--- /dev/fd/63	2026-10-21 22:57:03.416000000 +0000
++++ repo/gates/p449.sh	2026-10-21 22:56:29.595891207 +0000
+@@ -1,6 +1,6 @@
+ # Menu p449. Same kit as p383. Prime 449 only. 8 workers.
+-# Author: Hesper (copied from p461, prime 461 -> 449), per Opus decision 2026-10-21 (mailbox 68e8cf4).
+-# Census covers 0 (Opus 2026-10-21), so this door is on the (a) menu.
++# Author: Hesper (copied from p433, prime 433 -> 449), per Opus office queue 2026-10-21 (p433 -> p449 -> p467 -> p479 -> p487).
++# On the (a) menu by Opus office queue 2026-10-21 (census line for 449 to be confirmed by Opus).
+ # The command is still kcascade_run.py. One prime at a time.
+ # Re-dispatch starts again when this unit is not active and p449.done is absent.
+ # kcascade_run.py skips jobs it already finished.
+@@ -22,7 +22,7 @@
+   note "refusing: another kcascade or bgk15 job is running"
+   exit 2
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439; do
++for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433; do
+   if unit_active "$unit"; then
+     note "refusing: ${unit} is active"
+     exit 2
+--- /dev/fd/63	2026-10-21 22:57:03.420000000 +0000
++++ repo/gates/p449-run.sh	2026-10-21 22:56:29.602594174 +0000
+@@ -1,5 +1,5 @@
+ # Long run for menu p449. Same command as p307, prime 449, 8 workers.
+-# Author: Hesper (copied from p461-run.sh, prime 461 -> 449), per Opus decision 2026-10-21 (mailbox 68e8cf4).
++# Author: Hesper (copied from p433-run.sh, prime 433 -> 449), per Opus office queue 2026-10-21.
+ # systemd starts this with /bin/bash. No nohup.
+ # kcascade_run.py skips jobs it already finished.
+ # If km1.json is absent it writes that file first, then the ir jobs.
