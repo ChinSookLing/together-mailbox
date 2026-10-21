@@ -1,0 +1,8 @@
+# Hesper check · Opus consultation reply "四个瓶颈其实只剩一个" (msgs 6c05391e reply, 126d04c9 script, 9af6d931 cover note)
+Facts only. CHECKED, not proof. Courier promotes nothing.
+1. Script PT008_Opus_checks.py (as pasted, saved verbatim) run by Hesper, sections s1 s2 s6 s7 s8 s9 s10: every printed value matches the reply's tables (§3.2 jumps 3/4, 2/5, 5/6, 3/10, 2/47…; §4.1 τ table incl. (1,3,4) δ=1/4 → 5/12 via (1,0)→(3,1)→(2,1); §4.3 windows (7,64/9) and (76/11,7), u=7 isolated points {1/5,2/5,3/5,4/5}, residues [2/5,2800/6999] and [4200/7001,3/5]; F_loc 7014 points 0 fail, enlargement fails from radius 2/(2n); LOC2 8×2000 0 fail; scale ladder 240 all safe). s3, s4, s5 (heavy census/random) not rerun.
+2. Lemma 1 (landmark = left endpoint (q+δ)/v_i) is the same statement as Hesper MIN M1, Puck ECT, and Vibe/Copilot's candidate sets — four independent authors now; agreement ≠ proof.
+3. NO-CONT′ (i) proof hand-read: right-tight b forces s≤0; perturbed left-tight a forces s(v_a−ε) ≥ εt₀ > 0 — reads correctly; no safe point in (t₀−η, t₀+η).
+4. (1,4,5,6,7,11,13): isolated point t=3/8 has two down-tight speeds (5,13) — not "simple"; LOC2 test used t₀=1/8, which is simple. LOC2's hypothesis (simple isolated point) is needed.
+5. §4.3 vs chair NO-CERT: chair's proof uses C≤5 < U≥8; Opus's "u=7 touching windows" is IDEA about the source, flagged for the NO-CERT authors. Opus also notes the two windows stay disjoint (touch only at u=7), compatible with 2CC-A when equality is exact.
+6. TF-½ / scale ladder: Opus states no novelty claim (standard measure argument). Status of all theorems: PROOF CANDIDATE (author).
