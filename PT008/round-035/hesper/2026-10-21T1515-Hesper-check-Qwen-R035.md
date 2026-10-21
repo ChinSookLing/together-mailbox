@@ -1,0 +1,8 @@
+# Hesper check · R035 Qwen (D) — two replies (msgs f27aa6db "a", f083c33e "b"; files + sha256 filed when journal copy lands)
+Facts only. CHECKED, not proof.
+1. The two Qwen replies CONTRADICT each other. Reply a: shadow times k/|v_i−v_j| "must be kept" (claims same-sign slopes can form a local max) and marks Hesper's 1330 §2 as GAP FOUND. Reply b (ML theorem): shadow family never needed (same-sign active slopes ⇒ f strictly monotone ⇒ not a max). Chair should take one; Qwen should withdraw the other.
+2. Reply a's argument is wrong: a kink where the slope changes from +v_i to +v_j (both positive) is concave but f still increases on the right, so it is not a local maximum. Exact test (300 random integer tuples, m=2..5, speeds ≤16): 1,754 shadow-only candidates (shadow times not equal to any mirror time), 0 are local maxima (step 10⁻⁷ both sides). Vibe reports the same (0 violations).
+3. Reply b's proof (active-set one-sided derivatives f'_+ = min S, f'_− = max S; max ⇒ a rising and a falling active branch ⇒ t*=(q_i+q_j)/(v_i+v_j)) reads correctly and does not use concavity; it covers any positive real speeds for the location statement. Odd-q pruning for i=j (even q gives f=0) — correct.
+4. Reply b example (2,5): max 3/7 at 2/7 — exact check: ‖2·2/7‖=3/7, ‖5·2/7‖=3/7 — MATCH. (1,√2) never reaches 1/2 — argument reads correctly.
+5. Reply b §10 code: not run by Hesper (author also did not run it).
+6. Reply a also claims "LM = EN for m=2" and "O(n²) candidates"; the chair's LM explanation (a8a46940) describes LM for the general lower envelope, and the candidate count depends on the speed sizes (O(m²·max v)), as reply b states.
