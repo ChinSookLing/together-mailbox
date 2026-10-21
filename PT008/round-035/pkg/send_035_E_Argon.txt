@@ -1,0 +1,50 @@
+PT-008 · R035 任务包 · Argon / Gemini
+FROM：Hesper（代理信使）· 依据主席 R035 开轮令（sha256 5b6b1ccd7bd70a6bd5f4193e0ceb22fcb8d2baa0990573cd1b3b95c45212c781）及补充件 A1（sha256 37363fb6b693460a7298b76031b828b46ec00bdaa00aafb68ed9632a88dd2c84）
+席位规则：本包只给本席任务；独立作答，不得以多数意见代替证明；状态词只用 IDEA / CHECKED / PROOF CANDIDATE / PROOF VERIFIED / GAP FOUND / DISPROVED / UNFINISHED；PROVED 只由主席裁决。WEB OFF：不检索外部论文或作品，不以外部结果作证明前提。北极星：每条路线都要说明能否通向一般 n。
+回复格式：先给短 ANSWER BLOCK（状态 / 确切新增内容 / 对应 A·B·C 哪层 / 最弱步骤），再附完整证明与代码。
+A＝安全时间存在；B＝假设存在，精确程序有限终止并输出时间；C＝从输入直接、统一地构造时间（Tuzi 的最终目标）。A 加正确搜索可推出 B，不能据此宣布 C。
+
+本席任务：独立攻击 Opus 的 NO-CONT′ 原命题（附原文，不只审标题）。请明确：“紧实例”的定义、输入空间、正确选择器的定义；结论到底是 (a) 全局连续选择器不存在，(b) 在某个输入处不能连续，还是 (c) 某一分支或某一固定容差方案失败——三者不是同一命题。“固定数值容差必败”须说明容差与输出规则的准确含义；不能从不连续性直接否定全部数值算法。
+
+
+=== 附件：Opus §3.2 NO-CONT′（原文 sha256 a57aa8d47dc1b779a5173f54a235441a7dfc39f797a064eece47916e51d00c8b；节选，未改字）===
+### 3.2　NO-CONT′：必需分支的位置恰为紧实例集
+
+**定义**　v* 称为**紧实例**，若 S_δ(v*) ≠ ∅ 且其中每一点都是孤立点（等价于测度为零，即 MZ-ZERO）。**选择子**：定义在 v* 的某邻域 U 上、满足 F(v) ∈ S_δ(v) 的函数 F。
+
+**定理**（n ≥ 3，δ = 1/n）
+(i) 若 v* 是紧实例，则任何选择子都在 v* 处不连续。
+(ii) 若 S_δ(v*) 有内点，且 U 上存在选择子，则存在一个在 v* 处连续的选择子。
+因此（在选择子存在的前提下）"所有选择子都在该点不连续"的点集，恰为紧实例集。
+
+*证明 (i)*：设 F 在 v* 连续，t₀ = F(v*)。t₀ 是孤立点。用引理 1 的论证分别看左右两侧：存在速度 a 使 v*_a t₀ ≡ +δ（左侧紧），存在速度 b 使 v*_b t₀ ≡ −δ（右侧紧）；因 δ < 1/2，+δ ≢ −δ，故 a ≠ b。（这正是 LM 所说的"两速度算术结构"。）令 v(ε) = v* − ε·e_a。对充分小的 |s| < η 与 0 < ε < ε₀：
+- 速度 b 不变：‖v*_b (t₀ + s)‖ ≥ δ ⟺ s ≤ 0；
+- 速度 a：(v*_a − ε)(t₀ + s) ≡ δ + v*_a s − ε(t₀ + s)，安全 ⟺ v*_a s ≥ ε(t₀ + s) > 0，从而 s > 0。
+
+两者矛盾，所以 v(ε) 在 (t₀ − η, t₀ + η) 内没有安全时间；但连续性要求 F(v(ε)) → t₀。∎
+
+*证明 (ii)*：在内部取 t₁ 使所有 ‖v*_i t₁‖ > δ（等号点是离散的，可以避开）；有限个严格不等式在 v* 附近保持成立，所以在一个小球内令 F ≡ t₁，球外用任一选择子即可。∎
+
+**推论 1（固定精度必败）**　若一个算法只通过舍入值 r(v) 读入，且在 v* 的某邻域内 r(v) = r(v*)（例如 v* 是整数，可精确表示），则它在 v*，或在任意近的某个 v 上，输出不安全时间。
+*证明*：邻域内输出恒为 t̂。若 t̂ 对 v* 不安全，已经出错；否则 t̂ 是孤立点，取其左侧紧速度 a，令 v = v* − ε·e_a，0 < ε < δ/(2t̂)，则 ‖(v*_a − ε) t̂‖ = δ − ε t̂ < δ。∎
+
+**推论 2（可计算分析，computable analysis；证明草图）**　即使允许自适应精度、甚至允许多值输出，只读近似值的算法也不能在任何紧实例的邻域内总是正确：它读完有限个近似值后就必须承诺一个很小的输出窗口，而与这些近似值相容的输入里，同时包含"t₀ 附近没有安全点"的 v(ε)。
+
+**极值点数据（CHECKED，§4.2）**　V* = (1, …, n−1) 处 τ = 1/n。把 v₁ 降低 10⁻⁶ 后，t₀ ± δ/4 内安全分量数为 0，τ 跳到 j/n，其中 j 是大于 1 的最小的与 n 互素的整数（n = 4 跳到 3/4，n = 10 跳到 3/10，n = 47 跳到 2/47）；把 v₁ 升高 10⁻⁶，τ 连续地停在约 1/n。
+=== 附件完 ===
+
+
+=== 附件：Hesper 事实核对 2026-10-21T1340-Hesper-check-Opus-consultation.md（原文 sha256 7e106aa172d622deeac06bf50f73c6b6938e30d14e6f6c909f6e16e8a402a95a）===
+# Hesper check · Opus consultation reply "四个瓶颈其实只剩一个" (msgs 6c05391e reply, 126d04c9 script, 9af6d931 cover note)
+Facts only. CHECKED, not proof. Courier promotes nothing.
+1. Script PT008_Opus_checks.py (as pasted, saved verbatim) run by Hesper, sections s1 s2 s6 s7 s8 s9 s10: every printed value matches the reply's tables (§3.2 jumps 3/4, 2/5, 5/6, 3/10, 2/47…; §4.1 τ table incl. (1,3,4) δ=1/4 → 5/12 via (1,0)→(3,1)→(2,1); §4.3 windows (7,64/9) and (76/11,7), u=7 isolated points {1/5,2/5,3/5,4/5}, residues [2/5,2800/6999] and [4200/7001,3/5]; F_loc 7014 points 0 fail, enlargement fails from radius 2/(2n); LOC2 8×2000 0 fail; scale ladder 240 all safe). s3, s4, s5 (heavy census/random) not rerun.
+2. Lemma 1 (landmark = left endpoint (q+δ)/v_i) is the same statement as Hesper MIN M1, Puck ECT, and Vibe/Copilot's candidate sets — four independent authors now; agreement ≠ proof.
+3. NO-CONT′ (i) proof hand-read: right-tight b forces s≤0; perturbed left-tight a forces s(v_a−ε) ≥ εt₀ > 0 — reads correctly; no safe point in (t₀−η, t₀+η).
+4. (1,4,5,6,7,11,13): isolated point t=3/8 has two down-tight speeds (5,13) — not "simple"; LOC2 test used t₀=1/8, which is simple. LOC2's hypothesis (simple isolated point) is needed.
+5. §4.3 vs chair NO-CERT: chair's proof uses C≤5 < U≥8; Opus's "u=7 touching windows" is IDEA about the source, flagged for the NO-CERT authors. Opus also notes the two windows stay disjoint (touch only at u=7), compatible with 2CC-A when equality is exact.
+6. TF-½ / scale ladder: Opus states no novelty claim (standard measure argument). Status of all theorems: PROOF CANDIDATE (author).
+
+=== 附件完 ===
+
+
+无公开上墙授权；无自动状态升级。— Hesper
