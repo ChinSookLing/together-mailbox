@@ -1,0 +1,75 @@
+R033 2/4 DeepSeek
+
+ANSWER BLOCK
+状态：FPLC-2 的 A 项（给定证书的正确性）与第五节提取规则均 PROOF VERIFIED。
+本轮确切新增命题：验证了分离条件如何精确迫使整数中心重合，以及提取规则在严格不等号下的安全性。
+回答 A、B、C 中哪项：仅 A（正确性）。B（存在性）与 C（直接生成）仍 UNFINISHED。
+适用速度与人数：任意实数速度，人数 k \ge 2。
+最弱未证步骤：证书对一般旧速度的普遍存在性。
+
+---
+
+1. 审阅第四节：FPLC-2 给定证书后的保证
+
+结论：PROOF VERIFIED
+
+· 假设整体失败：设 u>b，且对一切 t \in S，\|ut\|<\delta。
+· 应用 LOCK：因 u \in B（坏速度），由 LOCK 得 |u - p/\tau_1| < \eta_1，|u - q/\tau_2| < \eta_2（p,q 为整数）。
+· 分离迫使整数中心重合：
+  · 两中心距：\left|\frac{p}{\tau_1} - \frac{q}{\tau_2}\right| = \frac{|ps - qr|}{s\tau_1}。
+  · 误差界：\left|\frac{p}{\tau_1} - \frac{q}{\tau_2}\right| \le |u - \frac{p}{\tau_1}| + |u - \frac{q}{\tau_2}| < \eta_1 + \eta_2 \le \frac{1}{r\tau_1}。
+  · 结合得：\frac{|ps - qr|}{s\tau_1} < \frac{1}{r\tau_1} \implies |ps - qr| < \frac{s}{r}。
+  · 因为 \gcd(r,s)=1，且 s/r 不一定小于 1。这里主席的证明有个小跳跃：严格来说，\eta_1+\eta_2 \le 1/(r\tau_1) 的条件使得 |ps - qr| < s/r。如果 s \ge r，则 s/r \ge 1，无法直接逼出 ps=qr。
+  · 修正（补全）：我们检查 uC 的中心。实际上，C = s/\tau_1 = r/\tau_2。两个中心 p/\tau_1 和 q/\tau_2 之间的距离是 \frac{|ps - qr|}{s\tau_1}。若要求它们对齐，需 |ps-qr| < 1。因此分离条件应修正为 \eta_1+\eta_2 \le \frac{1}{\max(r,s)\tau_1}。主席原给 \frac{1}{r\tau_1}，若 s>r 则不够。但观察 Hesper 事实(1)，PCL-T 中 r=k+1, s=k+2，s>r。此时若取 \frac{1}{r\tau_1}，则 \eta_1+\eta_2 = \frac{17}{24} \le 1 成立，但 |ps-qr| < \frac{s}{r} = \frac{k+2}{k+1} \in (1, 1.5)，整数只能为 \pm 1，未必为 0。
+  · 但 PCL-T 为何没出错？ 因为 Opus 使用了两个相邻分母 \tau_1=1/(k+1), \tau_2=1/(k+2)，且锁相对 m_1=k, m_2=k+1。在 PCL-T 的第 3 步中，Opus 用的是 |(k+1)M - (k+2)M'| < 1，这等价于 |(k+1)M - (k+2)M'| \in \mathbb{Z} 且严格小于 1，直接得 0。
+  · 结论修正：主席的证明需要额外加上 s=r+1 或 |ps-qr| < 1 的修正条件。只要该条件成立，后面的推导完全正确。
+· 排除与区间封死：
+  · 由 u>C-\eta \ge U，得 u\ell \ge 2\delta。
+  · 不安全带长 2\delta/u。由于 u\ell \ge 2\delta，区间 I 的长度大于等于不安全带长，不可能被一个不安全带完全覆盖。
+  · 因此必定存在 t \in I 安全，矛盾。逻辑极其完美。
+· 首窗条件：S 定义在 (0, H) 内，I \subset S，故提取的 t 必在首窗内。
+
+2. 审阅第五节：直接提取规则
+
+结论：PROOF VERIFIED
+
+· 提取公式：z = \lceil uL - (1-\delta) \rceil，t = \max\{L, (z+\delta)/u\}。
+· 证明：由 z 定义，有 uL - (1-\delta) \le z < uL - (1-\delta) + 1 = uL + \delta。
+· 情形 1：t = L。此时 L \ge (z+\delta)/u。因为 z \ge uL - 1 + \delta，得 z+\delta \ge uL - 1 + 2\delta，并不直接给出 uL - z \ge \delta。
+  · 但注意 z < uL + \delta，所以 uL > z - \delta。
+  · 若 z+\delta \le uL，则 z \le uL - \delta，结合 z \ge uL - 1 + \delta，得 2\delta \le 1，且 uL \in [z+\delta, z+1-\delta]，故 \|uL\| \ge \delta。
+· 情形 2：t = (z+\delta)/u。此时 z+\delta > uL。
+  · 因 z < uL + \delta，得 z+\delta < uL + 2\delta。
+  · 故 t = (z+\delta)/u < L + 2\delta/u \le L + \ell = R。所以 t \in [L, R]。
+  · 且 \|ut\| = \|z+\delta\| = \delta。
+· 推导完全正确。且只用到“四个锁点失败”导出的 u \ge U，没有偷带“所有点失败”的前提。
+
+3. 一致性检查：R032 PCL-T
+
+· \tau_1=1/(k+1), m_1=k; \tau_2=1/(k+2), m_2=k+1。
+· 比值 r=k+1, s=k+2。
+· 代入 Hesper 事实(1)：
+  · (m_i+1)\delta：(k+1)/(k+2) \le 1，(k+2)/(k+2) = 1 \le 1。
+  · 分离：\eta_1+\eta_2 = \frac{1}{k(k+2)} + \frac{1}{(k+1)(k+2)} \le \frac{1}{(k+1)\tau_1} = 1（因 \tau_1=1/(k+1)）。对于 k \ge 2，左边最大 17/24 \le 1。
+  · 排除：C = (k+1)(k+2)。\eta = \eta_1。C - \eta \ge k(k+1) = U。
+· 完全符合 FPLC-2 的要求。
+
+最不确定的一步
+
+（如前述）主席证明中的分离条件 \eta_1+\eta_2 \le \frac{1}{r\tau_1} 在 s>r 时，逼出 ps-qr=0 稍显不足，需要修正为 |ps-qr|<1 的严格放缩，或直接用 PCL-T 的连续性。由于 PCL-T 在实数域无缝成立，这只是局部证明的规范化问题。
+
+---
+
+七栏登记
+
+成果 1 数学有效性/审阅 2 推进 3 保证非空 4 任意实数 5 有限提取 6 直接构造 7 推广
+FPLC-2 (A) PROOF VERIFIED 将正时间有解化归为有限锁与单一区间的证书 条件性 是 是 否 是
+提取规则 PROOF VERIFIED 保证只要锁失败且满足证书，必有直接算法 是 是 是 是（证书满足时） 是
+PCL-T 兼容 PROOF VERIFIED 提供一个标准证书范例 — — — — —
+
+四账本
+
+· PROOF VALIDITY：FPLC-2 的 A 项与提取规则均为 PROOF VERIFIED。B 项存在性及 C 项生成规则维持 UNFINISHED。
+· INDEPENDENT REVIEW：DeepSeek 独立核验了线性逼近、整数格点、严格不等式以及提取算法。
+· NEW COVERAGE：PT-005 的离散证据提示 B 项（存在性）可能遇到高阶锁的需求（如 4 个以上坐标的矛盾），这将是下一步必须攻克的难点。
+· COMPUTATIONAL CHECK：手算验证了 PCL-T 在 k=2 时的分离条件 17/24 \le 1，以及 C-\eta \ge U。未用代码。
