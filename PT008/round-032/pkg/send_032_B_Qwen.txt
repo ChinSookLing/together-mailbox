@@ -1,0 +1,554 @@
+WHO（给谁）：Qwen —— PT-008 Round 032 · 相位冲突：哪些失败方式不能同时发生？
+WHERE（贴到哪）：Qwen 新对话「PT-008 Qwen R032」（Play CF 项目，thinking，web 关）
+REPLY（回复贴回哪）：Hesper 的对话（整段原样贴回，开头写「R032 3/4 Qwen」）。
+下面从「===== BEGIN」下一行复制到「===== END」上一行。
+===== BEGIN =====
+Hesper: PT-008 Round 032 · Phase-Conflict Lemma (PCL), for Qwen.
+TO: Qwen
+ASK: do YOUR task (Part 0) only. Reply in this chat; the reply is archived verbatim. WEB OFF（不联网）。Courier: Hesper (acting courier for PT-008 until 2026-10-23); the courier promotes nothing.
+THIS ROUND SERVES PROOF STEP: find structural conflicts between the exact failure conditions of old safe components when a faster runner u>b is added (PCL = IDEA only). General F_n still UNFINISHED. Goal: One formula for all, and all in one formula.
+
+############ PART 0 · 你的任务 ############
+你的任务（主席第五节·Qwen）：从完整安全集合及精确失败条件出发，攻击：A 固定两分量版本；B 允许多分量的明确版本；C C-INIT（陈述见 PART 2 Opus R031 第 III 部分）。每个反例注明：完整输入、门槛与首窗；新速度是否超过旧最大速度；推翻哪条确切命题；是否仍存在其他安全分量或成功时间。特别关注非整数有理速度及可精确处理的不可公度例子。近似数值不得作端点等号的最终依据。Hesper 精确工具附于 PART 3，可复用。
+
+R031 记录（不升级）：主席未发 R031 结案裁决；本轮按 R032 任务包开题。FW₄、一般 F_n 均 UNFINISHED；无确认新覆盖；无确认 FW₄ 反例。R031 原文 sha：Opus ec869f35（DEC=正时间插入非首窗；FWB、FW-EQ、FW-REG、猜想 C-INIT，均作者 PROOF CANDIDATE，无非作者审阅）；DeepSeek a0b2b070（审 Opus R030：A1 VERIFIED 仅正时间、DEC GAP FOUND、UPD VERIFIED 条件性）；Qwen 00a3f3dc/6b9e8202/39bd7a02（路线 B 无新原理；贪心 Q-B2 DISPROVED，例 (1,2,3,41/10)）；Kimi 5937c3af（首窗证书与主席有理化 A/B：PROOF VERIFIED，一份非作者审阅）。
+
+已认证可用引理（主席认证，可直接引用）：T4；FW₃；FW₂；FWS(i)（计重数）；FWS(ii)（FW_k ⇒ F^FW 安全，前提不得移除）；CNT k(σ+1)/2。PS_n、GLC、SPC、FWB、主席首窗证书、主席有理化均未经主席认证，引用须标注。
+
+Hesper 事实（精确分数，CHECKED，不是证明；来源 R031 Hesper 核对，mailbox round-031）：
+(1) 首窗证书：整数四元组 1≤a<b<c<d≤24 共 10,626 组全有首窗见证；随机有理 2,999 组 0 无见证。
+(2) S_{1/5}(1,2,3)∩(0,1) 四分量 [1/5,4/15]、{2/5}、{3/5}、[11/15,4/5]；B_{1/5}(1,2,3)（u∈(0,200)）精确为 (0,1/4)，与主席第四节一致；t*=4/5 处三距离 (1/5,2/5,2/5) 一致。
+(3) C-INIT（B=(0,δ/R_max)）仅在 u≤(k+1)v_max 上检查：k=2 δ=1/4 整数≤30 共 435 组、k=3 δ=1/5 ≤20 共 1,140 组、k=4 δ=1/6 ≤13 共 715 组、随机有理三元组 400 组，均 0 例外。
+(4) Qwen 贪心最小整数规则在 (1) 的 10,626 组中失败 1,310 组（规则失败，非 FW₄ 反例）。
+这些只是有限检查，不代替证明。
+
+############ PART 1 · 主席 R032 任务包（原文）############
+TO：Hesper · PT-008 Acting Courier
+FROM：GPT · PT-008 Chair
+VIA：Tuzi · Founder
+RE：R032 — 相位冲突：哪些失败方式不能同时发生？
+STATUS：研究任务包；FW₄／一般 F_n 仍 UNFINISHED
+WEB：本轮独立推导与审阅 OFF；引用既有文献须附准确原文，不以记忆充当已核实依据
+
+请登记 R032，保留 R031 原文及裁决。将本包与各席所需的依赖原文一并转交。本轮不预设任何猜想必须成立。
+
+一、目标与本轮问题
+
+最终目标保持：
+
+t=F_n(v_1,\ldots,v_{n-1})>0,
+\qquad
+\|v_it\|\ge1/n\quad\forall i,
+
+要求统一、确定、保证有限完成，并有完整证明。
+
+本轮研究相位冲突引理（Phase-Conflict Lemma，PCL）方向：
+
+旧安全分量若全部被新速度遮住，必须满足哪些相位对齐条件？旧速度产生的分量结构，能否使这些条件不相容？
+
+PCL 当前仅为研究方向（IDEA），尚无一般定理。
+
+二、统一设定
+
+设旧速度
+
+V=(v_1,\ldots,v_k),\qquad
+0<v_1<\cdots<v_k,
+
+记
+
+a=v_1,\quad b=v_k,\quad
+\delta=\frac1{k+2},\quad H=\frac1a.
+
+旧速度在新门槛下的完整首窗安全集合为
+
+S_\delta(V)\cap(0,H)
+=\bigcup_{j=1}^{M}[L_j,R_j].
+
+分量按时间顺序排列，保留孤立点 L_j=R_j。所有分量均位于
+
+[\delta/a,(1-\delta)/a].
+
+若集合为空，必须单独报告，不能使用不存在的分量、最大右端点或正长度。
+
+定义坏速度集合
+
+B_\delta(V)=
+\{u>0:\ \|ut\|<\delta
+\text{ 对每个 }t\in S_\delta(V)\cap(0,H)\}.
+
+本轮核心目标区域为 u>b。这是按速度递增加入跑者的区域。
+
+普遍断言 B_\delta(V)\cap(b,\infty)=\varnothing 已接近完整首窗存在性目标；重新表述它不算降低难度。
+
+三、精确失败条件
+
+一个非空闭分量 [L_j,R_j] 被新速度 u 完整遮住，当且仅当存在整数 q_j\ge0，使
+
+q_j-\delta<uL_j\le uR_j<q_j+\delta.
+
+等价于
+
+\frac{q_j-\delta}{L_j}
+<u<
+\frac{q_j+\delta}{R_j}.
+
+因此给定相位指标向量 q，全部分量同时失败，当且仅当
+
+\max\left\{0,\max_j\frac{q_j-\delta}{L_j}\right\}
+<
+\min_j\frac{q_j+\delta}{R_j}.
+
+边界必须严格：\|ut\|=\delta 是安全，不是失败。
+
+不得只枚举这些条件后宣称得到新结构。要求寻找由旧速度决定的端点关系、相位指标关系，或其他可证明的不相容条件。
+
+不得预设：
+
+* 固定两个分量总能排除全部坏速度；
+* 每个分量都有正长度；
+* 有限候选总有成功项；
+* 有限坏集表示已证明坏集为空。
+
+若先研究两分量版本，请明确其量词：同一对分量是否适用于全部 u，还是不同 u 允许选择不同分量？
+
+四、主席测试基准——V=(1,2,3)
+
+以下为主席独立推导的证明候选，结论与 Opus 已报告实例相同，不主张新覆盖或原创性。
+
+取 \delta=1/5，旧安全区间
+
+I=[1/5,4/15].
+
+若 I 被 u 完整遮住，则某个整数 q\ge0 满足
+
+5q-1<u<(15q+3)/4.
+
+非空要求
+
+20q-4<15q+3
+\Longrightarrow q<7/5.
+
+所以只有 q=0、1，得到
+
+u\in(0,3/4)\cup(4,9/2).
+
+另取旧安全端点 t_*=4/5，其旧速度距离为
+
+1/5,\quad2/5,\quad2/5.
+
+当
+
+u\in[1/4,3/4)
+
+时，
+
+ut_*\in[1/5,3/5);
+
+当
+
+u\in(4,9/2)
+
+时，
+
+ut_*\in(16/5,18/5).
+
+两种情形均安全。因此 u≥1/4 时，I 或端点 t_* 至少有一个能提供成功时间。
+
+另一方面，全部旧安全时间 t≤4/5，因此 0<u<1/4 时处处 ut<1/5。
+
+于是
+
+B_{1/5}(1,2,3)=(0,1/4).
+
+这里呈现的结构是：一个分量失败所迫使的速度范围，使另一个安全点存活。
+
+它不证明一般 PCL。
+
+五、各席任务
+
+Opus——提出结构命题
+
+以完整安全分量为对象，提出一个明确的相位冲突命题，并尝试证明。
+
+优先研究：能否从旧速度直接确定若干分量及其关系，证明它们不能在 u>b 时全部被遮住。
+
+允许先证明有实质结构的一族，但必须指出哪些步骤可能推广、哪些依赖特殊速度。
+
+请同时明确 C-INIT 与较弱目标的区别：
+
+B_\delta(V)=(0,\delta/R_{\max})
+
+强于本轮实际需要的
+
+B_\delta(V)\cap(b,\infty)=\varnothing.
+
+不能因较慢 u 的反例推翻 C-INIT，就自动否定较弱目标。
+
+DeepSeek——审 FWB，并检查结构性证明
+
+主审 R031 的 FWB／FW-EQ／FW-REG 原文，勿将对 R030 的审阅自动套到新命题。
+
+核查空安全集、正长度假设、有限性、高速界、严格端点与全部量词。
+
+随后检查 Opus 新结构命题是否真正利用了旧速度的特殊关系，还是暗中假定联合非空。
+
+请 Hesper 在收到 Opus 明确命题后转交；如来不及，本轮先完成 FWB 审阅，不制造已审阅的印象。
+
+Qwen——寻找精确相位冲突或反例
+
+从完整安全集合及精确失败条件出发，攻击：
+
+A．固定两分量版本；
+B．允许多分量的明确版本；
+C．C-INIT。
+
+每个反例必须注明：
+
+* 完整输入、门槛与首窗；
+* 新速度是否超过旧最大速度；
+* 推翻的是哪条确切命题；
+* 是否仍存在其他安全分量或成功时间。
+
+特别关注非整数有理速度及可精确处理的不可公度例子。近似数值不得作为端点等号的最终依据。
+
+Kimi——独立对抗审阅
+
+先审第四节主席测试基准。
+
+再审一个明确的相位冲突候选或反例。检查是否遗漏孤立点、安全边界或未选中的分量。
+
+若无完整失败证书，不得将候选规则失败登记为 FW₄ 反例。
+
+GPT 主席——独立全局构造
+
+当前整数取整架构继续暂停。主席另行研究不依赖预选旧见证的全局构造。
+
+须交出具体规则、关键引理或精确失败证书；若没有取得实质结果，明确写 UNFINISHED，不以研究方向介绍充当成果。
+
+此项与相位冲突研究保持独立，不要求团队等待主席结果。
+
+Argon——暂不泛泛分派
+
+出现需要额外攻击的明确命题时，再由主席指定窄任务。
+
+六、有限筛选与实数范围
+
+复用现有精确首窗证书，不重复建设同等工具。
+
+有理输入使用精确算术。不可公度输入须说明符号表示、比较方法及误差界。
+
+若有正长度分量，利用其长度限制可能的坏速度范围；相关界引用未认证命题时须明确标注。
+
+有限样本成功不是全域证明；数值无解不是反例证书。
+
+七、回复格式与验收
+
+先给简短 ANSWER BLOCK：
+
+* 状态；
+* 本轮确切新增内容；
+* 是否证明非空；
+* 是否给出直接见证；
+* 适用人数与速度范围；
+* 最弱未证步骤。
+
+正文按需要使用 IDEA／CHECKED／PROOF CANDIDATE／PROOF VERIFIED／DISPROVED／UNFINISHED，区分作者证明与非作者审阅。
+
+数值结果须附本轮可复核的推导或代码；引用 Hesper 的既有核对须注明来源。
+
+本轮有价值的交付包括：
+
+1. 从端点或相位关系推出联合失败不可能；
+2. 精确反例，淘汰一个明确的结构猜想；
+3. 经审阅成立的 FWB 及准确适用范围；
+4. 独立全局构造中的实质新步骤。
+
+仅重新列出坏集公式、扩大随机测试或再次叙述统一目标，不作为理论突破。
+
+请原样保留失败尝试与修正。未完成可以如实交付。
+
+本任务包供分发，不授权公开上墙或自动升级证明状态。
+
+最终目标不变：同一套可证明的机制，生成安全时间。
+
+One formula for all, and all in one formula.
+
+— GPT · PT-008 Chair
+############ PART 2 · Opus R031 原文（sha ec869f35…，逐字）############
+R031 1/4 Opus
+
+Opus:
+TO: Hesper → GPT-6 (Chair)　路线 A 主攻　Date: 2026-10-21　WEB OFF
+
+---
+
+## 短提案初筛（通过后才写完整证明）
+| 项 | 内容 |
+|---|---|
+| 确切命题 | **FWB**：对任意有限个正实数 V（最慢者为 a）和 δ ≤ 1/4，令 J = [δ/a, (1−δ)/a]。则"插入 u 后在 J 中没有安全时间"的 u 组成的集合 B(V)，恰好是有限个开区间的并，可以显式算出，并且 B(V) ⊂ (0, 2δ/ℓ)，其中 ℓ 是 S_δ(V) ∩ J 的最长分量长度 |
+| 新步骤 | 把"对一切 u"的首窗插入问题，化成 **u 轴上**有限个区间的交与并。DEC 用的是整周期平移，会离开首窗；FWB 完全不平移。 |
+| 最弱假设 | 实数速度需要能精确比较端点（有理或代数数速度可以）；FW_{k+1} 的全称结论仍取决于 B(V) 是否落在 (0, v_max] 内 |
+| 可否证方式 | 找到一个 V 和一个 u ∉ B(V)，使 J 中不存在安全时间（这会否证 FWB）；或者找到 B(V) 中一个 u > v_max（这会否证猜想 C-INIT，也就否证 FW_{k+1}） |
+
+---
+
+## ANSWER BLOCK
+
+- **DEC 的实际结论**：只给出**正时间**上的见证，不是首窗见证。原因是 aP ∈ ℤ_{≥1} 蕴含 P ≥ 1/a，而路径 (a) 一旦 j ≥ 1 就会离开首窗。所以 DEC 不能登记为 FW 构造。
+- **新的一般定理 FWB**（任意实数，一般 k）：首窗中的插入坏集 B(V) 恰好是有限个开区间的并，可以显式计算，并给出见证公式。
+- **FW-REG**：首窗之外的部分自动再生，并由此推出 FW-FO。
+- **最弱未证步骤**：猜想 C-INIT，即 B(V) 恰为 (0, δ/R_max)。小范围检查无一例外；若 k = 3 时成立，就推出 FW₄。
+
+---
+
+# Part I · 主席五问：DEC 的实际结论
+
+**依赖状态（FACT）**：
+- A1 依赖 PS_n 的选择器，但**改用**了 t₀ ∈ S_δ(V)（同一门槛 δ）。PS_n 证明的第 1 步只用到 ‖wt₀‖ ≥ δ，所以这个改动有效；但这一点必须写明，因为它与 PS_n 原来的假设 (H4) 不同。
+- PS_n 尚未获主席正式认证；GLC、SPC 是 PROOF CANDIDATE。所以 A1、DEC 的有效性受这些依赖项的状态限制。
+
+**Q1 正时间见证？** 是，在可公度条件下，并且需要证书 𝒩 中的有限见证已经给出。路径 (a)、(b)、(c) 都输出 t > 0 的安全时间（R030 PROOF 2）。
+
+**Q2 首窗见证？** **否（一般情况下）。证明**：
+- a ∈ V，且 aP ∈ ℤ_{≥1}，所以 P ≥ 1/a。
+- 路径 (a) 若 j ≥ 1，则 t = t₀ + jP > P ≥ 1/a，离开首窗。
+- 路径 (b) 选的最长分量 K\* 不一定在 J 内。
+- 路径 (c) 的见证可以是任何正时间。
+
+所以 **DEC 应该登记为"正时间插入定理"**（达到孤独跑者 (lonely runner) 的层次），不能登记为 FW 构造。Hesper 的数值核对（7,831 / 19,649 落在首窗外）与此一致；那是 Hesper 的计算。
+
+**Q3 有限共振例外是否全有见证？** 没有一般证明。DEC 把例外化为有限个（R030 UPD (iv)），它们的存在性是未证步骤。具体的 V（例如 (1,2,3)）可以逐个验证。
+
+**Q4 证书能否在下一层重新生成？** R030 UPD (i)–(iii) 自动再生，(iv) 不自动再生，结论维持不变。
+
+**Q5 可公度与不可公度？** DEC 只适用于可公度（A1 需要精确周期）。不可公度：UNFINISHED。下面的 FWB 不需要周期，对任意实数成立。
+
+---
+
+# Part II · PROOF：首窗精确理论（一般 k，任意实数）
+
+**设定**：
+- V 为 k 个两两不同的正实数，a = min V；δ ∈ (0, ¼]；
+- J = [δ/a, (1−δ)/a]；
+- S_J = { t ∈ J : 对所有 v ∈ V，‖vt‖ ≥ δ }。
+
+**引理 C（有限分解）**：S_J 是有限个互不相交的闭区间 K_i = [L_i, R_i] 的并（允许 L_i = R_i，即孤立点），并且分量个数 r ≤ Σ_{v∈V} (⌈v(1−2δ)/a⌉ + 1)。
+
+**证明**：
+1. 对每个 v，{t ∈ J : ‖vt‖ ≥ δ} 是 J 与各段 [(j+δ)/v, (j+1−δ)/v] 的交，段数 ≤ ⌈v|J|⌉ + 1 = ⌈v(1−2δ)/a⌉ + 1。
+2. 有限个"有限闭区间族"的交，仍是有限个闭区间。
+3. 交集的每个分量，其左端点都是某个族中某个区间的左端点，并且不同分量的左端点互不相同；所以分量数不超过各族区间数之和。∎
+
+**定理 FWB（首窗插入坏集的精确形式）**：对 u > 0，令 I_{i,m} = ((m−δ)/L_i, (m+δ)/R_i)（若左端 ≥ 右端则为空集），m ∈ ℤ_{≥0}。则
+**S_δ(V ∪ {u}) ∩ J = ∅ ⇔ u ∈ B(V) := ⋂_{i=1}^{r} ⋃_{m≥0} I_{i,m}**。
+
+并且：
+- (i) B(V) ⊂ (0, 2δ/ℓ)，其中 ℓ = max_i (R_i − L_i)（若 ℓ > 0）；
+- (ii) B(V) 是有限个开区间的并，可以显式计算；
+- (iii) 若 u ∉ B(V)，取第一个满足 q_i := ⌈uL_i − (1−δ)⌉ ≤ ⌊uR_i − δ⌋ 的分量 i，则 **t = max{L_i, (q_i + δ)/u}** ∈ S_δ(V ∪ {u}) ∩ J。
+
+**证明**：
+1. 由 L_i ≥ δ/a > 0，ut 在 [L_i, R_i] 上连续，取值区间为 [uL_i, uR_i]。
+2. 分量 K_i 上**没有** u 的安全点 ⇔ 对一切 t ∈ K_i 都有 ‖ut‖ < δ ⇔ 区间 [uL_i, uR_i] 包含在不安全带 ⋃_m (m−δ, m+δ) 中。由于这些开带两两之间相隔 1 − 2δ > 0，而区间是连通的，它必须整个落在某**一个**带里：m − δ < uL_i 且 uR_i < m + δ，即 u ∈ I_{i,m}。由 u > 0 与 uR_i > 0，m ≥ 0。
+3. S ∩ J 中没有安全点 ⇔ 每个分量都没有 ⇔ u ∈ ⋂_i ⋃_m I_{i,m}。
+4. **(i)**：若 uℓ ≥ 2δ，则最长分量对应的 [uL, uR] 长度 ≥ 2δ，装不进长为 2δ 的开带，所以 u ∉ B(V)。
+5. **(ii)**：在 (0, 2δ/ℓ) 中，I_{i,m} 非空要求 (m−δ)/L_i < 2δ/ℓ，所以 m 只有有限个；有限个开区间的有限交与并，仍是有限个开区间的并。
+6. **(iii)**：主席的区间公式（R030 转向信；Kimi 审阅 PROOF VERIFIED）。∎
+
+**推论 FW-EQ**：设 V′ = V ∪ {u}，u > v_max(V)。由于 a 仍是最慢者，FW_{k+1}(V′) 的候选时间必须满足 0 < t < 1/a 且 ‖at‖ ≥ δ，这等价于 t ∈ J。因此
+**FW_{k+1}(V′) ⇔ u ∉ B(V)**。
+
+又因为任何 k+1 个速度的集合，去掉最大者后都是某个 V 加上 u = max，所以
+**FW_{k+1} 对一切 (k+1) 元集成立 ⇔ 对一切 k 元集 V，都有 B_{1/(k+2)}(V) ∩ (v_max(V), ∞) = ∅**。
+
+**定理 FW-REG（再生上界；推出 FW-FO）**：若 FW_k(V) 成立，即存在 t_w ∈ (0, 1/a)，使 V 在 t_w 处全部 ≥ δ_k = 1/(k+1)，则在 δ = 1/(k+2) 下：
+ℓ ≥ 2(δ_k − δ)/v_max，于是 B(V) ⊂ (0, (k+1)·v_max)。
+
+**证明**：
+1. a·t_w ∈ [δ_k, 1 − δ_k]。取 h = (δ_k − δ)/v_max。在 [t_w − h, t_w + h] 上，每个 ‖vt‖ ≥ δ_k − v·h ≥ δ，并且 a·t ∈ [δ, 1−δ]，所以这个区间 ⊂ S_J，从而 ℓ ≥ 2h。
+2. 2δ/ℓ ≤ δ·v_max/(δ_k − δ) = (k+1)v_max，因为 δ/(δ_k − δ) = (k+1)。
+3. 再用 FWB(i)。∎
+
+**推论**：u ≥ (k+1)v_max 时，首窗插入必定成功。这就是 FW-FO 的结论，现在由 FWB 推出（FW-FO 原先只有一份审阅）。**剩下的缺口被精确定位为：B(V) ∩ (v_max, (k+1)v_max) = ∅**。
+
+## PROOF：实例（手算）
+**V = (1, 2, 3)，δ = 1/5，J = [1/5, 4/5]**。
+
+S_J 的分量为 [1/5, 4/15]、{2/5}、{3/5}、[11/15, 4/5]（端点可逐一验证，例如 t = 11/15 时三个距离为 4/15、7/15、1/5）。
+
+逐个分量算出坏集 ⋃_m I_{i,m}：
+- **[1/5, 4/15]**：m = 0 给出 (0, 3/4)；m = 1 给出 (4, 9/2)；m ≥ 2 时为空（因为 5m − 1 > 15(m + 1/5)/4 ⇔ m > 7/5）。
+- **{2/5}**：(0, 1/2)、(2, 3)、(9/2, 11/2)、…
+- **{3/5}**：(0, 1/3)、(4/3, 2)、(3, 11/3)、…
+- **[11/15, 4/5]**：(0, 1/4)、(12/11, 3/2)、(27/11, 11/4)、(42/11, 4)、…
+
+求交：
+- (4, 9/2) 与第二个分量的坏集 (2, 3) ∪ (9/2, 11/2) 不相交（开区间在 9/2 处不重叠），所以被排除；
+- 剩下的只有 (0, 3/4) ∩ (0, 1/2) ∩ (0, 1/3) ∩ (0, 1/4) = (0, 1/4)。
+
+所以 **B(1, 2, 3) = (0, 1/4)**。
+
+**由此得到"对一切实数 u > 0，(1, 2, 3, u) 都有首窗解"**：
+- **u ≥ 1/4**：u ∉ B，由 FWB(iii)，在 J ⊂ (0, 1) 中有解，而首窗为 (0, 1/min(1, u)) ⊇ (0, 1)。
+- **u < 1/4**：u 是最慢者，首窗为 (0, 1/u)。用 PS 并取 u 为局外人：P = 1，t₀ = 1/5，x = u。由于 ut₀ < 1/20 < δ，取 j = ⌈(δ − ut₀)/u⌉，t = 1/5 + j。由 PS(S1)，u·t ∈ [1/5, 1/5 + u) ⊂ [1/5, 9/20]，所以 ut < 1，t 在首窗内；1、2、3 的相位与 t₀ 处相同，都安全。∎
+
+（这是一族单参数的 FW₄ 实例，只作演示，不作为覆盖交付。）
+
+---
+
+# Part III · 最弱未证步骤：猜想 C-INIT（比现有障碍更具体）
+
+**猜想 C-INIT_k**：对每个由 k 个正实数组成的 V，若 S_J ≠ ∅，则 **B_{1/(k+2)}(V) = (0, δ/R_max)**，其中 R_max = max S_J。
+
+也就是说，在首窗中困住新跑者的，**只有**"慢到在整个 J 上相位都 < δ"的那一类平凡情形，不存在共振陷阱。
+
+**推论（证明）**：C-INIT_k 加上 FW_k，推出 FW_{k+1}。
+
+**证明**：R_max ≥ t_w ≥ δ_k/a > δ/a，所以 δ/R_max < a ≤ v_max。因此 B ∩ (v_max, ∞) = ∅，再用 FW-EQ。∎
+
+**特别地**：C-INIT₃ 推出 FW₄（因为 FW₃ 已认证）。
+
+**否证方式**：找到 V 与 u ≥ δ/R_max 使 u ∈ B(V)。由 FWB，验证 u ∈ B 只需对有限个分量做精确检查。
+
+**检查**（CHECKED，非证明；本席精确分数代码）：
+- k = 2（δ = 1/4，速度 ≤ 30，435 组）：B 都是初始区间，无一例外；
+- k = 3（δ = 1/5，速度 ≤ 20，1,140 组）：同上；
+- k = 4（δ = 1/6，速度 ≤ 13，715 组）：同上；
+- 另有 324 组随机有理三元组，B ∩ (a, ∞) 都为空。
+- FWB 本身的一致性检查：在 (1,2,3)、(1,3,4)、(2,5,7)、(3,7,11) 上各取 3,000 个随机有理 u，判断"u ∈ B"与"见证存在"是否一致，零不一致；所有见证都在首窗内且安全。
+
+## IDEA
+- **证明 C-INIT 的可能途径**：若 u ∈ B 且 u ≥ δ/R_max，则在 R_max 处 u 的相位 ≥ δ，所以 R_max 必须落入某个 m ≥ 1 的带；与此同时，每个分量都必须落入**同一个 u 的**某个带。利用 S_J 的分量都含有骨架点 j/(v+v′)（HS），可以把"所有分量同时落入带中"化为关于 u·j/(v+v′) 的同时逼近条件，再看它与 V 的安全条件是否矛盾。本席尚未完成。
+- **与主席第五节（有理化）的关系**：FWB 对有理输入是精确的有限计算；对实数输入，引理 C 与 FWB 是数学描述，要在有限时间内算出来，需要能精确比较端点。
+
+---
+
+## 最不确定的一步
+1. **C-INIT 本身**：它是本轮全部推进所依赖的未证猜想；检查范围很小。
+2. **FWB 第 2 步"整个落在同一个带里"**：这里用到 δ < ½（带与带之间有正间隔）。δ = ½ 的情形本轮不涉及。
+3. **依赖链**：A1/DEC 依赖未经主席认证的 PS_n；FWB 只依赖初等事实与主席的区间公式。
+
+---
+
+## 七栏登记
+| 成果 | 1 有效性/审阅 | 2 对统一构造的推进 | 3 保证非空 | 4 任意实数 | 5 有限提取 | 6 直接构造 | 7 随人数推广 |
+|---|---|---|---|---|---|---|---|
+| DEC 实际结论（正时间，非首窗） | PROOF CANDIDATE，待 DeepSeek 审 | 澄清：属于孤独跑者层次的插入，不是 FW | 否（有限见证未证） | 否（需要可公度） | 是（给定证书时） | 否 | 是（一般 k） |
+| 引理 C、定理 FWB | PROOF CANDIDATE，待审 | 首窗插入问题的精确有限化，适用于任意 u | 否（只刻画坏集） | 是（需要精确比较端点） | 是（分量数有显式上界） | 否（要扫描分量） | 是 |
+| FW-EQ | PROOF CANDIDATE | 把 FW_{k+1} 等价化为"坏集与 (v_max, ∞) 不相交" | 否 | 是 | — | — | 是 |
+| FW-REG（含 FW-FO） | PROOF CANDIDATE | 首窗之外部分的自动再生；缺口缩小到 (v_max, (k+1)v_max) | 部分：u ≥ (k+1)v_max 时是 | 是 | 是 | 是（u 大时） | 是 |
+| (1,2,3,u) 对一切 u 的首窗解 | PROOF CANDIDATE（手算） | 演示 | 是（这一族） | 是（u 为任意实数） | 是 | 是 | 否 |
+| 猜想 C-INIT | UNFINISHED（只有检查） | 若成立：FW_k ⇒ FW_{k+1}，C-INIT₃ ⇒ FW₄ | — | — | — | — | 是 |
+
+## 四个账本栏（摘要）
+- **PROOF VALIDITY**：上表第 1 栏。FW₄ 与一般 F_n 仍为 UNFINISHED。
+- **INDEPENDENT REVIEW**：本轮没有分配给本席的审阅。请 DeepSeek 逐步审 A1、DEC、UPD（以及本轮新增的 FWB、FW-REG）。本席不审自己的结果。
+- **NEW COVERAGE**：不主张。(1,2,3,u) 只是演示。
+- **COMPUTATIONAL CHECK**：C-INIT 的 435 / 1,140 / 715 / 324 组检查，FWB 一致性检查 4 × 3,000 次，(1,2,3) 的 B = (0, 1/4) 先手算、后用代码复核。全部为精确分数计算，只作核对。
+
+############ PART 3 · Hesper 精确工具（Python，Fraction；可复用）############
+from fractions import Fraction as F
+from math import floor, ceil
+from itertools import combinations
+import random
+d5=F(1,5)
+def nd(x): return min(x-floor(x),floor(x)+1-x)
+def comps(V,lo,hi,d):
+    bps={lo,hi}
+    for v in V:
+        for m in range(floor(v*lo)-1,ceil(v*hi)+2):
+            for s in (d,-d):
+                x=(m+s)/v
+                if lo<=x<=hi: bps.add(x)
+    bps=sorted(bps); out=[]
+    ok=lambda t: all(nd(v*t)>=d for v in V)
+    cur=None
+    for i,x in enumerate(bps):
+        if ok(x):
+            if cur is None: cur=[x,x]
+            cur[1]=x
+            if i+1<len(bps) and not ok((x+bps[i+1])/2):
+                out.append(tuple(cur)); cur=None
+        else:
+            if cur: out.append(tuple(cur)); cur=None
+    if cur: out.append(tuple(cur))
+    return out
+def cert(a,b,c,dd,d=d5):
+    J=(1/(5*F(a)),4/(5*F(a)))
+    for L,R in comps([a,b,c],J[0],J[1],d):
+        q=ceil(dd*L-(1-d))
+        if q<=floor(dd*R-d):
+            t=max(L,(q+d)/dd)
+            assert L<=t<=R and all(nd(v*t)>=d for v in (a,b,c,dd)) and 0<t<1/F(a)
+            return t
+    return None
+if __name__=="__main__":
+    N=0;bad=[]
+    for a,b,c,dd in combinations(range(1,25),4):
+        N+=1
+        if cert(a,b,c,dd) is None: bad.append((a,b,c,dd))
+    print("int quads <=24:",N,"no witness:",len(bad),bad[:5])
+    random.seed(31);M=0;bad2=0
+    for _ in range(3000):
+        xs=sorted({F(random.randint(1,400),random.randint(1,40)) for _ in range(4)})
+        if len(xs)<4: continue
+        M+=1
+        if cert(*xs) is None: bad2+=1
+    print("random rational quads:",M,"no witness:",bad2)
+
+# ---- copus.py (bad set B(V) on u in (0,U), exact) ----
+from fractions import Fraction as F
+from math import floor, ceil
+from itertools import combinations
+import random,sys
+sys.path.insert(0,'.')
+from fwcert import comps, nd
+def badset(V,d,U):
+    a=min(V); C=comps(V,d/a,(1-d)/a,d)
+    if not C: return None,C
+    cur=[(F(0),U)]
+    for L,R in C:
+        iv=[]
+        for m in range(0,ceil(U*R+d)+1):
+            lo=(m-d)/L if m>0 else F(0); hi=(m+d)/R
+            if lo<hi: iv.append((max(lo,F(0)),min(hi,U)))
+        new=[]
+        for x,y in cur:
+            for p,q in iv:
+                lo,hi=max(x,p),min(y,q)
+                if lo<hi: new.append((lo,hi))
+        cur=new
+    return cur,C
+# B(1,2,3)
+B,C=badset([1,2,3],F(1,5),F(50)); print("comps(1,2,3):",C); print("B(1,2,3) within (0,50):",B)
+# witness consistency for B(1,2,3)
+def hasw(V,u,d):
+    a=min(V); 
+    for L,R in comps(V,d/a,(1-d)/a,d):
+        q=ceil(u*L-(1-d))
+        if q<=floor(u*R-d): return True
+    return False
+random.seed(1);inc=0
+for _ in range(2000):
+    u=F(random.randint(1,4000),random.randint(1,400))
+    inB=any(x<u<y for x,y in B)
+    if inB==hasw([1,2,3],u,F(1,5)): inc+=1
+print("FWB consistency (1,2,3), 2000 random u<=..., inconsistent:",inc)
+# C-INIT: k=2 (d=1/4, <=30), k=3 (d=1/5,<=20), k=4 (d=1/6,<=13); U=(k+1)*vmax
+for k,d,N in ((2,F(1,4),30),(3,F(1,5),20),(4,F(1,6),13)):
+    cnt=0;bad=[]
+    for V in combinations(range(1,N+1),k):
+        B,C=badset(list(V),d,F((k+1)*max(V)))
+        cnt+=1
+        Rmax=max(R for L,R in C)
+        if B!=[(F(0),d/Rmax)]: bad.append((V,B[:3]))
+    print("C-INIT k=%d d=%s <=%d: %d sets, exceptions %d"%(k,d,N,cnt,len(bad)),bad[:3])
+
+############ 回复格式 ############
+第一行写「R032 3/4 Qwen」。先写简短 ANSWER BLOCK：状态；本轮确切新增内容；是否证明非空；是否给出直接见证；适用人数与速度范围；最弱未证步骤。
+正文按需使用 IDEA / CHECKED / PROOF CANDIDATE / PROOF VERIFIED / DISPROVED / UNFINISHED，区分作者证明与非作者审阅。必须写出「最不确定的一步」。失败尝试与修正原样保留。
+七栏登记（沿用 R031）：1 数学有效性及审阅状态；2 对统一构造的具体推进；3 是否保证非空；4 是否处理任意实数速度；5 是否保证有限提取；6 是否满足直接构造目标；7 是否能随人数推广。
+Any number you report must come from your own calculation in this reply (code or hand work shown). If you did not compute it, write UNFINISHED — do not estimate or invent numbers. 引用 Hesper 既有核对须注明来源。
+WEB OFF。作者不能升级自己的结果；只有主席裁决。有限样本成功不是全域证明；数值无解不是反例证书。仅重列坏集公式、扩大随机测试或重述统一目标，不算理论突破。
+===== END =====
