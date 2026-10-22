@@ -17,6 +17,7 @@ Updated: 2026-10-18 17:08 +0800 (L22 p=431 PROVISIONAL -> REPRODUCED, second mac
 Updated: 2026-10-19 11:14 +0800 (L25 p=461 added, PROVISIONAL, status OFFICE-RUN, CHAIR-SPOT-CHECKED; decided by chair under Amendment 1 (e6009d8), checks: chair (note 107, c4d5ae1) and Puck four-eyes count check MATCH (1be8e2f). Gate totals: closed 45.07; provisional 18.36 (L23, L24, L25); together 63.43 of 481.07).
 Updated: 2026-10-19 16:22 +0800 (L23 p=443 PROVISIONAL -> REPRODUCED, second machine K11; decided by chair under Amendment 1 (e6009d8), checks: chair compare (note 110) and Puck own compare 0/556 differ (2004f8a). Gate totals: closed 51.16; provisional 12.27 (L24, L25); together 63.43 of 481.07).
 Updated: 2026-10-20 21:30 +0800 (L24 p=463 PROVISIONAL -> REPRODUCED, second machine K11; decided by chair under Amendment 1 (e6009d8), checks: chair compare (note 111) and Puck own compare 0/589 differ (a9d141d). Gate totals: closed 57.30; provisional 6.13 (L25); together 63.43 of 481.07).
+Updated: 2026-10-22 18:52 +0800 (L25 p=461 PROVISIONAL -> REPRODUCED; L26 p=439 added as REPRODUCED; second machine K11; decided by chair under Amendment 1 (e6009d8), checks: chair compare (note 113) and Puck own compare 0/602 and 0/560 differ (d84f02c). Gate totals: closed 69.52; provisional 0; together 69.52 of 481.07).
 Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY · OFFICE-RUN, CHAIR-SPOT-CHECKED.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -351,3 +352,21 @@ SCOPE  = as L20–L22 for p = 463. K11 second full run of part (a) (results bran
          same patched cascade source f17094de…; chair compared job by job (r, s, rows, nodes, casc_rows, casc_survivors, deep,
          n_survivor_lines): 589 = 589, 0 differences; Σrows 112, km1 28 roots, 0 covers. Same code on both machines.
 Gate totals: closed 57.30 (L2…L14, L20–L24); provisional 6.13 (L25 461); together 63.43 of 481.07.
+
+## L25 · status change: p = 461 REPRODUCED (second machine)
+STATUS = REPRODUCED · decided by chair 2026-10-22 18:52 +08 under Amendment 1 (e6009d8),
+         four-eyes: Puck (own compare, d84f02c, 602 = 602 jobs, 0 differ) and chair (note 113).
+SCOPE  = as L20–L22 for p = 461. K11 second full run of part (a) (results k11/checkpoint/39752047356/checkpoint/k11-p461a/, copy
+         PT005/opus/chk1015/k11-p461a/, ir.jsonl sha256 63c0cd3d…): same pinned runner 90632d55…, same patched source f17094de…;
+         job by job on (rows, nodes, casc_rows, casc_survivors, deep, n_survivor_lines): 602 = 602, 0 differences; Σrows 177, km1 28 / 0.
+
+## L26 · Prime gate p = 439 (K = 15, 16 runners), level 16, part (a) only (γ(p) = 15)
+STATUS = REPRODUCED · decided by chair 2026-10-22 18:52 +08 under Amendment 1 (e6009d8),
+         four-eyes: Puck (own compare, d84f02c, 560 = 560 jobs, 0 differ) and chair (note 113).
+SCOPE  = as L20–L22. km1: 27 roots, 0 covers (census14 also 0 covers). (a) 560 jobs, 2,138 rows, 0 alive at level 16;
+         one level-2 cascade survivor (job (0, 0)), dies before level 16; "deep" empty in every job.
+RUNS   = office PC (PT005/hesper/officepc-p439/, ir.jsonl sha256 b61a81c6…, done 2026-10-20 05:45 +08) and K11
+         (results k11/checkpoint/39752047356/checkpoint/k11-p439a/, copy PT005/opus/chk1015/k11-p439a/, ir.jsonl sha256 6cbac226…,
+         done 2026-10-22 11:47 +08); same pinned runner 90632d55…, same patched source f17094de…; job by job 560 = 560, 0 differences.
+CHAIR CHECKS = job list regenerated (bgk15 irroots/irsubroots): 560 = 560, equal as sets; spot rerun (13, 2) MATCH.
+Gate totals: closed 69.52 (L2…L14, L20–L26); provisional 0; together 69.52 of 481.07.
