@@ -1,0 +1,50 @@
+1c1
+< # Job k11-p439a (Opus decision 2026-10-21 20:49 +08 relayed by Tuzi: params as p461a; p=439, 560 jobs, BUDGET 2026-10-24 18:00 +08), second-machine run of gate p = 439 part (a), office kit unchanged.
+---
+> # Job k11-p449a (Opus note 113 §2 6d81a21: as k11-p439a; p=449, 597 jobs, BUDGET 2026-10-25 18:00 +08), first run of gate p = 449 part (a), office kit unchanged.
+3,4c3,4
+< # First start: BUDGET stops new jobs at 2026-10-24 18:00 +08. Any start after that runs with no BUDGET.
+< # Restart-safe: kcascade_run.py skips jobs already in out439/ir.jsonl.
+---
+> # First start: BUDGET stops new jobs at 2026-10-25 18:00 +08. Any start after that runs with no BUDGET.
+> # Restart-safe: kcascade_run.py skips jobs already in out449/ir.jsonl.
+9c9
+< N=k11-p439a; W="$WORK/$N"; CK="$W/ckpt"; R="$W/out439"; B="$HOME/lr16/code"
+---
+> N=k11-p449a; W="$WORK/$N"; CK="$W/ckpt"; R="$W/out449"; B="$HOME/lr16/code"
+14c14
+<   cp -f "$W/run439.time" "$W/hashes.txt" "$W/lscpu.txt" "$CK/" 2>/dev/null
+---
+>   cp -f "$W/run449.time" "$W/hashes.txt" "$W/lscpu.txt" "$CK/" 2>/dev/null
+16c16
+<   tail -n 20 "$W/run439.log" > "$CK/run439.log.tail" 2>/dev/null
+---
+>   tail -n 20 "$W/run449.log" > "$CK/run449.log.tail" 2>/dev/null
+19c19
+<   printf '{"job":"%s","ir_lines":%s,"of":560,"time":"%s"}\n' "$N" "$n" "$(date '+%F %T %Z')" > "$CK/latest.json.tmp" && mv "$CK/latest.json.tmp" "$CK/latest.json"
+---
+>   printf '{"job":"%s","ir_lines":%s,"of":597,"time":"%s"}\n' "$N" "$n" "$(date '+%F %T %Z')" > "$CK/latest.json.tmp" && mv "$CK/latest.json.tmp" "$CK/latest.json"
+33c33
+< now=$(date +%s); dl=$(date -d '2026-10-24 18:00:00 +0800' +%s)
+---
+> now=$(date +%s); dl=$(date -d '2026-10-25 18:00:00 +0800' +%s)
+36c36
+< date '+%F %T %Z' | tee -a "$W/run439.time"
+---
+> date '+%F %T %Z' | tee -a "$W/run449.time"
+39c39
+<   BUDGET=$((dl - now)) python3 kcascade_run.py ./bgk15 ./cascade_k15p 439 16 "$R" 2>&1 | tee -a "$W/run439.log"
+---
+>   BUDGET=$((dl - now)) python3 kcascade_run.py ./bgk15 ./cascade_k15p 449 16 "$R" 2>&1 | tee -a "$W/run449.log"
+42c42
+<   python3 kcascade_run.py ./bgk15 ./cascade_k15p 439 16 "$R" 2>&1 | tee -a "$W/run439.log"
+---
+>   python3 kcascade_run.py ./bgk15 ./cascade_k15p 449 16 "$R" 2>&1 | tee -a "$W/run449.log"
+45c45
+< date '+%F %T %Z' | tee -a "$W/run439.time"
+---
+> date '+%F %T %Z' | tee -a "$W/run449.time"
+50c50
+< if (( rc == 0 && n >= 560 )); then date '+%F %T %Z' > "$STATE/$N.done"; echo "DONE $N"; fi
+---
+> if (( rc == 0 && n >= 597 )); then date '+%F %T %Z' > "$STATE/$N.done"; echo "DONE $N"; fi
