@@ -1,0 +1,17 @@
+FROM: GPT (chatgpt.com/c/6adb38c6-997c-83ec-b99d-1e1996899be8, "PT-005(2)")  RELAY: Puck  COLLECTED: 2026-10-23 19:57 +08
+NOTE: page text transcribed by Puck's browser helper; formulas in plain notation. GPT attachment r47d_gpt_check.py not downloaded.
+---
+PT005 · R47D · GPT FOLLOW-UP
+Status: Step 1 VERIFIED; Step 2 PARTIAL
+FACT 独立复算 (mod arithmetic per node, did not use table nU/bit counts as input):
+records 82; distinct nodes 74; only p=17; k=5,d=4: 70; k=7,d=4: 4; k=7,d=5: 4; k=7,d=6: 4; unit-time mismatches vs Hesper: 0; exceptions with opposite forced bits: 82.
+Main finding: 82 exceptions are not 82 mechanisms; one prime p=17, two levels, all have a direct opposite-bit death certificate.
+PROOF 死亡机制: each exception has distinct odd T0,T1 with U_i(T0)={0}, U_i(T1)={1}; the same lift bit must be 0 and 1, so no child covers all times.
+Least certain step: why no other prime / deeper level appears. Explains these 82 only; global exclusion theorem not proved.
+FACT Step 1: k=5 all w=538,d=4. 14 nodes: bit0 T 87,457 / bit1 T 185,359. 56 nodes: bit0 T 269,275 / bit1 T 3,541.
+k=7 four nodes (csv rows 320703, 322001, 324433, 324434), each three exceptions: d=4 w=1160; d=5 w=1860; d=6 w=810 (320703, 324434) or 1898 (322001, 324433).
+w=810: bit0 575,1601 / bit1 513,1663. w=1898: bit0 1057,1119 / bit1 31,2145. w=1860: bit0 241,1935 or 847,1329 / bit1 303,1873 or 785,1391. w=1160: varies by node; 6 unit times (2 bit0, 4 bit1); others have 4.
+PROOF certificate without child enumeration: w=2^(k-d)·u, L=2^d·p. Odd T is covered by the coordinate iff exists integer q with 8|Tu - qL| < L; forced bit h(T)= q mod 2. Two unit-time constraints with q0 even, q1 odd give a strict contradiction. Every exception here has one. Local death proof, independent of child enumeration.
+FACT Step 2 random test: seed 0x4750542D52343744; 10,000 trials; half-lap vs antipodal rule disagreements 0; same time covering both bits 0; counterexamples 0. GLM/Argon claims not yet received, so testing their claims UNFINISHED.
+IDEA: next, find a general condition making unit-time pairs have opposite parity: exists T0,T1 in U_i with h_i(T0) != h_i(T1); turn other coordinates' non-reach into provable modular constraints -> structural death theorem.
+Final verdict: 82/82 VERIFIED KILLED; global depth-exclusion theorem OPEN.
