@@ -1,0 +1,5 @@
+{"p": 59, "row": [1, 4, 5, 5, 6, 7, 11, 16, 17, 18, 20, 21, 23, 28, 29], "root_improper": true, "root_L7": null}
+{"label": "Hesper-seed row p=59", "level_p": 1, "open": 1, "f_hist": {"0": 1}, "closedL7": 0, "parity_bad_kids": 3, "S_hist": {}, "kids_open": 412}
+{"label": "Hesper-seed row p=59", "level_p": 2, "open": 412, "f_hist": {"3": 1, "4": 7, "5": 21, "6": 41, "7": 66, "8": 80, "9": 76, "10": 59, "11": 38, "12": 17, "13": 5, "14": 1}, "closedL7": 0, "parity_bad_kids": 0, "died": 348, "died_after_f9": 181, "death_depth_after_f9=1x": 181, "S_hist": {"2": 46, "11": 4, "1": 231, "9": 8, "12": 1, "4": 13, "3": 13, "5": 13, "10": 4, "6": 7, "7": 5, "15": 1, "14": 1, "13": 1}, "kids_open": 928}
+{"label": "Hesper-seed row p=59", "level_p": 4, "open": 928, "f_hist": {"5": 4, "8": 12, "9": 32, "10": 108, "11": 218, "12": 226, "13": 216, "14": 112}, "closedL7": 0, "parity_bad_kids": 0, "died": 928, "died_after_f9": 912, "death_depth_after_f9=1x": 806, "death_depth_after_f9=2x": 106, "S_hist": {"1": 882, "3": 6, "2": 38, "4": 2}, "kids_open": 0}
+{"label": "Hesper-seed row p=59", "END": "no open nodes"}

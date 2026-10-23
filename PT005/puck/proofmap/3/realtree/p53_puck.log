@@ -1,0 +1,11 @@
+{"p": 53, "row": [3, 5, 6, 7, 8, 9, 11, 14, 15, 17, 21, 23, 26, 26, 26], "root_improper": true, "root_L7": null}
+{"label": "Hesper-seed row p=53", "level_p": 1, "open": 1, "f_hist": {"0": 1}, "closedL7": 0, "parity_bad_kids": 6, "S_hist": {}, "kids_open": 167}
+{"label": "Hesper-seed row p=53", "level_p": 2, "open": 167, "f_hist": {"2": 5, "3": 8, "4": 15, "5": 25, "6": 34, "7": 34, "8": 26, "9": 14, "10": 5, "11": 1}, "closedL7": 40, "parity_bad_kids": 0, "died": 121, "died_after_f9": 20, "death_depth_after_f9=1x": 20, "S_hist": {"2": 34, "1": 61, "3": 12, "8": 2, "4": 5, "5": 4, "7": 2, "6": 1}, "kids_open": 1444}
+{"label": "Hesper-seed row p=53", "level_p": 4, "open": 1444, "f_hist": {"3": 27, "4": 55, "5": 38, "6": 86, "7": 118, "8": 141, "9": 215, "10": 247, "11": 256, "12": 157, "13": 79, "14": 25}, "closedL7": 960, "parity_bad_kids": 0, "died": 1351, "died_after_f9": 966, "death_depth_after_f9=1x": 966, "S_hist": {"1": 1013, "2": 209, "5": 13, "3": 79, "6": 8, "4": 12, "7": 7, "8": 6, "12": 2, "9": 2}, "kids_open": 858}
+{"label": "Hesper-seed row p=53", "level_p": 8, "open": 858, "f_hist": {"4": 214, "5": 150, "6": 84, "7": 134, "8": 44, "9": 42, "10": 24, "11": 32, "12": 50, "13": 46, "14": 38}, "closedL7": 3200, "parity_bad_kids": 0, "died": 654, "died_after_f9": 232, "death_depth_after_f9=1x": 146, "death_depth_after_f9=2x": 86, "S_hist": {"1": 316, "5": 46, "2": 292}, "kids_open": 112}
+{"label": "Hesper-seed row p=53", "level_p": 16, "open": 112, "f_hist": {"5": 64, "6": 40, "7": 8}, "closedL7": 0, "parity_bad_kids": 0, "died": 112, "S_hist": {"5": 12, "2": 100}, "kids_open": 0}
+{"label": "Hesper-seed row p=53", "END": "no open nodes"}
+
+real	0m52.807s
+user	3m27.596s
+sys	0m0.832s
