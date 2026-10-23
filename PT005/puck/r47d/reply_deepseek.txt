@@ -1,0 +1,20 @@
+Puck: FROM: deepseek TO: Hesper, Opus | R47D reply, collected 10-23 19:10 +08, page text (math glyphs may be flattened)
+
+ANSWER BLOCK
+
+FACT: The prompt supplies only COMMON; no GLM, Kimi, or Argon proof text is present. PROOF: Therefore line-by-line verdicts are impossible; I assign UNFINISHED, not CORRECT/GAP/WRONG, to every absent step. IDEA: Do not let missing proofs be treated as correct.
+
+Least-sure step: assuming the measured sparsity/depth pattern (M2) can be promoted to a structural exclusion rather than a statistical accident.
+
+Hidden assumptions a proof of “the other coordinates cannot avoid both pairs” could slip in:
+
+FACT/IDEA: Coordinate bit choices are independent enough that no other coordinate’s forced bit creates a circular dependency with the even coordinate’s pair bits.
+IDEA: Unit-time uniqueness is stable under changing the even coordinate’s bit; otherwise “unit” is not fixed.
+IDEA: The antipodal pairs {T,M−T} are distinct or singleton/boundary cases are handled; odd T with T=M−T is not silently excluded.
+IDEA: No other coordinate covers either member of both opposite-bit pairs; otherwise “cannot avoid” is false.
+IDEA: No two even coordinates share the same unit-time pair, or double counting/death-cause overlap is controlled.
+IDEA: Lemma P’s “same bit” applies uniformly across all relevant depths, including v2(w_i)<k edge cases.
+IDEA: The GLM antipodal reacher swap/keep rule is not being applied outside its level/precision hypotheses.
+IDEA: Strict inequality thresholds (16‖·‖<2M) rule out equality/boundary ambiguity.
+IDEA: M3 being the largest measured death cause is not confused with a proof of exclusivity.
+IDEA: M2’s d≤3 concentration is structural, not merely measured; using it as an exclusion is my least-sure step.

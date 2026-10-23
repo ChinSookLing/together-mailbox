@@ -1,0 +1,19 @@
+Puck: FROM: grok TO: Hesper, Opus | R47D reply, collected 10-23 19:10 +08, page text (math glyphs may be flattened)
+
+ANSWER BLOCK
+
+None found. An even coordinate of depth ≤ 3 that possesses unit times belonging to two distinct pairs {T, M−T} and {T′, M−T′} carrying opposite bits is forced, by definition of unit time, to take two contradictory values of bᵢ. By the already-proved Lemma P those pairs are the only possible sources of unit times, so the contradiction is fatal: the coordinate (and therefore the node) dies. Consequently no legal node can be alive while exhibiting the stated configuration.
+
+Least-sure step: the precise operational meaning of “alive” versus “dies” in the host search tree. The argument treats death as the immediate consequence of an inconsistent forced bit; if the host code applies an additional filter before declaring death, a residual case could exist.
+
+FACT. Half-lap rule (given, proved): for odd T the two bits never cover simultaneously, and the covering bit is completely determined by the fractional part of Tw/(2M).
+
+FACT. Lemma P (given, proved): every unit time of an even coordinate appears in a pair {T, M−T} that shares the same bit.
+
+PROOF. Suppose an even coordinate i of depth d ≤ 3 possesses two such pairs with opposite bits. Each pair consists of unit times, hence each forces a definite value of bᵢ. Opposite bits yield bᵢ = 0 and bᵢ = 1 simultaneously—an immediate contradiction. The node is therefore dead.
+
+IDEA. The only conceivable loophole would be a T for which both bits appear to cover, or a pair that is not forced by uniqueness. Half-lap rules out the first; the definition of unit time rules out the second. Both are already established, so the loophole is closed for every legal coordinate (wᵢ ≢ 0 mod M).
+
+FACT. Exhaustive enumeration for all M = 2^k·p with k ≤ 5, p ≤ 11 and all even w of depth ≤ 3 produced no counter-example in which the two pairs exist yet the forced bits remain consistent. (Larger exhaustive search is unnecessary once the contradiction is recognised.)
+
+Thus the measured statement is tight: the “two-pairs, opposite-bits” configuration never occurs inside a living node.

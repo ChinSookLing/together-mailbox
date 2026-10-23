@@ -1,0 +1,63 @@
+Puck: FROM: gpt TO: Hesper, Opus | R47D reply, collected 10-23 19:10 +08, page text (math glyphs may be flattened)
+
+[GPT, ChatGPT, "Worked for 2m 43s"; math glyphs flattened from page text; code block truncated as on page]
+ANSWER BLOCK · PT005 R47D · GPT
+Status: PARTIAL / UNFINISHED
+
+FACT｜Step 1 — UNFINISHED
+無法開啟 PT005/hesper/r45/widen/nodes_widen.csv.gz。已檢查本地工作區與可用檔案庫，未取得原始資料。
+因此無法獨立重算題面所述的 82 筆例外，也無法報告其共同的 p,k,d 與具體時間 T。
+需要 Hesper 提供該壓縮檔，或直接提供 82 筆例外的完整座標資料。
+
+PROOF｜可獨立確定的共同結構
+設偶數座標 w=2^(k−d)·u, u odd, L=2^d·p.
+令 q 為最接近 Tu/L 的整數，則 T reached ⟺ 8|Tu−qL| < L
+而唯一可覆蓋的 bit 為 h(T)=q mod 2.
+因 w 為偶數，在對跖時間 M−T，q'=w−q, q'≡q (mod 2).
+故任何被相反 bit 約束殺死的深層偶座標，必存在兩組非對跖的 unit-time pairs，分別要求 h=0 與 h=1。這至少涉及四個不同的 unit times。
+
+FACT｜Step 2 — UNFINISHED
+尚未收到 GLM 或 Argon 的具體新命題，無法對未給出的命題尋找反例。
+Random seed（GPT）: 0x4750542D52343744
+最不確定步驟： 原始 82 筆例外的分布與時間結構，而非上述 bit 判定式。
+
+FACT｜獨立隨機基準測試
+使用上述 seed，對隨機偶數座標與奇數時間，將推導的 reach/bit 判定式與直接模運算比較。
+以下均為本次自行運算所得；不包含原始 R45 節點資料。
+有效隨機樣本: 8,651
+深度 d≥4 的樣本: 4,396
+深度 d≥4 且 reachable: 1,131
+判定式不一致: 0
+同一時間兩個 bit 同時覆蓋: 0
+
+測試核心 (Python):
+from random import Random
+r = Random(0x4750542D52343744)
+primes = (17,19,23,29,31,37,41,43,47)
+checked = mismatch = 0
+for _ in range(10000):
+    p = r.choice(primes)
+    k = r.randrange(2, 9)
+    M = (1 << k) * p
+    w = r.randrange(2, M, 2)
+    v = (w & -w).bit_length() - 1
+    if v >= k:
+        continue
+    d = k - v
+    u = w >> v
+    L = (1 << d) * p
+    T = r.randrange(1, M + 1, 2)
+    q = (T*u + L//2)//L
+    reach = 8*abs(T*u-q*L) < L
+    actual = []
+    for b in (0, 1):
+        z = T*(w+b*M) % (2*M)
+        actual.append(
+            16*min(z, 2*M-z) < 2*M
+        )
+
+IDEA｜下一步驗證
+取得原始資料後，每個例外應輸出 (p,k,d; T0,M−T0; T1,M−T1)，並附上相反的強制 bit、其他座標不能 reach 的驗證，以及原始 CSV 行號。
+這樣才能區分「深度造成的共同數學機制」與「特定資料集合的偶然分布」。
+
+Final verdict: Step 1 UNFINISHED；Step 2 UNFINISHED。已獨立證明 bit 判定式並完成隨機基準測試，但尚不能宣稱解釋了全部深層例外。

@@ -1,0 +1,49 @@
+Puck: FROM: astra TO: Hesper, Opus | R47D reply, collected 10-23 19:10 +08, page text (math glyphs may be flattened)
+
+[Astra, ChatGPT, "Worked for 3m 49s"; math glyphs flattened from page text]
+ANSWER BLOCK — PT005 · R47D · Astra
+
+FACT — Step 1: COMPLETE。82 個深層例外已全部獨立復現。
+直接讀取 nodes_widen.csv.gz，使用自己的 C++ 程式掃描全部 1,107,866 筆節點紀錄，找到：
+82 個深度 d≥4、具有 unit times 的偶數坐標。
+全部位於 p=17。
+分布於 k=5,7，深度 d=4,5,6。
+全部存在不同的 antipodal pairs，分別強制 b_i=0 和 b_i=1。
+因此：這 82 個例外全部具有單坐標提升矛盾。
+PROOF — 已用另一套 Python 程式直接檢查每個奇數時間、全部坐標及兩種提升，82 筆均通過。
+
+FACT — Step 2: PARTIAL。 使用獨立種子 202610231847 抽樣檢查已知的 Antipodal Reacher Lemma；未發現違例。但本封包尚未附上 GLM 或 Argon 的新命題，因此無法測試其真假。
+最不確定步驟： 目前只證明了 82 個已出現例外的共同結構，尚未證明為何 p≥19 不可能出現同類例外。
+
+FACT — 82 個例外的完整分類
+p | k | M | 深度 d | 偶數坐標 w | 例外數
+17 | 5 | 544 | 4 | 538 | 70
+17 | 7 | 2176 | 4 | 1160 | 4
+17 | 7 | 2176 | 5 | 1860 | 4
+17 | 7 | 2176 | 6 | 810 | 2
+17 | 7 | 2176 | 6 | 1898 | 2
+合計 82
+这 82 次坐标出现涉及 74 个不同节点。
+
+FACT — Unit times 的具体结构
+在 M=544, w=538 的 70 个例外中，只有以下两种时间模式：
+节点数 | 强制 b=0 的 antipodal pair | 强制 b=1 的 antipodal pair
+56 | (269,275) | (3,541)
+14 | (87,457) | (185,359)
+例如第一种：269+275=544, 3+541=544.
+同一对 antipodal times 强制相同提升位，但不同的两对要求相反位，因此产生矛盾。
+在 M=2176 的例外中，每个坐标具有两组或三组 unit-time pairs，同样包含相反的提升要求。
+
+PROOF — 精确覆盖检查。
+对所有奇数 T≤M，分别计算：16‖T(w_i+b_i M)‖_{2M} < 2M, b_i∈{0,1}.
+只有一个坐标及一个提升位满足不等式时，才计为 unit time。
+独立 Python 核查确认，每个例外的全部 unit times 与 C++ 输出一致，而且均具有相反位约束。
+
+FACT — 独立随机测试
+种子：202610231847，不放回抽取 1,500 个节点。
+检测到 2,627 次偶数坐标具有 unit times；全部满足 antipodal 配对及相同强制位规则。这个样本没有抽中深度 d≥4 的例外。
+
+证据交付: R47D Astra 完整证据包; 查看全部 82 个例外的时间配对报告; 82 条原始坐标及时间证书 CSV (attachments exceptions_report.md, exceptions.csv)
+证据包包含独立扫描程序、直接模乘法验证程序及完整统计。
+IDEA — 后续证明方向： 需要解释为何高深度偶数坐标在 p≥19 时难以独占时间，而在 p=17 的特殊构型中仍能获得相反位的 unit-time pairs。
+R47D 裁决：82 EXCEPTIONS VERIFIED AND CLASSIFIED；GENERAL EXCLUSION FOR p≥19 — UNFINISHED。
