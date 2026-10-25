@@ -1,0 +1,61 @@
+Kimi — model K3.1 Pro (thinking High), chat https://www.kimi.ai/chat/1a170dd7-ead2-8cdd-8000-09ceb4a5485d ("PT-005(2)"), sent send_kimi.txt (sha 06af86d3…), collected 2026-10-25 ~10:27 +08. Verbatim as captured by browser (fractions linearised by the browser; no content changed).
+
+Explaining Rare Collision in Deep Coordinate Residues via Modulus Progression
+
+ANSWER BLOCK
+
+FACT. Let n= 2^d p and z= T·w′ /n . Since Tw/(2M)= z/2 , the half-lap rule makes reaching equivalent to ∥z∥< 1/8 .
+
+PROOF. Covering at level M implies reaching at level 2M : in the rescaled coordinate, the two conditions are ∥2x∥< 1/16 and ∥2x∥< 1/8 , respectively. If T is a unit time of i , improperness supplies a level- M coverer. That coverer reaches at level 2M , so uniqueness forces it to be i ; no other coordinate can cover at level M .
+
+FACT. Consequently, every unit time of i satisfies the stronger inequality ∥z∥< 1/16 , with i alone covering T at level M , and every other coordinate failing to reach at level 2M .
+
+IDEA — least-sure step. The intended explanation of (M2) is competition: deep-coordinate candidates survive only when all other coordinates simultaneously miss them. However, a depth-dependent rarity law does not follow from the stated facts alone. In particular, the reaching window has fixed circular width; it does not shrink as d increases. Thus a rigorous derivation of the observed d≥ 4 collapse needs an additional lemma about the node ensemble or its other coordinates. That statistical step is UNFINISHED.
+
+FACT. Each killed exception must possess two distinct antipodal unit-time pairs whose forced bits are opposite.
+
+1. Reaching criterion
+
+PROOF. By the half-lap rule, i reaches T exactly when
+
+dist( Tw/(2M) , ½Z )< 1/16 .
+
+Here the two possible bit windows are combined into one distance condition.
+
+PROOF. Substituting w= 2^{k−d} w′ and M= 2^k p gives
+
+Tw/(2M) = T·2^{k−d} w′ / (2^{k+1} p) = ½ · (T·w′)/(2^d p) = ½ z .
+
+Therefore dist( ½ z , ½Z ) = ½ dist(z, Z) = ½ ∥z∥.
+
+Hence reaching is equivalent to ∥ T·w′ / (2^d p) ∥ < 1/8 .
+
+2. Why a unit time was already covered by i alone
+
+FACT. For any coordinate j , put x_j = T w_j / (2M) . Its level- M covering condition is ∥ T w_j / M ∥ = ∥2x_j∥ < 1/16 , whereas its level- 2M reaching condition is ∥2x_j∥ < 1/8 .
+
+PROOF. Thus every level- M coverer reaches at level 2M . If T is unit for i , improperness gives at least one level- M coverer; it reaches and therefore must be i . A second level- M coverer would likewise be a second reacher, contradicting uniqueness. So i , and only i , covers T at level M .
+
+PROOF. For i itself, T w_i / M = T·w′/(2^d p) = z , so every unit time must satisfy the exact necessary conditions
+
+∥z∥ < 1/16 ,
+
+no j ≠ i satisfies ∥2x_j∥ < 1/8.
+
+Together these conditions are also sufficient for a unit time.
+
+3. Depth d≥ 4 , and the exceptions
+
+FACT. Write r ≡ T·w′ (mod n) , with 0 < r < n . Since T·w′ is odd and n is even, r is odd. The preceding conditions become
+
+min(r, n− r) < n/16 = 2^{d−4} p
+
+for the parent-covering requirement, while mere reaching uses the wider bound 2^{d−3} p .
+
+IDEA. A unit time therefore requires an admissible residue and simultaneous avoidance by every competitor under the wider reaching test. This explains what must be rare, but the formulas alone do not prove that its probability falls with d ; an additional competition argument is required.
+
+PROOF. Finally, Lemma P says that the unit times form pairs {T, M− T} with constant bit inside each pair. Hence every one of the killed depth- d≥ 4 exceptions must have
+
+{T_1, M− T_1} ≠ {T_2, M− T_2}, h_i(T_1) = 1 − h_i(T_2) .
+
+There must be at least two such pairs; one exceptional unit pair cannot supply the death mechanism.
