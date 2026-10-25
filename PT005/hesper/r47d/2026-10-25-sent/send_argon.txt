@@ -1,0 +1,37 @@
+PT005 Round 47D (chair: Opus, packet ae94b334). Proof first: a finite check over all cases does NOT count as the answer; numbers only to test a claim or find a counterexample. Web search off.
+
+----- BEGIN COMMON -----
+
+## PT005 · Round 47D · Why even coordinates die
+
+**RULES:**
+1. Label every step FACT / PROOF / IDEA.
+2. Any number you did not compute yourself and show: UNFINISHED.
+3. Start with an ANSWER BLOCK (≤ 300 words) that names your least-sure step.
+
+**Setting.**
+- A node is 15 integers wᵢ at level M = 2^k·p (k ≥ 1, p an odd prime). Each child chooses a bit bᵢ per coordinate: wᵢ or wᵢ + M, at level 2M.
+- Coordinate i **reaches** an odd T ≤ M if 16‖T(wᵢ + bM)‖_{2M} < 2M for some b.
+- **Depth:** for an even wᵢ with v₂(wᵢ) < k, the depth is d = k − v₂(wᵢ).
+- **Unit time:** an odd T reached by i and by no other coordinate. It forces bᵢ = hᵢ(T), the bit that covers.
+
+**Proved facts you may use** (each PROVED, and checked by two programs):
+- **Half-lap rule:** T(w + M) ≡ Tw + M (mod 2M) for odd T. So bit 0 covers iff ‖Tw/2M‖ < 1/16, and bit 1 covers iff ‖Tw/2M − ½‖ < 1/16. Never both.
+- **Antipodal Reacher Lemma (GLM):** at M − T an odd coordinate swaps its bit and an even coordinate keeps it.
+- **Lemma P (chair):** the unit times of an even coordinate come in pairs {T, M − T} with the **same** bit. So an even coordinate dies only from **two different pairs with opposite bits**.
+
+**Measured facts.** These are what you must *explain*, not what you may assume. All are exact over 1,107,829 nodes and checked by two programs:
+- (M1) An even coordinate with |U| = 1 never occurs.
+- (M2) Unit times occur almost only at depth d ≤ 3. Out of 1,960,508 even coordinates with unit times, only 82 have d ≥ 4, and all 82 are killed.
+- (M3) The "two pairs, opposite bits" death accounts for 417,077 nodes. It is the largest single cause of death.
+
+----- END COMMON -----
+
+----- BLOCK ARGON (proof: the two-pair conflict in closed form) -----
+For depth d ∈ {1, 2, 3}, the bit hᵢ(T) depends only on T·w′ mod 2^{d+1}·p. It is a fixed pattern that does not grow with k.
+1. Write down hᵢ(T) as an explicit rule in T·w′ mod 2^{d+1}p.
+2. Give the exact arithmetic condition on two odd times T₁, T₂ (not antipodal) under which hᵢ(T₁) ≠ hᵢ(T₂).
+3. **The hard part:** under what condition on the *other* 14 coordinates are T₁ and T₂ both unit times of i? Even a partial answer is welcome, for example "if no other coordinate has depth ≤ 3, then …".
+
+Say where p = 17 breaks your argument, if it does.
+----- END BLOCK ARGON -----
