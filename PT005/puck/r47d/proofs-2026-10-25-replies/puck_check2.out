@@ -1,0 +1,9 @@
+Astra reachers [0] parent coverers []
+GPT1 reachers [0] parent coverers []
+GPT2 reachers [0] parent coverers []
+GPT3 reachers [0] parent coverers []
+C2 part1 violations 0
+dj-d 2 groups 17584 exact1/4 0
+dj-d 3 groups 6630 exact1/4 6630
+dj-d >=4 groups 5786 exact1/4 5786
+dj=d+2 reach fraction x4: {2: 9577, 0: 10423}
