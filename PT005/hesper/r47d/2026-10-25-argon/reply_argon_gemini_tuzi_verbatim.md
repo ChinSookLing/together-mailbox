@@ -1,0 +1,192 @@
+Argon (Gemini, asked personally by Tuzi with send_argon.txt sha fd3c7470…), pasted to Hesper 2026-10-25 10:52 +08. Verbatim as pasted.
+
+### ANSWER BLOCK
+
+* **FACT [1–2 步閉式規則與衝突條件]：** 設偶數座標 $w_i = 2^{k-d} w'$（$w'$ 為奇數，深度 $d = k - v_2(w_i) \in \{1, 2, 3\}$），令 $r \equiv T w' \pmod{2^{d+1} p}$ 取於 $\{0, 1, \dots, 2^{d+1}p - 1\}$。因 $T, w'$ 皆為奇數，$r$ 必為奇數。座標 $i$ 觸及奇數 $T$ 當且僅當 $\Vert{} T w' \Vert{}_{2^d p} \lt 2^{d-3} p$（若 $p \mid w'$ 或 $p \mid T$，則 $d \le 3$ 時無解）。其覆蓋位元為：
+
+$$h_i(T) = \left\lfloor \frac{r + 2^{d-3} p}{2^d p} \right\rfloor \bmod 2 = \begin{cases} 0, & \text{若 } \Vert{} T w' \Vert{}_{2^{d+1} p} \lt 2^{d-3} p, \\ 1, & \text{若 } \Vert{} T w' - 2^d p \Vert{}_{2^{d+1} p} \lt 2^{d-3} p. \end{cases}$$
+
+
+
+兩個非對蹠奇數時間 $T_1, T_2$（$T_2 \neq M - T_1$）滿足 $h_i(T_1) \neq h_i(T_2)$ 當且僅當對 $\ell \in \{1, 2\}$ 皆有 $\Vert{} T_\ell w' \Vert{}_{2^d p} \lt 2^{d-3} p$，且差值滿足 $\Vert{} (T_2 - T_1) w' - 2^d p \Vert{}_{2^{d+1} p} \lt 2^{d-2} p$。
+* **IDEA [第 3 步與最不確定步驟]：** $T_\ell$ 為 $i$ 的單位時間當且僅當其餘 14 個座標 $w_j = 2^{k-d_j} w'_j$ 皆滿足 $\Vert{} T_\ell w'_j \Vert{}_{2^{d_j} p} \ge 2^{d_j - 3} p$。對於 $d_j \le d+1$ 的座標，其週期整除 $2^{d+1} p$，故在模 $2^{d+1} p$ 基底層即完全決定是否阻擋所有提升（lifts）；對於 $d_j \ge d+2$ 的座標，每個座標在 $2^{k-d-1}$ 個提升中各阻擋約 $\frac{1}{4}$ 的比例。**最不確定的步驟（Least-sure step）：** 當其餘 14 個座標皆滿足 $d_j \ge d+2$ 但有多個座標集中在相同深度 $d_j$ 時，排除這 14 個大小為 $\frac{1}{4}$ 的阻擋集形成完整覆蓋系（covering system）的精確無碰撞充分條件。
+* **FACT [$p = 17$ 的影響]：** 第 1、2 步與第 3 步的週期整除判準對所有奇質數 $p$ 均嚴格成立，在 $p = 17$ 處不會失效；但若假設「$d_j \le 0$（即 $2^k \mid w_j$）的座標對 $\gcd(T,p)=1$ 的時間至多阻擋 $\pm 1 \pmod p$」，該簡化會在 $p = 17$ 失效，因為 $\frac{17}{8} = 2.125 \gt 2$ 且 $\frac{17}{16} = 1.0625 \gt 1$。
+
+---
+
+### 預備引理：基本約化與測量事實 (M1) 的證明
+
+* **FACT [二進制消去與固定模數]：** 對偶數座標 $w_i$，設 $v_2(w_i) = k - d$，其中 $1 \le d \lt k$，並寫為 $w_i = 2^{k-d} w'$（$w'$ 為奇數）。因 $M = 2^k p$，對任意奇數 $T$ 有：
+
+$$\frac{T w_i}{2M} = \frac{T \cdot 2^{k-d} w'}{2^{k+1} p} = \frac{T w'}{2^{d+1} p}.$$
+
+
+* **PROOF [為何 $d \in \{1, 2, 3\}$ 必有 $\gcd(w', p) = 1$ 且 $\gcd(T, p) = 1$]：**
+由半圈規則（Half-lap rule），座標 $i$ 觸及奇數 $T$ 當且僅當 $\Vert{} T w' \Vert{}_{2^{d+1} p} \lt 2^{d-3} p$（位元 0）或 $\Vert{} T w' - 2^d p \Vert{}_{2^{d+1} p} \lt 2^{d-3} p$（位元 1）。
+因為 $T$ 與 $w'$ 皆為奇數，且 $d \ge 1$ 時 $2^d p$ 為偶數，故 $T w'$ 與 $T w' - 2^d p$ 皆為奇數，不能被 $2^{d+1} p$ 整除；因此 $\Vert{} T w' \Vert{}_{2^{d+1} p} \ge 1$ 且 $\Vert{} T w' - 2^d p \Vert{}_{2^{d+1} p} \ge 1$。
+若 $p \mid w'$ 或 $p \mid T$，則 $p \mid T w'$，故上述兩個距離皆為 $p$ 的正奇數倍，最小值至少為 $p$。然而當 $d \in \{1, 2, 3\}$ 時，閾值為 $2^{d-3} p \in \{\frac{p}{4}, \frac{p}{2}, p\}$，均滿足 $2^{d-3} p \le p$，嚴格不等式 $\lt 2^{d-3} p$ 無解。因此，深度 $d \in \{1, 2, 3\}$ 的座標欲觸及任何奇數 $T$，必有 $\gcd(w', p) = 1$（從而 $\gcd(w', 2^{d+1}p) = 1$）且 $\gcd(T, p) = 1$。（反之，當 $d = 4$ 時 $2^{4-3}p = 2p \gt p$，此約束失效，這解釋了 (M2) 在 $d \ge 4$ 的相變邊界。）
+* **PROOF [解釋 (M1)：偶數座標不可能有 $\vert{}U\vert{} = 1$]：**
+對任意座標 $j$（無論奇偶），由半圈規則知 $j$ 觸及奇數 $T$（存在某位元 $b_j \in \{0, 1\}$）當且僅當：
+
+$$\min\left(\left\Vert{}\frac{T w_j}{2M}\right\Vert{}, \left\Vert{}\frac{T w_j}{2M} - \frac{1}{2}\right\Vert{}\right) = \frac{1}{2} \left\Vert{}\frac{T w_j}{M}\right\Vert{} \lt \frac{1}{16} \iff \left\Vert{}\frac{T w_j}{M}\right\Vert{} \lt \frac{1}{8}.$$
+
+
+
+將 $T$ 替換為 $M - T$，因 $\left\Vert{}\frac{(M-T)w_j}{M}\right\Vert{} = \left\Vert{}w_j - \frac{T w_j}{M}\right\Vert{} = \left\Vert{}\frac{T w_j}{M}\right\Vert{}$，觸及 $M - T$ 的座標集合與觸及 $T$ 的座標集合完全相同。故 $T \in U_i \iff M - T \in U_i$。
+若 $\vert{}U_i\vert{} = 1$，唯一的單位時間 $T$ 必須滿足 $T = M - T$，即 $M = 2T$。因 $T$ 為奇數，這要求 $v_2(M) = k = 1$。然而：
+1. 對具有深度 $d = k - v_2(w_i) \ge 1$ 的偶數座標，因 $v_2(w_i) \ge 1$，必有 $k \ge 2$，故 $M/2 = 2^{k-1}p$ 為偶數，奇數 $T$ 永不可能等於 $M - T$，從而 $\{T, M-T\}$ 必為兩個相異奇數，$\vert{}U_i\vert{}$ 必為偶數。
+2. 即便在 $k = 1$ 且 $v_2(w_i) \ge 1$ 的情況下，在 $T = p = M/2$ 處，對所有座標 $j$ 有 $\frac{p w_j}{M} = \frac{w_j}{2} \in \{0, \frac{1}{2}\} \pmod 1$；任何偶數座標皆有 $\left\Vert{}\frac{p w_j}{M}\right\Vert{} = 0 \lt \frac{1}{8}$，只要節點不只有唯一一個偶數座標且其餘 14 個奇數座標對 $\frac{1}{2} \ge \frac{1}{8}$ 皆不觸及，$T=p$ 的情況在實際節點統計中亦不構成孤立單點（對於定義了深度 $v_2(w_i) \lt k$ 的偶數座標，恆有 $k \ge 2$，故 $\vert{}U_i\vert{}$ 嚴格為偶數，$\vert{}U_i\vert{} = 1$ 出現次數恆為 $0$）。
+
+
+
+---
+
+### 1. 深度 $d \in \{1, 2, 3\}$ 下 $h_i(T)$ 的顯式規則
+
+* **PROOF [通式與最近倍數分解]：**
+令 $w_i = 2^{k-d} w'$（$w'$ 為奇數，$d \in \{1, 2, 3\}$），並設 $r = (T w' \bmod 2^{d+1} p) \in \{1, 3, \dots, 2^{d+1}p - 1\}$。
+將 $T w'$ 對半週期模數 $2^d p$ 作最近整數倍分解：
+
+$$T w' = m(T) \cdot 2^d p + u(T), \qquad m(T) = \left\lfloor \frac{T w' + 2^{d-1} p}{2^d p} \right\rfloor \in \mathbb{Z}, \quad u(T) \in (-2^{d-1} p, 2^{d-1} p).$$
+
+
+* 若 $m(T)$ 為**偶數**，則 $T w' \equiv u(T) \pmod{2^{d+1} p}$，故 $\Vert{} T w' \Vert{}_{2^{d+1} p} = \vert{}u(T)\vert{}$；此時位元 $0$ 覆蓋當且僅當 $\vert{}u(T)\vert{} \lt 2^{d-3} p$。
+* 若 $m(T)$ 為**奇數**，則 $T w' - 2^d p \equiv u(T) \pmod{2^{d+1} p}$，故 $\Vert{} T w' - 2^d p \Vert{}_{2^{d+1} p} = \vert{}u(T)\vert{}$；此時位元 $1$ 覆蓋當且僅當 $\vert{}u(T)\vert{} \lt 2^{d-3} p$。
+
+
+由於當 $\vert{}u(T)\vert{} \lt 2^{d-3} p \le \frac{1}{4}(2^d p)$ 時，$0 \lt u(T) + 2^{d-3} p \lt 2^{d-2} p \lt 2^d p$，故對一切被 $i$ 觸及的奇數 $T$（即滿足 $\Vert{} T w' \Vert{}_{2^d p} \lt 2^{d-3} p$ 的 $T$），其商數 $m(T)$ 的奇偶性由下式唯一給出：
+
+$$h_i(T) = m(T) \bmod 2 = \left\lfloor \frac{r + 2^{d-3} p}{2^d p} \right\rfloor \bmod 2.$$
+
+
+* **FACT [各深度 $d \in \{1, 2, 3\}$ 的顯式區間表]：**
+以奇數餘數 $r = (T w' \bmod 2^{d+1} p) \in \{1, 3, \dots, 2^{d+1}p - 1\}$ 表示：
+1. **$d = 1$（模數 $4p$，半圈 $2p$，視窗半寬 $\frac{p}{4}$）：**
+* $h_i(T) = 0 \iff r \in \left(0, \frac{p}{4}\right) \cup \left(\frac{15p}{4}, 4p\right)$（即 $\Vert{} T w' \Vert{}_{4p} \lt \frac{p}{4}$，需 $p \ge 5$ 方有奇數解）。
+* $h_i(T) = 1 \iff r \in \left(\frac{7p}{4}, \frac{9p}{4}\right)$（即 $\Vert{} T w' - 2p \Vert{}_{4p} \lt \frac{p}{4}$，需 $p \ge 5$ 方有奇數解）。
+
+
+2. **$d = 2$（模數 $8p$，半圈 $4p$，視窗半寬 $\frac{p}{2}$）：**
+* $h_i(T) = 0 \iff r \in \left(0, \frac{p}{2}\right) \cup \left(\frac{15p}{2}, 8p\right)$（即 $\Vert{} T w' \Vert{}_{8p} \lt \frac{p}{2}$）。
+* $h_i(T) = 1 \iff r \in \left(\frac{7p}{2}, \frac{9p}{2}\right)$（即 $\Vert{} T w' - 4p \Vert{}_{8p} \lt \frac{p}{2}$）。
+
+
+3. **$d = 3$（模數 $16p$，半圈 $8p$，視窗半寬 $p$）：**
+* $h_i(T) = 0 \iff r \in (0, p) \cup (15p, 16p)$（即 $\Vert{} T w' \Vert{}_{16p} \lt p$）。
+* $h_i(T) = 1 \iff r \in (7p, 9p)$（即 $\Vert{} T w' - 8p \Vert{}_{16p} \lt p$）。
+
+
+
+
+
+---
+
+### 2. 非對蹠奇數時間對 $T_1, T_2$ 產生位元衝突 $h_i(T_1) \neq h_i(T_2)$ 的精確算術條件
+
+* **PROOF [雙對衝突的充要算術判準]：**
+設 $T_1, T_2 \le M$ 為兩個非對蹠奇數時間（$T_2 \neq M - T_1$）。座標 $i$ 同時觸及 $T_1, T_2$ 且 $h_i(T_1) \neq h_i(T_2)$ 當且僅當以下條件同時成立：
+1. **個別觸及條件（模 $2^d p$）：**
+
+$$\Vert{} T_1 w' \Vert{}_{2^d p} \lt 2^{d-3} p \quad \text{且} \quad \Vert{} T_2 w' \Vert{}_{2^d p} \lt 2^{d-3} p.$$
+
+
+
+即存在整數 $m_1, m_2 \in \mathbb{Z}$ 與奇數餘項 $u_1, u_2 \in (-2^{d-3} p, 2^{d-3} p)$ 使得 $T_1 w' = m_1 2^d p + u_1$ 且 $T_2 w' = m_2 2^d p + u_2$。
+2. **異號位元條件（模 $2^{d+1} p$）：**
+$m_1 \not\equiv m_2 \pmod 2$，亦即 $\{T_1, T_2\}$ 中恰有一者滿足 $\Vert{} T_\ell w' \Vert{}_{2^{d+1} p} \lt 2^{d-3} p$，另一者滿足 $\Vert{} T_\ell w' - 2^d p \Vert{}_{2^{d+1} p} \lt 2^{d-3} p$。
+將兩式相減與相加：
+
+$$(T_2 - T_1) w' = (m_2 - m_1) 2^d p + (u_2 - u_1), \qquad (T_2 + T_1) w' = (m_2 + m_1) 2^d p + (u_2 + u_1).$$
+
+
+
+因為 $\vert{}u_2 \mp u_1\vert{} \le \vert{}u_2\vert{} + \vert{}u_1\vert{} \lt 2 \cdot 2^{d-3} p = 2^{d-2} p = \frac{1}{4}(2^d p)$，整數差 $m_2 - m_1$ 與整數和 $m_2 + m_1$ 唯一決定了 $(T_2 \mp T_1) w'$ 最接近的 $2^d p$ 倍數。因此，在滿足條件 1 的前提下，$h_i(T_1) \neq h_i(T_2)$ **當且僅當**：
+
+$$\left\Vert{} (T_2 - T_1) w' - 2^d p \right\Vert{}_{2^{d+1} p} \lt 2^{d-2} p \quad \left(\text{等價地，}\left\Vert{} (T_2 + T_1) w' - 2^d p \right\Vert{}_{2^{d+1} p} \lt 2^{d-2} p\right).$$
+
+
+
+
+* **驗證對蹠不變性（Lemma P）：** 若 $T_2 = M - T_1$，則 $(T_2 + T_1) w' = M w' = 2^{k-d} w' \cdot 2^d p$。因 $k - d = v_2(w_i) \ge 1$，$2^{k-d} w'$ 為偶數，故 $\Vert{}(T_2 + T_1) w' - 2^d p\Vert{}_{2^{d+1} p} = 2^d p \not\lt 2^{d-2} p$，確認同一對蹠對 $\{T_1, M - T_1\}$ 永不產生位元衝突。
+
+
+
+---
+
+### 3. 其餘 14 個座標使 $T_1, T_2$ 同時成為 $i$ 的單位時間之條件
+
+* **FACT [單位時間的精確充要條件]：**
+對任意被 $i$ 觸及的奇數時間 $T_\ell$（$\ell \in \{1, 2\}$），$T_\ell$ 為 $i$ 的單位時間當且僅當對所有其餘 14 個座標 $j \neq i$ 皆不觸及 $T_\ell$，即：
+
+$$\left\Vert{} \frac{T_\ell w_j}{M} \right\Vert{} \ge \frac{1}{8} \iff \Vert{} T_\ell w_j \Vert{}_M \ge \frac{M}{8} \qquad (\forall j \neq i, \; \ell \in \{1, 2\}).$$
+
+
+
+對每個 $j \neq i$，設 $v_j = v_2(w_j)$，定義其廣義深度 $d_j = k - v_j \in \mathbb{Z}$，並寫為 $w_j = 2^{k-d_j} w'_j$（其中 $w'_j$ 為奇數；若 $w_j$ 為奇數則 $d_j = k$；若 $2^k \mid w_j$ 則 $d_j \le 0$）。則不觸及條件化為：
+
+$$\left\Vert{} \frac{T_\ell w'_j}{2^{d_j} p} \right\Vert{} \ge \frac{1}{8}.$$
+
+
+* **PROOF [按深度 $d_j$ 分層的週期提升機制（Lifting Decomposition）]：**
+固定座標 $i$（深度 $d \in \{1, 2, 3\}$）在模 $2^{d+1} p$ 下的一對衝突基底餘數 $T_{1,0}, T_{2,0} \in [1, 2^{d+1} p]$（滿足 $h_i(T_{1,0}) \neq h_i(T_{2,0})$）。
+在完整層級 $M = 2^k p$（設 $k \ge d + 1$）中，$T_{\ell, 0}$ 的所有提升為：
+
+$$T_\ell(m_\ell) = T_{\ell, 0} + m_\ell \cdot 2^{d+1} p, \qquad m_\ell \in \{0, 1, \dots, 2^{k-d-1} - 1\}.$$
+
+
+
+將 $T_\ell(m_\ell)$ 代入第 $j$ 個座標的相位 $\frac{T w_j}{M} \pmod 1$：
+
+$$\frac{T_\ell(m_\ell) w_j}{M} = \frac{T_{\ell, 0} w'_j}{2^{d_j} p} + \frac{m_\ell w'_j}{2^{d_j - d - 1}} \pmod 1.$$
+
+
+
+這將其餘 14 個座標嚴格分為兩類：
+1. **低深度座標層（$d_j \le d + 1$，特別地當 $d \in \{2, 3\}$ 時包含所有深度 $d_j \le 3$ 及 $d_j \le 0$ 的座標）：**
+此時 $d_j - d - 1 \le 0$，故第二項 $\frac{m_\ell w'_j}{2^{d_j - d - 1}} \in \mathbb{Z}$ 在模 $1$ 下恆為 $0$！
+* **推論：** 改變提升參數 $m_\ell$ **完全不會改變** $\left\Vert{} \frac{T_\ell(m_\ell) w_j}{M} \right\Vert{}$。因此，對於所有 $d_j \le d + 1$ 的座標 $j$，基底餘數 $T_{1,0}, T_{2,0}$ 必須在模 $2^{\max(d_j, 0)} p$ 下直接滿足：
+* 若 $1 \le d_j \le d + 1$：$\Vert{} T_{\ell, 0} w'_j \Vert{}_{2^{d_j} p} \ge 2^{d_j - 3} p$；
+* 若 $d_j \le 0$（即 $w_j = 2^k s_j$）：$p \nmid s_j$ 且 $\Vert{} T_{\ell, 0} s_j \Vert{}_p \ge \frac{p}{8}$。
+只要任一 $d_j \le d + 1$ 的座標在基底層違反上式，該基底類 $T_{\ell, 0}$ 的全部 $2^{k-d-1}$ 個提升即被全數封殺。
+
+
+
+
+2. **高深度與奇數座標層（$d_j \ge d + 2$，包含 $d_j \ge 4$ 的偶數座標與 $d_j = k$ 的奇數座標）：**
+令 $L_j = d_j - d - 1 \ge 1$，並記基底相位 $\alpha_{\ell, j} = \frac{T_{\ell, 0} w'_j}{2^{d_j} p} \pmod 1$。當 $m_\ell$ 遍历 $\mathbb{Z}/2^{k-d-1}\mathbb{Z}$ 時，因 $w'_j$ 為奇數（$\gcd(w'_j, 2^{L_j}) = 1$），相位移 $\frac{m_\ell w'_j}{2^{L_j}} \pmod 1$ 均勻遍歷分母為 $2^{L_j}$ 的整個陪集網格：
+* **當 $L_j = 1$（即 $d_j = d + 2$）：** 網格間距為 $\frac{1}{2}$。開區間 $\left(-\frac{1}{8}, \frac{1}{8}\right)$ 長度為 $\frac{1}{4} \lt \frac{1}{2}$，故在 $m_\ell \bmod 2$ 的兩個同餘類中**至多阻擋 1 個**（若 $\Vert{}2 \alpha_{\ell, j}\Vert{} \ge \frac{1}{4}$ 則阻擋 0 個；否則阻擋恰 $\frac{1}{2}$ 的提升）。
+* **當 $L_j \ge 2$（即 $d_j \ge d + 3$）：** 網格間距為 $2^{-L_j} \le \frac{1}{4}$。因區間長度為 $\frac{1}{4}$，座標 $j$ 僅在模 $2^{L_j}$ 下阻擋 $2^{L_j - 2}$ 個同餘類（恰佔所有提升的 $\frac{1}{4}$），且被阻擋與否完全由 $m_\ell w'_j$ 的第 $L_j - 1, L_j - 2, L_j - 3$ 這 3 個二進制位元（連同 $\alpha_{\ell, j}$ 的進位）決定。
+
+
+
+
+* **IDEA [「若無其他座標具有深度 $\le 3$」時的具體判準]：**
+假設除座標 $i$（深度 $d \in \{1, 2, 3\}$）外，其餘 14 個座標皆滿足 $d_j \ge 4$（例如全為奇數座標或高深度偶數座標，且若 $d = 3$ 則假設對 $d_j = 4$ 的座標滿足 $T_{\ell, 0}$ 不被其完全覆蓋）：
+1. 若其餘 14 個座標皆為**奇數座標**（$d_j = k$，故所有 $j \neq i$ 共用同一個 $L = k - d - 1$）：在模 $2^L$ 下，每個座標 $j$ 定義一個大小為 $2^{L-2}$ 的禁用殘餘集 $B_{\ell, j} = \left\{ m \in \mathbb{Z}/2^L\mathbb{Z} : \left\Vert{} \alpha_{\ell, j} + \frac{m w_j}{2^L} \right\Vert{} \lt \frac{1}{8} \right\}$。$T_1, T_2$ 能被選為 $i$ 的單位時間當且僅當對 $\ell = 1, 2$ 皆有：
+
+$$\bigcup_{j \neq i} B_{\ell, j} \neq \mathbb{Z}/2^L\mathbb{Z}.$$
+
+
+2. 若高深度座標分佈在**相異且間隔至少為 3 的深度**（$\vert{}d_j - d_{j'}\vert{} \ge 3$）：因為每個座標 $j$ 的阻擋條件僅約束 $m_\ell$ 在位元位置 $\{L_j-1, L_j-2, L_j-3\}$ 上的 3 個二進制位元（在 8 個狀態中禁用 2 個狀態，保留 $\frac{3}{4}$），當各座標的位元視窗互不重疊時，存活提升數由獨立乘積給出，必存在未受阻擋的提升 $m_1, m_2$。
+
+
+
+---
+
+### 4. $p = 17$ 在何處會（或不會）破壞論證
+
+* **PROOF [第 1–3 步代數結構在 $p = 17$ 處保持不變，但兩個算術閾值在 $p = 17$ 發生躍遷]：**
+上述第 1、2 步的閉式公式與第 3 步的 $2$-adic 週期整除分解對所有奇質數 $p$ 均精確成立，**不會**在 $p = 17$ 處崩潰。然而，若論證中依賴小質數（$p \le 13$）的以下兩個簡化性質，則恰在 $p = 17$ 處失效：
+1. **閾值一：$\frac{1}{p} \lt \frac{1}{16}$ 與 $\frac{2}{p} \lt \frac{1}{8}$ 首次成立（$d_j \le 0$ 座標的非零模 $p$ 阻擋）：**
+* 對於滿足 $2^k \mid w_j$（即 $d_j \le 0$，$w_j = 2^k s_j$，$p \nmid s_j$）的座標 $j$，其阻擋條件為 $\| T s_j \|_p \lt \frac{p}{8}$。
+* 當 $p \in \{3, 5, 7\}$ 時，$\frac{p}{8} \le \frac{7}{8} \lt 1$，故對所有滿足 $\gcd(T, p) = 1$ 的時間（包含 $i$ 所能觸及的一切時間），此類座標**完全不構成阻擋**（阻擋 $0$ 個非零模 $p$ 餘數類）。
+* 當 $p \in \{11, 13\}$ 時，$\frac{p}{8} \in \{\frac{11}{8}, \frac{13}{8}\} \subset (1, 2)$，僅阻擋 $T s_j \equiv \pm 1 \pmod p$（2 個餘數類）。
+* **在 $p = 17$ 時：** 因為 $17 = 2 \times 8 + 1$，我們有 $\frac{17}{8} = 2.125 \gt 2$，故 $\| T s_j \|_{17} \lt \frac{17}{8}$ 首次納入了 $\pm 1, \pm 2 \pmod{17}$ 共 **4 個**非零餘數類；且若 $2^{k+1} \mid w_j$（$w_j = 2^{k+1} s'_j$），單一位元 0 的條件 $\| T s'_j \|_p \lt \frac{p}{16}$ 在 $p \le 13$ 時對 $\gcd(T, p) = 1$ 恆無解，但在 $p = 17$ 時因 $\frac{17}{16} = 1.0625 \gt 1$ 首次阻擋 $T s'_j \equiv \pm 1 \pmod{17}$。
+
+
+
+
+2. **閾值二：$p - 1 = 16 \gt 14$（基底視窗內的對蹠奇數對數量超越其餘座標數 14）：**
+* 在 $d = 3$ 時，位元 $0$ 視窗 $(-p, p)$ 與位元 $1$ 視窗 $(7p, 9p)$ 內各自包含的正奇數餘數個數為 $\frac{p-1}{2}$（每個正奇數 $u$ 對應一對對蹠奇數餘數 $\{\pm u\}$）：
+* 當 $p = 3, 5, 7, 11, 13$ 時，每個位元視窗內的奇數餘數總數為 $p - 1 \in \{2, 4, 6, 10, 12\}$，皆小於其餘座標數 $14$。
+* **在 $p = 17$ 時：** 因為 $17 - 1 = 16 \gt 14$，單一位元視窗內的奇數餘數數目（$16$ 個，即 $8$ 個對蹠對；兩個位元合計 $16$ 個對蹠對）首次超過其餘 14 個座標的總數。因此，即使在 $k = 4$（$M = 16p$，無額外 $2$-adic 提升自由度 $m_\ell$）的基底層，若每個其他座標至多殺死一對基底對蹠餘數，在 $p = 17$ 時僅靠鴿籠原理已不足以殺光全部 $16$ 對基底候選時間。
