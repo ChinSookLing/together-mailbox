@@ -1,0 +1,7 @@
+CLAIMS (R47D, from Kimi K3.1 Pro and Argon replies). Notation: M=2^k p, p odd prime, k>=2; even coordinate w=2^(k-d) w', w' odd, 1<=d<k; T odd, T<=M; ||x||_m = distance of x to nearest multiple of m.
+C1 (Kimi T1, Argon T1): i reaches T iff ||T w'||_(2^d p) < 2^(d-3) p, i.e. ||T w'/(2^d p)|| < 1/8.
+C2 (Kimi T2): if j covers T at level M (16||T w_j||_M < M) then j reaches T at level 2M. Hence a unit time T of i is covered at level M by i alone, and ||T w'||_(2^d p) < 2^(d-4) p.
+C3 (Argon lemma): if d<=3 and i reaches T, then p does not divide w' and p does not divide T. (Fails for d>=4 since 2^(d-3)p >= 2p > p.)
+C4 (Argon T2): if i reaches T1 and T2 (T2 != T1, T2 != M-T1), then h_i(T1) != h_i(T2) iff ||(T2-T1) w' - 2^d p||_(2^(d+1) p) < 2^(d-2) p. Here h_i(T)=0 iff ||T w'||_(2^(d+1)p) < 2^(d-3)p, h_i(T)=1 iff ||T w' - 2^d p||_(2^(d+1)p) < 2^(d-3)p.
+C5 (Argon T3): whether a coordinate j with d_j <= d+1 reaches T depends only on T mod 2^(d+1) p; a coordinate with d_j >= d+2 reaches about 1/4 of the odd lifts T' == T (mod 2^(d+1) p), T'<=M. (Argon said "exactly 2^(L-2) classes"; test whether exact.)
+C6 (Kimi T3): a depth-rarity law for (M2) does NOT follow from C1-C2 alone; an extra lemma about the other coordinates is needed.
