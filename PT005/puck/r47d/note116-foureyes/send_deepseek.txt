@@ -1,0 +1,22 @@
+Puck: PT005 R47D, same chat. Chair (Opus) note 116 asks you for a FOUR-EYES line-by-line read of its C5′ proof below. Mark each numbered step and bullet CORRECT / GAP / WRONG with a one-line reason; check especially the bijection/multiplicity in step 2, the open-arc count and the odd/even endpoint argument in step 3 (does it need d ≥ 1, and is "mod 2^{d+1}p" parity valid?), and the L = 2 case. Then: is C5′ PROVED? Labels FACT/PROOF/IDEA. ANSWER BLOCK first (≤200 words). Web search off.
+
+===== NOTE 116 (verbatim excerpt: notation + §2) =====
+Notation as in claims.txt: M = 2^k·p, k ≥ 2, T odd, T ≤ M. A coordinate of depth d is w = 2^{k−d}·w′ with w′ odd. Odd coordinates have d = k. Frozen coordinates (v₂(w) ≥ k) depend only on T mod p, and are treated below as "d ≤ d + 1".
+## 2. C5′: ACCEPTED, with a chair proof. It is exact, not "about 1/4"
+**C5′.** Fix an odd T and a coordinate j of depth d_j. Look at the odd lifts T′ ≡ T (mod 2^{d+1}p), T′ ≤ M. Write L = d_j − d.
+- **(a)** If L ≤ 1, then whether j reaches T′ is the same for all these lifts.
+- **(b)** If L = 2, then j reaches **either none or exactly half** of the lifts, depending on T.
+- **(c)** If L ≥ 3, then j reaches **exactly one quarter** of the lifts.
+
+**Proof (chair).**
+1. **Reach condition.** By C1, j reaches T′ iff x′ := T′·w′_j mod 2^{d_j}p lies in the open arc A = (−2^{d_j−3}p, 2^{d_j−3}p), which is **one quarter** of the circle Z/2^{d_j}p.
+2. **The lifts form an evenly spaced set.** Write T′ = T + m·2^{d+1}p with m = 0, …, 2^{k−d−1} − 1. Then x′ = x + p·2^{d+1}·(m·w′_j mod 2^{L−1}), where x = T·w′_j.
+   - If L ≤ 1, the shift is 0 mod 2^{d_j}p. That gives (a).
+   - If L ≥ 2: since w′_j is odd, m ↦ m·w′_j is a bijection mod 2^{L−1}. Also 2^{k−d−1} is a multiple of 2^{L−1} (because d_j ≤ k). So each of the 2^{L−1} points x + r·2^{d+1}p (r mod 2^{L−1}) is hit equally often. These points are evenly spaced around the circle, 2^{d+1}p apart.
+3. **Counting points in the arc.** An open arc of exactly one quarter of the circle contains either exactly 2^{L−3} of these points, or 2^{L−3} − 1 when its ends fall on points.
+   - The ends cannot fall on points. The points are x + r·2^{d+1}p, which is **odd**, because T and w′_j are odd and 2^{d+1}p is even. The arc's ends are ±2^{d_j−3}p mod 2^{d+1}p, which is **even**, because d_j − 3 ≥ d ≥ 1. That gives (c).
+4. **The case L = 2.** There are two antipodal points and the arc is a quarter of the circle, so it contains 0 or 1 of them. That gives (b). ∎
+
+**Status:** PROVED by the chair, and CHECKED by Puck. Puck's figures: at L = 2 the fraction is always 0 or ½ (0 of 17,584 groups had exactly ¼); at L = 3, 6,630 of 6,630 were exact; at L ≥ 4, 5,786 of 5,786 were exact.
+- **Four-eyes:** DeepSeek, please read §2 line by line.
+- Credit: the claim is Argon's (T3), with the "exact?" test asked by Puck; the correction at L = 2 comes from Astra, GPT and Puck.
