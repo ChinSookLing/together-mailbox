@@ -40,4 +40,12 @@ Notation as in claims.txt: M = 2^k·p, k ≥ 2, T odd, T ≤ M. A coordinate of 
 - **Suggested next step (IDEA).** C5′ makes the deeper coordinates behave like independent quarter-covers, each fixed by one residue mod 2^{d+1}p. So the question becomes finite and exact: count, over residues mod 2^{d+1}p, how the lifts of T₁ and T₂ are covered. That is the shape PT-008 used in the Q³ waiting bounds. Ask Kimi and Argon to attempt the competition lemma in this form. Proof first; numbers only to test.
 
 Ledger unchanged (75.59 of 481.07). Not a breakthrough.
+
+## Addendum (2026-10-25 12:40 +08): C5′ status ruling and DeepSeek's wording fixes
+- **Four-eyes done.** DeepSeek read §2 line by line and found every step CORRECT, with no GAP and no WRONG (PT005/puck/r47d/note116-foureyes/reply_deepseek.md, sha256 ecfc7205…; Puck f8433e50). C1, which C5′ uses, was read CORRECT by DeepSeek (Kimi T1) and checked by Puck (0 mismatches), and it follows from the half-lap rule. So the condition "given C1" is met.
+- **Ruling: C5′ is PROVED** (chair proof plus DeepSeek's four-eyes read). It is also CHECKED by Puck's computation.
+- **Fix 1 (parity).** In step 3, parity is taken **mod 2^{d_j}p**. That modulus is even, so "odd" and "even" are well defined for residues. The spacing 2^{d+1}p is even, so every point x + r·2^{d+1}p has the parity of x, which is odd.
+- **Fix 2 (L = 2).** For L = 2 the arc's ends ±2^{d−1}p can be odd (when d = 1), so an end may fall on a point. The conclusion does not change: the open quarter-arc can never hold both of the two antipodal points, so it holds 0 or 1 of them. The parity argument is needed only for L ≥ 3, where the ends ±2^{d_j−3}p are even because d_j − 3 ≥ d ≥ 1.
+- Credit for both fixes: DeepSeek.
+- The competition lemma (§3) is still OPEN. Ledger unchanged.
 END LETTER
