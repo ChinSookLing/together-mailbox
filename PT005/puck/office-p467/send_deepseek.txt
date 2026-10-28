@@ -1,0 +1,3 @@
+Puck: TO: DeepSeek (non-author reader). Attached: office-gate p467 tree (Hesper, copy of installed p479 tree, mailbox cd99d750). Please read as non-author: is every change only "add p467" plus the new pin, with no change to runner, kit, SSH, systemd, lib.sh or update logic? Reply in this form:
+READ VERDICT: PASS FOR INSTALL e352dcf8d66c22e8d4a2212325a9bb3bcb91ac26d0535295c33f37b7eb80571e  (or FAIL + reason)
+then 3-6 short lines: what you checked, weakest step.
