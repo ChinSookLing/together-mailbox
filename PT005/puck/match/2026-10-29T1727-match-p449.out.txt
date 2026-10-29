@@ -1,0 +1,10 @@
+A PT005/hesper/2026-10-26-note117/office-p449-collect-40257056259/p449/ir.jsonl
+  sha256 c361134258e28b2ddf4beb87da4324ab3c983b7ae29517d23ba2079650ee5ce9 lines 597 keys 597 dup 0
+B k11-gate results e58c229:k11/checkpoint/40846316115/checkpoint/k11-p449a/ir.jsonl
+  sha256 4ab28530a6698439ad968a070f52ee9a306d2a0ccb1133963def3a1b28d45472 lines 597 keys 597 dup 0
+fields compared: ['casc_rows', 'casc_survivors', 'deep', 'n_survivor_lines', 'nodes', 'rows'] | field sets equal: True
+compared 597 identical 597 differing 0 onlyA 0 onlyB 0
+totals A: rows 10822 casc_rows 10822 survivors_l2 2 alive_l16 0 nodes 3843077077133
+totals B: rows 10822 casc_rows 10822 survivors_l2 2 alive_l16 0 nodes 3843077077133
+engine job list p=449: roots 28 jobs 597 | equals A keys True | equals B keys True
+MATCH
