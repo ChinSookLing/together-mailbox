@@ -1,0 +1,10 @@
+A PT005/hesper/2026-10-30T2010-office-p467-done/collect-41052354038/p467/ir.jsonl
+  sha256 33855f7da04224d85b53ecb938a22464440ed70068de768112d978e79ad24c61 lines 649 keys 649 dup 0
+B /tmp/m467/k11-40606032910.jsonl
+  sha256 39d9b3984751d950fe7fc19a3e791f1a48577e6bef27b5ea004d3e654cadada6 lines 649 keys 649 dup 0
+fields compared: ['casc_rows', 'casc_survivors', 'deep', 'n_survivor_lines', 'nodes', 'rows'] | field sets equal: True
+compared 649 identical 649 differing 0 onlyA 0 onlyB 0
+totals A: rows 1230 casc_rows 1230 survivors_l2 1 alive_l16 0 nodes 3969521584867
+totals B: rows 1230 casc_rows 1230 survivors_l2 1 alive_l16 0 nodes 3969521584867
+engine job list p=467: roots 29 jobs 649 | equals A keys True | equals B keys True
+MATCH
