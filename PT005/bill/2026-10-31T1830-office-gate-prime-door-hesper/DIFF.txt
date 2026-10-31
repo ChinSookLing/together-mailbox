@@ -1,0 +1,721 @@
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/.github/workflows/office-gate.yml PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/.github/workflows/office-gate.yml
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/.github/workflows/office-gate.yml	2026-10-31 00:03:30.395749402 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/.github/workflows/office-gate.yml	2026-10-31 10:26:45.635076172 +0000
+@@ -35,6 +35,7 @@
+           - p479
+           - p467
+           - p487
++          - prime
+           - collect
+           - update
+       collect_which:
+@@ -62,7 +63,18 @@
+           - p479
+           - p467
+           - p487
++          - prime
+           - all
++      prime:
++        description: One prime from gates/primes.txt. Used only when gate is prime, or collect_which is prime.
++        required: false
++        default: none
++        type: string
++      ticket:
++        description: "<40-hex mailbox commit>:PT005/bill/<folder>/TICKET.txt. Used only when gate is update. Give this alone, or the five values below."
++        required: false
++        default: ""
++        type: string
+       tree_commit:
+         description: 40-hex mailbox commit of the new tree. Used only when gate is update.
+         required: false
+@@ -103,6 +115,7 @@
+         env:
+           GATE: ${{ inputs.gate }}
+           COLLECT_WHICH: ${{ inputs.collect_which }}
++          PRIME: ${{ inputs.prime }}
+           RUN_ID: ${{ github.run_id }}
+           GITHUB_TOKEN: ""
+           GH_TOKEN: ""
+@@ -114,7 +127,7 @@
+           cd /tmp
+           sums="${HOME}/office-gate/dispatcher/SHA256SUMS"
+           got="$(sha256sum "$sums" | awk '{ print $1 }')"
+-          test "$got" = "e71080598f0cec1166347abce64973f544ee5c8340c74f1d4e2fdf5174fb9b59"
++          test "$got" = "50c93d4f2d755e605c63fd92b6f41220d3f011e2aee4e96f3024989a697080f2"
+           exec bash "${HOME}/office-gate/dispatcher/gates/entry.sh"
+       - name: publish results
+         if: always()
+@@ -138,12 +151,13 @@
+       - name: fetch verify swap
+         env:
+           TRIGGERING_ACTOR: ${{ github.triggering_actor }}
++          TICKET: ${{ inputs.ticket }}
+           TREE_COMMIT: ${{ inputs.tree_commit }}
+           TREE_PREFIX: ${{ inputs.tree_prefix }}
+           READ_RECORD_COMMIT: ${{ inputs.read_record_commit }}
+           READ_RECORD_PATH: ${{ inputs.read_record_path }}
+           READ_RECORD_SHA256: ${{ inputs.read_record_sha256 }}
+-          EXPECTED_PIN: e71080598f0cec1166347abce64973f544ee5c8340c74f1d4e2fdf5174fb9b59
++          EXPECTED_PIN: 50c93d4f2d755e605c63fd92b6f41220d3f011e2aee4e96f3024989a697080f2
+           GITHUB_TOKEN: ""
+           GH_TOKEN: ""
+           RESULT_TOKEN: ""
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/SHA256SUMS PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/SHA256SUMS
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/SHA256SUMS	2026-10-31 00:03:30.398465686 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/SHA256SUMS	2026-10-31 10:26:45.548084426 +0000
+@@ -1,8 +1,8 @@
+-34359a1d5c976e99e9606ba1a88ed27cda21942948b88f709c7c1ed0bf5e0889  gates/collect.sh
+-340658c0a97ca9247e867a64aed2ac95255f1477e57fa97e07d31cacc8480fbc  gates/dispatch.sh
++117c8d50493ca77c361540002ac038b895983df69d7c319b8d46856f67098b1d  gates/collect.sh
++f6f55fefb7d162643ba73ad16af348d7f413468ead79b60665ceafb5558e2ffc  gates/dispatch.sh
+ 62507950e6ca93e9bb28835b13ecd9d55cd0f7ebfb516a3509d77dadaaac1a51  gates/entry.sh
+ fd170eed44ec00e2a740645ef750957d6c1daaaa3d215587fe783de3828dc5ec  gates/km1_extract.py
+-75cbd039f0cdb063bf71f8353d7b488a35d6ab4e0b418e3fc8ef6b103c5c8a87  gates/lib.sh
++6b7cd741f3ba3d6213dfcdff2e497fa699348e68b23d9c7dbba409ae57bfbad6  gates/lib.sh
+ f641d96c9ebee16541bc57c8c12bff8e6e20ec22e09bae61699a1f0b3a5cf45a  gates/p191-run.sh
+ 96fa8c05c565bf024994cb12f2a52ac7acf3cee7833e3ce2ac0b1e8924378857  gates/p191.sh
+ 02a91ef2375ad8b4211b979f54028c5e748304f6719a5b8fbfb09ed57181359b  gates/p233-pack.sh
+@@ -42,8 +42,11 @@
+ 669df7afd49b886e27188f12b9eea5d3eb9dfe8816a5c4b85190022b6eeccba8  gates/p487-run.sh
+ 3060c022d025687c7ddf1fb6fda86226d8043591ba6456accf6a3adc053a68c5  gates/p487.sh
+ 432a478f7515bd65569a9e34eb039b114a34a6ea4876e7b83dca8f9f8fe3bb42  gates/pins.sha256
++2453db80513b90c402ada96a9f1a572501961b08e5e16d00287ca1b9954e9bc2  gates/prime-run.sh
++6a127839dfce3749f67e10c1eb216fcbf2490983774753d09e54b590fe6c06a4  gates/prime.sh
++40b562120c2bf498c391b4d493afbd9d963923b1b6130f79fefbdbdff2b7e7b1  gates/primes.txt
+ 835dc37b26aee626773db01051d72542ad7e94d43985ef436811e7ceaa743a04  gates/publish-step.sh
+-d163fab3c5e128f0aed77a4da86fbd6ee2210640d30b74ac942e082c0b9c4d81  gates/publish.sh
+-cc2a8a4e54127f03d6d33ff26f60bd73e1fd65b312dde58aa512703684104cd5  gates/self-check.sh
+-71f13ae0abd7eed7e02bc83b5ee665e627d547a1be6415f73bc18cf618c7be76  gates/status.sh
+-892cd67d83a2acc611123f7928ad360f851bce505bc5c8e0aefd908bae8a8e85  gates/update.sh
++88ea38d31dda636708c1d4ec69637e7538e1354e5c7b66f9dee4bcaca83922fa  gates/publish.sh
++0b3b0d40adf63f2309dd378fbb65ab1805ed9fae838e759b85dba90c099f1cf7  gates/self-check.sh
++5bfe3110f5b16789f58bc0abed05af85e25381c89c3362a20f0104ee16a86284  gates/status.sh
++22761481f1a03b11ab672f85fb3ed0e0a2a34f4ac835d95e68a2d01d6e736679  gates/update.sh
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/collect.sh PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/collect.sh
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/collect.sh	2026-10-31 00:03:30.401988455 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/collect.sh	2026-10-31 10:24:20.267392692 +0000
+@@ -5,7 +5,14 @@
+ which="${COLLECT_WHICH:-none}"
+ case "$which" in
+   none) note "collect_which is none"; exit 0 ;;
+-  all) items="p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449 p479 p467 p487" ;;
++  all) items="p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449 p479 p467 p487 $(prime_list | sed 's/^/p/' | paste -sd ' ' -)" ;;
++  prime)
++    if ! prime_on_list "${PRIME:-}"; then
++      note "refusing: prime is not on gates/primes.txt"
++      exit 2
++    fi
++    items="p${PRIME}"
++    ;;
+   p191|p241ab|p241c|p409|p383|p307|p337|p397|p431|p443|p463|p461|p439|p433|p449|p479|p467|p487) items="$which" ;;
+   *) note "bad collect_which"; exit 2 ;;
+ esac
+@@ -67,6 +74,22 @@
+       fi
+       copy_out "$HOME/lr16/out${p}/ir.jsonl" ir.jsonl
+       shrink_km1 "$HOME/lr16/out${p}/km1.json" km1
++      ;;
++    p[0-9]*)
++      p="${item#p}"
++      prime_on_list "$p" || { note "refusing item ${item}"; return 0; }
++      copy_out "$HOME/office-gate/state/p${p}.header" "p${p}.header"
++      copy_out "$HOME/office-gate/state/p${p}.result" "p${p}.result"
++      if [[ -f "$HOME/office-gate/state/p${p}.mismatch" ]]; then
++        copy_out "$HOME/office-gate/state/p${p}.mismatch" "p${p}.mismatch"
++      fi
++      copy_out "$HOME/kit/run${p}.time" "run${p}.time"
++      if [[ -f "$HOME/kit/run${p}.log" ]]; then
++        tail -n 5 "$HOME/kit/run${p}.log" > "$dir/run${p}.log.tail" || true
++        grep -E '^(ir jobs|BUDGET=|no BUDGET)' "$HOME/kit/run${p}.log" > "$dir/run${p}.log.starts" || true
++      fi
++      copy_out "$HOME/lr16/out${p}/ir.jsonl" ir.jsonl
++      shrink_km1 "$HOME/lr16/out${p}/km1.json" km1
+       ;;
+   esac
+   STAGE="$saved"
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/dispatch.sh PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/dispatch.sh
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/dispatch.sh	2026-10-31 00:03:30.403971635 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/dispatch.sh	2026-10-31 10:24:20.204574150 +0000
+@@ -5,7 +5,7 @@
+ export STAGE="$(mktemp -d)"
+ # shellcheck source=gates/lib.sh
+ source gates/lib.sh
+-printf 'gate=%s\ncollect_which=%s\nrun_id=%s\n' "${GATE:-}" "${COLLECT_WHICH:-none}" "${RUN_ID:-}" > "$STAGE/menu.txt"
++printf 'gate=%s\ncollect_which=%s\nprime=%s\nrun_id=%s\n' "${GATE:-}" "${COLLECT_WHICH:-none}" "${PRIME:-none}" "${RUN_ID:-}" > "$STAGE/menu.txt"
+ 
+ rc=0
+ if python3 - << 'PY'
+@@ -39,6 +39,7 @@
+     p479) bash gates/p479.sh || rc=$? ;;
+     p467) bash gates/p467.sh || rc=$? ;;
+     p487) bash gates/p487.sh || rc=$? ;;
++    prime) bash gates/prime.sh || rc=$? ;;
+     collect) bash gates/collect.sh || rc=$? ;;
+     update) note "update is a separate job. This menu does not swap the tree."; rc=2 ;;
+     *) note "unknown gate"; rc=2 ;;
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/lib.sh PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/lib.sh
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/lib.sh	2026-10-31 00:03:30.414070883 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/lib.sh	2026-10-31 10:26:45.454203508 +0000
+@@ -113,15 +113,24 @@
+   [[ "$state" == "active" || "$state" == "activating" ]]
+ }
+ 
+-detach() {
++# The unit file. Old doors: same text as before. Prime door (OFFICE_GATE_PRIME set):
++# the prime is passed in, and the job runs at low priority (chair note 122 D):
++# her work programs always win the CPU and the disk; the job uses idle time.
++unit_text() {
+   local unit="$1" script_src="$2"
+-  user_bus || return 1
+-  install -d "$HOME/.config/systemd/user" "$HOME/office-gate/state"
+-  local env_line=""
++  local env_line="" prime_lines=""
+   if [[ -n "${OFFICE_GATE_LOCK_GEN:-}" ]]; then
+     env_line="Environment=OFFICE_GATE_LOCK_GEN=${OFFICE_GATE_LOCK_GEN}"
+   fi
+-  cat > "$HOME/.config/systemd/user/${unit}.service" <<EOF
++  if [[ -n "${OFFICE_GATE_PRIME:-}" ]]; then
++    prime_on_list "${OFFICE_GATE_PRIME}" || return 1
++    prime_lines="Environment=OFFICE_GATE_PRIME=${OFFICE_GATE_PRIME}
++Nice=19
++CPUSchedulingPolicy=idle
++CPUWeight=idle
++IOSchedulingClass=idle"
++  fi
++  cat <<EOF
+ [Unit]
+ Description=office-gate ${unit}
+ [Service]
+@@ -129,10 +138,18 @@
+ Restart=no
+ WorkingDirectory=${HOME}
+ ${env_line}
++${prime_lines}
+ ExecStart=/bin/bash ${script_src}
+ StandardOutput=append:${HOME}/office-gate/state/${unit}.log
+ StandardError=append:${HOME}/office-gate/state/${unit}.log
+ EOF
++}
++
++detach() {
++  local unit="$1" script_src="$2"
++  user_bus || return 1
++  install -d "$HOME/.config/systemd/user" "$HOME/office-gate/state"
++  unit_text "$unit" "$script_src" > "$HOME/.config/systemd/user/${unit}.service" || return 1
+   systemctl --user daemon-reload
+   systemctl --user start --no-block "${unit}.service"
+   note "started ${unit}.service from ${script_src}"
+@@ -289,3 +306,74 @@
+ math_run_ready() {
+   printf '%s\n' "$$" > "${HOME}/kit/math-lock.holder"
+ }
++
++# ---- Prime door (chair note 122 A). gates/primes.txt: one prime per line, nothing else.
++OLD_UNITS="office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449 office-gate-p479 office-gate-p467 office-gate-p487"
++BUDGET_DAYS=4
++
++prime_list() {
++  grep -E '^[1-9][0-9]{2,3}$' "$ROOT/gates/primes.txt"
++}
++
++# True only for a value that is one whole line of primes.txt.
++prime_on_list() {
++  local p="${1:-}"
++  [[ "$p" =~ ^[1-9][0-9]{2,3}$ ]] || return 1
++  grep -qxF -- "$p" <<< "$(prime_list)"
++}
++
++# Every unit a math job can run in: the old doors and one per listed prime.
++office_units() {
++  local p
++  printf '%s\n' $OLD_UNITS
++  for p in $(prime_list); do
++    printf 'office-gate-p%s\n' "$p"
++  done
++}
++
++# List order: every prime above P must already be done.
++prime_order_ok() {
++  local want="$1" p
++  for p in $(prime_list); do
++    [[ "$p" == "$want" ]] && return 0
++    if [[ ! -f "$HOME/office-gate/state/p${p}.done" ]]; then
++      note "refusing: p${p} comes first on the list and is not done"
++      return 1
++    fi
++  done
++  return 1
++}
++
++# Close-out verdict. Prints DONE, UNFINISHED or MISMATCH and one reason.
++# DONE needs rc 0, one job count N > 0 in every "ir jobs N" line of the log,
++# and ir.jsonl with exactly N lines and N distinct (r,s) pairs.
++prime_verdict() {
++  local rc="$1" log="$2" ir="$3" ns n lines distinct
++  ns="$( { grep -oE '^ir jobs [0-9]+' "$log" 2>/dev/null || true; } | awk '{ print $3 }' | sort -u)"
++  if [[ -z "$ns" ]]; then
++    printf 'UNFINISHED no "ir jobs" line\n'; return 0
++  fi
++  if [[ "$(printf '%s\n' "$ns" | grep -c .)" != "1" ]]; then
++    printf 'MISMATCH job count changed between starts: %s\n' "$(printf '%s' "$ns" | paste -sd ' ' -)"; return 0
++  fi
++  n="$ns"
++  lines=0; distinct=0
++  if [[ -f "$ir" ]]; then
++    lines="$(wc -l < "$ir")"
++    distinct="$(python3 -c 'import json,sys; print(len({(json.loads(l)["r"], json.loads(l)["s"]) for l in open(sys.argv[1]) if l.strip()}))' "$ir")" || {
++      printf 'MISMATCH ir.jsonl does not parse\n'; return 0; }
++  fi
++  if (( lines != distinct )); then
++    printf 'MISMATCH ir.jsonl lines=%s distinct=%s of=%s\n' "$lines" "$distinct" "$n"; return 0
++  fi
++  if (( distinct > n )); then
++    printf 'MISMATCH distinct=%s is more than of=%s\n' "$distinct" "$n"; return 0
++  fi
++  if (( rc != 0 )); then
++    printf 'UNFINISHED rc=%s distinct=%s of=%s\n' "$rc" "$distinct" "$n"; return 0
++  fi
++  if (( n > 0 && distinct == n )); then
++    printf 'DONE of=%s distinct=%s lines=%s\n' "$n" "$distinct" "$lines"; return 0
++  fi
++  printf 'UNFINISHED distinct=%s of=%s\n' "$distinct" "$n"
++}
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/prime-run.sh PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/prime-run.sh
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/prime-run.sh	1970-01-01 00:00:00.000000000 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/prime-run.sh	2026-10-31 10:24:02.835808906 +0000
+@@ -0,0 +1,73 @@
++# Long run for the prime door (chair note 122 A). Same command as p487, prime from the unit, 8 workers.
++# Author: Hesper. systemd starts this with /bin/bash. No nohup.
++# Header: prime, start, BUDGET = first start + BUDGET_DAYS (lib.sh), written once and kept on restart.
++# Before BUDGET, kcascade gets the seconds left; a start after BUDGET runs with no BUDGET (as K11 jobs do).
++# Done flag only on prime_verdict DONE (note 121: log count used for the flag only, never as ledger proof).
++set +x
++set -euo pipefail
++source "$(dirname "$0")/lib.sh"
++P="${OFFICE_GATE_PRIME:-}"
++if ! prime_on_list "$P"; then
++  printf '%s\n' "refused" > "${HOME}/kit/math-lock.refused"
++  echo "refusing: prime is not on gates/primes.txt" >&2
++  exit 2
++fi
++math_run_lock
++if pgrep -f '[k]cascade_run.py' >/dev/null 2>&1 || pgrep -f '[b]gk15' >/dev/null 2>&1; then
++  printf '%s\n' "refused" > "${HOME}/kit/math-lock.refused"
++  echo "refusing: another kcascade or bgk15 job is running" >&2
++  exit 2
++fi
++STATE="${HOME}/office-gate/state"
++if ! sha256sum -c "$STATE/p${P}-pc-kit.sha256"; then
++  printf '%s\n' "refused" > "${HOME}/kit/math-lock.refused"
++  exit 2
++fi
++math_run_ready
++HDR="$STATE/p${P}.header"
++LOG="${HOME}/kit/run${P}.log"
++TIME="${HOME}/kit/run${P}.time"
++OUTD="${HOME}/lr16/out${P}"
++if [[ ! -f "$HDR" ]]; then
++  start="$(date +%s)"
++  deadline=$(( start + BUDGET_DAYS * 86400 ))
++  {
++    printf 'prime %s\n' "$P"
++    printf 'workers 8\n'
++    printf 'start %s\n' "$(date -d "@${start}" '+%F %T %Z')"
++    printf 'start_epoch %s\n' "$start"
++    printf 'budget %s\n' "$(date -d "@${deadline}" '+%F %T %Z')"
++    printf 'budget_epoch %s\n' "$deadline"
++  } > "$HDR.tmp"
++  mv "$HDR.tmp" "$HDR"
++fi
++deadline="$(awk '$1 == "budget_epoch" { print $2; exit }' "$HDR")"
++[[ "$deadline" =~ ^[0-9]+$ ]] || { echo "bad header" >&2; exit 2; }
++cd "${HOME}/lr16/code"
++date '+%F %T %Z' | tee -a "$TIME"
++now="$(date +%s)"
++set +e
++if (( now < deadline )); then
++  echo "BUDGET=$(( deadline - now ))" | tee -a "$LOG"
++  BUDGET=$(( deadline - now )) python3 "${HOME}/kit/kcascade_run.py" ./bgk15 ./cascade_k15p "$P" 8 "$OUTD" 2>&1 | tee -a "$LOG"
++  rc=${PIPESTATUS[0]}
++else
++  echo "no BUDGET (start after $(awk '$1 == "budget" { $1 = ""; print; exit }' "$HDR"))" | tee -a "$LOG"
++  python3 "${HOME}/kit/kcascade_run.py" ./bgk15 ./cascade_k15p "$P" 8 "$OUTD" 2>&1 | tee -a "$LOG"
++  rc=${PIPESTATUS[0]}
++fi
++set -e
++date '+%F %T %Z' | tee -a "$TIME"
++verdict="$(prime_verdict "$rc" "$LOG" "$OUTD/ir.jsonl")"
++printf '%s %s rc=%s\n' "$(date '+%F %T %Z')" "$verdict" "$rc" | tee -a "$LOG" >> "$STATE/p${P}.result"
++case "$verdict" in
++  DONE*)
++    if ! grep -q '^jobs ' "$HDR"; then
++      printf 'jobs %s\n' "$(grep -oE '^ir jobs [0-9]+' "$LOG" | awk '{ print $3; exit }')" >> "$HDR"
++    fi
++    date '+%F %T %Z' > "$STATE/p${P}.done"
++    ;;
++  MISMATCH*)
++    printf '%s\n' "$verdict" > "$STATE/p${P}.mismatch"
++    ;;
++esac
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/prime.sh PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/prime.sh
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/prime.sh	1970-01-01 00:00:00.000000000 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/prime.sh	2026-10-31 10:24:02.805020794 +0000
+@@ -0,0 +1,47 @@
++# Prime door (Opus chair note 122 A, D). One door for every prime on gates/primes.txt.
++# Author: Hesper. Replaces the per-prime copies (p467.sh, p479.sh, p487.sh ...) for new primes.
++# The prime comes from the PRIME input and must be one whole line of primes.txt.
++# Refuses: a prime not on the list, a prime already done, a prime with a mismatch mark,
++# a prime whose earlier list primes are not done (list order), another math job.
++# Same kit and command as p487: kcascade_run.py, 8 workers. Low CPU priority (unit_text in lib.sh).
++# Re-dispatch resumes when the unit is not active and pNNN.done is absent.
++set +x
++set -euo pipefail
++source "$(dirname "$0")/lib.sh"
++
++P="${PRIME:-}"
++if ! prime_on_list "$P"; then
++  note "refusing: prime is not on gates/primes.txt"
++  exit 2
++fi
++S="$HOME/office-gate/state"
++if [[ -f "$S/p${P}.done" ]]; then
++  note "refusing: p${P} is already done. Use collect."
++  exit 2
++fi
++if [[ -f "$S/p${P}.mismatch" ]]; then
++  note "refusing: p${P} closed with a job-count mismatch. Ask the chair."
++  exit 2
++fi
++prime_order_ok "$P" || exit 2
++math_menu_lock
++if unit_active "office-gate-p${P}"; then
++  note "p${P} unit is already running."
++  exit 0
++fi
++if pgrep -f '[k]cascade_run.py' >/dev/null 2>&1 || pgrep -f '[b]gk15' >/dev/null 2>&1; then
++  note "refusing: another kcascade or bgk15 job is running"
++  exit 2
++fi
++for unit in $(office_units); do
++  if unit_active "$unit"; then
++    note "refusing: ${unit} is active"
++    exit 2
++  fi
++done
++install -d "$S"
++check_hash "$HOME/kit/kcascade_run.py" scouting/LR16/opus/officepc/kcascade_run.py
++printf '%s  %s\n' "$(want_hash scouting/LR16/opus/officepc/kcascade_run.py)" "$HOME/kit/kcascade_run.py" \
++  > "$S/p${P}-pc-kit.sha256"
++export OFFICE_GATE_PRIME="$P"
++math_menu_detach "office-gate-p${P}" "$ROOT/gates/prime-run.sh"
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/primes.txt PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/primes.txt
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/primes.txt	1970-01-01 00:00:00.000000000 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/primes.txt	2026-10-31 10:24:02.724274373 +0000
+@@ -0,0 +1,6 @@
++491
++499
++503
++509
++521
++523
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/publish.sh PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/publish.sh
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/publish.sh	2026-10-31 00:03:30.518824706 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/publish.sh	2026-10-31 10:24:20.242695659 +0000
+@@ -7,7 +7,7 @@
+ token="${RESULT_TOKEN:?}"
+ : "${GATE:?}" "${RUN_ID:?}"
+ case "$GATE" in
+-  status|p233-pack|p191|p241ab|p241c|p409|p383|p307|p337|p397|p431|p443|p463|p461|p439|p433|p449|p479|p467|p487|collect) ;;
++  status|p233-pack|p191|p241ab|p241c|p409|p383|p307|p337|p397|p431|p443|p463|p461|p439|p433|p449|p479|p467|p487|prime|collect) ;;
+   *) echo "refusing gate name" >&2; exit 2 ;;
+ esac
+ case "$RUN_ID" in
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/self-check.sh PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/self-check.sh
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/self-check.sh	2026-10-31 00:03:30.520977061 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/self-check.sh	2026-10-31 10:26:28.145778919 +0000
+@@ -75,10 +75,10 @@
+ test "$out" = "REFUSED hash"
+ echo "p241c lock ok"
+ 
+-yml_opts="$(awk '/^          - /{print $2}' .github/workflows/office-gate.yml | head -22 | paste -sd ' ' -)"
++yml_opts="$(awk '/^          - /{print $2}' .github/workflows/office-gate.yml | head -23 | paste -sd ' ' -)"
+ case_opts="$(awk '/^    status\)/{f=1} f && /^    [a-z0-9-]+\)/{print $1}' gates/dispatch.sh | tr -d ')' | paste -sd ' ' -)"
+-test "$yml_opts" = "status p233-pack p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449 p479 p467 p487 collect update"
+-test "$case_opts" = "status p233-pack p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449 p479 p467 p487 collect update"
++test "$yml_opts" = "status p233-pack p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449 p479 p467 p487 prime collect update"
++test "$case_opts" = "status p233-pack p191 p241ab p241c p409 p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449 p479 p467 p487 prime collect update"
+ for name in p383 p307 p337 p397 p431 p443 p463 p461 p439 p433 p449 p479 p467 p487; do
+   grep -q "    ${name})" gates/dispatch.sh
+   grep -q "          - ${name}" .github/workflows/office-gate.yml
+@@ -363,4 +363,109 @@
+ test ! -e "$slow/kit/math-lock.stopped"
+ test -s "$slow/kit/math-lock.refused"
+ echo "timeout does not stop a lock holder"
++
++# ---- Prime door (chair note 122). Dry runs: no systemd, no kcascade.
++test "$(cat gates/primes.txt)" = "$(printf '491\n499\n503\n509\n521\n523')"
++test "$(grep -cvE '^[1-9][0-9]{2,3}$' gates/primes.txt || true)" = "0"
++test "$(sort gates/primes.txt | uniq -d | grep -c . || true)" = "0"
++grep -q '          - prime' .github/workflows/office-gate.yml
++grep -q 'PRIME: ${{ inputs.prime }}' .github/workflows/office-gate.yml
++grep -q 'TICKET: ${{ inputs.ticket }}' .github/workflows/office-gate.yml
++grep -q '|prime|' gates/publish.sh
++n_inputs="$(awk '/^    inputs:/{f=1; next} f && /^[a-z]/{f=0} f && /^      [a-z_]+:$/{n++} END{print n}' .github/workflows/office-gate.yml)"
++test "$n_inputs" -le 10
++for x in 491 499 503 509 521 523; do prime_on_list "$x"; done
++for x in 487 467 2 1000 "491 " " 491" "491;id" "0491" "" "49" "4910" "\$(id)"; do
++  if prime_on_list "$x"; then echo "prime_on_list accepted [$x]"; exit 1; fi
++done
++test "$(office_units | grep -c .)" = "24"
++grep -qx office-gate-p523 <<< "$(office_units)"
++grep -qx office-gate-p487 <<< "$(office_units)"
++door() {
++  local home="$1" prime="$2" rc=0
++  ( export HOME="$home" STAGE="$home/stage" PRIME="$prime"
++    unit_active() { return 1; }
++    math_menu_lock() { echo "reached math lock" > "$HOME/reached"; exit 7; }
++    source gates/lib.sh
++    unit_active() { return 1; }
++    math_menu_lock() { echo "reached math lock" > "$HOME/reached"; exit 7; }
++    P="${PRIME:-}"
++    # run the door body up to the math lock
++    eval "$(sed -n '/^P=/,/^math_menu_lock$/p' gates/prime.sh)"
++  ) >/dev/null 2>&1 || rc=$?
++  printf '%s\n' "$rc"
++}
++dh="$(mktemp -d)"; mkdir -p "$dh/stage" "$dh/office-gate/state"
++test "$(door "$dh" 487)" = "2"; grep -q 'not on gates/primes.txt' "$dh/stage/NOTE.txt"
++test "$(door "$dh" 'x')" = "2"
++test "$(door "$dh" 499)" = "2"; grep -q 'p491 comes first' "$dh/stage/NOTE.txt"
++test "$(door "$dh" 491)" = "7"
++date > "$dh/office-gate/state/p491.done"
++test "$(door "$dh" 491)" = "2"; grep -q 'p491 is already done' "$dh/stage/NOTE.txt"
++test "$(door "$dh" 499)" = "7"
++echo MISMATCH > "$dh/office-gate/state/p499.mismatch"
++test "$(door "$dh" 499)" = "2"; grep -q 'mismatch' "$dh/stage/NOTE.txt"
++test "$(door "$dh" 503)" = "2"
++echo "prime door refuses off-list, done, mismatch and out-of-order primes"
++grep -q 'export OFFICE_GATE_PRIME="$P"' gates/prime.sh
++grep -q 'math_menu_detach "office-gate-p${P}" "$ROOT/gates/prime-run.sh"' gates/prime.sh
++grep -q 'kcascade_run.py" ./bgk15 ./cascade_k15p "$P" 8 "$OUTD"' gates/prime-run.sh
++test "$(grep -c 'cascade_k15p "$P" 8 ' gates/prime-run.sh)" = "2"
++grep -q 'math_run_lock' gates/prime-run.sh
++sum_line="$(grep -n 'sha256sum -c' gates/prime-run.sh | head -1 | cut -d: -f1)"
++ready_line="$(grep -n 'math_run_ready' gates/prime-run.sh | head -1 | cut -d: -f1)"
++test "$sum_line" -lt "$ready_line"
++# Unit text: old doors unchanged, prime units low priority.
++u_old="$( unset OFFICE_GATE_PRIME; OFFICE_GATE_LOCK_GEN=g unit_text office-gate-p487 /x/p487-run.sh )"
++if grep -qE 'Nice|CPU|IOSched|OFFICE_GATE_PRIME' <<< "$u_old"; then echo "old unit text changed"; exit 1; fi
++u_new="$( OFFICE_GATE_PRIME=491 OFFICE_GATE_LOCK_GEN=g unit_text office-gate-p491 /x/prime-run.sh )"
++for l in 'Environment=OFFICE_GATE_PRIME=491' 'Nice=19' 'CPUSchedulingPolicy=idle' 'CPUWeight=idle' 'IOSchedulingClass=idle' 'Environment=OFFICE_GATE_LOCK_GEN=g'; do
++  grep -qx -- "$l" <<< "$u_new"
++done
++if ( OFFICE_GATE_PRIME=487 unit_text office-gate-p487 /x >/dev/null ); then echo "unit_text took an off-list prime"; exit 1; fi
++echo "unit text ok"
++# Close-out verdict.
++vd="$(mktemp -d)"
++mk() { : > "$vd/ir"; local r s; for s in "$@"; do printf '{"r": 1, "s": %s, "rows": 0}\n' "$s" >> "$vd/ir"; done; }
++printf 'ir jobs 3 done 0 todo 3\n' > "$vd/log"
++mk 1 2 3;   [[ "$(prime_verdict 0 "$vd/log" "$vd/ir")" == DONE* ]]
++mk 1 2;     [[ "$(prime_verdict 0 "$vd/log" "$vd/ir")" == UNFINISHED* ]]
++mk 1 2 3;   [[ "$(prime_verdict 1 "$vd/log" "$vd/ir")" == UNFINISHED* ]]
++mk 1 2 2;   [[ "$(prime_verdict 0 "$vd/log" "$vd/ir")" == MISMATCH* ]]
++mk 1 2 3 4; [[ "$(prime_verdict 0 "$vd/log" "$vd/ir")" == MISMATCH* ]]
++printf 'ir jobs 3 done 0 todo 3\nir jobs 4 done 3 todo 1\n' > "$vd/log"
++mk 1 2 3;   [[ "$(prime_verdict 0 "$vd/log" "$vd/ir")" == MISMATCH* ]]
++: > "$vd/log"
++[[ "$(prime_verdict 0 "$vd/log" "$vd/ir")" == UNFINISHED* ]]
++printf 'ir jobs 0 done 0 todo 0\n' > "$vd/log"; : > "$vd/ir"
++[[ "$(prime_verdict 0 "$vd/log" "$vd/ir")" == UNFINISHED* ]]
++echo "verdict ok"
++# One-line ticket (note 122 B).
++tk="$(mktemp -d)"
++C40=1c3d8e243240246e1f9b091e0ac94ed32d7826a0
++S64=e71080598f0cec1166347abce64973f544ee5c8340c74f1d4e2fdf5174fb9b59
++good() { printf 'tree_commit %s\ntree_prefix PT005/bill/F1/repo\nread_record_commit %s\nread_record_path PT005/puck/r.md\nread_record_sha256 %s\nnew_pin %s\n' "$C40" "$C40" "$S64" "$S64"; }
++good > "$tk/t"; ( parse_ticket "$tk/t" ) > "$tk/out"
++test "$(grep -c . "$tk/out")" = "6"
++grep -qx "tree_prefix PT005/bill/F1/repo" "$tk/out"
++tbad() { local rc=0; ( parse_ticket "$tk/b" ) >/dev/null 2>&1 || rc=$?; test "$rc" = "2"; }
++{ good; printf 'new_pin %s\n' "$S64"; } > "$tk/b"; tbad
++{ good; printf 'extra x\n'; } > "$tk/b"; tbad
++good | grep -v '^new_pin' > "$tk/b"; tbad
++good | sed 's/^tree_prefix /tree_prefix  /' > "$tk/b"; tbad
++good | sed 's/^read_record_path .*/read_record_path a b/' > "$tk/b"; tbad
++allow_ticket_path "PT005/bill/F1/TICKET.txt"
++if allow_ticket_path "PT005/hesper/F1/TICKET.txt"; then echo "ticket path accepted a non-bill seat"; exit 1; fi
++if allow_ticket_path "PT005/bill/../TICKET.txt"; then echo "ticket path accepted .."; exit 1; fi
++if allow_ticket_path "PT005/bill/F1/repo/TICKET.txt"; then echo "ticket path accepted a nested file"; exit 1; fi
++rc=0
++( TICKET="$C40:PT005/bill/F1/TICKET.txt" TREE_COMMIT="$C40" TRIGGERING_ACTOR=ChinSookLing main_update ) >/dev/null 2>&1 || rc=$?
++test "$rc" = "2"
++rc=0
++( TICKET="$C40:PT005/bill/F1/TICKET.txt" TRIGGERING_ACTOR=hesper main_update ) >/dev/null 2>&1 || rc=$?
++test "$rc" = "2"
++grep -q 'ticket new_pin is not the incoming SHA256SUMS hash' gates/update.sh
++grep -q 'record does not name the ticket tree_commit' gates/update.sh
++grep -q 'ticket folder is not the tree folder' gates/update.sh
++echo "ticket checks ok"
+ echo "self-check ok"
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/status.sh PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/status.sh
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/status.sh	2026-10-31 00:03:30.523502801 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/status.sh	2026-10-31 10:24:20.367783859 +0000
+@@ -13,11 +13,11 @@
+ else
+   echo no > "$STAGE/user_bus.txt"
+ fi
+-for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449 office-gate-p479 office-gate-p467 office-gate-p487; do
++for unit in $(office_units); do
+   if [[ -S "${XDG_RUNTIME_DIR:-/nonexistent}/bus" ]]; then
+     systemctl --user is-active "${unit}.service" > "$STAGE/${unit}.active" 2>/dev/null || true
+   fi
+-  for mark in done stopped; do
++  for mark in done stopped mismatch; do
+     if [[ -f "$HOME/office-gate/state/${unit#office-gate-}.${mark}" ]]; then
+       echo yes > "$STAGE/${unit}.${mark}"
+     fi
+@@ -41,7 +41,7 @@
+ tail -n 40 "$HOME/kit/census14.log" > "$STAGE/census14.log.tail" || true
+ 
+ # Primes 383, 307, 337 and the (a) doors. Read only. Writes only in $STAGE.
+-for p in 383 307 337 397 431 443 463 461 439 433 449 479 467 487; do
++for p in 383 307 337 397 431 443 463 461 439 433 449 479 467 487 $(prime_list); do
+   if [[ ! -d "$HOME/lr16/out${p}" && ! -f "$HOME/kit/run${p}.log" && ! -f "$HOME/kit/run${p}.time" ]]; then
+     continue
+   fi
+@@ -56,6 +56,11 @@
+   if [[ -f "$HOME/kit/run${p}.time" ]]; then
+     cp -- "$HOME/kit/run${p}.time" "$STAGE/run${p}.time"
+   fi
++  for f in header result; do
++    if [[ -f "$HOME/office-gate/state/p${p}.${f}" ]]; then
++      cp -- "$HOME/office-gate/state/p${p}.${f}" "$STAGE/p${p}.${f}"
++    fi
++  done
+ done
+ 
+ # census14 batch 2 process. Count, pid, elapsed time, cpu, and rss only.
+diff -ruN PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/update.sh PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/update.sh
+--- PT005/bill/2026-10-30T2030-office-gate-p487-hesper/repo/gates/update.sh	2026-10-31 00:03:30.525453641 +0000
++++ PT005/bill/2026-10-31T1830-office-gate-prime-door-hesper/repo/gates/update.sh	2026-10-31 10:24:46.752272096 +0000
+@@ -93,6 +93,63 @@
+   rm -f "$list"
+ }
+ 
++# One-line ticket (chair note 122 B). TICKET is "<40-hex commit>:PT005/bill/<folder>/TICKET.txt".
++allow_ticket_path() {
++  [[ "$1" != *..* ]] || return 1
++  [[ "$1" =~ ^PT005/bill/[A-Za-z0-9][A-Za-z0-9._-]*/TICKET\.txt$ ]]
++}
++
++# Prints the six values, one "key value" per line, in a fixed order, or refuses.
++# Each key exactly once; no other line except blank lines and lines starting with #.
++parse_ticket() {
++  local file="$1" key val rest seen=" "
++  local keys="tree_commit tree_prefix read_record_commit read_record_path read_record_sha256 new_pin"
++  while IFS= read -r line || [[ -n "$line" ]]; do
++    line="${line%$'\r'}"
++    [[ -z "$line" || "$line" == \#* ]] && continue
++    [[ "$line" =~ ^([a-z_0-9]+)\ ([^ ]+)$ ]] || refuse "ticket line is not 'key value'"
++    key="${BASH_REMATCH[1]}"; val="${BASH_REMATCH[2]}"
++    case " $keys " in
++      *" $key "*) ;;
++      *) refuse "ticket has an unknown key: $key" ;;
++    esac
++    [[ "$seen" != *" $key "* ]] || refuse "ticket names $key twice"
++    seen="${seen}${key} "
++    printf -v "T_${key}" '%s' "$val"
++  done < "$file"
++  for key in $keys; do
++    [[ "$seen" == *" $key "* ]] || refuse "ticket has no $key"
++  done
++  for key in $keys; do
++    rest="T_${key}"
++    printf '%s %s\n' "$key" "${!rest}"
++  done
++}
++
++# Fills the five inputs from the ticket and checks it names the same folder.
++load_ticket() {
++  local ticket="$1" commit path work out folder_t folder_p
++  commit="${ticket%%:*}"
++  path="${ticket#*:}"
++  is_commit "$commit" || refuse "ticket commit is not 40 hex"
++  allow_ticket_path "$path" || refuse "ticket path is not PT005/bill/<folder>/TICKET.txt"
++  work="$(mktemp)"
++  fetch_file "$(raw_url "$commit" "$path")" "$work"
++  out="$(parse_ticket "$work")" || { rm -f "$work"; exit 2; }
++  rm -f "$work"
++  TREE_COMMIT="$(awk '$1 == "tree_commit" { print $2 }' <<< "$out")"
++  TREE_PREFIX="$(awk '$1 == "tree_prefix" { print $2 }' <<< "$out")"
++  READ_RECORD_COMMIT="$(awk '$1 == "read_record_commit" { print $2 }' <<< "$out")"
++  READ_RECORD_PATH="$(awk '$1 == "read_record_path" { print $2 }' <<< "$out")"
++  READ_RECORD_SHA256="$(awk '$1 == "read_record_sha256" { print $2 }' <<< "$out")"
++  TICKET_NEW_PIN="$(awk '$1 == "new_pin" { print $2 }' <<< "$out")"
++  is_sha256 "$TICKET_NEW_PIN" || refuse "ticket new_pin is not 64 hex"
++  folder_t="${path#PT005/bill/}"; folder_t="${folder_t%/TICKET.txt}"
++  folder_p="${TREE_PREFIX#PT005/bill/}"; folder_p="${folder_p%/repo}"
++  [[ "$folder_t" == "$folder_p" ]] || refuse "ticket folder is not the tree folder"
++  TICKET_USED="$commit:$path"
++}
++
+ record_ok() {
+   local file="$1" sums_hash="$2" first
+   grep -q 'PASS FOR INSTALL' "$file" || refuse "record has no PASS FOR INSTALL"
+@@ -106,6 +163,15 @@
+ }
+ 
+ main_update() {
++  TICKET_USED=""
++  TICKET_NEW_PIN=""
++  if [[ -n "${TICKET:-}" ]]; then
++    if [[ -n "${TREE_COMMIT:-}${TREE_PREFIX:-}${READ_RECORD_COMMIT:-}${READ_RECORD_PATH:-}${READ_RECORD_SHA256:-}" ]]; then
++      refuse "give the ticket alone or the five values, not both"
++    fi
++    allow_actor "${TRIGGERING_ACTOR:-}" || refuse "refusing actor ${TRIGGERING_ACTOR:-empty}"
++    load_ticket "$TICKET"
++  fi
+   local tree_commit="${TREE_COMMIT:-}"
+   local tree_prefix="${TREE_PREFIX:-}"
+   local record_commit="${READ_RECORD_COMMIT:-}"
+@@ -137,7 +203,11 @@
+   if [[ -S "/run/user/${uid}/bus" ]]; then
+     export XDG_RUNTIME_DIR="/run/user/${uid}"
+     export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+-    for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449 office-gate-p479 office-gate-p467 office-gate-p487; do
++    local plist=""
++    if [[ -f "$live/gates/primes.txt" ]]; then
++      plist="$(grep -E '^[1-9][0-9]{2,3}$' "$live/gates/primes.txt" | sed 's/^/office-gate-p/' | paste -sd ' ' -)"
++    fi
++    for unit in office-gate-p191 office-gate-p241ab office-gate-p241c office-gate-p409 office-gate-p383 office-gate-p307 office-gate-p337 office-gate-p397 office-gate-p431 office-gate-p443 office-gate-p463 office-gate-p461 office-gate-p439 office-gate-p433 office-gate-p449 office-gate-p479 office-gate-p467 office-gate-p487 $plist; do
+       state="$(systemctl --user is-active "${unit}.service" 2>/dev/null || true)"
+       if [[ "$state" == "active" || "$state" == "activating" ]]; then
+         refuse "refusing swap while ${unit} is ${state}"
+@@ -170,12 +240,19 @@
+   check_tree_shape "$work"
+   incoming="$(sha256sum "$work/SHA256SUMS" | awk '{ print $1 }')"
+   [[ "$incoming" != "$got" ]] || refuse "incoming tree is the tree already installed"
++  if [[ -n "$TICKET_USED" ]]; then
++    [[ "$incoming" == "$TICKET_NEW_PIN" ]] || refuse "ticket new_pin is not the incoming SHA256SUMS hash"
++  fi
+ 
+   url="$(raw_url "$record_commit" "$record_path")"
+   fetch_file "$url" "$work/READ_RECORD"
+   got="$(sha256sum "$work/READ_RECORD" | awk '{ print $1 }')"
+   [[ "$got" == "$record_sha" ]] || refuse "read record sha256 does not match"
+   record_ok "$work/READ_RECORD" "$incoming"
++  if [[ -n "$TICKET_USED" ]]; then
++    grep -qF -- "$tree_commit" "$work/READ_RECORD" || refuse "record does not name the ticket tree_commit"
++    grep -qF -- "$tree_prefix" "$work/READ_RECORD" || refuse "record does not name the ticket tree_prefix"
++  fi
+   rm -f "$work/READ_RECORD"
+   ( cd "$work" && sha256sum -c SHA256SUMS ) || refuse "incoming tree changed after the record check"
+ 
+@@ -210,6 +287,7 @@
+     printf 'read_record_commit %s\n' "$record_commit"
+     printf 'read_record_path %s\n' "$record_path"
+     printf 'read_record_sha256 %s\n' "$record_sha"
++    printf 'ticket %s\n' "${TICKET_USED:--}"
+     printf 'backup %s\n' "$backup"
+   } | tee "${HOME}/office-gate/state/update-receipt.txt" | tee "${HOME}/office-gate/state/update-receipt.${stamp}.txt"
+ }
