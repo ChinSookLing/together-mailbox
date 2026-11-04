@@ -1,0 +1,11 @@
+2026-11-02 23:00:16 +08 start k11-p499a
+unzip missing: using jobs/kit/unzip-shim.py
+2026-11-02 23:00:21 +08
+BUDGET=327579
+km1: {'roots': 31, 'covers': 0, 'gen_secs': 28683.008, 'ext_rows': 0, 'ext_survivors': 0}
+ir jobs 762 done 0 todo 762
+{"ir_jobs_done": 762, "of": 762, "rows": 330, "casc_rows": 330, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-11-04 21:45:45 +08
+2026-11-04 21:45:45 +08 kcascade rc=0 ir_lines=762
+2026-11-04 21:45:45 +08 job count from kcascade: of=762
+DONE k11-p499a
