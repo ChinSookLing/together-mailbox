@@ -1,0 +1,162 @@
+diff --git a/.github/workflows/k11-gate.yml b/.github/workflows/k11-gate.yml
+index 65cbaac..a6e1268 100644
+--- a/.github/workflows/k11-gate.yml
++++ b/.github/workflows/k11-gate.yml
+@@ -31,15 +31,21 @@ on:
+           - k11-p491a
+           - k11-p499a
+           - k11-p503a
++          - repair-tail
+           - install
+           - wifi
++      job:
++        description: Job name for repair-tail (e.g. k11-p503a); ignored by other gates
++        required: false
++        type: string
++        default: ''
+ permissions:
+   contents: write
+ concurrency:
+   group: k11-gate
+   cancel-in-progress: false
+ env:
+-  PIN: 735940e4cb38432d4a1ce35592f96716c22ce66fd446fb01520c5c515fcf2e13
++  PIN: 6634159a7d875076ce72f64b07ed094e4432e85a8c37f82204d10bd4af5564d6
+ jobs:
+   install:
+     if: inputs.gate == 'install' && github.ref == 'refs/heads/main'
+@@ -95,6 +101,7 @@ jobs:
+       - name: reviewed local menu
+         env:
+           GATE: ${{ inputs.gate }}
++          JOB: ${{ inputs.job }}
+           RUN_ID: ${{ github.run_id }}
+           GITHUB_TOKEN: ""
+           GH_TOKEN: ""
+diff --git a/dispatcher/SHA256SUMS b/dispatcher/SHA256SUMS
+index a08b599..bbc2ce0 100644
+--- a/dispatcher/SHA256SUMS
++++ b/dispatcher/SHA256SUMS
+@@ -1,9 +1,11 @@
+ 3e9334a8cb8705bd4a05708cce4b077add0c477ca29b693d5b457667696ccef9  ./README.txt
+ b627656478a57d95a500343e876c2b49c71a9761fd335928a1e273e6ad00ddec  ./gates/checkpoint.sh
+ e0b11fb04bdc4ae7e3a463a45a91665c77c936d71442ce9481e17ba806acefee  ./gates/close-k11-p479a.sh
+-fb9db2f55ae9b54a71c94feef7ae647de5d5745e92603cdbc34686a46836f0ab  ./gates/entry.sh
++0105a63c37f48d7b30bec57b20cc24990dc283cad3b14c506381c2c3f2b75bc9  ./gates/entry.sh
+ 6f17244491c5123d99235d498188a7d5d15bb67ac18b14b3c3f25885aced13cc  ./gates/lib.sh
+ a3fe2234a1d55c3153d0a8e844eb9754df0da6894d2e941aa19d817df922ab87  ./gates/publish.sh
++8f2b88a03049a549dd823eedf04c8aae3d9daaa656d85d7cb703c6f102e02ab2  ./gates/repair-tail.sh
++1491e06f032e743c5b65b9c3ab3d2e002c9d75b37f23a91357b0adaa885a8fe9  ./gates/repair_tail.py
+ d8e6de69dde5886b6526ec0fe8ceb9a867e8c4d58fc2f78f0e23e15b707cb0ba  ./gates/resume.sh
+ 8210f60648d6392846b06ca2c0c4d6d6c8a67a5da69805cdd967c6af489eb3b9  ./gates/status.sh
+ 155be852cd6af07eb7aa3a577fe47deb96935d78c40e84328cb3933d048e7e62  ./jobs/k11-p383a.sh
+diff --git a/dispatcher/gates/entry.sh b/dispatcher/gates/entry.sh
+index b90ae26..072bd78 100644
+--- a/dispatcher/gates/entry.sh
++++ b/dispatcher/gates/entry.sh
+@@ -25,5 +25,6 @@ case "$GATE" in
+   k11-p491a)  start_job k11-p491a; bash "${D}/gates/status.sh" ;;
+   k11-p499a)  start_job k11-p499a; bash "${D}/gates/status.sh" ;;
+   k11-p503a)  start_job k11-p503a; bash "${D}/gates/status.sh" ;;
++  repair-tail) bash "${D}/gates/repair-tail.sh"; bash "${D}/gates/status.sh" ;;
+   *) note "not on menu: $GATE"; exit 2 ;;
+ esac
+diff --git a/dispatcher/gates/repair-tail.sh b/dispatcher/gates/repair-tail.sh
+new file mode 100644
+index 0000000..42cec4b
+--- /dev/null
++++ b/dispatcher/gates/repair-tail.sh
+@@ -0,0 +1,29 @@
++# Gate repair-tail (Opus chair note 127, 36315df8). Reusable. Input JOB = a K11 job name on the menu.
++# Refuses if: JOB malformed or not on the menu; any k11-job-* unit active; JOB already DONE; ir.jsonl missing.
++# Then runs gates/repair_tail.py on $WORK/$JOB/out<prime>/ir.jsonl: keeps the leading complete JSON lines,
++# moves the rest to a timestamped side file (never overwritten), atomic replace; tail only (mid-file bad line = refuse).
++# Publishes sha256 + bytes of before / kept / side, kept line count and kept (r, s), plus copies of the kept file and
++# side file. No compute, no delete, no job start.
++set +x
++set -uo pipefail
++source "$(dirname "$0")/lib.sh"
++need_bus
++J="${JOB:-}"
++[[ "$J" =~ ^k11-p([0-9]+)a$ ]] || { note "refusing: job '$J' is not of the form k11-p<prime>a"; exit 2; }
++P="${BASH_REMATCH[1]}"
++known_job "$J" || { note "refusing: $J has no job file"; exit 2; }
++grep -qE "^  ${J}\) " "${D}/gates/entry.sh" || { note "refusing: $J not on the menu"; exit 2; }
++for u in $(systemctl --user list-units --plain --no-legend 'k11-job-*' 2>/dev/null | awk '{print $1}'); do
++  note "refusing: $u is active"; exit 2
++done
++[[ -f "$STATE/$J.done" ]] && { note "refusing: $J already DONE"; exit 2; }
++grep -qF "R=\"\$W/out${P}\"" "${D}/jobs/$J.sh" || { note "refusing: job file does not use out${P}"; exit 2; }
++IR="$WORK/$J/out${P}/ir.jsonl"
++[[ -f "$IR" ]] || { note "refusing: $IR missing"; exit 2; }
++printf 'job=%s\n' "$J" >> "$OUT/menu.txt"
++python3 "${D}/gates/repair_tail.py" "$IR" "$OUT"; rc=$?
++note "repair_tail.py rc=$rc"
++cp -f "$IR" "$OUT/ir.jsonl.after" 2>/dev/null
++side=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1])).get("side_file",""))' "$OUT/repair-tail.json" 2>/dev/null)
++[[ -n "$side" && -f "$side" ]] && cp -f "$side" "$OUT/$(basename "$side")"
++exit "$rc"
+diff --git a/dispatcher/gates/repair_tail.py b/dispatcher/gates/repair_tail.py
+new file mode 100644
+index 0000000..7bca40d
+--- /dev/null
++++ b/dispatcher/gates/repair_tail.py
+@@ -0,0 +1,58 @@
++# repair_tail.py (Opus chair note 127, 36315df8). Computes nothing, deletes nothing, starts nothing.
++# Usage: python3 repair_tail.py IR_JSONL OUTDIR [--dry-run]
++# Keeps the leading run of complete lines: each ends with b"\n" and is one JSON object with integer "r" and "s".
++# Everything after that run (the tail) is moved byte for byte to IR_JSONL.tail-<UTC stamp>.bin (created with O_EXCL,
++# never overwritten); the kept part is written back to IR_JSONL by atomic replace (tmp + fsync + os.replace + dir fsync).
++# Refuses (exit 2, file untouched) if any complete line after the first bad one parses as a record: bad line mid-file.
++# Exit 0 with nothing written if there is no tail. --dry-run writes nothing on the input side, only the report in OUTDIR.
++import sys, os, json, hashlib, time
++def rec(seg):
++    if not seg.endswith(b"\n"): return None
++    try: d = json.loads(seg.decode("utf-8"))
++    except Exception: return None
++    if isinstance(d, dict) and type(d.get("r")) is int and type(d.get("s")) is int: return (d["r"], d["s"])
++    return None
++def info(b): return {"bytes": len(b), "sha256": hashlib.sha256(b).hexdigest()}
++def main():
++    a = sys.argv[1:]; dry = "--dry-run" in a; a = [x for x in a if x != "--dry-run"]
++    if len(a) != 2: print("usage: repair_tail.py IR_JSONL OUTDIR [--dry-run]"); return 2
++    ir, out = a; os.makedirs(out, exist_ok=True)
++    rep = {"ir": ir, "dry_run": dry, "time_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
++    def done(code, why):
++        rep["result"] = why; rep["exit"] = code
++        open(os.path.join(out, "repair-tail.json"), "w").write(json.dumps(rep, indent=1) + "\n")
++        print(json.dumps(rep, indent=1)); return code
++    if not os.path.isfile(ir): return done(2, "refused: ir file missing")
++    data = open(ir, "rb").read(); rep["before"] = info(data)
++    segs = data.splitlines(keepends=True)
++    kept, rs, i = 0, [], 0
++    while i < len(segs):
++        k = rec(segs[i])
++        if k is None: break
++        rs.append(k); kept += len(segs[i]); i += 1
++    later = [j for j in range(i + 1, len(segs)) if rec(segs[j]) is not None]
++    rep["kept_lines"] = len(rs); rep["kept_rs"] = [list(x) for x in rs]
++    rep["kept_distinct_rs"] = len(set(rs)); rep["kept_duplicate_rs"] = len(rs) - len(set(rs))
++    keep, tail = data[:kept], data[kept:]
++    rep["kept"] = info(keep); rep["tail"] = info(tail)
++    rep["tail_nul_bytes"] = tail.count(b"\x00"); rep["tail_first_bytes_hex"] = tail[:32].hex()
++    if later:
++        rep["mid_file_good_lines_after_bad"] = len(later)
++        return done(2, "refused: bad line mid-file (complete records follow the first bad line); nothing changed")
++    if not tail: return done(0, "no tail: file already all complete lines; nothing changed")
++    assert keep + tail == data
++    if dry: return done(0, "dry-run: would move tail to side file and keep the leading complete lines")
++    side = f"{ir}.tail-{time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())}.bin"
++    fd = os.open(side, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o644)
++    with os.fdopen(fd, "wb") as fh: fh.write(tail); fh.flush(); os.fsync(fh.fileno())
++    if open(side, "rb").read() != tail: return done(2, "refused: side file read-back mismatch; ir.jsonl untouched")
++    tmp = f"{ir}.repair-tmp"
++    fd = os.open(tmp, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o644)
++    with os.fdopen(fd, "wb") as fh: fh.write(keep); fh.flush(); os.fsync(fh.fileno())
++    os.replace(tmp, ir)
++    dfd = os.open(os.path.dirname(os.path.abspath(ir)), os.O_RDONLY); os.fsync(dfd); os.close(dfd)
++    after, sb = open(ir, "rb").read(), open(side, "rb").read()
++    rep["side_file"] = side; rep["after"] = info(after); rep["side"] = info(sb)
++    rep["after_plus_side_equals_before"] = hashlib.sha256(after + sb).hexdigest() == rep["before"]["sha256"]
++    return done(0, "repaired: tail moved to side file, kept part written back by atomic replace")
++if __name__ == "__main__": sys.exit(main())
