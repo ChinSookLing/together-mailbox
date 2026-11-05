@@ -18,8 +18,8 @@ Usage: gate=repair-tail, job=<name>.
 1. **Refuses** if:
    - the job name is not on the menu; or
    - any k11-job-* unit is active; or
-   - \$STATE/<job>.done exists.
-2. **Reads** \$WORK/<job>/out<p>/ir.jsonl (the path is taken from the job's own script variables, not typed).
+   - $STATE/<job>.done exists.
+2. **Reads** $WORK/<job>/out<p>/ir.jsonl (the path is taken from the job's own script variables, not typed).
 3. **Keep part:** the longest leading run of lines that end in "\n" and pass json.loads with integer keys r and s.
 4. **Remainder:** everything after the keep part. If the remainder holds a newline followed by more bytes (a bad line *in the middle*, not only at the tail), **refuse** and report. Only a single damaged last line may be set aside.
 5. **Writes:**
