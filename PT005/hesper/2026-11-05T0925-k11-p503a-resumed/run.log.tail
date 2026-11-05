@@ -1,0 +1,32 @@
+2026-11-05 01:05:39 +08 start k11-p503a
+unzip missing: using jobs/kit/unzip-shim.py
+2026-11-05 01:05:43 +08
+BUDGET=492857
+km1: {'roots': 31, 'covers': 0, 'gen_secs': 21814.777999999995, 'ext_rows': 0, 'ext_survivors': 0}
+ir jobs 751 done 0 todo 751
+2026-11-05 08:43:38 +08 resume k11-p503a after boot
+2026-11-05 08:43:38 +08 start k11-p503a
+2026-11-05 08:43:38 +08
+BUDGET=465382
+km1: {'roots': 31, 'covers': 0, 'gen_secs': 21814.777999999995, 'ext_rows': 0, 'ext_survivors': 0}
+Traceback (most recent call last):
+  File "/home/k11run/lr16/code/kcascade_run.py", line 30, in <module>
+    for l in open(f"{OUT}/ir.jsonl"): d = json.loads(l); done.add((d["r"], d["s"]))
+                                          ~~~~~~~~~~^^^
+  File "/usr/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-11-05 08:43:38 +08
+2026-11-05 08:43:38 +08 kcascade rc=1 ir_lines=3
+2026-11-05 08:43:38 +08 job count from kcascade: of=751
+2026-11-05 09:21:29 +08 start k11-p503a
+2026-11-05 09:21:29 +08
+BUDGET=463111
+km1: {'roots': 31, 'covers': 0, 'gen_secs': 21814.777999999995, 'ext_rows': 0, 'ext_survivors': 0}
+ir jobs 751 done 3 todo 748
