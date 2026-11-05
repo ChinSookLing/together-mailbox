@@ -1,0 +1,48 @@
+{
+ "ir": "ir.jsonl",
+ "dry_run": false,
+ "time_utc": "2026-11-05T00:51:52Z",
+ "before": {
+  "bytes": 559,
+  "sha256": "51f7838c1838738e9698b9951471fd0da325c40cbfb85dae3326355952dd8a09"
+ },
+ "kept_lines": 3,
+ "kept_rs": [
+  [
+   0,
+   12
+  ],
+  [
+   0,
+   15
+  ],
+  [
+   0,
+   14
+  ]
+ ],
+ "kept_distinct_rs": 3,
+ "kept_duplicate_rs": 0,
+ "kept": {
+  "bytes": 419,
+  "sha256": "68c1e8d52dfec8793074c0b97d72f7d20432a5b7bd596ddbd903010403d6e197"
+ },
+ "tail": {
+  "bytes": 140,
+  "sha256": "24045c10c12a89f4c11e3b88ea34558fcdf926a8c1008cd08cc33bc71407c774"
+ },
+ "tail_nul_bytes": 140,
+ "tail_first_bytes_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+ "side_file": "ir.jsonl.tail-20261105T005152Z.bin",
+ "after": {
+  "bytes": 419,
+  "sha256": "68c1e8d52dfec8793074c0b97d72f7d20432a5b7bd596ddbd903010403d6e197"
+ },
+ "side": {
+  "bytes": 140,
+  "sha256": "24045c10c12a89f4c11e3b88ea34558fcdf926a8c1008cd08cc33bc71407c774"
+ },
+ "after_plus_side_equals_before": true,
+ "result": "repaired: tail moved to side file, kept part written back by atomic replace",
+ "exit": 0
+}
