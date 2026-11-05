@@ -1,0 +1,130 @@
+# Private repo only. workflow_dispatch only. Do not add push, schedule, pull_request or pull_request_target.
+# The gate job does not run checked-out code. It runs the reviewed tree installed at
+# $HOME/k11-gate/dispatcher, and only if its SHA256SUMS hash equals PIN below.
+# install copies dispatcher/ from main into $HOME only if its SHA256SUMS hash equals PIN.
+# Changing PIN needs a push to this workflow; Puck's token has Actions only, no Contents.
+name: k11-gate
+on:
+  workflow_dispatch:
+    inputs:
+      gate:
+        description: Menu item
+        required: true
+        type: choice
+        options:
+          - status
+          - checkpoint
+          - selftest
+          - k11-p383a
+          - k11-p397a
+          - k11-p431a
+          - k11-p443a
+          - k11-p463a
+          - k11-p461a
+          - k11-p439a
+          - k11-p449a
+          - k11-p433a
+          - k11-p467a
+          - k11-p479a
+          - close-k11-p479a
+          - k11-p487a
+          - k11-p491a
+          - k11-p499a
+          - k11-p503a
+          - repair-tail
+          - install
+          - wifi
+      job:
+        description: Job name for repair-tail (e.g. k11-p503a); ignored by other gates
+        required: false
+        type: string
+        default: ''
+permissions:
+  contents: write
+concurrency:
+  group: k11-gate
+  cancel-in-progress: false
+env:
+  PIN: 6634159a7d875076ce72f64b07ed094e4432e85a8c37f82204d10bd4af5564d6
+jobs:
+  install:
+    if: inputs.gate == 'install' && github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, k11]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: verify and install pinned tree
+        run: |
+          set +x
+          set -euo pipefail
+          cd dispatcher
+          test "$(sha256sum SHA256SUMS | awk '{ print $1 }')" = "$PIN"
+          sha256sum -c --quiet SHA256SUMS
+          echo "pin ok"
+          test -z "$(find . -type f ! -name SHA256SUMS | LC_ALL=C sort | xargs sha256sum | diff - SHA256SUMS)"
+          echo "file list ok"
+          dst="$HOME/k11-gate"; install -d "$dst"
+          rm -rf "$dst/dispatcher.new"; cp -a . "$dst/dispatcher.new"
+          rm -rf "$dst/dispatcher.old"; if [ -d "$dst/dispatcher" ]; then mv "$dst/dispatcher" "$dst/dispatcher.old"; fi
+          mv "$dst/dispatcher.new" "$dst/dispatcher"
+          export XDG_RUNTIME_DIR="/run/user/$(id -u)" DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u)/bus"
+          install -d "$HOME/.config/systemd/user"
+          cp "$dst/dispatcher/systemd/k11-resume.service" "$HOME/.config/systemd/user/"
+          echo "tree copied"
+          systemctl --user daemon-reload
+          systemctl --user enable k11-resume.service
+          rm -rf "$dst/root"; cp -a ../root "$dst/root"
+          echo "installed tree $PIN"
+  wifi:
+    # Adds the Wi-Fi in repo secrets K11_WIFI_SSID / K11_WIFI_PSK via the root helper.
+    if: inputs.gate == 'wifi'
+    runs-on: [self-hosted, k11]
+    timeout-minutes: 5
+    steps:
+      - name: add wifi from repo secrets
+        env:
+          WSSID: ${{ secrets.K11_WIFI_SSID }}
+          WPSK: ${{ secrets.K11_WIFI_PSK }}
+        run: |
+          set +x
+          set -euo pipefail
+          test -n "$WSSID" && test -n "$WPSK"
+          printf '%s\n%s\n' "$WSSID" "$WPSK" | sudo -n /usr/local/sbin/k11-wifi-add
+          sudo -n /usr/local/sbin/k11-wifi-add --list
+  gate:
+    if: inputs.gate != 'install' && inputs.gate != 'wifi'
+    runs-on: [self-hosted, k11]
+    timeout-minutes: 20
+    steps:
+      - name: reviewed local menu
+        env:
+          GATE: ${{ inputs.gate }}
+          JOB: ${{ inputs.job }}
+          RUN_ID: ${{ github.run_id }}
+          GITHUB_TOKEN: ""
+          GH_TOKEN: ""
+          ACTIONS_RUNTIME_TOKEN: ""
+        run: |
+          set +x
+          set -euo pipefail
+          cd /tmp
+          d="$HOME/k11-gate/dispatcher"
+          test "$(sha256sum "$d/SHA256SUMS" | awk '{ print $1 }')" = "$PIN"
+          (cd "$d" && sha256sum -c --quiet SHA256SUMS)
+          exec bash "$d/gates/entry.sh"
+      - name: publish results
+        if: always()
+        env:
+          GATE: ${{ inputs.gate }}
+          RUN_ID: ${{ github.run_id }}
+          RESULT_TOKEN: ${{ github.token }}
+          RESULT_REPO: ${{ github.repository }}
+        run: |
+          set +x
+          set -euo pipefail
+          cd /tmp
+          d="$HOME/k11-gate/dispatcher"
+          test "$(sha256sum "$d/SHA256SUMS" | awk '{ print $1 }')" = "$PIN"
+          exec bash "$d/gates/publish.sh"
