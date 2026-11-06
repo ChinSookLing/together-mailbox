@@ -1,0 +1,113 @@
+diff --git a/.github/workflows/k11-gate.yml b/.github/workflows/k11-gate.yml
+index a6e1268..1014ccd 100644
+--- a/.github/workflows/k11-gate.yml
++++ b/.github/workflows/k11-gate.yml
+@@ -31,6 +31,7 @@ on:
+           - k11-p491a
+           - k11-p499a
+           - k11-p503a
++          - k11-p509a
+           - repair-tail
+           - install
+           - wifi
+@@ -45,7 +46,7 @@ concurrency:
+   group: k11-gate
+   cancel-in-progress: false
+ env:
+-  PIN: 6634159a7d875076ce72f64b07ed094e4432e85a8c37f82204d10bd4af5564d6
++  PIN: 1a1971a3981d314786253266e5f5e8595467c9309a6b559fc9fae50cd2252c3c
+ jobs:
+   install:
+     if: inputs.gate == 'install' && github.ref == 'refs/heads/main'
+diff --git a/dispatcher/SHA256SUMS b/dispatcher/SHA256SUMS
+index bbc2ce0..471f5fa 100644
+--- a/dispatcher/SHA256SUMS
++++ b/dispatcher/SHA256SUMS
+@@ -1,7 +1,7 @@
+ 3e9334a8cb8705bd4a05708cce4b077add0c477ca29b693d5b457667696ccef9  ./README.txt
+ b627656478a57d95a500343e876c2b49c71a9761fd335928a1e273e6ad00ddec  ./gates/checkpoint.sh
+ e0b11fb04bdc4ae7e3a463a45a91665c77c936d71442ce9481e17ba806acefee  ./gates/close-k11-p479a.sh
+-0105a63c37f48d7b30bec57b20cc24990dc283cad3b14c506381c2c3f2b75bc9  ./gates/entry.sh
++2c243806d650062d6bb5bef4c3fccabccb1c61438c0dd44eee575c60450a16ea  ./gates/entry.sh
+ 6f17244491c5123d99235d498188a7d5d15bb67ac18b14b3c3f25885aced13cc  ./gates/lib.sh
+ a3fe2234a1d55c3153d0a8e844eb9754df0da6894d2e941aa19d817df922ab87  ./gates/publish.sh
+ 8f2b88a03049a549dd823eedf04c8aae3d9daaa656d85d7cb703c6f102e02ab2  ./gates/repair-tail.sh
+@@ -23,6 +23,7 @@ b890ba88fa203d85bfc1eddd67abeb076996f43de522453facf40235fbbcceab  ./jobs/k11-p47
+ cc7e23dc2222b0f1eb08ad511f8ec417fb89bdfaec5228c5b1bec7efeb6bf4ca  ./jobs/k11-p491a.sh
+ cc98bda392282b59bc411977832cd992696bb82742b230ba916065b7c8a8849d  ./jobs/k11-p499a.sh
+ 4060bc16df23acd39051dbeaa713e7d01061dc1ae28ad9ab67dab5fbecb7cc27  ./jobs/k11-p503a.sh
++41bcf546a6aae38a20e1ef3e2c59e632dff97349415275cfa31c7fa7be56e4fe  ./jobs/k11-p509a.sh
+ 90632d553b33cfbbc4abe87276393294a450145a6a84fec8b8407db649c1faae  ./jobs/kit/kcascade_run.py
+ 602b6f9943e6775eedd054fe919099c38651b9ea22a0f0d45d230ad7f4f6a4ae  ./jobs/kit/setup_k15.sh
+ 985e6c859f3e5e3dc179f3cf417f8f713dbce38ec3a96f09959a8dd26bddabd9  ./jobs/kit/unzip-shim.py
+diff --git a/dispatcher/gates/entry.sh b/dispatcher/gates/entry.sh
+index 072bd78..6fc8740 100644
+--- a/dispatcher/gates/entry.sh
++++ b/dispatcher/gates/entry.sh
+@@ -25,6 +25,7 @@ case "$GATE" in
+   k11-p491a)  start_job k11-p491a; bash "${D}/gates/status.sh" ;;
+   k11-p499a)  start_job k11-p499a; bash "${D}/gates/status.sh" ;;
+   k11-p503a)  start_job k11-p503a; bash "${D}/gates/status.sh" ;;
++  k11-p509a)  start_job k11-p509a; bash "${D}/gates/status.sh" ;;
+   repair-tail) bash "${D}/gates/repair-tail.sh"; bash "${D}/gates/status.sh" ;;
+   *) note "not on menu: $GATE"; exit 2 ;;
+ esac
+diff --git a/dispatcher/jobs/k11-p509a.sh b/dispatcher/jobs/k11-p509a.sh
+new file mode 100644
+index 0000000..e5573fd
+--- /dev/null
++++ b/dispatcher/jobs/k11-p509a.sh
+@@ -0,0 +1,53 @@
++# Job k11-p509a (Opus chair note 128 spec: prime 509, 751 jobs / 31 roots per chair list PT005/opus/joblists/p509-jobs.txt; start by hand, K11 idle since the previous job DONE 2026-11-06 15:53:50 +08): first run of p = 509, BUDGET 2026-11-11 18:00 +08. Copy of the previous K11 job with prime, paths and BUDGET changed; job count is read from kcascade_run.py's own 'ir jobs N' line (no hand-typed count). Start by hand; no chain.
++# Build once with jobs/kit/setup_k15.sh (sha256 602b6f99...), then kcascade_run.py (sha256 90632d55...) with 16 workers.
++# First start: BUDGET stops new jobs at 2026-11-11 18:00 +08. Any start after that runs with no BUDGET.
++# Restart-safe: kcascade_run.py skips jobs already in out509/ir.jsonl.
++set +x
++set -uo pipefail
++OUT=/tmp
++source "${HOME}/k11-gate/dispatcher/gates/lib.sh"
++N=k11-p509a; W="$WORK/$N"; CK="$W/ckpt"; R="$W/out509"; B="$HOME/lr16/code"
++install -d "$CK" "$R"
++exec >>"$W/run.log" 2>&1
++echo "$(date '+%F %T %Z') start $N"
++snap() {
++  cp -f "$W/run509.time" "$W/hashes.txt" "$W/lscpu.txt" "$CK/" 2>/dev/null
++  tail -n 20 "$W/setup.log" > "$CK/setup.log.tail" 2>/dev/null
++  tail -n 20 "$W/run509.log" > "$CK/run509.log.tail" 2>/dev/null
++  cp -f "$R/ir.jsonl" "$R/km1.json" "$CK/" 2>/dev/null
++  n=$(cat "$R/ir.jsonl" 2>/dev/null | wc -l)
++  of=$(grep -oE '^ir jobs [0-9]+' "$W/run509.log" 2>/dev/null | tail -n 1 | grep -oE '[0-9]+$'); of=${of:-0}
++  printf '{"job":"%s","ir_lines":%s,"of":%s,"time":"%s"}\n' "$N" "$n" "$of" "$(date '+%F %T %Z')" > "$CK/latest.json.tmp" && mv "$CK/latest.json.tmp" "$CK/latest.json"
++}
++if [[ ! -f "$W/build.ok" ]]; then
++  if ! command -v unzip >/dev/null 2>&1; then
++    install -d "$W/bin"; cp "$D/jobs/kit/unzip-shim.py" "$W/bin/unzip"; chmod +x "$W/bin/unzip"; export PATH="$W/bin:$PATH"
++    echo "unzip missing: using jobs/kit/unzip-shim.py"
++  fi
++  bash "$D/jobs/kit/setup_k15.sh" > "$W/setup.log" 2>&1
++  grep -q '^SETUP_OK' "$W/setup.log" || { echo "$(date '+%F %T %Z') setup FAILED"; snap; exit 1; }
++  (cd "$B" && sha256sum bgk15 cascade_k15p cascade_filter_k_patched.cpp) > "$W/hashes.txt"
++  lscpu > "$W/lscpu.txt"
++  date '+%F %T %Z' > "$W/build.ok"
++fi
++cp -f "$D/jobs/kit/kcascade_run.py" "$B/kcascade_run.py"
++now=$(date +%s); dl=$(date -d '2026-11-11 18:00:00 +0800' +%s)
++( while sleep 300; do snap; done ) & SNAP=$!
++cd "$B"
++date '+%F %T %Z' | tee -a "$W/run509.time"
++if (( now < dl )); then
++  echo "BUDGET=$((dl - now))"
++  BUDGET=$((dl - now)) python3 kcascade_run.py ./bgk15 ./cascade_k15p 509 16 "$R" 2>&1 | tee -a "$W/run509.log"
++else
++  echo "no BUDGET"
++  python3 kcascade_run.py ./bgk15 ./cascade_k15p 509 16 "$R" 2>&1 | tee -a "$W/run509.log"
++fi
++rc=${PIPESTATUS[0]}
++date '+%F %T %Z' | tee -a "$W/run509.time"
++kill "$SNAP" 2>/dev/null
++n=$(wc -l < "$R/ir.jsonl" 2>/dev/null || echo 0)
++echo "$(date '+%F %T %Z') kcascade rc=$rc ir_lines=$n"
++snap
++of=$(grep -oE '^ir jobs [0-9]+' "$W/run509.log" 2>/dev/null | tail -n 1 | grep -oE '[0-9]+$'); of=${of:-0}
++echo "$(date '+%F %T %Z') job count from kcascade: of=$of"
++if (( rc == 0 && of > 0 && n >= of )); then date '+%F %T %Z' > "$STATE/$N.done"; echo "DONE $N"; fi
