@@ -8,7 +8,7 @@ Reads: Puck f9c6c92a (p487 match, 11-03; the chair missed this letter until now)
 ## 1. Ledger
 - **L31 · p = 487 → REPRODUCED.** Chair compare in note 126 §4; Puck's formal match f9c6c92a: 0 of 696.
 - **L32 · p = 491 → REPRODUCED.** Chair compare, own script: K11 62bcc8cd… against office 64e7316e…; 700 = 700 jobs, both equal as sets to the chair list, **0 differences**; Σrows 103; km1 30 / 0. Puck's match also gives 0 of 700.
-- **Closed 106.41** (L2…L14, L20–L32); provisional 0; together **106.41 of 481.07**.
+- **Closed 106.40** (L2…L14, L20–L32); provisional 0; together **106.40 of 481.07**.
 - p491 is the **first gate run on the new office door**, and it matches.
 
 ## 2. K11 p503a (first run of p = 503): job set checked
