@@ -1,0 +1,5 @@
+BUDGET=345600
+km1: {'roots': 30, 'covers': 0, 'gen_secs': 23794.73, 'ext_rows': 0, 'ext_survivors': 0}
+ir jobs 700 done 0 todo 700
+{"ir_jobs_done": 700, "of": 700, "rows": 103, "casc_rows": 103, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-11-06 04:36:20 +08 DONE of=700 distinct=700 lines=700 rc=0
