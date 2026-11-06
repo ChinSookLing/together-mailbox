@@ -1,0 +1,163 @@
+host k11  user k11run  now 2026-11-07 06:23:43 +08
+uptime up 1 day, 21 hours, 42 minutes  booted 2026-11-05 08:41:11
+cpus 16
+               total        used        free      shared  buff/cache   available
+Mem:           28381        1000       26825          41         957       27380
+Swap:           8191           0        8191
+/dev/mapper/ubuntu--vg-ubuntu--lv  914G   15G  861G   2% /
+--- k11 units
+k11-job-k11-p509a.service loaded active   running [systemd-run] /bin/bash /home/k11run/k11-gate/dispatcher/jobs/k11-p509a.sh
+k11-resume.service        loaded inactive dead    K11 gate: resume the active job after boot
+--- resume unit enabled: enabled
+--- active job: k11-p509a
+total 76
+drwxr-xr-x 2 k11run k11run 4096 Nov  6 15:53 .
+drwxr-xr-x 4 k11run k11run 4096 Oct 16 20:31 ..
+-rw-r--r-- 1 k11run k11run   10 Nov  7 06:23 active
+-rw-rw-r-- 1 k11run k11run   24 Oct 17 01:40 k11-p383a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 18 02:01 k11-p397a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 18 14:14 k11-p431a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 25 04:20 k11-p433a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 22 11:47 k11-p439a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 19 05:44 k11-p443a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 23 21:39 k11-p449a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 21 12:59 k11-p461a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 20 06:02 k11-p463a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 27 16:06 k11-p467a.done
+-rw-r--r-- 1 k11run k11run   86 Oct 29 17:31 k11-p479a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 31 03:45 k11-p487a.done
+-rw-rw-r-- 1 k11run k11run   24 Nov  1 23:10 k11-p491a.done
+-rw-rw-r-- 1 k11run k11run   24 Nov  4 21:45 k11-p499a.done
+-rw-rw-r-- 1 k11run k11run   24 Nov  6 15:53 k11-p503a.done
+-rw-rw-r-- 1 k11run k11run   24 Oct 16 20:44 selftest.done
+--- job k11-p383a
+{"job":"k11-p383a","ir_lines":415,"of":415,"time":"2026-10-17 01:40:36 +08"}
+
+ir jobs 415 done 0 todo 415
+{"ir_jobs_done": 415, "of": 415, "rows": 5171, "casc_rows": 5171, "survivors_l2": 2, "rows_alive_at_l16": 0}
+2026-10-17 01:40:36 +08
+2026-10-17 01:40:36 +08 kcascade rc=0 ir_lines=415
+DONE k11-p383a
+--- job k11-p397a
+{"job":"k11-p397a","ir_lines":436,"of":436,"time":"2026-10-18 02:01:41 +08"}
+
+ir jobs 436 done 0 todo 436
+{"ir_jobs_done": 436, "of": 436, "rows": 23452, "casc_rows": 23452, "survivors_l2": 2, "rows_alive_at_l16": 0}
+2026-10-18 02:01:41 +08
+2026-10-18 02:01:41 +08 kcascade rc=0 ir_lines=436
+DONE k11-p397a
+--- job k11-p431a
+{"job":"k11-p431a","ir_lines":514,"of":514,"time":"2026-10-18 14:14:52 +08"}
+
+ir jobs 514 done 0 todo 514
+{"ir_jobs_done": 514, "of": 514, "rows": 1382, "casc_rows": 1382, "survivors_l2": 2, "rows_alive_at_l16": 0}
+2026-10-18 14:14:52 +08
+2026-10-18 14:14:52 +08 kcascade rc=0 ir_lines=514
+DONE k11-p431a
+--- job k11-p433a
+{"job":"k11-p433a","ir_lines":564,"of":564,"time":"2026-10-25 04:20:28 +08"}
+
+ir jobs 564 done 182 todo 382
+{"ir_jobs_done": 564, "of": 564, "rows": 16936, "casc_rows": 16936, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-10-25 04:20:28 +08
+2026-10-25 04:20:28 +08 kcascade rc=0 ir_lines=564
+DONE k11-p433a
+--- job k11-p439a
+{"job":"k11-p439a","ir_lines":560,"of":560,"time":"2026-10-22 11:47:16 +08"}
+
+ir jobs 560 done 0 todo 560
+{"ir_jobs_done": 560, "of": 560, "rows": 2138, "casc_rows": 2138, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-10-22 11:47:16 +08
+2026-10-22 11:47:16 +08 kcascade rc=0 ir_lines=560
+DONE k11-p439a
+--- job k11-p443a
+{"job":"k11-p443a","ir_lines":556,"of":556,"time":"2026-10-19 05:44:50 +08"}
+
+ir jobs 556 done 0 todo 556
+{"ir_jobs_done": 556, "of": 556, "rows": 993, "casc_rows": 993, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-10-19 05:44:50 +08
+2026-10-19 05:44:50 +08 kcascade rc=0 ir_lines=556
+DONE k11-p443a
+--- job k11-p449a
+{"job":"k11-p449a","ir_lines":597,"of":597,"time":"2026-10-23 21:39:12 +08"}
+
+ir jobs 597 done 0 todo 597
+{"ir_jobs_done": 597, "of": 597, "rows": 10822, "casc_rows": 10822, "survivors_l2": 2, "rows_alive_at_l16": 0}
+2026-10-23 21:39:12 +08
+2026-10-23 21:39:12 +08 kcascade rc=0 ir_lines=597
+DONE k11-p449a
+--- job k11-p461a
+{"job":"k11-p461a","ir_lines":602,"of":602,"time":"2026-10-21 12:59:03 +08"}
+
+ir jobs 602 done 0 todo 602
+{"ir_jobs_done": 602, "of": 602, "rows": 177, "casc_rows": 177, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-10-21 12:59:03 +08
+2026-10-21 12:59:03 +08 kcascade rc=0 ir_lines=602
+DONE k11-p461a
+--- job k11-p463a
+{"job":"k11-p463a","ir_lines":589,"of":589,"time":"2026-10-20 06:02:37 +08"}
+
+ir jobs 589 done 0 todo 589
+{"ir_jobs_done": 589, "of": 589, "rows": 112, "casc_rows": 112, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-10-20 06:02:37 +08
+2026-10-20 06:02:37 +08 kcascade rc=0 ir_lines=589
+DONE k11-p463a
+--- job k11-p467a
+{"job":"k11-p467a","ir_lines":649,"of":649,"time":"2026-10-27 16:06:26 +08"}
+
+ir jobs 649 done 9 todo 640
+{"ir_jobs_done": 649, "of": 649, "rows": 1230, "casc_rows": 1230, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-10-27 16:06:26 +08
+2026-10-27 16:06:26 +08 kcascade rc=0 ir_lines=649
+DONE k11-p467a
+--- job k11-p479a
+{"job":"k11-p479a","ir_lines":645,"of":649,"time":"2026-10-29 01:24:44 +08"}
+
+km1: {'roots': 29, 'covers': 0, 'gen_secs': 9339.2036, 'ext_rows': 0, 'ext_survivors': 0}
+ir jobs 645 done 0 todo 645
+{"ir_jobs_done": 645, "of": 645, "rows": 88, "casc_rows": 88, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-10-29 01:24:44 +08
+2026-10-29 01:24:44 +08 kcascade rc=0 ir_lines=645
+--- job k11-p487a
+{"job":"k11-p487a","ir_lines":696,"of":696,"time":"2026-10-31 03:45:27 +08"}
+
+ir jobs 696 done 0 todo 696
+{"ir_jobs_done": 696, "of": 696, "rows": 438, "casc_rows": 438, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-10-31 03:45:27 +08
+2026-10-31 03:45:27 +08 kcascade rc=0 ir_lines=696
+DONE k11-p487a
+--- job k11-p491a
+{"job":"k11-p491a","ir_lines":700,"of":700,"time":"2026-11-01 23:10:27 +08"}
+
+{"ir_jobs_done": 700, "of": 700, "rows": 103, "casc_rows": 103, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-11-01 23:10:27 +08
+2026-11-01 23:10:27 +08 kcascade rc=0 ir_lines=700
+2026-11-01 23:10:27 +08 job count from kcascade: of=700
+DONE k11-p491a
+--- job k11-p499a
+{"job":"k11-p499a","ir_lines":762,"of":762,"time":"2026-11-04 21:45:45 +08"}
+
+{"ir_jobs_done": 762, "of": 762, "rows": 330, "casc_rows": 330, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-11-04 21:45:45 +08
+2026-11-04 21:45:45 +08 kcascade rc=0 ir_lines=762
+2026-11-04 21:45:45 +08 job count from kcascade: of=762
+DONE k11-p499a
+--- job k11-p503a
+{"job":"k11-p503a","ir_lines":751,"of":751,"time":"2026-11-06 15:53:50 +08"}
+
+{"ir_jobs_done": 751, "of": 751, "rows": 50, "casc_rows": 50, "survivors_l2": 1, "rows_alive_at_l16": 0}
+2026-11-06 15:53:50 +08
+2026-11-06 15:53:50 +08 kcascade rc=0 ir_lines=751
+2026-11-06 15:53:50 +08 job count from kcascade: of=751
+DONE k11-p503a
+--- job k11-p509a
+
+2026-11-07 06:23:43 +08 start k11-p509a
+unzip missing: using jobs/kit/unzip-shim.py
+--- job selftest
+{"step": 600, "acc": "9d101085c23f6dfa057a93687ba4a942c798d459b6eb9056e9e7645342bb190c", "resumes": 1, "time": "2026-10-16 20:44:33"}
+2026-10-16 20:41:33 step 420
+2026-10-16 20:42:33 step 480
+2026-10-16 20:43:33 step 540
+2026-10-16 20:44:33 step 600
+2026-10-16 20:44:33 DONE acc 9d101085c23f6dfa057a93687ba4a942c798d459b6eb9056e9e7645342bb190c resumes 1
