@@ -1,0 +1,10 @@
+df58c0e9924c346a9dae5ddb9a548c5c54eaa064d616bf1a5dabdeb6ae7d1f2a  ./letter.md
+fd1824c891f37560ab4ec1060bfd90c6a38ee1774c72ff8e12717d383584302d  ./raw/k11/latest.json
+2ad44128a526ff17f1b058d219b3b0134192de0b77317845eef5a2367e236338  ./raw/k11/run.log.tail
+44872c69843a181db2bc224a3cb93e681902c86803b26ee5a8d9333d0462b86d  ./raw/k11/status.txt
+b9bb3acd3581a2417f20e553a58cac87cc63cc8688c6552433fb1a97e55f3b76  ./raw/office/DATE.txt
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  ./raw/office/exit_code.txt
+c2f400f26e523bb8d02edd4d28e7dffe8fb8f0d88da3124bccc01a6f440989f9  ./raw/office/office-gate-p499.active
+4c005f84cfaf4ccea894c12b193c1fba0207ffd615da6f61f1f8c130d2a0c9f1  ./raw/office/out499-ir.count
+7340b7dabd2dd26bfbab75786675707bc29af6ca8d4def69c2d9846da0c55bee  ./raw/office/p499.header
+2f8a1ae90d19f3bb861cf9e38390a45722dc4d1767a55e278dbbc85dcda9c93a  ./raw/office/run499.log.last
