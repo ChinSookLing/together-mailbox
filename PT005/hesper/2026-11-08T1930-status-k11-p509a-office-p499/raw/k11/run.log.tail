@@ -1,0 +1,16 @@
+2026-11-07 06:23:43 +08 start k11-p509a
+unzip missing: using jobs/kit/unzip-shim.py
+2026-11-07 06:23:47 +08
+BUDGET=387373
+2026-11-07 15:44:09 +08 resume k11-p509a after boot
+2026-11-07 15:44:09 +08 start k11-p509a
+2026-11-07 15:44:09 +08
+BUDGET=353751
+km1: {'roots': 31, 'covers': 0, 'gen_secs': 16306.316, 'ext_rows': 0, 'ext_survivors': 0}
+ir jobs 751 done 0 todo 751
+2026-11-08 19:23:24 +08 resume k11-p509a after boot
+2026-11-08 19:23:24 +08 start k11-p509a
+2026-11-08 19:23:24 +08
+BUDGET=254196
+km1: {'roots': 31, 'covers': 0, 'gen_secs': 16306.316, 'ext_rows': 0, 'ext_survivors': 0}
+ir jobs 751 done 338 todo 413
