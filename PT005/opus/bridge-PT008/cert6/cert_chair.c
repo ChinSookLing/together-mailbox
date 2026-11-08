@@ -21,6 +21,6 @@ int main(int argc,char**argv){
         for(int i=0;i<5&&ok;i++){int gg=M; for(int k=0;k<5;k++) if(k!=i) gg=g(gg,v[k]); if(gg!=1) ok=0;}
         if(!ok) continue; filt++;
         int any=0; for(int w=0;w<W;w++) if(t4[w]&S[(size_t)x5*W+w]){any=1;break;}
-        if(!any){fail++; if(fail<=5) printf("FAIL %d %d %d %d %d\n",x1,x2,x3,x4,x5);}
+        if(!any){fail++; if(getenv("ALL")||fail<=5) printf("FAIL %d %d %d %d %d\n",x1,x2,x3,x4,x5);}
       }}}}}
   printf("p=%d M=%d |A|=%d tuples=%lld filtered=%lld fail=%lld\n",p,M,n,tot,filt,fail); return 0;}

@@ -1,0 +1,11 @@
+p=23 M=138 |A|=66 tuples=12103014 filtered=9228142 fail=0
+p=29 M=174 |A|=84 tuples=39175752 filtered=29978480 fail=0
+p=31 M=186 |A|=90 tuples=54891018 filtered=42041706 fail=0
+p=37 M=222 |A|=108 tuples=134153712 filtered=102964680 fail=0
+p=41 M=246 |A|=120 tuples=225150024 filtered=172986808 fail=0
+p=43 M=258 |A|=126 tuples=286243776 filtered=220025316 fail=0
+p=47 M=282 |A|=138 tuples=448072338 filtered=344687522 fail=0
+p=53 M=318 |A|=156 tuples=820384032 filtered=631696728 fail=0
+p=59 M=354 |A|=174 tuples=1407057960 filtered=1084257916 fail=0
+p=61 M=366 |A|=180 tuples=1663834536 filtered=1282407312 fail=0
+p=67 M=402 |A|=198 tuples=2666333340 filtered=2056277256 fail=0
