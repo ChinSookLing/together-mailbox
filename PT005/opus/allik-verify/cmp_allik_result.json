@@ -1,0 +1,429 @@
+[
+ {
+  "p": 383,
+  "his_jobs": 415,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 415,
+  "his_bf_rows": 5171,
+  "his_bf_nodes": 519032701616,
+  "his_sum_rows": 5171,
+  "his_sum_nodes": 519032701616,
+  "his_sum_surv": 2,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 415,
+   "sum_rows": 5171,
+   "sum_nodes": 519032701616,
+   "sum_surv": 2,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 415,
+   "sum_rows": 5171,
+   "sum_nodes": 519032701616,
+   "sum_surv": 2,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 397,
+  "his_jobs": 436,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 436,
+  "his_bf_rows": 23452,
+  "his_bf_nodes": 904936414352,
+  "his_sum_rows": 23452,
+  "his_sum_nodes": 904936414352,
+  "his_sum_surv": 2,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 436,
+   "sum_rows": 23452,
+   "sum_nodes": 904936414352,
+   "sum_surv": 2,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 436,
+   "sum_rows": 23452,
+   "sum_nodes": 904936414352,
+   "sum_surv": 2,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 431,
+  "his_jobs": 514,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 514,
+  "his_bf_rows": 1382,
+  "his_bf_nodes": 1276818583063,
+  "his_sum_rows": 1382,
+  "his_sum_nodes": 1276818583063,
+  "his_sum_surv": 2,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 514,
+   "sum_rows": 1382,
+   "sum_nodes": 1276818583063,
+   "sum_surv": 2,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 514,
+   "sum_rows": 1382,
+   "sum_nodes": 1276818583063,
+   "sum_surv": 2,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 433,
+  "his_jobs": 564,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 564,
+  "his_bf_rows": 16936,
+  "his_bf_nodes": 2906324105074,
+  "his_sum_rows": 16936,
+  "his_sum_nodes": 2906324105074,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 564,
+   "sum_rows": 16936,
+   "sum_nodes": 2906324105074,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 564,
+   "sum_rows": 16936,
+   "sum_nodes": 2906324105074,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 439,
+  "his_jobs": 560,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 560,
+  "his_bf_rows": 2138,
+  "his_bf_nodes": 2132084855977,
+  "his_sum_rows": 2138,
+  "his_sum_nodes": 2132084855977,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 560,
+   "sum_rows": 2138,
+   "sum_nodes": 2132084855977,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 560,
+   "sum_rows": 2138,
+   "sum_nodes": 2132084855977,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 443,
+  "his_jobs": 556,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 556,
+  "his_bf_rows": 993,
+  "his_bf_nodes": 1789561454139,
+  "his_sum_rows": 993,
+  "his_sum_nodes": 1789561454139,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 556,
+   "sum_rows": 993,
+   "sum_nodes": 1789561454139,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 556,
+   "sum_rows": 993,
+   "sum_nodes": 1789561454139,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 449,
+  "his_jobs": 597,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 597,
+  "his_bf_rows": 10822,
+  "his_bf_nodes": 3843077077133,
+  "his_sum_rows": 10822,
+  "his_sum_nodes": 3843077077133,
+  "his_sum_surv": 2,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 597,
+   "sum_rows": 10822,
+   "sum_nodes": 3843077077133,
+   "sum_surv": 2,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 597,
+   "sum_rows": 10822,
+   "sum_nodes": 3843077077133,
+   "sum_surv": 2,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 461,
+  "his_jobs": 602,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 602,
+  "his_bf_rows": 177,
+  "his_bf_nodes": 2155460614900,
+  "his_sum_rows": 177,
+  "his_sum_nodes": 2155460614900,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 602,
+   "sum_rows": 177,
+   "sum_nodes": 2155460614900,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 602,
+   "sum_rows": 177,
+   "sum_nodes": 2155460614900,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 463,
+  "his_jobs": 589,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 589,
+  "his_bf_rows": 112,
+  "his_bf_nodes": 1945186014037,
+  "his_sum_rows": 112,
+  "his_sum_nodes": 1945186014037,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 589,
+   "sum_rows": 112,
+   "sum_nodes": 1945186014037,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 589,
+   "sum_rows": 112,
+   "sum_nodes": 1945186014037,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 467,
+  "his_jobs": 649,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 649,
+  "his_bf_rows": 1230,
+  "his_bf_nodes": 3969521584867,
+  "his_sum_rows": 1230,
+  "his_sum_nodes": 3969521584867,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 649,
+   "sum_rows": 1230,
+   "sum_nodes": 3969521584867,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 649,
+   "sum_rows": 1230,
+   "sum_nodes": 3969521584867,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 479,
+  "his_jobs": 645,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 645,
+  "his_bf_rows": 88,
+  "his_bf_nodes": 2130648128489,
+  "his_sum_rows": 88,
+  "his_sum_nodes": 2130648128489,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 645,
+   "sum_rows": 88,
+   "sum_nodes": 2130648128489,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 645,
+   "sum_rows": 88,
+   "sum_nodes": 2130648128489,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 487,
+  "his_jobs": 696,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 696,
+  "his_bf_rows": 438,
+  "his_bf_nodes": 4659872153843,
+  "his_sum_rows": 438,
+  "his_sum_nodes": 4659872153843,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 696,
+   "sum_rows": 438,
+   "sum_nodes": 4659872153843,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 696,
+   "sum_rows": 438,
+   "sum_nodes": 4659872153843,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 491,
+  "his_jobs": 700,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 700,
+  "his_bf_rows": 103,
+  "his_bf_nodes": 3810957606535,
+  "his_sum_rows": 103,
+  "his_sum_nodes": 3810957606535,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 700,
+   "sum_rows": 103,
+   "sum_nodes": 3810957606535,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": {
+   "jobs": 700,
+   "sum_rows": 103,
+   "sum_nodes": 3810957606535,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  }
+ },
+ {
+  "p": 499,
+  "his_jobs": 762,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 762,
+  "his_bf_rows": 330,
+  "his_bf_nodes": 6396059905945,
+  "his_sum_rows": 330,
+  "his_sum_nodes": 6396059905945,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 762,
+   "sum_rows": 330,
+   "sum_nodes": 6396059905945,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": "absent"
+ },
+ {
+  "p": 503,
+  "his_jobs": 751,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 751,
+  "his_bf_rows": 50,
+  "his_bf_nodes": 5081244505945,
+  "his_sum_rows": 50,
+  "his_sum_nodes": 5081244505945,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 751,
+   "sum_rows": 50,
+   "sum_nodes": 5081244505945,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": "absent"
+ },
+ {
+  "p": 509,
+  "his_jobs": 751,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 751,
+  "his_bf_rows": 7,
+  "his_bf_nodes": 3880737098447,
+  "his_sum_rows": 7,
+  "his_sum_nodes": 3880737098447,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 751,
+   "sum_rows": 7,
+   "sum_nodes": 3880737098447,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": "absent"
+ }
+]
