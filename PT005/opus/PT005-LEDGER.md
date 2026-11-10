@@ -22,10 +22,13 @@ Updated: 2026-10-25 10:12 +0800 (L27 p=433 added as REPRODUCED: office first run
 Updated: 2026-10-29 17:31 +0800 (L28 p=449 and L29 p=479 added as REPRODUCED: K11 + office runs, job by job; decided by chair under Amendment 1 (e6009d8), checks: chair compare (note 119) and Puck own compare 0/597 and 0/645 differ (0981b164). Gate totals: closed 87.87; provisional 0; together 87.87 of 481.07).
 Updated: 2026-10-30 20:18 +0800 (L30 p=467 added as REPRODUCED: K11 first run + office second run, job by job; decided by chair under Amendment 1 (e6009d8), checks: chair compare (note 120) and Puck own compare 0/649 differ (9e4f683e). Gate totals: closed 94.02; provisional 0; together 94.02 of 481.07).
 Updated: 2026-11-06 23:10 +0800 (L31 p=487 and L32 p=491 added as REPRODUCED: K11 + office runs, job by job; decided by chair under Amendment 1 (e6009d8), checks: chair compares (notes 126, 128) and Puck own compares 0/696 (f9c6c92a) and 0/700 (7e2e43ed, d9fb7a11). Gate totals: closed 106.40; provisional 0; together 106.40 of 481.07).
-Vocabulary: PROVED-LEAN · REPRODUCED · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY · OFFICE-RUN, CHAIR-SPOT-CHECKED.
+Updated: 2026-11-11 06:40 +0800 (L33 p=499 REPRODUCED: K11 + office runs, job by job, and also equal to Allikvere's published evidence; L34 p=503 and L35 p=509 added as REPRODUCED-EXT: K11 run equal job by job to Allikvere's published evidence15 package; L20–L32 annotated as also equal to that evidence. Decided by chair under Amendment 1 (e6009d8), notes 133–134; checks: chair compare (note 133, allik-verify/) and Puck own compares (3b8809d5 four-eyes 16/16 0 differ; 2482ca6e office × K11 p499 0/762). Gate totals: closed 125.07; provisional 0; together 125.07 of 481.07).
+Vocabulary: PROVED-LEAN · REPRODUCED · REPRODUCED-EXT · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY · OFFICE-RUN, CHAIR-SPOT-CHECKED.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
-  not a theorem. OFFICE-RUN, CHAIR-SPOT-CHECKED = one full run on Tuzi's office PC; the chair regenerated the job list and
+  not a theorem. REPRODUCED-EXT = one full run on our machine (K11) equal job by job (job set, rows, nodes, survivors, km1)
+  to the original author's published per-job evidence, whose archive hash equals the author's pinned hash (note 133);
+  same engine as the author's, so a reproduction, not an independent reimplementation. OFFICE-RUN, CHAIR-SPOT-CHECKED = one full run on Tuzi's office PC; the chair regenerated the job list and
   re-ran sampled jobs with exact agreement; no second full run (provisional). A status applies only to its SCOPE.
 
 ---
@@ -435,3 +438,37 @@ RUNS   = K11 first (results k11/checkpoint/41360653615/checkpoint/k11-p491a/, ir
          on the new office door (office-collect-42237155282, ir.jsonl sha256 64e7316e…); job by job 700 = 700, 0 differences;
          both job sets equal the chair list PT005/opus/joblists/p491-jobs.txt.
 Gate totals: closed 106.40 (L2…L14, L20–L32); provisional 0; together 106.40 of 481.07.
+
+## Note to L20–L32 (2026-11-11, chair note 134)
+All 13 gates L20–L32 (p = 383, 397, 431, 433, 439, 443, 449, 461, 463, 467, 479, 487, 491) are **also equal, job by job, to
+Allikvere's published evidence15_<p>_s0 packages** (Zenodo 10.5281/zenodo.23304361; archive hashes equal his SHA256SUMS.txt):
+both our K11 and our office runs, job set, rows, nodes, survivors; km1 roots and covers agree. Chair compare (note 133,
+PT005/opus/allik-verify/) and Puck own compare (3b8809d5). Status unchanged (REPRODUCED). All these gates are already closed
+in his preprint; our ledger counts what we have checked, not what is new.
+
+## L33 · Prime gate p = 499 (K = 15, 16 runners), level 16, part (a) only (γ(p) = 15)
+STATUS = REPRODUCED · decided by chair 2026-11-11 06:40 +08 under Amendment 1 (e6009d8),
+         four-eyes: Puck (own compare, 2482ca6e, 762 = 762 jobs, 0 differ; and 3b8809d5 vs Allikvere) and chair (notes 133, 134).
+SCOPE  = as L20–L22. km1: 31 roots, 0 covers. (a) 762 jobs, 330 rows, 0 alive at level 16; one level-2 survivor (job (0, 0)), dies before level 16.
+RUNS   = K11 first (PT005/hesper/2026-11-05T0104-k11-p499a-done/, ir.jsonl sha256 4fb890e6…) and office PC second
+         (PT005/hesper/2026-11-11T0615-office-p499-done/, collect 42912288399, ir.jsonl sha256 75856f7e…); job by job 762 = 762,
+         0 differences; both job sets equal the chair list PT005/opus/joblists/p499-jobs.txt (d53d8a37…).
+ALSO   = both runs equal Allikvere evidence15_499_s0.tgz (sha256 1c9996f3…), job by job (note 133/134).
+Gate totals: closed 112.61 (L2…L14, L20–L33); provisional 0; together 112.61 of 481.07.
+
+## L34 · Prime gate p = 503 (K = 15, 16 runners), level 16, part (a) only (γ(p) = 15)
+STATUS = REPRODUCED-EXT · decided by chair 2026-11-11 06:40 +08 under Amendment 1 (e6009d8),
+         four-eyes: Puck (own code, 3b8809d5, 751 = 751 jobs, 0 differ) and chair (note 133).
+SCOPE  = as L20–L22. km1: 31 roots, 0 covers. (a) 751 jobs, 50 rows, 0 alive at level 16; one level-2 survivor, dies before level 16.
+RUNS   = K11 (k11-gate results, checkpoint 42541770750, k11-p503a/ir.jsonl sha256 3d22e0c5…; one damaged tail line moved aside
+         by the repair-tail gate and the job re-run, note 127) equal job by job to Allikvere evidence15_503_s0.tgz (sha256 442d1830…);
+         job set equals the chair list p503-jobs.txt (aa394a11…). Office second run: not yet.
+Gate totals: closed 118.83 (L2…L14, L20–L34); provisional 0; together 118.83 of 481.07.
+
+## L35 · Prime gate p = 509 (K = 15, 16 runners), level 16, part (a) only (γ(p) = 15)
+STATUS = REPRODUCED-EXT · decided by chair 2026-11-11 06:40 +08 under Amendment 1 (e6009d8),
+         four-eyes: Puck (own code, 3b8809d5, 751 = 751 jobs, 0 differ) and chair (note 133).
+SCOPE  = as L20–L22. km1: 31 roots, 0 covers. (a) 751 jobs, 7 rows, 0 alive at level 16; one level-2 survivor, dies before level 16.
+RUNS   = K11 (k11-gate results, checkpoint 42541770750, k11-p509a/ir.jsonl sha256 6f91a910…) equal job by job to Allikvere
+         evidence15_509_s0.tgz (sha256 67c74b4a…); job set equals the chair list p509-jobs.txt (78bef636…). Office second run: not yet.
+Gate totals: closed 125.07 (L2…L14, L20–L35); provisional 0; together 125.07 of 481.07.
