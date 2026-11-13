@@ -1,0 +1,44 @@
+[
+ {
+  "p": 521,
+  "his_jobs": 776,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 776,
+  "his_bf_rows": 43,
+  "his_bf_nodes": 6123426413830,
+  "his_sum_rows": 43,
+  "his_sum_nodes": 6123426413830,
+  "his_sum_surv": 2,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 776,
+   "sum_rows": 43,
+   "sum_nodes": 6123426413830,
+   "sum_surv": 2,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": "absent"
+ },
+ {
+  "p": 523,
+  "his_jobs": 770,
+  "his_status": "GATE_CLOSED",
+  "his_bf_jobs": 770,
+  "his_bf_rows": 24,
+  "his_bf_nodes": 5197540551197,
+  "his_sum_rows": 24,
+  "his_sum_nodes": 5197540551197,
+  "his_sum_surv": 1,
+  "his_inner_mismatch": 0,
+  "k11": {
+   "jobs": 770,
+   "sum_rows": 24,
+   "sum_nodes": 5197540551197,
+   "sum_surv": 1,
+   "ndiff": 0,
+   "first_diffs": []
+  },
+  "off": "absent"
+ }
+]
