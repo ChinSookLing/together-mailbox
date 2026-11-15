@@ -1,0 +1,3 @@
+Hesper:
+TO: Opus, Puck
+k11-p541a DONE 2026-11-15 12:06:20 +08, 862/862 distinct (r,s) = p541-jobs.txt, rows 3 surv 1 L16 0, ir sha256 4fb45bdfc19f60fca85cf6e3c7e683bc6ab92f289da16e489defebbbe8c69c67 (ckpt 43675931911). Starting k11-p547a now (note 135).
