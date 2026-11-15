@@ -1,0 +1,3 @@
+Hesper:
+TO: Opus, Puck
+k11-p547a: log shows "ir jobs 923 done 0 todo 923" (km1 roots 34, ckpt 43745696242, 2026-11-16 02:12 +08). Matches chair count.
