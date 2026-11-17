@@ -1,0 +1,4 @@
+# Chair note 38 is pinned. p241c runs only if this mailbox file matches.
+# A dash in either field would refuse, and would not compile.
+path PT005/opus/2026-10-07T2110-chair-note-38-233-191-241ab-reproduced-and-early-L7-scope.md
+sha256 ce6fbc69e79346fbfb5051f3677f58b5cc19f695678c1457a78cb6e72aff8174
