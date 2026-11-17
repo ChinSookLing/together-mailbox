@@ -1,0 +1,6 @@
+OFFICE DOOR UPDATE TICKET (for Tuzi's gate=update press)
+tree_prefix: PT005/bill/2026-11-17T1100-office-gate-571-569-hesper/repo
+tree_commit: 82492904
+PIN: 82a85b173a8f4848052d9f5f8a0093c4b94a4f292df589bcb2af3f3959901b95
+Puck READ PASS: c43cb873. Hesper gate 3 MATCH: this commit.
+Press only after office p523 DONE + collect. Workers stay 8. BUDGET_DAYS 7. Primes after: 571 (984), 569 (963).
