@@ -24,6 +24,7 @@ Updated: 2026-10-30 20:18 +0800 (L30 p=467 added as REPRODUCED: K11 first run + 
 Updated: 2026-11-06 23:10 +0800 (L31 p=487 and L32 p=491 added as REPRODUCED: K11 + office runs, job by job; decided by chair under Amendment 1 (e6009d8), checks: chair compares (notes 126, 128) and Puck own compares 0/696 (f9c6c92a) and 0/700 (7e2e43ed, d9fb7a11). Gate totals: closed 106.40; provisional 0; together 106.40 of 481.07).
 Updated: 2026-11-11 06:40 +0800 (L33 p=499 REPRODUCED: K11 + office runs, job by job, and also equal to Allikvere's published evidence; L34 p=503 and L35 p=509 added as REPRODUCED-EXT: K11 run equal job by job to Allikvere's published evidence15 package; L20–L32 annotated as also equal to that evidence. Decided by chair under Amendment 1 (e6009d8), notes 133–134; checks: chair compare (note 133, allik-verify/) and Puck own compares (3b8809d5 four-eyes 16/16 0 differ; 2482ca6e office × K11 p499 0/762). Gate totals: closed 125.07; provisional 0; together 125.07 of 481.07).
 Updated: 2026-11-14 20:25 +0800 (L34 p=503 REPRODUCED-EXT -> REPRODUCED: office second run equal job by job to K11 p503a and to Allikvere evidence15_503; decided by chair under Amendment 1 (e6009d8), note 136; checks: Hesper own compare 0/751 (836e6274) and chair compare 0/751 vs K11 and vs evidence. Gate totals unchanged: closed 125.07; provisional 0; together 125.07 of 481.07).
+Updated: 2026-11-17 10:45 +0800 (L35 p=509 REPRODUCED-EXT -> REPRODUCED: office second run equal job by job to K11 p509a; decided by chair under Amendment 1 (e6009d8), note 137; four-eyes: Hesper own compare 0/751 (148e7299) and Puck own compare 0/751 (36e243dd). Gate totals unchanged: closed 125.07; provisional 0; together 125.07 of 481.07).
 Vocabulary: PROVED-LEAN · REPRODUCED · REPRODUCED-EXT · CHAIR-CHECKED · HAND-CHECKED · REFUTED · SUPPORTED-MODEL · EXPLORATORY · OFFICE-RUN, CHAIR-SPOT-CHECKED.
   HAND-CHECKED = checked by hand by at least two readers who are not its author; no machine proof, no independent
   computation. SUPPORTED-MODEL = an empirical model whose predictions were stated before the test and then met;
@@ -470,9 +471,12 @@ RUNS   = K11 (k11-gate results, checkpoint 42541770750, k11-p503a/ir.jsonl sha25
 Gate totals: closed 118.83 (L2…L14, L20–L34); provisional 0; together 118.83 of 481.07.
 
 ## L35 · Prime gate p = 509 (K = 15, 16 runners), level 16, part (a) only (γ(p) = 15)
-STATUS = REPRODUCED-EXT · decided by chair 2026-11-11 06:40 +08 under Amendment 1 (e6009d8),
-         four-eyes: Puck (own code, 3b8809d5, 751 = 751 jobs, 0 differ) and chair (note 133).
+STATUS = REPRODUCED · 2026-11-17 10:45 +08 (was REPRODUCED-EXT from 2026-11-11 06:40), decided by chair under Amendment 1 (e6009d8), note 137;
+         four-eyes for the office × K11 match: Hesper (own compare, 148e7299, 751/751, 0 diff incl. nodes) and Puck (own program, 36e243dd, 751/751, 0 diff).
+         Earlier four-eyes for K11 × evidence: Puck (own code, 3b8809d5, 751 = 751 jobs, 0 differ) and chair (note 133).
 SCOPE  = as L20–L22. km1: 31 roots, 0 covers. (a) 751 jobs, 7 rows, 0 alive at level 16; one level-2 survivor, dies before level 16.
 RUNS   = K11 (k11-gate results, checkpoint 42541770750, k11-p509a/ir.jsonl sha256 6f91a910…) equal job by job to Allikvere
-         evidence15_509_s0.tgz (sha256 67c74b4a…); job set equals the chair list p509-jobs.txt (78bef636…). Office second run: not yet.
+         evidence15_509_s0.tgz (sha256 67c74b4a…); job set equals the chair list p509-jobs.txt (78bef636…).
+         Office second run: office-gate collect run 43986022829, ir.jsonl sha256 ae497bd9…, 2026-11-14 20:12:34 → 2026-11-17 06:52:10 +08,
+         751 jobs, equal job by job to K11 (Hesper, Puck). The chair did not hold the office file (not in the mailbox).
 Gate totals: closed 125.07 (L2…L14, L20–L35); provisional 0; together 125.07 of 481.07.
