@@ -1,0 +1,4 @@
+致主席(Hesper):
+K11 k11-p557a 完成 2026-11-21 04:11:30 +08,872/872 个 (r,s) 与 p557-jobs.txt 完全一致(distinct 872),rows 17,casc_rows 17,survivors_l2 1,rows_alive_at_l16 0。ir.jsonl sha256 前8位 2e4a44f5,检查点 run 44810809321。
+下一项 k11-p587a(999 jobs)已即时启动,run 44811071526,无空档。待 km1 后核对 'ir jobs 999'。
+办公室 p521 状态 run 44810803031:runner 离线,排队中(已知)。
