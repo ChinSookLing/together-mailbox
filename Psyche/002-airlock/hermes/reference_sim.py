@@ -1,7 +1,11 @@
-"""Reference simulator for airlock-v0.1 (Hermes). Bill: behaviour to match; not production code."""
-import json,random,sys
-T=json.load(open("airlock-v0.1-events.json"))
-M=T["state"]["meters"]
+"""Reference simulator for airlock-v0.1 (Hermes), aligned 2026-11-21 with Bill's live engine.
+Rules: PASS = that sol's B effects (B's flag is NOT set); an unoffered letter = NO MOVE (not applied, ask again);
+step 8 = handover note (A honest, B 'All normal.', PASS blank); no shelter mode.
+Usage: python3 reference_sim.py                -> 200 random weeks
+       python3 reference_sim.py S1 AAB-CBD-AA [zh] -> replay one code, print ending (and last packet)"""
+import json,random,sys,os
+T=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),"airlock-v0.1-events.json")))
+M=T["state"]["meters"]; L={"en":0,"zh":1}
 def mulberry32(a):
     a&=0xffffffff
     def r():
@@ -11,9 +15,9 @@ def mulberry32(a):
         t^=(t+(((t^(t>>7))*(t|61))&0xffffffff))&0xffffffff
         return ((t^(t>>14))&0xffffffff)/4294967296
     return r
-def tier(m,v,lang=0):
+def tier(m,v,lang="en"):
     for lo,hi,en,zh in M[m]["tiers"]:
-        if lo<=v<=hi: return en if lang==0 else zh
+        if lo<=v<=hi: return en if lang=="en" else zh
 def clamp(s):
     for m in M: s[m]=max(M[m]["min"],min(M[m]["max"],s[m]))
 def apply(s,eff):
@@ -28,41 +32,76 @@ def sol_def(s,n):
         if c.startswith("dust") and s["dust"]>=3: return v,v
         if c.startswith("seal") and s["seal"]>=2: return v,v
         if c=="otherwise": return v,v
-def packet(seed,s,step,hours,lines,so_far,scene,opts,moves):
-    o="".join(f'{x["key"]} {x["en"]}\n' for x in opts)
-    return T["packet_template"].format(seed=seed,sol=min(step,7),step=step,water=tier("water",s["water"]),power=tier("power",s["power"]),dust=tier("dust",s["dust"]),seal=tier("seal",s["seal"]),hours=hours,lines=lines,so_far=so_far or "none",scene=scene,options=o,moves=moves)
-def play(seed,chooser,show=False):
-    r=mulberry32(seed); nights=[]
-    for _ in range(6): w=1 if r()<0.4 else 0; p=1 if r()<0.4 else 0; nights.append((w,p))
-    s=dict(T["state"]["start"]); flags=[]; moves=""; extra=""; maxlen=0; echo=None
-    for n in range(1,8):
-        d,v=sol_def(s,n)
-        if v: echo=v["id"]; flags.append(v["flag"])
-        lines=extra
-        if "start_effects" in d: apply(s,d["start_effects"])
-        if "start_line" in d: lines+=d["start_line"]["en"]+"\n"
-        if s["water"]<=3 or s["power"]<=3 or s["dust"]>=6: lines+=T["state"]["shelter_line"]["en"]+"\n"
-        opts=d["options"]
-        p=packet(seed,s,n,4,lines,", ".join(T["state"]["so_far_labels"][x] for x in flags),d["scene"]["en"],opts,moves); maxlen=max(maxlen,len(p))
-        if show and n in(1,5): print(p,"\n")
-        c=chooser(opts)
-        if c!="P" and c not in [x["key"] for x in opts]: c="P"
-        if c=="P": eff=T["sols"][0]["options"][1]["effects"]
-        else: o=[x for x in opts if x["key"]==c][0]; eff=o["effects"]; f=o.get("flag"); f and flags.append(f)
-        apply(s,eff); left=4+eff.get("time",0); moves+=c
-        extra=""
-        if left>=3: s["dust"]-=1; clamp(s); extra=T["state"]["vacuum_line"]["en"]+"\n"
-        if n<7:
-            w,p_=nights[n-1]; s["water"]-=w; s["power"]-=p_
-            if s["dust"]>=4: s["water"]-=1
-            clamp(s)
-    return s,flags,echo,moves,maxlen
+class Game:
+    def __init__(s,seed):
+        s.seed=seed; r=mulberry32(int(str(seed).lstrip("S")))
+        s.nights=[]
+        for _ in range(6): w=1 if r()<0.4 else 0; p=1 if r()<0.4 else 0; s.nights.append((w,p))
+        s.st=dict(T["state"]["start"]); s.flags=[]; s.moves=""; s.step=1; s.extra=[]; s.note=None; s.cur=None
+        s._enter()
+    def _enter(s):
+        if s.step>7: s.cur=None; return
+        d,v=sol_def(s.st,s.step)
+        if v: s.flags.append(v["flag"])
+        s.lines=list(s.extra)
+        if "start_effects" in d: apply(s.st,d["start_effects"])
+        if "start_line" in d: s.lines.append(d["start_line"])
+        s.cur=d
+    def offered(s):
+        return [o["key"] for o in (s.cur["options"] if s.cur else T["step8"]["options"])]
+    def move(s,c):
+        if c=="PASS": c="P"
+        if c!="P" and c not in s.offered(): return "NO MOVE"
+        if s.step==8:
+            s.note={"A":"honest","B":"normal","P":None}[c]; s.moves+=c; s.step=9; return "ok"
+        opts=s.cur["options"]
+        if c=="P": eff=[o for o in opts if o["key"]=="B"][0]["effects"]
+        else:
+            o=[o for o in opts if o["key"]==c][0]; eff=o["effects"]
+            if o.get("flag"): s.flags.append(o["flag"])
+        apply(s.st,eff); left=4+eff.get("time",0); s.moves+=c; s.extra=[]
+        if left>=3: s.st["dust"]-=1; clamp(s.st); s.extra=[T["state"]["vacuum_line"]]
+        if s.step<7:
+            w,p=s.nights[s.step-1]; s.st["water"]-=w; s.st["power"]-=p
+            if s.st["dust"]>=4: s.st["water"]-=1
+            clamp(s.st)
+        s.step+=1; s._enter(); return "ok"
+    def replay(s):
+        m=s.moves; return f"{s.seed}/airlock-v0.1/"+"-".join([m[0:3],m[3:6],m[6:8]][:1+(len(m)>3)+(len(m)>6)])
+    def so_far(s,lang="en"):
+        lab=T["state"]["so_far_labels" if lang=="en" else "so_far_labels_zh"]
+        parts=[f"sol {i+1} {c}" if lang=="en" else f"第{i+1}天 {c}" for i,c in enumerate(s.moves[:7])]
+        parts+= [lab[f] for f in s.flags]
+        return "; ".join(parts) if parts else ("none" if lang=="en" else "無")
+    def ending(s,lang="en"):
+        E=T["ending"]; t=lambda m: tier(m,s.st[m],lang)
+        out=[E["opening"][lang].format(water_tier=t("water"),power_tier=t("power"),dust_tier=t("dust"),seal_tier=t("seal"))]
+        out+=[E["flag_lines"][f][lang] for f in s.flags if f in E["flag_lines"]]
+        wp=s.st["water"]+s.st["power"]; d=s.st["dust"]
+        k="kept_resources" if wp>=14 and d>=4 else "kept_clean" if d<=1 and wp<14 else "balance" if d<=3 and wp>=14 else "stretched"
+        out.append(E["protected_let_go"]["lines"][k][lang])
+        if s.note is None: out.append(E["note_line"]["blank"][lang])
+        else:
+            tpl=T["step8"]["options"][0 if s.note=="honest" else 1]["note_template"][lang]
+            note=tpl.format(dust_tier=t("dust"),seal_tier=t("seal"),water_tier=t("water"),power_tier=t("power"),lesson="",lesson_zh="").strip()
+            out.append(E["note_line"][lang].format(note=note))
+        out.append(E["closing"][lang].format(replay=s.replay()))
+        return ("" if lang=="zh" else " ").join(out)
+def run(seed,code):
+    g=Game(seed)
+    for c in code.replace("-",""): 
+        if g.move(c)!="ok": raise SystemExit(f"NO MOVE at step {g.step}: {c}")
+    return g
 if __name__=="__main__":
-    if len(sys.argv)>1: play(1,lambda o:o[0]["key"],show=True); sys.exit()
+    if len(sys.argv)>=3:
+        g=run(sys.argv[1],sys.argv[2]); lang=sys.argv[3] if len(sys.argv)>3 else "en"
+        print(g.ending(lang)); sys.exit()
     import collections
-    E=collections.Counter(); ML=0; shelter=0; tiers=collections.Counter()
+    E=collections.Counter(); K=collections.Counter()
     for seed in range(1,201):
-        rnd=random.Random(seed)
-        s,f,e,m,ml=play(seed,lambda o:rnd.choice([x["key"] for x in o]+(["P"] if rnd.random()<0.05 else [])))
-        E[e]+=1; ML=max(ML,ml); tiers[(tier("water",s["water"]),tier("dust",s["dust"]))]+=1
-    print("echo variants:",dict(E)); print("max packet chars:",ML); print("final water/dust:",tiers.most_common(8))
+        rnd=random.Random(seed); g=Game(seed)
+        while g.step<=8:
+            g.move("P" if rnd.random()<0.05 else rnd.choice(g.offered()))
+        E[[f for f in g.flags if f in("ade_cough","seal_hissed","five_sols_clean")][0]]+=1
+        K[(tier("water",g.st["water"]),tier("dust",g.st["dust"]))]+=1
+    print("echo:",dict(E)); print("final water/dust:",K.most_common(6))
