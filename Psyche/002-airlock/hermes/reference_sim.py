@@ -46,6 +46,7 @@ def play(seed,chooser,show=False):
         p=packet(seed,s,n,4,lines,", ".join(T["state"]["so_far_labels"][x] for x in flags),d["scene"]["en"],opts,moves); maxlen=max(maxlen,len(p))
         if show and n in(1,5): print(p,"\n")
         c=chooser(opts)
+        if c!="P" and c not in [x["key"] for x in opts]: c="P"
         if c=="P": eff=T["sols"][0]["options"][1]["effects"]
         else: o=[x for x in opts if x["key"]==c][0]; eff=o["effects"]; f=o.get("flag"); f and flags.append(f)
         apply(s,eff); left=4+eff.get("time",0); moves+=c
